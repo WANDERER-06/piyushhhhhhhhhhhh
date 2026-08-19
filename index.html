@@ -1,0 +1,2120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Piyush Singh | Marketing & Operations Portfolio</title>
+
+<meta name="description"
+content="Portfolio of Piyush Singh — MBA Digital Marketing & Operations student, marketer, analyst and operations enthusiast.">
+
+<style>
+/* =========================================================
+   GLOBAL
+========================================================= */
+
+:root {
+    --olive: #68744a;
+    --olive-dark: #4d5835;
+    --olive-light: #e9eddf;
+    --olive-pale: #f5f7ef;
+
+    --black: #151713;
+    --dark: #242720;
+    --gray: #686c63;
+    --light-gray: #e7e9e2;
+    --white: #ffffff;
+    --off-white: #fafbf8;
+
+    --shadow: 0 20px 60px rgba(49, 57, 35, 0.10);
+    --radius: 22px;
+
+    --max-width: 1180px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--black);
+    background: var(--white);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button {
+    font-family: inherit;
+}
+
+.container {
+    width: min(92%, var(--max-width));
+    margin: auto;
+}
+
+section {
+    padding: 110px 0;
+}
+
+::selection {
+    background: var(--olive);
+    color: white;
+}
+
+
+/* =========================================================
+   NAVBAR
+========================================================= */
+
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 999;
+    background: rgba(255,255,255,0.88);
+    backdrop-filter: blur(18px);
+    border-bottom: 1px solid rgba(104,116,74,0.10);
+}
+
+.nav-inner {
+    height: 76px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    font-size: 22px;
+    font-weight: 800;
+    letter-spacing: -1px;
+}
+
+.logo span {
+    color: var(--olive);
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 34px;
+    list-style: none;
+}
+
+.nav-links a {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--gray);
+    transition: .25s;
+}
+
+.nav-links a:hover {
+    color: var(--olive);
+}
+
+.nav-contact {
+    background: var(--olive);
+    color: white !important;
+    padding: 11px 19px;
+    border-radius: 30px;
+}
+
+.nav-contact:hover {
+    background: var(--olive-dark);
+}
+
+.menu-btn {
+    display: none;
+    border: none;
+    background: transparent;
+    font-size: 27px;
+    cursor: pointer;
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.hero {
+    min-height: 100vh;
+    padding-top: 150px;
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    background:
+        radial-gradient(circle at 90% 15%, rgba(104,116,74,.12), transparent 28%),
+        linear-gradient(180deg, #ffffff 0%, #fafbf8 100%);
+}
+
+.hero-grid {
+    display: grid;
+    grid-template-columns: 1.1fr .9fr;
+    gap: 70px;
+    align-items: center;
+}
+
+.eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    padding: 8px 14px;
+    background: var(--olive-pale);
+    color: var(--olive-dark);
+    border: 1px solid #dfe5d2;
+    border-radius: 30px;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 1.4px;
+    text-transform: uppercase;
+    margin-bottom: 25px;
+}
+
+.eyebrow-dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: var(--olive);
+}
+
+.hero h1 {
+    font-size: clamp(48px, 7vw, 82px);
+    line-height: .98;
+    letter-spacing: -5px;
+    max-width: 750px;
+    margin-bottom: 28px;
+}
+
+.hero h1 span {
+    color: var(--olive);
+}
+
+.hero-description {
+    max-width: 650px;
+    color: var(--gray);
+    font-size: 18px;
+    line-height: 1.8;
+    margin-bottom: 35px;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 14px;
+    flex-wrap: wrap;
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 9px;
+    padding: 14px 22px;
+    border-radius: 12px;
+    font-size: 14px;
+    font-weight: 700;
+    transition: .3s;
+}
+
+.btn-primary {
+    background: var(--olive);
+    color: white;
+}
+
+.btn-primary:hover {
+    background: var(--olive-dark);
+    transform: translateY(-3px);
+    box-shadow: 0 12px 30px rgba(104,116,74,.22);
+}
+
+.btn-secondary {
+    border: 1px solid var(--light-gray);
+    background: white;
+}
+
+.btn-secondary:hover {
+    border-color: var(--olive);
+    color: var(--olive);
+    transform: translateY(-3px);
+}
+
+
+/* HERO VISUAL */
+
+.hero-visual {
+    position: relative;
+    min-height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.profile-card {
+    width: 340px;
+    height: 420px;
+    border-radius: 35px;
+    background: var(--olive);
+    position: relative;
+    overflow: hidden;
+    box-shadow: 30px 30px 80px rgba(57,67,37,.20);
+    transform: rotate(4deg);
+}
+
+.profile-card::before {
+    content: "PS";
+    position: absolute;
+    font-size: 170px;
+    font-weight: 900;
+    color: rgba(255,255,255,.08);
+    bottom: -20px;
+    left: -15px;
+    letter-spacing: -15px;
+}
+
+.profile-card-content {
+    position: absolute;
+    inset: 0;
+    padding: 35px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    color: white;
+}
+
+.profile-initials {
+    width: 72px;
+    height: 72px;
+    border: 1px solid rgba(255,255,255,.4);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    font-weight: 800;
+}
+
+.profile-name {
+    font-size: 32px;
+    font-weight: 800;
+    line-height: 1.05;
+}
+
+.profile-role {
+    opacity: .75;
+    font-size: 13px;
+    margin-top: 8px;
+}
+
+.floating-card {
+    position: absolute;
+    background: white;
+    border: 1px solid #e5e8df;
+    box-shadow: var(--shadow);
+    border-radius: 17px;
+    padding: 17px 20px;
+}
+
+.floating-card strong {
+    display: block;
+    color: var(--olive);
+    font-size: 22px;
+}
+
+.floating-card small {
+    color: var(--gray);
+    font-size: 11px;
+}
+
+.float-one {
+    top: 50px;
+    left: 0;
+    animation: float 5s ease-in-out infinite;
+}
+
+.float-two {
+    bottom: 50px;
+    right: 0;
+    animation: float 6s ease-in-out infinite reverse;
+}
+
+@keyframes float {
+    0%,100% { transform: translateY(0); }
+    50% { transform: translateY(-12px); }
+}
+
+
+/* =========================================================
+   SECTION HEADERS
+========================================================= */
+
+.section-header {
+    margin-bottom: 55px;
+}
+
+.section-number {
+    color: var(--olive);
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+}
+
+.section-title {
+    font-size: clamp(36px, 5vw, 58px);
+    line-height: 1;
+    letter-spacing: -3px;
+}
+
+.section-subtitle {
+    margin-top: 17px;
+    color: var(--gray);
+    max-width: 650px;
+}
+
+
+/* =========================================================
+   ABOUT
+========================================================= */
+
+.about {
+    background: var(--off-white);
+}
+
+.about-grid {
+    display: grid;
+    grid-template-columns: .8fr 1.2fr;
+    gap: 80px;
+    align-items: start;
+}
+
+.about-large {
+    font-size: 31px;
+    font-weight: 600;
+    line-height: 1.3;
+    letter-spacing: -1px;
+}
+
+.about-large span {
+    color: var(--olive);
+}
+
+.about-text {
+    color: var(--gray);
+    font-size: 16px;
+    line-height: 1.9;
+    margin-bottom: 22px;
+}
+
+.info-grid {
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 15px;
+    margin-top: 30px;
+}
+
+.info-item {
+    padding: 20px;
+    background: white;
+    border: 1px solid var(--light-gray);
+    border-radius: 15px;
+}
+
+.info-item span {
+    display: block;
+    color: var(--gray);
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 5px;
+}
+
+.info-item strong {
+    font-size: 14px;
+}
+
+
+/* =========================================================
+   EXPERIENCE
+========================================================= */
+
+.timeline {
+    position: relative;
+    max-width: 900px;
+}
+
+.timeline::before {
+    content: "";
+    position: absolute;
+    left: 9px;
+    top: 5px;
+    bottom: 5px;
+    width: 1px;
+    background: #d9ddcf;
+}
+
+.timeline-item {
+    position: relative;
+    padding-left: 50px;
+    margin-bottom: 55px;
+}
+
+.timeline-dot {
+    position: absolute;
+    left: 0;
+    top: 6px;
+    width: 19px;
+    height: 19px;
+    border-radius: 50%;
+    background: var(--olive);
+    border: 5px solid white;
+    box-shadow: 0 0 0 1px #cdd4be;
+}
+
+.timeline-date {
+    color: var(--olive);
+    font-size: 12px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 8px;
+}
+
+.timeline-item h3 {
+    font-size: 25px;
+    margin-bottom: 3px;
+}
+
+.timeline-company {
+    color: var(--gray);
+    font-size: 14px;
+    margin-bottom: 15px;
+}
+
+.timeline-item ul {
+    padding-left: 18px;
+    color: var(--gray);
+}
+
+.timeline-item li {
+    margin-bottom: 8px;
+}
+
+
+/* =========================================================
+   PROJECTS
+========================================================= */
+
+.projects {
+    background: var(--off-white);
+}
+
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 22px;
+}
+
+.project-card {
+    background: white;
+    border: 1px solid #e4e7df;
+    border-radius: var(--radius);
+    padding: 30px;
+    transition: .35s;
+    position: relative;
+    overflow: hidden;
+}
+
+.project-card::after {
+    content: "";
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background: var(--olive-pale);
+    right: -70px;
+    top: -70px;
+    transition: .4s;
+}
+
+.project-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow);
+    border-color: #d4dac8;
+}
+
+.project-card:hover::after {
+    transform: scale(1.5);
+}
+
+.project-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 20px;
+    position: relative;
+    z-index: 1;
+}
+
+.project-index {
+    font-size: 12px;
+    color: var(--olive);
+    font-weight: 800;
+}
+
+.project-card h3 {
+    margin-top: 25px;
+    font-size: 24px;
+    line-height: 1.2;
+    max-width: 500px;
+}
+
+.project-card p {
+    color: var(--gray);
+    font-size: 14px;
+    line-height: 1.8;
+    margin-top: 16px;
+}
+
+.project-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 7px;
+    margin-top: 23px;
+}
+
+.project-tags span {
+    padding: 6px 10px;
+    background: var(--olive-pale);
+    color: var(--olive-dark);
+    border-radius: 7px;
+    font-size: 11px;
+    font-weight: 700;
+}
+
+.project-result {
+    margin-top: 25px;
+    padding-top: 20px;
+    border-top: 1px solid #eceee8;
+    font-weight: 800;
+    color: var(--olive-dark);
+}
+
+
+/* =========================================================
+   IMPACT NUMBERS
+========================================================= */
+
+.impact {
+    background: var(--olive);
+    color: white;
+}
+
+.impact-grid {
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 20px;
+}
+
+.impact-item {
+    padding: 30px 15px;
+    border-left: 1px solid rgba(255,255,255,.2);
+}
+
+.impact-number {
+    font-size: 43px;
+    font-weight: 800;
+    letter-spacing: -2px;
+}
+
+.impact-label {
+    color: rgba(255,255,255,.7);
+    font-size: 13px;
+    margin-top: 5px;
+}
+
+
+/* =========================================================
+   SKILLS
+========================================================= */
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+}
+
+.skill-box {
+    border: 1px solid var(--light-gray);
+    border-radius: var(--radius);
+    padding: 30px;
+}
+
+.skill-box h3 {
+    font-size: 20px;
+    margin-bottom: 22px;
+}
+
+.skill-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.skill-tags span {
+    padding: 10px 13px;
+    border: 1px solid #dfe3d7;
+    border-radius: 10px;
+    color: var(--dark);
+    background: var(--off-white);
+    font-size: 13px;
+    transition: .25s;
+}
+
+.skill-tags span:hover {
+    background: var(--olive);
+    color: white;
+    border-color: var(--olive);
+}
+
+
+/* =========================================================
+   EDUCATION
+========================================================= */
+
+.education {
+    background: var(--off-white);
+}
+
+.education-grid {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 20px;
+}
+
+.edu-card {
+    background: white;
+    border: 1px solid #e4e7df;
+    border-radius: var(--radius);
+    padding: 28px;
+}
+
+.edu-year {
+    color: var(--olive);
+    font-size: 12px;
+    font-weight: 800;
+    margin-bottom: 20px;
+}
+
+.edu-card h3 {
+    font-size: 20px;
+    line-height: 1.3;
+    margin-bottom: 10px;
+}
+
+.edu-card p {
+    color: var(--gray);
+    font-size: 13px;
+}
+
+.edu-grade {
+    display: inline-block;
+    margin-top: 18px;
+    padding: 7px 11px;
+    background: var(--olive-pale);
+    color: var(--olive-dark);
+    border-radius: 8px;
+    font-weight: 800;
+    font-size: 12px;
+}
+
+
+/* =========================================================
+   CERTIFICATIONS
+========================================================= */
+
+.cert-grid {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 14px;
+}
+
+.cert {
+    border: 1px solid var(--light-gray);
+    border-radius: 14px;
+    padding: 18px;
+    transition: .25s;
+}
+
+.cert:hover {
+    border-color: var(--olive);
+    transform: translateY(-4px);
+}
+
+.cert-title {
+    font-weight: 700;
+    font-size: 14px;
+}
+
+.cert-date {
+    color: var(--gray);
+    font-size: 11px;
+    margin-top: 5px;
+}
+
+
+/* =========================================================
+   ACHIEVEMENT
+========================================================= */
+
+.achievement {
+    background: var(--olive-pale);
+}
+
+.achievement-card {
+    background: white;
+    border-radius: 30px;
+    padding: 55px;
+    display: grid;
+    grid-template-columns: .8fr 1.2fr;
+    gap: 50px;
+    align-items: center;
+    border: 1px solid #dfe5d2;
+}
+
+.achievement-number {
+    font-size: clamp(55px, 8vw, 100px);
+    font-weight: 900;
+    color: var(--olive);
+    letter-spacing: -7px;
+    line-height: .9;
+}
+
+.achievement-card h3 {
+    font-size: 30px;
+    margin-bottom: 12px;
+}
+
+.achievement-card p {
+    color: var(--gray);
+}
+
+
+/* =========================================================
+   CONTACT
+========================================================= */
+
+.contact {
+    padding-bottom: 70px;
+}
+
+.contact-box {
+    background: var(--olive);
+    border-radius: 30px;
+    padding: 70px;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 40px;
+    overflow: hidden;
+    position: relative;
+}
+
+.contact-box::after {
+    content: "LET'S CONNECT";
+    position: absolute;
+    right: -30px;
+    bottom: -30px;
+    font-size: 75px;
+    font-weight: 900;
+    opacity: .05;
+}
+
+.contact-box h2 {
+    font-size: clamp(36px,5vw,60px);
+    line-height: 1;
+    letter-spacing: -3px;
+}
+
+.contact-box p {
+    color: rgba(255,255,255,.72);
+    margin-top: 15px;
+}
+
+.contact-links {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    position: relative;
+    z-index: 2;
+}
+
+.contact-link {
+    padding: 13px 18px;
+    border: 1px solid rgba(255,255,255,.3);
+    border-radius: 10px;
+    font-size: 13px;
+    transition: .25s;
+}
+
+.contact-link:hover {
+    background: white;
+    color: var(--olive);
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+footer {
+    border-top: 1px solid var(--light-gray);
+    padding: 30px 0;
+    color: var(--gray);
+    font-size: 12px;
+}
+
+.footer-inner {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+
+/* =========================================================
+   SCROLL REVEAL
+========================================================= */
+
+.reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity .8s ease, transform .8s ease;
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 900px) {
+
+    .nav-links {
+        position: absolute;
+        top: 76px;
+        left: 0;
+        width: 100%;
+        background: white;
+        display: none;
+        flex-direction: column;
+        padding: 25px;
+        border-bottom: 1px solid var(--light-gray);
+    }
+
+    .nav-links.show {
+        display: flex;
+    }
+
+    .menu-btn {
+        display: block;
+    }
+
+    .hero-grid,
+    .about-grid,
+    .achievement-card {
+        grid-template-columns: 1fr;
+    }
+
+    .hero {
+        padding-top: 120px;
+    }
+
+    .hero-visual {
+        min-height: 430px;
+    }
+
+    .project-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .impact-grid {
+        grid-template-columns: repeat(2,1fr);
+    }
+
+    .education-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .cert-grid {
+        grid-template-columns: repeat(2,1fr);
+    }
+
+    .contact-box {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 45px;
+    }
+}
+
+@media (max-width: 600px) {
+
+    section {
+        padding: 80px 0;
+    }
+
+    .hero h1 {
+        font-size: 48px;
+        letter-spacing: -3px;
+    }
+
+    .hero-description {
+        font-size: 15px;
+    }
+
+    .profile-card {
+        width: 280px;
+        height: 360px;
+    }
+
+    .float-one {
+        left: 5px;
+    }
+
+    .float-two {
+        right: 5px;
+    }
+
+    .info-grid,
+    .skills-grid,
+    .cert-grid,
+    .impact-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .about-large {
+        font-size: 25px;
+    }
+
+    .achievement-card {
+        padding: 35px;
+    }
+
+    .contact-box {
+        padding: 35px 25px;
+    }
+
+    .footer-inner {
+        flex-direction: column;
+    }
+}
+</style>
+</head>
+
+
+<body>
+
+<!-- ======================================================
+     NAVIGATION
+======================================================= -->
+
+<nav class="navbar">
+    <div class="container nav-inner">
+
+        <a href="#home" class="logo">
+            Piyush<span>.</span>
+        </a>
+
+        <button class="menu-btn" id="menuBtn">☰</button>
+
+        <ul class="nav-links" id="navLinks">
+            <li><a href="#about">About</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#education">Education</a></li>
+            <li><a href="#contact" class="nav-contact">Let's Talk</a></li>
+        </ul>
+
+    </div>
+</nav>
+
+
+<!-- ======================================================
+     HERO
+======================================================= -->
+
+<header class="hero" id="home">
+
+    <div class="container hero-grid">
+
+        <div class="reveal">
+
+            <div class="eyebrow">
+                <span class="eyebrow-dot"></span>
+                MBA | Digital Marketing & Operations
+            </div>
+
+            <h1>
+                Marketing ideas
+                <span>with business impact.</span>
+            </h1>
+
+            <p class="hero-description">
+                I'm Piyush Singh, an MBA student specializing in Digital Marketing
+                and Operations. I combine marketing strategy, analytics and
+                process improvement to solve practical business problems.
+            </p>
+
+            <div class="hero-buttons">
+
+                <a href="#projects" class="btn btn-primary">
+                    Explore My Work →
+                </a>
+
+                <a href="#contact" class="btn btn-secondary">
+                    Contact Me
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <div class="hero-visual reveal">
+
+            <div class="floating-card float-one">
+                <strong>92.4K+</strong>
+                <small>Google Ads Impressions</small>
+            </div>
+
+            <div class="profile-card">
+
+                <div class="profile-card-content">
+
+                    <div class="profile-initials">
+                        PS
+                    </div>
+
+                    <div>
+                        <div class="profile-name">
+                            Piyush<br>Singh
+                        </div>
+
+                        <div class="profile-role">
+                            Marketing • Analytics • Operations
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="floating-card float-two">
+                <strong>55%</strong>
+                <small>Travel Time Reduction</small>
+            </div>
+
+        </div>
+
+    </div>
+
+</header>
+
+
+<!-- ======================================================
+     ABOUT
+======================================================= -->
+
+<section class="about" id="about">
+
+    <div class="container">
+
+        <div class="section-header reveal">
+            <div class="section-number">01 — About</div>
+
+            <h2 class="section-title">
+                A marketer who<br>
+                thinks beyond marketing.
+            </h2>
+        </div>
+
+
+        <div class="about-grid">
+
+            <div class="reveal">
+                <div class="about-large">
+                    I work at the intersection of
+                    <span>marketing, analytics and operations.</span>
+                </div>
+            </div>
+
+            <div class="reveal">
+
+                <p class="about-text">
+                    Currently pursuing an MBA in Digital Marketing and Operations
+                    at Lovely Professional University, I enjoy turning business
+                    challenges into structured, practical solutions.
+                </p>
+
+                <p class="about-text">
+                    My project experience ranges from Google Ads and SEO to
+                    digital product marketing, brand strategy, supply chain
+                    analysis and Lean Six Sigma process improvement.
+                </p>
+
+                <div class="info-grid">
+
+                    <div class="info-item">
+                        <span>Current Focus</span>
+                        <strong>Digital Marketing & Operations</strong>
+                    </div>
+
+                    <div class="info-item">
+                        <span>Location</span>
+                        <strong>India</strong>
+                    </div>
+
+                    <div class="info-item">
+                        <span>MBA</span>
+                        <strong>Lovely Professional University</strong>
+                    </div>
+
+                    <div class="info-item">
+                        <span>Undergraduate</span>
+                        <strong>Biotechnology & Zoology</strong>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ======================================================
+     EXPERIENCE
+======================================================= -->
+
+<section id="experience">
+
+    <div class="container">
+
+        <div class="section-header reveal">
+            <div class="section-number">02 — Experience</div>
+
+            <h2 class="section-title">
+                Where I've<br>worked.
+            </h2>
+
+            <p class="section-subtitle">
+                Experience across marketing, coaching, event coordination
+                and laboratory operations.
+            </p>
+        </div>
+
+
+        <div class="timeline">
+
+            <div class="timeline-item reveal">
+
+                <div class="timeline-dot"></div>
+
+                <div class="timeline-date">
+                    Jun 2026 — Jul 2026
+                </div>
+
+                <h3>Marketing Intern</h3>
+
+                <div class="timeline-company">
+                    Cognizen Innovations
+                </div>
+
+                <ul>
+                    <li>
+                        Conducted high-volume cold calling to educate potential
+                        clients on SIP investments and wealth creation.
+                    </li>
+
+                    <li>
+                        Communicated market benefits, addressed investor
+                        hesitations and developed objection-handling skills.
+                    </li>
+
+                    <li>
+                        Assessed prospect interest and financial readiness to
+                        build an initial outreach pipeline.
+                    </li>
+                </ul>
+
+            </div>
+
+
+            <div class="timeline-item reveal">
+
+                <div class="timeline-dot"></div>
+
+                <div class="timeline-date">
+                    Jun 2024 — Jul 2024
+                </div>
+
+                <h3>Laboratory Assistant Intern</h3>
+
+                <div class="timeline-company">
+                    Belagavi Bio-Center
+                </div>
+
+                <ul>
+                    <li>
+                        Managed and validated 100+ laboratory data entries.
+                    </li>
+
+                    <li>
+                        Supported workflow optimization and improved
+                        operational efficiency by 10%.
+                    </li>
+
+                    <li>
+                        Contributed to research focused on Bio-Fertilizers
+                        and Bio-Control Agents.
+                    </li>
+                </ul>
+
+            </div>
+
+
+            <div class="timeline-item reveal">
+
+                <div class="timeline-dot"></div>
+
+                <div class="timeline-date">
+                    Jun 2023 — Jul 2023
+                </div>
+
+                <h3>Assistant Event Coordinator</h3>
+
+                <div class="timeline-company">
+                    Bhushan Badminton Academy
+                </div>
+
+                <ul>
+                    <li>
+                        Coordinated tournament logistics and event operations.
+                    </li>
+
+                    <li>
+                        Supervised match-day volunteers and vendor coordination.
+                    </li>
+
+                    <li>
+                        Supported smooth tournament scheduling and execution.
+                    </li>
+                </ul>
+
+            </div>
+
+
+            <div class="timeline-item reveal">
+
+                <div class="timeline-dot"></div>
+
+                <div class="timeline-date">
+                    May 2025 — Jun 2025
+                </div>
+
+                <h3>Assistant Coach</h3>
+
+                <div class="timeline-company">
+                    Air Force Summer Coaching Camp
+                </div>
+
+                <ul>
+                    <li>
+                        Supported badminton training programs for 22 students.
+                    </li>
+
+                    <li>
+                        Formulated structured daily drills for skill development.
+                    </li>
+
+                    <li>
+                        Assisted practice coordination and performance improvement.
+                    </li>
+                </ul>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ======================================================
+     PROJECTS
+======================================================= -->
+
+<section class="projects" id="projects">
+
+    <div class="container">
+
+        <div class="section-header reveal">
+
+            <div class="section-number">03 — Selected Work</div>
+
+            <h2 class="section-title">
+                Projects that<br>
+                made an impact.
+            </h2>
+
+            <p class="section-subtitle">
+                A mix of digital marketing, business strategy,
+                operations and process improvement projects.
+            </p>
+
+        </div>
+
+
+        <div class="project-grid">
+
+
+            <!-- PROJECT 01 -->
+
+            <article class="project-card reveal">
+
+                <div class="project-top">
+                    <span class="project-index">01</span>
+                    <span class="project-index">LEAN SIX SIGMA</span>
+                </div>
+
+                <h3>
+                    Lean Six Sigma Approach to Public Transport Efficiency
+                </h3>
+
+                <p>
+                    Applied DMAIC, SIPOC mapping, Fishbone diagrams and Pareto
+                    analysis to identify terminal bottlenecks, congestion
+                    causes and passenger delays.
+                </p>
+
+                <div class="project-tags">
+                    <span>DMAIC</span>
+                    <span>SIPOC</span>
+                    <span>Fishbone</span>
+                    <span>Pareto</span>
+                    <span>Process Improvement</span>
+                </div>
+
+                <div class="project-result">
+                    55% reduction in travel time · 68% reduction in passenger wait time
+                </div>
+
+            </article>
+
+
+            <!-- PROJECT 02 -->
+
+            <article class="project-card reveal">
+
+                <div class="project-top">
+                    <span class="project-index">02</span>
+                    <span class="project-index">DIGITAL MARKETING</span>
+                </div>
+
+                <h3>
+                    Digital Campaign Creation & SEO Optimization
+                </h3>
+
+                <p>
+                    Optimized website content for targeted keywords and
+                    executed Google Ads campaigns while tracking performance
+                    through Google Analytics.
+                </p>
+
+                <div class="project-tags">
+                    <span>Google Ads</span>
+                    <span>SEO</span>
+                    <span>Google Analytics</span>
+                    <span>SERP</span>
+                </div>
+
+                <div class="project-result">
+                    92.4K+ impressions · 257 clicks · 1st-page SERP ranking
+                </div>
+
+            </article>
+
+
+            <!-- PROJECT 03 -->
+
+            <article class="project-card reveal">
+
+                <div class="project-top">
+                    <span class="project-index">03</span>
+                    <span class="project-index">PRODUCT MARKETING</span>
+                </div>
+
+                <h3>
+                    Digital Product Creation & Marketing
+                </h3>
+
+                <p>
+                    Developed and launched a kids colouring book as a digital
+                    product supported by a landing page and social media
+                    promotion.
+                </p>
+
+                <div class="project-tags">
+                    <span>Digital Product</span>
+                    <span>Landing Page</span>
+                    <span>Social Media</span>
+                    <span>Conversion</span>
+                </div>
+
+                <div class="project-result">
+                    ₹10,000+ revenue · 25+ engagements · 4% conversion rate
+                </div>
+
+            </article>
+
+
+            <!-- PROJECT 04 -->
+
+            <article class="project-card reveal">
+
+                <div class="project-top">
+                    <span class="project-index">04</span>
+                    <span class="project-index">AFFILIATE MARKETING</span>
+                </div>
+
+                <h3>
+                    Affiliate Marketing — August Bioscience
+                </h3>
+
+                <p>
+                    Planned and executed affiliate marketing campaigns across
+                    social media platforms while researching audience segments
+                    and improving ad relevance.
+                </p>
+
+                <div class="project-tags">
+                    <span>Affiliate Marketing</span>
+                    <span>Social Media</span>
+                    <span>Audience Research</span>
+                    <span>Conversion</span>
+                </div>
+
+                <div class="project-result">
+                    5+ campaigns · 10% lead conversion · 5% sales growth
+                </div>
+
+            </article>
+
+
+            <!-- PROJECT 05 -->
+
+            <article class="project-card reveal">
+
+                <div class="project-top">
+                    <span class="project-index">05</span>
+                    <span class="project-index">BRAND STRATEGY</span>
+                </div>
+
+                <h3>
+                    Unbranded to Branded — AttarVibez
+                </h3>
+
+                <p>
+                    Developed a complete brand identity and integrated marketing
+                    strategy covering brand positioning, pricing and
+                    go-to-market planning.
+                </p>
+
+                <div class="project-tags">
+                    <span>Brand Positioning</span>
+                    <span>GTM Strategy</span>
+                    <span>Pricing</span>
+                    <span>Brand Identity</span>
+                </div>
+
+                <div class="project-result">
+                    ₹18K revenue · estimated 50% profit margin
+                </div>
+
+            </article>
+
+
+            <!-- PROJECT 06 -->
+
+            <article class="project-card reveal">
+
+                <div class="project-top">
+                    <span class="project-index">06</span>
+                    <span class="project-index">SUPPLY CHAIN</span>
+                </div>
+
+                <h3>
+                    Amul Supply Chain & Operations Analysis
+                </h3>
+
+                <p>
+                    Analyzed procurement, production, inventory, warehousing
+                    and distribution workflows to identify operational gaps
+                    and improvement opportunities.
+                </p>
+
+                <div class="project-tags">
+                    <span>Supply Chain</span>
+                    <span>Excel</span>
+                    <span>Inventory</span>
+                    <span>Operations</span>
+                </div>
+
+                <div class="project-result">
+                    Data-driven recommendations for improved availability
+                </div>
+
+            </article>
+
+
+            <!-- PROJECT 07 -->
+
+            <article class="project-card reveal">
+
+                <div class="project-top">
+                    <span class="project-index">07</span>
+                    <span class="project-index">OPERATIONS</span>
+                </div>
+
+                <h3>
+                    HP World Supply Chain & Inventory Optimization
+                </h3>
+
+                <p>
+                    Analyzed a four-tier supply chain to identify inventory
+                    and lead-time bottlenecks and recommended spare-parts
+                    buffer strategies.
+                </p>
+
+                <div class="project-tags">
+                    <span>Inventory</span>
+                    <span>Supply Chain</span>
+                    <span>Risk Analysis</span>
+                    <span>Forecasting</span>
+                </div>
+
+                <div class="project-result">
+                    3+ operational risks diagnosed · 5–8 high-frequency parts identified
+                </div>
+
+            </article>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ======================================================
+     IMPACT
+======================================================= -->
+
+<section class="impact">
+
+    <div class="container">
+
+        <div class="section-header reveal">
+
+            <div class="section-number" style="color:white;">
+                04 — By The Numbers
+            </div>
+
+            <h2 class="section-title">
+                Results speak.
+            </h2>
+
+        </div>
+
+
+        <div class="impact-grid">
+
+            <div class="impact-item reveal">
+                <div class="impact-number">92.4K+</div>
+                <div class="impact-label">Google Ads impressions</div>
+            </div>
+
+            <div class="impact-item reveal">
+                <div class="impact-number">68%</div>
+                <div class="impact-label">Passenger wait-time reduction</div>
+            </div>
+
+            <div class="impact-item reveal">
+                <div class="impact-number">₹10K+</div>
+                <div class="impact-label">Digital product revenue</div>
+            </div>
+
+            <div class="impact-item reveal">
+                <div class="impact-number">10%</div>
+                <div class="impact-label">Operational efficiency improvement</div>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ======================================================
+     SKILLS
+======================================================= -->
+
+<section id="skills">
+
+    <div class="container">
+
+        <div class="section-header reveal">
+
+            <div class="section-number">05 — Skills & Tools</div>
+
+            <h2 class="section-title">
+                My toolkit.
+            </h2>
+
+        </div>
+
+
+        <div class="skills-grid">
+
+            <div class="skill-box reveal">
+
+                <h3>Tools & Platforms</h3>
+
+                <div class="skill-tags">
+
+                    <span>MS Excel</span>
+                    <span>PowerPoint</span>
+                    <span>Tableau</span>
+                    <span>Google Sheets</span>
+                    <span>Canva</span>
+                    <span>IBM SPSS</span>
+                    <span>Shopify</span>
+                    <span>WordPress</span>
+                    <span>Google Ads</span>
+                    <span>Google Analytics</span>
+
+                </div>
+
+            </div>
+
+
+            <div class="skill-box reveal">
+
+                <h3>Core Strengths</h3>
+
+                <div class="skill-tags">
+
+                    <span>Communication</span>
+                    <span>Leadership</span>
+                    <span>Strategic Thinking</span>
+                    <span>Problem Solving</span>
+                    <span>Team Collaboration</span>
+                    <span>Data Analysis</span>
+                    <span>Marketing Strategy</span>
+                    <span>Process Improvement</span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ======================================================
+     EDUCATION
+======================================================= -->
+
+<section class="education" id="education">
+
+    <div class="container">
+
+        <div class="section-header reveal">
+
+            <div class="section-number">06 — Education</div>
+
+            <h2 class="section-title">
+                Academic foundation.
+            </h2>
+
+        </div>
+
+
+        <div class="education-grid">
+
+            <div class="edu-card reveal">
+
+                <div class="edu-year">
+                    Aug 2025 — Jul 2027
+                </div>
+
+                <h3>
+                    Master of Business Administration
+                </h3>
+
+                <p>
+                    Digital Marketing & Operations
+                </p>
+
+                <p style="margin-top:8px;">
+                    Lovely Professional University
+                </p>
+
+                <div class="edu-grade">
+                    CGPA — 7.2
+                </div>
+
+            </div>
+
+
+            <div class="edu-card reveal">
+
+                <div class="edu-year">
+                    Aug 2021 — Oct 2024
+                </div>
+
+                <h3>
+                    Bachelor's in Biotechnology & Zoology
+                </h3>
+
+                <p>
+                    KLE Society's Raja Lakhmagouda Science Institute,
+                    Karnataka
+                </p>
+
+                <div class="edu-grade">
+                    CGPA — 8.1
+                </div>
+
+            </div>
+
+
+            <div class="edu-card reveal">
+
+                <div class="edu-year">
+                    Aug 2020 — May 2021
+                </div>
+
+                <h3>
+                    Science Stream
+                </h3>
+
+                <p>
+                    KV No. 1, Sambra, Karnataka
+                </p>
+
+                <div class="edu-grade">
+                    85%
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ======================================================
+     CERTIFICATIONS
+======================================================= -->
+
+<section>
+
+    <div class="container">
+
+        <div class="section-header reveal">
+
+            <div class="section-number">07 — Certifications</div>
+
+            <h2 class="section-title">
+                Continuous learning.
+            </h2>
+
+        </div>
+
+
+        <div class="cert-grid">
+
+            <div class="cert reveal">
+                <div class="cert-title">Yellow Belt Six Sigma</div>
+                <div class="cert-date">Jun 2026 — Jul 2026</div>
+            </div>
+
+            <div class="cert reveal">
+                <div class="cert-title">Data Analyst 101</div>
+                <div class="cert-date">Advanced Data Analysis & Visualization</div>
+            </div>
+
+            <div class="cert reveal">
+                <div class="cert-title">SEBI Investor Awareness Test</div>
+                <div class="cert-date">Oct 2025</div>
+            </div>
+
+            <div class="cert reveal">
+                <div class="cert-title">Bio-Fertilizer & Bio-Coated Agent Training</div>
+                <div class="cert-date">Jul 2024</div>
+            </div>
+
+            <div class="cert reveal">
+                <div class="cert-title">CME: Advanced Laboratory Techniques</div>
+                <div class="cert-date">May 2023</div>
+            </div>
+
+            <div class="cert reveal">
+                <div class="cert-title">Digital 101 Journey</div>
+                <div class="cert-date">Jun 2022</div>
+            </div>
+
+            <div class="cert reveal">
+                <div class="cert-title">Mushroom Cultivation Certification</div>
+                <div class="cert-date">May 2022</div>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ======================================================
+     ACHIEVEMENT
+======================================================= -->
+
+<section class="achievement">
+
+    <div class="container">
+
+        <div class="section-header reveal">
+
+            <div class="section-number">08 — Achievement</div>
+
+            <h2 class="section-title">
+                Beyond the classroom.
+            </h2>
+
+        </div>
+
+
+        <div class="achievement-card reveal">
+
+            <div>
+                <div class="achievement-number">
+                    ₹21L
+                </div>
+            </div>
+
+            <div>
+
+                <h3>
+                    Vishwakarma Learnbiz Simulation Game
+                </h3>
+
+                <p>
+                    Grew simulated business revenue from ₹5 lakhs to
+                    ₹21 lakhs and secured 5th rank among competing teams.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ======================================================
+     CONTACT
+======================================================= -->
+
+<section class="contact" id="contact">
+
+    <div class="container">
+
+        <div class="contact-box reveal">
+
+            <div>
+
+                <h2>
+                    Let's build<br>
+                    something useful.
+                </h2>
+
+                <p>
+                    Open to conversations around marketing, operations,
+                    analytics, projects and career opportunities.
+                </p>
+
+            </div>
+
+
+            <div class="contact-links">
+
+                <a
+                    href="mailto:piyushsingh20030610@gmail.com"
+                    class="contact-link">
+                    ✉ piyushsingh20030610@gmail.com
+                </a>
+
+                <a
+                    href="tel:+918431832821"
+                    class="contact-link">
+                    ☎ +91 8431832821
+                </a>
+
+                <a
+                    href="https://linkedin.com/in/piyushsingh0610"
+                    target="_blank"
+                    class="contact-link">
+                    ↗ LinkedIn
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ======================================================
+     FOOTER
+======================================================= -->
+
+<footer>
+
+    <div class="container footer-inner">
+
+        <span>
+            © <span id="year"></span> Piyush Singh
+        </span>
+
+        <span>
+            Marketing • Analytics • Operations
+        </span>
+
+    </div>
+
+</footer>
+
+
+<!-- ======================================================
+     JAVASCRIPT
+======================================================= -->
+
+<script>
+
+/* Mobile Navigation */
+
+const menuBtn = document.getElementById("menuBtn");
+const navLinks = document.getElementById("navLinks");
+
+menuBtn.addEventListener("click", () => {
+    navLinks.classList.toggle("show");
+});
+
+document.querySelectorAll(".nav-links a").forEach(link => {
+    link.addEventListener("click", () => {
+        navLinks.classList.remove("show");
+    });
+});
+
+
+/* Dynamic Year */
+
+document.getElementById("year").textContent =
+    new Date().getFullYear();
+
+
+/* Scroll Reveal */
+
+const observer = new IntersectionObserver(
+    (entries) => {
+
+        entries.forEach(entry => {
+
+            if (entry.isIntersecting) {
+                entry.target.classList.add("active");
+            }
+
+        });
+
+    },
+    {
+        threshold: 0.12
+    }
+);
+
+document.querySelectorAll(".reveal").forEach(element => {
+    observer.observe(element);
+});
+
+
+/* Smooth Navigation */
+
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+
+    anchor.addEventListener("click", function(e) {
+
+        const target = document.querySelector(
+            this.getAttribute("href")
+        );
+
+        if (target) {
+
+            e.preventDefault();
+
+            target.scrollIntoView({
+                behavior: "smooth"
+            });
+
+        }
+
+    });
+
+});
+
+</script>
+
+</body>
+</html>
