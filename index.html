@@ -17,30 +17,31 @@ content="Piyush Singh — MBA Digital Marketing & Operations portfolio."
 <style>
 
 /* =========================================================
-   ROOT
+   ROOT THEME
 ========================================================= */
 
 :root{
 
-    --night-950:#02050e;
-    --night-900:#030812;
-    --night-850:#050b18;
-    --night-800:#08142b;
+    --void:#02040a;
+    --midnight:#070d1e;
+    --navy:#0b1430;
 
-    --cyan:#65e6ff;
-    --cyan-soft:#8feaff;
+    --indigo:#263a86;
+    --blue:#4964c9;
+    --cyan:#79dff5;
+    --ice:#d9f7ff;
 
-    --purple:#a88cff;
-    --lavender:#c6b8ff;
+    --white:#f5f8ff;
+    --muted:#a8b5cc;
+    --muted2:#71809c;
 
-    --white:#f5f9ff;
-    --muted:#9baabd;
+    --glass:rgba(7,13,30,.58);
 
-    --glass:rgba(6,14,30,.58);
+    --border:rgba(121,178,255,.16);
 
-    --border:rgba(143,234,255,.14);
+    --border-bright:rgba(121,223,245,.32);
 
-    --radius:24px;
+    --radius:22px;
 
     --max:1180px;
 
@@ -63,6 +64,8 @@ html{
 
 body{
 
+    min-height:100vh;
+
     font-family:
     Inter,
     ui-sans-serif,
@@ -76,28 +79,143 @@ body{
 
     background:
     linear-gradient(
-        180deg,
-        #02050e 0%,
-        #040a17 45%,
-        #08142b 100%
+        135deg,
+        #02040a 0%,
+        #030711 42%,
+        #070d1e 100%
     );
-
-    overflow-x:hidden;
 
     line-height:1.6;
 
+    overflow-x:hidden;
+
 }
 
-a{
-    text-decoration:none;
-    color:inherit;
+
+/* =========================================================
+   COSMIC CANVAS
+========================================================= */
+
+#cosmosCanvas{
+
+    position:fixed;
+
+    inset:0;
+
+    width:100%;
+    height:100%;
+
+    z-index:-20;
+
+    pointer-events:none;
+
 }
 
-button,
-input,
-textarea{
-    font:inherit;
+
+/* =========================================================
+   EXTRA COSMIC ATMOSPHERE
+========================================================= */
+
+.cosmic-vignette{
+
+    position:fixed;
+
+    inset:0;
+
+    pointer-events:none;
+
+    z-index:-10;
+
+    background:
+
+    radial-gradient(
+        ellipse at center,
+        transparent 35%,
+        rgba(0,0,0,.22) 72%,
+        rgba(0,0,0,.62) 100%
+    );
+
 }
+
+
+/* =========================================================
+   MILKY WAY CSS ATMOSPHERE
+========================================================= */
+
+.milkyway-glow{
+
+    position:fixed;
+
+    width:150vw;
+    height:430px;
+
+    top:12%;
+
+    left:-30%;
+
+    transform:
+        rotate(-25deg);
+
+    pointer-events:none;
+
+    z-index:-15;
+
+    opacity:.36;
+
+    filter:blur(48px);
+
+    background:
+
+    radial-gradient(
+        ellipse at center,
+        rgba(87,106,201,.28) 0%,
+        rgba(42,63,145,.20) 22%,
+        rgba(27,45,109,.14) 42%,
+        transparent 72%
+    );
+
+}
+
+
+.milkyway-core{
+
+    position:fixed;
+
+    width:150vw;
+    height:160px;
+
+    top:20%;
+
+    left:-30%;
+
+    transform:
+        rotate(-25deg);
+
+    pointer-events:none;
+
+    z-index:-14;
+
+    opacity:.20;
+
+    filter:blur(22px);
+
+    background:
+
+    linear-gradient(
+        90deg,
+        transparent,
+        rgba(124,151,255,.22),
+        rgba(68,92,191,.38),
+        rgba(135,154,255,.25),
+        transparent
+    );
+
+}
+
+
+/* =========================================================
+   CONTAINER
+========================================================= */
 
 .container{
 
@@ -112,17 +230,22 @@ textarea{
 
 section{
 
-    padding:110px 0;
-
     position:relative;
 
-    z-index:3;
+    z-index:2;
+
+    padding:110px 0;
 
 }
 
+
+/* =========================================================
+   TYPOGRAPHY
+========================================================= */
+
 .section-heading{
 
-    margin-bottom:55px;
+    margin-bottom:52px;
 
 }
 
@@ -130,7 +253,7 @@ section{
 
     color:var(--cyan);
 
-    font-size:.76rem;
+    font-size:.72rem;
 
     font-weight:800;
 
@@ -138,22 +261,22 @@ section{
 
     text-transform:uppercase;
 
-    margin-bottom:12px;
+    margin-bottom:13px;
 
 }
 
 .section-heading h2{
 
     font-size:
-    clamp(
-        2.1rem,
-        5vw,
-        3.6rem
-    );
+        clamp(
+            2.2rem,
+            5vw,
+            3.8rem
+        );
 
-    line-height:1.05;
+    line-height:1.03;
 
-    letter-spacing:-2px;
+    letter-spacing:-2.5px;
 
 }
 
@@ -161,20 +284,22 @@ section{
 
     max-width:680px;
 
-    color:var(--muted);
+    margin-top:17px;
 
-    margin-top:16px;
+    color:var(--muted);
 
 }
 
 .gradient-text{
 
     background:
+
     linear-gradient(
-        100deg,
+        110deg,
         #ffffff,
-        #8feaff 40%,
-        #b49aff 85%
+        #b7eefe 38%,
+        #7794ff 75%,
+        #9eaaff
     );
 
     -webkit-background-clip:text;
@@ -187,230 +312,7 @@ section{
 
 
 /* =========================================================
-   COSMIC BACKGROUND
-========================================================= */
-
-#spaceCanvas{
-
-    position:fixed;
-
-    inset:0;
-
-    width:100%;
-
-    height:100%;
-
-    z-index:-10;
-
-    pointer-events:none;
-
-}
-
-
-/* =========================================================
-   MILKY WAY NEBULA
-========================================================= */
-
-.milky-way{
-
-    position:fixed;
-
-    width:145vw;
-
-    height:48vh;
-
-    left:-28vw;
-
-    top:-5vh;
-
-    z-index:-9;
-
-    pointer-events:none;
-
-    transform:
-    rotate(
-        29deg
-    );
-
-    transform-origin:center;
-
-    background:
-
-    radial-gradient(
-        ellipse at center,
-        rgba(145,110,255,.20) 0%,
-        rgba(91,184,255,.14) 23%,
-        rgba(119,88,210,.10) 40%,
-        rgba(25,49,105,.04) 58%,
-        transparent 74%
-    );
-
-    filter:
-    blur(28px);
-
-    opacity:.75;
-
-}
-
-
-/* =========================================================
-   MILKY WAY DUST
-========================================================= */
-
-.milky-way::before{
-
-    content:"";
-
-    position:absolute;
-
-    inset:0;
-
-    background:
-
-    repeating-linear-gradient(
-        110deg,
-        transparent 0%,
-        rgba(255,255,255,.025) 8%,
-        transparent 15%
-    ),
-
-    radial-gradient(
-        ellipse at center,
-        rgba(174,135,255,.18),
-        transparent 60%
-    );
-
-    filter:blur(16px);
-
-}
-
-
-/* =========================================================
-   NEBULA GLOW
-========================================================= */
-
-.nebula-one,
-.nebula-two,
-.nebula-three{
-
-    position:fixed;
-
-    border-radius:50%;
-
-    pointer-events:none;
-
-    z-index:-8;
-
-    filter:blur(85px);
-
-    opacity:.12;
-
-}
-
-.nebula-one{
-
-    width:500px;
-
-    height:300px;
-
-    top:4%;
-
-    left:30%;
-
-    background:#8367ff;
-
-    transform:rotate(-20deg);
-
-}
-
-.nebula-two{
-
-    width:420px;
-
-    height:260px;
-
-    top:30%;
-
-    left:8%;
-
-    background:#38d8ff;
-
-}
-
-.nebula-three{
-
-    width:500px;
-
-    height:300px;
-
-    top:12%;
-
-    right:5%;
-
-    background:#5d7fff;
-
-}
-
-
-/* =========================================================
-   DARK CLOUD HORIZON
-========================================================= */
-
-.horizon-clouds{
-
-    position:fixed;
-
-    left:-10%;
-
-    bottom:-8px;
-
-    width:120%;
-
-    height:190px;
-
-    z-index:-6;
-
-    pointer-events:none;
-
-    opacity:.72;
-
-    filter:blur(4px);
-
-    background:
-
-    radial-gradient(
-        ellipse at 10% 100%,
-        #01040a 0%,
-        #01040a 40%,
-        transparent 70%
-    ),
-
-    radial-gradient(
-        ellipse at 32% 100%,
-        #01040a 0%,
-        #01040a 45%,
-        transparent 70%
-    ),
-
-    radial-gradient(
-        ellipse at 56% 100%,
-        #01040a 0%,
-        #01040a 42%,
-        transparent 70%
-    ),
-
-    radial-gradient(
-        ellipse at 82% 100%,
-        #01040a 0%,
-        #01040a 45%,
-        transparent 70%
-    );
-
-}
-
-
-/* =========================================================
-   NAVBAR
+   NAVIGATION
 ========================================================= */
 
 .navbar{
@@ -418,9 +320,7 @@ section{
     position:fixed;
 
     top:0;
-
     left:0;
-
     right:0;
 
     z-index:1000;
@@ -434,9 +334,10 @@ section{
 .navbar.scrolled{
 
     background:
-    rgba(2,5,14,.78);
+    rgba(2,4,10,.72);
 
-    backdrop-filter:blur(18px);
+    backdrop-filter:
+    blur(20px);
 
     border-bottom:
     1px solid var(--border);
@@ -458,22 +359,18 @@ section{
 
     justify-content:space-between;
 
-    padding:10px 18px;
+    padding:10px 17px;
 
     border:
-    1px solid rgba(
-        143,
-        234,
-        255,
-        .10
-    );
+    1px solid rgba(130,166,255,.10);
 
-    border-radius:18px;
+    border-radius:17px;
 
     background:
-    rgba(3,8,18,.38);
+    rgba(5,9,21,.40);
 
-    backdrop-filter:blur(12px);
+    backdrop-filter:
+    blur(16px);
 
 }
 
@@ -485,44 +382,68 @@ section{
 
     gap:10px;
 
+    font-size:.87rem;
+
     font-weight:900;
+
+    letter-spacing:.4px;
 
 }
 
-.logo-dot{
+.logo-star{
 
-    width:11px;
+    width:9px;
 
-    height:11px;
-
-    background:var(--cyan);
+    height:9px;
 
     border-radius:50%;
 
+    background:#dffaff;
+
     box-shadow:
-    0 0 25px var(--cyan);
+    0 0 8px #bcefff,
+    0 0 25px #769dff;
+
+    animation:
+    starPulse 2.5s ease-in-out infinite;
+
+}
+
+@keyframes starPulse{
+
+    0%,100%{
+        opacity:.6;
+        transform:scale(.8);
+    }
+
+    50%{
+        opacity:1;
+        transform:scale(1.3);
+    }
 
 }
 
 .nav-links{
 
+    list-style:none;
+
     display:flex;
 
-    gap:8px;
-
-    list-style:none;
+    gap:5px;
 
 }
 
 .nav-links a{
 
-    color:#aab7ca;
+    display:block;
 
-    padding:9px 13px;
+    color:#9daac2;
 
-    border-radius:10px;
+    padding:8px 12px;
 
-    font-size:.88rem;
+    border-radius:9px;
+
+    font-size:.83rem;
 
     transition:.25s;
 
@@ -534,7 +455,7 @@ section{
     color:white;
 
     background:
-    rgba(101,230,255,.09);
+    rgba(115,148,255,.10);
 
 }
 
@@ -542,9 +463,9 @@ section{
 
     display:none;
 
-    background:none;
-
     border:0;
+
+    background:none;
 
     color:white;
 
@@ -567,9 +488,7 @@ section{
 
     align-items:center;
 
-    padding-top:120px;
-
-    overflow:hidden;
+    padding-top:125px;
 
 }
 
@@ -578,9 +497,10 @@ section{
     display:grid;
 
     grid-template-columns:
-    1.2fr .8fr;
+        1.2fr
+        .8fr;
 
-    gap:60px;
+    gap:65px;
 
     align-items:center;
 
@@ -594,52 +514,53 @@ section{
 
     gap:10px;
 
-    padding:7px 12px;
+    padding:
+        7px
+        12px;
 
     border:
-    1px solid var(--border);
+    1px solid rgba(121,223,245,.18);
 
     background:
-    rgba(101,230,255,.06);
+    rgba(91,124,255,.06);
 
     border-radius:100px;
 
-    color:#b7efff;
+    color:#bdefff;
 
-    font-size:.8rem;
+    font-size:.74rem;
 
-    font-weight:700;
+    font-weight:800;
+
+    letter-spacing:.4px;
 
     margin-bottom:25px;
 
 }
 
-.live-dot{
+.status-dot{
 
     width:7px;
-
     height:7px;
-
-    background:#8fffe0;
 
     border-radius:50%;
 
+    background:#dffcff;
+
     box-shadow:
-    0 0 14px #8fffe0;
+    0 0 7px #dffcff,
+    0 0 18px #73dfff;
 
     animation:
-    pulse 1.6s infinite;
+    statusPulse 1.7s infinite;
 
 }
 
-@keyframes pulse{
+@keyframes statusPulse{
 
     50%{
-
-        transform:scale(1.6);
-
-        opacity:.5;
-
+        transform:scale(1.7);
+        opacity:.45;
     }
 
 }
@@ -647,13 +568,13 @@ section{
 .hero h1{
 
     font-size:
-    clamp(
-        3.3rem,
-        7vw,
-        6.8rem
-    );
+        clamp(
+            3.3rem,
+            7vw,
+            6.7rem
+        );
 
-    line-height:.92;
+    line-height:.91;
 
     letter-spacing:-6px;
 
@@ -661,13 +582,15 @@ section{
 
 .hero-description{
 
-    color:var(--muted);
-
     max-width:650px;
 
-    font-size:1.05rem;
+    margin:
+        28px
+        0;
 
-    margin:28px 0;
+    color:var(--muted);
+
+    font-size:1.03rem;
 
 }
 
@@ -677,7 +600,7 @@ section{
 
     flex-wrap:wrap;
 
-    gap:13px;
+    gap:11px;
 
 }
 
@@ -689,20 +612,22 @@ section{
 
     justify-content:center;
 
-    gap:9px;
+    gap:8px;
 
-    padding:13px 19px;
+    padding:
+        12px
+        18px;
 
-    border-radius:13px;
-
-    font-weight:800;
-
-    font-size:.9rem;
-
-    cursor:pointer;
+    border-radius:12px;
 
     border:
     1px solid var(--border);
+
+    font-size:.86rem;
+
+    font-weight:800;
+
+    cursor:pointer;
 
     transition:.25s;
 
@@ -710,18 +635,18 @@ section{
 
 .btn-primary{
 
-    color:#03101b;
+    color:#02050b;
 
     background:
     linear-gradient(
-        100deg,
-        #8feaff,
-        #65e6ff
+        110deg,
+        #dffaff,
+        #8adff5
     );
 
     box-shadow:
-    0 10px 35px
-    rgba(101,230,255,.16);
+    0 8px 35px
+    rgba(104,200,255,.13);
 
 }
 
@@ -730,8 +655,8 @@ section{
     transform:translateY(-3px);
 
     box-shadow:
-    0 16px 45px
-    rgba(101,230,255,.28);
+    0 15px 50px
+    rgba(104,200,255,.23);
 
 }
 
@@ -746,22 +671,25 @@ section{
 
 .btn-ghost:hover{
 
-    background:
-    rgba(101,230,255,.08);
-
     transform:translateY(-3px);
+
+    background:
+    rgba(105,140,255,.10);
+
+    border-color:
+    var(--border-bright);
 
 }
 
 .hero-contact{
 
-    margin-top:32px;
-
     display:flex;
 
     flex-wrap:wrap;
 
-    gap:10px;
+    gap:9px;
+
+    margin-top:30px;
 
 }
 
@@ -773,17 +701,19 @@ section{
 
     gap:8px;
 
-    color:#9fb1c5;
-
-    font-size:.85rem;
-
-    padding:8px 11px;
+    padding:
+    7px
+    10px;
 
     border:
     1px solid
-    rgba(143,234,255,.10);
+    rgba(121,178,255,.11);
 
-    border-radius:11px;
+    border-radius:10px;
+
+    color:#91a5c3;
+
+    font-size:.77rem;
 
     transition:.2s;
 
@@ -793,10 +723,8 @@ section{
 
     color:white;
 
-    border-color:var(--border);
-
     background:
-    rgba(101,230,255,.06);
+    rgba(115,148,255,.07);
 
 }
 
@@ -815,30 +743,38 @@ section{
 
 .profile-card{
 
-    width:min(
+    width:
+    min(
         380px,
         100%
     );
 
-    padding:15px;
+    padding:14px;
 
     border:
-    1px solid var(--border);
+    1px solid
+    rgba(130,165,255,.19);
 
-    border-radius:34px;
+    border-radius:32px;
 
     background:
+
     linear-gradient(
         145deg,
-        rgba(101,230,255,.09),
-        rgba(3,8,18,.68)
+        rgba(66,90,180,.15),
+        rgba(3,6,17,.72)
     );
 
     box-shadow:
-    0 20px 70px
-    rgba(0,0,0,.35);
 
-    transform:rotate(2deg);
+    0 25px 90px
+    rgba(0,0,0,.40),
+
+    inset 0 1px 0
+    rgba(255,255,255,.04);
+
+    transform:
+    rotate(1.5deg);
 
     transition:.5s;
 
@@ -860,13 +796,15 @@ section{
 
     overflow:hidden;
 
-    border-radius:25px;
+    border-radius:24px;
 
     background:
-    linear-gradient(
-        145deg,
-        #101d42,
-        #02050e
+
+    radial-gradient(
+        circle at 50% 30%,
+        #344b9b,
+        #0b1430 48%,
+        #02040a
     );
 
     display:flex;
@@ -880,7 +818,6 @@ section{
 .profile-image img{
 
     width:100%;
-
     height:100%;
 
     object-fit:cover;
@@ -903,9 +840,9 @@ section{
 
     flex-direction:column;
 
-    color:#a9eaff;
-
     text-align:center;
+
+    color:#ccefff;
 
 }
 
@@ -917,35 +854,38 @@ section{
 
 .profile-placeholder span{
 
-    font-size:.75rem;
+    font-size:.72rem;
 
-    color:#8294ab;
+    color:#7f91b2;
 
 }
 
 .profile-info{
 
-    padding:17px 8px 7px;
+    padding:
+        16px
+        8px
+        6px;
 
 }
 
 .profile-info h3{
 
-    font-size:1.25rem;
+    font-size:1.18rem;
 
 }
 
 .profile-info p{
 
-    color:#879bb2;
+    color:#8292ad;
 
-    font-size:.85rem;
+    font-size:.81rem;
 
 }
 
 
 /* =========================================================
-   GLASS
+   GLASS CARDS
 ========================================================= */
 
 .glass{
@@ -954,19 +894,26 @@ section{
     1px solid var(--border);
 
     background:
+
     linear-gradient(
         145deg,
-        rgba(8,20,43,.55),
-        rgba(2,5,14,.58)
+        rgba(11,20,48,.57),
+        rgba(2,4,10,.60)
     );
 
-    backdrop-filter:blur(14px);
+    backdrop-filter:
+    blur(15px);
 
-    border-radius:var(--radius);
+    border-radius:
+    var(--radius);
 
     box-shadow:
-    0 15px 60px
-    rgba(0,0,0,.14);
+
+    0 18px 70px
+    rgba(0,0,0,.18),
+
+    inset 0 1px 0
+    rgba(255,255,255,.025);
 
 }
 
@@ -980,15 +927,16 @@ section{
     display:grid;
 
     grid-template-columns:
-    .8fr 1.2fr;
+    .8fr
+    1.2fr;
 
-    gap:25px;
+    gap:22px;
 
 }
 
 .about-card{
 
-    padding:35px;
+    padding:34px;
 
 }
 
@@ -1013,21 +961,13 @@ section{
     grid-template-columns:
     repeat(2,1fr);
 
-    gap:14px;
+    gap:13px;
 
 }
 
 .fact{
 
     padding:25px;
-
-    border:
-    1px solid var(--border);
-
-    border-radius:18px;
-
-    background:
-    rgba(101,230,255,.025);
 
 }
 
@@ -1037,7 +977,7 @@ section{
 
     font-weight:900;
 
-    color:var(--cyan);
+    color:#a8e9ff;
 
 }
 
@@ -1045,9 +985,9 @@ section{
 
     display:block;
 
-    color:#8294aa;
+    color:#7586a2;
 
-    font-size:.8rem;
+    font-size:.77rem;
 
 }
 
@@ -1073,15 +1013,15 @@ section{
     left:10px;
 
     top:0;
-
     bottom:0;
 
     width:1px;
 
     background:
+
     linear-gradient(
-        var(--cyan),
-        rgba(143,234,255,.03)
+        #83baff,
+        rgba(90,125,230,.03)
     );
 
 }
@@ -1105,18 +1045,20 @@ section{
     top:25px;
 
     width:15px;
-
     height:15px;
-
-    background:var(--cyan);
 
     border-radius:50%;
 
+    background:
+    #d8f7ff;
+
     box-shadow:
+
     0 0 0 5px
-    rgba(101,230,255,.07),
-    0 0 20px
-    rgba(101,230,255,.6);
+    rgba(102,151,255,.08),
+
+    0 0 25px
+    rgba(130,220,255,.7);
 
 }
 
@@ -1138,17 +1080,17 @@ section{
 
 .card-top h3{
 
-    font-size:1.25rem;
+    font-size:1.2rem;
 
 }
 
 .card-company{
 
-    color:var(--cyan);
+    color:#8eddf5;
+
+    font-size:.87rem;
 
     font-weight:700;
-
-    font-size:.9rem;
 
 }
 
@@ -1156,16 +1098,18 @@ section{
 
     white-space:nowrap;
 
-    color:#7e90a7;
+    color:#71819d;
 
-    font-size:.78rem;
+    font-size:.74rem;
 
-    padding:6px 10px;
+    padding:
+        6px
+        10px;
 
     border:
     1px solid var(--border);
 
-    border-radius:9px;
+    border-radius:8px;
 
 }
 
@@ -1197,13 +1141,13 @@ section{
     grid-template-columns:
     repeat(2,1fr);
 
-    gap:18px;
+    gap:17px;
 
 }
 
 .project-card{
 
-    padding:28px;
+    padding:27px;
 
     position:relative;
 
@@ -1213,20 +1157,42 @@ section{
 
 }
 
+.project-card::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:150px;
+    height:150px;
+
+    top:-100px;
+    right:-100px;
+
+    border-radius:50%;
+
+    background:
+    rgba(83,117,255,.12);
+
+    filter:blur(20px);
+
+}
+
 .project-card:hover{
 
-    transform:translateY(-7px);
+    transform:
+    translateY(-7px);
 
     border-color:
-    rgba(143,234,255,.30);
+    rgba(129,186,255,.31);
 
 }
 
 .project-number{
 
-    font-size:.75rem;
+    color:#8ddff6;
 
-    color:var(--cyan);
+    font-size:.69rem;
 
     font-weight:900;
 
@@ -1236,9 +1202,12 @@ section{
 
 .project-card h3{
 
-    margin:11px 0 8px;
+    margin:
+        11px
+        0
+        8px;
 
-    font-size:1.2rem;
+    font-size:1.16rem;
 
 }
 
@@ -1246,7 +1215,7 @@ section{
 
     color:var(--muted);
 
-    font-size:.88rem;
+    font-size:.85rem;
 
 }
 
@@ -1264,20 +1233,22 @@ section{
 
 .tag{
 
-    padding:5px 9px;
+    padding:
+        5px
+        9px;
 
-    border-radius:8px;
+    border-radius:7px;
 
     border:
     1px solid
-    rgba(143,234,255,.12);
+    rgba(121,178,255,.12);
 
     background:
-    rgba(101,230,255,.04);
+    rgba(93,125,255,.05);
 
-    color:#a8dff0;
+    color:#9ab5dc;
 
-    font-size:.7rem;
+    font-size:.68rem;
 
 }
 
@@ -1293,7 +1264,7 @@ section{
     grid-template-columns:
     repeat(4,1fr);
 
-    gap:13px;
+    gap:12px;
 
 }
 
@@ -1311,7 +1282,7 @@ section{
 
     font-size:2.25rem;
 
-    color:var(--cyan);
+    color:#a6eaff;
 
     line-height:1;
 
@@ -1319,9 +1290,9 @@ section{
 
 .metric span{
 
-    color:#8295aa;
+    color:#71839f;
 
-    font-size:.75rem;
+    font-size:.73rem;
 
 }
 
@@ -1337,7 +1308,7 @@ section{
     grid-template-columns:
     repeat(3,1fr);
 
-    gap:18px;
+    gap:17px;
 
 }
 
@@ -1345,39 +1316,35 @@ section{
 
     padding:27px;
 
-    min-height:260px;
+    min-height:255px;
 
 }
 
 .edu-icon{
 
-    width:48px;
-
-    height:48px;
+    width:47px;
+    height:47px;
 
     display:flex;
 
     align-items:center;
-
     justify-content:center;
 
-    border-radius:15px;
+    border-radius:14px;
 
     background:
-    rgba(101,230,255,.07);
+    rgba(89,125,255,.09);
 
     border:
     1px solid var(--border);
 
-    font-size:1.25rem;
-
-    margin-bottom:25px;
+    margin-bottom:24px;
 
 }
 
 .edu-card h3{
 
-    font-size:1.05rem;
+    font-size:1.02rem;
 
 }
 
@@ -1385,9 +1352,9 @@ section{
 
     color:var(--muted);
 
-    font-size:.84rem;
+    font-size:.82rem;
 
-    margin-top:9px;
+    margin-top:8px;
 
 }
 
@@ -1395,11 +1362,11 @@ section{
 
     display:inline-block;
 
-    margin-top:17px;
+    margin-top:16px;
 
-    color:var(--cyan);
+    color:#83d9f4;
 
-    font-size:.75rem;
+    font-size:.73rem;
 
     font-weight:800;
 
@@ -1417,7 +1384,7 @@ section{
     grid-template-columns:
     repeat(2,1fr);
 
-    gap:12px;
+    gap:11px;
 
 }
 
@@ -1429,15 +1396,19 @@ section{
 
     align-items:center;
 
-    padding:18px 20px;
+    gap:15px;
+
+    padding:
+        17px
+        20px;
 
     border:
     1px solid var(--border);
 
     background:
-    rgba(101,230,255,.025);
+    rgba(89,125,255,.035);
 
-    border-radius:15px;
+    border-radius:14px;
 
     transition:.25s;
 
@@ -1445,10 +1416,11 @@ section{
 
 .cert:hover{
 
-    background:
-    rgba(101,230,255,.07);
+    transform:
+    translateX(5px);
 
-    transform:translateX(5px);
+    background:
+    rgba(89,125,255,.08);
 
 }
 
@@ -1456,15 +1428,17 @@ section{
 
     font-weight:700;
 
-    font-size:.9rem;
+    font-size:.85rem;
 
 }
 
 .cert-date{
 
-    color:#72869d;
+    color:#687b99;
 
-    font-size:.72rem;
+    font-size:.69rem;
+
+    white-space:nowrap;
 
 }
 
@@ -1478,9 +1452,10 @@ section{
     display:grid;
 
     grid-template-columns:
-    1fr 1fr;
+    1fr
+    1fr;
 
-    gap:20px;
+    gap:18px;
 
 }
 
@@ -1492,7 +1467,7 @@ section{
 
 .skill{
 
-    margin-bottom:22px;
+    margin-bottom:21px;
 
 }
 
@@ -1504,22 +1479,22 @@ section{
 
     margin-bottom:8px;
 
-    font-size:.82rem;
+    font-size:.79rem;
 
 }
 
 .skill-title span:last-child{
 
-    color:var(--cyan);
+    color:#8cdef7;
 
 }
 
 .skill-track{
 
-    height:6px;
+    height:5px;
 
     background:
-    rgba(255,255,255,.05);
+    rgba(255,255,255,.055);
 
     border-radius:20px;
 
@@ -1536,11 +1511,11 @@ section{
     border-radius:20px;
 
     background:
+
     linear-gradient(
         90deg,
-        #3b8cae,
-        #65e6ff,
-        #a88cff
+        #344caa,
+        #85e7fa
     );
 
     transition:
@@ -1554,27 +1529,29 @@ section{
 
     flex-wrap:wrap;
 
-    gap:9px;
+    gap:8px;
 
-    margin-top:20px;
+    margin-top:19px;
 
 }
 
 .tool{
 
-    padding:9px 12px;
+    padding:
+        8px
+        11px;
 
-    border-radius:11px;
+    border-radius:9px;
 
     background:
-    rgba(101,230,255,.035);
+    rgba(89,125,255,.045);
 
     border:
     1px solid var(--border);
 
-    color:#b2cfe0;
+    color:#a6b9d4;
 
-    font-size:.78rem;
+    font-size:.75rem;
 
 }
 
@@ -1587,38 +1564,38 @@ section{
 
     display:grid;
 
-    grid-template-columns:auto 1fr;
+    grid-template-columns:
+    auto
+    1fr;
 
-    gap:25px;
+    gap:24px;
 
     align-items:center;
 
-    padding:35px;
+    padding:34px;
 
 }
 
 .achievement-icon{
 
-    width:75px;
-
-    height:75px;
+    width:72px;
+    height:72px;
 
     display:flex;
 
     align-items:center;
-
     justify-content:center;
 
-    border-radius:22px;
+    border-radius:21px;
 
     background:
     linear-gradient(
         145deg,
-        rgba(143,234,255,.12),
-        rgba(168,140,255,.10)
+        rgba(105,139,255,.18),
+        rgba(7,13,30,.5)
     );
 
-    font-size:2rem;
+    font-size:1.8rem;
 
 }
 
@@ -1640,9 +1617,10 @@ section{
     display:grid;
 
     grid-template-columns:
-    .8fr 1.2fr;
+    .8fr
+    1.2fr;
 
-    gap:20px;
+    gap:19px;
 
 }
 
@@ -1656,21 +1634,21 @@ section{
 
     display:flex;
 
-    gap:15px;
+    gap:14px;
 
     align-items:center;
 
-    padding:16px;
+    padding:15px;
 
-    border-radius:15px;
+    border-radius:14px;
 
     border:
     1px solid var(--border);
 
     background:
-    rgba(101,230,255,.025);
+    rgba(89,125,255,.035);
 
-    margin-bottom:10px;
+    margin-bottom:9px;
 
     transition:.2s;
 
@@ -1678,31 +1656,34 @@ section{
 
 .contact-method:hover{
 
-    background:
-    rgba(101,230,255,.08);
+    transform:
+    translateX(4px);
 
-    transform:translateX(4px);
+    background:
+    rgba(89,125,255,.09);
 
 }
 
 .contact-icon{
 
-    width:43px;
+    width:42px;
+    height:42px;
 
-    height:43px;
+    flex-shrink:0;
 
     display:flex;
 
     align-items:center;
-
     justify-content:center;
 
-    border-radius:12px;
+    border-radius:11px;
 
     background:
-    rgba(101,230,255,.07);
+    rgba(104,147,255,.09);
 
-    color:var(--cyan);
+    color:#9be7fa;
+
+    font-weight:800;
 
 }
 
@@ -1710,15 +1691,15 @@ section{
 
     display:block;
 
-    font-size:.86rem;
+    font-size:.83rem;
 
 }
 
 .contact-method span{
 
-    color:#8194aa;
+    color:#7d8da9;
 
-    font-size:.78rem;
+    font-size:.74rem;
 
     word-break:break-word;
 
@@ -1729,9 +1710,10 @@ section{
     display:grid;
 
     grid-template-columns:
-    1fr 1fr;
+    1fr
+    1fr;
 
-    gap:12px;
+    gap:11px;
 
 }
 
@@ -1745,11 +1727,11 @@ section{
 
     display:block;
 
-    margin-bottom:7px;
+    margin-bottom:6px;
 
-    font-size:.76rem;
+    color:#8292ad;
 
-    color:#8799ae;
+    font-size:.74rem;
 
 }
 
@@ -1758,19 +1740,21 @@ section{
 
     width:100%;
 
-    border:
-    1px solid var(--border);
-
-    background:
-    rgba(0,0,0,.18);
+    padding:
+        12px
+        13px;
 
     color:white;
 
+    background:
+    rgba(0,0,0,.20);
+
+    border:
+    1px solid var(--border);
+
+    border-radius:11px;
+
     outline:none;
-
-    border-radius:12px;
-
-    padding:13px 14px;
 
     transition:.2s;
 
@@ -1778,7 +1762,7 @@ section{
 
 .field textarea{
 
-    min-height:150px;
+    min-height:145px;
 
     resize:vertical;
 
@@ -1787,21 +1771,22 @@ section{
 .field input:focus,
 .field textarea:focus{
 
-    border-color:var(--cyan);
+    border-color:
+    #84dff7;
 
     box-shadow:
     0 0 0 3px
-    rgba(101,230,255,.06);
+    rgba(105,181,255,.07);
 
 }
 
 .form-note{
 
-    margin-top:10px;
+    color:#657995;
 
-    color:#72869c;
+    font-size:.68rem;
 
-    font-size:.72rem;
+    margin-top:9px;
 
 }
 
@@ -1809,17 +1794,17 @@ section{
 
     display:none;
 
-    margin-top:12px;
+    margin-top:11px;
 
-    padding:12px;
+    padding:11px;
 
     border:
     1px solid var(--border);
 
-    border-radius:14px;
+    border-radius:12px;
 
     background:
-    rgba(2,5,14,.88);
+    rgba(2,4,10,.88);
 
 }
 
@@ -1831,35 +1816,31 @@ section{
 
 .email-options-title{
 
-    color:#8da2b7;
+    color:#8395b0;
 
-    font-size:.75rem;
+    font-size:.7rem;
 
-    margin-bottom:9px;
+    margin-bottom:8px;
 
 }
 
 .email-option{
 
-    display:block;
-
     width:100%;
 
-    padding:10px;
+    padding:9px;
 
-    margin-top:6px;
-
-    border-radius:10px;
+    margin-top:5px;
 
     border:
     1px solid var(--border);
 
+    border-radius:9px;
+
     background:
-    rgba(101,230,255,.04);
+    rgba(89,125,255,.06);
 
     color:white;
-
-    text-align:center;
 
     cursor:pointer;
 
@@ -1868,7 +1849,7 @@ section{
 .email-option:hover{
 
     background:
-    rgba(101,230,255,.10);
+    rgba(89,125,255,.13);
 
 }
 
@@ -1879,14 +1860,10 @@ section{
 
 footer{
 
-    padding:35px 0;
+    padding:34px 0;
 
     border-top:
     1px solid var(--border);
-
-    position:relative;
-
-    z-index:5;
 
 }
 
@@ -1894,9 +1871,9 @@ footer{
 
     display:flex;
 
-    justify-content:space-between;
-
     align-items:center;
+
+    justify-content:space-between;
 
     gap:20px;
 
@@ -1904,9 +1881,9 @@ footer{
 
 .footer-inner p{
 
-    color:#667991;
+    color:#5f718e;
 
-    font-size:.78rem;
+    font-size:.72rem;
 
 }
 
@@ -1920,22 +1897,20 @@ footer{
 
 .footer-links a{
 
-    width:36px;
-
-    height:36px;
-
-    border-radius:10px;
+    width:35px;
+    height:35px;
 
     display:flex;
 
     align-items:center;
-
     justify-content:center;
+
+    border-radius:9px;
 
     border:
     1px solid var(--border);
 
-    color:#9eb8cc;
+    color:#8ba0bd;
 
 }
 
@@ -1948,27 +1923,24 @@ footer{
 
     position:fixed;
 
-    right:20px;
+    right:19px;
+    bottom:19px;
 
-    bottom:20px;
-
-    width:45px;
-
-    height:45px;
+    width:43px;
+    height:43px;
 
     display:flex;
 
     align-items:center;
-
     justify-content:center;
 
-    border-radius:13px;
+    border-radius:12px;
 
     border:
     1px solid var(--border);
 
     background:
-    rgba(3,8,18,.88);
+    rgba(4,8,18,.85);
 
     color:white;
 
@@ -2001,7 +1973,8 @@ footer{
 
     opacity:0;
 
-    transform:translateY(30px);
+    transform:
+    translateY(28px);
 
     transition:
     opacity .7s ease,
@@ -2090,27 +2063,27 @@ footer{
 
         position:absolute;
 
-        top:68px;
+        top:67px;
 
         left:14px;
-
         right:14px;
 
         display:none;
 
         flex-direction:column;
 
-        padding:10px;
+        padding:9px;
 
         border:
         1px solid var(--border);
 
+        border-radius:15px;
+
         background:
-        rgba(2,5,14,.97);
+        rgba(2,4,10,.96);
 
-        backdrop-filter:blur(20px);
-
-        border-radius:16px;
+        backdrop-filter:
+        blur(20px);
 
     }
 
@@ -2191,22 +2164,22 @@ footer{
 
 
 /* =========================================================
-   REDUCE MOTION ACCESSIBILITY
+   REDUCED MOTION
 ========================================================= */
 
-@media(
-    prefers-reduced-motion:reduce
-){
+@media(prefers-reduced-motion:reduce){
 
-    *,
-    *::before,
-    *::after{
+    html{
+
+        scroll-behavior:auto;
+
+    }
+
+    *{
 
         animation-duration:.01ms !important;
 
         animation-iteration-count:1 !important;
-
-        scroll-behavior:auto !important;
 
         transition-duration:.01ms !important;
 
@@ -2226,21 +2199,17 @@ footer{
      COSMIC BACKGROUND
 ====================================================== -->
 
-<canvas id="spaceCanvas"></canvas>
+<canvas id="cosmosCanvas"></canvas>
 
-<div class="milky-way"></div>
+<div class="milkyway-glow"></div>
 
-<div class="nebula-one"></div>
+<div class="milkyway-core"></div>
 
-<div class="nebula-two"></div>
-
-<div class="nebula-three"></div>
-
-<div class="horizon-clouds"></div>
+<div class="cosmic-vignette"></div>
 
 
 <!-- =====================================================
-     NAVBAR
+     NAVIGATION
 ====================================================== -->
 
 <header class="navbar" id="navbar">
@@ -2252,7 +2221,7 @@ href="#home"
 class="logo"
 >
 
-<span class="logo-dot"></span>
+<span class="logo-star"></span>
 
 PIYUSH SINGH
 
@@ -2264,9 +2233,7 @@ class="menu-btn"
 id="menuBtn"
 aria-label="Open navigation"
 >
-
 ☰
-
 </button>
 
 
@@ -2278,62 +2245,48 @@ id="navLinks"
 >
 
 <li>
-
 <a
 href="#home"
 class="active"
 >
 Home
 </a>
-
 </li>
 
 <li>
-
 <a href="#about">
 About
 </a>
-
 </li>
 
 <li>
-
 <a href="#experience">
 Experience
 </a>
-
 </li>
 
 <li>
-
 <a href="#projects">
 Projects
 </a>
-
 </li>
 
 <li>
-
 <a href="#education">
 Education
 </a>
-
 </li>
 
 <li>
-
 <a href="#skills">
 Skills
 </a>
-
 </li>
 
 <li>
-
 <a href="#contact">
 Contact
 </a>
-
 </li>
 
 </ul>
@@ -2346,10 +2299,15 @@ Contact
 
 
 <!-- =====================================================
-     HERO
+     MAIN
 ====================================================== -->
 
 <main>
+
+
+<!-- =====================================================
+     HERO
+====================================================== -->
 
 <section
 class="hero"
@@ -2365,7 +2323,7 @@ id="home"
 
 <div class="hero-kicker">
 
-<span class="live-dot"></span>
+<span class="status-dot"></span>
 
 OPEN TO OPPORTUNITIES
 
@@ -2377,6 +2335,7 @@ OPEN TO OPPORTUNITIES
 Building ideas<br>
 
 that move
+
 <span class="gradient-text">
 forward.
 </span>
@@ -2401,9 +2360,7 @@ with structured problem solving.
 href="#projects"
 class="btn btn-primary"
 >
-
 Explore My Work →
-
 </a>
 
 
@@ -2413,9 +2370,7 @@ target="_blank"
 rel="noopener noreferrer"
 class="btn btn-ghost"
 >
-
 ✉ Email Me
-
 </a>
 
 
@@ -2425,9 +2380,7 @@ target="_blank"
 rel="noopener noreferrer"
 class="btn btn-ghost"
 >
-
 ↗ LinkedIn
-
 </a>
 
 
@@ -2443,10 +2396,7 @@ href="https://mail.google.com/mail/?view=cm&fs=1&to=piyushsingh20030610@gmail.co
 target="_blank"
 rel="noopener noreferrer"
 >
-
-✉
-piyushsingh20030610@gmail.com
-
+✉ piyushsingh20030610@gmail.com
 </a>
 
 
@@ -2454,14 +2404,12 @@ piyushsingh20030610@gmail.com
 class="contact-chip"
 href="tel:+918431832821"
 >
-
-☎
-+91 84318 32821
-
+☎ +91 84318 32821
 </a>
 
 
 </div>
+
 
 </div>
 
@@ -2471,6 +2419,7 @@ href="tel:+918431832821"
 <div class="profile-wrap reveal">
 
 <div class="profile-card">
+
 
 <div class="profile-image">
 
@@ -2520,6 +2469,7 @@ MBA — Digital Marketing & Operations
 </p>
 
 </div>
+
 
 </div>
 
@@ -2701,6 +2651,7 @@ learned by doing.
 
 <div class="glass experience-card">
 
+
 <div class="card-top">
 
 <div>
@@ -2748,6 +2699,7 @@ to build an initial outreach pipeline for SIP services.
 
 </ul>
 
+
 </div>
 
 </div>
@@ -2758,6 +2710,7 @@ to build an initial outreach pipeline for SIP services.
 <span class="timeline-dot"></span>
 
 <div class="glass experience-card">
+
 
 <div class="card-top">
 
@@ -2799,6 +2752,7 @@ skill acquisition and performance growth.
 
 </ul>
 
+
 </div>
 
 </div>
@@ -2809,6 +2763,7 @@ skill acquisition and performance growth.
 <span class="timeline-dot"></span>
 
 <div class="glass experience-card">
+
 
 <div class="card-top">
 
@@ -2849,6 +2804,7 @@ to keep tournament schedules running without delays.
 
 </ul>
 
+
 </div>
 
 </div>
@@ -2859,6 +2815,7 @@ to keep tournament schedules running without delays.
 <span class="timeline-dot"></span>
 
 <div class="glass experience-card">
+
 
 <div class="card-top">
 
@@ -2905,6 +2862,7 @@ on Bio-Fertilizers and Bio-Control Agents.
 </li>
 
 </ul>
+
 
 </div>
 
@@ -3485,7 +3443,6 @@ assets/lpu.jpg
 
 </div>
 
-
 <h3>
 Lovely Professional University
 </h3>
@@ -3506,7 +3463,7 @@ style="aspect-ratio:16/9;"
 
 <img
 src="assets/kle.jpg"
-alt="KLE Society's Raja Lakhmagouda Science Institute"
+alt="KLE Science Institute"
 onerror="this.style.display='none';"
 >
 
@@ -3527,7 +3484,6 @@ assets/kle.jpg
 </div>
 
 </div>
-
 
 <h3>
 KLE Society's Raja Lakhmagouda Science Institute
@@ -3570,7 +3526,6 @@ assets/kv-school.jpg
 </div>
 
 </div>
-
 
 <h3>
 KV No.1, Sambra
@@ -3845,7 +3800,6 @@ Problem Solving
 
 </div>
 
-
 </div>
 
 </div>
@@ -3991,9 +3945,11 @@ May 2022
 
 <div class="glass achievement reveal">
 
+
 <div class="achievement-icon">
 🏆
 </div>
+
 
 <div>
 
@@ -4014,6 +3970,7 @@ among competing teams.
 </p>
 
 </div>
+
 
 </div>
 
@@ -4059,6 +4016,8 @@ Let's connect.
 
 <div class="contact-grid">
 
+
+<!-- CONTACT DETAILS -->
 
 <div class="glass contact-card reveal">
 
@@ -4159,8 +4118,8 @@ Copy Email Address
 id="copyMessage"
 style="
 text-align:center;
-color:#65e6ff;
-font-size:.75rem;
+color:#9be7fa;
+font-size:.72rem;
 margin-top:9px;
 min-height:18px;
 "
@@ -4325,6 +4284,7 @@ No backend or form service is required.
 
 </div>
 
+
 </div>
 
 </div>
@@ -4346,11 +4306,8 @@ No backend or form service is required.
 
 <p>
 
-©
-<span id="year"></span>
-
+© <span id="year"></span>
 Piyush Singh.
-
 Built with curiosity & code.
 
 </p>
@@ -4365,9 +4322,7 @@ target="_blank"
 rel="noopener noreferrer"
 aria-label="Email"
 >
-
 ✉
-
 </a>
 
 
@@ -4375,9 +4330,7 @@ aria-label="Email"
 href="tel:+918431832821"
 aria-label="Phone"
 >
-
 ☎
-
 </a>
 
 
@@ -4387,9 +4340,7 @@ target="_blank"
 rel="noopener noreferrer"
 aria-label="LinkedIn"
 >
-
 in
-
 </a>
 
 
@@ -4407,9 +4358,7 @@ class="top-btn"
 id="topBtn"
 aria-label="Back to top"
 >
-
 ↑
-
 </button>
 
 
@@ -4433,9 +4382,7 @@ const MY_LINKEDIN =
    YEAR
 ========================================================= */
 
-document.getElementById(
-"year"
-).textContent =
+document.getElementById("year").textContent =
 new Date().getFullYear();
 
 
@@ -4444,25 +4391,20 @@ new Date().getFullYear();
 ========================================================= */
 
 const menuBtn =
-document.getElementById(
-"menuBtn"
-);
+document.getElementById("menuBtn");
 
 const navLinks =
-document.getElementById(
-"navLinks"
-);
+document.getElementById("navLinks");
 
 
 menuBtn.addEventListener(
 "click",
 function(){
 
-    navLinks.classList.toggle(
-        "open"
-    );
+    navLinks.classList.toggle("open");
 
-});
+}
+);
 
 
 document.querySelectorAll(
@@ -4471,27 +4413,26 @@ document.querySelectorAll(
 function(link){
 
     link.addEventListener(
-        "click",
-        function(){
+    "click",
+    function(){
 
-            navLinks.classList.remove(
-                "open"
-            );
+        navLinks.classList.remove(
+        "open"
+        );
 
-        }
+    }
     );
 
-});
+}
+);
 
 
 /* =========================================================
-   NAVBAR
+   NAVBAR SCROLL
 ========================================================= */
 
 const navbar =
-document.getElementById(
-"navbar"
-);
+document.getElementById("navbar");
 
 
 window.addEventListener(
@@ -4503,20 +4444,19 @@ function(){
     ){
 
         navbar.classList.add(
-            "scrolled"
-        );
-
-    }else{
-
-        navbar.classList.remove(
-            "scrolled"
+        "scrolled"
         );
 
     }
 
-},
-{
-    passive:true
+    else{
+
+        navbar.classList.remove(
+        "scrolled"
+        );
+
+    }
+
 }
 );
 
@@ -4543,54 +4483,50 @@ function(){
     let current = "";
 
     sections.forEach(
-        function(section){
+    function(section){
 
-            const sectionTop =
-            section.offsetTop - 180;
+        const top =
+        section.offsetTop - 180;
 
-            if(
-                window.scrollY >=
-                sectionTop
-            ){
+        if(
+            window.scrollY >= top
+        ){
 
-                current =
-                section.getAttribute(
-                    "id"
-                );
-
-            }
+            current =
+            section.getAttribute(
+            "id"
+            );
 
         }
+
+    }
     );
 
 
     navigationLinks.forEach(
-        function(link){
+    function(link){
 
-            link.classList.remove(
-                "active"
+        link.classList.remove(
+        "active"
+        );
+
+
+        if(
+            link.getAttribute(
+            "href"
+            ) ===
+            "#" + current
+        ){
+
+            link.classList.add(
+            "active"
             );
 
-
-            if(
-                link.getAttribute(
-                    "href"
-                ) ===
-                "#" + current
-            ){
-
-                link.classList.add(
-                    "active"
-                );
-
-            }
-
         }
+
+    }
     );
 
-},
-{
-    passive:true
 }
 );
 
@@ -4610,23 +4546,23 @@ new IntersectionObserver(
 function(entries){
 
     entries.forEach(
-        function(entry){
+    function(entry){
 
-            if(
-                entry.isIntersecting
-            ){
+        if(
+            entry.isIntersecting
+        ){
 
-                entry.target.classList.add(
-                    "visible"
-                );
+            entry.target.classList.add(
+            "visible"
+            );
 
-                revealObserver.unobserve(
-                    entry.target
-                );
-
-            }
+            revealObserver.unobserve(
+            entry.target
+            );
 
         }
+
+    }
     );
 
 },
@@ -4640,14 +4576,15 @@ revealElements.forEach(
 function(element){
 
     revealObserver.observe(
-        element
+    element
     );
 
-});
+}
+);
 
 
 /* =========================================================
-   SKILLS
+   SKILL BARS
 ========================================================= */
 
 const skillFills =
@@ -4661,22 +4598,22 @@ new IntersectionObserver(
 function(entries){
 
     entries.forEach(
-        function(entry){
+    function(entry){
 
-            if(
-                entry.isIntersecting
-            ){
+        if(
+            entry.isIntersecting
+        ){
 
-                entry.target.style.width =
-                entry.target.dataset.width;
+            entry.target.style.width =
+            entry.target.dataset.width;
 
-                skillObserver.unobserve(
-                    entry.target
-                );
-
-            }
+            skillObserver.unobserve(
+            entry.target
+            );
 
         }
+
+    }
     );
 
 },
@@ -4690,10 +4627,11 @@ skillFills.forEach(
 function(skill){
 
     skillObserver.observe(
-        skill
+    skill
     );
 
-});
+}
+);
 
 
 /* =========================================================
@@ -4708,27 +4646,27 @@ function copyEmail(){
     ){
 
         navigator.clipboard
-        .writeText(
-            MY_EMAIL
-        )
+        .writeText(MY_EMAIL)
         .then(
-            function(){
+        function(){
 
-                showCopyMessage(
-                    "✓ Email copied"
-                );
+            showCopyMessage(
+            "✓ Email copied"
+            );
 
-            }
+        }
         )
         .catch(
-            function(){
+        function(){
 
-                fallbackCopyEmail();
+            fallbackCopyEmail();
 
-            }
+        }
         );
 
-    }else{
+    }
+
+    else{
 
         fallbackCopyEmail();
 
@@ -4741,7 +4679,7 @@ function fallbackCopyEmail(){
 
     const textarea =
     document.createElement(
-        "textarea"
+    "textarea"
     );
 
     textarea.value =
@@ -4754,7 +4692,7 @@ function fallbackCopyEmail(){
     "0";
 
     document.body.appendChild(
-        textarea
+    textarea
     );
 
     textarea.select();
@@ -4763,24 +4701,26 @@ function fallbackCopyEmail(){
     try{
 
         document.execCommand(
-            "copy"
+        "copy"
         );
 
         showCopyMessage(
-            "✓ Email copied"
+        "✓ Email copied"
         );
 
-    }catch(error){
+    }
+
+    catch(error){
 
         showCopyMessage(
-            MY_EMAIL
+        MY_EMAIL
         );
 
     }
 
 
     document.body.removeChild(
-        textarea
+    textarea
     );
 
 }
@@ -4792,21 +4732,20 @@ message
 
     const element =
     document.getElementById(
-        "copyMessage"
+    "copyMessage"
     );
 
     element.textContent =
     message;
 
-
     setTimeout(
-        function(){
+    function(){
 
-            element.textContent =
-            "";
+        element.textContent =
+        "";
 
-        },
-        2500
+    },
+    2500
     );
 
 }
@@ -4823,20 +4762,20 @@ function openMailApp(){
 
 
     const body =
-    "Hello Piyush,%0D%0A%0D%0A" +
-    "I would like to connect with you regarding an opportunity.%0D%0A%0D%0A" +
-    "Regards";
+    `Hello Piyush,
+
+I would like to connect with you regarding an opportunity.
+
+Regards`;
 
 
     window.location.href =
     "mailto:" +
     MY_EMAIL +
     "?subject=" +
-    encodeURIComponent(
-        subject
-    ) +
+    encodeURIComponent(subject) +
     "&body=" +
-    body;
+    encodeURIComponent(body);
 
 }
 
@@ -4870,25 +4809,25 @@ function(event){
 
     const name =
     document.getElementById(
-        "name"
+    "name"
     ).value.trim();
 
 
     const senderEmail =
     document.getElementById(
-        "senderEmail"
+    "senderEmail"
     ).value.trim();
 
 
     const subject =
     document.getElementById(
-        "subject"
+    "subject"
     ).value.trim();
 
 
     const message =
     document.getElementById(
-        "message"
+    "message"
     ).value.trim();
 
 
@@ -4900,7 +4839,7 @@ function(event){
     ){
 
         alert(
-            "Please fill in all fields."
+        "Please fill in all fields."
         );
 
         return;
@@ -4908,8 +4847,11 @@ function(event){
     }
 
 
-    const emailBody =
+    /* ================================================
+       PREPARE MESSAGE
+    ================================================= */
 
+    const emailBody =
 `Hello Piyush,
 
 My name is ${name}.
@@ -4925,73 +4867,58 @@ Regards,
 ${name}`;
 
 
-    /* =====================================================
+    /* ================================================
        GMAIL COMPOSE
-    ===================================================== */
+    ================================================= */
 
     preparedGmailURL =
-
     "https://mail.google.com/mail/" +
-
     "?view=cm" +
-
     "&fs=1" +
-
     "&to=" +
-
     encodeURIComponent(
-        MY_EMAIL
+    MY_EMAIL
     ) +
-
     "&su=" +
-
     encodeURIComponent(
-        subject
+    subject
     ) +
-
     "&body=" +
-
     encodeURIComponent(
-        emailBody
+    emailBody
     );
 
 
-    /* =====================================================
+    /* ================================================
        MAILTO FALLBACK
-    ===================================================== */
+    ================================================= */
 
     preparedMailtoURL =
-
     "mailto:" +
-
     MY_EMAIL +
-
     "?subject=" +
-
     encodeURIComponent(
-        subject
+    subject
     ) +
-
     "&body=" +
-
     encodeURIComponent(
-        emailBody
+    emailBody
     );
 
 
     emailOptions.classList.add(
-        "show"
+    "show"
     );
 
 
-    /* =====================================================
-       OPEN GMAIL
-    ===================================================== */
+    /* ================================================
+       OPEN GMAIL AUTOMATICALLY
+    ================================================= */
 
     window.open(
-        preparedGmailURL,
-        "_blank",
-        "noopener,noreferrer"
+    preparedGmailURL,
+    "_blank",
+    "noopener,noreferrer"
     );
 
 }
@@ -5013,9 +4940,9 @@ function(){
     ){
 
         window.open(
-            preparedGmailURL,
-            "_blank",
-            "noopener,noreferrer"
+        preparedGmailURL,
+        "_blank",
+        "noopener,noreferrer"
         );
 
     }
@@ -5066,20 +4993,19 @@ function(){
     ){
 
         topBtn.classList.add(
-            "show"
-        );
-
-    }else{
-
-        topBtn.classList.remove(
-            "show"
+        "show"
         );
 
     }
 
-},
-{
-    passive:true
+    else{
+
+        topBtn.classList.remove(
+        "show"
+        );
+
+    }
+
 }
 );
 
@@ -5096,26 +5022,24 @@ function(){
 
     });
 
-});
+}
+);
 
 
 /* =========================================================
    ========================================================
-   HIGH PERFORMANCE COSMIC STARFIELD
+   COSMIC STAR ENGINE
    ========================================================
 ========================================================= */
 
 const canvas =
 document.getElementById(
-"spaceCanvas"
+"cosmosCanvas"
 );
 
 const ctx =
 canvas.getContext(
-"2d",
-{
-    alpha:true
-}
+"2d"
 );
 
 
@@ -5123,58 +5047,42 @@ let width = 0;
 
 let height = 0;
 
-let dpr = 1;
-
-let stars = [];
-
-let shootingStars = [];
-
-let lastTime = 0;
-
-let nextShootingStar = 4000;
+let pixelRatio =
+window.devicePixelRatio || 1;
 
 
 /* =========================================================
-   STAR COUNT
+   STAR LAYERS
 ========================================================= */
 
-function getStarCount(){
+const stars = {
 
-    const area =
-    width * height;
+    background:[],
+    medium:[],
+    focal:[]
 
-    /*
-       Density is deliberately controlled.
+};
 
-       This keeps the animation smooth even on
-       high resolution displays.
-    */
 
-    return Math.min(
-        650,
-        Math.max(
-            220,
-            Math.floor(
-                area / 3500
-            )
-        )
-    );
+/* =========================================================
+   SHOOTING STARS
+========================================================= */
 
-}
+let shootingStars = [];
+
+
+/* =========================================================
+   COSMIC TIME
+========================================================= */
+
+let cosmicTime = 0;
 
 
 /* =========================================================
    RESIZE CANVAS
 ========================================================= */
 
-function resizeSpace(){
-
-    dpr =
-    Math.min(
-        window.devicePixelRatio || 1,
-        1.5
-    );
-
+function resizeCosmos(){
 
     width =
     window.innerWidth;
@@ -5182,32 +5090,32 @@ function resizeSpace(){
     height =
     window.innerHeight;
 
+    pixelRatio =
+    Math.min(
+        window.devicePixelRatio || 1,
+        2
+    );
+
 
     canvas.width =
-    Math.floor(
-        width * dpr
-    );
-
+    width * pixelRatio;
 
     canvas.height =
-    Math.floor(
-        height * dpr
-    );
+    height * pixelRatio;
 
 
     canvas.style.width =
     width + "px";
-
 
     canvas.style.height =
     height + "px";
 
 
     ctx.setTransform(
-        dpr,
+        pixelRatio,
         0,
         0,
-        dpr,
+        pixelRatio,
         0,
         0
     );
@@ -5220,162 +5128,269 @@ function resizeSpace(){
 
 window.addEventListener(
 "resize",
-resizeSpace,
-{
-    passive:true
-}
+resizeCosmos
 );
 
 
 /* =========================================================
-   STAR CREATION
+   RANDOM HELPER
+========================================================= */
+
+function random(
+min,
+max
+){
+
+    return Math.random() *
+    (max - min) +
+    min;
+
+}
+
+
+/* =========================================================
+   CREATE STAR
+========================================================= */
+
+function createStar(
+layer
+){
+
+    let size;
+    let opacity;
+    let speed;
+
+    if(
+        layer === "background"
+    ){
+
+        size =
+        random(
+            .15,
+            .65
+        );
+
+        opacity =
+        random(
+            .15,
+            .48
+        );
+
+        speed =
+        random(
+            .003,
+            .008
+        );
+
+    }
+
+
+    else if(
+        layer === "medium"
+    ){
+
+        size =
+        random(
+            .55,
+            1.35
+        );
+
+        opacity =
+        random(
+            .35,
+            .78
+        );
+
+        speed =
+        random(
+            .005,
+            .014
+        );
+
+    }
+
+
+    else{
+
+        size =
+        random(
+            1.1,
+            2.4
+        );
+
+        opacity =
+        random(
+            .60,
+            .95
+        );
+
+        speed =
+        random(
+            .008,
+            .018
+        );
+
+    }
+
+
+    const colors = [
+
+        "255,255,255",
+
+        "211,242,255",
+
+        "172,225,255",
+
+        "255,247,225"
+
+    ];
+
+
+    return {
+
+        x:
+        Math.random() * width,
+
+        y:
+        Math.random() * height,
+
+        size:size,
+
+        baseOpacity:opacity,
+
+        twinkleSpeed:speed,
+
+        phase:
+        Math.random() *
+        Math.PI *
+        2,
+
+        driftX:
+        random(
+            -.018,
+            .018
+        ),
+
+        driftY:
+        random(
+            -.006,
+            .006
+        ),
+
+        color:
+        colors[
+            Math.floor(
+                Math.random() *
+                colors.length
+            )
+        ],
+
+        layer:layer,
+
+        rotation:
+        random(
+            0,
+            Math.PI * 2
+        )
+
+    };
+
+}
+
+
+/* =========================================================
+   CREATE ALL STARS
 ========================================================= */
 
 function createStars(){
 
-    stars = [];
+    stars.background = [];
 
-    const count =
-    getStarCount();
+    stars.medium = [];
+
+    stars.focal = [];
+
+
+    /*
+        Background microscopic dust
+    */
+
+    const backgroundCount =
+    Math.min(
+        850,
+        Math.floor(
+            width * height / 1800
+        )
+    );
+
+
+    /*
+        Medium stars
+    */
+
+    const mediumCount =
+    Math.min(
+        250,
+        Math.floor(
+            width * height / 6500
+        )
+    );
+
+
+    /*
+        Focal stars
+    */
+
+    const focalCount =
+    Math.min(
+        45,
+        Math.floor(
+            width * height / 35000
+        )
+    );
 
 
     for(
         let i=0;
-        i<count;
+        i<backgroundCount;
         i++
     ){
 
-        const x =
-        Math.random() *
-        width;
-
-
-        const y =
-        Math.random() *
-        height;
-
-
-        /*
-           Determine whether star lies near the
-           diagonal Milky Way area.
-
-           Galaxy roughly travels from:
-
-           top-center
-           ↓
-           middle-left
-        */
-
-        const galaxyCenterX =
-        width *
-        (
-            .55 -
-            .38 *
-            (y / height)
-        );
-
-
-        const galaxyDistance =
-        Math.abs(
-            x -
-            galaxyCenterX
-        );
-
-
-        const inGalaxy =
-        galaxyDistance <
-        width * .18;
-
-
-        /*
-           Galaxy receives higher density and
-           slightly stronger stars.
-        */
-
-        const size =
-        inGalaxy
-        ?
-        Math.random() * 1.65 + .35
-        :
-        Math.random() * 1.25 + .25;
-
-
-        const brightness =
-        inGalaxy
-        ?
-        Math.random() * .65 + .35
-        :
-        Math.random() * .50 + .20;
-
-
-        /*
-           Cool star palette:
-           white
-           cyan
-           ice blue
-           lavender
-        */
-
-        const palettes = [
-
-            [245,249,255],
-
-            [210,245,255],
-
-            [145,226,255],
-
-            [192,180,255]
-
-        ];
-
-
-        const color =
-        palettes[
-            Math.floor(
-                Math.random() *
-                palettes.length
+        stars.background.push(
+            createStar(
+                "background"
             )
-        ];
+        );
+
+    }
 
 
-        stars.push({
+    for(
+        let i=0;
+        i<mediumCount;
+        i++
+    ){
 
-            x:x,
+        stars.medium.push(
+            createStar(
+                "medium"
+            )
+        );
 
-            y:y,
+    }
 
-            baseX:x,
 
-            baseY:y,
+    for(
+        let i=0;
+        i<focalCount;
+        i++
+    ){
 
-            size:size,
-
-            alpha:brightness,
-
-            baseAlpha:brightness,
-
-            color:color,
-
-            phase:
-            Math.random() *
-            Math.PI *
-            2,
-
-            twinkle:
-            Math.random() *
-            .0017
-            +
-            .0005,
-
-            drift:
-            Math.random() *
-            .012
-            +
-            .003,
-
-            galaxy:inGalaxy
-
-        });
+        stars.focal.push(
+            createStar(
+                "focal"
+            )
+        );
 
     }
 
@@ -5392,193 +5407,267 @@ time
 ){
 
     /*
-       Independent twinkle.
-
-       Each star has a different phase and speed.
+        Individual sinusoidal twinkling.
     */
 
-    const pulse =
-    (
-        Math.sin(
-            time *
-            star.twinkle
-            +
-            star.phase
-        )
-        +
-        1
-    )
-    * .5;
-
-
-    const alpha =
-    star.baseAlpha *
-    (
-        .58 +
-        pulse *
-        .42
-    );
-
-
-    /*
-       Very subtle scale pulse.
-    */
-
-    const scale =
-    1 +
-    pulse *
-    .28;
-
-
-    const radius =
-    star.size *
-    scale;
-
-
-    /*
-       Slow horizontal drift.
-    */
-
-    star.x =
-    star.baseX +
+    const twinkle =
     Math.sin(
         time *
-        .000035
-        +
+        star.twinkleSpeed *
+        100 +
         star.phase
-    )
-    *
-    (
-        5 +
-        star.drift *
-        300
     );
 
 
-    star.y =
-    star.baseY +
-    Math.cos(
-        time *
-        .000028
-        +
+    const opacity =
+    Math.max(
+        .03,
+        star.baseOpacity +
+        twinkle *
+        star.baseOpacity *
+        .25
+    );
+
+
+    /*
+        Gentle parallax drift.
+    */
+
+    const parallax =
+    star.layer === "background"
+    ? .15
+    :
+    star.layer === "medium"
+    ? .45
+    : .85;
+
+
+    let x =
+    star.x +
+    Math.sin(
+        time * .000035 +
         star.phase
-    )
-    *
-    3;
+    ) *
+    18 *
+    parallax;
+
+
+    let y =
+    star.y +
+    Math.cos(
+        time * .000028 +
+        star.phase
+    ) *
+    10 *
+    parallax;
 
 
     /*
-       Wrap stars.
+        Wrap around screen.
     */
 
-    if(
-        star.x < -10
-    ){
+    x =
+    (x + width) %
+    width;
 
-        star.x =
-        width + 10;
-
-        star.baseX =
-        star.x;
-
-    }
+    y =
+    (y + height) %
+    height;
 
 
-    if(
-        star.x >
-        width + 10
-    ){
-
-        star.x = -10;
-
-        star.baseX =
-        star.x;
-
-    }
-
-
-    const rgb =
-    star.color;
+    ctx.save();
 
 
     /*
-       Larger stars receive a tiny glow.
+        Focal stars get a soft glow.
     */
 
     if(
-        radius > 1.25
+        star.layer === "focal"
     ){
 
-        ctx.beginPath();
-
-        ctx.arc(
-            star.x,
-            star.y,
-            radius * 3.2,
+        const glow =
+        ctx.createRadialGradient(
+            x,
+            y,
             0,
-            Math.PI * 2
+            x,
+            y,
+            star.size * 8
+        );
+
+
+        glow.addColorStop(
+            0,
+            `rgba(
+                ${star.color},
+                ${opacity * .40}
+            )`
+        );
+
+
+        glow.addColorStop(
+            1,
+            `rgba(
+                ${star.color},
+                0
+            )`
         );
 
 
         ctx.fillStyle =
-        `rgba(
-            ${rgb[0]},
-            ${rgb[1]},
-            ${rgb[2]},
-            ${alpha * .055}
-        )`;
+        glow;
 
+
+        ctx.beginPath();
+
+        ctx.arc(
+            x,
+            y,
+            star.size * 8,
+            0,
+            Math.PI * 2
+        );
 
         ctx.fill();
 
     }
 
 
+    ctx.fillStyle =
+    `rgba(
+        ${star.color},
+        ${opacity}
+    )`;
+
+
     ctx.beginPath();
 
     ctx.arc(
-        star.x,
-        star.y,
-        radius,
+        x,
+        y,
+        star.size,
         0,
         Math.PI * 2
     );
 
-
-    ctx.fillStyle =
-    `rgba(
-        ${rgb[0]},
-        ${rgb[1]},
-        ${rgb[2]},
-        ${alpha}
-    )`;
-
-
     ctx.fill();
+
+
+    /*
+        Cross flare for a few focal stars.
+    */
+
+    if(
+        star.layer === "focal" &&
+        star.size > 1.7
+    ){
+
+        ctx.globalAlpha =
+        opacity * .45;
+
+
+        ctx.fillRect(
+            x - star.size * 4,
+            y - .35,
+            star.size * 8,
+            .7
+        );
+
+
+        ctx.fillRect(
+            x - .35,
+            y - star.size * 4,
+            .7,
+            star.size * 8
+        );
+
+    }
+
+
+    ctx.restore();
 
 }
 
 
 /* =========================================================
-   SHOOTING STAR
+   DRAW STAR FIELD
+========================================================= */
+
+function drawStars(
+time
+){
+
+    stars.background.forEach(
+        star =>
+        drawStar(
+            star,
+            time
+        )
+    );
+
+
+    stars.medium.forEach(
+        star =>
+        drawStar(
+            star,
+            time
+        )
+    );
+
+
+    stars.focal.forEach(
+        star =>
+        drawStar(
+            star,
+            time
+        )
+    );
+
+}
+
+
+/* =========================================================
+   SHOOTING STAR CREATION
 ========================================================= */
 
 function createShootingStar(){
 
     /*
-       Random start point around the upper half.
+        Keep maximum number low
+        for performance.
     */
 
+    if(
+        shootingStars.length >= 1
+    ){
+
+        return;
+
+    }
+
+
+    const fromLeft =
+    Math.random() > .5;
+
+
     const startX =
-    Math.random() *
-    width *
-    .85;
+    fromLeft
+    ? random(
+        width * .15,
+        width * .65
+    )
+    : random(
+        width * .35,
+        width * .85
+    );
 
 
     const startY =
-    Math.random() *
-    height *
-    .38;
+    random(
+        height * .05,
+        height * .55
+    );
 
 
     shootingStars.push({
@@ -5588,34 +5677,35 @@ function createShootingStar(){
         y:startY,
 
         length:
-        Math.random() *
-        100 +
-        80,
+        random(
+            80,
+            190
+        ),
 
         speed:
-        Math.random() *
-        .55 +
-        .65,
+        random(
+            5,
+            10
+        ),
+
+        angle:
+        fromLeft
+        ? random(
+            .30,
+            .55
+        )
+        : random(
+            2.60,
+            2.85
+        ),
 
         life:0,
 
         maxLife:
-        Math.random() *
-        900 +
-        650,
-
-        angle:
-        Math.PI *
-        (
-            .15 +
-            Math.random() *
-            .13
-        ),
-
-        alpha:
-        Math.random() *
-        .35 +
-        .45
+        random(
+            65,
+            120
+        )
 
     });
 
@@ -5626,109 +5716,69 @@ function createShootingStar(){
    DRAW SHOOTING STARS
 ========================================================= */
 
-function drawShootingStars(
-delta
-){
+function drawShootingStars(){
 
-    for(
-        let i =
-        shootingStars.length - 1;
-        i >= 0;
-        i--
-    ){
+    shootingStars.forEach(
+    function(star){
 
-        const s =
-        shootingStars[i];
+        star.life += 1;
 
 
-        s.life +=
-        delta;
-
-
-        s.x +=
+        star.x +=
         Math.cos(
-            s.angle
-        )
-        *
-        s.speed
-        *
-        delta;
+            star.angle
+        ) *
+        star.speed;
 
 
-        s.y +=
+        star.y +=
         Math.sin(
-            s.angle
-        )
-        *
-        s.speed
-        *
-        delta;
+            star.angle
+        ) *
+        star.speed;
 
 
         const progress =
-        s.life /
-        s.maxLife;
+        star.life /
+        star.maxLife;
 
 
-        let alpha =
-        s.alpha;
-
-
-        /*
-           Fade in and fade out.
-        */
-
-        if(
-            progress < .18
-        ){
-
-            alpha *=
-            progress / .18;
-
-        }
-
-        if(
-            progress > .65
-        ){
-
-            alpha *=
-            (
-                1 - progress
-            ) / .35;
-
-        }
+        const alpha =
+        Math.sin(
+            progress *
+            Math.PI
+        ) *
+        .75;
 
 
         const tailX =
-        s.x -
+        star.x -
         Math.cos(
-            s.angle
-        )
-        *
-        s.length;
+            star.angle
+        ) *
+        star.length;
 
 
         const tailY =
-        s.y -
+        star.y -
         Math.sin(
-            s.angle
-        )
-        *
-        s.length;
+            star.angle
+        ) *
+        star.length;
 
 
         const gradient =
         ctx.createLinearGradient(
             tailX,
             tailY,
-            s.x,
-            s.y
+            star.x,
+            star.y
         );
 
 
         gradient.addColorStop(
             0,
-            "rgba(130,210,255,0)"
+            "rgba(130,190,255,0)"
         );
 
 
@@ -5736,9 +5786,9 @@ delta
             .75,
             `rgba(
                 190,
-                230,
+                225,
                 255,
-                ${alpha * .28}
+                ${alpha * .35}
             )`
         );
 
@@ -5754,6 +5804,15 @@ delta
         );
 
 
+        ctx.save();
+
+
+        ctx.strokeStyle =
+        gradient;
+
+        ctx.lineWidth =
+        1.2;
+
         ctx.beginPath();
 
         ctx.moveTo(
@@ -5762,33 +5821,11 @@ delta
         );
 
         ctx.lineTo(
-            s.x,
-            s.y
+            star.x,
+            star.y
         );
-
-
-        ctx.strokeStyle =
-        gradient;
-
-        ctx.lineWidth =
-        1.1;
 
         ctx.stroke();
-
-
-        /*
-           Bright head.
-        */
-
-        ctx.beginPath();
-
-        ctx.arc(
-            s.x,
-            s.y,
-            1.6,
-            0,
-            Math.PI * 2
-        );
 
 
         ctx.fillStyle =
@@ -5800,20 +5837,77 @@ delta
         )`;
 
 
+        ctx.shadowBlur =
+        12;
+
+        ctx.shadowColor =
+        "rgba(180,230,255,.8)";
+
+
+        ctx.beginPath();
+
+        ctx.arc(
+            star.x,
+            star.y,
+            1.4,
+            0,
+            Math.PI * 2
+        );
+
         ctx.fill();
 
 
-        if(
-            s.life >
-            s.maxLife
-        ){
+        ctx.restore();
 
-            shootingStars.splice(
-                i,
-                1
-            );
+    });
 
-        }
+
+    shootingStars =
+    shootingStars.filter(
+    function(star){
+
+        return (
+            star.life <
+            star.maxLife
+        );
+
+    });
+
+}
+
+
+/* =========================================================
+   SHOOTING STAR TIMER
+========================================================= */
+
+let nextShootingStar =
+Date.now() +
+random(
+    7000,
+    16000
+);
+
+
+function checkShootingStar(){
+
+    const now =
+    Date.now();
+
+
+    if(
+        now >=
+        nextShootingStar
+    ){
+
+        createShootingStar();
+
+
+        nextShootingStar =
+        now +
+        random(
+            9000,
+            22000
+        );
 
     }
 
@@ -5821,26 +5915,98 @@ delta
 
 
 /* =========================================================
-   SPACE ANIMATION LOOP
+   VERY SLOW COSMIC PARALLAX
 ========================================================= */
 
-function animateSpace(
+function drawCosmicNebula(
+
 time
+
 ){
 
     /*
-       Avoid enormous delta after tab switching.
+        Extremely subtle moving
+        indigo-blue atmospheric haze.
+
+        This stays behind all stars.
     */
 
-    const delta =
-    Math.min(
-        40,
-        time - lastTime || 16
+    const offsetX =
+    Math.sin(
+        time * .000015
+    ) * 45;
+
+
+    const offsetY =
+    Math.cos(
+        time * .000011
+    ) * 25;
+
+
+    const gradient =
+    ctx.createRadialGradient(
+
+        width * .52 +
+        offsetX,
+
+        height * .22 +
+        offsetY,
+
+        0,
+
+        width * .52 +
+        offsetX,
+
+        height * .22 +
+        offsetY,
+
+        width * .62
+
     );
 
 
-    lastTime =
-    time;
+    gradient.addColorStop(
+        0,
+        "rgba(56,75,166,.055)"
+    );
+
+
+    gradient.addColorStop(
+        .35,
+        "rgba(33,52,128,.035)"
+    );
+
+
+    gradient.addColorStop(
+        1,
+        "rgba(0,0,0,0)"
+    );
+
+
+    ctx.fillStyle =
+    gradient;
+
+
+    ctx.fillRect(
+        0,
+        0,
+        width,
+        height
+    );
+
+}
+
+
+/* =========================================================
+   COSMIC ANIMATION LOOP
+========================================================= */
+
+function animateCosmos(
+timestamp
+){
+
+    cosmicTime =
+    timestamp;
 
 
     ctx.clearRect(
@@ -5852,60 +6018,34 @@ time
 
 
     /*
-       Draw stars.
+        Background atmospheric movement.
     */
 
-    for(
-        let i=0;
-        i<stars.length;
-        i++
-    ){
-
-        drawStar(
-            stars[i],
-            time
-        );
-
-    }
-
-
-    /*
-       Shooting stars.
-    */
-
-    nextShootingStar -=
-    delta;
-
-
-    if(
-        nextShootingStar <= 0
-    ){
-
-        /*
-           Only occasional.
-
-           Random interval:
-           5–13 seconds.
-        */
-
-        createShootingStar();
-
-
-        nextShootingStar =
-        5000 +
-        Math.random() *
-        8000;
-
-    }
-
-
-    drawShootingStars(
-        delta
+    drawCosmicNebula(
+        timestamp
     );
 
 
+    /*
+        Three-layer star field.
+    */
+
+    drawStars(
+        timestamp
+    );
+
+
+    /*
+        Occasional shooting star.
+    */
+
+    checkShootingStar();
+
+    drawShootingStars();
+
+
     requestAnimationFrame(
-        animateSpace
+        animateCosmos
     );
 
 }
@@ -5915,10 +6055,10 @@ time
    START COSMOS
 ========================================================= */
 
-resizeSpace();
+resizeCosmos();
 
 requestAnimationFrame(
-animateSpace
+animateCosmos
 );
 
 
@@ -5932,19 +6072,20 @@ document.querySelectorAll(
 function(img){
 
     img.addEventListener(
-        "error",
-        function(){
+    "error",
+    function(){
 
-            img.style.display =
-            "none";
+        img.style.display =
+        "none";
 
-        }
+    }
     );
 
-});
-
+}
+);
 
 </script>
+
 
 </body>
 
