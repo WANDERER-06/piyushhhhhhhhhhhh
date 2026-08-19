@@ -2,26 +2,18 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Piyush Singh | Digital Marketing & Operations</title>
 
 <meta name="description"
-content="Portfolio of Piyush Singh — MBA Digital Marketing & Operations student, marketer, analyst and problem solver.">
-
-<meta name="keywords"
-content="Piyush Singh, Digital Marketing, Marketing, Operations, MBA, Portfolio, LPU, SEO, Google Ads, Analytics">
-
-<meta name="author" content="Piyush Singh">
-
-<meta property="og:title" content="Piyush Singh | Portfolio">
-<meta property="og:description" content="Digital Marketing & Operations Portfolio">
-<meta property="og:type" content="website">
+content="Piyush Singh — MBA Digital Marketing & Operations portfolio.">
 
 <style>
 
 /* =========================================================
-   GLOBAL
+   VARIABLES
 ========================================================= */
 
 :root{
@@ -35,21 +27,25 @@ content="Piyush Singh, Digital Marketing, Marketing, Operations, MBA, Portfolio,
     --ocean-400:#28c5d5;
     --ocean-300:#65e0e9;
     --ocean-200:#a6f2f5;
+
     --white:#f4feff;
     --muted:#a7c9ce;
+
     --glass:rgba(4,45,56,.55);
-    --glass-light:rgba(9,75,88,.45);
     --border:rgba(101,224,233,.18);
-    --shadow:0 20px 70px rgba(0,0,0,.28);
+
     --radius:24px;
     --max:1180px;
 }
+
+/* =========================================================
+   RESET
+========================================================= */
 
 *{
     margin:0;
     padding:0;
     box-sizing:border-box;
-    scroll-behavior:smooth;
 }
 
 html{
@@ -67,10 +63,23 @@ body{
     sans-serif;
 
     color:var(--white);
+
     background:
-    radial-gradient(circle at 10% 10%, rgba(40,197,213,.13), transparent 28%),
-    radial-gradient(circle at 90% 20%, rgba(8,127,145,.18), transparent 30%),
-    radial-gradient(circle at 50% 90%, rgba(101,224,233,.08), transparent 35%),
+    radial-gradient(
+        circle at 10% 10%,
+        rgba(40,197,213,.14),
+        transparent 28%
+    ),
+    radial-gradient(
+        circle at 90% 20%,
+        rgba(8,127,145,.18),
+        transparent 30%
+    ),
+    radial-gradient(
+        circle at 50% 90%,
+        rgba(101,224,233,.08),
+        transparent 35%
+    ),
     var(--ocean-950);
 
     overflow-x:hidden;
@@ -78,8 +87,8 @@ body{
 }
 
 a{
-    color:inherit;
     text-decoration:none;
+    color:inherit;
 }
 
 button,
@@ -89,7 +98,7 @@ textarea{
 }
 
 .container{
-    width:min(var(--max), calc(100% - 40px));
+    width:min(var(--max),calc(100% - 40px));
     margin:auto;
 }
 
@@ -105,7 +114,7 @@ section{
 
 .eyebrow{
     color:var(--ocean-300);
-    font-size:.78rem;
+    font-size:.76rem;
     font-weight:800;
     letter-spacing:3px;
     text-transform:uppercase;
@@ -122,6 +131,20 @@ section{
     max-width:680px;
     color:var(--muted);
     margin-top:16px;
+}
+
+.gradient-text{
+    background:
+    linear-gradient(
+        100deg,
+        #ffffff,
+        #65e0e9 45%,
+        #0ba4b8
+    );
+
+    -webkit-background-clip:text;
+    background-clip:text;
+    color:transparent;
 }
 
 
@@ -188,7 +211,7 @@ section{
 }
 
 .navbar.scrolled{
-    background:rgba(2,21,29,.76);
+    background:rgba(2,21,29,.78);
     backdrop-filter:blur(18px);
     border-bottom:1px solid var(--border);
 }
@@ -206,7 +229,7 @@ section{
     border:1px solid rgba(101,224,233,.10);
     border-radius:18px;
 
-    background:rgba(3,38,48,.25);
+    background:rgba(3,38,48,.28);
     backdrop-filter:blur(12px);
 }
 
@@ -215,7 +238,6 @@ section{
     align-items:center;
     gap:10px;
     font-weight:900;
-    letter-spacing:-.5px;
 }
 
 .logo-dot{
@@ -236,7 +258,7 @@ section{
     color:#b9d9dd;
     padding:9px 13px;
     border-radius:10px;
-    font-size:.9rem;
+    font-size:.88rem;
     transition:.25s;
 }
 
@@ -281,6 +303,7 @@ section{
     gap:10px;
 
     padding:7px 12px;
+
     border:1px solid var(--border);
     background:rgba(11,164,184,.08);
     border-radius:100px;
@@ -288,6 +311,7 @@ section{
     color:var(--ocean-200);
     font-size:.8rem;
     font-weight:700;
+
     margin-bottom:25px;
 }
 
@@ -311,20 +335,6 @@ section{
     font-size:clamp(3.3rem,7vw,6.8rem);
     line-height:.92;
     letter-spacing:-6px;
-    max-width:850px;
-}
-
-.gradient-text{
-    background:linear-gradient(
-        100deg,
-        #ffffff,
-        #65e0e9 45%,
-        #0ba4b8
-    );
-
-    -webkit-background-clip:text;
-    background-clip:text;
-    color:transparent;
 }
 
 .hero-description{
@@ -353,6 +363,7 @@ section{
     font-size:.9rem;
 
     cursor:pointer;
+
     border:1px solid var(--border);
 
     transition:.25s;
@@ -395,6 +406,7 @@ section{
     font-size:.85rem;
 
     padding:8px 11px;
+
     border:1px solid rgba(101,224,233,.10);
     border-radius:11px;
 
@@ -409,7 +421,7 @@ section{
 
 
 /* =========================================================
-   PROFILE CARD
+   PROFILE
 ========================================================= */
 
 .profile-wrap{
@@ -420,6 +432,7 @@ section{
 .profile-card{
     width:min(380px,100%);
     padding:15px;
+
     border:1px solid var(--border);
     border-radius:34px;
 
@@ -430,8 +443,10 @@ section{
         rgba(3,38,48,.65)
     );
 
-    box-shadow:var(--shadow);
+    box-shadow:0 20px 70px rgba(0,0,0,.28);
+
     transform:rotate(2deg);
+
     transition:.5s;
 }
 
@@ -444,6 +459,7 @@ section{
     aspect-ratio:4/5;
     overflow:hidden;
     border-radius:25px;
+
     background:
     linear-gradient(
         145deg,
@@ -474,12 +490,10 @@ section{
 
     color:var(--ocean-200);
     text-align:center;
-    padding:25px;
 }
 
 .profile-placeholder strong{
     font-size:3rem;
-    margin-bottom:5px;
 }
 
 .profile-placeholder span{
@@ -502,11 +516,12 @@ section{
 
 
 /* =========================================================
-   GLASS CARDS
+   GLASS
 ========================================================= */
 
 .glass{
     border:1px solid var(--border);
+
     background:
     linear-gradient(
         145deg,
@@ -515,8 +530,11 @@ section{
     );
 
     backdrop-filter:blur(14px);
+
     border-radius:var(--radius);
-    box-shadow:0 15px 60px rgba(0,0,0,.12);
+
+    box-shadow:
+    0 15px 60px rgba(0,0,0,.12);
 }
 
 
@@ -566,12 +584,11 @@ section{
     display:block;
     color:#91b7bc;
     font-size:.8rem;
-    margin-top:3px;
 }
 
 
 /* =========================================================
-   EXPERIENCE
+   TIMELINE
 ========================================================= */
 
 .timeline{
@@ -581,11 +598,15 @@ section{
 
 .timeline::before{
     content:"";
+
     position:absolute;
+
     left:10px;
     top:0;
     bottom:0;
+
     width:1px;
+
     background:
     linear-gradient(
         var(--ocean-300),
@@ -601,6 +622,7 @@ section{
 
 .timeline-dot{
     position:absolute;
+
     left:3px;
     top:25px;
 
@@ -623,7 +645,6 @@ section{
     display:flex;
     justify-content:space-between;
     gap:20px;
-    align-items:flex-start;
 }
 
 .card-top h3{
@@ -634,14 +655,16 @@ section{
     color:var(--ocean-300);
     font-weight:700;
     font-size:.9rem;
-    margin-top:3px;
 }
 
 .date{
     white-space:nowrap;
+
     color:#88aeb3;
     font-size:.78rem;
+
     padding:6px 10px;
+
     border:1px solid var(--border);
     border-radius:9px;
 }
@@ -674,26 +697,9 @@ section{
     transition:.3s;
 }
 
-.project-card::before{
-    content:"";
-    position:absolute;
-    width:180px;
-    height:180px;
-    background:var(--ocean-400);
-    opacity:.05;
-    border-radius:50%;
-    right:-80px;
-    top:-80px;
-    transition:.4s;
-}
-
 .project-card:hover{
     transform:translateY(-7px);
     border-color:rgba(101,224,233,.3);
-}
-
-.project-card:hover::before{
-    transform:scale(1.6);
 }
 
 .project-number{
@@ -723,8 +729,10 @@ section{
 .tag{
     padding:5px 9px;
     border-radius:8px;
+
     border:1px solid rgba(101,224,233,.12);
     background:rgba(40,197,213,.05);
+
     color:#a5dce1;
     font-size:.7rem;
 }
@@ -771,8 +779,6 @@ section{
 .edu-card{
     padding:27px;
     min-height:260px;
-    position:relative;
-    overflow:hidden;
 }
 
 .edu-icon{
@@ -789,6 +795,7 @@ section{
     border:1px solid var(--border);
 
     font-size:1.25rem;
+
     margin-bottom:25px;
 }
 
@@ -805,7 +812,9 @@ section{
 .edu-year{
     display:inline-block;
     margin-top:17px;
+
     color:var(--ocean-300);
+
     font-size:.75rem;
     font-weight:800;
 }
@@ -829,6 +838,7 @@ section{
     padding:18px 20px;
 
     border:1px solid var(--border);
+
     background:rgba(40,197,213,.035);
 
     border-radius:15px;
@@ -870,10 +880,6 @@ section{
     margin-bottom:22px;
 }
 
-.skill:last-child{
-    margin-bottom:0;
-}
-
 .skill-title{
     display:flex;
     justify-content:space-between;
@@ -895,6 +901,7 @@ section{
 .skill-fill{
     height:100%;
     width:0;
+
     border-radius:20px;
 
     background:
@@ -904,7 +911,7 @@ section{
         var(--ocean-300)
     );
 
-    transition:width 1.5s cubic-bezier(.2,.7,.2,1);
+    transition:width 1.5s ease;
 }
 
 .tool-cloud{
@@ -916,10 +923,15 @@ section{
 
 .tool{
     padding:9px 12px;
+
     border-radius:11px;
+
     background:rgba(40,197,213,.05);
+
     border:1px solid var(--border);
+
     color:#b5dce0;
+
     font-size:.78rem;
 }
 
@@ -957,10 +969,6 @@ section{
     font-size:2rem;
 }
 
-.achievement h3{
-    font-size:1.35rem;
-}
-
 .achievement p{
     color:var(--muted);
     margin-top:7px;
@@ -987,9 +995,11 @@ section{
     align-items:center;
 
     padding:16px;
+
     border-radius:15px;
 
     border:1px solid var(--border);
+
     background:rgba(40,197,213,.035);
 
     margin-bottom:10px;
@@ -1013,6 +1023,7 @@ section{
     border-radius:12px;
 
     background:rgba(40,197,213,.1);
+
     color:var(--ocean-300);
 }
 
@@ -1040,19 +1051,28 @@ section{
 .field label{
     display:block;
     margin-bottom:7px;
+
     font-size:.76rem;
+
     color:#91b8bd;
 }
 
 .field input,
 .field textarea{
     width:100%;
+
     border:1px solid var(--border);
+
     background:rgba(0,0,0,.15);
+
     color:white;
+
     outline:none;
+
     border-radius:12px;
+
     padding:13px 14px;
+
     transition:.2s;
 }
 
@@ -1064,13 +1084,65 @@ section{
 .field input:focus,
 .field textarea:focus{
     border-color:var(--ocean-300);
-    box-shadow:0 0 0 3px rgba(40,197,213,.07);
+
+    box-shadow:
+    0 0 0 3px rgba(40,197,213,.07);
 }
 
 .form-note{
     margin-top:10px;
     color:#7fa8ad;
     font-size:.72rem;
+}
+
+.email-options{
+    display:none;
+
+    margin-top:12px;
+
+    padding:12px;
+
+    border:1px solid var(--border);
+
+    border-radius:14px;
+
+    background:rgba(2,21,29,.85);
+}
+
+.email-options.show{
+    display:block;
+}
+
+.email-options-title{
+    color:#8fb7bc;
+    font-size:.75rem;
+    margin-bottom:9px;
+}
+
+.email-option{
+    display:block;
+
+    width:100%;
+
+    padding:10px;
+
+    margin-top:6px;
+
+    border-radius:10px;
+
+    border:1px solid var(--border);
+
+    background:rgba(40,197,213,.05);
+
+    color:white;
+
+    text-align:center;
+
+    cursor:pointer;
+}
+
+.email-option:hover{
+    background:rgba(40,197,213,.12);
 }
 
 
@@ -1081,8 +1153,6 @@ section{
 footer{
     padding:35px 0;
     border-top:1px solid var(--border);
-    position:relative;
-    z-index:2;
 }
 
 .footer-inner{
@@ -1105,6 +1175,7 @@ footer{
 .footer-links a{
     width:36px;
     height:36px;
+
     border-radius:10px;
 
     display:flex;
@@ -1112,23 +1183,18 @@ footer{
     justify-content:center;
 
     border:1px solid var(--border);
+
     color:#9dc6ca;
-
-    transition:.2s;
-}
-
-.footer-links a:hover{
-    background:rgba(40,197,213,.1);
-    color:white;
 }
 
 
 /* =========================================================
-   BACK TO TOP
+   TOP BUTTON
 ========================================================= */
 
 .top-btn{
     position:fixed;
+
     right:20px;
     bottom:20px;
 
@@ -1142,7 +1208,9 @@ footer{
     border-radius:13px;
 
     border:1px solid var(--border);
-    background:rgba(3,38,48,.8);
+
+    background:rgba(3,38,48,.85);
+
     color:white;
 
     cursor:pointer;
@@ -1168,6 +1236,7 @@ footer{
 .reveal{
     opacity:0;
     transform:translateY(30px);
+
     transition:
     opacity .7s ease,
     transform .7s ease;
@@ -1190,10 +1259,6 @@ footer{
     .contact-grid,
     .skills-layout{
         grid-template-columns:1fr;
-    }
-
-    .hero{
-        padding-top:150px;
     }
 
     .profile-wrap{
@@ -1223,27 +1288,27 @@ footer{
         width:min(100% - 28px,var(--max));
     }
 
-    .nav-inner{
-        padding:10px 14px;
-    }
-
     .menu-btn{
         display:block;
     }
 
     .nav-links{
         position:absolute;
+
         top:68px;
         left:14px;
         right:14px;
 
         display:none;
+
         flex-direction:column;
 
         padding:10px;
 
         border:1px solid var(--border);
-        background:rgba(2,21,29,.95);
+
+        background:rgba(2,21,29,.97);
+
         backdrop-filter:blur(20px);
 
         border-radius:16px;
@@ -1253,23 +1318,13 @@ footer{
         display:flex;
     }
 
-    .nav-links a{
-        display:block;
-        padding:12px;
-    }
-
     .hero h1{
         font-size:clamp(3rem,16vw,5rem);
         letter-spacing:-4px;
     }
 
-    .hero-description{
-        font-size:.95rem;
-    }
-
     .hero-actions{
         flex-direction:column;
-        align-items:stretch;
     }
 
     .btn{
@@ -1311,8 +1366,9 @@ footer{
 
 <body>
 
+
 <!-- =====================================================
-     LIVE OCEAN BACKGROUND
+     LIVE OCEAN
 ====================================================== -->
 
 <canvas id="oceanCanvas"></canvas>
@@ -1322,37 +1378,63 @@ footer{
 
 
 <!-- =====================================================
-     NAVIGATION
+     NAVBAR
 ====================================================== -->
 
 <header class="navbar" id="navbar">
 
-    <div class="nav-inner">
+<div class="nav-inner">
 
-        <a href="#home" class="logo">
-            <span class="logo-dot"></span>
-            PIYUSH SINGH
-        </a>
+<a href="#home" class="logo">
+    <span class="logo-dot"></span>
+    PIYUSH SINGH
+</a>
 
-        <button class="menu-btn" id="menuBtn" aria-label="Open menu">
-            ☰
-        </button>
+<button
+    class="menu-btn"
+    id="menuBtn"
+    aria-label="Open navigation"
+>
+    ☰
+</button>
 
-        <nav>
-            <ul class="nav-links" id="navLinks">
+<nav>
 
-                <li><a href="#home" class="active">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#experience">Experience</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#education">Education</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#contact">Contact</a></li>
+<ul class="nav-links" id="navLinks">
 
-            </ul>
-        </nav>
+<li>
+    <a href="#home" class="active">Home</a>
+</li>
 
-    </div>
+<li>
+    <a href="#about">About</a>
+</li>
+
+<li>
+    <a href="#experience">Experience</a>
+</li>
+
+<li>
+    <a href="#projects">Projects</a>
+</li>
+
+<li>
+    <a href="#education">Education</a>
+</li>
+
+<li>
+    <a href="#skills">Skills</a>
+</li>
+
+<li>
+    <a href="#contact">Contact</a>
+</li>
+
+</ul>
+
+</nav>
+
+</div>
 
 </header>
 
@@ -1371,116 +1453,119 @@ footer{
 
 <div>
 
-    <div class="hero-kicker">
-        <span class="live-dot"></span>
-        OPEN TO OPPORTUNITIES
-    </div>
+<div class="hero-kicker">
+    <span class="live-dot"></span>
+    OPEN TO OPPORTUNITIES
+</div>
 
-    <h1>
-        Building ideas<br>
-        that move <span class="gradient-text">forward.</span>
-    </h1>
+<h1>
+    Building ideas<br>
+    that move <span class="gradient-text">forward.</span>
+</h1>
 
-    <p class="hero-description">
-        MBA Digital Marketing & Operations student focused on
-        digital marketing, business strategy, analytics and
-        operational improvement — combining creative thinking
-        with structured problem solving.
-    </p>
+<p class="hero-description">
+    MBA Digital Marketing & Operations student focused on
+    digital marketing, business strategy, analytics and
+    operational improvement — combining creative thinking
+    with structured problem solving.
+</p>
 
-    <div class="hero-actions">
+<div class="hero-actions">
 
-        <a href="#projects" class="btn btn-primary">
-            Explore My Work →
-        </a>
+<a
+    href="#projects"
+    class="btn btn-primary"
+>
+    Explore My Work →
+</a>
 
-        <a
-            href="mailto:piyushsingh20030610@gmail.com?subject=Portfolio%20Opportunity"
-            class="btn btn-ghost"
-        >
-            ✉ Email Me
-        </a>
+<!-- GMAIL DIRECT BUTTON -->
 
-        <a
-            href="https://www.linkedin.com/in/piyushsingh0610/"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="btn btn-ghost"
-        >
-            ↗ LinkedIn
-        </a>
+<a
+    href="https://mail.google.com/mail/?view=cm&fs=1&to=piyushsingh20030610@gmail.com&su=Portfolio%20Opportunity"
+    target="_blank"
+    rel="noopener noreferrer"
+    class="btn btn-ghost"
+>
+    ✉ Email Me
+</a>
 
-    </div>
+<a
+    href="https://www.linkedin.com/in/piyushsingh0610/"
+    target="_blank"
+    rel="noopener noreferrer"
+    class="btn btn-ghost"
+>
+    ↗ LinkedIn
+</a>
 
-    <div class="hero-contact">
+</div>
 
-        <a
-            class="contact-chip"
-            href="mailto:piyushsingh20030610@gmail.com"
-        >
-            ✉ piyushsingh20030610@gmail.com
-        </a>
+<div class="hero-contact">
 
-        <a
-            class="contact-chip"
-            href="tel:+918431832821"
-        >
-            ☎ +91 84318 32821
-        </a>
+<a
+    class="contact-chip"
+    href="https://mail.google.com/mail/?view=cm&fs=1&to=piyushsingh20030610@gmail.com"
+    target="_blank"
+    rel="noopener noreferrer"
+>
+    ✉ piyushsingh20030610@gmail.com
+</a>
 
-    </div>
+<a
+    class="contact-chip"
+    href="tel:+918431832821"
+>
+    ☎ +91 84318 32821
+</a>
+
+</div>
 
 </div>
 
 
+<!-- PROFILE -->
+
 <div class="profile-wrap reveal">
 
-    <div class="profile-card">
+<div class="profile-card">
 
-        <div class="profile-image">
+<div class="profile-image">
 
-            <!--
-            ==================================================
-            YOUR PROFILE PHOTO
+<img
+    src="assets/profile.jpg"
+    alt="Piyush Singh"
+    onerror="this.style.display='none';document.getElementById('profilePlaceholder').style.display='flex';"
+>
 
-            Replace "assets/profile.jpg" with your photo.
+<div
+    class="profile-placeholder"
+    id="profilePlaceholder"
+    style="display:none;"
+>
 
-            Example:
-            assets/piyush-profile.jpg
-            ==================================================
-            -->
+<strong>PS</strong>
 
-            <img
-                src="assets/profile.jpg"
-                alt="Piyush Singh"
-                onerror="this.style.display='none';document.getElementById('profilePlaceholder').style.display='flex';"
-            >
+<span>
+    Add your photo at<br>
+    assets/profile.jpg
+</span>
 
-            <div
-                class="profile-placeholder"
-                id="profilePlaceholder"
-                style="display:none;"
-            >
-                <strong>PS</strong>
-                <span>
-                    Add your photo at<br>
-                    assets/profile.jpg
-                </span>
-            </div>
+</div>
 
-        </div>
+</div>
 
-        <div class="profile-info">
+<div class="profile-info">
 
-            <h3>Piyush Singh</h3>
+<h3>Piyush Singh</h3>
 
-            <p>
-                MBA — Digital Marketing & Operations
-            </p>
+<p>
+    MBA — Digital Marketing & Operations
+</p>
 
-        </div>
+</div>
 
-    </div>
+</div>
 
 </div>
 
@@ -1501,16 +1586,21 @@ footer{
 
 <div class="section-heading reveal">
 
-    <div class="eyebrow">01 — About</div>
+<div class="eyebrow">
+    01 — About
+</div>
 
-    <h2>A marketer with an<br>
-        <span class="gradient-text">analytical mindset.</span>
-    </h2>
+<h2>
+    A marketer with an<br>
+    <span class="gradient-text">
+        analytical mindset.
+    </span>
+</h2>
 
-    <p>
-        My work sits at the intersection of marketing, analytics,
-        operations and business strategy.
-    </p>
+<p>
+    My work sits at the intersection of marketing,
+    analytics, operations and business strategy.
+</p>
 
 </div>
 
@@ -1519,48 +1609,81 @@ footer{
 
 <div class="glass about-card reveal">
 
-    <h3>What I bring</h3>
+<h3>
+    What I bring
+</h3>
 
-    <p>
-        I enjoy understanding how people, processes and data
-        connect. From digital campaigns and SEO to supply chain
-        analysis and Lean Six Sigma projects, I focus on finding
-        practical ways to improve performance.
-    </p>
+<p>
+    I enjoy understanding how people, processes and data
+    connect. From digital campaigns and SEO to supply chain
+    analysis and Lean Six Sigma projects, I focus on finding
+    practical ways to improve performance.
+</p>
 
-    <br>
+<br>
 
-    <p>
-        Currently pursuing an MBA in Digital Marketing and
-        Operations at Lovely Professional University, I am
-        developing a multidisciplinary business perspective
-        supported by hands-on academic projects and internships.
-    </p>
+<p>
+    Currently pursuing an MBA in Digital Marketing and
+    Operations at Lovely Professional University, I am
+    developing a multidisciplinary business perspective
+    supported by hands-on academic projects and internships.
+</p>
 
 </div>
 
 
 <div class="fact-grid">
 
-    <div class="fact glass reveal">
-        <div class="fact-number">92.4K+</div>
-        <span>Google Ads Impressions</span>
-    </div>
+<div class="fact glass reveal">
 
-    <div class="fact glass reveal">
-        <div class="fact-number">55%</div>
-        <span>Travel Time Reduction</span>
-    </div>
+<div class="fact-number">
+    92.4K+
+</div>
 
-    <div class="fact glass reveal">
-        <div class="fact-number">68%</div>
-        <span>Passenger Wait Reduction</span>
-    </div>
+<span>
+    Google Ads Impressions
+</span>
 
-    <div class="fact glass reveal">
-        <div class="fact-number">₹10K+</div>
-        <span>Digital Product Revenue</span>
-    </div>
+</div>
+
+
+<div class="fact glass reveal">
+
+<div class="fact-number">
+    55%
+</div>
+
+<span>
+    Travel Time Reduction
+</span>
+
+</div>
+
+
+<div class="fact glass reveal">
+
+<div class="fact-number">
+    68%
+</div>
+
+<span>
+    Passenger Wait Reduction
+</span>
+
+</div>
+
+
+<div class="fact glass reveal">
+
+<div class="fact-number">
+    ₹10K+
+</div>
+
+<span>
+    Digital Product Revenue
+</span>
+
+</div>
 
 </div>
 
@@ -1581,11 +1704,16 @@ footer{
 
 <div class="section-heading reveal">
 
-    <div class="eyebrow">02 — Experience</div>
+<div class="eyebrow">
+    02 — Experience
+</div>
 
-    <h2>Where I have<br>
-        <span class="gradient-text">learned by doing.</span>
-    </h2>
+<h2>
+    Where I have<br>
+    <span class="gradient-text">
+        learned by doing.
+    </span>
+</h2>
 
 </div>
 
@@ -1603,11 +1731,13 @@ footer{
 
 <div>
 
-    <h3>Marketing Intern</h3>
+<h3>
+    Marketing Intern
+</h3>
 
-    <div class="card-company">
-        Cognizen Innovations
-    </div>
+<div class="card-company">
+    Cognizen Innovations
+</div>
 
 </div>
 
@@ -1619,21 +1749,21 @@ footer{
 
 <ul class="card-list">
 
-    <li>
-        Conducted high-volume cold calling to educate
-        potential clients on SIP investments and wealth creation.
-    </li>
+<li>
+    Conducted high-volume cold calling to educate
+    potential clients on SIP investments and wealth creation.
+</li>
 
-    <li>
-        Communicated market benefits, addressed investor
-        hesitations and developed objection-handling skills
-        in a competitive BFSI environment.
-    </li>
+<li>
+    Communicated market benefits, addressed investor
+    hesitations and developed objection-handling skills
+    in a competitive BFSI environment.
+</li>
 
-    <li>
-        Assessed prospect interest and financial readiness
-        to build an initial outreach pipeline for SIP services.
-    </li>
+<li>
+    Assessed prospect interest and financial readiness
+    to build an initial outreach pipeline for SIP services.
+</li>
 
 </ul>
 
@@ -1652,11 +1782,13 @@ footer{
 
 <div>
 
-    <h3>Assistant Coach</h3>
+<h3>
+    Assistant Coach
+</h3>
 
-    <div class="card-company">
-        AIR FORCE Summer Coaching Camp
-    </div>
+<div class="card-company">
+    AIR FORCE Summer Coaching Camp
+</div>
 
 </div>
 
@@ -1668,16 +1800,16 @@ footer{
 
 <ul class="card-list">
 
-    <li>
-        Supported badminton training programs by coaching
-        22 students and assisting in skill development,
-        practice coordination and performance improvement.
-    </li>
+<li>
+    Supported badminton training programs by coaching
+    22 students and assisting in skill development,
+    practice coordination and performance improvement.
+</li>
 
-    <li>
-        Formulated structured daily drills to accelerate
-        skill acquisition and performance growth.
-    </li>
+<li>
+    Formulated structured daily drills to accelerate
+    skill acquisition and performance growth.
+</li>
 
 </ul>
 
@@ -1696,11 +1828,13 @@ footer{
 
 <div>
 
-    <h3>Assistant Event Coordinator</h3>
+<h3>
+    Assistant Event Coordinator
+</h3>
 
-    <div class="card-company">
-        Bhushan Badminton Academy
-    </div>
+<div class="card-company">
+    Bhushan Badminton Academy
+</div>
 
 </div>
 
@@ -1712,15 +1846,15 @@ footer{
 
 <ul class="card-list">
 
-    <li>
-        Coordinated event logistics and tournament operations
-        to support successful event execution.
-    </li>
+<li>
+    Coordinated event logistics and tournament operations
+    to support successful event execution.
+</li>
 
-    <li>
-        Supervised match-day volunteers and vendor coordination
-        to keep tournament schedules running without delays.
-    </li>
+<li>
+    Supervised match-day volunteers and vendor coordination
+    to keep tournament schedules running without delays.
+</li>
 
 </ul>
 
@@ -1739,11 +1873,13 @@ footer{
 
 <div>
 
-    <h3>Laboratory Assistant Intern</h3>
+<h3>
+    Laboratory Assistant Intern
+</h3>
 
-    <div class="card-company">
-        Belagavi Bio-Center
-    </div>
+<div class="card-company">
+    Belagavi Bio-Center
+</div>
 
 </div>
 
@@ -1755,20 +1891,20 @@ footer{
 
 <ul class="card-list">
 
-    <li>
-        Managed and validated 100+ laboratory data entries,
-        ensuring accuracy and integrity of experimental records.
-    </li>
+<li>
+    Managed and validated 100+ laboratory data entries,
+    ensuring accuracy and integrity of experimental records.
+</li>
 
-    <li>
-        Enhanced operational efficiency by 10% by supporting
-        laboratory staff with essential daily tasks.
-    </li>
+<li>
+    Enhanced operational efficiency by 10% by supporting
+    laboratory staff with essential daily tasks.
+</li>
 
-    <li>
-        Contributed to research and analysis projects focused
-        on Bio-Fertilizers and Bio-Control Agents.
-    </li>
+<li>
+    Contributed to research and analysis projects focused
+    on Bio-Fertilizers and Bio-Control Agents.
+</li>
 
 </ul>
 
@@ -1794,11 +1930,16 @@ footer{
 
 <div class="section-heading reveal">
 
-    <div class="eyebrow">03 — Selected Work</div>
+<div class="eyebrow">
+    03 — Selected Work
+</div>
 
-    <h2>Projects that turn<br>
-        <span class="gradient-text">problems into possibilities.</span>
-    </h2>
+<h2>
+    Projects that turn<br>
+    <span class="gradient-text">
+        problems into possibilities.
+    </span>
+</h2>
 
 </div>
 
@@ -1808,155 +1949,198 @@ footer{
 
 <div class="glass project-card reveal">
 
-    <div class="project-number">01 / OPERATIONS</div>
+<div class="project-number">
+    01 / OPERATIONS
+</div>
 
-    <h3>Lean Six Sigma Approach to Public Transport Efficiency</h3>
+<h3>
+    Lean Six Sigma Approach to Public Transport Efficiency
+</h3>
 
-    <p>
-        Applied DMAIC, SIPOC mapping, Fishbone diagrams and
-        Pareto charts to analyze terminal bottlenecks,
-        congestion and passenger delays.
-    </p>
+<p>
+    Applied DMAIC, SIPOC mapping, Fishbone diagrams and
+    Pareto charts to analyze terminal bottlenecks,
+    congestion and passenger delays.
+</p>
 
-    <div class="project-tags">
-        <span class="tag">Lean Six Sigma</span>
-        <span class="tag">DMAIC</span>
-        <span class="tag">SIPOC</span>
-        <span class="tag">Process Improvement</span>
-    </div>
+<div class="project-tags">
+
+<span class="tag">Lean Six Sigma</span>
+<span class="tag">DMAIC</span>
+<span class="tag">SIPOC</span>
+<span class="tag">Process Improvement</span>
+
+</div>
 
 </div>
 
 
 <div class="glass project-card reveal">
 
-    <div class="project-number">02 / DIGITAL MARKETING</div>
+<div class="project-number">
+    02 / DIGITAL MARKETING
+</div>
 
-    <h3>Digital Campaign Creation & SEO Optimization</h3>
+<h3>
+    Digital Campaign Creation & SEO Optimization
+</h3>
 
-    <p>
-        Optimized website content for first-page Google SERP
-        ranking and executed Google Ads campaigns generating
-        92.4K+ impressions and 257 clicks.
-    </p>
+<p>
+    Optimized website content for first-page Google SERP
+    ranking and executed Google Ads campaigns generating
+    92.4K+ impressions and 257 clicks.
+</p>
 
-    <div class="project-tags">
-        <span class="tag">Google Ads</span>
-        <span class="tag">SEO</span>
-        <span class="tag">Google Analytics</span>
-        <span class="tag">SEM</span>
-    </div>
+<div class="project-tags">
+
+<span class="tag">Google Ads</span>
+<span class="tag">SEO</span>
+<span class="tag">Google Analytics</span>
+<span class="tag">SEM</span>
+
+</div>
 
 </div>
 
 
 <div class="glass project-card reveal">
 
-    <div class="project-number">03 / DIGITAL PRODUCT</div>
+<div class="project-number">
+    03 / DIGITAL PRODUCT
+</div>
 
-    <h3>Digital Product Creation & Marketing</h3>
+<h3>
+    Digital Product Creation & Marketing
+</h3>
 
-    <p>
-        Developed and launched a digital kids colouring book
-        supported by a landing page and social media promotion,
-        generating 25+ customer engagements and ₹10,000+ revenue.
-    </p>
+<p>
+    Developed and launched a digital kids colouring book
+    supported by a landing page and social media promotion,
+    generating 25+ customer engagements and ₹10,000+ revenue.
+</p>
 
-    <div class="project-tags">
-        <span class="tag">Digital Product</span>
-        <span class="tag">Social Media</span>
-        <span class="tag">Landing Page</span>
-        <span class="tag">Conversion</span>
-    </div>
+<div class="project-tags">
+
+<span class="tag">Digital Product</span>
+<span class="tag">Social Media</span>
+<span class="tag">Landing Page</span>
+<span class="tag">Conversion</span>
+
+</div>
 
 </div>
 
 
 <div class="glass project-card reveal">
 
-    <div class="project-number">04 / AFFILIATE MARKETING</div>
+<div class="project-number">
+    04 / AFFILIATE MARKETING
+</div>
 
-    <h3>Affiliate Marketing — August Bioscience</h3>
+<h3>
+    Affiliate Marketing — August Bioscience
+</h3>
 
-    <p>
-        Orchestrated 5+ affiliate marketing campaigns across
-        social platforms, achieving a 10% lead conversion rate
-        and contributing to 5% online sales growth.
-    </p>
+<p>
+    Orchestrated 5+ affiliate marketing campaigns across
+    social platforms, achieving a 10% lead conversion rate
+    and contributing to 5% online sales growth.
+</p>
 
-    <div class="project-tags">
-        <span class="tag">Affiliate Marketing</span>
-        <span class="tag">Social Media</span>
-        <span class="tag">Lead Generation</span>
-    </div>
+<div class="project-tags">
+
+<span class="tag">Affiliate Marketing</span>
+<span class="tag">Social Media</span>
+<span class="tag">Lead Generation</span>
+
+</div>
 
 </div>
 
 
 <div class="glass project-card reveal">
 
-    <div class="project-number">05 / BRAND STRATEGY</div>
+<div class="project-number">
+    05 / BRAND STRATEGY
+</div>
 
-    <h3>Unbranded to Branded — AttarVibez</h3>
+<h3>
+    Unbranded to Branded — AttarVibez
+</h3>
 
-    <p>
-        Developed brand identity and integrated marketing
-        strategies for an attar and perfume product line,
-        including positioning and go-to-market planning.
-    </p>
+<p>
+    Developed brand identity and integrated marketing
+    strategies for an attar and perfume product line,
+    including positioning and go-to-market planning.
+</p>
 
-    <div class="project-tags">
-        <span class="tag">Brand Strategy</span>
-        <span class="tag">Positioning</span>
-        <span class="tag">GTM</span>
-        <span class="tag">Pricing</span>
-    </div>
+<div class="project-tags">
+
+<span class="tag">Brand Strategy</span>
+<span class="tag">Positioning</span>
+<span class="tag">GTM</span>
+<span class="tag">Pricing</span>
+
+</div>
 
 </div>
 
 
 <div class="glass project-card reveal">
 
-    <div class="project-number">06 / SUPPLY CHAIN</div>
+<div class="project-number">
+    06 / SUPPLY CHAIN
+</div>
 
-    <h3>Amul Supply Chain & Operations Analysis</h3>
+<h3>
+    Amul Supply Chain & Operations Analysis
+</h3>
 
-    <p>
-        Analyzed procurement, production, inventory,
-        warehousing and distribution while identifying gaps
-        in inventory planning and logistics.
-    </p>
+<p>
+    Analyzed procurement, production, inventory,
+    warehousing and distribution while identifying gaps
+    in inventory planning and logistics.
+</p>
 
-    <div class="project-tags">
-        <span class="tag">Supply Chain</span>
-        <span class="tag">Excel</span>
-        <span class="tag">Operations</span>
-        <span class="tag">Analysis</span>
-    </div>
+<div class="project-tags">
+
+<span class="tag">Supply Chain</span>
+<span class="tag">Excel</span>
+<span class="tag">Operations</span>
+<span class="tag">Analysis</span>
+
+</div>
 
 </div>
 
 
 <div class="glass project-card reveal">
 
-    <div class="project-number">07 / INVENTORY</div>
+<div class="project-number">
+    07 / INVENTORY
+</div>
 
-    <h3>HP World Supply Chain & Inventory Optimization</h3>
+<h3>
+    HP World Supply Chain & Inventory Optimization
+</h3>
 
-    <p>
-        Analyzed a 4-tier HP supply chain, diagnosed operational
-        risks and recommended high-frequency spare parts with
-        buffer stock to improve availability.
-    </p>
+<p>
+    Analyzed a 4-tier HP supply chain, diagnosed operational
+    risks and recommended high-frequency spare parts with
+    buffer stock to improve availability.
+</p>
 
-    <div class="project-tags">
-        <span class="tag">Inventory</span>
-        <span class="tag">Supply Chain</span>
-        <span class="tag">Risk Analysis</span>
-        <span class="tag">Optimization</span>
-    </div>
+<div class="project-tags">
+
+<span class="tag">Inventory</span>
+<span class="tag">Supply Chain</span>
+<span class="tag">Risk Analysis</span>
+<span class="tag">Optimization</span>
 
 </div>
+
+</div>
+
 
 </div>
 
@@ -1975,25 +2159,56 @@ footer{
 
 <div class="metrics">
 
-    <div class="glass metric reveal">
-        <strong>92.4K+</strong>
-        <span>Ad Impressions</span>
-    </div>
+<div class="glass metric reveal">
 
-    <div class="glass metric reveal">
-        <strong>257</strong>
-        <span>Ad Clicks</span>
-    </div>
+<strong>
+    92.4K+
+</strong>
 
-    <div class="glass metric reveal">
-        <strong>4%</strong>
-        <span>Digital Product Conversion</span>
-    </div>
+<span>
+    Ad Impressions
+</span>
 
-    <div class="glass metric reveal">
-        <strong>50%</strong>
-        <span>Estimated AttarVibez Margin</span>
-    </div>
+</div>
+
+
+<div class="glass metric reveal">
+
+<strong>
+    257
+</strong>
+
+<span>
+    Ad Clicks
+</span>
+
+</div>
+
+
+<div class="glass metric reveal">
+
+<strong>
+    4%
+</strong>
+
+<span>
+    Digital Product Conversion
+</span>
+
+</div>
+
+
+<div class="glass metric reveal">
+
+<strong>
+    50%
+</strong>
+
+<span>
+    Estimated AttarVibez Margin
+</span>
+
+</div>
 
 </div>
 
@@ -2012,11 +2227,16 @@ footer{
 
 <div class="section-heading reveal">
 
-    <div class="eyebrow">04 — Education</div>
+<div class="eyebrow">
+    04 — Education
+</div>
 
-    <h2>Learning across<br>
-        <span class="gradient-text">business & science.</span>
-    </h2>
+<h2>
+    Learning across<br>
+    <span class="gradient-text">
+        business & science.
+    </span>
+</h2>
 
 </div>
 
@@ -2026,73 +2246,78 @@ footer{
 
 <div class="glass edu-card reveal">
 
-    <div class="edu-icon">🎓</div>
+<div class="edu-icon">
+    🎓
+</div>
 
-    <h3>
-        Lovely Professional University
-    </h3>
+<h3>
+    Lovely Professional University
+</h3>
 
-    <p>
-        Master of Business Administration —
-        Digital Marketing and Operations
-    </p>
+<p>
+    Master of Business Administration —
+    Digital Marketing and Operations
+</p>
 
-    <p>
-        CGPA: 7.2
-    </p>
+<p>
+    CGPA: 7.2
+</p>
 
-    <span class="edu-year">
-        Aug 2025 — Jul 2027
-    </span>
+<span class="edu-year">
+    Aug 2025 — Jul 2027
+</span>
 
 </div>
 
 
 <div class="glass edu-card reveal">
 
-    <div class="edu-icon">🔬</div>
+<div class="edu-icon">
+    🔬
+</div>
 
-    <h3>
-        KLE Society's Raja Lakhmagouda Science Institute
-    </h3>
+<h3>
+    KLE Society's Raja Lakhmagouda Science Institute
+</h3>
 
-    <p>
-        Bachelor's in Biotechnology and Zoology
-    </p>
+<p>
+    Bachelor's in Biotechnology and Zoology
+</p>
 
-    <p>
-        CGPA: 8.1
-    </p>
+<p>
+    CGPA: 8.1
+</p>
 
-    <span class="edu-year">
-        Aug 2021 — Oct 2024
-    </span>
+<span class="edu-year">
+    Aug 2021 — Oct 2024
+</span>
 
 </div>
 
 
 <div class="glass edu-card reveal">
 
-    <div class="edu-icon">📚</div>
-
-    <h3>
-        KV No.1, Sambra, Karnataka
-    </h3>
-
-    <p>
-        Science Stream
-    </p>
-
-    <p>
-        Percentage: 85%
-    </p>
-
-    <span class="edu-year">
-        Aug 2020 — May 2021
-    </span>
-
+<div class="edu-icon">
+    📚
 </div>
 
+<h3>
+    KV No.1, Sambra, Karnataka
+</h3>
+
+<p>
+    Science Stream
+</p>
+
+<p>
+    Percentage: 85%
+</p>
+
+<span class="edu-year">
+    Aug 2020 — May 2021
+</span>
+
+</div>
 
 </div>
 
@@ -2102,7 +2327,7 @@ footer{
 
 
 <!-- =====================================================
-     EDUCATION PHOTOS
+     CAMPUS PHOTOS
 ====================================================== -->
 
 <section>
@@ -2111,99 +2336,133 @@ footer{
 
 <div class="section-heading reveal">
 
-    <div class="eyebrow">Campus</div>
+<div class="eyebrow">
+    Campus
+</div>
 
-    <h2>Places that shaped<br>
-        <span class="gradient-text">my journey.</span>
-    </h2>
+<h2>
+    Places that shaped<br>
+    <span class="gradient-text">
+        my journey.
+    </span>
+</h2>
 
 </div>
 
 
 <div class="project-grid">
 
+
 <div class="glass project-card reveal">
 
-    <!-- Replace with your LPU image -->
+<div
+    class="profile-image"
+    style="aspect-ratio:16/9;"
+>
 
-    <div class="profile-image" style="aspect-ratio:16/9;">
+<img
+    src="assets/lpu.jpg"
+    alt="Lovely Professional University"
+    onerror="this.style.display='none';"
+>
 
-        <img
-            src="assets/lpu.jpg"
-            alt="Lovely Professional University"
-            onerror="this.style.display='none';"
-        >
+<div class="profile-placeholder">
 
-        <div class="profile-placeholder">
-            <strong>01</strong>
-            <span>Add LPU campus photo<br>assets/lpu.jpg</span>
-        </div>
+<strong>01</strong>
 
-    </div>
+<span>
+    Add LPU campus photo<br>
+    assets/lpu.jpg
+</span>
 
-    <h3>Lovely Professional University</h3>
+</div>
 
-    <p>
-        MBA — Digital Marketing & Operations
-    </p>
+</div>
+
+<h3>
+    Lovely Professional University
+</h3>
+
+<p>
+    MBA — Digital Marketing & Operations
+</p>
 
 </div>
 
 
 <div class="glass project-card reveal">
 
-    <!-- Replace with your KLE image -->
+<div
+    class="profile-image"
+    style="aspect-ratio:16/9;"
+>
 
-    <div class="profile-image" style="aspect-ratio:16/9;">
+<img
+    src="assets/kle.jpg"
+    alt="KLE Society's Raja Lakhmagouda Science Institute"
+    onerror="this.style.display='none';"
+>
 
-        <img
-            src="assets/kle.jpg"
-            alt="KLE Society's Raja Lakhmagouda Science Institute"
-            onerror="this.style.display='none';"
-        >
+<div class="profile-placeholder">
 
-        <div class="profile-placeholder">
-            <strong>02</strong>
-            <span>Add college photo<br>assets/kle.jpg</span>
-        </div>
+<strong>02</strong>
 
-    </div>
+<span>
+    Add college photo<br>
+    assets/kle.jpg
+</span>
 
-    <h3>KLE Society's Raja Lakhmagouda Science Institute</h3>
+</div>
 
-    <p>
-        Bachelor's in Biotechnology & Zoology
-    </p>
+</div>
+
+<h3>
+    KLE Society's Raja Lakhmagouda Science Institute
+</h3>
+
+<p>
+    Bachelor's in Biotechnology & Zoology
+</p>
 
 </div>
 
 
 <div class="glass project-card reveal">
 
-    <!-- Replace with your school image -->
+<div
+    class="profile-image"
+    style="aspect-ratio:16/9;"
+>
 
-    <div class="profile-image" style="aspect-ratio:16/9;">
+<img
+    src="assets/kv-school.jpg"
+    alt="KV No.1 Sambra"
+    onerror="this.style.display='none';"
+>
 
-        <img
-            src="assets/kv-school.jpg"
-            alt="KV No.1 Sambra"
-            onerror="this.style.display='none';"
-        >
+<div class="profile-placeholder">
 
-        <div class="profile-placeholder">
-            <strong>03</strong>
-            <span>Add school photo<br>assets/kv-school.jpg</span>
-        </div>
+<strong>03</strong>
 
-    </div>
-
-    <h3>KV No.1, Sambra</h3>
-
-    <p>
-        Science Stream
-    </p>
+<span>
+    Add school photo<br>
+    assets/kv-school.jpg
+</span>
 
 </div>
+
+</div>
+
+<h3>
+    KV No.1, Sambra
+</h3>
+
+<p>
+    Science Stream
+</p>
+
+</div>
+
 
 </div>
 
@@ -2222,11 +2481,16 @@ footer{
 
 <div class="section-heading reveal">
 
-    <div class="eyebrow">05 — Skills</div>
+<div class="eyebrow">
+    05 — Skills
+</div>
 
-    <h2>Tools, thinking &<br>
-        <span class="gradient-text">execution.</span>
-    </h2>
+<h2>
+    Tools, thinking &<br>
+    <span class="gradient-text">
+        execution.
+    </span>
+</h2>
 
 </div>
 
@@ -2244,12 +2508,24 @@ footer{
 <div class="skill">
 
 <div class="skill-title">
-    <span>Digital Marketing</span>
-    <span>90%</span>
+
+<span>
+    Digital Marketing
+</span>
+
+<span>
+    90%
+</span>
+
 </div>
 
 <div class="skill-track">
-    <div class="skill-fill" data-width="90%"></div>
+
+<div
+    class="skill-fill"
+    data-width="90%"
+></div>
+
 </div>
 
 </div>
@@ -2258,12 +2534,24 @@ footer{
 <div class="skill">
 
 <div class="skill-title">
-    <span>Market Research</span>
-    <span>88%</span>
+
+<span>
+    Market Research
+</span>
+
+<span>
+    88%
+</span>
+
 </div>
 
 <div class="skill-track">
-    <div class="skill-fill" data-width="88%"></div>
+
+<div
+    class="skill-fill"
+    data-width="88%"
+></div>
+
 </div>
 
 </div>
@@ -2272,12 +2560,24 @@ footer{
 <div class="skill">
 
 <div class="skill-title">
-    <span>Data Analysis</span>
-    <span>85%</span>
+
+<span>
+    Data Analysis
+</span>
+
+<span>
+    85%
+</span>
+
 </div>
 
 <div class="skill-track">
-    <div class="skill-fill" data-width="85%"></div>
+
+<div
+    class="skill-fill"
+    data-width="85%"
+></div>
+
 </div>
 
 </div>
@@ -2286,12 +2586,24 @@ footer{
 <div class="skill">
 
 <div class="skill-title">
-    <span>Operations Analysis</span>
-    <span>84%</span>
+
+<span>
+    Operations Analysis
+</span>
+
+<span>
+    84%
+</span>
+
 </div>
 
 <div class="skill-track">
-    <div class="skill-fill" data-width="84%"></div>
+
+<div
+    class="skill-fill"
+    data-width="84%"
+></div>
+
 </div>
 
 </div>
@@ -2300,38 +2612,52 @@ footer{
 <div class="skill">
 
 <div class="skill-title">
-    <span>Problem Solving</span>
-    <span>90%</span>
+
+<span>
+    Problem Solving
+</span>
+
+<span>
+    90%
+</span>
+
 </div>
 
 <div class="skill-track">
-    <div class="skill-fill" data-width="90%"></div>
-</div>
+
+<div
+    class="skill-fill"
+    data-width="90%"
+></div>
 
 </div>
 
+</div>
 
 </div>
 
 
 <div class="glass skill-card reveal">
 
-<h3>Tools & platforms</h3>
+<h3>
+    Tools & platforms
+</h3>
 
 <div class="tool-cloud">
 
-    <span class="tool">MS Excel</span>
-    <span class="tool">PowerPoint</span>
-    <span class="tool">Tableau</span>
-    <span class="tool">Google Sheets</span>
-    <span class="tool">Canva</span>
-    <span class="tool">IBM SPSS</span>
-    <span class="tool">Shopify</span>
-    <span class="tool">WordPress</span>
-    <span class="tool">Google Ads</span>
-    <span class="tool">Google Analytics</span>
+<span class="tool">MS Excel</span>
+<span class="tool">PowerPoint</span>
+<span class="tool">Tableau</span>
+<span class="tool">Google Sheets</span>
+<span class="tool">Canva</span>
+<span class="tool">IBM SPSS</span>
+<span class="tool">Shopify</span>
+<span class="tool">WordPress</span>
+<span class="tool">Google Ads</span>
+<span class="tool">Google Analytics</span>
 
 </div>
+
 
 <h3 style="margin-top:35px;">
     Power skills
@@ -2339,11 +2665,11 @@ footer{
 
 <div class="tool-cloud">
 
-    <span class="tool">Communication</span>
-    <span class="tool">Leadership</span>
-    <span class="tool">Team Camaraderie</span>
-    <span class="tool">Strategic Thinking</span>
-    <span class="tool">Problem Solving</span>
+<span class="tool">Communication</span>
+<span class="tool">Leadership</span>
+<span class="tool">Team Camaraderie</span>
+<span class="tool">Strategic Thinking</span>
+<span class="tool">Problem Solving</span>
 
 </div>
 
@@ -2366,9 +2692,13 @@ footer{
 
 <div class="section-heading reveal">
 
-    <div class="eyebrow">06 — Certifications</div>
+<div class="eyebrow">
+    06 — Certifications
+</div>
 
-    <h2>Always <span class="gradient-text">learning.</span></h2>
+<h2>
+    Always <span class="gradient-text">learning.</span>
+</h2>
 
 </div>
 
@@ -2377,39 +2707,81 @@ footer{
 
 
 <div class="cert reveal">
-    <span class="cert-name">Yellow Belt Six Sigma</span>
-    <span class="cert-date">Jun — Jul 2026</span>
+    <span class="cert-name">
+        Yellow Belt Six Sigma
+    </span>
+
+    <span class="cert-date">
+        Jun — Jul 2026
+    </span>
 </div>
 
-<div class="cert reveal">
-    <span class="cert-name">Data Analyst 101</span>
-    <span class="cert-date">Nov 2025</span>
-</div>
 
 <div class="cert reveal">
-    <span class="cert-name">SEBI Investor Awareness Test</span>
-    <span class="cert-date">Oct 2025</span>
+    <span class="cert-name">
+        Data Analyst 101
+    </span>
+
+    <span class="cert-date">
+        Nov 2025
+    </span>
 </div>
 
-<div class="cert reveal">
-    <span class="cert-name">Bio-Fertilizer & Bio-Coated Agent Training</span>
-    <span class="cert-date">Jul 2024</span>
-</div>
 
 <div class="cert reveal">
-    <span class="cert-name">CME: Advanced Laboratory Techniques</span>
-    <span class="cert-date">May 2023</span>
+    <span class="cert-name">
+        SEBI Investor Awareness Test
+    </span>
+
+    <span class="cert-date">
+        Oct 2025
+    </span>
 </div>
 
-<div class="cert reveal">
-    <span class="cert-name">Digital 101 Journey</span>
-    <span class="cert-date">Jun 2022</span>
-</div>
 
 <div class="cert reveal">
-    <span class="cert-name">Mushroom Cultivation Certification</span>
-    <span class="cert-date">May 2022</span>
+    <span class="cert-name">
+        Bio-Fertilizer & Bio-Coated Agent Training
+    </span>
+
+    <span class="cert-date">
+        Jul 2024
+    </span>
 </div>
+
+
+<div class="cert reveal">
+    <span class="cert-name">
+        CME: Advanced Laboratory Techniques
+    </span>
+
+    <span class="cert-date">
+        May 2023
+    </span>
+</div>
+
+
+<div class="cert reveal">
+    <span class="cert-name">
+        Digital 101 Journey
+    </span>
+
+    <span class="cert-date">
+        Jun 2022
+    </span>
+</div>
+
+
+<div class="cert reveal">
+    <span class="cert-name">
+        Mushroom Cultivation Certification
+    </span>
+
+    <span class="cert-date">
+        May 2022
+    </span>
+</div>
+
 
 </div>
 
@@ -2434,19 +2806,19 @@ footer{
 
 <div>
 
-    <div class="eyebrow">
-        Achievement
-    </div>
+<div class="eyebrow">
+    Achievement
+</div>
 
-    <h3>
-        Vishwakarma Learnbiz Simulation Game
-    </h3>
+<h3>
+    Vishwakarma Learnbiz Simulation Game
+</h3>
 
-    <p>
-        Achieved revenue growth from ₹5 lakhs to ₹21 lakhs
-        in the business simulation game, securing 5th rank
-        among competing teams.
-    </p>
+<p>
+    Achieved revenue growth from ₹5 lakhs to ₹21 lakhs
+    in the business simulation game, securing 5th rank
+    among competing teams.
+</p>
 
 </div>
 
@@ -2467,16 +2839,21 @@ footer{
 
 <div class="section-heading reveal">
 
-    <div class="eyebrow">07 — Contact</div>
+<div class="eyebrow">
+    07 — Contact
+</div>
 
-    <h2>Let's create something<br>
-        <span class="gradient-text">worth building.</span>
-    </h2>
+<h2>
+    Let's create something<br>
+    <span class="gradient-text">
+        worth building.
+    </span>
+</h2>
 
-    <p>
-        Have an opportunity, project or idea?
-        Let's connect.
-    </p>
+<p>
+    Have an opportunity, project or idea?
+    Let's connect.
+</p>
 
 </div>
 
@@ -2484,97 +2861,140 @@ footer{
 <div class="contact-grid">
 
 
+<!-- =====================================================
+     CONTACT INFORMATION
+====================================================== -->
+
 <div class="glass contact-card reveal">
 
-    <h3 style="margin-bottom:18px;">
-        Get in touch
-    </h3>
+<h3 style="margin-bottom:18px;">
+    Get in touch
+</h3>
 
 
-    <a
-        href="mailto:piyushsingh20030610@gmail.com"
-        class="contact-method"
-    >
+<!-- EMAIL -->
 
-        <div class="contact-icon">✉</div>
+<a
+    href="https://mail.google.com/mail/?view=cm&fs=1&to=piyushsingh20030610@gmail.com"
+    target="_blank"
+    rel="noopener noreferrer"
+    class="contact-method"
+>
 
-        <div>
+<div class="contact-icon">
+    ✉
+</div>
 
-            <strong>Email</strong>
+<div>
 
-            <span>
-                piyushsingh20030610@gmail.com
-            </span>
+<strong>
+    Email
+</strong>
 
-        </div>
-
-    </a>
-
-
-    <a
-        href="tel:+918431832821"
-        class="contact-method"
-    >
-
-        <div class="contact-icon">☎</div>
-
-        <div>
-
-            <strong>Phone</strong>
-
-            <span>
-                +91 84318 32821
-            </span>
-
-        </div>
-
-    </a>
-
-
-    <a
-        href="https://www.linkedin.com/in/piyushsingh0610/"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="contact-method"
-    >
-
-        <div class="contact-icon">in</div>
-
-        <div>
-
-            <strong>LinkedIn</strong>
-
-            <span>
-                linkedin.com/in/piyushsingh0610
-            </span>
-
-        </div>
-
-    </a>
-
-
-    <button
-        class="btn btn-ghost"
-        style="width:100%;margin-top:7px;"
-        onclick="copyEmail()"
-    >
-        Copy Email Address
-    </button>
-
-
-    <div
-        id="copyMessage"
-        style="
-        text-align:center;
-        color:#65e0e9;
-        font-size:.75rem;
-        margin-top:9px;
-        min-height:18px;
-        "
-    ></div>
+<span>
+    piyushsingh20030610@gmail.com
+</span>
 
 </div>
 
+</a>
+
+
+<!-- PHONE -->
+
+<a
+    href="tel:+918431832821"
+    class="contact-method"
+>
+
+<div class="contact-icon">
+    ☎
+</div>
+
+<div>
+
+<strong>
+    Phone
+</strong>
+
+<span>
+    +91 84318 32821
+</span>
+
+</div>
+
+</a>
+
+
+<!-- LINKEDIN -->
+
+<a
+    href="https://www.linkedin.com/in/piyushsingh0610/"
+    target="_blank"
+    rel="noopener noreferrer"
+    class="contact-method"
+>
+
+<div class="contact-icon">
+    in
+</div>
+
+<div>
+
+<strong>
+    LinkedIn
+</strong>
+
+<span>
+    linkedin.com/in/piyushsingh0610
+</span>
+
+</div>
+
+</a>
+
+
+<!-- COPY -->
+
+<button
+    type="button"
+    class="btn btn-ghost"
+    style="width:100%;margin-top:7px;"
+    onclick="copyEmail()"
+>
+    Copy Email Address
+</button>
+
+
+<div
+    id="copyMessage"
+    style="
+    text-align:center;
+    color:#65e0e9;
+    font-size:.75rem;
+    margin-top:9px;
+    min-height:18px;
+    "
+></div>
+
+
+<!-- EMAIL APP FALLBACK -->
+
+<button
+    type="button"
+    class="btn btn-ghost"
+    style="width:100%;margin-top:5px;"
+    onclick="openMailApp()"
+>
+    Open Email App
+</button>
+
+</div>
+
+
+<!-- =====================================================
+     WORKING CONTACT FORM
+====================================================== -->
 
 <div class="glass contact-card reveal">
 
@@ -2587,83 +3007,125 @@ footer{
 
 <div class="form-row">
 
-<div class="field">
-
-    <label for="name">
-        Your Name
-    </label>
-
-    <input
-        id="name"
-        type="text"
-        placeholder="Your name"
-        required
-    >
-
-</div>
-
 
 <div class="field">
 
-    <label for="email">
-        Your Email
-    </label>
+<label for="name">
+    Your Name
+</label>
 
-    <input
-        id="email"
-        type="email"
-        placeholder="you@example.com"
-        required
-    >
-
-</div>
+<input
+    id="name"
+    type="text"
+    placeholder="Your name"
+    autocomplete="name"
+    required
+>
 
 </div>
 
 
 <div class="field">
 
-    <label for="subject">
-        Subject
-    </label>
+<label for="senderEmail">
+    Your Email
+</label>
 
-    <input
-        id="subject"
-        type="text"
-        placeholder="Opportunity / Project / Collaboration"
-        required
-    >
+<input
+    id="senderEmail"
+    type="email"
+    placeholder="you@example.com"
+    autocomplete="email"
+    required
+>
+
+</div>
+
 
 </div>
 
 
 <div class="field">
 
-    <label for="message">
-        Message
-    </label>
+<label for="subject">
+    Subject
+</label>
 
-    <textarea
-        id="message"
-        placeholder="Write your message here..."
-        required
-    ></textarea>
+<input
+    id="subject"
+    type="text"
+    placeholder="Opportunity / Collaboration"
+    required
+>
 
 </div>
 
+
+<div class="field">
+
+<label for="message">
+    Message
+</label>
+
+<textarea
+    id="message"
+    placeholder="Write your message here..."
+    required
+></textarea>
+
+</div>
+
+
+<!-- =================================================
+     MAIN SEND BUTTON
+================================================== -->
 
 <button
     type="submit"
     class="btn btn-primary"
     style="width:100%;"
 >
-    Open Email & Send →
+    ✉ Send Message
 </button>
 
 
+<!-- =================================================
+     EMAIL OPTIONS
+================================================== -->
+
+<div
+    class="email-options"
+    id="emailOptions"
+>
+
+<div class="email-options-title">
+    Choose how you want to send the message:
+</div>
+
+
+<button
+    type="button"
+    class="email-option"
+    id="gmailButton"
+>
+    Continue with Gmail
+</button>
+
+
+<button
+    type="button"
+    class="email-option"
+    id="mailAppButton"
+>
+    Continue with Email App
+</button>
+
+</div>
+
+
 <p class="form-note">
-    This form uses your device's email application, so
-    no backend or third-party form service is required.
+    Gmail opens with your message automatically prepared.
+    No backend or form service is required.
 </p>
 
 </form>
@@ -2675,6 +3137,7 @@ footer{
 </div>
 
 </section>
+
 
 </main>
 
@@ -2688,7 +3151,8 @@ footer{
 <div class="container footer-inner">
 
 <p>
-    © <span id="year"></span> Piyush Singh.
+    © <span id="year"></span>
+    Piyush Singh.
     Built with curiosity & code.
 </p>
 
@@ -2696,11 +3160,14 @@ footer{
 <div class="footer-links">
 
 <a
-    href="mailto:piyushsingh20030610@gmail.com"
+    href="https://mail.google.com/mail/?view=cm&fs=1&to=piyushsingh20030610@gmail.com"
+    target="_blank"
+    rel="noopener noreferrer"
     aria-label="Email"
 >
     ✉
 </a>
+
 
 <a
     href="tel:+918431832821"
@@ -2708,6 +3175,7 @@ footer{
 >
     ☎
 </a>
+
 
 <a
     href="https://www.linkedin.com/in/piyushsingh0610/"
@@ -2725,7 +3193,9 @@ footer{
 </footer>
 
 
-<!-- BACK TO TOP -->
+<!-- =====================================================
+     BACK TO TOP
+====================================================== -->
 
 <button
     class="top-btn"
@@ -2739,7 +3209,21 @@ footer{
 <script>
 
 /* =========================================================
-   BASIC SETTINGS
+   YOUR CONTACT INFORMATION
+========================================================= */
+
+const MY_EMAIL =
+    "piyushsingh20030610@gmail.com";
+
+const MY_PHONE =
+    "+918431832821";
+
+const MY_LINKEDIN =
+    "https://www.linkedin.com/in/piyushsingh0610/";
+
+
+/* =========================================================
+   YEAR
 ========================================================= */
 
 document.getElementById("year").textContent =
@@ -2750,73 +3234,133 @@ document.getElementById("year").textContent =
    MOBILE MENU
 ========================================================= */
 
-const menuBtn = document.getElementById("menuBtn");
-const navLinks = document.getElementById("navLinks");
+const menuBtn =
+    document.getElementById("menuBtn");
 
-menuBtn.addEventListener("click", () => {
-    navLinks.classList.toggle("open");
-});
+const navLinks =
+    document.getElementById("navLinks");
 
-document.querySelectorAll(".nav-links a").forEach(link => {
+menuBtn.addEventListener(
+    "click",
+    function(){
 
-    link.addEventListener("click", () => {
-        navLinks.classList.remove("open");
-    });
+        navLinks.classList.toggle("open");
+
+    }
+);
+
+
+document.querySelectorAll(
+    ".nav-links a"
+).forEach(function(link){
+
+    link.addEventListener(
+        "click",
+        function(){
+
+            navLinks.classList.remove("open");
+
+        }
+    );
 
 });
 
 
 /* =========================================================
-   NAVBAR SCROLL
+   NAVBAR
 ========================================================= */
 
-const navbar = document.getElementById("navbar");
+const navbar =
+    document.getElementById("navbar");
 
-window.addEventListener("scroll", () => {
+window.addEventListener(
+    "scroll",
+    function(){
 
-    if(window.scrollY > 30){
-        navbar.classList.add("scrolled");
-    }else{
-        navbar.classList.remove("scrolled");
+        if(window.scrollY > 30){
+
+            navbar.classList.add(
+                "scrolled"
+            );
+
+        }else{
+
+            navbar.classList.remove(
+                "scrolled"
+            );
+
+        }
+
     }
-
-});
+);
 
 
 /* =========================================================
    ACTIVE NAVIGATION
 ========================================================= */
 
-const sections = document.querySelectorAll("section[id]");
+const sections =
+    document.querySelectorAll(
+        "section[id]"
+    );
+
 const navigationLinks =
-    document.querySelectorAll(".nav-links a");
+    document.querySelectorAll(
+        ".nav-links a"
+    );
 
-window.addEventListener("scroll", () => {
+window.addEventListener(
+    "scroll",
+    function(){
 
-    let current = "";
+        let current = "";
 
-    sections.forEach(section => {
+        sections.forEach(
+            function(section){
 
-        const sectionTop =
-            section.offsetTop - 180;
+                const sectionTop =
+                    section.offsetTop - 180;
 
-        if(window.scrollY >= sectionTop){
-            current = section.getAttribute("id");
-        }
+                if(
+                    window.scrollY >=
+                    sectionTop
+                ){
 
-    });
+                    current =
+                        section.getAttribute(
+                            "id"
+                        );
 
-    navigationLinks.forEach(link => {
+                }
 
-        link.classList.remove("active");
+            }
+        );
 
-        if(link.getAttribute("href") === "#" + current){
-            link.classList.add("active");
-        }
 
-    });
+        navigationLinks.forEach(
+            function(link){
 
-});
+                link.classList.remove(
+                    "active"
+                );
+
+                if(
+                    link.getAttribute(
+                        "href"
+                    ) === "#" + current
+                ){
+
+                    link.classList.add(
+                        "active"
+                    );
+
+                }
+
+            }
+        );
+
+    }
+);
 
 
 /* =========================================================
@@ -2824,25 +3368,33 @@ window.addEventListener("scroll", () => {
 ========================================================= */
 
 const revealElements =
-    document.querySelectorAll(".reveal");
+    document.querySelectorAll(
+        ".reveal"
+    );
 
 const revealObserver =
     new IntersectionObserver(
-        entries => {
+        function(entries){
 
-            entries.forEach(entry => {
+            entries.forEach(
+                function(entry){
 
-                if(entry.isIntersecting){
+                    if(
+                        entry.isIntersecting
+                    ){
 
-                    entry.target.classList.add("visible");
+                        entry.target.classList.add(
+                            "visible"
+                        );
 
-                    revealObserver.unobserve(
-                        entry.target
-                    );
+                        revealObserver.unobserve(
+                            entry.target
+                        );
+
+                    }
 
                 }
-
-            });
+            );
 
         },
         {
@@ -2850,38 +3402,49 @@ const revealObserver =
         }
     );
 
-revealElements.forEach(el => {
-    revealObserver.observe(el);
-});
+
+revealElements.forEach(
+    function(element){
+
+        revealObserver.observe(
+            element
+        );
+
+    }
+);
 
 
 /* =========================================================
-   SKILL BAR ANIMATION
+   SKILLS
 ========================================================= */
 
 const skillFills =
-    document.querySelectorAll(".skill-fill");
+    document.querySelectorAll(
+        ".skill-fill"
+    );
 
 const skillObserver =
     new IntersectionObserver(
-        entries => {
+        function(entries){
 
-            entries.forEach(entry => {
+            entries.forEach(
+                function(entry){
 
-                if(entry.isIntersecting){
+                    if(
+                        entry.isIntersecting
+                    ){
 
-                    const width =
-                        entry.target.dataset.width;
+                        entry.target.style.width =
+                            entry.target.dataset.width;
 
-                    entry.target.style.width = width;
+                        skillObserver.unobserve(
+                            entry.target
+                        );
 
-                    skillObserver.unobserve(
-                        entry.target
-                    );
+                    }
 
                 }
-
-            });
+            );
 
         },
         {
@@ -2889,9 +3452,16 @@ const skillObserver =
         }
     );
 
-skillFills.forEach(skill => {
-    skillObserver.observe(skill);
-});
+
+skillFills.forEach(
+    function(skill){
+
+        skillObserver.observe(
+            skill
+        );
+
+    }
+);
 
 
 /* =========================================================
@@ -2900,88 +3470,326 @@ skillFills.forEach(skill => {
 
 function copyEmail(){
 
-    const email =
-        "piyushsingh20030610@gmail.com";
+    if(
+        navigator.clipboard &&
+        window.isSecureContext
+    ){
 
-    navigator.clipboard.writeText(email)
-        .then(() => {
+        navigator.clipboard
+            .writeText(MY_EMAIL)
+            .then(function(){
 
-            document.getElementById(
-                "copyMessage"
-            ).textContent =
-                "✓ Email copied to clipboard";
+                showCopyMessage(
+                    "✓ Email copied"
+                );
 
-            setTimeout(() => {
+            })
+            .catch(function(){
 
-                document.getElementById(
-                    "copyMessage"
-                ).textContent = "";
+                fallbackCopyEmail();
 
-            },2500);
+            });
 
-        })
-        .catch(() => {
+    }else{
 
-            document.getElementById(
-                "copyMessage"
-            ).textContent =
-                "Email: " + email;
+        fallbackCopyEmail();
 
-        });
+    }
+
+}
+
+
+function fallbackCopyEmail(){
+
+    const textarea =
+        document.createElement("textarea");
+
+    textarea.value =
+        MY_EMAIL;
+
+    textarea.style.position =
+        "fixed";
+
+    textarea.style.opacity =
+        "0";
+
+    document.body.appendChild(
+        textarea
+    );
+
+    textarea.select();
+
+    try{
+
+        document.execCommand(
+            "copy"
+        );
+
+        showCopyMessage(
+            "✓ Email copied"
+        );
+
+    }catch(error){
+
+        showCopyMessage(
+            MY_EMAIL
+        );
+
+    }
+
+    document.body.removeChild(
+        textarea
+    );
+
+}
+
+
+function showCopyMessage(
+    message
+){
+
+    const element =
+        document.getElementById(
+            "copyMessage"
+        );
+
+    element.textContent =
+        message;
+
+    setTimeout(
+        function(){
+
+            element.textContent =
+                "";
+
+        },
+        2500
+    );
+
+}
+
+
+/* =========================================================
+   OPEN DEFAULT EMAIL APPLICATION
+========================================================= */
+
+function openMailApp(){
+
+    const subject =
+        "Portfolio Opportunity";
+
+    const body =
+        "Hello Piyush,%0D%0A%0D%0A" +
+        "I would like to connect with you regarding an opportunity.%0D%0A%0D%0A" +
+        "Regards";
+
+    window.location.href =
+        "mailto:" +
+        MY_EMAIL +
+        "?subject=" +
+        encodeURIComponent(subject) +
+        "&body=" +
+        body;
 
 }
 
 
 /* =========================================================
    CONTACT FORM
-   WORKING MAILTO IMPLEMENTATION
 ========================================================= */
 
 const contactForm =
-    document.getElementById("contactForm");
+    document.getElementById(
+        "contactForm"
+    );
 
-contactForm.addEventListener("submit", function(event){
-
-    event.preventDefault();
-
-    const name =
-        document.getElementById("name").value.trim();
-
-    const senderEmail =
-        document.getElementById("email").value.trim();
-
-    const subject =
-        document.getElementById("subject").value.trim();
-
-    const message =
-        document.getElementById("message").value.trim();
+const emailOptions =
+    document.getElementById(
+        "emailOptions"
+    );
 
 
-    const emailBody =
+let preparedGmailURL =
+    "";
+
+let preparedMailtoURL =
+    "";
+
+
+contactForm.addEventListener(
+    "submit",
+    function(event){
+
+        event.preventDefault();
+
+
+        const name =
+            document.getElementById(
+                "name"
+            ).value.trim();
+
+
+        const senderEmail =
+            document.getElementById(
+                "senderEmail"
+            ).value.trim();
+
+
+        const subject =
+            document.getElementById(
+                "subject"
+            ).value.trim();
+
+
+        const message =
+            document.getElementById(
+                "message"
+            ).value.trim();
+
+
+        if(
+            !name ||
+            !senderEmail ||
+            !subject ||
+            !message
+        ){
+
+            alert(
+                "Please fill in all fields."
+            );
+
+            return;
+
+        }
+
+
+        /* ============================================
+           EMAIL CONTENT
+        ============================================ */
+
+        const emailBody =
 `Hello Piyush,
 
 My name is ${name}.
 
-My email: ${senderEmail}
+My email address is:
+${senderEmail}
 
 Message:
+
 ${message}
 
 Regards,
 ${name}`;
 
 
-    const mailtoURL =
-        "mailto:piyushsingh20030610@gmail.com" +
-        "?subject=" +
-        encodeURIComponent(subject) +
-        "&body=" +
-        encodeURIComponent(emailBody);
+        /* ============================================
+           GMAIL COMPOSE URL
+
+           THIS IS THE IMPORTANT FIX.
+
+           It does NOT depend on the visitor
+           having Outlook/Windows Mail/etc.
+        ============================================ */
+
+        preparedGmailURL =
+            "https://mail.google.com/mail/" +
+            "?view=cm" +
+            "&fs=1" +
+            "&to=" +
+            encodeURIComponent(MY_EMAIL) +
+            "&su=" +
+            encodeURIComponent(subject) +
+            "&body=" +
+            encodeURIComponent(emailBody);
 
 
-    window.location.href = mailtoURL;
+        /* ============================================
+           MAILTO FALLBACK
+        ============================================ */
 
-});
+        preparedMailtoURL =
+            "mailto:" +
+            MY_EMAIL +
+            "?subject=" +
+            encodeURIComponent(subject) +
+            "&body=" +
+            encodeURIComponent(emailBody);
+
+
+        /* ============================================
+           SHOW TWO OPTIONS
+        ============================================ */
+
+        emailOptions.classList.add(
+            "show"
+        );
+
+
+        /* ============================================
+           AUTOMATICALLY OPEN GMAIL
+
+           This makes the main button itself
+           functional.
+        ============================================ */
+
+        window.open(
+            preparedGmailURL,
+            "_blank",
+            "noopener,noreferrer"
+        );
+
+    }
+);
+
+
+/* =========================================================
+   GMAIL BUTTON
+========================================================= */
+
+document.getElementById(
+    "gmailButton"
+).addEventListener(
+    "click",
+    function(){
+
+        if(
+            preparedGmailURL
+        ){
+
+            window.open(
+                preparedGmailURL,
+                "_blank",
+                "noopener,noreferrer"
+            );
+
+        }
+
+    }
+);
+
+
+/* =========================================================
+   EMAIL APP BUTTON
+========================================================= */
+
+document.getElementById(
+    "mailAppButton"
+).addEventListener(
+    "click",
+    function(){
+
+        if(
+            preparedMailtoURL
+        ){
+
+            window.location.href =
+                preparedMailtoURL;
+
+        }
+
+    }
+);
 
 
 /* =========================================================
@@ -2989,26 +3797,45 @@ ${name}`;
 ========================================================= */
 
 const topBtn =
-    document.getElementById("topBtn");
+    document.getElementById(
+        "topBtn"
+    );
 
-window.addEventListener("scroll", () => {
+window.addEventListener(
+    "scroll",
+    function(){
 
-    if(window.scrollY > 500){
-        topBtn.classList.add("show");
-    }else{
-        topBtn.classList.remove("show");
+        if(
+            window.scrollY > 500
+        ){
+
+            topBtn.classList.add(
+                "show"
+            );
+
+        }else{
+
+            topBtn.classList.remove(
+                "show"
+            );
+
+        }
+
     }
+);
 
-});
 
-topBtn.addEventListener("click", () => {
+topBtn.addEventListener(
+    "click",
+    function(){
 
-    window.scrollTo({
-        top:0,
-        behavior:"smooth"
-    });
+        window.scrollTo({
+            top:0,
+            behavior:"smooth"
+        });
 
-});
+    }
+);
 
 
 /* =========================================================
@@ -3016,22 +3843,26 @@ topBtn.addEventListener("click", () => {
 ========================================================= */
 
 const canvas =
-    document.getElementById("oceanCanvas");
+    document.getElementById(
+        "oceanCanvas"
+    );
 
 const ctx =
     canvas.getContext("2d");
 
 let particles = [];
 
+
 function resizeCanvas(){
 
+    const ratio =
+        window.devicePixelRatio || 1;
+
     canvas.width =
-        window.innerWidth *
-        window.devicePixelRatio;
+        window.innerWidth * ratio;
 
     canvas.height =
-        window.innerHeight *
-        window.devicePixelRatio;
+        window.innerHeight * ratio;
 
     canvas.style.width =
         window.innerWidth + "px";
@@ -3039,18 +3870,29 @@ function resizeCanvas(){
     canvas.style.height =
         window.innerHeight + "px";
 
-    ctx.scale(
-        window.devicePixelRatio,
-        window.devicePixelRatio
+    ctx.setTransform(
+        ratio,
+        0,
+        0,
+        ratio,
+        0,
+        0
     );
 
 }
 
+
 resizeCanvas();
+
 
 window.addEventListener(
     "resize",
-    resizeCanvas
+    function(){
+
+        resizeCanvas();
+        createParticles();
+
+    }
 );
 
 
@@ -3060,23 +3902,34 @@ function createParticles(){
 
     const amount =
         Math.min(
-            80,
-            Math.floor(window.innerWidth / 18)
+            85,
+            Math.floor(
+                window.innerWidth / 18
+            )
         );
 
-    for(let i=0;i<amount;i++){
+
+    for(
+        let i=0;
+        i<amount;
+        i++
+    ){
 
         particles.push({
 
-            x:Math.random()*window.innerWidth,
+            x:
+                Math.random() *
+                window.innerWidth,
 
-            y:Math.random()*window.innerHeight,
+            y:
+                Math.random() *
+                window.innerHeight,
 
             radius:
-                Math.random()*2.2+.4,
+                Math.random() * 2.2 + .4,
 
             speed:
-                Math.random()*.35+.08,
+                Math.random() * .35 + .08,
 
             drift:
                 (Math.random()-.5)*.25,
@@ -3089,6 +3942,7 @@ function createParticles(){
     }
 
 }
+
 
 createParticles();
 
@@ -3103,50 +3957,71 @@ function animateOcean(){
     );
 
 
-    particles.forEach(p => {
+    particles.forEach(
+        function(p){
 
-        p.y -= p.speed;
+            p.y -= p.speed;
 
-        p.x += p.drift;
+            p.x += p.drift;
 
 
-        if(p.y < -10){
+            if(
+                p.y < -10
+            ){
 
-            p.y =
-                window.innerHeight + 10;
+                p.y =
+                    window.innerHeight + 10;
 
-            p.x =
-                Math.random()*window.innerWidth;
+                p.x =
+                    Math.random() *
+                    window.innerWidth;
+
+            }
+
+
+            if(
+                p.x < -10
+            ){
+
+                p.x =
+                    window.innerWidth + 10;
+
+            }
+
+
+            if(
+                p.x >
+                window.innerWidth + 10
+            ){
+
+                p.x = -10;
+
+            }
+
+
+            ctx.beginPath();
+
+            ctx.arc(
+                p.x,
+                p.y,
+                p.radius,
+                0,
+                Math.PI * 2
+            );
+
+
+            ctx.fillStyle =
+                `rgba(
+                    101,
+                    224,
+                    233,
+                    ${p.opacity}
+                )`;
+
+            ctx.fill();
 
         }
-
-
-        if(p.x < -10){
-            p.x = window.innerWidth + 10;
-        }
-
-        if(p.x > window.innerWidth + 10){
-            p.x = -10;
-        }
-
-
-        ctx.beginPath();
-
-        ctx.arc(
-            p.x,
-            p.y,
-            p.radius,
-            0,
-            Math.PI*2
-        );
-
-
-        ctx.fillStyle =
-            `rgba(101,224,233,${p.opacity})`;
-
-        ctx.fill();
-
-    });
+    );
 
 
     requestAnimationFrame(
@@ -3155,64 +4030,31 @@ function animateOcean(){
 
 }
 
+
 animateOcean();
 
 
 /* =========================================================
-   SUBTLE CURSOR GLOW
-========================================================= */
-
-let mouseX = 0;
-let mouseY = 0;
-
-const cursorGlow =
-    document.createElement("div");
-
-cursorGlow.style.position = "fixed";
-cursorGlow.style.width = "220px";
-cursorGlow.style.height = "220px";
-cursorGlow.style.borderRadius = "50%";
-cursorGlow.style.pointerEvents = "none";
-cursorGlow.style.zIndex = "-1";
-cursorGlow.style.background =
-    "radial-gradient(circle, rgba(40,197,213,.08), transparent 70%)";
-cursorGlow.style.transform =
-    "translate(-50%,-50%)";
-
-document.body.appendChild(cursorGlow);
-
-window.addEventListener("mousemove", e => {
-
-    mouseX = e.clientX;
-    mouseY = e.clientY;
-
-    cursorGlow.style.left =
-        mouseX + "px";
-
-    cursorGlow.style.top =
-        mouseY + "px";
-
-});
-
-
-/* =========================================================
-   IMAGE FALLBACK
+   IMAGE ERROR HANDLING
 ========================================================= */
 
 document.querySelectorAll(
     ".profile-image img"
-).forEach(img => {
+).forEach(
+    function(img){
 
-    img.addEventListener(
-        "error",
-        () => {
+        img.addEventListener(
+            "error",
+            function(){
 
-            img.style.display = "none";
+                img.style.display =
+                    "none";
 
-        }
-    );
+            }
+        );
 
-});
+    }
+);
 
 </script>
 
