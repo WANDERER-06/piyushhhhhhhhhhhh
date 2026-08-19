@@ -1,66 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
 
 <meta charset="UTF-8">
 
-<meta name="viewport"
-content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Piyush Singh | Digital Marketing & Operations</title>
 
-<meta name="description"
-content="Piyush Singh — MBA Digital Marketing & Operations portfolio.">
+<meta
+name="description"
+content="Piyush Singh — MBA Digital Marketing & Operations portfolio."
+>
 
 <style>
 
 /* =========================================================
-   COSMIC MOONLIGHT DESIGN SYSTEM
+   GLOBAL
 ========================================================= */
 
 :root{
 
-    --space-black:#02040a;
-    --space-deep:#050814;
-    --space-blue:#081323;
-    --space-indigo:#0c1426;
+    --black:#000000;
+    --space:#020204;
+    --space2:#05070b;
 
-    --moon-white:#f4f8ff;
-    --moon-light:#dce8f7;
-    --moon-silver:#b8c9dc;
+    --blue:#0ba4b8;
+    --cyan:#55e6ef;
+    --cyan2:#9cfaff;
 
-    --ice-blue:#a9d8ff;
-    --electric-blue:#76c8ff;
-    --soft-blue:#6ca8d9;
+    --white:#f4fbff;
+    --muted:#9aafb5;
 
-    --muted:#8fa5bc;
-
-    --glass:
-        rgba(16,27,45,.50);
-
-    --glass-light:
-        rgba(196,220,246,.055);
-
-    --border:
-        rgba(185,215,245,.16);
-
-    --border-bright:
-        rgba(185,225,255,.32);
-
-    --shadow:
-        rgba(0,0,0,.50);
-
-    --radius:24px;
+    --glass:rgba(5,9,14,.68);
+    --border:rgba(85,230,239,.14);
 
     --max:1180px;
 
 }
-
-
-/* =========================================================
-   RESET
-========================================================= */
 
 *{
     margin:0;
@@ -76,32 +53,15 @@ body{
 
     font-family:
     Inter,
-    ui-sans-serif,
     system-ui,
     -apple-system,
     BlinkMacSystemFont,
     "Segoe UI",
     sans-serif;
 
-    color:var(--moon-white);
+    color:var(--white);
 
-    background:
-        radial-gradient(
-            ellipse at 50% 0%,
-            rgba(39,77,124,.18),
-            transparent 45%
-        ),
-        radial-gradient(
-            ellipse at 15% 70%,
-            rgba(32,57,100,.14),
-            transparent 38%
-        ),
-        radial-gradient(
-            ellipse at 85% 35%,
-            rgba(49,71,112,.10),
-            transparent 38%
-        ),
-        var(--space-black);
+    background:#000;
 
     line-height:1.6;
 
@@ -111,10 +71,10 @@ body{
 
 
 /* =========================================================
-   COSMIC CANVAS
+   BLACK HOLE BACKGROUND
 ========================================================= */
 
-#cosmosCanvas{
+#blackHoleCanvas{
 
     position:fixed;
 
@@ -127,123 +87,85 @@ body{
 
     pointer-events:none;
 
+    background:
+    radial-gradient(
+        circle at 50% 50%,
+        #090b0f 0%,
+        #020204 30%,
+        #000000 70%
+    );
+
 }
 
 
-/* =========================================================
-   NEBULA LAYERS
-========================================================= */
+/* dark cinematic overlay */
 
-.nebula{
+.space-overlay{
 
     position:fixed;
 
-    border-radius:50%;
-
-    filter:blur(100px);
-
-    pointer-events:none;
+    inset:0;
 
     z-index:-8;
 
-    opacity:.12;
-
-    animation:
-        nebulaFloat
-        18s
-        ease-in-out
-        infinite
-        alternate;
-
-}
-
-.nebula-one{
-
-    width:650px;
-    height:420px;
-
-    top:-200px;
-    left:-200px;
+    pointer-events:none;
 
     background:
-        radial-gradient(
-            ellipse,
-            #4979bd,
-            #172d5a,
-            transparent 70%
-        );
+
+    radial-gradient(
+        ellipse at center,
+        transparent 0%,
+        rgba(0,0,0,.05) 35%,
+        rgba(0,0,0,.58) 80%,
+        rgba(0,0,0,.9) 100%
+    );
 
 }
 
-.nebula-two{
+
+/* subtle blue atmosphere */
+
+.space-blue-glow{
+
+    position:fixed;
 
     width:700px;
-    height:500px;
+    height:700px;
 
-    right:-300px;
-    top:25%;
+    left:50%;
+    top:50%;
 
-    background:
-        radial-gradient(
-            ellipse,
-            #6c91c2,
-            #263a68,
-            transparent 70%
-        );
+    transform:
+    translate(-50%,-50%);
 
-    animation-delay:3s;
-
-}
-
-.nebula-three{
-
-    width:650px;
-    height:420px;
-
-    bottom:-250px;
-    left:25%;
+    border-radius:50%;
 
     background:
-        radial-gradient(
-            ellipse,
-            #305b92,
-            #101d3a,
-            transparent 70%
-        );
+    radial-gradient(
+        circle,
+        rgba(7,91,105,.10),
+        transparent 65%
+    );
 
-    animation-delay:7s;
+    filter:blur(50px);
 
-}
+    pointer-events:none;
 
-
-@keyframes nebulaFloat{
-
-    from{
-        transform:
-            translate3d(0,0,0)
-            scale(1);
-    }
-
-    to{
-        transform:
-            translate3d(60px,-35px,0)
-            scale(1.15);
-    }
+    z-index:-7;
 
 }
 
 
 /* =========================================================
-   GLOBAL
+   CONTAINER
 ========================================================= */
 
 .container{
 
-    width:
-        min(
-            var(--max),
-            calc(100% - 40px)
-        );
+    width:min(
+        var(--max),
+        calc(100% - 40px)
+    );
 
     margin:auto;
 
@@ -251,25 +173,38 @@ body{
 
 section{
 
-    padding:110px 0;
-
     position:relative;
+
+    padding:110px 0;
 
     z-index:2;
 
 }
 
+a{
 
-.section-heading{
+    color:inherit;
 
-    margin-bottom:55px;
+    text-decoration:none;
+
+}
+
+button,
+input,
+textarea{
+
+    font:inherit;
 
 }
 
 
+/* =========================================================
+   TYPOGRAPHY
+========================================================= */
+
 .eyebrow{
 
-    color:var(--ice-blue);
+    color:var(--cyan);
 
     font-size:.72rem;
 
@@ -279,54 +214,96 @@ section{
 
     text-transform:uppercase;
 
-    margin-bottom:12px;
+    margin-bottom:13px;
 
 }
 
+.section-heading{
+
+    margin-bottom:55px;
+
+}
 
 .section-heading h2{
 
     font-size:
-        clamp(
-            2.1rem,
-            5vw,
-            3.7rem
-        );
+    clamp(
+        2.1rem,
+        5vw,
+        3.7rem
+    );
 
-    line-height:1.04;
+    line-height:1.02;
 
-    letter-spacing:-2px;
+    letter-spacing:-2.5px;
 
 }
 
-
 .section-heading p{
 
-    max-width:680px;
-
     color:var(--muted);
+
+    max-width:690px;
 
     margin-top:16px;
 
 }
 
-
 .gradient-text{
 
     background:
-        linear-gradient(
-            105deg,
-            #ffffff 5%,
-            #d9ebff 35%,
-            #82caff 75%,
-            #b9d9ff 100%
-        );
+    linear-gradient(
+        100deg,
+        #ffffff,
+        #7af2fa 45%,
+        #0ba4b8
+    );
 
     -webkit-background-clip:text;
 
     background-clip:text;
 
     color:transparent;
+
+}
+
+
+/* =========================================================
+   GLASS
+========================================================= */
+
+.glass{
+
+    border:
+
+    1px solid
+    rgba(
+        85,
+        230,
+        239,
+        .13
+    );
+
+    background:
+
+    linear-gradient(
+        145deg,
+        rgba(10,16,22,.72),
+        rgba(2,3,6,.72)
+    );
+
+    backdrop-filter:
+    blur(14px);
+
+    -webkit-backdrop-filter:
+    blur(14px);
+
+    border-radius:24px;
+
+    box-shadow:
+
+    0 25px 80px
+    rgba(0,0,0,.35);
 
 }
 
@@ -351,29 +328,27 @@ section{
 
 }
 
-
 .navbar.scrolled{
 
     background:
-        rgba(2,4,10,.76);
+    rgba(0,0,0,.72);
 
     backdrop-filter:
-        blur(20px);
+    blur(18px);
 
     border-bottom:
-        1px solid
-        rgba(190,220,250,.10);
+    1px solid
+    rgba(85,230,239,.10);
 
 }
-
 
 .nav-inner{
 
     width:
-        min(
-            var(--max),
-            calc(100% - 30px)
-        );
+    min(
+        var(--max),
+        calc(100% - 30px)
+    );
 
     margin:auto;
 
@@ -383,22 +358,22 @@ section{
 
     justify-content:space-between;
 
-    padding:10px 18px;
+    padding:
+    10px 18px;
 
     border:
-        1px solid
-        rgba(185,215,245,.10);
+    1px solid
+    rgba(85,230,239,.10);
 
     border-radius:18px;
 
     background:
-        rgba(10,18,31,.38);
+    rgba(2,3,5,.48);
 
     backdrop-filter:
-        blur(16px);
+    blur(15px);
 
 }
-
 
 .logo{
 
@@ -414,7 +389,6 @@ section{
 
 }
 
-
 .logo-dot{
 
     width:10px;
@@ -424,19 +398,13 @@ section{
     border-radius:50%;
 
     background:
-        radial-gradient(
-            circle at 35% 30%,
-            #ffffff,
-            #8ecbff 45%,
-            #467aa5
-        );
+    var(--cyan);
 
     box-shadow:
-        0 0 15px
-        rgba(151,211,255,.9);
+    0 0 20px
+    var(--cyan);
 
 }
-
 
 .nav-links{
 
@@ -448,32 +416,32 @@ section{
 
 }
 
-
 .nav-links a{
 
-    color:#aabbd0;
+    display:block;
 
-    padding:9px 13px;
+    padding:
+    9px 13px;
+
+    color:#9fb4b9;
+
+    font-size:.85rem;
 
     border-radius:10px;
-
-    font-size:.86rem;
 
     transition:.25s;
 
 }
 
-
 .nav-links a:hover,
 .nav-links a.active{
 
-    color:#ffffff;
+    color:white;
 
     background:
-        rgba(188,220,250,.08);
+    rgba(85,230,239,.08);
 
 }
-
 
 .menu-btn{
 
@@ -506,18 +474,14 @@ section{
 
     padding-top:120px;
 
-    overflow:hidden;
-
 }
-
 
 .hero-grid{
 
     display:grid;
 
     grid-template-columns:
-        1.2fr
-        .8fr;
+    1.15fr .85fr;
 
     gap:60px;
 
@@ -525,36 +489,35 @@ section{
 
 }
 
-
 .hero-kicker{
 
     display:inline-flex;
 
     align-items:center;
 
-    gap:10px;
+    gap:9px;
 
-    padding:7px 13px;
+    padding:
+    7px 12px;
 
     border:
-        1px solid
-        rgba(178,216,249,.16);
+    1px solid
+    rgba(85,230,239,.14);
 
     background:
-        rgba(140,190,235,.055);
+    rgba(85,230,239,.035);
 
     border-radius:100px;
 
-    color:#c5ddf5;
+    color:#a5eaf0;
 
-    font-size:.76rem;
+    font-size:.75rem;
 
-    font-weight:700;
+    font-weight:800;
 
     margin-bottom:25px;
 
 }
-
 
 .live-dot{
 
@@ -562,21 +525,18 @@ section{
 
     height:7px;
 
+    background:#7affd4;
+
     border-radius:50%;
 
-    background:#dff4ff;
-
     box-shadow:
-        0 0 12px
-        #9dd9ff;
+    0 0 15px
+    #7affd4;
 
     animation:
-        pulse
-        1.7s
-        infinite;
+    pulse 1.6s infinite;
 
 }
-
 
 @keyframes pulse{
 
@@ -590,35 +550,33 @@ section{
 
 }
 
-
 .hero h1{
 
     font-size:
-        clamp(
-            3.3rem,
-            7vw,
-            6.8rem
-        );
+    clamp(
+        3.3rem,
+        7vw,
+        6.7rem
+    );
 
-    line-height:.91;
+    line-height:.92;
 
     letter-spacing:-6px;
 
 }
 
-
 .hero-description{
-
-    color:#9aadc2;
 
     max-width:650px;
 
-    font-size:1.05rem;
+    color:var(--muted);
 
-    margin:28px 0;
+    font-size:1.03rem;
+
+    margin:
+    28px 0;
 
 }
-
 
 .hero-actions{
 
@@ -630,7 +588,6 @@ section{
 
 }
 
-
 .btn{
 
     display:inline-flex;
@@ -639,9 +596,10 @@ section{
 
     justify-content:center;
 
-    gap:9px;
+    gap:8px;
 
-    padding:13px 19px;
+    padding:
+    13px 19px;
 
     border-radius:13px;
 
@@ -652,71 +610,59 @@ section{
     cursor:pointer;
 
     border:
-        1px solid
-        var(--border);
+    1px solid
+    rgba(85,230,239,.15);
 
-    transition:.28s;
+    transition:.25s;
 
 }
-
 
 .btn-primary{
 
-    color:#07101c;
+    color:#001014;
 
     background:
-        linear-gradient(
-            135deg,
-            #f7fbff,
-            #b9dcfa
-        );
+    var(--cyan);
 
     box-shadow:
-        0 12px 35px
-        rgba(132,193,239,.15);
+    0 10px 40px
+    rgba(85,230,239,.12);
 
 }
-
 
 .btn-primary:hover{
 
     transform:
-        translateY(-3px);
+    translateY(-3px);
 
     box-shadow:
-        0 18px 45px
-        rgba(151,210,255,.25);
+    0 16px 50px
+    rgba(85,230,239,.25);
 
 }
-
 
 .btn-ghost{
 
-    background:
-        rgba(190,220,250,.035);
+    color:white;
 
-    color:#edf6ff;
+    background:
+    rgba(255,255,255,.025);
 
 }
-
 
 .btn-ghost:hover{
 
     background:
-        rgba(190,220,250,.10);
-
-    border-color:
-        var(--border-bright);
+    rgba(85,230,239,.08);
 
     transform:
-        translateY(-3px);
+    translateY(-3px);
 
 }
 
-
 .hero-contact{
 
-    margin-top:32px;
+    margin-top:30px;
 
     display:flex;
 
@@ -726,41 +672,34 @@ section{
 
 }
 
-
 .contact-chip{
 
-    display:flex;
-
-    align-items:center;
-
-    gap:8px;
-
-    color:#8fa7be;
-
-    font-size:.83rem;
-
-    padding:8px 11px;
+    padding:
+    8px 11px;
 
     border:
-        1px solid
-        rgba(190,220,250,.09);
+    1px solid
+    rgba(85,230,239,.10);
 
     border-radius:11px;
+
+    color:#8daeb3;
+
+    font-size:.78rem;
 
     transition:.2s;
 
 }
-
 
 .contact-chip:hover{
 
     color:white;
 
     border-color:
-        rgba(190,220,250,.25);
+    rgba(85,230,239,.28);
 
     background:
-        rgba(190,220,250,.05);
+    rgba(85,230,239,.05);
 
 }
 
@@ -777,55 +716,47 @@ section{
 
 }
 
-
 .profile-card{
 
     width:
-        min(
-            380px,
-            100%
-        );
+    min(
+        380px,
+        100%
+    );
 
-    padding:15px;
+    padding:14px;
 
     border:
-        1px solid
-        rgba(205,230,255,.20);
+    1px solid
+    rgba(85,230,239,.15);
 
     border-radius:34px;
 
     background:
-
-        linear-gradient(
-            145deg,
-            rgba(214,232,249,.11),
-            rgba(10,19,33,.72)
-        );
+    linear-gradient(
+        145deg,
+        rgba(10,25,31,.78),
+        rgba(0,0,0,.8)
+    );
 
     box-shadow:
-
-        0 25px 80px
-        rgba(0,0,0,.45),
-
-        inset 0 1px 0
-        rgba(255,255,255,.08);
+    0 25px 90px
+    rgba(0,0,0,.6);
 
     transform:
-        rotate(2deg);
+    rotate(2deg);
 
     transition:.5s;
 
 }
 
-
 .profile-card:hover{
 
     transform:
-        rotate(0deg)
-        translateY(-8px);
+    rotate(0deg)
+    translateY(-8px);
 
 }
-
 
 .profile-image{
 
@@ -838,12 +769,11 @@ section{
     border-radius:25px;
 
     background:
-
-        linear-gradient(
-            145deg,
-            #1b3149,
-            #060b14
-        );
+    linear-gradient(
+        145deg,
+        #0b3e48,
+        #020305
+    );
 
     display:flex;
 
@@ -853,11 +783,9 @@ section{
 
 }
 
-
 .profile-image img{
 
     width:100%;
-
     height:100%;
 
     object-fit:cover;
@@ -865,7 +793,6 @@ section{
     display:block;
 
 }
-
 
 .profile-placeholder{
 
@@ -881,12 +808,11 @@ section{
 
     flex-direction:column;
 
-    color:#bdddf7;
-
     text-align:center;
 
-}
+    color:#8cecf2;
 
+}
 
 .profile-placeholder strong{
 
@@ -894,25 +820,20 @@ section{
 
 }
 
-
 .profile-placeholder span{
 
-    font-size:.74rem;
+    color:#73959a;
 
-    color:#819bb5;
+    font-size:.72rem;
 
 }
-
 
 .profile-info{
 
     padding:
-        17px
-        8px
-        7px;
+    17px 8px 7px;
 
 }
-
 
 .profile-info h3{
 
@@ -920,72 +841,11 @@ section{
 
 }
 
-
 .profile-info p{
 
-    color:#8fa7be;
+    color:#7e9ba0;
 
-    font-size:.84rem;
-
-}
-
-
-/* =========================================================
-   MOONLIGHT GLASS CARDS
-========================================================= */
-
-.glass{
-
-    border:
-        1px solid
-        rgba(196,220,246,.14);
-
-    background:
-
-        linear-gradient(
-            145deg,
-            rgba(145,181,218,.075),
-            rgba(10,18,31,.58)
-        );
-
-    backdrop-filter:
-        blur(18px);
-
-    -webkit-backdrop-filter:
-        blur(18px);
-
-    border-radius:
-        var(--radius);
-
-    box-shadow:
-
-        0 20px 65px
-        rgba(0,0,0,.28),
-
-        inset 0 1px 0
-        rgba(255,255,255,.045);
-
-}
-
-
-.glass::after{
-
-    content:"";
-
-    position:absolute;
-
-    inset:0;
-
-    border-radius:inherit;
-
-    pointer-events:none;
-
-    background:
-        linear-gradient(
-            120deg,
-            rgba(255,255,255,.035),
-            transparent 35%
-        );
+    font-size:.83rem;
 
 }
 
@@ -999,82 +859,69 @@ section{
     display:grid;
 
     grid-template-columns:
-        .8fr
-        1.2fr;
+    .8fr 1.2fr;
 
     gap:25px;
 
 }
 
-
 .about-card{
 
     padding:35px;
 
-    position:relative;
-
 }
-
 
 .about-card h3{
 
-    font-size:1.4rem;
-
     margin-bottom:15px;
 
-}
+    font-size:1.4rem;
 
+}
 
 .about-card p{
 
-    color:#9aacbf;
+    color:var(--muted);
 
 }
-
 
 .fact-grid{
 
     display:grid;
 
     grid-template-columns:
-        repeat(2,1fr);
+    repeat(2,1fr);
 
     gap:14px;
 
 }
 
-
 .fact{
 
     padding:25px;
 
-    position:relative;
+    background:
+    rgba(3,6,9,.67);
 
 }
 
-
 .fact-number{
+
+    color:var(--cyan);
 
     font-size:2rem;
 
     font-weight:900;
 
-    color:#cbe7ff;
-
-    text-shadow:
-        0 0 25px
-        rgba(145,205,255,.22);
-
 }
-
 
 .fact span{
 
     display:block;
 
-    color:#8298ae;
+    color:#7f9da2;
 
-    font-size:.79rem;
+    font-size:.78rem;
 
 }
 
@@ -1091,7 +938,6 @@ section{
 
 }
 
-
 .timeline::before{
 
     content:"";
@@ -1107,14 +953,12 @@ section{
     width:1px;
 
     background:
-
-        linear-gradient(
-            #9bd4ff,
-            rgba(155,212,255,.04)
-        );
+    linear-gradient(
+        var(--cyan),
+        rgba(85,230,239,.02)
+    );
 
 }
-
 
 .timeline-item{
 
@@ -1125,7 +969,6 @@ section{
     margin-bottom:28px;
 
 }
-
 
 .timeline-dot{
 
@@ -1140,33 +983,23 @@ section{
     height:15px;
 
     background:
-        radial-gradient(
-            circle at 35% 30%,
-            white,
-            #9ed7ff
-        );
+    var(--cyan);
 
     border-radius:50%;
 
     box-shadow:
-
-        0 0 0 5px
-        rgba(150,210,250,.07),
-
-        0 0 20px
-        rgba(150,210,250,.55);
+    0 0 0 5px
+    rgba(85,230,239,.06),
+    0 0 22px
+    rgba(85,230,239,.6);
 
 }
-
 
 .experience-card{
 
     padding:27px;
 
-    position:relative;
-
 }
-
 
 .card-top{
 
@@ -1178,46 +1011,41 @@ section{
 
 }
 
-
 .card-top h3{
 
-    font-size:1.25rem;
+    font-size:1.2rem;
 
 }
-
 
 .card-company{
 
-    color:#a8d5f5;
+    color:
+    var(--cyan);
+
+    font-size:.88rem;
 
     font-weight:700;
 
-    font-size:.9rem;
-
 }
-
 
 .date{
 
     white-space:nowrap;
 
-    color:#7f95aa;
+    color:#759398;
 
-    font-size:.77rem;
+    font-size:.75rem;
 
-    padding:6px 10px;
+    padding:
+    6px 10px;
 
     border:
-        1px solid
-        rgba(190,220,250,.13);
+    1px solid
+    var(--border);
 
     border-radius:9px;
 
-    background:
-        rgba(200,225,250,.025);
-
 }
-
 
 .card-list{
 
@@ -1225,10 +1053,9 @@ section{
 
     padding-left:19px;
 
-    color:#95a9bc;
+    color:var(--muted);
 
 }
-
 
 .card-list li{
 
@@ -1246,18 +1073,15 @@ section{
     display:grid;
 
     grid-template-columns:
-        repeat(2,1fr);
+    repeat(2,1fr);
 
     gap:18px;
 
 }
 
-
 .project-card{
 
     padding:28px;
-
-    position:relative;
 
     overflow:hidden;
 
@@ -1265,31 +1089,22 @@ section{
 
 }
 
-
 .project-card:hover{
 
     transform:
-        translateY(-7px);
+    translateY(-7px);
 
     border-color:
-        rgba(190,225,255,.28);
-
-    box-shadow:
-
-        0 25px 70px
-        rgba(0,0,0,.38),
-
-        inset 0 1px 0
-        rgba(255,255,255,.07);
+    rgba(85,230,239,.28);
 
 }
 
-
 .project-number{
 
-    font-size:.72rem;
+    color:
+    var(--cyan);
 
-    color:#9fd3f5;
+    font-size:.72rem;
 
     font-weight:900;
 
@@ -1297,27 +1112,22 @@ section{
 
 }
 
-
 .project-card h3{
 
     margin:
-        11px
-        0
-        8px;
+    11px 0 8px;
 
-    font-size:1.2rem;
+    font-size:1.18rem;
 
 }
-
 
 .project-card p{
 
-    color:#91a5b9;
+    color:var(--muted);
 
-    font-size:.88rem;
+    font-size:.86rem;
 
 }
-
 
 .project-tags{
 
@@ -1331,25 +1141,23 @@ section{
 
 }
 
-
 .tag{
 
     padding:
-        5px
-        9px;
+    5px 9px;
+
+    border:
+    1px solid
+    rgba(85,230,239,.11);
 
     border-radius:8px;
 
-    border:
-        1px solid
-        rgba(185,220,250,.12);
+    color:#91d6dc;
 
     background:
-        rgba(190,220,250,.045);
+    rgba(85,230,239,.035);
 
-    color:#a9c9e3;
-
-    font-size:.7rem;
+    font-size:.69rem;
 
 }
 
@@ -1363,46 +1171,38 @@ section{
     display:grid;
 
     grid-template-columns:
-        repeat(4,1fr);
+    repeat(4,1fr);
 
     gap:13px;
 
 }
 
-
 .metric{
-
-    text-align:center;
 
     padding:27px 15px;
 
-    position:relative;
+    text-align:center;
 
 }
-
 
 .metric strong{
 
     display:block;
 
-    font-size:2.25rem;
+    color:
+    var(--cyan);
 
-    color:#d3eaff;
+    font-size:2.2rem;
 
     line-height:1;
 
-    text-shadow:
-        0 0 25px
-        rgba(140,205,255,.15);
-
 }
-
 
 .metric span{
 
-    color:#8298ad;
+    color:#77969b;
 
-    font-size:.75rem;
+    font-size:.74rem;
 
 }
 
@@ -1416,12 +1216,11 @@ section{
     display:grid;
 
     grid-template-columns:
-        repeat(3,1fr);
+    repeat(3,1fr);
 
     gap:18px;
 
 }
-
 
 .edu-card{
 
@@ -1429,10 +1228,7 @@ section{
 
     min-height:260px;
 
-    position:relative;
-
 }
-
 
 .edu-icon{
 
@@ -1446,39 +1242,34 @@ section{
 
     justify-content:center;
 
-    border-radius:15px;
+    border:
+    1px solid
+    var(--border);
 
     background:
-        rgba(190,220,250,.07);
+    rgba(85,230,239,.05);
 
-    border:
-        1px solid
-        rgba(190,220,250,.13);
-
-    font-size:1.25rem;
+    border-radius:15px;
 
     margin-bottom:25px;
 
 }
 
-
 .edu-card h3{
 
-    font-size:1.05rem;
+    font-size:1.03rem;
 
 }
 
-
 .edu-card p{
 
-    color:#91a6ba;
+    color:var(--muted);
 
-    font-size:.84rem;
+    font-size:.82rem;
 
     margin-top:9px;
 
 }
-
 
 .edu-year{
 
@@ -1486,9 +1277,10 @@ section{
 
     margin-top:17px;
 
-    color:#a8d5f5;
+    color:
+    var(--cyan);
 
-    font-size:.75rem;
+    font-size:.73rem;
 
     font-weight:800;
 
@@ -1496,31 +1288,45 @@ section{
 
 
 /* =========================================================
-   CAMPUS PHOTO SECTION
+   CAMPUS
 ========================================================= */
 
-.campus-photo{
+.campus-image{
 
-    aspect-ratio:16/9 !important;
+    aspect-ratio:16/9;
+
+    overflow:hidden;
+
+    position:relative;
+
+    border-radius:18px;
+
+    background:
+    linear-gradient(
+        145deg,
+        #0c3d45,
+        #010204
+    );
 
 }
 
+.campus-image img{
 
-.campus-photo img{
+    width:100%;
+    height:100%;
 
-    transition:
-        transform
-        .6s
-        ease;
+    object-fit:cover;
 
 }
 
+.campus-image .profile-placeholder{
 
-.project-card:hover
-.campus-photo img{
-
-    transform:
-        scale(1.04);
+    background:
+    linear-gradient(
+        145deg,
+        rgba(5,50,59,.7),
+        rgba(0,0,0,.85)
+    );
 
 }
 
@@ -1534,29 +1340,23 @@ section{
     display:grid;
 
     grid-template-columns:
-        1fr
-        1fr;
+    1fr 1fr;
 
     gap:20px;
 
 }
 
-
 .skill-card{
 
     padding:28px;
 
-    position:relative;
-
 }
-
 
 .skill{
 
     margin-bottom:22px;
 
 }
-
 
 .skill-title{
 
@@ -1566,24 +1366,23 @@ section{
 
     margin-bottom:8px;
 
-    font-size:.82rem;
+    font-size:.81rem;
 
 }
-
 
 .skill-title span:last-child{
 
-    color:#a9d8f7;
+    color:
+    var(--cyan);
 
 }
-
 
 .skill-track{
 
     height:6px;
 
     background:
-        rgba(255,255,255,.055);
+    rgba(255,255,255,.05);
 
     border-radius:20px;
 
@@ -1591,34 +1390,25 @@ section{
 
 }
 
-
 .skill-fill{
 
-    height:100%;
-
     width:0;
+
+    height:100%;
 
     border-radius:20px;
 
     background:
-
-        linear-gradient(
-            90deg,
-            #4c7ca8,
-            #b9e1ff
-        );
+    linear-gradient(
+        90deg,
+        #075665,
+        #55e6ef
+    );
 
     transition:
-        width
-        1.5s
-        ease;
-
-    box-shadow:
-        0 0 12px
-        rgba(150,215,255,.22);
+    width 1.5s ease;
 
 }
-
 
 .tool-cloud{
 
@@ -1632,25 +1422,23 @@ section{
 
 }
 
-
 .tool{
 
     padding:
-        9px
-        12px;
+    9px 12px;
+
+    border:
+    1px solid
+    var(--border);
 
     border-radius:11px;
 
     background:
-        rgba(190,220,250,.045);
+    rgba(85,230,239,.035);
 
-    border:
-        1px solid
-        rgba(190,220,250,.11);
+    color:#a3c9cd;
 
-    color:#abc7df;
-
-    font-size:.78rem;
+    font-size:.76rem;
 
 }
 
@@ -1664,31 +1452,31 @@ section{
     display:grid;
 
     grid-template-columns:
-        repeat(2,1fr);
+    repeat(2,1fr);
 
     gap:12px;
 
 }
 
-
 .cert{
 
     display:flex;
 
-    justify-content:space-between;
-
     align-items:center;
 
+    justify-content:space-between;
+
+    gap:15px;
+
     padding:
-        18px
-        20px;
+    18px 20px;
 
     border:
-        1px solid
-        rgba(190,220,250,.12);
+    1px solid
+    var(--border);
 
     background:
-        rgba(180,215,245,.035);
+    rgba(4,7,10,.65);
 
     border-radius:15px;
 
@@ -1696,32 +1484,29 @@ section{
 
 }
 
-
 .cert:hover{
 
-    background:
-        rgba(190,220,250,.075);
-
     transform:
-        translateX(5px);
+    translateX(5px);
+
+    background:
+    rgba(85,230,239,.05);
 
 }
-
 
 .cert-name{
 
-    font-weight:700;
+    font-size:.87rem;
 
-    font-size:.9rem;
+    font-weight:700;
 
 }
 
-
 .cert-date{
 
-    color:#738ca3;
+    color:#708c91;
 
-    font-size:.72rem;
+    font-size:.71rem;
 
 }
 
@@ -1734,9 +1519,7 @@ section{
 
     display:grid;
 
-    grid-template-columns:
-        auto
-        1fr;
+    grid-template-columns:auto 1fr;
 
     gap:25px;
 
@@ -1744,10 +1527,7 @@ section{
 
     padding:35px;
 
-    position:relative;
-
 }
-
 
 .achievement-icon{
 
@@ -1761,28 +1541,22 @@ section{
 
     justify-content:center;
 
+    border:
+    1px solid
+    var(--border);
+
     border-radius:22px;
 
     background:
-
-        linear-gradient(
-            145deg,
-            rgba(220,238,255,.11),
-            rgba(30,48,70,.35)
-        );
-
-    border:
-        1px solid
-        rgba(190,220,250,.14);
+    rgba(85,230,239,.05);
 
     font-size:2rem;
 
 }
 
-
 .achievement p{
 
-    color:#91a6ba;
+    color:var(--muted);
 
     margin-top:7px;
 
@@ -1798,59 +1572,52 @@ section{
     display:grid;
 
     grid-template-columns:
-        .8fr
-        1.2fr;
+    .8fr 1.2fr;
 
     gap:20px;
 
 }
 
-
 .contact-card{
 
     padding:30px;
 
-    position:relative;
-
 }
-
 
 .contact-method{
 
     display:flex;
 
-    gap:15px;
-
     align-items:center;
+
+    gap:15px;
 
     padding:16px;
 
-    border-radius:15px;
+    margin-bottom:10px;
 
     border:
-        1px solid
-        rgba(190,220,250,.11);
+    1px solid
+    var(--border);
+
+    border-radius:15px;
 
     background:
-        rgba(190,220,250,.035);
-
-    margin-bottom:10px;
+    rgba(85,230,239,.025);
 
     transition:.2s;
 
 }
 
-
 .contact-method:hover{
 
-    background:
-        rgba(190,220,250,.075);
-
     transform:
-        translateX(4px);
+    translateX(4px);
+
+    background:
+    rgba(85,230,239,.07);
 
 }
-
 
 .contact-icon{
 
@@ -1867,45 +1634,43 @@ section{
     border-radius:12px;
 
     background:
-        rgba(190,220,250,.07);
+    rgba(85,230,239,.08);
 
-    color:#b8ddfa;
+    color:
+    var(--cyan);
 
 }
-
 
 .contact-method strong{
 
     display:block;
 
-    font-size:.86rem;
+    font-size:.84rem;
 
 }
 
-
 .contact-method span{
 
-    color:#8198ad;
+    display:block;
 
-    font-size:.78rem;
+    color:#78969b;
+
+    font-size:.76rem;
 
     word-break:break-word;
 
 }
-
 
 .form-row{
 
     display:grid;
 
     grid-template-columns:
-        1fr
-        1fr;
+    1fr 1fr;
 
     gap:12px;
 
 }
-
 
 .field{
 
@@ -1913,54 +1678,42 @@ section{
 
 }
 
-
 .field label{
 
     display:block;
 
     margin-bottom:7px;
 
-    font-size:.76rem;
+    color:#86a5aa;
 
-    color:#8ea6bb;
+    font-size:.75rem;
 
 }
-
 
 .field input,
 .field textarea{
 
     width:100%;
 
-    border:
-        1px solid
-        rgba(190,220,250,.13);
-
-    background:
-        rgba(0,0,0,.18);
-
-    color:white;
-
     outline:none;
+
+    border:
+    1px solid
+    var(--border);
 
     border-radius:12px;
 
+    background:
+    rgba(0,0,0,.3);
+
+    color:white;
+
     padding:
-        13px
-        14px;
+    13px 14px;
 
     transition:.2s;
 
 }
-
-
-.field input::placeholder,
-.field textarea::placeholder{
-
-    color:#596f85;
-
-}
-
 
 .field textarea{
 
@@ -1970,34 +1723,27 @@ section{
 
 }
 
-
 .field input:focus,
 .field textarea:focus{
 
     border-color:
-        rgba(175,220,255,.45);
+    var(--cyan);
 
     box-shadow:
-        0 0 0 3px
-        rgba(150,210,255,.055);
+    0 0 0 3px
+    rgba(85,230,239,.06);
 
 }
-
 
 .form-note{
 
     margin-top:10px;
 
-    color:#667f96;
+    color:#607c81;
 
-    font-size:.72rem;
+    font-size:.7rem;
 
 }
-
-
-/* =========================================================
-   EMAIL OPTIONS
-========================================================= */
 
 .email-options{
 
@@ -2008,16 +1754,15 @@ section{
     padding:12px;
 
     border:
-        1px solid
-        rgba(190,220,250,.14);
+    1px solid
+    var(--border);
 
     border-radius:14px;
 
     background:
-        rgba(3,7,15,.86);
+    rgba(0,0,0,.8);
 
 }
-
 
 .email-options.show{
 
@@ -2025,50 +1770,41 @@ section{
 
 }
 
-
 .email-options-title{
 
-    color:#8fa8bf;
+    color:#86a6ab;
 
-    font-size:.75rem;
-
-    margin-bottom:9px;
+    font-size:.73rem;
 
 }
 
-
 .email-option{
-
-    display:block;
 
     width:100%;
 
+    margin-top:7px;
+
     padding:10px;
 
-    margin-top:6px;
+    border:
+    1px solid
+    var(--border);
 
     border-radius:10px;
 
-    border:
-        1px solid
-        rgba(190,220,250,.12);
-
     background:
-        rgba(190,220,250,.045);
+    rgba(85,230,239,.04);
 
     color:white;
-
-    text-align:center;
 
     cursor:pointer;
 
 }
 
-
 .email-option:hover{
 
     background:
-        rgba(190,220,250,.10);
+    rgba(85,230,239,.09);
 
 }
 
@@ -2082,11 +1818,10 @@ footer{
     padding:35px 0;
 
     border-top:
-        1px solid
-        rgba(190,220,250,.09);
+    1px solid
+    rgba(85,230,239,.10);
 
 }
-
 
 .footer-inner{
 
@@ -2100,15 +1835,13 @@ footer{
 
 }
 
-
 .footer-inner p{
 
-    color:#657d93;
+    color:#5f7c81;
 
-    font-size:.78rem;
+    font-size:.75rem;
 
 }
-
 
 .footer-links{
 
@@ -2118,14 +1851,11 @@ footer{
 
 }
 
-
 .footer-links a{
 
     width:36px;
 
     height:36px;
-
-    border-radius:10px;
 
     display:flex;
 
@@ -2134,10 +1864,12 @@ footer{
     justify-content:center;
 
     border:
-        1px solid
-        rgba(190,220,250,.13);
+    1px solid
+    var(--border);
 
-    color:#a5c3dd;
+    border-radius:10px;
+
+    color:#90aeb3;
 
 }
 
@@ -2164,14 +1896,14 @@ footer{
 
     justify-content:center;
 
+    border:
+    1px solid
+    var(--border);
+
     border-radius:13px;
 
-    border:
-        1px solid
-        rgba(190,220,250,.16);
-
     background:
-        rgba(8,15,26,.86);
+    rgba(0,0,0,.85);
 
     color:white;
 
@@ -2186,7 +1918,6 @@ footer{
     z-index:900;
 
 }
-
 
 .top-btn.show{
 
@@ -2206,14 +1937,13 @@ footer{
     opacity:0;
 
     transform:
-        translateY(30px);
+    translateY(30px);
 
     transition:
-        opacity .7s ease,
-        transform .7s ease;
+    opacity .7s ease,
+    transform .7s ease;
 
 }
-
 
 .reveal.visible{
 
@@ -2239,13 +1969,11 @@ footer{
 
     }
 
-
     .profile-wrap{
 
         order:-1;
 
     }
-
 
     .profile-card{
 
@@ -2253,24 +1981,21 @@ footer{
 
     }
 
-
     .education-grid{
 
         grid-template-columns:
-            1fr 1fr;
+        1fr 1fr;
 
     }
-
 
     .metrics{
 
         grid-template-columns:
-            repeat(2,1fr);
+        repeat(2,1fr);
 
     }
 
 }
-
 
 @media(max-width:720px){
 
@@ -2280,24 +2005,18 @@ footer{
 
     }
 
-
     .container{
 
         width:
-            min(
-                100% - 28px,
-                var(--max)
-            );
+        calc(100% - 28px);
 
     }
-
 
     .menu-btn{
 
         display:block;
 
     }
-
 
     .nav-links{
 
@@ -2316,19 +2035,18 @@ footer{
         padding:10px;
 
         border:
-            1px solid
-            rgba(190,220,250,.14);
-
-        background:
-            rgba(3,6,13,.97);
-
-        backdrop-filter:
-            blur(20px);
+        1px solid
+        var(--border);
 
         border-radius:16px;
 
-    }
+        background:
+        rgba(0,0,0,.95);
 
+        backdrop-filter:
+        blur(20px);
+
+    }
 
     .nav-links.open{
 
@@ -2336,20 +2054,18 @@ footer{
 
     }
 
-
     .hero h1{
 
         font-size:
-            clamp(
-                3rem,
-                16vw,
-                5rem
-            );
+        clamp(
+            3rem,
+            16vw,
+            5rem
+        );
 
         letter-spacing:-4px;
 
     }
-
 
     .hero-actions{
 
@@ -2357,13 +2073,11 @@ footer{
 
     }
 
-
     .btn{
 
         width:100%;
 
     }
-
 
     .fact-grid,
     .project-grid,
@@ -2374,21 +2088,11 @@ footer{
 
     }
 
-
-    .metrics{
-
-        grid-template-columns:
-            1fr 1fr;
-
-    }
-
-
     .form-row{
 
         grid-template-columns:1fr;
 
     }
-
 
     .card-top{
 
@@ -2396,13 +2100,11 @@ footer{
 
     }
 
-
     .achievement{
 
         grid-template-columns:1fr;
 
     }
-
 
     .footer-inner{
 
@@ -2415,22 +2117,23 @@ footer{
 }
 
 
+/* =========================================================
+   ACCESSIBILITY
+========================================================= */
+
 @media(prefers-reduced-motion:reduce){
 
     *,
     *::before,
     *::after{
 
-        animation-duration:
-            .01ms !important;
+        animation-duration:.01ms !important;
 
-        animation-iteration-count:
-            1 !important;
+        animation-iteration-count:1 !important;
 
         scroll-behavior:auto !important;
 
-        transition-duration:
-            .01ms !important;
+        transition-duration:.01ms !important;
 
     }
 
@@ -2445,27 +2148,31 @@ footer{
 
 
 <!-- =====================================================
-     COSMIC BACKGROUND
+     REALISTIC BLACK HOLE CANVAS
 ====================================================== -->
 
-<canvas id="cosmosCanvas"></canvas>
+<canvas id="blackHoleCanvas"></canvas>
 
-<div class="nebula nebula-one"></div>
+<div class="space-overlay"></div>
 
-<div class="nebula nebula-two"></div>
-
-<div class="nebula nebula-three"></div>
+<div class="space-blue-glow"></div>
 
 
 <!-- =====================================================
-     NAVBAR
+     NAVIGATION
 ====================================================== -->
 
-<header class="navbar" id="navbar">
+<header
+class="navbar"
+id="navbar"
+>
 
 <div class="nav-inner">
 
-<a href="#home" class="logo">
+<a
+href="#home"
+class="logo"
+>
 
 <span class="logo-dot"></span>
 
@@ -2475,9 +2182,9 @@ PIYUSH SINGH
 
 
 <button
-    class="menu-btn"
-    id="menuBtn"
-    aria-label="Open navigation"
+class="menu-btn"
+id="menuBtn"
+aria-label="Open navigation"
 >
 
 ☰
@@ -2487,10 +2194,16 @@ PIYUSH SINGH
 
 <nav>
 
-<ul class="nav-links" id="navLinks">
+<ul
+class="nav-links"
+id="navLinks"
+>
 
 <li>
-<a href="#home" class="active">
+<a
+href="#home"
+class="active"
+>
 Home
 </a>
 </li>
@@ -2541,12 +2254,20 @@ Contact
 
 
 <!-- =====================================================
-     HERO
+     MAIN
 ====================================================== -->
 
 <main>
 
-<section class="hero" id="home">
+
+<!-- =====================================================
+     HERO
+====================================================== -->
+
+<section
+class="hero"
+id="home"
+>
 
 <div class="container">
 
@@ -2566,12 +2287,9 @@ OPEN TO OPPORTUNITIES
 
 <h1>
 
-Building ideas
-
-<br>
+Building ideas<br>
 
 that move
-
 <span class="gradient-text">
 forward.
 </span>
@@ -2593,8 +2311,8 @@ with structured problem solving.
 
 
 <a
-    href="#projects"
-    class="btn btn-primary"
+href="#projects"
+class="btn btn-primary"
 >
 
 Explore My Work →
@@ -2603,10 +2321,10 @@ Explore My Work →
 
 
 <a
-    href="https://mail.google.com/mail/?view=cm&fs=1&to=piyushsingh20030610@gmail.com&su=Portfolio%20Opportunity"
-    target="_blank"
-    rel="noopener noreferrer"
-    class="btn btn-ghost"
+href="https://mail.google.com/mail/?view=cm&fs=1&to=piyushsingh20030610@gmail.com&su=Portfolio%20Opportunity"
+target="_blank"
+rel="noopener noreferrer"
+class="btn btn-ghost"
 >
 
 ✉ Email Me
@@ -2615,10 +2333,10 @@ Explore My Work →
 
 
 <a
-    href="https://www.linkedin.com/in/piyushsingh0610/"
-    target="_blank"
-    rel="noopener noreferrer"
-    class="btn btn-ghost"
+href="https://www.linkedin.com/in/piyushsingh0610/"
+target="_blank"
+rel="noopener noreferrer"
+class="btn btn-ghost"
 >
 
 ↗ LinkedIn
@@ -2633,10 +2351,10 @@ Explore My Work →
 
 
 <a
-    class="contact-chip"
-    href="https://mail.google.com/mail/?view=cm&fs=1&to=piyushsingh20030610@gmail.com"
-    target="_blank"
-    rel="noopener noreferrer"
+class="contact-chip"
+href="https://mail.google.com/mail/?view=cm&fs=1&to=piyushsingh20030610@gmail.com"
+target="_blank"
+rel="noopener noreferrer"
 >
 
 ✉
@@ -2646,8 +2364,8 @@ piyushsingh20030610@gmail.com
 
 
 <a
-    class="contact-chip"
-    href="tel:+918431832821"
+class="contact-chip"
+href="tel:+918431832821"
 >
 
 ☎
@@ -2661,27 +2379,30 @@ piyushsingh20030610@gmail.com
 </div>
 
 
-<!-- PROFILE -->
+<!-- =====================================================
+     PROFILE PHOTO
+====================================================== -->
 
 <div class="profile-wrap reveal">
 
 <div class="profile-card">
 
-
 <div class="profile-image">
 
-
 <img
-    src="assets/profile.jpg"
-    alt="Piyush Singh"
-    onerror="this.style.display='none';document.getElementById('profilePlaceholder').style.display='flex';"
+src="assets/profile.jpg"
+alt="Piyush Singh"
+onerror="
+this.style.display='none';
+document.getElementById('profilePlaceholder').style.display='flex';
+"
 >
 
 
 <div
-    class="profile-placeholder"
-    id="profilePlaceholder"
-    style="display:none;"
+class="profile-placeholder"
+id="profilePlaceholder"
+style="display:none;"
 >
 
 <strong>
@@ -2690,16 +2411,13 @@ PS
 
 <span>
 
-Add your photo at
-
-<br>
+Add your photo at<br>
 
 assets/profile.jpg
 
 </span>
 
 </div>
-
 
 </div>
 
@@ -2715,7 +2433,6 @@ MBA — Digital Marketing & Operations
 </p>
 
 </div>
-
 
 </div>
 
@@ -2737,26 +2454,21 @@ MBA — Digital Marketing & Operations
 
 <div class="container">
 
-
 <div class="section-heading reveal">
 
 <div class="eyebrow">
 01 — About
 </div>
 
-
 <h2>
 
-A marketer with an
-
-<br>
+A marketer with an<br>
 
 <span class="gradient-text">
 analytical mindset.
 </span>
 
 </h2>
-
 
 <p>
 
@@ -2777,7 +2489,6 @@ analytics, operations and business strategy.
 What I bring
 </h3>
 
-
 <p>
 
 I enjoy understanding how people, processes and data
@@ -2787,9 +2498,7 @@ practical ways to improve performance.
 
 </p>
 
-
 <br>
-
 
 <p>
 
@@ -2875,19 +2584,15 @@ Digital Product Revenue
 
 <div class="container">
 
-
 <div class="section-heading reveal">
 
 <div class="eyebrow">
 02 — Experience
 </div>
 
-
 <h2>
 
-Where I have
-
-<br>
+Where I have<br>
 
 <span class="gradient-text">
 learned by doing.
@@ -2905,11 +2610,9 @@ learned by doing.
 
 <span class="timeline-dot"></span>
 
-
 <div class="glass experience-card">
 
 <div class="card-top">
-
 
 <div>
 
@@ -2923,14 +2626,11 @@ Cognizen Innovations
 
 </div>
 
-
 <div class="date">
 Jun 2026 — Jul 2026
 </div>
 
-
 </div>
-
 
 <ul class="card-list">
 
@@ -2961,11 +2661,9 @@ to build an initial outreach pipeline for SIP services.
 
 <span class="timeline-dot"></span>
 
-
 <div class="glass experience-card">
 
 <div class="card-top">
-
 
 <div>
 
@@ -2979,14 +2677,11 @@ AIR FORCE Summer Coaching Camp
 
 </div>
 
-
 <div class="date">
 May 2025 — Jun 2025
 </div>
 
-
 </div>
-
 
 <ul class="card-list">
 
@@ -3012,11 +2707,9 @@ skill acquisition and performance growth.
 
 <span class="timeline-dot"></span>
 
-
 <div class="glass experience-card">
 
 <div class="card-top">
-
 
 <div>
 
@@ -3030,14 +2723,11 @@ Bhushan Badminton Academy
 
 </div>
 
-
 <div class="date">
 Jun 2023 — Jul 2023
 </div>
 
-
 </div>
-
 
 <ul class="card-list">
 
@@ -3062,11 +2752,9 @@ to keep tournament schedules running without delays.
 
 <span class="timeline-dot"></span>
 
-
 <div class="glass experience-card">
 
 <div class="card-top">
-
 
 <div>
 
@@ -3080,14 +2768,11 @@ Belagavi Bio-Center
 
 </div>
 
-
 <div class="date">
 Jun 2024 — Jul 2024
 </div>
 
-
 </div>
-
 
 <ul class="card-list">
 
@@ -3128,19 +2813,15 @@ on Bio-Fertilizers and Bio-Control Agents.
 
 <div class="container">
 
-
 <div class="section-heading reveal">
 
 <div class="eyebrow">
 03 — Selected Work
 </div>
 
-
 <h2>
 
-Projects that turn
-
-<br>
+Projects that turn<br>
 
 <span class="gradient-text">
 problems into possibilities.
@@ -3165,9 +2846,11 @@ Lean Six Sigma Approach to Public Transport Efficiency
 </h3>
 
 <p>
+
 Applied DMAIC, SIPOC mapping, Fishbone diagrams and
 Pareto charts to analyze terminal bottlenecks,
 congestion and passenger delays.
+
 </p>
 
 <div class="project-tags">
@@ -3204,9 +2887,11 @@ Digital Campaign Creation & SEO Optimization
 </h3>
 
 <p>
+
 Optimized website content for first-page Google SERP
 ranking and executed Google Ads campaigns generating
 92.4K+ impressions and 257 clicks.
+
 </p>
 
 <div class="project-tags">
@@ -3243,9 +2928,11 @@ Digital Product Creation & Marketing
 </h3>
 
 <p>
+
 Developed and launched a digital kids colouring book
 supported by a landing page and social media promotion,
 generating 25+ customer engagements and ₹10,000+ revenue.
+
 </p>
 
 <div class="project-tags">
@@ -3282,9 +2969,11 @@ Affiliate Marketing — August Bioscience
 </h3>
 
 <p>
+
 Orchestrated 5+ affiliate marketing campaigns across
 social platforms, achieving a 10% lead conversion rate
 and contributing to 5% online sales growth.
+
 </p>
 
 <div class="project-tags">
@@ -3317,9 +3006,11 @@ Unbranded to Branded — AttarVibez
 </h3>
 
 <p>
+
 Developed brand identity and integrated marketing
 strategies for an attar and perfume product line,
 including positioning and go-to-market planning.
+
 </p>
 
 <div class="project-tags">
@@ -3356,9 +3047,11 @@ Amul Supply Chain & Operations Analysis
 </h3>
 
 <p>
+
 Analyzed procurement, production, inventory,
 warehousing and distribution while identifying gaps
 in inventory planning and logistics.
+
 </p>
 
 <div class="project-tags">
@@ -3395,9 +3088,11 @@ HP World Supply Chain & Inventory Optimization
 </h3>
 
 <p>
+
 Analyzed a 4-tier HP supply chain, diagnosed operational
 risks and recommended high-frequency spare parts with
 buffer stock to improve availability.
+
 </p>
 
 <div class="project-tags">
@@ -3508,19 +3203,15 @@ Estimated AttarVibez Margin
 
 <div class="container">
 
-
 <div class="section-heading reveal">
 
 <div class="eyebrow">
 04 — Education
 </div>
 
-
 <h2>
 
-Learning across
-
-<br>
+Learning across<br>
 
 <span class="gradient-text">
 business & science.
@@ -3625,19 +3316,15 @@ Aug 2020 — May 2021
 
 <div class="container">
 
-
 <div class="section-heading reveal">
 
 <div class="eyebrow">
 Campus
 </div>
 
-
 <h2>
 
-Places that shaped
-
-<br>
+Places that shaped<br>
 
 <span class="gradient-text">
 my journey.
@@ -3653,16 +3340,15 @@ my journey.
 
 <div class="glass project-card reveal">
 
-<div
-    class="profile-image campus-photo"
->
+<div class="campus-image">
 
 <img
-    src="assets/lpu.jpg"
-    alt="Lovely Professional University"
-    onerror="this.style.display='none';"
+src="assets/lpu.jpg"
+alt="Lovely Professional University"
+onerror="
+this.style.display='none';
+"
 >
-
 
 <div class="profile-placeholder">
 
@@ -3671,15 +3357,13 @@ my journey.
 </strong>
 
 <span>
-Add LPU campus photo
-<br>
+Add LPU campus photo<br>
 assets/lpu.jpg
 </span>
 
 </div>
 
 </div>
-
 
 <h3>
 Lovely Professional University
@@ -3694,16 +3378,15 @@ MBA — Digital Marketing & Operations
 
 <div class="glass project-card reveal">
 
-<div
-    class="profile-image campus-photo"
->
+<div class="campus-image">
 
 <img
-    src="assets/kle.jpg"
-    alt="KLE Society's Raja Lakhmagouda Science Institute"
-    onerror="this.style.display='none';"
+src="assets/kle.jpg"
+alt="KLE College"
+onerror="
+this.style.display='none';
+"
 >
-
 
 <div class="profile-placeholder">
 
@@ -3712,15 +3395,13 @@ MBA — Digital Marketing & Operations
 </strong>
 
 <span>
-Add college photo
-<br>
+Add college photo<br>
 assets/kle.jpg
 </span>
 
 </div>
 
 </div>
-
 
 <h3>
 KLE Society's Raja Lakhmagouda Science Institute
@@ -3735,16 +3416,15 @@ Bachelor's in Biotechnology & Zoology
 
 <div class="glass project-card reveal">
 
-<div
-    class="profile-image campus-photo"
->
+<div class="campus-image">
 
 <img
-    src="assets/kv-school.jpg"
-    alt="KV No.1 Sambra"
-    onerror="this.style.display='none';"
+src="assets/kv-school.jpg"
+alt="KV No.1 Sambra"
+onerror="
+this.style.display='none';
+"
 >
-
 
 <div class="profile-placeholder">
 
@@ -3753,15 +3433,13 @@ Bachelor's in Biotechnology & Zoology
 </strong>
 
 <span>
-Add school photo
-<br>
+Add school photo<br>
 assets/kv-school.jpg
 </span>
 
 </div>
 
 </div>
-
 
 <h3>
 KV No.1, Sambra
@@ -3789,19 +3467,15 @@ Science Stream
 
 <div class="container">
 
-
 <div class="section-heading reveal">
 
 <div class="eyebrow">
 05 — Skills
 </div>
 
-
 <h2>
 
-Tools, thinking &
-
-<br>
+Tools, thinking &<br>
 
 <span class="gradient-text">
 execution.
@@ -3836,12 +3510,11 @@ Digital Marketing
 
 </div>
 
-
 <div class="skill-track">
 
 <div
-    class="skill-fill"
-    data-width="90%"
+class="skill-fill"
+data-width="90%"
 ></div>
 
 </div>
@@ -3863,12 +3536,11 @@ Market Research
 
 </div>
 
-
 <div class="skill-track">
 
 <div
-    class="skill-fill"
-    data-width="88%"
+class="skill-fill"
+data-width="88%"
 ></div>
 
 </div>
@@ -3890,12 +3562,11 @@ Data Analysis
 
 </div>
 
-
 <div class="skill-track">
 
 <div
-    class="skill-fill"
-    data-width="85%"
+class="skill-fill"
+data-width="85%"
 ></div>
 
 </div>
@@ -3917,12 +3588,11 @@ Operations Analysis
 
 </div>
 
-
 <div class="skill-track">
 
 <div
-    class="skill-fill"
-    data-width="84%"
+class="skill-fill"
+data-width="84%"
 ></div>
 
 </div>
@@ -3944,12 +3614,11 @@ Problem Solving
 
 </div>
 
-
 <div class="skill-track">
 
 <div
-    class="skill-fill"
-    data-width="90%"
+class="skill-fill"
+data-width="90%"
 ></div>
 
 </div>
@@ -3962,11 +3631,9 @@ Problem Solving
 
 <div class="glass skill-card reveal">
 
-
 <h3>
 Tools & platforms
 </h3>
-
 
 <div class="tool-cloud">
 
@@ -4017,7 +3684,6 @@ Google Analytics
 Power skills
 </h3>
 
-
 <div class="tool-cloud">
 
 <span class="tool">
@@ -4042,8 +3708,8 @@ Problem Solving
 
 </div>
 
-
 </div>
+
 
 </div>
 
@@ -4060,18 +3726,15 @@ Problem Solving
 
 <div class="container">
 
-
 <div class="section-heading reveal">
 
 <div class="eyebrow">
 06 — Certifications
 </div>
 
-
 <h2>
 
 Always
-
 <span class="gradient-text">
 learning.
 </span>
@@ -4190,14 +3853,11 @@ May 2022
 
 <div class="container">
 
-
 <div class="glass achievement reveal">
-
 
 <div class="achievement-icon">
 🏆
 </div>
-
 
 <div>
 
@@ -4205,21 +3865,19 @@ May 2022
 Achievement
 </div>
 
-
 <h3>
 Vishwakarma Learnbiz Simulation Game
 </h3>
 
-
 <p>
+
 Achieved revenue growth from ₹5 lakhs to ₹21 lakhs
 in the business simulation game, securing 5th rank
 among competing teams.
+
 </p>
 
-
 </div>
-
 
 </div>
 
@@ -4236,19 +3894,15 @@ among competing teams.
 
 <div class="container">
 
-
 <div class="section-heading reveal">
 
 <div class="eyebrow">
 07 — Contact
 </div>
 
-
 <h2>
 
-Let's create something
-
-<br>
+Let's create something<br>
 
 <span class="gradient-text">
 worth building.
@@ -4256,12 +3910,10 @@ worth building.
 
 </h2>
 
-
 <p>
 Have an opportunity, project or idea?
 Let's connect.
 </p>
-
 
 </div>
 
@@ -4273,23 +3925,21 @@ Let's connect.
 
 <div class="glass contact-card reveal">
 
-
 <h3 style="margin-bottom:18px;">
 Get in touch
 </h3>
 
 
 <a
-    href="https://mail.google.com/mail/?view=cm&fs=1&to=piyushsingh20030610@gmail.com"
-    target="_blank"
-    rel="noopener noreferrer"
-    class="contact-method"
+href="https://mail.google.com/mail/?view=cm&fs=1&to=piyushsingh20030610@gmail.com"
+target="_blank"
+rel="noopener noreferrer"
+class="contact-method"
 >
 
 <div class="contact-icon">
 ✉
 </div>
-
 
 <div>
 
@@ -4307,14 +3957,13 @@ piyushsingh20030610@gmail.com
 
 
 <a
-    href="tel:+918431832821"
-    class="contact-method"
+href="tel:+918431832821"
+class="contact-method"
 >
 
 <div class="contact-icon">
 ☎
 </div>
-
 
 <div>
 
@@ -4332,16 +3981,15 @@ Phone
 
 
 <a
-    href="https://www.linkedin.com/in/piyushsingh0610/"
-    target="_blank"
-    rel="noopener noreferrer"
-    class="contact-method"
+href="https://www.linkedin.com/in/piyushsingh0610/"
+target="_blank"
+rel="noopener noreferrer"
+class="contact-method"
 >
 
 <div class="contact-icon">
 in
 </div>
-
 
 <div>
 
@@ -4359,10 +4007,10 @@ linkedin.com/in/piyushsingh0610
 
 
 <button
-    type="button"
-    class="btn btn-ghost"
-    style="width:100%;margin-top:7px;"
-    onclick="copyEmail()"
+type="button"
+class="btn btn-ghost"
+style="width:100%;margin-top:7px;"
+onclick="copyEmail()"
 >
 
 Copy Email Address
@@ -4371,28 +4019,27 @@ Copy Email Address
 
 
 <div
-    id="copyMessage"
-    style="
-    text-align:center;
-    color:#a9d8ff;
-    font-size:.75rem;
-    margin-top:9px;
-    min-height:18px;
-    "
+id="copyMessage"
+style="
+text-align:center;
+color:#55e6ef;
+font-size:.75rem;
+margin-top:9px;
+min-height:18px;
+"
 ></div>
 
 
 <button
-    type="button"
-    class="btn btn-ghost"
-    style="width:100%;margin-top:5px;"
-    onclick="openMailApp()"
+type="button"
+class="btn btn-ghost"
+style="width:100%;margin-top:5px;"
+onclick="openMailApp()"
 >
 
 Open Email App
 
 </button>
-
 
 </div>
 
@@ -4400,7 +4047,6 @@ Open Email App
 <!-- CONTACT FORM -->
 
 <div class="glass contact-card reveal">
-
 
 <h3 style="margin-bottom:20px;">
 Send me a message
@@ -4420,11 +4066,11 @@ Your Name
 </label>
 
 <input
-    id="name"
-    type="text"
-    placeholder="Your name"
-    autocomplete="name"
-    required
+id="name"
+type="text"
+placeholder="Your name"
+autocomplete="name"
+required
 >
 
 </div>
@@ -4437,11 +4083,11 @@ Your Email
 </label>
 
 <input
-    id="senderEmail"
-    type="email"
-    placeholder="you@example.com"
-    autocomplete="email"
-    required
+id="senderEmail"
+type="email"
+placeholder="you@example.com"
+autocomplete="email"
+required
 >
 
 </div>
@@ -4457,10 +4103,10 @@ Subject
 </label>
 
 <input
-    id="subject"
-    type="text"
-    placeholder="Opportunity / Collaboration"
-    required
+id="subject"
+type="text"
+placeholder="Opportunity / Collaboration"
+required
 >
 
 </div>
@@ -4473,18 +4119,18 @@ Message
 </label>
 
 <textarea
-    id="message"
-    placeholder="Write your message here..."
-    required
+id="message"
+placeholder="Write your message here..."
+required
 ></textarea>
 
 </div>
 
 
 <button
-    type="submit"
-    class="btn btn-primary"
-    style="width:100%;"
+type="submit"
+class="btn btn-primary"
+style="width:100%;"
 >
 
 ✉ Send Message
@@ -4493,10 +4139,9 @@ Message
 
 
 <div
-    class="email-options"
-    id="emailOptions"
+class="email-options"
+id="emailOptions"
 >
-
 
 <div class="email-options-title">
 
@@ -4506,9 +4151,9 @@ Choose how you want to send the message:
 
 
 <button
-    type="button"
-    class="email-option"
-    id="gmailButton"
+type="button"
+class="email-option"
+id="gmailButton"
 >
 
 Continue with Gmail
@@ -4517,22 +4162,21 @@ Continue with Gmail
 
 
 <button
-    type="button"
-    class="email-option"
-    id="mailAppButton"
+type="button"
+class="email-option"
+id="mailAppButton"
 >
 
 Continue with Email App
 
 </button>
 
-
 </div>
 
 
 <p class="form-note">
 
-Gmail will open with the message automatically prepared.
+Gmail opens with your message automatically prepared.
 No backend or form service is required.
 
 </p>
@@ -4548,6 +4192,7 @@ No backend or form service is required.
 
 </section>
 
+
 </main>
 
 
@@ -4559,14 +4204,11 @@ No backend or form service is required.
 
 <div class="container footer-inner">
 
-
 <p>
 
 ©
 <span id="year"></span>
-
 Piyush Singh.
-
 Built with curiosity & code.
 
 </p>
@@ -4576,28 +4218,28 @@ Built with curiosity & code.
 
 
 <a
-    href="https://mail.google.com/mail/?view=cm&fs=1&to=piyushsingh20030610@gmail.com"
-    target="_blank"
-    rel="noopener noreferrer"
-    aria-label="Email"
+href="https://mail.google.com/mail/?view=cm&fs=1&to=piyushsingh20030610@gmail.com"
+target="_blank"
+rel="noopener noreferrer"
+aria-label="Email"
 >
 ✉
 </a>
 
 
 <a
-    href="tel:+918431832821"
-    aria-label="Phone"
+href="tel:+918431832821"
+aria-label="Phone"
 >
 ☎
 </a>
 
 
 <a
-    href="https://www.linkedin.com/in/piyushsingh0610/"
-    target="_blank"
-    rel="noopener noreferrer"
-    aria-label="LinkedIn"
+href="https://www.linkedin.com/in/piyushsingh0610/"
+target="_blank"
+rel="noopener noreferrer"
+aria-label="LinkedIn"
 >
 in
 </a>
@@ -4610,23 +4252,19 @@ in
 </footer>
 
 
-<!-- BACK TO TOP -->
-
 <button
-    class="top-btn"
-    id="topBtn"
-    aria-label="Back to top"
+class="top-btn"
+id="topBtn"
+aria-label="Back to top"
 >
-
 ↑
-
 </button>
 
 
 <script>
 
 /* =========================================================
-   CONTACT INFORMATION
+   CONTACT DETAILS
 ========================================================= */
 
 const MY_EMAIL =
@@ -4664,7 +4302,8 @@ function(){
 
     navLinks.classList.toggle("open");
 
-});
+}
+);
 
 
 document.querySelectorAll(
@@ -4677,7 +4316,7 @@ function(link){
     function(){
 
         navLinks.classList.remove(
-            "open"
+        "open"
         );
 
     });
@@ -4697,18 +4336,18 @@ window.addEventListener(
 "scroll",
 function(){
 
-    if(window.scrollY > 30){
+    if(
+        window.scrollY > 30
+    ){
 
         navbar.classList.add(
-            "scrolled"
+        "scrolled"
         );
 
-    }
-
-    else{
+    }else{
 
         navbar.classList.remove(
-            "scrolled"
+        "scrolled"
         );
 
     }
@@ -4740,18 +4379,15 @@ function(){
     sections.forEach(
     function(section){
 
-        const sectionTop =
-            section.offsetTop - 180;
+        const top =
+        section.offsetTop - 180;
 
         if(
-            window.scrollY >=
-            sectionTop
+            window.scrollY >= top
         ){
 
             current =
-                section.getAttribute(
-                    "id"
-                );
+            section.getAttribute("id");
 
         }
 
@@ -4762,19 +4398,17 @@ function(){
     function(link){
 
         link.classList.remove(
-            "active"
+        "active"
         );
 
-
         if(
-            link.getAttribute(
-                "href"
-            ) ===
+            link.getAttribute("href")
+            ===
             "#" + current
         ){
 
             link.classList.add(
-                "active"
+            "active"
             );
 
         }
@@ -4806,11 +4440,11 @@ function(entries){
         ){
 
             entry.target.classList.add(
-                "visible"
+            "visible"
             );
 
             revealObserver.unobserve(
-                entry.target
+            entry.target
             );
 
         }
@@ -4827,7 +4461,7 @@ revealElements.forEach(
 function(element){
 
     revealObserver.observe(
-        element
+    element
     );
 
 });
@@ -4855,10 +4489,10 @@ function(entries){
         ){
 
             entry.target.style.width =
-                entry.target.dataset.width;
+            entry.target.dataset.width;
 
             skillObserver.unobserve(
-                entry.target
+            entry.target
             );
 
         }
@@ -4875,7 +4509,7 @@ skillFills.forEach(
 function(skill){
 
     skillObserver.observe(
-        skill
+    skill
     );
 
 });
@@ -4898,7 +4532,7 @@ function copyEmail(){
         function(){
 
             showCopyMessage(
-                "✓ Email copied"
+            "✓ Email copied"
             );
 
         })
@@ -4909,9 +4543,7 @@ function copyEmail(){
 
         });
 
-    }
-
-    else{
+    }else{
 
         fallbackCopyEmail();
 
@@ -4923,52 +4555,45 @@ function copyEmail(){
 function fallbackCopyEmail(){
 
     const textarea =
-        document.createElement(
-            "textarea"
-        );
-
-
-    textarea.value =
-        MY_EMAIL;
-
-    textarea.style.position =
-        "fixed";
-
-    textarea.style.opacity =
-        "0";
-
-
-    document.body.appendChild(
-        textarea
+    document.createElement(
+    "textarea"
     );
 
+    textarea.value =
+    MY_EMAIL;
+
+    textarea.style.position =
+    "fixed";
+
+    textarea.style.opacity =
+    "0";
+
+    document.body.appendChild(
+    textarea
+    );
 
     textarea.select();
-
 
     try{
 
         document.execCommand(
-            "copy"
+        "copy"
         );
 
         showCopyMessage(
-            "✓ Email copied"
+        "✓ Email copied"
         );
 
-    }
-
-    catch(error){
+    }catch(error){
 
         showCopyMessage(
-            MY_EMAIL
+        MY_EMAIL
         );
 
     }
-
 
     document.body.removeChild(
-        textarea
+    textarea
     );
 
 }
@@ -4979,20 +4604,18 @@ message
 ){
 
     const element =
-        document.getElementById(
-            "copyMessage"
-        );
-
+    document.getElementById(
+    "copyMessage"
+    );
 
     element.textContent =
-        message;
-
+    message;
 
     setTimeout(
     function(){
 
         element.textContent =
-            "";
+        "";
 
     },
     2500
@@ -5008,24 +4631,21 @@ message
 function openMailApp(){
 
     const subject =
-        "Portfolio Opportunity";
-
+    "Portfolio Opportunity";
 
     const body =
-        "Hello Piyush,%0D%0A%0D%0A" +
-        "I would like to connect with you regarding an opportunity.%0D%0A%0D%0A" +
-        "Regards";
+    "Hello Piyush,\n\n" +
+    "I would like to connect with you regarding an opportunity.\n\n" +
+    "Regards";
 
 
     window.location.href =
-        "mailto:" +
-        MY_EMAIL +
-        "?subject=" +
-        encodeURIComponent(
-            subject
-        ) +
-        "&body=" +
-        body;
+    "mailto:" +
+    MY_EMAIL +
+    "?subject=" +
+    encodeURIComponent(subject) +
+    "&body=" +
+    encodeURIComponent(body);
 
 }
 
@@ -5036,19 +4656,17 @@ function openMailApp(){
 
 const contactForm =
 document.getElementById(
-    "contactForm"
+"contactForm"
 );
-
 
 const emailOptions =
 document.getElementById(
-    "emailOptions"
+"emailOptions"
 );
 
 
 let preparedGmailURL =
 "";
-
 
 let preparedMailtoURL =
 "";
@@ -5062,27 +4680,27 @@ function(event){
 
 
     const name =
-        document.getElementById(
-            "name"
-        ).value.trim();
+    document.getElementById(
+    "name"
+    ).value.trim();
 
 
     const senderEmail =
-        document.getElementById(
-            "senderEmail"
-        ).value.trim();
+    document.getElementById(
+    "senderEmail"
+    ).value.trim();
 
 
     const subject =
-        document.getElementById(
-            "subject"
-        ).value.trim();
+    document.getElementById(
+    "subject"
+    ).value.trim();
 
 
     const message =
-        document.getElementById(
-            "message"
-        ).value.trim();
+    document.getElementById(
+    "message"
+    ).value.trim();
 
 
     if(
@@ -5093,7 +4711,7 @@ function(event){
     ){
 
         alert(
-            "Please fill in all fields."
+        "Please fill in all fields."
         );
 
         return;
@@ -5118,73 +4736,44 @@ Regards,
 ${name}`;
 
 
-    /* =====================================================
-       GMAIL COMPOSE
-    ===================================================== */
+    /* Gmail */
 
     preparedGmailURL =
 
-        "https://mail.google.com/mail/" +
-
-        "?view=cm" +
-
-        "&fs=1" +
-
-        "&to=" +
-
-        encodeURIComponent(
-            MY_EMAIL
-        ) +
-
-        "&su=" +
-
-        encodeURIComponent(
-            subject
-        ) +
-
-        "&body=" +
-
-        encodeURIComponent(
-            emailBody
-        );
+    "https://mail.google.com/mail/" +
+    "?view=cm" +
+    "&fs=1" +
+    "&to=" +
+    encodeURIComponent(MY_EMAIL) +
+    "&su=" +
+    encodeURIComponent(subject) +
+    "&body=" +
+    encodeURIComponent(emailBody);
 
 
-    /* =====================================================
-       MAILTO FALLBACK
-    ===================================================== */
+    /* Mail App */
 
     preparedMailtoURL =
 
-        "mailto:" +
-
-        MY_EMAIL +
-
-        "?subject=" +
-
-        encodeURIComponent(
-            subject
-        ) +
-
-        "&body=" +
-
-        encodeURIComponent(
-            emailBody
-        );
+    "mailto:" +
+    MY_EMAIL +
+    "?subject=" +
+    encodeURIComponent(subject) +
+    "&body=" +
+    encodeURIComponent(emailBody);
 
 
     emailOptions.classList.add(
-        "show"
+    "show"
     );
 
 
-    /* =====================================================
-       OPEN GMAIL IMMEDIATELY
-    ===================================================== */
+    /* Automatically open Gmail */
 
     window.open(
-        preparedGmailURL,
-        "_blank",
-        "noopener,noreferrer"
+    preparedGmailURL,
+    "_blank",
+    "noopener,noreferrer"
     );
 
 });
@@ -5205,9 +4794,9 @@ function(){
     ){
 
         window.open(
-            preparedGmailURL,
-            "_blank",
-            "noopener,noreferrer"
+        preparedGmailURL,
+        "_blank",
+        "noopener,noreferrer"
         );
 
     }
@@ -5216,7 +4805,7 @@ function(){
 
 
 /* =========================================================
-   MAIL APP BUTTON
+   EMAIL APP BUTTON
 ========================================================= */
 
 document.getElementById(
@@ -5230,7 +4819,7 @@ function(){
     ){
 
         window.location.href =
-            preparedMailtoURL;
+        preparedMailtoURL;
 
     }
 
@@ -5243,7 +4832,7 @@ function(){
 
 const topBtn =
 document.getElementById(
-    "topBtn"
+"topBtn"
 );
 
 
@@ -5256,15 +4845,13 @@ function(){
     ){
 
         topBtn.classList.add(
-            "show"
+        "show"
         );
 
-    }
-
-    else{
+    }else{
 
         topBtn.classList.remove(
-            "show"
+        "show"
         );
 
     }
@@ -5288,319 +4875,276 @@ function(){
 
 
 /* =========================================================
-   REALISTIC COSMOS ENGINE
+   ========================================================
+   REALISTIC BLACK HOLE ENGINE
+   ========================================================
 ========================================================= */
 
 const canvas =
 document.getElementById(
-    "cosmosCanvas"
+"blackHoleCanvas"
 );
-
 
 const ctx =
 canvas.getContext(
-    "2d"
+"2d"
 );
 
 
+let width =
+window.innerWidth;
+
+let height =
+window.innerHeight;
+
+let centerX =
+width / 2;
+
+let centerY =
+height / 2;
+
+
+/* Device pixel ratio */
+
+let DPR =
+Math.min(
+window.devicePixelRatio || 1,
+2
+);
+
+
+/* =========================================================
+   STAR FIELD
+========================================================= */
+
 let stars = [];
 
-let shootingStars = [];
+const STAR_COUNT = 430;
 
-let width = 0;
 
-let height = 0;
+function randomStar(){
 
-let dpr =
-window.devicePixelRatio || 1;
+    return {
+
+        angle:
+        Math.random() *
+        Math.PI * 2,
+
+        distance:
+        Math.random() *
+        Math.max(
+            width,
+            height
+        ),
+
+        size:
+        Math.random() *
+        1.25
+        + .15,
+
+        opacity:
+        Math.random() *
+        .8
+        + .15,
+
+        speed:
+        Math.random() *
+        .0005
+        + .00008,
+
+        twinkle:
+        Math.random() *
+        Math.PI * 2
+
+    };
+
+}
+
+
+function createStars(){
+
+    stars = [];
+
+    for(
+        let i=0;
+        i<STAR_COUNT;
+        i++
+    ){
+
+        stars.push(
+        randomStar()
+        );
+
+    }
+
+}
+
+
+createStars();
 
 
 /* =========================================================
    RESIZE
 ========================================================= */
 
-function resizeCosmos(){
-
-    dpr =
-        Math.min(
-            window.devicePixelRatio || 1,
-            2
-        );
-
+function resizeCanvas(){
 
     width =
-        window.innerWidth;
-
+    window.innerWidth;
 
     height =
-        window.innerHeight;
+    window.innerHeight;
 
-
-    canvas.width =
-        width * dpr;
-
-
-    canvas.height =
-        height * dpr;
-
-
-    canvas.style.width =
-        width + "px";
-
-
-    canvas.style.height =
-        height + "px";
-
-
-    ctx.setTransform(
-        dpr,
-        0,
-        0,
-        dpr,
-        0,
-        0
+    DPR =
+    Math.min(
+    window.devicePixelRatio || 1,
+    2
     );
 
 
-    createStars();
+    canvas.width =
+    width * DPR;
+
+    canvas.height =
+    height * DPR;
+
+    canvas.style.width =
+    width + "px";
+
+    canvas.style.height =
+    height + "px";
+
+
+    ctx.setTransform(
+    DPR,
+    0,
+    0,
+    DPR,
+    0,
+    0
+    );
+
+
+    centerX =
+    width / 2;
+
+    centerY =
+    height / 2;
 
 }
+
+
+resizeCanvas();
 
 
 window.addEventListener(
 "resize",
-resizeCosmos
-);
-
-
-/* =========================================================
-   CREATE STARS
-========================================================= */
-
-function createStars(){
-
-    stars = [];
-
-
-    const amount =
-        Math.min(
-            650,
-            Math.floor(
-                width *
-                height /
-                2200
-            )
-        );
-
-
-    for(
-        let i=0;
-        i<amount;
-        i++
-    ){
-
-        const depth =
-            Math.random();
-
-
-        stars.push({
-
-            x:
-                Math.random() *
-                width,
-
-            y:
-                Math.random() *
-                height,
-
-            radius:
-                depth *
-                1.7 +
-                .25,
-
-            alpha:
-                .18 +
-                depth *
-                .68,
-
-            twinkle:
-                Math.random() *
-                Math.PI *
-                2,
-
-            twinkleSpeed:
-                .002 +
-                Math.random() *
-                .012,
-
-            drift:
-                .005 +
-                depth *
-                .018,
-
-            blue:
-                Math.random() >
-                .82
-
-        });
-
-    }
-
-}
-
-
-/* =========================================================
-   SHOOTING STAR
-========================================================= */
-
-function createShootingStar(){
-
-    if(
-        shootingStars.length >= 2
-    ){
-
-        return;
-
-    }
-
-
-    shootingStars.push({
-
-        x:
-            Math.random() *
-            width,
-
-        y:
-            Math.random() *
-            height *
-            .55,
-
-        length:
-            80 +
-            Math.random() *
-            150,
-
-        speed:
-            7 +
-            Math.random() *
-            8,
-
-        opacity:
-            .45 +
-            Math.random() *
-            .45,
-
-        life:
-            0,
-
-        maxLife:
-            55 +
-            Math.random() *
-            35
-
-    });
-
-}
-
-
-/* =========================================================
-   OCCASIONAL SHOOTING STAR
-========================================================= */
-
-setInterval(
 function(){
 
-    if(
-        Math.random() <
-        .72
-    ){
+    resizeCanvas();
 
-        createShootingStar();
+    createStars();
 
-    }
-
-},
-4200
-);
+});
 
 
 /* =========================================================
-   DRAW STARS
+   DRAW STAR FIELD
 ========================================================= */
 
-function drawStars(){
+function drawStars(time){
 
     stars.forEach(
     function(star){
 
-        star.twinkle +=
-            star.twinkleSpeed;
+        star.angle +=
+        star.speed;
 
 
-        const pulse =
-            .72 +
-            Math.sin(
-                star.twinkle
-            ) *
-            .28;
+        const x =
+        centerX +
+        Math.cos(star.angle) *
+        star.distance;
 
 
-        star.y -=
-            star.drift;
+        const y =
+        centerY +
+        Math.sin(star.angle) *
+        star.distance;
 
 
         if(
-            star.y < -5
+            x < -20 ||
+            x > width + 20 ||
+            y < -20 ||
+            y > height + 20
         ){
 
-            star.y =
-                height + 5;
-
-            star.x =
-                Math.random() *
-                width;
+            return;
 
         }
+
+
+        /* gravitational distortion */
+
+        const dx =
+        x - centerX;
+
+        const dy =
+        y - centerY;
+
+        const dist =
+        Math.sqrt(
+        dx*dx + dy*dy
+        );
+
+
+        const eventRadius =
+        Math.min(
+        width,
+        height
+        ) * .135;
+
+
+        if(
+            dist < eventRadius * 2.8
+        ){
+
+            return;
+
+        }
+
+
+        const twinkle =
+        Math.sin(
+        time * .0015 +
+        star.twinkle
+        );
+
+
+        const alpha =
+        star.opacity *
+        (.72 + twinkle * .2);
 
 
         ctx.beginPath();
 
-
         ctx.arc(
-            star.x,
-            star.y,
-            star.radius,
-            0,
-            Math.PI * 2
+        x,
+        y,
+        star.size,
+        0,
+        Math.PI * 2
         );
 
 
-        if(
-            star.blue
-        ){
-
-            ctx.fillStyle =
-                `rgba(
-                    174,
-                    215,
-                    255,
-                    ${star.alpha * pulse}
-                )`;
-
-        }
-
-        else{
-
-            ctx.fillStyle =
-                `rgba(
-                    235,
-                    244,
-                    255,
-                    ${star.alpha * pulse}
-                )`;
-
-        }
-
+        ctx.fillStyle =
+        `rgba(
+        205,
+        235,
+        240,
+        ${alpha}
+        )`;
 
         ctx.fill();
 
@@ -5610,235 +5154,731 @@ function drawStars(){
 
 
 /* =========================================================
-   SHOOTING STARS
+   STAR STREAKS / LENSING
 ========================================================= */
 
-function drawShootingStars(){
+function drawLensingStars(){
 
-    shootingStars.forEach(
-    function(star){
-
-        star.x +=
-            star.speed;
-
-        star.y +=
-            star.speed *
-            .42;
-
-        star.life++;
+    const radius =
+    Math.min(
+    width,
+    height
+    ) * .19;
 
 
-        const progress =
-            star.life /
-            star.maxLife;
+    for(
+        let i=0;
+        i<42;
+        i++
+    ){
+
+        const angle =
+        (i / 42) *
+        Math.PI * 2;
 
 
-        const opacity =
-            star.opacity *
-            (1 - progress);
+        const distance =
+        radius +
+        Math.sin(
+        i * 7.3
+        ) * 15;
+
+
+        const x =
+        centerX +
+        Math.cos(angle) *
+        distance;
+
+
+        const y =
+        centerY +
+        Math.sin(angle) *
+        distance *
+        .45;
+
+
+        const length =
+        8 +
+        Math.random() * 20;
+
+
+        const x2 =
+        x +
+        Math.cos(angle)
+        * length;
+
+
+        const y2 =
+        y +
+        Math.sin(angle)
+        * length *
+        .45;
 
 
         const gradient =
-            ctx.createLinearGradient(
-
-                star.x,
-                star.y,
-
-                star.x -
-                    star.length,
-
-                star.y -
-                    star.length *
-                    .42
-
-            );
-
-
-        gradient.addColorStop(
-            0,
-            `rgba(
-                255,
-                255,
-                255,
-                ${opacity}
-            )`
+        ctx.createLinearGradient(
+        x,
+        y,
+        x2,
+        y2
         );
 
 
         gradient.addColorStop(
-            .25,
-            `rgba(
-                183,
-                222,
-                255,
-                ${opacity * .6}
-            )`
+        0,
+        "rgba(180,235,240,.0)"
+        );
+
+        gradient.addColorStop(
+        .5,
+        "rgba(120,220,230,.35)"
+        );
+
+        gradient.addColorStop(
+        1,
+        "rgba(255,255,255,.0)"
         );
 
 
-        gradient.addColorStop(
-            1,
-            "rgba(120,180,240,0)"
+        ctx.beginPath();
+
+        ctx.moveTo(
+        x,
+        y
+        );
+
+        ctx.lineTo(
+        x2,
+        y2
+        );
+
+        ctx.strokeStyle =
+        gradient;
+
+        ctx.lineWidth =
+        .7;
+
+        ctx.stroke();
+
+    }
+
+}
+
+
+/* =========================================================
+   ACCRETION DISK
+========================================================= */
+
+function drawAccretionDisk(time){
+
+    const minSize =
+    Math.min(
+    width,
+    height
+    );
+
+
+    const outer =
+    minSize * .31;
+
+    const inner =
+    minSize * .125;
+
+
+    /*
+       multiple rotating elliptical rings
+    */
+
+    for(
+        let ring=0;
+        ring<34;
+        ring++
+    ){
+
+        const ratio =
+        ring / 34;
+
+
+        const radius =
+        inner +
+        (outer-inner) *
+        ratio;
+
+
+        const rotation =
+        time *
+        .000035 *
+        (1.4 - ratio);
+
+
+        const alpha =
+        .035 +
+        (1-ratio) *
+        .025;
+
+
+        ctx.save();
+
+        ctx.translate(
+        centerX,
+        centerY
+        );
+
+        ctx.rotate(
+        rotation
         );
 
 
         ctx.beginPath();
 
 
-        ctx.strokeStyle =
-            gradient;
+        ctx.ellipse(
+        0,
+        0,
+        radius,
+        radius * .28,
+        0,
+        0,
+        Math.PI * 2
+        );
 
+
+        const gradient =
+        ctx.createLinearGradient(
+        -radius,
+        0,
+        radius,
+        0
+        );
+
+
+        gradient.addColorStop(
+        0,
+        `rgba(20,115,130,${alpha})`
+        );
+
+        gradient.addColorStop(
+        .3,
+        `rgba(90,220,230,${alpha*1.8})`
+        );
+
+        gradient.addColorStop(
+        .52,
+        `rgba(245,255,250,${alpha*2})`
+        );
+
+        gradient.addColorStop(
+        .7,
+        `rgba(70,190,205,${alpha*1.5})`
+        );
+
+        gradient.addColorStop(
+        1,
+        `rgba(10,60,70,${alpha})`
+        );
+
+
+        ctx.strokeStyle =
+        gradient;
 
         ctx.lineWidth =
-            1.5;
-
-
-        ctx.moveTo(
-            star.x,
-            star.y
-        );
-
-
-        ctx.lineTo(
-            star.x -
-                star.length,
-
-            star.y -
-                star.length *
-                .42
-        );
+        1.5 +
+        Math.sin(
+        ring * 1.7 +
+        time*.001
+        ) * .5;
 
 
         ctx.stroke();
 
-    });
+        ctx.restore();
+
+    }
 
 
-    shootingStars =
-        shootingStars.filter(
-        function(star){
+    /* bright inner disk */
 
-            return (
-                star.life <
-                star.maxLife
-            );
+    ctx.save();
 
-        });
-
-}
-
-
-/* =========================================================
-   SUBTLE GALAXY HAZE
-========================================================= */
-
-function drawGalaxyHaze(){
-
-    const gradient =
-        ctx.createRadialGradient(
-
-            width * .50,
-            height * .38,
-            0,
-
-            width * .50,
-            height * .38,
-            Math.max(
-                width,
-                height
-            ) * .72
-
-        );
-
-
-    gradient.addColorStop(
-        0,
-        "rgba(96,139,194,.055)"
+    ctx.translate(
+    centerX,
+    centerY
     );
 
 
-    gradient.addColorStop(
-        .3,
-        "rgba(55,92,145,.025)"
+    ctx.rotate(
+    time * .00006
     );
 
 
-    gradient.addColorStop(
-        1,
-        "rgba(0,0,0,0)"
+    ctx.beginPath();
+
+    ctx.ellipse(
+    0,
+    0,
+    inner * 1.9,
+    inner * .46,
+    0,
+    0,
+    Math.PI * 2
+    );
+
+
+    const innerGradient =
+    ctx.createRadialGradient(
+    0,
+    0,
+    inner*.2,
+    0,
+    0,
+    inner*2
+    );
+
+
+    innerGradient.addColorStop(
+    0,
+    "rgba(255,255,255,.0)"
+    );
+
+    innerGradient.addColorStop(
+    .35,
+    "rgba(180,245,250,.16)"
+    );
+
+    innerGradient.addColorStop(
+    .62,
+    "rgba(60,205,220,.20)"
+    );
+
+    innerGradient.addColorStop(
+    1,
+    "rgba(0,50,60,0)"
     );
 
 
     ctx.fillStyle =
-        gradient;
+    innerGradient;
 
+    ctx.fill();
 
-    ctx.fillRect(
-        0,
-        0,
-        width,
-        height
-    );
+    ctx.restore();
 
 }
 
 
 /* =========================================================
-   COSMOS ANIMATION
+   EVENT HORIZON
 ========================================================= */
 
-function animateCosmos(){
+function drawBlackHole(time){
 
-    ctx.clearRect(
-        0,
-        0,
-        width,
-        height
+    const minSize =
+    Math.min(
+    width,
+    height
     );
 
 
-    drawGalaxyHaze();
+    const eventRadius =
+    minSize * .105;
 
-    drawStars();
 
-    drawShootingStars();
+    /* gravitational glow */
+
+    const glow =
+    ctx.createRadialGradient(
+    centerX,
+    centerY,
+    eventRadius*.7,
+    centerX,
+    centerY,
+    eventRadius*2.5
+    );
+
+
+    glow.addColorStop(
+    0,
+    "rgba(0,0,0,1)"
+    );
+
+    glow.addColorStop(
+    .42,
+    "rgba(0,0,0,.98)"
+    );
+
+    glow.addColorStop(
+    .65,
+    "rgba(0,0,0,.5)"
+    );
+
+    glow.addColorStop(
+    1,
+    "rgba(0,0,0,0)"
+    );
+
+
+    ctx.beginPath();
+
+    ctx.arc(
+    centerX,
+    centerY,
+    eventRadius*2.5,
+    0,
+    Math.PI*2
+    );
+
+    ctx.fillStyle =
+    glow;
+
+    ctx.fill();
+
+
+    /* photon ring */
+
+    ctx.beginPath();
+
+    ctx.arc(
+    centerX,
+    centerY,
+    eventRadius*1.17,
+    0,
+    Math.PI*2
+    );
+
+
+    const photon =
+    ctx.createRadialGradient(
+    centerX,
+    centerY,
+    eventRadius*1.03,
+    centerX,
+    centerY,
+    eventRadius*1.24
+    );
+
+
+    photon.addColorStop(
+    0,
+    "rgba(0,0,0,0)"
+    );
+
+    photon.addColorStop(
+    .4,
+    "rgba(130,225,235,.30)"
+    );
+
+    photon.addColorStop(
+    .55,
+    "rgba(220,255,255,.52)"
+    );
+
+    photon.addColorStop(
+    .7,
+    "rgba(50,170,185,.24)"
+    );
+
+    photon.addColorStop(
+    1,
+    "rgba(0,0,0,0)"
+    );
+
+
+    ctx.strokeStyle =
+    photon;
+
+    ctx.lineWidth =
+    7;
+
+    ctx.stroke();
+
+
+    /* black event horizon */
+
+    ctx.beginPath();
+
+    ctx.arc(
+    centerX,
+    centerY,
+    eventRadius,
+    0,
+    Math.PI*2
+    );
+
+
+    const black =
+    ctx.createRadialGradient(
+    centerX - eventRadius*.2,
+    centerY - eventRadius*.2,
+    eventRadius*.1,
+    centerX,
+    centerY,
+    eventRadius
+    );
+
+
+    black.addColorStop(
+    0,
+    "#000000"
+    );
+
+    black.addColorStop(
+    .8,
+    "#000000"
+    );
+
+    black.addColorStop(
+    1,
+    "#010101"
+    );
+
+
+    ctx.fillStyle =
+    black;
+
+    ctx.fill();
+
+
+    /* subtle moving edge */
+
+    ctx.beginPath();
+
+    ctx.arc(
+    centerX,
+    centerY,
+    eventRadius*1.09,
+    time*.00015,
+    time*.00015 +
+    Math.PI*1.2
+    );
+
+
+    ctx.strokeStyle =
+    "rgba(145,245,250,.24)";
+
+    ctx.lineWidth =
+    1.5;
+
+    ctx.stroke();
+
+}
+
+
+/* =========================================================
+   DUST / PARTICLES AROUND DISK
+========================================================= */
+
+function drawDust(time){
+
+    const minSize =
+    Math.min(
+    width,
+    height
+    );
+
+
+    const outer =
+    minSize*.33;
+
+
+    for(
+        let i=0;
+        i<150;
+        i++
+    ){
+
+        const angle =
+        i*.71 +
+        time*.00004;
+
+
+        const distance =
+        minSize*.14 +
+        Math.abs(
+        Math.sin(i*4.13)
+        ) *
+        (outer-minSize*.14);
+
+
+        const x =
+        centerX +
+        Math.cos(angle) *
+        distance;
+
+
+        const y =
+        centerY +
+        Math.sin(angle) *
+        distance *
+        .28;
+
+
+        const alpha =
+        .04 +
+        Math.abs(
+        Math.sin(
+        time*.001+i
+        )
+        )*.08;
+
+
+        ctx.beginPath();
+
+        ctx.arc(
+        x,
+        y,
+        .5 +
+        Math.random()*.7,
+        0,
+        Math.PI*2
+        );
+
+
+        ctx.fillStyle =
+        `rgba(
+        150,
+        230,
+        235,
+        ${alpha}
+        )`;
+
+        ctx.fill();
+
+    }
+
+}
+
+
+/* =========================================================
+   BLACK HOLE ANIMATION
+========================================================= */
+
+function animateBlackHole(time){
+
+    ctx.clearRect(
+    0,
+    0,
+    width,
+    height
+    );
+
+
+    /*
+       Deep black base
+    */
+
+    const background =
+    ctx.createRadialGradient(
+    centerX,
+    centerY,
+    0,
+    centerX,
+    centerY,
+    Math.max(
+    width,
+    height
+    )*.7
+    );
+
+
+    background.addColorStop(
+    0,
+    "#050609"
+    );
+
+    background.addColorStop(
+    .3,
+    "#020306"
+    );
+
+    background.addColorStop(
+    .75,
+    "#010102"
+    );
+
+    background.addColorStop(
+    1,
+    "#000000"
+    );
+
+
+    ctx.fillStyle =
+    background;
+
+    ctx.fillRect(
+    0,
+    0,
+    width,
+    height
+    );
+
+
+    drawStars(time);
+
+    drawLensingStars();
+
+    drawDust(time);
+
+    drawAccretionDisk(time);
+
+    drawBlackHole(time);
 
 
     requestAnimationFrame(
-        animateCosmos
+    animateBlackHole
     );
 
 }
 
 
-resizeCosmos();
-
-animateCosmos();
+requestAnimationFrame(
+animateBlackHole
+);
 
 
 /* =========================================================
-   IMAGE FALLBACK
+   MOUSE PARALLAX
 ========================================================= */
 
-document.querySelectorAll(
-".profile-image img"
-).forEach(
-function(img){
+let mouseX = 0;
+let mouseY = 0;
 
-    img.addEventListener(
-        "error",
-        function(){
 
-            img.style.display =
-                "none";
+window.addEventListener(
+"mousemove",
+function(event){
 
-        }
-    );
+    mouseX =
+    (event.clientX / width - .5);
+
+    mouseY =
+    (event.clientY / height - .5);
 
 });
+
+
+/* subtle atmosphere response */
+
+setInterval(
+function(){
+
+    const glow =
+    document.querySelector(
+    ".space-blue-glow"
+    );
+
+    if(!glow) return;
+
+    glow.style.transform =
+    `translate(
+    calc(-50% + ${mouseX*15}px),
+    calc(-50% + ${mouseY*15}px)
+    )`;
+
+},
+50
+);
 
 </script>
 
 </body>
-
 </html>
