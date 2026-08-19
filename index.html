@@ -1,97 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<meta
-    name="viewport"
-    content="width=device-width, initial-scale=1.0"
->
+<meta name="description"
+content="Piyush Singh — MBA Digital Marketing & Operations portfolio. Marketing, analytics, operations and continuous improvement.">
 
-<meta
-    name="description"
-    content="Piyush Singh — MBA Digital Marketing & Operations Portfolio"
->
+<meta name="theme-color" content="#03060d">
 
-<title>Piyush Singh | Portfolio</title>
+<title>Piyush Singh | Digital Marketing & Operations</title>
 
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
 
 <style>
 
 /* =========================================================
-   GLOBAL VARIABLES
+   CORE
 ========================================================= */
 
 :root{
-
     --black:#03060d;
-
-    --space:#060b16;
-
+    --midnight:#07101f;
     --navy:#0a1224;
+    --navy2:#101c32;
 
-    --navy2:#0d1830;
+    --blue:#2186c9;
+    --blue2:#42b8ec;
+    --cyan:#78d7f5;
 
-    --blue:#162a4a;
-
-    --stellar:#eef4ff;
-
-    --blue-white:#dceaff;
+    --white:#eef4ff;
+    --muted:#a7b4c7;
+    --muted2:#74839a;
 
     --amber:#ffe8cc;
 
-    --muted:#9baabd;
+    --glass:rgba(7,15,29,.66);
+    --glass2:rgba(13,26,47,.72);
 
-    --muted2:#718096;
+    --line:rgba(160,195,235,.14);
 
-    --glass:rgba(7,14,28,.68);
+    --shadow:
+        0 25px 80px rgba(0,0,0,.42);
 
-    --glass-light:rgba(15,27,48,.48);
-
-    --border:rgba(180,205,240,.13);
-
-    --border-hover:rgba(220,235,255,.28);
-
-    --radius:22px;
-
-    --max:1180px;
-
+    --radius:26px;
 }
 
-
-/* =========================================================
-   RESET
-========================================================= */
-
 *{
+    box-sizing:border-box;
     margin:0;
     padding:0;
-    box-sizing:border-box;
 }
 
 html{
     scroll-behavior:smooth;
+    scroll-padding-top:100px;
 }
 
 body{
-
-    font-family:
-    Inter,
-    ui-sans-serif,
-    system-ui,
-    -apple-system,
-    BlinkMacSystemFont,
-    "Segoe UI",
-    sans-serif;
-
-    color:var(--stellar);
-
     background:#03060d;
-
-    line-height:1.6;
-
+    color:var(--white);
+    font-family:"DM Sans",sans-serif;
     overflow-x:hidden;
 }
 
@@ -101,116 +73,75 @@ a{
 }
 
 button,
-input,
-textarea{
+input{
     font:inherit;
 }
 
-button{
-    cursor:pointer;
-}
-
 
 /* =========================================================
-   ASTROPHOTOGRAPHY CANVAS
+   COSMIC BACKGROUND
 ========================================================= */
 
 #spaceCanvas{
-
     position:fixed;
-
     inset:0;
-
     width:100%;
     height:100%;
-
     z-index:-10;
-
     pointer-events:none;
-
-    background:#03060d;
+    background:
+        radial-gradient(
+            ellipse at 50% 25%,
+            rgba(18,38,68,.42),
+            transparent 52%
+        ),
+        linear-gradient(
+            180deg,
+            #03060d 0%,
+            #07101f 52%,
+            #03060d 100%
+        );
 }
 
-
-/* =========================================================
-   REALISTIC DARK NEBULA
-========================================================= */
-
-.nebula{
-
+.cosmic-haze{
     position:fixed;
-
-    border-radius:50%;
-
+    inset:-20%;
+    z-index:-9;
     pointer-events:none;
 
-    z-index:-8;
+    background:
+        radial-gradient(
+            ellipse at 23% 17%,
+            rgba(33,78,115,.13),
+            transparent 35%
+        ),
+        radial-gradient(
+            ellipse at 76% 30%,
+            rgba(23,54,91,.10),
+            transparent 40%
+        ),
+        radial-gradient(
+            ellipse at 52% 72%,
+            rgba(8,22,42,.18),
+            transparent 48%
+        );
 
-    filter:blur(90px);
-
-    opacity:.17;
-
-    will-change:transform;
-
+    animation:
+        cosmicDrift 50s ease-in-out infinite alternate;
 }
 
-.nebula-one{
+@keyframes cosmicDrift{
+    from{
+        transform:
+            translate3d(-1%,0,0)
+            scale(1);
+    }
 
-    width:650px;
-    height:420px;
-
-    top:-180px;
-    left:-180px;
-
-    background:
-    radial-gradient(
-        ellipse,
-        rgba(24,47,82,.8),
-        rgba(8,18,36,.3),
-        transparent 70%
-    );
-
-    transform:rotate(-25deg);
-
-}
-
-
-.nebula-two{
-
-    width:600px;
-    height:450px;
-
-    right:-240px;
-    top:20%;
-
-    background:
-    radial-gradient(
-        ellipse,
-        rgba(20,40,70,.65),
-        rgba(7,14,28,.25),
-        transparent 72%
-    );
-
-    transform:rotate(35deg);
-
-}
-
-
-.nebula-three{
-
-    width:700px;
-    height:350px;
-
-    left:25%;
-    bottom:-250px;
-
-    background:
-    radial-gradient(
-        ellipse,
-        rgba(18,34,60,.5),
-        transparent 70%
-    );
-
+    to{
+        transform:
+            translate3d(1%,1%,0)
+            scale(1.025);
+    }
 }
 
 
@@ -218,306 +149,219 @@ button{
    DARK HORIZON
 ========================================================= */
 
-.cosmic-horizon{
-
+.horizon{
     position:fixed;
-
-    left:0;
-    right:0;
-    bottom:0;
-
-    height:22vh;
-
-    z-index:-5;
-
+    left:-10%;
+    right:-10%;
+    bottom:-7%;
+    height:30%;
+    z-index:-7;
     pointer-events:none;
 
     background:
+        radial-gradient(
+            ellipse at 15% 40%,
+            rgba(15,19,27,.72),
+            transparent 43%
+        ),
+        radial-gradient(
+            ellipse at 45% 30%,
+            rgba(10,15,23,.82),
+            transparent 48%
+        ),
+        radial-gradient(
+            ellipse at 80% 45%,
+            rgba(13,18,27,.72),
+            transparent 45%
+        ),
+        linear-gradient(
+            to top,
+            #02040a 0%,
+            rgba(3,6,13,.94) 48%,
+            transparent 100%
+        );
 
-    linear-gradient(
-        to top,
-        rgba(1,3,8,.92),
-        rgba(2,5,12,.68),
-        transparent
-    );
-
+    filter:blur(3px);
 }
 
 
 /* =========================================================
-   SUBTLE VIGNETTE
+   NAVBAR
 ========================================================= */
 
-.vignette{
-
+.nav-wrap{
     position:fixed;
-
-    inset:0;
-
-    z-index:-4;
-
-    pointer-events:none;
-
-    background:
-
-    radial-gradient(
-        ellipse at center,
-        transparent 42%,
-        rgba(0,0,0,.25) 75%,
-        rgba(0,0,0,.6) 100%
-    );
-
-}
-
-
-/* =========================================================
-   CONTENT
-========================================================= */
-
-.container{
-
-    width:
-    min(
-        var(--max),
-        calc(100% - 40px)
-    );
-
-    margin:auto;
-
-}
-
-
-section{
-
-    padding:110px 0;
-
-    position:relative;
-
-    z-index:2;
-
-}
-
-
-.section-heading{
-
-    margin-bottom:55px;
-
-}
-
-
-.eyebrow{
-
-    color:#b8c9df;
-
-    font-size:.72rem;
-
-    font-weight:800;
-
-    letter-spacing:3px;
-
-    text-transform:uppercase;
-
-    margin-bottom:14px;
-
-}
-
-
-.section-heading h2{
-
-    font-size:
-    clamp(
-        2.2rem,
-        5vw,
-        3.8rem
-    );
-
-    line-height:1.04;
-
-    letter-spacing:-2.5px;
-
-}
-
-
-.section-heading p{
-
-    max-width:680px;
-
-    color:var(--muted);
-
-    margin-top:17px;
-
-}
-
-
-.gradient-text{
-
-    background:
-
-    linear-gradient(
-        110deg,
-        #ffffff 5%,
-        #dceaff 45%,
-        #9bb9df 100%
-    );
-
-    -webkit-background-clip:text;
-
-    background-clip:text;
-
-    color:transparent;
-
-}
-
-
-/* =========================================================
-   NAVIGATION
-========================================================= */
-
-.navbar{
-
-    position:fixed;
-
-    top:0;
+    top:16px;
     left:0;
     right:0;
-
-    z-index:1000;
-
-    padding:15px 0;
-
-    transition:.3s ease;
-
+    z-index:100;
 }
 
-
-.navbar.scrolled{
-
-    background:
-    rgba(3,6,13,.78);
-
-    backdrop-filter:blur(18px);
-
-    border-bottom:
-    1px solid
-    rgba(210,225,245,.08);
-
-}
-
-
-.nav-inner{
-
-    width:
-    min(
-        var(--max),
-        calc(100% - 30px)
-    );
-
+nav{
+    width:min(1160px,92%);
     margin:auto;
 
     display:flex;
-
     align-items:center;
-
     justify-content:space-between;
 
-    padding:10px 16px;
-
-    border:
-    1px solid
-    rgba(210,225,245,.09);
-
-    border-radius:16px;
+    padding:10px 12px 10px 18px;
 
     background:
-    rgba(5,11,22,.48);
+        linear-gradient(
+            120deg,
+            rgba(5,12,25,.74),
+            rgba(9,21,39,.62)
+        );
 
-    backdrop-filter:blur(12px);
+    backdrop-filter:blur(20px);
+    -webkit-backdrop-filter:blur(20px);
 
+    border:1px solid rgba(160,195,235,.13);
+    border-radius:999px;
+
+    box-shadow:
+        0 18px 60px rgba(0,0,0,.32);
 }
 
-
-.logo{
-
+.brand{
     display:flex;
-
     align-items:center;
+    gap:11px;
 
-    gap:10px;
-
-    font-size:.86rem;
-
-    font-weight:900;
-
-    letter-spacing:1px;
-
+    font-family:"Manrope",sans-serif;
+    font-weight:800;
 }
 
+.brand-mark{
+    width:39px;
+    height:39px;
 
-.logo-star{
-
-    width:9px;
-    height:9px;
+    display:grid;
+    place-items:center;
 
     border-radius:50%;
 
-    background:#f3f7ff;
-
-    box-shadow:
-    0 0 8px rgba(238,244,255,.9),
-    0 0 20px rgba(180,210,255,.4);
-
-}
-
-
-.nav-links{
-
-    display:flex;
-
-    gap:5px;
-
-    list-style:none;
-
-}
-
-
-.nav-links a{
-
-    color:#9baabd;
-
-    padding:9px 12px;
-
-    border-radius:9px;
-
-    font-size:.82rem;
-
-    transition:.25s;
-
-}
-
-
-.nav-links a:hover,
-.nav-links a.active{
+    background:
+        linear-gradient(
+            145deg,
+            #4ebde9,
+            #0b3d67
+        );
 
     color:#fff;
 
-    background:
-    rgba(200,220,245,.07);
+    box-shadow:
+        0 8px 28px rgba(33,134,201,.25);
+}
 
+.nav-links{
+    display:flex;
+    align-items:center;
+    gap:4px;
+}
+
+.nav-links a{
+    padding:10px 13px;
+    border-radius:999px;
+
+    color:#aab9cd;
+    font-size:.86rem;
+    font-weight:700;
+
+    transition:.25s ease;
+}
+
+.nav-links a:hover{
+    background:rgba(66,184,236,.10);
+    color:#fff;
+}
+
+.nav-cta{
+    background:#12547f !important;
+    color:#fff !important;
+}
+
+.menu-btn{
+    display:none;
+    border:0;
+    background:transparent;
+    color:white;
+    font-size:1.45rem;
+    cursor:pointer;
 }
 
 
-.menu-btn{
+/* =========================================================
+   GENERAL
+========================================================= */
 
-    display:none;
+.container{
+    width:min(1160px,92%);
+    margin:auto;
+}
 
-    background:none;
+.section{
+    position:relative;
+    padding:110px 0;
+}
 
-    border:0;
+.eyebrow{
+    display:inline-flex;
+    align-items:center;
+    gap:9px;
 
-    color:white;
+    color:var(--cyan);
 
-    font-size:24px;
+    font-size:.73rem;
+    font-weight:800;
 
+    letter-spacing:.16em;
+    text-transform:uppercase;
+
+    margin-bottom:16px;
+}
+
+.eyebrow::before{
+    content:"";
+
+    width:30px;
+    height:1px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            var(--cyan)
+        );
+}
+
+h1,
+h2,
+h3{
+    font-family:"Manrope",sans-serif;
+}
+
+h2{
+    font-size:
+        clamp(2.1rem,4vw,3.7rem);
+
+    letter-spacing:-.055em;
+    line-height:1;
+}
+
+.section-head{
+    max-width:760px;
+    margin-bottom:46px;
+}
+
+.section-head p{
+    margin-top:18px;
+
+    color:var(--muted);
+
+    line-height:1.8;
+    font-size:1rem;
 }
 
 
@@ -526,423 +370,363 @@ section{
 ========================================================= */
 
 .hero{
-
     min-height:100vh;
 
-    display:flex;
-
+    display:grid;
     align-items:center;
 
-    padding-top:125px;
-
-    overflow:hidden;
-
+    padding-top:145px;
 }
-
 
 .hero-grid{
-
     display:grid;
+    grid-template-columns:1.12fr .88fr;
 
-    grid-template-columns:
-    1.2fr .8fr;
-
-    gap:65px;
-
+    gap:70px;
     align-items:center;
-
 }
 
+.hero h1{
+    max-width:820px;
 
-.hero-kicker{
+    font-size:
+        clamp(3.3rem,7vw,6.8rem);
 
-    display:inline-flex;
+    letter-spacing:-.075em;
+    line-height:.88;
+}
 
-    align-items:center;
+.hero h1 span{
+    display:inline;
 
-    gap:9px;
-
-    padding:7px 12px;
-
-    border:
-    1px solid
-    rgba(210,225,245,.13);
+    color:transparent;
 
     background:
-    rgba(220,235,255,.035);
+        linear-gradient(
+            110deg,
+            #eef4ff,
+            #58c5f1,
+            #9ae5fa,
+            #eef4ff
+        );
 
-    border-radius:100px;
+    background-size:300% auto;
 
-    color:#c8d6e8;
-
-    font-size:.73rem;
-
-    font-weight:700;
-
-    letter-spacing:.5px;
-
-    margin-bottom:25px;
-
-}
-
-
-.live-star{
-
-    width:6px;
-    height:6px;
-
-    border-radius:50%;
-
-    background:#fff;
-
-    box-shadow:
-    0 0 8px #fff,
-    0 0 18px #b7d0f0;
+    background-clip:text;
+    -webkit-background-clip:text;
 
     animation:
-    starPulse 3.5s ease-in-out infinite;
-
+        textShine 8s ease-in-out infinite;
 }
 
-
-@keyframes starPulse{
-
-    0%,100%{
-        opacity:.45;
+@keyframes textShine{
+    0%{
+        background-position:0% center;
     }
 
     50%{
-        opacity:1;
+        background-position:100% center;
     }
 
+    100%{
+        background-position:0% center;
+    }
 }
 
-
-.hero h1{
-
-    font-size:
-    clamp(
-        3.3rem,
-        7vw,
-        6.8rem
-    );
-
-    line-height:.91;
-
-    letter-spacing:-6px;
-
-    font-weight:850;
-
-}
-
-
-.hero-description{
-
-    color:#9baabd;
-
+.hero-copy{
     max-width:650px;
 
-    font-size:1.02rem;
+    margin:30px 0;
 
-    margin:29px 0;
+    color:#aebbd0;
 
+    font-size:1.08rem;
+    line-height:1.85;
 }
-
 
 .hero-actions{
-
     display:flex;
-
     flex-wrap:wrap;
-
     gap:11px;
-
 }
 
-
 .btn{
-
     display:inline-flex;
-
     align-items:center;
-
     justify-content:center;
-
     gap:8px;
 
-    padding:12px 18px;
+    padding:14px 20px;
 
-    border-radius:11px;
-
-    font-size:.83rem;
+    border-radius:999px;
 
     font-weight:800;
 
-    border:
-    1px solid
-    rgba(210,225,245,.14);
+    border:1px solid transparent;
 
-    transition:.25s;
-
+    transition:
+        transform .25s ease,
+        background .25s ease,
+        border .25s ease;
 }
 
+.btn:hover{
+    transform:translateY(-3px);
+}
 
 .btn-primary{
-
     background:
-    linear-gradient(
-        135deg,
-        #eef4ff,
-        #cbdcf2
-    );
-
-    color:#06101e;
-
-    box-shadow:
-    0 10px 30px
-    rgba(200,220,245,.08);
-
-}
-
-
-.btn-primary:hover{
-
-    transform:translateY(-3px);
-
-    box-shadow:
-    0 15px 35px
-    rgba(200,220,245,.15);
-
-}
-
-
-.btn-ghost{
-
-    background:
-    rgba(220,235,255,.035);
-
-    color:#e4ecf8;
-
-}
-
-
-.btn-ghost:hover{
-
-    background:
-    rgba(220,235,255,.08);
-
-    border-color:
-    rgba(220,235,255,.25);
-
-    transform:translateY(-3px);
-
-}
-
-
-.hero-contact{
-
-    margin-top:30px;
-
-    display:flex;
-
-    flex-wrap:wrap;
-
-    gap:9px;
-
-}
-
-
-.contact-chip{
-
-    display:flex;
-
-    align-items:center;
-
-    gap:8px;
-
-    padding:7px 10px;
-
-    border:
-    1px solid
-    rgba(210,225,245,.09);
-
-    border-radius:9px;
-
-    color:#8998ab;
-
-    font-size:.76rem;
-
-    transition:.2s;
-
-}
-
-
-.contact-chip:hover{
+        linear-gradient(
+            135deg,
+            #1d79b8,
+            #287eae
+        );
 
     color:white;
 
-    background:
-    rgba(220,235,255,.05);
+    box-shadow:
+        0 15px 40px rgba(24,119,180,.22);
+}
 
+.btn-secondary{
+    background:
+        rgba(8,18,34,.65);
+
+    border-color:
+        rgba(150,190,230,.16);
+
+    color:#d9e5f5;
+
+    backdrop-filter:blur(12px);
+}
+
+.btn-secondary:hover{
+    background:rgba(25,57,91,.7);
 }
 
 
 /* =========================================================
-   PROFILE
+   PROFILE CARD
 ========================================================= */
 
-.profile-wrap{
-
-    display:flex;
-
-    justify-content:center;
-
-}
-
-
-.profile-card{
-
-    width:
-    min(
-        370px,
-        100%
-    );
-
-    padding:12px;
-
-    border:
-    1px solid
-    rgba(220,235,255,.14);
-
-    border-radius:29px;
-
-    background:
-    linear-gradient(
-        145deg,
-        rgba(25,40,64,.55),
-        rgba(3,7,15,.72)
-    );
-
-    box-shadow:
-    0 25px 80px
-    rgba(0,0,0,.38);
-
-    transform:rotate(1.5deg);
-
-    transition:.5s;
-
-}
-
-
-.profile-card:hover{
-
-    transform:
-    rotate(0deg)
-    translateY(-8px);
-
-    border-color:
-    rgba(220,235,255,.24);
-
-}
-
-
-.profile-image{
+.hero-card{
+    min-height:520px;
 
     position:relative;
 
-    aspect-ratio:4/5;
-
     overflow:hidden;
 
-    border-radius:21px;
+    border-radius:38px;
 
     background:
-    linear-gradient(
-        145deg,
-        #111d31,
-        #03060d
-    );
+        linear-gradient(
+            155deg,
+            rgba(11,30,55,.91),
+            rgba(3,7,15,.94)
+        );
 
-    display:flex;
+    border:1px solid
+        rgba(164,202,240,.14);
 
-    align-items:center;
+    box-shadow:
+        0 40px 100px rgba(0,0,0,.42);
 
-    justify-content:center;
-
+    isolation:isolate;
 }
 
-
-.profile-image img{
-
-    width:100%;
-    height:100%;
-
-    object-fit:cover;
-
-    display:block;
-
-}
-
-
-.profile-placeholder{
+.hero-card::before{
+    content:"";
 
     position:absolute;
 
-    inset:0;
+    width:400px;
+    height:400px;
 
-    display:flex;
+    right:-180px;
+    top:-170px;
 
-    flex-direction:column;
+    border-radius:50%;
 
-    align-items:center;
+    background:
+        radial-gradient(
+            circle,
+            rgba(63,170,222,.18),
+            transparent 68%
+        );
 
-    justify-content:center;
+    filter:blur(10px);
+
+    z-index:-1;
+}
+
+.profile-photo{
+    position:absolute;
+
+    top:28px;
+    left:28px;
+    right:28px;
+
+    height:350px;
+
+    border-radius:28px;
+
+    overflow:hidden;
+
+    background:
+        linear-gradient(
+            145deg,
+            #102d4c,
+            #071321
+        );
+
+    border:
+        1px solid
+        rgba(180,215,245,.13);
+}
+
+.profile-photo img{
+    width:100%;
+    height:100%;
+
+    display:block;
+
+    object-fit:cover;
+}
+
+.photo-placeholder{
+    height:100%;
+
+    display:grid;
+    place-items:center;
 
     text-align:center;
 
-    color:#bdcee2;
-
+    color:white;
 }
 
+.photo-placeholder strong{
+    display:block;
 
-.profile-placeholder strong{
+    font-family:"Manrope",sans-serif;
 
-    font-size:3rem;
+    font-size:4.5rem;
 
-    font-weight:900;
+    letter-spacing:-.08em;
 
+    background:
+        linear-gradient(
+            135deg,
+            white,
+            #66c9ef
+        );
+
+    color:transparent;
+
+    background-clip:text;
+    -webkit-background-clip:text;
 }
 
+.photo-placeholder small{
+    display:block;
 
-.profile-placeholder span{
+    margin-top:8px;
 
-    color:#718096;
+    color:#8295ad;
+}
 
+.floating-pill{
+    position:absolute;
+
+    top:330px;
+    right:24px;
+
+    padding:10px 14px;
+
+    border-radius:999px;
+
+    background:
+        rgba(226,241,255,.92);
+
+    color:#07172b;
+
+    font-size:.76rem;
+    font-weight:800;
+
+    box-shadow:
+        0 15px 35px rgba(0,0,0,.3);
+}
+
+.hero-card-content{
+    position:absolute;
+
+    left:34px;
+    right:34px;
+    bottom:28px;
+
+    color:white;
+}
+
+.hero-card-content .mini{
     font-size:.7rem;
 
+    letter-spacing:.16em;
+
+    text-transform:uppercase;
+
+    color:#71859e;
+}
+
+.hero-card-content h3{
+    font-size:2rem;
+
+    margin:8px 0;
+}
+
+.hero-card-content p{
+    color:#8999ae;
+
+    line-height:1.6;
 }
 
 
-.profile-info{
+/* =========================================================
+   PHOTO UPLOAD
+========================================================= */
 
-    padding:16px 7px 6px;
+.photo-tools{
+    display:flex;
+    gap:8px;
 
+    margin-top:14px;
 }
 
+.upload-label{
+    display:inline-flex;
+    align-items:center;
 
-.profile-info h3{
+    padding:8px 12px;
 
-    font-size:1.15rem;
+    border-radius:999px;
 
+    background:rgba(255,255,255,.07);
+
+    border:1px solid
+        rgba(255,255,255,.12);
+
+    color:#b8c8da;
+
+    font-size:.72rem;
+    font-weight:800;
+
+    cursor:pointer;
 }
 
+.upload-label input{
+    display:none;
+}
 
-.profile-info p{
-
-    color:#77879b;
-
-    font-size:.78rem;
-
+.clear-photo{
+    cursor:pointer;
 }
 
 
@@ -951,35 +735,22 @@ section{
 ========================================================= */
 
 .glass{
+    background:
+        linear-gradient(
+            145deg,
+            rgba(10,21,38,.69),
+            rgba(6,13,26,.58)
+        );
 
     border:
-    1px solid
-    var(--border);
-
-    background:
-
-    linear-gradient(
-        145deg,
-        rgba(13,25,45,.58),
-        rgba(3,7,15,.62)
-    );
-
-    backdrop-filter:blur(13px);
-
-    border-radius:var(--radius);
+        1px solid
+        rgba(156,194,233,.11);
 
     box-shadow:
-    0 20px 60px
-    rgba(0,0,0,.13);
+        0 20px 70px rgba(0,0,0,.28);
 
-}
-
-
-.glass:hover{
-
-    border-color:
-    var(--border-hover);
-
+    backdrop-filter:blur(18px);
+    -webkit-backdrop-filter:blur(18px);
 }
 
 
@@ -988,79 +759,106 @@ section{
 ========================================================= */
 
 .about-grid{
-
     display:grid;
 
-    grid-template-columns:.8fr 1.2fr;
+    grid-template-columns:.82fr 1.18fr;
 
-    gap:22px;
+    gap:65px;
 
+    align-items:start;
 }
 
+.about-panel{
+    padding:32px;
 
-.about-card{
-
-    padding:34px;
-
+    border-radius:var(--radius);
 }
 
-
-.about-card h3{
-
-    font-size:1.3rem;
-
-    margin-bottom:14px;
-
+.about-panel h2{
+    font-size:2.4rem;
 }
 
-
-.about-card p{
-
-    color:var(--muted);
-
-    font-size:.91rem;
-
-}
-
-
-.fact-grid{
-
+.stat-grid{
     display:grid;
 
-    grid-template-columns:
-    repeat(2,1fr);
+    grid-template-columns:1fr 1fr;
 
-    gap:13px;
+    gap:11px;
 
+    margin-top:25px;
 }
 
+.stat{
+    padding:20px;
 
-.fact{
+    border-radius:18px;
 
-    padding:25px;
+    background:
+        linear-gradient(
+            145deg,
+            rgba(20,40,67,.58),
+            rgba(7,17,31,.55)
+        );
 
+    border:
+        1px solid
+        rgba(157,194,230,.10);
 }
 
-
-.fact-number{
-
-    font-size:2rem;
-
-    font-weight:900;
-
-    color:#e6eef9;
-
-}
-
-
-.fact span{
-
+.stat b{
     display:block;
 
-    color:#718096;
+    color:#eaf6ff;
 
-    font-size:.76rem;
+    font-family:"Manrope";
 
+    font-size:1.55rem;
+}
+
+.stat span{
+    display:block;
+
+    margin-top:5px;
+
+    color:#78899f;
+
+    font-size:.78rem;
+}
+
+.about-text{
+    color:#a8b7ca;
+
+    font-size:1.04rem;
+
+    line-height:1.9;
+
+    margin-bottom:18px;
+}
+
+.tag-row{
+    display:flex;
+    flex-wrap:wrap;
+    gap:9px;
+
+    margin-top:24px;
+}
+
+.tag{
+    padding:8px 12px;
+
+    border-radius:999px;
+
+    background:
+        rgba(44,135,190,.10);
+
+    border:
+        1px solid
+        rgba(75,166,215,.13);
+
+    color:#8fd5f3;
+
+    font-size:.78rem;
+    font-weight:800;
 }
 
 
@@ -1069,143 +867,125 @@ section{
 ========================================================= */
 
 .timeline{
-
     position:relative;
 
-    max-width:950px;
-
+    margin-left:8px;
 }
 
-
 .timeline::before{
-
     content:"";
 
     position:absolute;
 
-    left:8px;
-
-    top:0;
-
-    bottom:0;
+    left:9px;
+    top:5px;
+    bottom:5px;
 
     width:1px;
 
     background:
-    linear-gradient(
-        #b5c8e1,
-        rgba(181,200,225,.04)
-    );
-
+        linear-gradient(
+            var(--blue2),
+            rgba(66,184,236,0)
+        );
 }
-
 
 .timeline-item{
-
     position:relative;
 
-    padding-left:47px;
+    padding-left:44px;
 
-    margin-bottom:27px;
-
+    margin-bottom:24px;
 }
 
-
 .timeline-dot{
-
     position:absolute;
 
-    left:2px;
+    left:0;
+    top:7px;
 
-    top:25px;
-
-    width:14px;
-
-    height:14px;
+    width:19px;
+    height:19px;
 
     border-radius:50%;
 
-    background:#edf3fc;
+    background:#07111f;
+
+    border:
+        4px solid
+        #43b9ec;
 
     box-shadow:
-    0 0 0 5px rgba(220,235,255,.055),
-    0 0 18px rgba(220,235,255,.35);
-
+        0 0 0 5px
+        rgba(67,185,236,.07);
 }
 
+.timeline-card{
+    padding:24px;
 
-.experience-card{
+    border-radius:22px;
 
-    padding:27px;
+    background:
+        rgba(7,16,30,.62);
 
+    border:
+        1px solid
+        rgba(160,195,230,.10);
+
+    transition:.3s ease;
 }
 
+.timeline-card:hover{
+    transform:translateX(5px);
 
-.card-top{
+    border-color:
+        rgba(70,177,228,.25);
+}
 
+.timeline-top{
     display:flex;
 
     justify-content:space-between;
 
-    gap:20px;
-
+    gap:15px;
 }
 
-
-.card-top h3{
-
-    font-size:1.18rem;
-
+.timeline-card h3{
+    font-size:1.2rem;
 }
-
-
-.card-company{
-
-    color:#b2c5dc;
-
-    font-size:.85rem;
-
-    font-weight:700;
-
-}
-
 
 .date{
+    color:#68c6ee;
+
+    font-size:.76rem;
+
+    font-weight:800;
 
     white-space:nowrap;
-
-    color:#718096;
-
-    font-size:.72rem;
-
-    padding:5px 9px;
-
-    border:
-    1px solid
-    var(--border);
-
-    border-radius:8px;
-
 }
 
+.role{
+    color:#57bce8;
 
-.card-list{
-
-    margin-top:17px;
-
-    padding-left:18px;
-
-    color:#94a4b8;
+    font-weight:800;
 
     font-size:.86rem;
 
+    margin:6px 0 13px;
 }
 
+.timeline-card ul{
+    margin:0;
 
-.card-list li{
+    padding-left:18px;
 
-    margin-bottom:8px;
+    color:#8999ae;
 
+    line-height:1.75;
+}
+
+.timeline-card li+li{
+    margin-top:5px;
 }
 
 
@@ -1214,145 +994,116 @@ section{
 ========================================================= */
 
 .project-grid{
-
     display:grid;
 
     grid-template-columns:
-    repeat(2,1fr);
+        repeat(2,1fr);
 
-    gap:16px;
-
+    gap:18px;
 }
 
-
-.project-card{
-
-    padding:27px;
+.project{
+    min-height:285px;
 
     position:relative;
 
     overflow:hidden;
 
-    transition:.3s;
+    padding:28px;
 
-}
-
-
-.project-card:hover{
-
-    transform:translateY(-6px);
-
-}
-
-
-.project-number{
-
-    font-size:.7rem;
-
-    color:#899db8;
-
-    font-weight:900;
-
-    letter-spacing:2px;
-
-}
-
-
-.project-card h3{
-
-    margin:11px 0 8px;
-
-    font-size:1.12rem;
-
-}
-
-
-.project-card p{
-
-    color:#8d9daf;
-
-    font-size:.83rem;
-
-}
-
-
-.project-tags{
-
-    display:flex;
-
-    flex-wrap:wrap;
-
-    gap:7px;
-
-    margin-top:18px;
-
-}
-
-
-.tag{
-
-    padding:5px 9px;
-
-    border-radius:7px;
-
-    border:
-    1px solid
-    rgba(210,225,245,.09);
+    border-radius:27px;
 
     background:
-    rgba(220,235,255,.035);
+        linear-gradient(
+            145deg,
+            rgba(11,25,44,.74),
+            rgba(5,12,24,.68)
+        );
 
-    color:#9eafc3;
+    border:
+        1px solid
+        rgba(160,198,237,.10);
 
-    font-size:.68rem;
-
+    transition:
+        transform .3s ease,
+        border .3s ease,
+        box-shadow .3s ease;
 }
 
+.project::after{
+    content:"";
 
-/* =========================================================
-   METRICS
-========================================================= */
+    position:absolute;
 
-.metrics{
+    width:190px;
+    height:190px;
 
-    display:grid;
+    right:-100px;
+    bottom:-100px;
 
-    grid-template-columns:
-    repeat(4,1fr);
+    border-radius:50%;
 
-    gap:12px;
-
+    background:
+        radial-gradient(
+            circle,
+            rgba(57,162,215,.14),
+            transparent 70%
+        );
 }
 
+.project:hover{
+    transform:translateY(-7px);
+
+    border-color:
+        rgba(68,179,229,.24);
+
+    box-shadow:
+        0 25px 65px rgba(0,0,0,.30);
+}
+
+.project-number{
+    color:#52bce8;
+
+    font-size:.75rem;
+
+    font-weight:800;
+
+    letter-spacing:.08em;
+}
+
+.project h3{
+    font-size:1.38rem;
+
+    margin:14px 0 10px;
+}
+
+.project p{
+    color:#8e9eb2;
+
+    line-height:1.7;
+}
 
 .metric{
+    display:inline-flex;
 
-    text-align:center;
+    margin-top:20px;
 
-    padding:27px 12px;
+    padding:9px 12px;
 
-}
+    border-radius:12px;
 
+    background:
+        rgba(42,135,191,.10);
 
-.metric strong{
+    border:
+        1px solid
+        rgba(62,164,215,.12);
 
-    display:block;
+    color:#83d2ef;
 
-    font-size:2.15rem;
+    font-size:.77rem;
 
-    color:#e4edf9;
-
-    line-height:1;
-
-}
-
-
-.metric span{
-
-    color:#718096;
-
-    font-size:.72rem;
-
+    font-weight:800;
 }
 
 
@@ -1360,156 +1111,109 @@ section{
    EDUCATION
 ========================================================= */
 
-.education-grid{
-
+.edu-grid{
     display:grid;
 
     grid-template-columns:
-    repeat(3,1fr);
+        repeat(3,1fr);
 
-    gap:17px;
-
+    gap:18px;
 }
-
 
 .edu-card{
-
     padding:27px;
 
-    min-height:255px;
+    min-height:245px;
 
-}
-
-
-.edu-icon{
-
-    width:47px;
-
-    height:47px;
-
-    display:flex;
-
-    align-items:center;
-
-    justify-content:center;
-
-    border-radius:14px;
+    border-radius:24px;
 
     background:
-    rgba(220,235,255,.045);
+        linear-gradient(
+            145deg,
+            rgba(11,24,43,.73),
+            rgba(5,13,25,.64)
+        );
 
     border:
-    1px solid
-    var(--border);
-
-    margin-bottom:23px;
-
+        1px solid
+        rgba(160,198,237,.10);
 }
 
+.edu-card .year{
+    color:#55bee9;
+
+    font-size:.74rem;
+
+    font-weight:800;
+}
 
 .edu-card h3{
+    font-size:1.12rem;
 
-    font-size:1rem;
-
+    margin:15px 0 8px;
 }
-
 
 .edu-card p{
+    color:#8999ae;
 
-    color:#8c9caf;
+    line-height:1.7;
 
-    font-size:.8rem;
-
-    margin-top:8px;
-
+    font-size:.9rem;
 }
 
+.edu-photo{
+    height:110px;
 
-.edu-year{
+    margin-top:20px;
 
-    display:inline-block;
+    border-radius:15px;
 
-    margin-top:16px;
+    overflow:hidden;
 
-    color:#b0c2d8;
+    background:
+        linear-gradient(
+            145deg,
+            #0d2845,
+            #07111f
+        );
+
+    border:
+        1px solid
+        rgba(150,190,230,.10);
+}
+
+.edu-photo img{
+    width:100%;
+    height:100%;
+
+    object-fit:cover;
+}
+
+.edu-upload{
+    display:inline-flex;
+
+    margin-top:10px;
+
+    padding:7px 10px;
+
+    border-radius:999px;
+
+    color:#7fcce9;
+
+    background:
+        rgba(50,140,190,.08);
+
+    border:
+        1px solid
+        rgba(80,170,215,.12);
 
     font-size:.7rem;
 
-    font-weight:800;
-
+    cursor:pointer;
 }
 
-
-/* =========================================================
-   CERTIFICATIONS
-========================================================= */
-
-.cert-grid{
-
-    display:grid;
-
-    grid-template-columns:
-    repeat(2,1fr);
-
-    gap:11px;
-
-}
-
-
-.cert{
-
-    display:flex;
-
-    justify-content:space-between;
-
-    align-items:center;
-
-    gap:15px;
-
-    padding:17px 19px;
-
-    border:
-    1px solid
-    var(--border);
-
-    background:
-    rgba(220,235,255,.025);
-
-    border-radius:13px;
-
-    transition:.25s;
-
-}
-
-
-.cert:hover{
-
-    background:
-    rgba(220,235,255,.06);
-
-    transform:
-    translateX(4px);
-
-}
-
-
-.cert-name{
-
-    font-weight:700;
-
-    font-size:.83rem;
-
-}
-
-
-.cert-date{
-
-    color:#68788c;
-
-    font-size:.68rem;
-
-    white-space:nowrap;
-
+.edu-upload input{
+    display:none;
 }
 
 
@@ -1517,171 +1221,94 @@ section{
    SKILLS
 ========================================================= */
 
-.skills-layout{
-
+.skills-wrap{
     display:grid;
 
-    grid-template-columns:
-    1fr 1fr;
+    grid-template-columns:1fr 1fr;
 
     gap:18px;
-
 }
 
-
-.skill-card{
-
+.skill-box{
     padding:28px;
 
+    border-radius:26px;
 }
 
-
-.skill{
-
-    margin-bottom:21px;
-
+.skill-box h3{
+    margin-bottom:18px;
 }
 
-
-.skill-title{
-
-    display:flex;
-
-    justify-content:space-between;
-
-    margin-bottom:7px;
-
-    font-size:.78rem;
-
-}
-
-
-.skill-title span:last-child{
-
-    color:#b7c8dc;
-
-}
-
-
-.skill-track{
-
-    height:5px;
-
-    background:
-    rgba(220,235,255,.06);
-
-    border-radius:20px;
-
-    overflow:hidden;
-
-}
-
-
-.skill-fill{
-
-    height:100%;
-
-    width:0;
-
-    border-radius:20px;
-
-    background:
-    linear-gradient(
-        90deg,
-        #536c8c,
-        #e0e9f5
-    );
-
-    transition:
-    width 1.4s ease;
-
-}
-
-
-.tool-cloud{
-
+.skill-list{
     display:flex;
 
     flex-wrap:wrap;
 
-    gap:8px;
-
-    margin-top:18px;
-
+    gap:9px;
 }
 
+.skill{
+    padding:10px 13px;
 
-.tool{
-
-    padding:8px 11px;
-
-    border-radius:9px;
+    border-radius:12px;
 
     background:
-    rgba(220,235,255,.035);
+        rgba(13,29,50,.75);
 
     border:
-    1px solid
-    var(--border);
+        1px solid
+        rgba(150,190,230,.10);
 
-    color:#a6b7ca;
+    color:#a9bbcf;
 
-    font-size:.72rem;
+    font-size:.81rem;
 
+    font-weight:700;
+
+    transition:.2s;
+}
+
+.skill:hover{
+    color:white;
+
+    border-color:
+        rgba(68,180,230,.3);
+
+    transform:translateY(-2px);
 }
 
 
 /* =========================================================
-   ACHIEVEMENT
+   CERTIFICATIONS
 ========================================================= */
 
-.achievement{
-
-    display:grid;
-
-    grid-template-columns:auto 1fr;
-
-    gap:24px;
-
-    align-items:center;
-
-    padding:34px;
-
-}
-
-
-.achievement-icon{
-
-    width:72px;
-
-    height:72px;
-
+.certifications{
     display:flex;
 
-    align-items:center;
+    flex-wrap:wrap;
 
-    justify-content:center;
+    gap:10px;
 
-    border-radius:20px;
-
-    background:
-    rgba(220,235,255,.05);
-
-    border:
-    1px solid
-    var(--border);
-
-    font-size:1.8rem;
-
+    margin-top:25px;
 }
 
+.cert{
+    padding:11px 14px;
 
-.achievement p{
+    border-radius:12px;
 
-    color:#8c9caf;
+    background:
+        rgba(12,27,47,.70);
 
-    margin-top:6px;
+    border:
+        1px solid
+        rgba(152,191,230,.10);
 
+    color:#a7bbd1;
+
+    font-size:.82rem;
+
+    font-weight:700;
 }
 
 
@@ -1689,349 +1316,148 @@ section{
    CONTACT
 ========================================================= */
 
-.contact-grid{
+.contact{
+    position:relative;
 
+    overflow:hidden;
+
+    padding:55px;
+
+    border-radius:38px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(5,15,29,.94),
+            rgba(10,34,59,.91)
+        );
+
+    border:
+        1px solid
+        rgba(120,185,230,.15);
+
+    box-shadow:
+        0 35px 100px rgba(0,0,0,.42);
+}
+
+.contact::before{
+    content:"";
+
+    position:absolute;
+
+    width:500px;
+    height:500px;
+
+    right:-250px;
+    top:-280px;
+
+    border-radius:50%;
+
+    border:
+        1px solid
+        rgba(91,189,232,.15);
+
+    box-shadow:
+        0 0 0 55px rgba(91,189,232,.035),
+        0 0 0 110px rgba(91,189,232,.018);
+}
+
+.contact-grid{
     display:grid;
 
-    grid-template-columns:.8fr 1.2fr;
+    grid-template-columns:
+        1fr .78fr;
 
-    gap:18px;
+    gap:60px;
 
+    position:relative;
 }
 
-
-.contact-card{
-
-    padding:29px;
-
+.contact h2{
+    max-width:650px;
 }
 
+.contact p{
+    max-width:620px;
 
-.contact-method{
+    margin:20px 0;
 
+    color:#8999ad;
+
+    line-height:1.8;
+}
+
+.contact-links{
+    display:grid;
+
+    gap:11px;
+}
+
+.contact-link{
     display:flex;
 
     align-items:center;
 
     gap:14px;
 
-    padding:15px;
-
-    border-radius:13px;
-
-    border:
-    1px solid
-    var(--border);
-
-    background:
-    rgba(220,235,255,.025);
-
-    margin-bottom:9px;
-
-    transition:.2s;
-
-}
-
-
-.contact-method:hover{
-
-    background:
-    rgba(220,235,255,.065);
-
-    transform:
-    translateX(4px);
-
-}
-
-
-.contact-icon{
-
-    width:41px;
-
-    height:41px;
-
-    display:flex;
-
-    align-items:center;
-
-    justify-content:center;
-
-    border-radius:11px;
-
-    background:
-    rgba(220,235,255,.05);
-
-    color:#dbe6f5;
-
-}
-
-
-.contact-method strong{
-
-    display:block;
-
-    font-size:.83rem;
-
-}
-
-
-.contact-method span{
-
-    display:block;
-
-    color:#718096;
-
-    font-size:.74rem;
-
-    word-break:break-word;
-
-}
-
-
-/* =========================================================
-   CONTACT FORM
-========================================================= */
-
-.form-row{
-
-    display:grid;
-
-    grid-template-columns:
-    1fr 1fr;
-
-    gap:11px;
-
-}
-
-
-.field{
-
-    margin-bottom:13px;
-
-}
-
-
-.field label{
-
-    display:block;
-
-    margin-bottom:6px;
-
-    font-size:.73rem;
-
-    color:#8797aa;
-
-}
-
-
-.field input,
-.field textarea{
-
-    width:100%;
-
-    border:
-    1px solid
-    rgba(210,225,245,.11);
-
-    background:
-    rgba(0,0,0,.22);
-
-    color:#fff;
-
-    outline:none;
-
-    border-radius:11px;
-
-    padding:12px 13px;
-
-    transition:.2s;
-
-}
-
-
-.field textarea{
-
-    min-height:145px;
-
-    resize:vertical;
-
-}
-
-
-.field input:focus,
-.field textarea:focus{
-
-    border-color:
-    rgba(220,235,255,.35);
-
-    box-shadow:
-    0 0 0 3px
-    rgba(220,235,255,.035);
-
-}
-
-
-.form-note{
-
-    margin-top:9px;
-
-    color:#64748b;
-
-    font-size:.68rem;
-
-    line-height:1.5;
-
-}
-
-
-/* =========================================================
-   EMAIL OPTIONS
-========================================================= */
-
-.email-options{
-
-    display:none;
-
-    margin-top:11px;
-
-    padding:11px;
-
-    border:
-    1px solid
-    var(--border);
-
-    border-radius:12px;
-
-    background:
-    rgba(3,6,13,.9);
-
-}
-
-
-.email-options.show{
-
-    display:block;
-
-}
-
-
-.email-options-title{
-
-    color:#8191a5;
-
-    font-size:.7rem;
-
-    margin-bottom:8px;
-
-}
-
-
-.email-option{
-
-    width:100%;
-
-    padding:9px;
-
-    margin-top:5px;
-
-    border:
-    1px solid
-    var(--border);
-
-    border-radius:9px;
-
-    background:
-    rgba(220,235,255,.035);
-
-    color:#e6edf7;
-
-    font-size:.75rem;
-
-}
-
-
-.email-option:hover{
-
-    background:
-    rgba(220,235,255,.08);
-
-}
-
-
-/* =========================================================
-   CAMPUS IMAGE
-========================================================= */
-
-.campus-image{
-
-    position:relative;
-
-    width:100%;
-
-    aspect-ratio:16/9;
-
-    overflow:hidden;
+    padding:15px 17px;
 
     border-radius:17px;
 
     background:
-    linear-gradient(
-        145deg,
-        #111d31,
-        #03060d
-    );
+        rgba(255,255,255,.035);
 
+    border:
+        1px solid
+        rgba(160,195,230,.10);
+
+    transition:.25s ease;
 }
 
+.contact-link:hover{
+    background:
+        rgba(67,181,231,.08);
 
-.campus-image img{
+    transform:
+        translateX(5px);
 
-    width:100%;
-    height:100%;
-
-    object-fit:cover;
-
+    border-color:
+        rgba(74,181,230,.22);
 }
 
+.icon{
+    width:40px;
+    height:40px;
 
-.campus-placeholder{
+    flex-shrink:0;
 
-    position:absolute;
+    display:grid;
+    place-items:center;
 
-    inset:0;
+    border-radius:12px;
 
-    display:flex;
+    background:
+        rgba(77,184,234,.10);
 
-    flex-direction:column;
+    color:#79d0f0;
 
-    align-items:center;
-
-    justify-content:center;
-
-    color:#8999ad;
-
-    text-align:center;
-
+    font-weight:900;
 }
 
+.contact-link small{
+    display:block;
 
-.campus-placeholder strong{
-
-    font-size:2rem;
-
-    color:#dce6f3;
-
-}
-
-
-.campus-placeholder span{
+    color:#64758b;
 
     font-size:.68rem;
 
-    color:#667589;
+    margin-bottom:3px;
+}
 
-    margin-top:5px;
+.contact-link strong{
+    font-size:.88rem;
 
+    word-break:break-word;
 }
 
 
@@ -2040,122 +1466,13 @@ section{
 ========================================================= */
 
 footer{
+    padding:35px 0 55px;
 
-    padding:34px 0;
+    color:#5f7086;
 
-    border-top:
-    1px solid
-    rgba(210,225,245,.08);
+    font-size:.78rem;
 
-}
-
-
-.footer-inner{
-
-    display:flex;
-
-    justify-content:space-between;
-
-    align-items:center;
-
-    gap:20px;
-
-}
-
-
-.footer-inner p{
-
-    color:#59687b;
-
-    font-size:.7rem;
-
-}
-
-
-.footer-links{
-
-    display:flex;
-
-    gap:7px;
-
-}
-
-
-.footer-links a{
-
-    width:34px;
-
-    height:34px;
-
-    display:flex;
-
-    align-items:center;
-
-    justify-content:center;
-
-    border:
-    1px solid
-    var(--border);
-
-    border-radius:9px;
-
-    color:#9aaabd;
-
-}
-
-
-/* =========================================================
-   BACK TO TOP
-========================================================= */
-
-.top-btn{
-
-    position:fixed;
-
-    right:20px;
-
-    bottom:20px;
-
-    width:43px;
-
-    height:43px;
-
-    display:flex;
-
-    align-items:center;
-
-    justify-content:center;
-
-    border:
-    1px solid
-    var(--border);
-
-    background:
-    rgba(5,11,22,.85);
-
-    backdrop-filter:blur(10px);
-
-    color:#fff;
-
-    border-radius:11px;
-
-    opacity:0;
-
-    pointer-events:none;
-
-    transition:.3s;
-
-    z-index:900;
-
-}
-
-
-.top-btn.show{
-
-    opacity:1;
-
-    pointer-events:auto;
-
+    text-align:center;
 }
 
 
@@ -2164,25 +1481,56 @@ footer{
 ========================================================= */
 
 .reveal{
+    opacity:0;
+
+    transform:
+        translateY(25px);
+
+    transition:
+        opacity .8s ease,
+        transform .8s ease;
+}
+
+.reveal.show{
+    opacity:1;
+
+    transform:none;
+}
+
+
+/* =========================================================
+   SHOOTING STAR
+========================================================= */
+
+.shooting-star{
+    position:fixed;
+
+    z-index:-3;
+
+    width:110px;
+    height:1px;
+
+    pointer-events:none;
 
     opacity:0;
 
     transform:
-    translateY(25px);
+        rotate(-27deg);
 
-    transition:
-    opacity .7s ease,
-    transform .7s ease;
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(238,244,255,.95),
+            rgba(255,232,204,.8),
+            transparent
+        );
 
-}
-
-
-.reveal.visible{
-
-    opacity:1;
-
-    transform:none;
-
+    filter:
+        drop-shadow(
+            0 0 5px
+            rgba(220,235,255,.5)
+        );
 }
 
 
@@ -2190,442 +1538,277 @@ footer{
    RESPONSIVE
 ========================================================= */
 
-@media(max-width:950px){
-
-    .hero-grid,
-    .about-grid,
-    .contact-grid,
-    .skills-layout{
-
-        grid-template-columns:1fr;
-
-    }
-
-
-    .profile-wrap{
-
-        order:-1;
-
-    }
-
-
-    .profile-card{
-
-        width:290px;
-
-    }
-
-
-    .education-grid{
-
-        grid-template-columns:
-        repeat(2,1fr);
-
-    }
-
-
-    .metrics{
-
-        grid-template-columns:
-        repeat(2,1fr);
-
-    }
-
-}
-
-
-@media(max-width:720px){
-
-    section{
-
-        padding:80px 0;
-
-    }
-
-
-    .container{
-
-        width:
-        min(
-            100% - 28px,
-            var(--max)
-        );
-
-    }
-
-
-    .menu-btn{
-
-        display:block;
-
-    }
-
+@media(max-width:900px){
 
     .nav-links{
+        display:none;
 
         position:absolute;
 
         top:65px;
 
-        left:14px;
-        right:14px;
+        left:0;
+        right:0;
 
-        display:none;
+        padding:12px;
 
         flex-direction:column;
-
-        padding:9px;
 
         background:
-        rgba(3,6,13,.97);
+            rgba(4,12,24,.94);
 
         border:
-        1px solid
-        var(--border);
+            1px solid
+            rgba(160,195,230,.12);
 
-        border-radius:14px;
+        border-radius:22px;
 
         backdrop-filter:blur(20px);
-
     }
-
 
     .nav-links.open{
-
         display:flex;
-
     }
 
-
-    .hero h1{
-
-        font-size:
-        clamp(
-            3rem,
-            16vw,
-            5rem
-        );
-
-        letter-spacing:-4px;
-
-    }
-
-
-    .hero-actions{
-
-        flex-direction:column;
-
-    }
-
-
-    .btn{
-
+    .nav-links a{
         width:100%;
 
-    }
-
-
-    .fact-grid,
-    .project-grid,
-    .education-grid,
-    .cert-grid{
-
-        grid-template-columns:1fr;
-
-    }
-
-
-    .metrics{
-
-        grid-template-columns:
-        1fr 1fr;
-
-    }
-
-
-    .form-row{
-
-        grid-template-columns:1fr;
-
-    }
-
-
-    .card-top{
-
-        flex-direction:column;
-
-    }
-
-
-    .achievement{
-
-        grid-template-columns:1fr;
-
-    }
-
-
-    .footer-inner{
-
-        flex-direction:column;
-
         text-align:center;
-
     }
 
+    .menu-btn{
+        display:block;
+    }
+
+    .nav-cta{
+        display:none;
+    }
+
+    .hero-grid,
+    .about-grid,
+    .contact-grid{
+        grid-template-columns:1fr;
+    }
+
+    .hero{
+        padding-top:130px;
+    }
+
+    .hero-card{
+        width:100%;
+
+        max-width:650px;
+
+        margin:auto;
+    }
+
+    .project-grid{
+        grid-template-columns:1fr;
+    }
+
+    .edu-grid{
+        grid-template-columns:1fr;
+    }
+
+    .skills-wrap{
+        grid-template-columns:1fr;
+    }
 }
 
 
-@media(prefers-reduced-motion:reduce){
+@media(max-width:560px){
 
-    html{
-
-        scroll-behavior:auto;
-
+    .section{
+        padding:80px 0;
     }
+
+    .hero h1{
+        font-size:
+            clamp(
+                3rem,
+                15vw,
+                4.5rem
+            );
+    }
+
+    .hero-copy{
+        font-size:.98rem;
+    }
+
+    .hero-card{
+        min-height:475px;
+    }
+
+    .profile-photo{
+        height:300px;
+    }
+
+    .floating-pill{
+        top:282px;
+    }
+
+    .timeline-top{
+        display:block;
+    }
+
+    .date{
+        display:block;
+
+        margin-top:7px;
+    }
+
+    .contact{
+        padding:34px 24px;
+
+        border-radius:28px;
+    }
+
+    .stat-grid{
+        grid-template-columns:1fr;
+    }
+
+    .contact-link strong{
+        font-size:.78rem;
+    }
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media(prefers-reduced-motion:reduce){
 
     *,
     *::before,
     *::after{
-
         animation-duration:.01ms !important;
-
         animation-iteration-count:1 !important;
-
+        scroll-behavior:auto !important;
         transition-duration:.01ms !important;
-
     }
-
 }
 
 </style>
-
 </head>
 
 
 <body>
 
-
-<!-- =========================================================
-     ASTROPHOTOGRAPHY BACKGROUND
-========================================================= -->
+<!-- =======================================================
+     BACKGROUND
+======================================================= -->
 
 <canvas id="spaceCanvas"></canvas>
 
-<div class="nebula nebula-one"></div>
+<div class="cosmic-haze"></div>
 
-<div class="nebula nebula-two"></div>
-
-<div class="nebula nebula-three"></div>
-
-<div class="cosmic-horizon"></div>
-
-<div class="vignette"></div>
+<div class="horizon"></div>
 
 
-<!-- =========================================================
+<!-- =======================================================
      NAVIGATION
-========================================================= -->
+======================================================= -->
 
-<header
-    class="navbar"
-    id="navbar"
->
+<header class="nav-wrap">
 
-<div class="nav-inner">
+<nav>
 
-<a
-    href="#home"
-    class="logo"
->
-
-<span class="logo-star"></span>
-
-PIYUSH SINGH
-
+<a href="#home" class="brand">
+    <span class="brand-mark">PS</span>
+    <span>Piyush Singh</span>
 </a>
-
 
 <button
     class="menu-btn"
     id="menuBtn"
-    aria-label="Open menu"
->
-
-☰
-
+    aria-label="Open navigation">
+    ☰
 </button>
 
+<div class="nav-links" id="navLinks">
 
-<nav>
+<a href="#about">About</a>
 
-<ul
-    class="nav-links"
-    id="navLinks"
->
+<a href="#experience">Experience</a>
 
-<li>
-<a
-    href="#home"
-    class="active"
->
-Home
+<a href="#projects">Projects</a>
+
+<a href="#education">Education</a>
+
+<a href="#skills">Skills</a>
+
+<a href="#contact" class="nav-cta">
+    Let's Connect
 </a>
-</li>
-
-<li>
-<a href="#about">
-About
-</a>
-</li>
-
-<li>
-<a href="#experience">
-Experience
-</a>
-</li>
-
-<li>
-<a href="#projects">
-Projects
-</a>
-</li>
-
-<li>
-<a href="#education">
-Education
-</a>
-</li>
-
-<li>
-<a href="#skills">
-Skills
-</a>
-</li>
-
-<li>
-<a href="#contact">
-Contact
-</a>
-</li>
-
-</ul>
-
-</nav>
 
 </div>
+
+</nav>
 
 </header>
 
 
-<!-- =========================================================
+<!-- =======================================================
      MAIN
-========================================================= -->
+======================================================= -->
 
 <main>
 
 
-<!-- =========================================================
+<!-- =======================================================
      HERO
-========================================================= -->
+======================================================= -->
 
-<section
-    class="hero"
-    id="home"
->
+<section class="hero section" id="home">
 
-<div class="container">
-
-<div class="hero-grid">
+<div class="container hero-grid">
 
 
-<div>
+<div class="reveal">
 
-<div class="hero-kicker">
-
-<span class="live-star"></span>
-
-OPEN TO OPPORTUNITIES
-
+<div class="eyebrow">
+    Marketing × Operations × Analytics
 </div>
 
-
 <h1>
-
-Building ideas<br>
-
-that move
-
-<span class="gradient-text">
-forward.
-</span>
-
+    Turning ideas into
+    <span>business impact.</span>
 </h1>
 
-
-<p class="hero-description">
-
-MBA Digital Marketing & Operations student focused on
-digital marketing, business strategy, analytics and
-operational improvement — combining creative thinking
-with structured problem solving.
-
+<p class="hero-copy">
+    MBA candidate in Digital Marketing & Operations with
+    hands-on experience across marketing, analytics,
+    process improvement, business strategy and customer
+    engagement.
 </p>
-
 
 <div class="hero-actions">
 
-
 <a
-    href="#projects"
     class="btn btn-primary"
->
-Explore My Work →
+    href="#projects">
+    Explore My Work ↗
 </a>
 
 
+<!-- Gmail compose -->
 <a
-    href="https://mail.google.com/mail/?view=cm&fs=1&to=piyushsingh20030610@gmail.com&su=Portfolio%20Opportunity"
+    class="btn btn-secondary"
+    href="https://mail.google.com/mail/?view=cm&fs=1&to=piyushsingh20030610@gmail.com&su=Portfolio%20Opportunity&body=Hi%20Piyush%2C%0A%0AI%20came%20across%20your%20portfolio%20and%20would%20like%20to%20connect.%0A%0ARegards%2C"
     target="_blank"
-    rel="noopener noreferrer"
-    class="btn btn-ghost"
->
-✉ Email Me
+    rel="noopener noreferrer">
+    Email Me ↗
 </a>
 
 
 <a
+    class="btn btn-secondary"
     href="https://www.linkedin.com/in/piyushsingh0610/"
     target="_blank"
-    rel="noopener noreferrer"
-    class="btn btn-ghost"
->
-↗ LinkedIn
+    rel="noopener noreferrer">
+    LinkedIn ↗
 </a>
-
-
-</div>
-
-
-<div class="hero-contact">
-
-
-<a
-    class="contact-chip"
-    href="https://mail.google.com/mail/?view=cm&fs=1&to=piyushsingh20030610@gmail.com"
-    target="_blank"
-    rel="noopener noreferrer"
->
-✉ piyushsingh20030610@gmail.com
-</a>
-
-
-<a
-    class="contact-chip"
-    href="tel:+918431832821"
->
-☎ +91 84318 32821
-</a>
-
 
 </div>
 
@@ -2634,64 +1817,76 @@ Explore My Work →
 
 <!-- PROFILE -->
 
-<div class="profile-wrap reveal">
-
-<div class="profile-card">
-
-
-<div class="profile-image">
-
-
-<img
-    src="assets/profile.jpg"
-    alt="Piyush Singh"
-    onerror="
-        this.style.display='none';
-        document.getElementById('profilePlaceholder').style.display='flex';
-    "
->
-
+<div class="hero-card reveal">
 
 <div
-    class="profile-placeholder"
-    id="profilePlaceholder"
-    style="display:none;"
->
+    class="profile-photo"
+    id="profilePhoto">
 
-<strong>
-PS
-</strong>
+<div class="photo-placeholder">
 
-<span>
+<div>
 
-Add your photo at<br>
+<strong>PS</strong>
 
-assets/profile.jpg
+<small>
+    Add your professional photo
+</small>
 
+</div>
+
+</div>
+
+</div>
+
+
+<span class="floating-pill">
+    Open to opportunities
 </span>
 
+
+<div class="hero-card-content">
+
+<div class="mini">
+    Portfolio / 2026
 </div>
-
-</div>
-
-
-<div class="profile-info">
 
 <h3>
-Piyush Singh
+    Piyush Singh
 </h3>
 
 <p>
-MBA — Digital Marketing & Operations
+    Digital Marketing & Operations
+    • Analytics
+    • Business Strategy
 </p>
 
+
+<div class="photo-tools">
+
+<label class="upload-label">
+
+    + Add Photo
+
+    <input
+        type="file"
+        id="profileUpload"
+        accept="image/*">
+
+</label>
+
+<button
+    class="upload-label clear-photo"
+    id="clearProfile"
+    type="button">
+
+    Reset
+
+</button>
+
 </div>
 
-
 </div>
-
-</div>
-
 
 </div>
 
@@ -2700,132 +1895,86 @@ MBA — Digital Marketing & Operations
 </section>
 
 
-<!-- =========================================================
+<!-- =======================================================
      ABOUT
-========================================================= -->
+======================================================= -->
 
-<section
-    id="about"
->
+<section class="section" id="about">
 
-<div class="container">
+<div class="container about-grid">
 
 
-<div class="section-heading reveal">
+<div class="about-panel glass reveal">
 
 <div class="eyebrow">
-01 — About
+    A quick snapshot
 </div>
 
 <h2>
-
-A marketer with an<br>
-
-<span class="gradient-text">
-analytical mindset.
-</span>
-
+    Curious mind.<br>
+    Business mindset.
 </h2>
 
-<p>
 
-My work sits at the intersection of marketing,
-analytics, operations and business strategy.
+<div class="stat-grid">
+
+<div class="stat">
+    <b>7.2</b>
+    <span>MBA CGPA</span>
+</div>
+
+<div class="stat">
+    <b>8.1</b>
+    <span>Bachelor's CGPA</span>
+</div>
+
+<div class="stat">
+    <b>92.4K+</b>
+    <span>Google Ads impressions</span>
+</div>
+
+<div class="stat">
+    <b>55%</b>
+    <span>Travel-time reduction</span>
+</div>
+
+</div>
+
+</div>
+
+
+<div class="reveal">
+
+<div class="eyebrow">
+    About me
+</div>
+
+<p class="about-text">
+
+I am pursuing an MBA in Digital Marketing and Operations
+at Lovely Professional University. My work sits at the
+intersection of customer understanding, digital marketing,
+data analysis and operational improvement.
 
 </p>
 
-</div>
+<p class="about-text">
 
-
-<div class="about-grid">
-
-
-<div class="glass about-card reveal">
-
-<h3>
-What I bring
-</h3>
-
-
-<p>
-
-I enjoy understanding how people, processes and data
-connect. From digital campaigns and SEO to supply chain
-analysis and Lean Six Sigma projects, I focus on finding
-practical ways to improve performance.
+I enjoy turning business problems into structured plans,
+measuring meaningful outcomes and communicating insights
+clearly.
 
 </p>
 
 
-<br>
+<div class="tag-row">
 
-
-<p>
-
-Currently pursuing an MBA in Digital Marketing and
-Operations at Lovely Professional University, I am
-developing a multidisciplinary business perspective
-supported by hands-on academic projects and internships.
-
-</p>
-
-</div>
-
-
-<div class="fact-grid">
-
-
-<div class="fact glass reveal">
-
-<div class="fact-number">
-92.4K+
-</div>
-
-<span>
-Google Ads Impressions
-</span>
-
-</div>
-
-
-<div class="fact glass reveal">
-
-<div class="fact-number">
-55%
-</div>
-
-<span>
-Travel Time Reduction
-</span>
-
-</div>
-
-
-<div class="fact glass reveal">
-
-<div class="fact-number">
-68%
-</div>
-
-<span>
-Passenger Wait Reduction
-</span>
-
-</div>
-
-
-<div class="fact glass reveal">
-
-<div class="fact-number">
-₹10K+
-</div>
-
-<span>
-Digital Product Revenue
-</span>
-
-</div>
-
+<span class="tag">Digital Marketing</span>
+<span class="tag">Operations</span>
+<span class="tag">Analytics</span>
+<span class="tag">Process Improvement</span>
+<span class="tag">Brand Strategy</span>
+<span class="tag">Market Research</span>
 
 </div>
 
@@ -2836,32 +1985,28 @@ Digital Product Revenue
 </section>
 
 
-<!-- =========================================================
+<!-- =======================================================
      EXPERIENCE
-========================================================= -->
+======================================================= -->
 
-<section
-    id="experience"
->
+<section class="section" id="experience">
 
 <div class="container">
 
-
-<div class="section-heading reveal">
+<div class="section-head reveal">
 
 <div class="eyebrow">
-02 — Experience
+    Experience
 </div>
 
 <h2>
-
-Where I have<br>
-
-<span class="gradient-text">
-learned by doing.
-</span>
-
+    Where I learned by doing.
 </h2>
+
+<p>
+    Selected experiences spanning marketing,
+    laboratory operations, coaching and event coordination.
+</p>
 
 </div>
 
@@ -2869,240 +2014,186 @@ learned by doing.
 <div class="timeline">
 
 
-<div class="timeline-item reveal">
+<!-- COGNIZEN -->
+
+<article class="timeline-item reveal">
 
 <span class="timeline-dot"></span>
 
+<div class="timeline-card">
 
-<div class="glass experience-card">
-
-
-<div class="card-top">
-
-
-<div>
+<div class="timeline-top">
 
 <h3>
-Marketing Intern
+    Cognizen Innovations
 </h3>
 
-<div class="card-company">
-Cognizen Innovations
-</div>
+<span class="date">
+    Jun 2026 — Jul 2026
+</span>
 
 </div>
 
-
-<div class="date">
-Jun 2026 — Jul 2026
+<div class="role">
+    Marketing Intern
 </div>
 
-
-</div>
-
-
-<ul class="card-list">
+<ul>
 
 <li>
-
-Conducted high-volume cold calling to educate
-potential clients on SIP investments and wealth creation.
-
+    Conducted customer outreach to educate prospects
+    on SIP investments and wealth creation.
 </li>
 
 <li>
-
-Communicated market benefits, addressed investor
-hesitations and developed objection-handling skills
-in a competitive BFSI environment.
-
+    Communicated market benefits, addressed investor
+    hesitations and strengthened objection handling.
 </li>
 
 <li>
-
-Assessed prospect interest and financial readiness
-to build an initial outreach pipeline for SIP services.
-
+    Assessed prospect interest and financial readiness
+    to build an initial outreach pipeline.
 </li>
 
 </ul>
 
 </div>
 
-</div>
+</article>
 
 
-<div class="timeline-item reveal">
+<!-- BIO CENTER -->
+
+<article class="timeline-item reveal">
 
 <span class="timeline-dot"></span>
 
+<div class="timeline-card">
 
-<div class="glass experience-card">
-
-
-<div class="card-top">
-
-
-<div>
+<div class="timeline-top">
 
 <h3>
-Assistant Coach
+    Belagavi Bio-Center
 </h3>
 
-<div class="card-company">
-AIR FORCE Summer Coaching Camp
-</div>
+<span class="date">
+    Jun 2024 — Jul 2024
+</span>
 
 </div>
 
-
-<div class="date">
-May 2025 — Jun 2025
+<div class="role">
+    Laboratory Assistant Intern
 </div>
 
-
-</div>
-
-
-<ul class="card-list">
+<ul>
 
 <li>
-
-Supported badminton training programs by coaching
-22 students and assisting in skill development,
-practice coordination and performance improvement.
-
+    Managed and validated 100+ laboratory data entries
+    with strong accuracy and record integrity.
 </li>
 
 <li>
+    Supported workflow improvements that enhanced
+    operational efficiency by 10%.
+</li>
 
-Formulated structured daily drills to accelerate
-skill acquisition and performance growth.
-
+<li>
+    Contributed to research involving bio-fertilizers
+    and bio-control agents.
 </li>
 
 </ul>
 
 </div>
 
-</div>
+</article>
 
 
-<div class="timeline-item reveal">
+<!-- AIR FORCE -->
+
+<article class="timeline-item reveal">
 
 <span class="timeline-dot"></span>
 
+<div class="timeline-card">
 
-<div class="glass experience-card">
-
-
-<div class="card-top">
-
-
-<div>
+<div class="timeline-top">
 
 <h3>
-Assistant Event Coordinator
+    AIR FORCE Summer Coaching Camp
 </h3>
 
-<div class="card-company">
-Bhushan Badminton Academy
-</div>
+<span class="date">
+    May 2025 — Jun 2025
+</span>
 
 </div>
 
-
-<div class="date">
-Jun 2023 — Jul 2023
+<div class="role">
+    Assistant Coach
 </div>
 
-
-</div>
-
-
-<ul class="card-list">
+<ul>
 
 <li>
-
-Coordinated event logistics and tournament operations
-to support successful event execution.
-
+    Coached 22 students and supported badminton
+    skill development and practice coordination.
 </li>
 
 <li>
-
-Supervised match-day volunteers and vendor coordination
-to keep tournament schedules running without delays.
-
+    Created structured daily drills to support
+    skill acquisition and performance growth.
 </li>
 
 </ul>
 
 </div>
 
-</div>
+</article>
 
 
-<div class="timeline-item reveal">
+<!-- BHUSHAN -->
+
+<article class="timeline-item reveal">
 
 <span class="timeline-dot"></span>
 
+<div class="timeline-card">
 
-<div class="glass experience-card">
-
-
-<div class="card-top">
-
-
-<div>
+<div class="timeline-top">
 
 <h3>
-Laboratory Assistant Intern
+    Bhushan Badminton Academy
 </h3>
 
-<div class="card-company">
-Belagavi Bio-Center
-</div>
+<span class="date">
+    Jun 2023 — Jul 2023
+</span>
 
 </div>
 
-
-<div class="date">
-Jun 2024 — Jul 2024
+<div class="role">
+    Assistant Event Coordinator
 </div>
 
-
-</div>
-
-
-<ul class="card-list">
+<ul>
 
 <li>
-
-Managed and validated 100+ laboratory data entries,
-ensuring accuracy and integrity of experimental records.
-
+    Coordinated tournament logistics and
+    match-day operations.
 </li>
 
 <li>
-
-Enhanced operational efficiency by 10% by supporting
-laboratory staff with essential daily tasks.
-
-</li>
-
-<li>
-
-Contributed to research and analysis projects focused
-on Bio-Fertilizers and Bio-Control Agents.
-
+    Supervised volunteers and vendor coordination
+    to keep schedules running smoothly.
 </li>
 
 </ul>
 
 </div>
 
-</div>
+</article>
 
 
 </div>
@@ -3112,32 +2203,28 @@ on Bio-Fertilizers and Bio-Control Agents.
 </section>
 
 
-<!-- =========================================================
+<!-- =======================================================
      PROJECTS
-========================================================= -->
+======================================================= -->
 
-<section
-    id="projects"
->
+<section class="section" id="projects">
 
 <div class="container">
 
-
-<div class="section-heading reveal">
+<div class="section-head reveal">
 
 <div class="eyebrow">
-03 — Selected Work
+    Selected Work
 </div>
 
 <h2>
-
-Projects that turn<br>
-
-<span class="gradient-text">
-problems into possibilities.
-</span>
-
+    Projects with measurable outcomes.
 </h2>
+
+<p>
+    A combination of marketing, analytics, operations,
+    business strategy and process-improvement work.
+</p>
 
 </div>
 
@@ -3145,294 +2232,180 @@ problems into possibilities.
 <div class="project-grid">
 
 
-<div class="glass project-card reveal">
+<article class="project reveal">
 
-<div class="project-number">
-01 / OPERATIONS
-</div>
+<span class="project-number">
+    01 / OPERATIONS
+</span>
 
 <h3>
-Lean Six Sigma Approach to Public Transport Efficiency
+    Lean Six Sigma Approach to Public Transport Efficiency
 </h3>
 
 <p>
-
-Applied DMAIC, SIPOC mapping, Fishbone diagrams and
-Pareto charts to analyze terminal bottlenecks,
-congestion and passenger delays.
-
+    Applied DMAIC, SIPOC, Fishbone and Pareto analysis
+    to investigate terminal bottlenecks and passenger delays.
 </p>
 
-
-<div class="project-tags">
-
-<span class="tag">
-Lean Six Sigma
+<span class="metric">
+    55% travel-time reduction • 68% lower wait time
 </span>
 
-<span class="tag">
-DMAIC
+</article>
+
+
+<article class="project reveal">
+
+<span class="project-number">
+    02 / DIGITAL MARKETING
 </span>
-
-<span class="tag">
-SIPOC
-</span>
-
-<span class="tag">
-Process Improvement
-</span>
-
-</div>
-
-</div>
-
-
-<div class="glass project-card reveal">
-
-<div class="project-number">
-02 / DIGITAL MARKETING
-</div>
 
 <h3>
-Digital Campaign Creation & SEO Optimization
+    Google Ads & SEO Optimization
 </h3>
 
 <p>
-
-Optimized website content for first-page Google SERP
-ranking and executed Google Ads campaigns generating
-92.4K+ impressions and 257 clicks.
-
+    Optimized website content for targeted search visibility
+    and executed paid campaigns tracked through Google Analytics.
 </p>
 
-
-<div class="project-tags">
-
-<span class="tag">
-Google Ads
+<span class="metric">
+    92.4K+ impressions • 257 clicks
 </span>
 
-<span class="tag">
-SEO
+</article>
+
+
+<article class="project reveal">
+
+<span class="project-number">
+    03 / PRODUCT MARKETING
 </span>
-
-<span class="tag">
-Google Analytics
-</span>
-
-<span class="tag">
-SEM
-</span>
-
-</div>
-
-</div>
-
-
-<div class="glass project-card reveal">
-
-<div class="project-number">
-03 / DIGITAL PRODUCT
-</div>
 
 <h3>
-Digital Product Creation & Marketing
+    Digital Product Creation — Kids Colouring Book
 </h3>
 
 <p>
-
-Developed and launched a digital kids colouring book
-supported by a landing page and social media promotion,
-generating 25+ customer engagements and ₹10,000+ revenue.
-
+    Developed a digital product with a landing page
+    and social promotion to drive online engagement.
 </p>
 
-
-<div class="project-tags">
-
-<span class="tag">
-Digital Product
+<span class="metric">
+    25+ engagements • ₹10K+ revenue • 4% conversion
 </span>
 
-<span class="tag">
-Social Media
+</article>
+
+
+<article class="project reveal">
+
+<span class="project-number">
+    04 / AFFILIATE MARKETING
 </span>
-
-<span class="tag">
-Landing Page
-</span>
-
-<span class="tag">
-Conversion
-</span>
-
-</div>
-
-</div>
-
-
-<div class="glass project-card reveal">
-
-<div class="project-number">
-04 / AFFILIATE MARKETING
-</div>
 
 <h3>
-Affiliate Marketing — August Bioscience
+    August Bioscience
 </h3>
 
 <p>
-
-Orchestrated 5+ affiliate marketing campaigns across
-social platforms, achieving a 10% lead conversion rate
-and contributing to 5% online sales growth.
-
+    Planned and executed affiliate campaigns across
+    social platforms while researching audience segments.
 </p>
 
-
-<div class="project-tags">
-
-<span class="tag">
-Affiliate Marketing
+<span class="metric">
+    5+ campaigns • 10% lead conversion • 5% sales growth
 </span>
 
-<span class="tag">
-Social Media
+</article>
+
+
+<article class="project reveal">
+
+<span class="project-number">
+    05 / BRAND STRATEGY
 </span>
-
-<span class="tag">
-Lead Generation
-</span>
-
-</div>
-
-</div>
-
-
-<div class="glass project-card reveal">
-
-<div class="project-number">
-05 / BRAND STRATEGY
-</div>
 
 <h3>
-Unbranded to Branded — AttarVibez
+    Unbranded to Branded — AttarVibez
 </h3>
 
 <p>
-
-Developed brand identity and integrated marketing
-strategies for an attar and perfume product line,
-including positioning and go-to-market planning.
-
+    Built brand identity, positioning and go-to-market
+    strategy for an attar and perfume product line.
 </p>
 
-
-<div class="project-tags">
-
-<span class="tag">
-Brand Strategy
+<span class="metric">
+    ₹18K revenue • ~50% estimated margin
 </span>
 
-<span class="tag">
-Positioning
+</article>
+
+
+<article class="project reveal">
+
+<span class="project-number">
+    06 / SUPPLY CHAIN
 </span>
-
-<span class="tag">
-GTM
-</span>
-
-<span class="tag">
-Pricing
-</span>
-
-</div>
-
-</div>
-
-
-<div class="glass project-card reveal">
-
-<div class="project-number">
-06 / SUPPLY CHAIN
-</div>
 
 <h3>
-Amul Supply Chain & Operations Analysis
+    Amul Supply Chain & Operations Analysis
 </h3>
 
 <p>
-
-Analyzed procurement, production, inventory,
-warehousing and distribution while identifying gaps
-in inventory planning and logistics.
-
+    Analyzed procurement, production, inventory,
+    warehousing and distribution to identify workflow gaps.
 </p>
 
-
-<div class="project-tags">
-
-<span class="tag">
-Supply Chain
+<span class="metric">
+    Supply chain workflow & inventory analysis
 </span>
 
-<span class="tag">
-Excel
+</article>
+
+
+<article class="project reveal">
+
+<span class="project-number">
+    07 / INVENTORY
 </span>
-
-<span class="tag">
-Operations
-</span>
-
-<span class="tag">
-Analysis
-</span>
-
-</div>
-
-</div>
-
-
-<div class="glass project-card reveal">
-
-<div class="project-number">
-07 / INVENTORY
-</div>
 
 <h3>
-HP World Supply Chain & Inventory Optimization
+    HP World Supply Chain & Inventory Optimization
 </h3>
 
 <p>
-
-Analyzed a 4-tier HP supply chain, diagnosed operational
-risks and recommended high-frequency spare parts with
-buffer stock to improve availability.
-
+    Analyzed a four-tier supply chain and diagnosed
+    inventory and repair bottlenecks.
 </p>
 
-
-<div class="project-tags">
-
-<span class="tag">
-Inventory
+<span class="metric">
+    3+ risks • 7+ day delays • 5–8 priority parts
 </span>
 
-<span class="tag">
-Supply Chain
+</article>
+
+
+<article class="project reveal">
+
+<span class="project-number">
+    08 / BUSINESS SIMULATION
 </span>
 
-<span class="tag">
-Risk Analysis
+<h3>
+    Vishwakarma Learnbiz Simulation
+</h3>
+
+<p>
+    Applied business decision-making in a competitive
+    simulation focused on revenue growth.
+</p>
+
+<span class="metric">
+    ₹5L → ₹21L • Rank #5
 </span>
 
-<span class="tag">
-Optimization
-</span>
-
-</div>
-
-</div>
+</article>
 
 
 </div>
@@ -3442,184 +2415,147 @@ Optimization
 </section>
 
 
-<!-- =========================================================
-     METRICS
-========================================================= -->
-
-<section>
-
-<div class="container">
-
-
-<div class="metrics">
-
-
-<div class="glass metric reveal">
-
-<strong>
-92.4K+
-</strong>
-
-<span>
-Ad Impressions
-</span>
-
-</div>
-
-
-<div class="glass metric reveal">
-
-<strong>
-257
-</strong>
-
-<span>
-Ad Clicks
-</span>
-
-</div>
-
-
-<div class="glass metric reveal">
-
-<strong>
-4%
-</strong>
-
-<span>
-Digital Product Conversion
-</span>
-
-</div>
-
-
-<div class="glass metric reveal">
-
-<strong>
-50%
-</strong>
-
-<span>
-Estimated AttarVibez Margin
-</span>
-
-</div>
-
-
-</div>
-
-</div>
-
-</section>
-
-
-<!-- =========================================================
+<!-- =======================================================
      EDUCATION
-========================================================= -->
+======================================================= -->
 
-<section
-    id="education"
->
+<section class="section" id="education">
 
 <div class="container">
 
-
-<div class="section-heading reveal">
+<div class="section-head reveal">
 
 <div class="eyebrow">
-04 — Education
+    Education
 </div>
 
 <h2>
-
-Learning across<br>
-
-<span class="gradient-text">
-business & science.
-</span>
-
+    Academic foundation.
 </h2>
 
+<p>
+    Academic experiences that shaped my analytical,
+    scientific and business perspective.
+</p>
+
 </div>
 
 
-<div class="education-grid">
+<div class="edu-grid">
 
 
-<div class="glass edu-card reveal">
+<!-- MBA -->
 
-<div class="edu-icon">
-🎓
+<article class="edu-card reveal">
+
+<div class="year">
+    AUG 2025 — JUL 2027
 </div>
 
 <h3>
-Lovely Professional University
+    Lovely Professional University
 </h3>
 
 <p>
-Master of Business Administration —
-Digital Marketing and Operations
+    MBA — Digital Marketing & Operations
+    <br>
+    <strong>CGPA: 7.2</strong>
 </p>
 
-<p>
-CGPA: 7.2
-</p>
-
-<span class="edu-year">
-Aug 2025 — Jul 2027
-</span>
+<div
+    class="edu-photo"
+    id="eduPhoto1">
 
 </div>
 
+<label class="edu-upload">
 
-<div class="glass edu-card reveal">
+    + Add College Photo
 
-<div class="edu-icon">
-🔬
+    <input
+        type="file"
+        accept="image/*"
+        data-photo="eduPhoto1">
+
+</label>
+
+</article>
+
+
+<!-- BACHELORS -->
+
+<article class="edu-card reveal">
+
+<div class="year">
+    AUG 2021 — OCT 2024
 </div>
 
 <h3>
-KLE Society's Raja Lakhmagouda Science Institute
+    KLE Society's Raja Lakhmagouda Science Institute
 </h3>
 
 <p>
-Bachelor's in Biotechnology and Zoology
+    Bachelor's in Biotechnology & Zoology
+    <br>
+    <strong>CGPA: 8.1</strong>
 </p>
 
-<p>
-CGPA: 8.1
-</p>
-
-<span class="edu-year">
-Aug 2021 — Oct 2024
-</span>
+<div
+    class="edu-photo"
+    id="eduPhoto2">
 
 </div>
 
+<label class="edu-upload">
 
-<div class="glass edu-card reveal">
+    + Add College Photo
 
-<div class="edu-icon">
-📚
+    <input
+        type="file"
+        accept="image/*"
+        data-photo="eduPhoto2">
+
+</label>
+
+</article>
+
+
+<!-- SCHOOL -->
+
+<article class="edu-card reveal">
+
+<div class="year">
+    AUG 2020 — MAY 2021
 </div>
 
 <h3>
-KV No.1, Sambra, Karnataka
+    KV No. 1, Sambra, Karnataka
 </h3>
 
 <p>
-Science Stream
+    Science Stream
+    <br>
+    <strong>Percentage: 85%</strong>
 </p>
 
-<p>
-Percentage: 85%
-</p>
-
-<span class="edu-year">
-Aug 2020 — May 2021
-</span>
+<div
+    class="edu-photo"
+    id="eduPhoto3">
 
 </div>
+
+<label class="edu-upload">
+
+    + Add School Photo
+
+    <input
+        type="file"
+        accept="image/*"
+        data-photo="eduPhoto3">
+
+</label>
+
+</article>
 
 
 </div>
@@ -3629,608 +2565,123 @@ Aug 2020 — May 2021
 </section>
 
 
-<!-- =========================================================
-     CAMPUS / SCHOOL PHOTOS
-========================================================= -->
-
-<section>
-
-<div class="container">
-
-
-<div class="section-heading reveal">
-
-<div class="eyebrow">
-Campus
-</div>
-
-<h2>
-
-Places that shaped<br>
-
-<span class="gradient-text">
-my journey.
-</span>
-
-</h2>
-
-</div>
-
-
-<div class="project-grid">
-
-
-<div class="glass project-card reveal">
-
-
-<div class="campus-image">
-
-<img
-    src="assets/lpu.jpg"
-    alt="Lovely Professional University"
-    onerror="
-        this.style.display='none';
-        this.nextElementSibling.style.display='flex';
-    "
->
-
-
-<div
-    class="campus-placeholder"
-    style="display:none;"
->
-
-<strong>
-01
-</strong>
-
-<span>
-Add LPU photo<br>
-assets/lpu.jpg
-</span>
-
-</div>
-
-</div>
-
-
-<h3>
-Lovely Professional University
-</h3>
-
-<p>
-MBA — Digital Marketing & Operations
-</p>
-
-</div>
-
-
-<div class="glass project-card reveal">
-
-
-<div class="campus-image">
-
-<img
-    src="assets/kle.jpg"
-    alt="KLE Society's Raja Lakhmagouda Science Institute"
-    onerror="
-        this.style.display='none';
-        this.nextElementSibling.style.display='flex';
-    "
->
-
-
-<div
-    class="campus-placeholder"
-    style="display:none;"
->
-
-<strong>
-02
-</strong>
-
-<span>
-Add college photo<br>
-assets/kle.jpg
-</span>
-
-</div>
-
-</div>
-
-
-<h3>
-KLE Society's Raja Lakhmagouda Science Institute
-</h3>
-
-<p>
-Bachelor's in Biotechnology & Zoology
-</p>
-
-</div>
-
-
-<div class="glass project-card reveal">
-
-
-<div class="campus-image">
-
-<img
-    src="assets/kv-school.jpg"
-    alt="KV No.1 Sambra"
-    onerror="
-        this.style.display='none';
-        this.nextElementSibling.style.display='flex';
-    "
->
-
-
-<div
-    class="campus-placeholder"
-    style="display:none;"
->
-
-<strong>
-03
-</strong>
-
-<span>
-Add school photo<br>
-assets/kv-school.jpg
-</span>
-
-</div>
-
-</div>
-
-
-<h3>
-KV No.1, Sambra
-</h3>
-
-<p>
-Science Stream
-</p>
-
-</div>
-
-
-</div>
-
-</div>
-
-</section>
-
-
-<!-- =========================================================
+<!-- =======================================================
      SKILLS
-========================================================= -->
+======================================================= -->
 
-<section
-    id="skills"
->
+<section class="section" id="skills">
 
 <div class="container">
 
-
-<div class="section-heading reveal">
+<div class="section-head reveal">
 
 <div class="eyebrow">
-05 — Skills
+    Capabilities
 </div>
 
 <h2>
-
-Tools, thinking &<br>
-
-<span class="gradient-text">
-execution.
-</span>
-
+    Tools I use. Skills I bring.
 </h2>
 
 </div>
 
 
-<div class="skills-layout">
+<div class="skills-wrap">
 
 
-<div class="glass skill-card reveal">
-
-<h3 style="margin-bottom:25px;">
-Core capabilities
-</h3>
-
-
-<div class="skill">
-
-<div class="skill-title">
-
-<span>
-Digital Marketing
-</span>
-
-<span>
-90%
-</span>
-
-</div>
-
-<div class="skill-track">
-
-<div
-    class="skill-fill"
-    data-width="90%"
-></div>
-
-</div>
-
-</div>
-
-
-<div class="skill">
-
-<div class="skill-title">
-
-<span>
-Market Research
-</span>
-
-<span>
-88%
-</span>
-
-</div>
-
-<div class="skill-track">
-
-<div
-    class="skill-fill"
-    data-width="88%"
-></div>
-
-</div>
-
-</div>
-
-
-<div class="skill">
-
-<div class="skill-title">
-
-<span>
-Data Analysis
-</span>
-
-<span>
-85%
-</span>
-
-</div>
-
-<div class="skill-track">
-
-<div
-    class="skill-fill"
-    data-width="85%"
-></div>
-
-</div>
-
-</div>
-
-
-<div class="skill">
-
-<div class="skill-title">
-
-<span>
-Operations Analysis
-</span>
-
-<span>
-84%
-</span>
-
-</div>
-
-<div class="skill-track">
-
-<div
-    class="skill-fill"
-    data-width="84%"
-></div>
-
-</div>
-
-</div>
-
-
-<div class="skill">
-
-<div class="skill-title">
-
-<span>
-Problem Solving
-</span>
-
-<span>
-90%
-</span>
-
-</div>
-
-<div class="skill-track">
-
-<div
-    class="skill-fill"
-    data-width="90%"
-></div>
-
-</div>
-
-</div>
-
-</div>
-
-
-<div class="glass skill-card reveal">
+<div class="skill-box glass reveal">
 
 <h3>
-Tools & platforms
+    Tools & Platforms
 </h3>
 
+<div class="skill-list">
 
-<div class="tool-cloud">
-
-<span class="tool">
-MS Excel
-</span>
-
-<span class="tool">
-PowerPoint
-</span>
-
-<span class="tool">
-Tableau
-</span>
-
-<span class="tool">
-Google Sheets
-</span>
-
-<span class="tool">
-Canva
-</span>
-
-<span class="tool">
-IBM SPSS
-</span>
-
-<span class="tool">
-Shopify
-</span>
-
-<span class="tool">
-WordPress
-</span>
-
-<span class="tool">
-Google Ads
-</span>
-
-<span class="tool">
-Google Analytics
-</span>
-
-</div>
-
-
-<h3 style="margin-top:35px;">
-Power skills
-</h3>
-
-
-<div class="tool-cloud">
-
-<span class="tool">
-Communication
-</span>
-
-<span class="tool">
-Leadership
-</span>
-
-<span class="tool">
-Team Camaraderie
-</span>
-
-<span class="tool">
-Strategic Thinking
-</span>
-
-<span class="tool">
-Problem Solving
-</span>
+<span class="skill">MS Excel</span>
+<span class="skill">PowerPoint</span>
+<span class="skill">Tableau</span>
+<span class="skill">Google Sheets</span>
+<span class="skill">Canva</span>
+<span class="skill">IBM SPSS</span>
+<span class="skill">Shopify</span>
+<span class="skill">WordPress</span>
+<span class="skill">Google Ads</span>
+<span class="skill">Google Analytics</span>
 
 </div>
 
 </div>
 
 
-</div>
-
-</div>
-
-</section>
-
-
-<!-- =========================================================
-     CERTIFICATIONS
-========================================================= -->
-
-<section>
-
-<div class="container">
-
-
-<div class="section-heading reveal">
-
-<div class="eyebrow">
-06 — Certifications
-</div>
-
-<h2>
-
-Always
-<span class="gradient-text">
-learning.
-</span>
-
-</h2>
-
-</div>
-
-
-<div class="cert-grid">
-
-
-<div class="cert reveal">
-
-<span class="cert-name">
-Yellow Belt Six Sigma
-</span>
-
-<span class="cert-date">
-Jun — Jul 2026
-</span>
-
-</div>
-
-
-<div class="cert reveal">
-
-<span class="cert-name">
-Data Analyst 101
-</span>
-
-<span class="cert-date">
-Nov 2025
-</span>
-
-</div>
-
-
-<div class="cert reveal">
-
-<span class="cert-name">
-SEBI Investor Awareness Test
-</span>
-
-<span class="cert-date">
-Oct 2025
-</span>
-
-</div>
-
-
-<div class="cert reveal">
-
-<span class="cert-name">
-Bio-Fertilizer & Bio-Coated Agent Training
-</span>
-
-<span class="cert-date">
-Jul 2024
-</span>
-
-</div>
-
-
-<div class="cert reveal">
-
-<span class="cert-name">
-CME: Advanced Laboratory Techniques
-</span>
-
-<span class="cert-date">
-May 2023
-</span>
-
-</div>
-
-
-<div class="cert reveal">
-
-<span class="cert-name">
-Digital 101 Journey
-</span>
-
-<span class="cert-date">
-Jun 2022
-</span>
-
-</div>
-
-
-<div class="cert reveal">
-
-<span class="cert-name">
-Mushroom Cultivation Certification
-</span>
-
-<span class="cert-date">
-May 2022
-</span>
-
-</div>
-
-
-</div>
-
-</div>
-
-</section>
-
-
-<!-- =========================================================
-     ACHIEVEMENT
-========================================================= -->
-
-<section>
-
-<div class="container">
-
-
-<div class="glass achievement reveal">
-
-
-<div class="achievement-icon">
-🏆
-</div>
-
-
-<div>
-
-<div class="eyebrow">
-Achievement
-</div>
-
+<div class="skill-box glass reveal">
 
 <h3>
-Vishwakarma Learnbiz Simulation Game
+    Power Skills
 </h3>
 
+<div class="skill-list">
 
-<p>
-
-Achieved revenue growth from ₹5 lakhs to ₹21 lakhs
-in the business simulation game, securing 5th rank
-among competing teams.
-
-</p>
+<span class="skill">Communication</span>
+<span class="skill">Leadership</span>
+<span class="skill">Team Camaraderie</span>
+<span class="skill">Strategic Thinking</span>
+<span class="skill">Problem Solving</span>
+<span class="skill">Customer Engagement</span>
+<span class="skill">Process Analysis</span>
+<span class="skill">Creative Thinking</span>
 
 </div>
+
+</div>
+
+
+</div>
+
+
+<div
+    class="section-head reveal"
+    style="margin-top:70px;margin-bottom:20px">
+
+<div class="eyebrow">
+    Certifications & Achievement
+</div>
+
+</div>
+
+
+<div class="certifications reveal">
+
+<span class="cert">
+    ✓ Yellow Belt Six Sigma
+</span>
+
+<span class="cert">
+    ✓ Data Analyst 101
+</span>
+
+<span class="cert">
+    ✓ SEBI Investor Awareness Test
+</span>
+
+<span class="cert">
+    ✓ Bio-Fertilizer & Bio-Coated Agent Training
+</span>
+
+<span class="cert">
+    ✓ Advanced Laboratory Techniques
+</span>
+
+<span class="cert">
+    ✓ Digital 101 Journey
+</span>
+
+<span class="cert">
+    ✓ Mushroom Cultivation Certification
+</span>
+
+<span class="cert">
+    ✓ Vishwakarma Learnbiz Simulation — Rank #5
+</span>
 
 </div>
 
@@ -4239,83 +2690,105 @@ among competing teams.
 </section>
 
 
-<!-- =========================================================
+<!-- =======================================================
      CONTACT
-========================================================= -->
+======================================================= -->
 
-<section
-    id="contact"
->
+<section class="section" id="contact">
 
 <div class="container">
 
-
-<div class="section-heading reveal">
-
-<div class="eyebrow">
-07 — Contact
-</div>
-
-<h2>
-
-Let's create something<br>
-
-<span class="gradient-text">
-worth building.
-</span>
-
-</h2>
-
-
-<p>
-
-Have an opportunity, project or idea?
-Let's connect.
-
-</p>
-
-</div>
-
+<div class="contact reveal">
 
 <div class="contact-grid">
 
 
-<!-- CONTACT INFORMATION -->
+<div>
 
-<div class="glass contact-card reveal">
+<div
+    class="eyebrow"
+    style="color:#7ed5f3">
+
+    Let's connect
+
+</div>
+
+<h2>
+    Have an opportunity
+    or an idea?
+</h2>
+
+<p>
+    I'm open to conversations around digital marketing,
+    business strategy, operations, analytics,
+    process improvement and growth-focused opportunities.
+</p>
 
 
-<h3 style="margin-bottom:18px;">
-Get in touch
-</h3>
+<div class="hero-actions">
+
+
+<!-- Gmail browser compose -->
+<a
+    class="btn btn-primary"
+    href="https://mail.google.com/mail/?view=cm&fs=1&to=piyushsingh20030610@gmail.com&su=Portfolio%20Opportunity&body=Hi%20Piyush%2C%0A%0AI%20came%20across%20your%20portfolio%20and%20would%20like%20to%20connect.%0A%0ARegards%2C"
+    target="_blank"
+    rel="noopener noreferrer">
+
+    Start an Email ↗
+
+</a>
+
+
+<!-- Direct mail client fallback -->
+<a
+    class="btn btn-secondary"
+    href="mailto:piyushsingh20030610@gmail.com?subject=Portfolio%20Opportunity&body=Hi%20Piyush%2C%0A%0AI%20came%20across%20your%20portfolio%20and%20would%20like%20to%20connect.%0A%0ARegards%2C">
+
+    Mail App
+
+</a>
+
+
+<a
+    class="btn btn-secondary"
+    href="tel:+918431832821">
+
+    Call Me
+
+</a>
+
+</div>
+
+</div>
+
+
+<div class="contact-links">
 
 
 <!-- EMAIL -->
 
 <a
-    href="https://mail.google.com/mail/?view=cm&fs=1&to=piyushsingh20030610@gmail.com"
+    class="contact-link"
+    href="https://mail.google.com/mail/?view=cm&fs=1&to=piyushsingh20030610@gmail.com&su=Portfolio%20Opportunity"
     target="_blank"
-    rel="noopener noreferrer"
-    class="contact-method"
->
+    rel="noopener noreferrer">
 
-
-<div class="contact-icon">
-✉
-</div>
-
-
-<div>
-
-<strong>
-Email
-</strong>
-
-<span>
-piyushsingh20030610@gmail.com
+<span class="icon">
+    ✉
 </span>
 
-</div>
+<span>
+
+<small>
+    EMAIL
+</small>
+
+<strong>
+    piyushsingh20030610@gmail.com
+</strong>
+
+</span>
 
 </a>
 
@@ -4323,27 +2796,24 @@ piyushsingh20030610@gmail.com
 <!-- PHONE -->
 
 <a
-    href="tel:+918431832821"
-    class="contact-method"
->
+    class="contact-link"
+    href="tel:+918431832821">
 
-
-<div class="contact-icon">
-☎
-</div>
-
-
-<div>
-
-<strong>
-Phone
-</strong>
-
-<span>
-+91 84318 32821
+<span class="icon">
+    ☎
 </span>
 
-</div>
+<span>
+
+<small>
+    PHONE
+</small>
+
+<strong>
+    +91 84318 32821
+</strong>
+
+</span>
 
 </a>
 
@@ -4351,219 +2821,31 @@ Phone
 <!-- LINKEDIN -->
 
 <a
+    class="contact-link"
     href="https://www.linkedin.com/in/piyushsingh0610/"
     target="_blank"
-    rel="noopener noreferrer"
-    class="contact-method"
->
+    rel="noopener noreferrer">
 
-
-<div class="contact-icon">
-in
-</div>
-
-
-<div>
-
-<strong>
-LinkedIn
-</strong>
-
-<span>
-linkedin.com/in/piyushsingh0610
+<span class="icon">
+    in
 </span>
 
-</div>
+<span>
+
+<small>
+    LINKEDIN
+</small>
+
+<strong>
+    linkedin.com/in/piyushsingh0610
+</strong>
+
+</span>
 
 </a>
 
 
-<!-- COPY EMAIL -->
-
-<button
-    type="button"
-    class="btn btn-ghost"
-    style="width:100%;margin-top:7px;"
-    onclick="copyEmail()"
->
-
-Copy Email Address
-
-</button>
-
-
-<div
-    id="copyMessage"
-    style="
-        text-align:center;
-        color:#c7d7e9;
-        font-size:.72rem;
-        margin-top:8px;
-        min-height:18px;
-    "
-></div>
-
-
-<!-- DEFAULT EMAIL APP -->
-
-<button
-    type="button"
-    class="btn btn-ghost"
-    style="width:100%;margin-top:4px;"
-    onclick="openMailApp()"
->
-
-Open Email App
-
-</button>
-
-
 </div>
-
-
-<!-- CONTACT FORM -->
-
-<div class="glass contact-card reveal">
-
-
-<h3 style="margin-bottom:20px;">
-Send me a message
-</h3>
-
-
-<form id="contactForm">
-
-
-<div class="form-row">
-
-
-<div class="field">
-
-<label for="name">
-Your Name
-</label>
-
-<input
-    id="name"
-    type="text"
-    placeholder="Your name"
-    autocomplete="name"
-    required
->
-
-</div>
-
-
-<div class="field">
-
-<label for="senderEmail">
-Your Email
-</label>
-
-<input
-    id="senderEmail"
-    type="email"
-    placeholder="you@example.com"
-    autocomplete="email"
-    required
->
-
-</div>
-
-
-</div>
-
-
-<div class="field">
-
-<label for="subject">
-Subject
-</label>
-
-<input
-    id="subject"
-    type="text"
-    placeholder="Opportunity / Collaboration"
-    required
->
-
-</div>
-
-
-<div class="field">
-
-<label for="message">
-Message
-</label>
-
-<textarea
-    id="message"
-    placeholder="Write your message here..."
-    required
-></textarea>
-
-</div>
-
-
-<button
-    type="submit"
-    class="btn btn-primary"
-    style="width:100%;"
->
-
-✉ Send Message
-
-</button>
-
-
-<div
-    class="email-options"
-    id="emailOptions"
->
-
-
-<div class="email-options-title">
-
-Choose how you want to send the message:
-
-</div>
-
-
-<button
-    type="button"
-    class="email-option"
-    id="gmailButton"
->
-
-Continue with Gmail
-
-</button>
-
-
-<button
-    type="button"
-    class="email-option"
-    id="mailAppButton"
->
-
-Continue with Email App
-
-</button>
-
-
-</div>
-
-
-<p class="form-note">
-
-The form opens Gmail with the recipient, subject
-and message automatically prepared. No backend
-or external form service is required.
-
-</p>
-
-
-</form>
 
 </div>
 
@@ -4573,103 +2855,31 @@ or external form service is required.
 
 </section>
 
-
 </main>
 
 
-<!-- =========================================================
+<!-- =======================================================
      FOOTER
-========================================================= -->
+======================================================= -->
 
 <footer>
 
-<div class="container footer-inner">
-
-
-<p>
-
 © <span id="year"></span>
-Piyush Singh.
-Built with curiosity & code.
-
-</p>
-
-
-<div class="footer-links">
-
-
-<a
-    href="https://mail.google.com/mail/?view=cm&fs=1&to=piyushsingh20030610@gmail.com"
-    target="_blank"
-    rel="noopener noreferrer"
-    aria-label="Email"
->
-✉
-</a>
-
-
-<a
-    href="tel:+918431832821"
-    aria-label="Phone"
->
-☎
-</a>
-
-
-<a
-    href="https://www.linkedin.com/in/piyushsingh0610/"
-    target="_blank"
-    rel="noopener noreferrer"
-    aria-label="LinkedIn"
->
-in
-</a>
-
-
-</div>
-
-</div>
+Piyush Singh
+•
+Digital Marketing
+•
+Operations
+•
+Analytics
 
 </footer>
-
-
-<!-- BACK TO TOP -->
-
-<button
-    class="top-btn"
-    id="topBtn"
-    aria-label="Back to top"
->
-↑
-</button>
 
 
 <script>
 
 /* =========================================================
-   CONTACT INFORMATION
-========================================================= */
-
-const MY_EMAIL =
-    "piyushsingh20030610@gmail.com";
-
-const MY_PHONE =
-    "+918431832821";
-
-const MY_LINKEDIN =
-    "https://www.linkedin.com/in/piyushsingh0610/";
-
-
-/* =========================================================
-   YEAR
-========================================================= */
-
-document.getElementById("year").textContent =
-    new Date().getFullYear();
-
-
-/* =========================================================
-   MOBILE MENU
+   NAVIGATION
 ========================================================= */
 
 const menuBtn =
@@ -4681,7 +2891,7 @@ const navLinks =
 
 menuBtn.addEventListener(
     "click",
-    function(){
+    () => {
 
         navLinks.classList.toggle("open");
 
@@ -4689,656 +2899,304 @@ menuBtn.addEventListener(
 );
 
 
-document.querySelectorAll(
-    ".nav-links a"
-).forEach(
-    function(link){
+document
+.querySelectorAll(".nav-links a")
+.forEach(link => {
 
-        link.addEventListener(
-            "click",
-            function(){
+    link.addEventListener(
+        "click",
+        () => {
 
-                navLinks.classList.remove(
-                    "open"
-                );
-
-            }
-        );
-
-    }
-);
-
-
-/* =========================================================
-   NAVBAR SCROLL
-========================================================= */
-
-const navbar =
-    document.getElementById("navbar");
-
-
-window.addEventListener(
-    "scroll",
-    function(){
-
-        if(
-            window.scrollY > 30
-        ){
-
-            navbar.classList.add(
-                "scrolled"
-            );
-
-        }else{
-
-            navbar.classList.remove(
-                "scrolled"
-            );
+            navLinks.classList.remove("open");
 
         }
+    );
 
-    },
-    {
-        passive:true
-    }
-);
+});
 
 
 /* =========================================================
-   ACTIVE NAVIGATION
+   YEAR
 ========================================================= */
 
-const sections =
-    document.querySelectorAll(
-        "section[id]"
-    );
-
-const navigationLinks =
-    document.querySelectorAll(
-        ".nav-links a"
-    );
+document
+.getElementById("year")
+.textContent =
+    new Date().getFullYear();
 
 
-window.addEventListener(
-    "scroll",
-    function(){
+/* =========================================================
+   SCROLL REVEAL
+========================================================= */
 
-        let current = "";
+const revealObserver =
+    new IntersectionObserver(
 
-        sections.forEach(
-            function(section){
+        entries => {
 
-                const top =
-                    section.offsetTop - 190;
+            entries.forEach(entry => {
 
-                if(
-                    window.scrollY >= top
-                ){
+                if(entry.isIntersecting){
 
-                    current =
-                        section.getAttribute(
-                            "id"
-                        );
+                    entry.target.classList.add("show");
 
-                }
-
-            }
-        );
-
-
-        navigationLinks.forEach(
-            function(link){
-
-                link.classList.remove(
-                    "active"
-                );
-
-
-                if(
-                    link.getAttribute(
-                        "href"
-                    ) === "#" + current
-                ){
-
-                    link.classList.add(
-                        "active"
+                    revealObserver.unobserve(
+                        entry.target
                     );
 
                 }
 
-            }
-        );
-
-    },
-    {
-        passive:true
-    }
-);
-
-
-/* =========================================================
-   REVEAL ANIMATION
-========================================================= */
-
-const revealElements =
-    document.querySelectorAll(
-        ".reveal"
-    );
-
-
-const revealObserver =
-    new IntersectionObserver(
-        function(entries){
-
-            entries.forEach(
-                function(entry){
-
-                    if(
-                        entry.isIntersecting
-                    ){
-
-                        entry.target.classList.add(
-                            "visible"
-                        );
-
-                        revealObserver.unobserve(
-                            entry.target
-                        );
-
-                    }
-
-                }
-            );
+            });
 
         },
+
         {
             threshold:.12
         }
+
     );
 
 
-revealElements.forEach(
-    function(element){
+document
+.querySelectorAll(".reveal")
+.forEach(el => {
 
-        revealObserver.observe(
-            element
-        );
+    revealObserver.observe(el);
 
-    }
-);
+});
 
 
 /* =========================================================
-   SKILL BARS
+   PROFILE PHOTO
 ========================================================= */
 
-const skillFills =
-    document.querySelectorAll(
-        ".skill-fill"
+const profileUpload =
+    document.getElementById(
+        "profileUpload"
+    );
+
+const profilePhoto =
+    document.getElementById(
+        "profilePhoto"
+    );
+
+const clearProfile =
+    document.getElementById(
+        "clearProfile"
     );
 
 
-const skillObserver =
-    new IntersectionObserver(
-        function(entries){
+function setProfilePhoto(src){
 
-            entries.forEach(
-                function(entry){
-
-                    if(
-                        entry.isIntersecting
-                    ){
-
-                        entry.target.style.width =
-                            entry.target.dataset.width;
-
-                        skillObserver.unobserve(
-                            entry.target
-                        );
-
-                    }
-
-                }
-            );
-
-        },
-        {
-            threshold:.35
-        }
-    );
+    let img =
+        profilePhoto.querySelector("img");
 
 
-skillFills.forEach(
-    function(skill){
+    if(!img){
 
-        skillObserver.observe(
-            skill
-        );
+        img =
+            document.createElement("img");
+
+        img.alt =
+            "Piyush Singh professional portrait";
+
+        profilePhoto.innerHTML = "";
+
+        profilePhoto.appendChild(img);
 
     }
-);
 
 
-/* =========================================================
-   COPY EMAIL
-========================================================= */
+    img.src = src;
 
-function copyEmail(){
+}
 
-    if(
-        navigator.clipboard &&
-        window.isSecureContext
-    ){
 
-        navigator.clipboard
-        .writeText(MY_EMAIL)
-        .then(
-            function(){
+/* Load saved profile image */
 
-                showCopyMessage(
-                    "✓ Email copied"
+const savedProfile =
+    localStorage.getItem(
+        "piyushPortfolioPhoto"
+    );
+
+
+if(savedProfile){
+
+    setProfilePhoto(
+        savedProfile
+    );
+
+}
+
+
+/* Upload profile */
+
+profileUpload.addEventListener(
+    "change",
+    event => {
+
+        const file =
+            event.target.files[0];
+
+        if(!file) return;
+
+
+        const reader =
+            new FileReader();
+
+
+        reader.onload =
+            () => {
+
+                try{
+
+                    localStorage.setItem(
+                        "piyushPortfolioPhoto",
+                        reader.result
+                    );
+
+                }catch(error){}
+
+
+                setProfilePhoto(
+                    reader.result
                 );
 
-            }
-        )
-        .catch(
-            function(){
+            };
 
-                fallbackCopyEmail();
 
-            }
-        );
-
-    }else{
-
-        fallbackCopyEmail();
-
-    }
-
-}
-
-
-function fallbackCopyEmail(){
-
-    const textarea =
-        document.createElement(
-            "textarea"
-        );
-
-    textarea.value =
-        MY_EMAIL;
-
-    textarea.style.position =
-        "fixed";
-
-    textarea.style.opacity =
-        "0";
-
-    document.body.appendChild(
-        textarea
-    );
-
-    textarea.select();
-
-
-    try{
-
-        document.execCommand(
-            "copy"
-        );
-
-        showCopyMessage(
-            "✓ Email copied"
-        );
-
-    }catch(error){
-
-        showCopyMessage(
-            MY_EMAIL
-        );
-
-    }
-
-
-    document.body.removeChild(
-        textarea
-    );
-
-}
-
-
-function showCopyMessage(
-    message
-){
-
-    const element =
-        document.getElementById(
-            "copyMessage"
-        );
-
-    element.textContent =
-        message;
-
-
-    setTimeout(
-        function(){
-
-            element.textContent =
-                "";
-
-        },
-        2500
-    );
-
-}
-
-
-/* =========================================================
-   DEFAULT EMAIL APP
-========================================================= */
-
-function openMailApp(){
-
-    const subject =
-        "Portfolio Opportunity";
-
-
-    const body =
-        "Hello Piyush,\n\n" +
-        "I would like to connect with you regarding an opportunity.\n\n" +
-        "Regards";
-
-
-    window.location.href =
-        "mailto:" +
-        MY_EMAIL +
-        "?subject=" +
-        encodeURIComponent(
-            subject
-        ) +
-        "&body=" +
-        encodeURIComponent(
-            body
-        );
-
-}
-
-
-/* =========================================================
-   CONTACT FORM
-========================================================= */
-
-const contactForm =
-    document.getElementById(
-        "contactForm"
-    );
-
-
-const emailOptions =
-    document.getElementById(
-        "emailOptions"
-    );
-
-
-let preparedGmailURL =
-    "";
-
-
-let preparedMailtoURL =
-    "";
-
-
-contactForm.addEventListener(
-    "submit",
-    function(event){
-
-        event.preventDefault();
-
-
-        const name =
-            document.getElementById(
-                "name"
-            ).value.trim();
-
-
-        const senderEmail =
-            document.getElementById(
-                "senderEmail"
-            ).value.trim();
-
-
-        const subject =
-            document.getElementById(
-                "subject"
-            ).value.trim();
-
-
-        const message =
-            document.getElementById(
-                "message"
-            ).value.trim();
-
-
-        if(
-            !name ||
-            !senderEmail ||
-            !subject ||
-            !message
-        ){
-
-            alert(
-                "Please fill in all fields."
-            );
-
-            return;
-
-        }
-
-
-        /* ==============================================
-           CREATE EMAIL BODY
-        ============================================== */
-
-        const emailBody =
-
-`Hello Piyush,
-
-My name is ${name}.
-
-My email address is:
-${senderEmail}
-
-Message:
-
-${message}
-
-Regards,
-${name}`;
-
-
-        /* ==============================================
-           GMAIL COMPOSE
-        ============================================== */
-
-        preparedGmailURL =
-
-            "https://mail.google.com/mail/" +
-
-            "?view=cm" +
-
-            "&fs=1" +
-
-            "&to=" +
-
-            encodeURIComponent(
-                MY_EMAIL
-            ) +
-
-            "&su=" +
-
-            encodeURIComponent(
-                subject
-            ) +
-
-            "&body=" +
-
-            encodeURIComponent(
-                emailBody
-            );
-
-
-        /* ==============================================
-           MAILTO FALLBACK
-        ============================================== */
-
-        preparedMailtoURL =
-
-            "mailto:" +
-
-            MY_EMAIL +
-
-            "?subject=" +
-
-            encodeURIComponent(
-                subject
-            ) +
-
-            "&body=" +
-
-            encodeURIComponent(
-                emailBody
-            );
-
-
-        /* ==============================================
-           SHOW OPTIONS
-        ============================================== */
-
-        emailOptions.classList.add(
-            "show"
-        );
-
-
-        /* ==============================================
-           OPEN GMAIL AUTOMATICALLY
-        ============================================== */
-
-        window.open(
-            preparedGmailURL,
-            "_blank",
-            "noopener,noreferrer"
-        );
+        reader.readAsDataURL(file);
 
     }
 );
 
 
-/* =========================================================
-   GMAIL OPTION
-========================================================= */
+/* Reset profile */
 
-document.getElementById(
-    "gmailButton"
-)
-.addEventListener(
+clearProfile.addEventListener(
     "click",
-    function(){
+    () => {
 
-        if(
-            preparedGmailURL
-        ){
+        localStorage.removeItem(
+            "piyushPortfolioPhoto"
+        );
 
-            window.open(
-                preparedGmailURL,
-                "_blank",
-                "noopener,noreferrer"
-            );
+        profilePhoto.innerHTML = `
 
-        }
+            <div class="photo-placeholder">
 
-    }
-);
+                <div>
 
+                    <strong>PS</strong>
 
-/* =========================================================
-   EMAIL APP OPTION
-========================================================= */
+                    <small>
+                        Add your professional photo
+                    </small>
 
-document.getElementById(
-    "mailAppButton"
-)
-.addEventListener(
-    "click",
-    function(){
+                </div>
 
-        if(
-            preparedMailtoURL
-        ){
+            </div>
 
-            window.location.href =
-                preparedMailtoURL;
+        `;
 
-        }
+        profileUpload.value = "";
 
     }
 );
 
 
 /* =========================================================
-   BACK TO TOP
+   EDUCATION PHOTOS
 ========================================================= */
 
-const topBtn =
-    document.getElementById(
-        "topBtn"
+document
+.querySelectorAll(".edu-upload input")
+.forEach(input => {
+
+    input.addEventListener(
+        "change",
+        event => {
+
+            const file =
+                event.target.files[0];
+
+            if(!file) return;
+
+
+            const targetID =
+                input.dataset.photo;
+
+
+            const reader =
+                new FileReader();
+
+
+            reader.onload =
+                () => {
+
+                    const box =
+                        document.getElementById(
+                            targetID
+                        );
+
+
+                    box.innerHTML = `
+
+                        <img
+                            src="${reader.result}"
+                            alt="Education photo">
+
+                    `;
+
+
+                    try{
+
+                        localStorage.setItem(
+                            targetID,
+                            reader.result
+                        );
+
+                    }catch(error){}
+
+                };
+
+
+            reader.readAsDataURL(file);
+
+        }
     );
 
-
-window.addEventListener(
-    "scroll",
-    function(){
-
-        if(
-            window.scrollY > 500
-        ){
-
-            topBtn.classList.add(
-                "show"
-            );
-
-        }else{
-
-            topBtn.classList.remove(
-                "show"
-            );
-
-        }
-
-    },
-    {
-        passive:true
-    }
-);
+});
 
 
-topBtn.addEventListener(
-    "click",
-    function(){
+/* Load saved education images */
 
-        window.scrollTo({
+["eduPhoto1","eduPhoto2","eduPhoto3"]
+.forEach(id => {
 
-            top:0,
+    const saved =
+        localStorage.getItem(id);
 
-            behavior:"smooth"
+    if(saved){
 
-        });
+        const box =
+            document.getElementById(id);
+
+        box.innerHTML = `
+
+            <img
+                src="${saved}"
+                alt="Education photo">
+
+        `;
 
     }
-);
+
+});
 
 
 /* =========================================================
-   REALISTIC ASTROPHOTOGRAPHY ENGINE
+   COSMIC STARFIELD
 ========================================================= */
 
 const canvas =
@@ -5346,68 +3204,177 @@ const canvas =
         "spaceCanvas"
     );
 
-
 const ctx =
     canvas.getContext(
         "2d",
         {
-            alpha:false,
-            desynchronized:true
+            alpha:true
         }
     );
 
 
 let width = 0;
-
 let height = 0;
 
 let dpr = 1;
 
-
-/* =========================================================
-   STAR LAYERS
-========================================================= */
-
 let stars = [];
 
-let milkyStars = [];
+let lastTime = 0;
 
-let shootingStars = [];
-
-
-/* =========================================================
-   PERFORMANCE
-========================================================= */
-
-let lastFrame =
-    performance.now();
-
-let frameTime = 0;
-
-let animationPaused =
-    false;
+let elapsed = 0;
 
 
-/* =========================================================
-   DEVICE PERFORMANCE
-========================================================= */
+/* Performance */
 
-const isLowPower =
+const prefersReducedMotion =
     window.matchMedia(
-        "(max-width:700px)"
-    ).matches ||
-    (
-        navigator.hardwareConcurrency &&
-        navigator.hardwareConcurrency <= 4
-    );
+        "(prefers-reduced-motion: reduce)"
+    ).matches;
 
 
-const STAR_COUNT =
-    isLowPower ? 180 : 330;
+/* =========================================================
+   STAR GENERATION
+========================================================= */
+
+function random(min,max){
+
+    return Math.random()
+        * (max-min)
+        + min;
+
+}
 
 
-const MILKY_COUNT =
-    isLowPower ? 430 : 820;
+function createStars(){
+
+    stars = [];
+
+
+    const area =
+        width * height;
+
+
+    /*
+       Density is intentionally capped.
+       This keeps the animation lightweight.
+    */
+
+    const count =
+        Math.min(
+            950,
+            Math.max(
+                420,
+                Math.floor(
+                    area / 1800
+                )
+            )
+        );
+
+
+    for(
+        let i=0;
+        i<count;
+        i++
+    ){
+
+        /*
+          Create a diagonal Milky Way
+          distribution.
+
+          x/y are normalized.
+        */
+
+        let x =
+            Math.random();
+
+        let y =
+            Math.random();
+
+
+        const bandCenter =
+            .27 +
+            x * .35;
+
+
+        const distance =
+            Math.abs(
+                y - bandCenter
+            );
+
+
+        /*
+          Higher probability near
+          diagonal galactic band.
+        */
+
+        if(
+            Math.random() < .56
+            &&
+            distance < .25
+        ){
+
+            y =
+                bandCenter +
+                random(
+                    -.13,
+                    .13
+                );
+
+        }
+
+
+        const colors = [
+
+            [238,244,255],
+
+            [238,244,255],
+
+            [210,232,255],
+
+            [255,232,204],
+
+            [198,225,255]
+
+        ];
+
+
+        const color =
+            colors[
+                Math.floor(
+                    Math.random()
+                    * colors.length
+                )
+            ];
+
+
+        stars.push({
+
+            x:x,
+            y:y,
+
+            radius:
+                random(.35,1.65),
+
+            baseAlpha:
+                random(.22,.9),
+
+            twinkle:
+                random(.0005,.0018),
+
+            phase:
+                random(0,Math.PI*2),
+
+            drift:
+                random(.000002,.000009),
+
+            color:color
+
+        });
+
+    }
+
+}
 
 
 /* =========================================================
@@ -5419,33 +3386,26 @@ function resizeCanvas(){
     dpr =
         Math.min(
             window.devicePixelRatio || 1,
-            isLowPower ? 1 : 1.5
+            1.5
         );
 
 
     width =
         window.innerWidth;
 
-
     height =
         window.innerHeight;
 
 
     canvas.width =
-        Math.floor(
-            width * dpr
-        );
-
+        width * dpr;
 
     canvas.height =
-        Math.floor(
-            height * dpr
-        );
+        height * dpr;
 
 
     canvas.style.width =
         width + "px";
-
 
     canvas.style.height =
         height + "px";
@@ -5463,8 +3423,6 @@ function resizeCanvas(){
 
     createStars();
 
-    createMilkyWay();
-
 }
 
 
@@ -5478,366 +3436,60 @@ window.addEventListener(
 
 
 /* =========================================================
-   RANDOM
+   MILKY WAY STATIC BAND
 ========================================================= */
 
-function random(
-    min,
-    max
-){
-
-    return (
-        Math.random() *
-        (max - min)
-    ) + min;
-
-}
-
-
-/* =========================================================
-   NATURAL STAR COLOR
-========================================================= */
-
-function starColor(){
-
-    const value =
-        Math.random();
-
-
-    if(
-        value < .12
-    ){
-
-        return {
-            r:210,
-            g:225,
-            b:255
-        };
-
-    }
-
-
-    if(
-        value < .24
-    ){
-
-        return {
-            r:255,
-            g:235,
-            b:205
-        };
-
-    }
-
-
-    return {
-
-        r:238,
-        g:244,
-        b:255
-
-    };
-
-}
-
-
-/* =========================================================
-   NORMAL STAR FIELD
-========================================================= */
-
-function createStars(){
-
-    stars = [];
-
-
-    for(
-        let i=0;
-        i<STAR_COUNT;
-        i++
-    ){
-
-        const color =
-            starColor();
-
-
-        stars.push({
-
-            x:
-                Math.random() *
-                width,
-
-            y:
-                Math.random() *
-                height,
-
-            size:
-                random(
-                    .35,
-                    1.7
-                ),
-
-            baseAlpha:
-                random(
-                    .16,
-                    .68
-                ),
-
-            twinkle:
-                random(
-                    .0005,
-                    .002
-                ),
-
-            phase:
-                random(
-                    0,
-                    Math.PI * 2
-                ),
-
-            drift:
-                random(
-                    .004,
-                    .018
-                ),
-
-            color:color
-
-        });
-
-    }
-
-}
-
-
-/* =========================================================
-   MILKY WAY DIAGONAL BAND
-========================================================= */
-
-function createMilkyWay(){
-
-    milkyStars = [];
-
+function drawMilkyWay(){
 
     /*
-        The Milky Way runs diagonally
-        from lower-left toward upper-right
-        through the upper-middle section.
+      Draw a soft diagonal galactic dust band.
+      This is intentionally subtle and low contrast.
     */
-
-
-    const angle =
-        -0.32;
-
-
-    const centerX =
-        width * .55;
-
-
-    const centerY =
-        height * .27;
-
-
-    const cos =
-        Math.cos(angle);
-
-
-    const sin =
-        Math.sin(angle);
-
-
-    for(
-        let i=0;
-        i<MILKY_COUNT;
-        i++
-    ){
-
-        const along =
-            random(
-                -width * .75,
-                width * .75
-            );
-
-
-        /*
-           Gaussian-like width.
-        */
-
-        const spread =
-            randomGaussian() *
-            height *
-            .14;
-
-
-        let x =
-            centerX +
-            along * cos -
-            spread * sin;
-
-
-        let y =
-            centerY +
-            along * sin +
-            spread * cos;
-
-
-        /*
-           Keep some stars away
-           from the core to create
-           natural soft edges.
-        */
-
-
-        const edgeFactor =
-            Math.max(
-                0,
-                1 -
-                Math.abs(spread) /
-                (height * .22)
-            );
-
-
-        const color =
-            starColor();
-
-
-        milkyStars.push({
-
-            x:x,
-
-            y:y,
-
-            size:
-                random(
-                    .25,
-                    1.35
-                ),
-
-            baseAlpha:
-                random(
-                    .035,
-                    .28
-                ) *
-                edgeFactor,
-
-            twinkle:
-                random(
-                    .0003,
-                    .0014
-                ),
-
-            phase:
-                random(
-                    0,
-                    Math.PI * 2
-                ),
-
-            drift:
-                random(
-                    .002,
-                    .012
-                ),
-
-            color:color
-
-        });
-
-    }
-
-}
-
-
-/* =========================================================
-   BOX-MULLER RANDOM
-========================================================= */
-
-function randomGaussian(){
-
-    let u = 0;
-
-    let v = 0;
-
-
-    while(
-        u === 0
-    ){
-
-        u =
-            Math.random();
-
-    }
-
-
-    while(
-        v === 0
-    ){
-
-        v =
-            Math.random();
-
-    }
-
-
-    return Math.sqrt(
-        -2 *
-        Math.log(u)
-    ) *
-    Math.cos(
-        2 *
-        Math.PI *
-        v
-    );
-
-}
-
-
-/* =========================================================
-   NEBULA GRADIENT
-========================================================= */
-
-function drawNebula(){
-
-    /*
-       Very subtle dark astrophotography haze.
-    */
-
 
     const gradient =
-        ctx.createRadialGradient(
-
-            width * .48,
-            height * .22,
-
+        ctx.createLinearGradient(
             0,
-
-            width * .48,
-            height * .22,
-
-            width * .7
-
+            height * .05,
+            width,
+            height * .52
         );
 
 
     gradient.addColorStop(
         0,
-        "rgba(24,40,65,.12)"
+        "rgba(35,58,82,0)"
     );
-
 
     gradient.addColorStop(
-        .35,
-        "rgba(13,27,48,.075)"
+        .25,
+        "rgba(54,79,104,.06)"
     );
 
+    gradient.addColorStop(
+        .5,
+        "rgba(84,107,131,.10)"
+    );
 
     gradient.addColorStop(
         .7,
-        "rgba(5,13,26,.025)"
+        "rgba(40,65,91,.055)"
     );
-
 
     gradient.addColorStop(
         1,
-        "rgba(0,0,0,0)"
+        "rgba(20,38,59,0)"
+    );
+
+
+    ctx.save();
+
+    ctx.translate(
+        width * .5,
+        height * .22
+    );
+
+    ctx.rotate(
+        -.34
     );
 
 
@@ -5845,116 +3497,43 @@ function drawNebula(){
         gradient;
 
 
-    ctx.fillRect(
-        0,
-        0,
-        width,
-        height
-    );
-
-}
-
-
-/* =========================================================
-   MILKY WAY SOFT HAZE
-========================================================= */
-
-function drawMilkyHaze(){
-
-    const angle =
-        -0.32;
-
-
-    const centerX =
-        width * .55;
-
-
-    const centerY =
-        height * .27;
-
-
-    ctx.save();
-
-
-    ctx.translate(
-        centerX,
-        centerY
-    );
-
-
-    ctx.rotate(
-        angle
-    );
-
-
-    const haze =
-        ctx.createLinearGradient(
-            -width,
-            0,
-            width,
-            0
-        );
-
-
-    haze.addColorStop(
-        0,
-        "rgba(0,0,0,0)"
-    );
-
-
-    haze.addColorStop(
-        .25,
-        "rgba(70,87,112,.025)"
-    );
-
-
-    haze.addColorStop(
-        .45,
-        "rgba(105,120,145,.065)"
-    );
-
-
-    haze.addColorStop(
-        .55,
-        "rgba(85,103,130,.055)"
-    );
-
-
-    haze.addColorStop(
-        .72,
-        "rgba(40,58,85,.025)"
-    );
-
-
-    haze.addColorStop(
-        1,
-        "rgba(0,0,0,0)"
-    );
-
-
-    ctx.fillStyle =
-        haze;
+    ctx.filter =
+        "blur(22px)";
 
 
     ctx.fillRect(
         -width,
-        -height * .18,
-        width * 2,
-        height * .36
+        -height*.15,
+        width*2,
+        height*.55
     );
 
 
+    ctx.restore();
+
+
     /*
-       Dark dust lane.
+      Secondary dust lane.
     */
+
+    ctx.save();
+
+    ctx.translate(
+        width*.52,
+        height*.2
+    );
+
+    ctx.rotate(
+        -.34
+    );
 
 
     const dust =
         ctx.createLinearGradient(
             0,
-            -height * .12,
+            -120,
             0,
-            height * .12
+            120
         );
 
 
@@ -5963,24 +3542,15 @@ function drawMilkyHaze(){
         "rgba(0,0,0,0)"
     );
 
-
     dust.addColorStop(
-        .38,
-        "rgba(0,0,0,.04)"
+        .45,
+        "rgba(2,5,11,.16)"
     );
 
-
     dust.addColorStop(
-        .5,
-        "rgba(0,0,0,.15)"
+        .55,
+        "rgba(1,3,8,.21)"
     );
-
-
-    dust.addColorStop(
-        .62,
-        "rgba(0,0,0,.04)"
-    );
-
 
     dust.addColorStop(
         1,
@@ -5991,12 +3561,15 @@ function drawMilkyHaze(){
     ctx.fillStyle =
         dust;
 
+    ctx.filter =
+        "blur(12px)";
+
 
     ctx.fillRect(
         -width,
-        -height * .2,
-        width * 2,
-        height * .4
+        -90,
+        width*2,
+        180
     );
 
 
@@ -6006,606 +3579,10 @@ function drawMilkyHaze(){
 
 
 /* =========================================================
-   DRAW STAR
+   STAR DRAWING
 ========================================================= */
 
-function drawStar(
-    star,
-    time,
-    milky=false
-){
-
-    /*
-       Smooth natural twinkling.
-       No rapid flashing.
-    */
-
-
-    const wave =
-        Math.sin(
-            time *
-            star.twinkle +
-            star.phase
-        );
-
-
-    const modulation =
-        .84 +
-        wave * .16;
-
-
-    const alpha =
-        star.baseAlpha *
-        modulation;
-
-
-    let x =
-        star.x;
-
-
-    let y =
-        star.y;
-
-
-    /*
-       Very slow cosmic drift.
-    */
-
-
-    x +=
-        Math.sin(
-            time * .000025 +
-            star.phase
-        ) *
-        star.drift *
-        40;
-
-
-    y +=
-        Math.cos(
-            time * .00002 +
-            star.phase
-        ) *
-        star.drift *
-        25;
-
-
-    /*
-       Wrap around.
-    */
-
-
-    if(
-        x < -5
-    ){
-
-        x += width + 10;
-
-    }
-
-
-    if(
-        x > width + 5
-    ){
-
-        x -= width + 10;
-
-    }
-
-
-    if(
-        y < -5
-    ){
-
-        y += height + 10;
-
-    }
-
-
-    if(
-        y > height + 5
-    ){
-
-        y -= height + 10;
-
-    }
-
-
-    const r =
-        star.color.r;
-
-
-    const g =
-        star.color.g;
-
-
-    const b =
-        star.color.b;
-
-
-    ctx.fillStyle =
-        `rgba(
-            ${r},
-            ${g},
-            ${b},
-            ${alpha}
-        )`;
-
-
-    ctx.beginPath();
-
-
-    ctx.arc(
-        x,
-        y,
-        star.size,
-        0,
-        Math.PI * 2
-    );
-
-
-    ctx.fill();
-
-
-    /*
-       Very subtle glow
-       only for brighter stars.
-    */
-
-
-    if(
-        star.size > 1.25 &&
-        alpha > .35
-    ){
-
-        const glow =
-            ctx.createRadialGradient(
-                x,
-                y,
-                0,
-                x,
-                y,
-                star.size * 5
-            );
-
-
-        glow.addColorStop(
-            0,
-            `rgba(
-                ${r},
-                ${g},
-                ${b},
-                ${alpha * .16}
-            )`
-        );
-
-
-        glow.addColorStop(
-            1,
-            "rgba(0,0,0,0)"
-        );
-
-
-        ctx.fillStyle =
-            glow;
-
-
-        ctx.beginPath();
-
-
-        ctx.arc(
-            x,
-            y,
-            star.size * 5,
-            0,
-            Math.PI * 2
-        );
-
-
-        ctx.fill();
-
-    }
-
-}
-
-
-/* =========================================================
-   SHOOTING STAR
-========================================================= */
-
-function createShootingStar(){
-
-    if(
-        shootingStars.length >= 1
-    ){
-
-        return;
-
-    }
-
-
-    /*
-       Start mostly from upper
-       half of viewport.
-    */
-
-
-    const startX =
-        random(
-            width * .15,
-            width * .9
-        );
-
-
-    const startY =
-        random(
-            height * .05,
-            height * .4
-        );
-
-
-    shootingStars.push({
-
-        x:startX,
-
-        y:startY,
-
-        length:
-            random(
-                80,
-                170
-            ),
-
-        speed:
-            random(
-                7,
-                12
-            ),
-
-        life:0,
-
-        maxLife:
-            random(
-                38,
-                62
-            ),
-
-        angle:
-            random(
-                Math.PI * .12,
-                Math.PI * .32
-            )
-
-    });
-
-}
-
-
-/* =========================================================
-   DRAW SHOOTING STAR
-========================================================= */
-
-function drawShootingStars(){
-
-    for(
-        let i =
-        shootingStars.length - 1;
-
-        i >= 0;
-
-        i--
-    ){
-
-        const s =
-            shootingStars[i];
-
-
-        s.life += 1;
-
-
-        s.x +=
-            Math.cos(
-                s.angle
-            ) *
-            s.speed;
-
-
-        s.y +=
-            Math.sin(
-                s.angle
-            ) *
-            s.speed;
-
-
-        const progress =
-            s.life /
-            s.maxLife;
-
-
-        const alpha =
-            Math.sin(
-                Math.PI *
-                progress
-            ) *
-            .6;
-
-
-        const tailX =
-            s.x -
-            Math.cos(
-                s.angle
-            ) *
-            s.length;
-
-
-        const tailY =
-            s.y -
-            Math.sin(
-                s.angle
-            ) *
-            s.length;
-
-
-        const gradient =
-            ctx.createLinearGradient(
-                tailX,
-                tailY,
-                s.x,
-                s.y
-            );
-
-
-        gradient.addColorStop(
-            0,
-            "rgba(238,244,255,0)"
-        );
-
-
-        gradient.addColorStop(
-            .75,
-            `rgba(
-                220,
-                232,
-                248,
-                ${alpha * .35}
-            )`
-        );
-
-
-        gradient.addColorStop(
-            1,
-            `rgba(
-                255,
-                255,
-                255,
-                ${alpha}
-            )`
-        );
-
-
-        ctx.strokeStyle =
-            gradient;
-
-
-        ctx.lineWidth =
-            1;
-
-
-        ctx.beginPath();
-
-
-        ctx.moveTo(
-            tailX,
-            tailY
-        );
-
-
-        ctx.lineTo(
-            s.x,
-            s.y
-        );
-
-
-        ctx.stroke();
-
-
-        if(
-            s.life >=
-            s.maxLife
-        ){
-
-            shootingStars.splice(
-                i,
-                1
-            );
-
-        }
-
-    }
-
-}
-
-
-/* =========================================================
-   SHOOTING STAR TIMER
-========================================================= */
-
-let nextShootingStar =
-    performance.now() +
-    random(
-        7000,
-        17000
-    );
-
-
-/* =========================================================
-   MAIN ANIMATION
-========================================================= */
-
-function animateSpace(
-    now
-){
-
-    if(
-        animationPaused
-    ){
-
-        lastFrame =
-            now;
-
-        requestAnimationFrame(
-            animateSpace
-        );
-
-        return;
-
-    }
-
-
-    /*
-       Keep animation around 60 FPS
-       while avoiding unnecessary
-       work on slow devices.
-    */
-
-
-    frameTime =
-        now -
-        lastFrame;
-
-
-    if(
-        frameTime < 15
-    ){
-
-        requestAnimationFrame(
-            animateSpace
-        );
-
-        return;
-
-    }
-
-
-    lastFrame =
-        now;
-
-
-    /*
-       Base space.
-    */
-
-
-    ctx.fillStyle =
-        "#03060d";
-
-
-    ctx.fillRect(
-        0,
-        0,
-        width,
-        height
-    );
-
-
-    /*
-       Very subtle navy depth.
-    */
-
-
-    const background =
-        ctx.createRadialGradient(
-
-            width * .5,
-            height * .15,
-            0,
-
-            width * .5,
-            height * .5,
-            Math.max(
-                width,
-                height
-            )
-
-        );
-
-
-    background.addColorStop(
-        0,
-        "#0a1224"
-    );
-
-
-    background.addColorStop(
-        .35,
-        "#070e1c"
-    );
-
-
-    background.addColorStop(
-        .75,
-        "#040912"
-    );
-
-
-    background.addColorStop(
-        1,
-        "#03060d"
-    );
-
-
-    ctx.fillStyle =
-        background;
-
-
-    ctx.fillRect(
-        0,
-        0,
-        width,
-        height
-    );
-
-
-    /*
-       Nebula atmosphere.
-    */
-
-
-    drawNebula();
-
-
-    /*
-       Milky Way soft haze.
-    */
-
-
-    drawMilkyHaze();
-
-
-    /*
-       Distant Milky Way stars.
-    */
-
-
-    for(
-        let i=0;
-        i<milkyStars.length;
-        i++
-    ){
-
-        drawStar(
-            milkyStars[i],
-            now,
-            true
-        );
-
-    }
-
-
-    /*
-       Foreground stars.
-    */
-
+function drawStars(time){
 
     for(
         let i=0;
@@ -6613,141 +3590,412 @@ function animateSpace(
         i++
     ){
 
-        drawStar(
-            stars[i],
-            now,
-            false
-        );
-
-    }
+        const star =
+            stars[i];
 
 
-    /*
-       Shooting stars.
-    */
+        /*
+          Very slow cosmic drift.
+        */
+
+        let sx =
+            (
+                star.x +
+                time * star.drift
+            ) % 1;
 
 
-    drawShootingStars();
+        let sy =
+            star.y;
 
 
-    /*
-       Schedule rare shooting star.
-    */
+        if(sx < 0){
 
-
-    if(
-        now >
-        nextShootingStar
-    ){
-
-        if(
-            Math.random() < .72
-        ){
-
-            createShootingStar();
+            sx += 1;
 
         }
 
 
-        nextShootingStar =
-            now +
-            random(
-                9000,
-                24000
+        const x =
+            sx * width;
+
+        const y =
+            sy * height;
+
+
+        /*
+          Gentle non-uniform twinkle.
+        */
+
+        const twinkle =
+            Math.sin(
+                time * star.twinkle
+                +
+                star.phase
             );
+
+
+        const alpha =
+            Math.max(
+                .08,
+                star.baseAlpha
+                +
+                twinkle * .16
+            );
+
+
+        const rgb =
+            star.color;
+
+
+        ctx.beginPath();
+
+        ctx.fillStyle =
+            `rgba(
+                ${rgb[0]},
+                ${rgb[1]},
+                ${rgb[2]},
+                ${alpha}
+            )`;
+
+
+        ctx.arc(
+            x,
+            y,
+            star.radius,
+            0,
+            Math.PI*2
+        );
+
+
+        ctx.fill();
+
+
+        /*
+          Tiny glow only for
+          the brighter stars.
+        */
+
+        if(
+            star.radius > 1.15
+            &&
+            star.baseAlpha > .6
+        ){
+
+            ctx.beginPath();
+
+            const glow =
+                ctx.createRadialGradient(
+                    x,
+                    y,
+                    0,
+                    x,
+                    y,
+                    star.radius * 4
+                );
+
+
+            glow.addColorStop(
+                0,
+                `rgba(
+                    ${rgb[0]},
+                    ${rgb[1]},
+                    ${rgb[2]},
+                    .16
+                )`
+            );
+
+            glow.addColorStop(
+                1,
+                `rgba(
+                    ${rgb[0]},
+                    ${rgb[1]},
+                    ${rgb[2]},
+                    0
+                )`
+            );
+
+
+            ctx.fillStyle =
+                glow;
+
+
+            ctx.arc(
+                x,
+                y,
+                star.radius*4,
+                0,
+                Math.PI*2
+            );
+
+
+            ctx.fill();
+
+        }
+
+    }
+
+}
+
+
+/* =========================================================
+   COSMIC FRAME
+========================================================= */
+
+function animate(timestamp){
+
+    if(!lastTime){
+
+        lastTime =
+            timestamp;
 
     }
 
 
+    const delta =
+        timestamp -
+        lastTime;
+
+
+    lastTime =
+        timestamp;
+
+
+    /*
+      Cap time progression on
+      slow/background tabs.
+    */
+
+    elapsed +=
+        Math.min(
+            delta,
+            50
+        );
+
+
+    ctx.clearRect(
+        0,
+        0,
+        width,
+        height
+    );
+
+
+    drawMilkyWay();
+
+    drawStars(
+        elapsed
+    );
+
+
     requestAnimationFrame(
-        animateSpace
+        animate
     );
 
 }
 
 
 /* =========================================================
-   START SPACE
+   SHOOTING STARS
+========================================================= */
+
+function createShootingStar(){
+
+    if(
+        prefersReducedMotion
+    ){
+
+        return;
+
+    }
+
+
+    const star =
+        document.createElement(
+            "div"
+        );
+
+
+    star.className =
+        "shooting-star";
+
+
+    const startX =
+        random(
+            -10,
+            width * .75
+        );
+
+
+    const startY =
+        random(
+            30,
+            height * .48
+        );
+
+
+    star.style.left =
+        startX + "px";
+
+
+    star.style.top =
+        startY + "px";
+
+
+    document.body.appendChild(
+        star
+    );
+
+
+    const duration =
+        random(
+            650,
+            1050
+        );
+
+
+    const distance =
+        random(
+            250,
+            480
+        );
+
+
+    const animation =
+        star.animate(
+
+            [
+
+                {
+                    opacity:0,
+                    transform:
+                        "translate3d(0,0,0) rotate(-27deg)"
+                },
+
+                {
+                    opacity:.85,
+                    transform:
+                        `translate3d(${distance*.55}px,${distance*.30}px,0) rotate(-27deg)`
+                },
+
+                {
+                    opacity:0,
+                    transform:
+                        `translate3d(${distance}px,${distance*.55}px,0) rotate(-27deg)`
+                }
+
+            ],
+
+            {
+                duration:
+                    duration,
+
+                easing:
+                    "cubic-bezier(.2,.7,.2,1)",
+
+                fill:"forwards"
+
+            }
+
+        );
+
+
+    animation.onfinish =
+        () => {
+
+            star.remove();
+
+        };
+
+}
+
+
+/*
+   Rare shooting star.
+
+   Random delay between
+   approximately 8–18 seconds.
+*/
+
+function scheduleShootingStar(){
+
+    if(
+        prefersReducedMotion
+    ){
+
+        return;
+
+    }
+
+
+    setTimeout(
+        () => {
+
+            createShootingStar();
+
+            scheduleShootingStar();
+
+        },
+
+        random(
+            8000,
+            18000
+        )
+
+    );
+
+}
+
+
+/* =========================================================
+   INITIALIZE
 ========================================================= */
 
 resizeCanvas();
 
 requestAnimationFrame(
-    animateSpace
+    animate
 );
+
+scheduleShootingStar();
 
 
 /* =========================================================
-   PAUSE WHEN TAB IS HIDDEN
-   Saves CPU/GPU.
+   EMAIL FALLBACK
 ========================================================= */
 
-document.addEventListener(
-    "visibilitychange",
-    function(){
+/*
+  Gmail works directly in the browser.
 
-        animationPaused =
-            document.hidden;
+  mailto works with the user's configured
+  email application.
 
-    }
-);
+  This means the contact section does not
+  depend exclusively on mailto.
+*/
 
+document
+.querySelectorAll(
+    'a[href^="mailto:"]'
+)
+.forEach(link => {
 
-/* =========================================================
-   REDUCE ANIMATION IF USER PREFERS
-   REDUCED MOTION
-========================================================= */
+    link.addEventListener(
+        "click",
+        event => {
 
-const reducedMotion =
-    window.matchMedia(
-        "(prefers-reduced-motion: reduce)"
+            /*
+              Do not prevent the normal
+              mailto behavior.
+            */
+
+        }
     );
 
+});
 
-if(
-    reducedMotion.matches
-){
-
-    animationPaused = true;
-
-}
-
-
-/* =========================================================
-   IMAGE FALLBACK
-========================================================= */
-
-document.querySelectorAll(
-    ".campus-image img"
-)
-.forEach(
-    function(img){
-
-        img.addEventListener(
-            "error",
-            function(){
-
-                img.style.display =
-                    "none";
-
-                if(
-                    img.nextElementSibling
-                ){
-
-                    img.nextElementSibling.style.display =
-                        "flex";
-
-                }
-
-            }
-        );
-
-    }
-);
 
 </script>
 
-
 </body>
-
 </html>
