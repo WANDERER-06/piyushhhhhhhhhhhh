@@ -5,41 +5,54 @@
 
 <meta charset="UTF-8">
 
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Piyush Singh | Digital Marketing & Operations</title>
+<meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+>
 
 <meta
-name="description"
-content="Piyush Singh — MBA Digital Marketing & Operations portfolio."
+    name="description"
+    content="Piyush Singh — MBA Digital Marketing & Operations Portfolio"
 >
+
+<title>Piyush Singh | Portfolio</title>
+
 
 <style>
 
 /* =========================================================
-   ROOT THEME
+   GLOBAL VARIABLES
 ========================================================= */
 
 :root{
 
-    --void:#02040a;
-    --midnight:#070d1e;
-    --navy:#0b1430;
+    --black:#03060d;
 
-    --indigo:#263a86;
-    --blue:#4964c9;
-    --cyan:#79dff5;
-    --ice:#d9f7ff;
+    --space:#060b16;
 
-    --white:#f5f8ff;
-    --muted:#a8b5cc;
-    --muted2:#71809c;
+    --navy:#0a1224;
 
-    --glass:rgba(7,13,30,.58);
+    --navy2:#0d1830;
 
-    --border:rgba(121,178,255,.16);
+    --blue:#162a4a;
 
-    --border-bright:rgba(121,223,245,.32);
+    --stellar:#eef4ff;
+
+    --blue-white:#dceaff;
+
+    --amber:#ffe8cc;
+
+    --muted:#9baabd;
+
+    --muted2:#718096;
+
+    --glass:rgba(7,14,28,.68);
+
+    --glass-light:rgba(15,27,48,.48);
+
+    --border:rgba(180,205,240,.13);
+
+    --border-hover:rgba(220,235,255,.28);
 
     --radius:22px;
 
@@ -64,8 +77,6 @@ html{
 
 body{
 
-    min-height:100vh;
-
     font-family:
     Inter,
     ui-sans-serif,
@@ -75,28 +86,36 @@ body{
     "Segoe UI",
     sans-serif;
 
-    color:var(--white);
+    color:var(--stellar);
 
-    background:
-    linear-gradient(
-        135deg,
-        #02040a 0%,
-        #030711 42%,
-        #070d1e 100%
-    );
+    background:#03060d;
 
     line-height:1.6;
 
     overflow-x:hidden;
+}
 
+a{
+    color:inherit;
+    text-decoration:none;
+}
+
+button,
+input,
+textarea{
+    font:inherit;
+}
+
+button{
+    cursor:pointer;
 }
 
 
 /* =========================================================
-   COSMIC CANVAS
+   ASTROPHOTOGRAPHY CANVAS
 ========================================================= */
 
-#cosmosCanvas{
+#spaceCanvas{
 
     position:fixed;
 
@@ -105,108 +124,120 @@ body{
     width:100%;
     height:100%;
 
-    z-index:-20;
-
-    pointer-events:none;
-
-}
-
-
-/* =========================================================
-   EXTRA COSMIC ATMOSPHERE
-========================================================= */
-
-.cosmic-vignette{
-
-    position:fixed;
-
-    inset:0;
-
-    pointer-events:none;
-
     z-index:-10;
 
-    background:
+    pointer-events:none;
 
-    radial-gradient(
-        ellipse at center,
-        transparent 35%,
-        rgba(0,0,0,.22) 72%,
-        rgba(0,0,0,.62) 100%
-    );
-
+    background:#03060d;
 }
 
 
 /* =========================================================
-   MILKY WAY CSS ATMOSPHERE
+   REALISTIC DARK NEBULA
 ========================================================= */
 
-.milkyway-glow{
+.nebula{
 
     position:fixed;
 
-    width:150vw;
-    height:430px;
-
-    top:12%;
-
-    left:-30%;
-
-    transform:
-        rotate(-25deg);
+    border-radius:50%;
 
     pointer-events:none;
 
-    z-index:-15;
+    z-index:-8;
 
-    opacity:.36;
+    filter:blur(90px);
 
-    filter:blur(48px);
+    opacity:.17;
+
+    will-change:transform;
+
+}
+
+.nebula-one{
+
+    width:650px;
+    height:420px;
+
+    top:-180px;
+    left:-180px;
 
     background:
-
     radial-gradient(
-        ellipse at center,
-        rgba(87,106,201,.28) 0%,
-        rgba(42,63,145,.20) 22%,
-        rgba(27,45,109,.14) 42%,
+        ellipse,
+        rgba(24,47,82,.8),
+        rgba(8,18,36,.3),
+        transparent 70%
+    );
+
+    transform:rotate(-25deg);
+
+}
+
+
+.nebula-two{
+
+    width:600px;
+    height:450px;
+
+    right:-240px;
+    top:20%;
+
+    background:
+    radial-gradient(
+        ellipse,
+        rgba(20,40,70,.65),
+        rgba(7,14,28,.25),
         transparent 72%
     );
 
+    transform:rotate(35deg);
+
 }
 
 
-.milkyway-core{
+.nebula-three{
+
+    width:700px;
+    height:350px;
+
+    left:25%;
+    bottom:-250px;
+
+    background:
+    radial-gradient(
+        ellipse,
+        rgba(18,34,60,.5),
+        transparent 70%
+    );
+
+}
+
+
+/* =========================================================
+   DARK HORIZON
+========================================================= */
+
+.cosmic-horizon{
 
     position:fixed;
 
-    width:150vw;
-    height:160px;
+    left:0;
+    right:0;
+    bottom:0;
 
-    top:20%;
+    height:22vh;
 
-    left:-30%;
-
-    transform:
-        rotate(-25deg);
+    z-index:-5;
 
     pointer-events:none;
-
-    z-index:-14;
-
-    opacity:.20;
-
-    filter:blur(22px);
 
     background:
 
     linear-gradient(
-        90deg,
-        transparent,
-        rgba(124,151,255,.22),
-        rgba(68,92,191,.38),
-        rgba(135,154,255,.25),
+        to top,
+        rgba(1,3,8,.92),
+        rgba(2,5,12,.68),
         transparent
     );
 
@@ -214,12 +245,39 @@ body{
 
 
 /* =========================================================
-   CONTAINER
+   SUBTLE VIGNETTE
+========================================================= */
+
+.vignette{
+
+    position:fixed;
+
+    inset:0;
+
+    z-index:-4;
+
+    pointer-events:none;
+
+    background:
+
+    radial-gradient(
+        ellipse at center,
+        transparent 42%,
+        rgba(0,0,0,.25) 75%,
+        rgba(0,0,0,.6) 100%
+    );
+
+}
+
+
+/* =========================================================
+   CONTENT
 ========================================================= */
 
 .container{
 
-    width:min(
+    width:
+    min(
         var(--max),
         calc(100% - 40px)
     );
@@ -228,30 +286,28 @@ body{
 
 }
 
+
 section{
+
+    padding:110px 0;
 
     position:relative;
 
     z-index:2;
 
-    padding:110px 0;
-
 }
 
-
-/* =========================================================
-   TYPOGRAPHY
-========================================================= */
 
 .section-heading{
 
-    margin-bottom:52px;
+    margin-bottom:55px;
 
 }
 
+
 .eyebrow{
 
-    color:var(--cyan);
+    color:#b8c9df;
 
     font-size:.72rem;
 
@@ -261,34 +317,37 @@ section{
 
     text-transform:uppercase;
 
-    margin-bottom:13px;
+    margin-bottom:14px;
 
 }
+
 
 .section-heading h2{
 
     font-size:
-        clamp(
-            2.2rem,
-            5vw,
-            3.8rem
-        );
+    clamp(
+        2.2rem,
+        5vw,
+        3.8rem
+    );
 
-    line-height:1.03;
+    line-height:1.04;
 
     letter-spacing:-2.5px;
 
 }
 
+
 .section-heading p{
 
     max-width:680px;
 
-    margin-top:17px;
-
     color:var(--muted);
 
+    margin-top:17px;
+
 }
+
 
 .gradient-text{
 
@@ -296,10 +355,9 @@ section{
 
     linear-gradient(
         110deg,
-        #ffffff,
-        #b7eefe 38%,
-        #7794ff 75%,
-        #9eaaff
+        #ffffff 5%,
+        #dceaff 45%,
+        #9bb9df 100%
     );
 
     -webkit-background-clip:text;
@@ -325,28 +383,31 @@ section{
 
     z-index:1000;
 
-    padding:16px 0;
+    padding:15px 0;
 
     transition:.3s ease;
 
 }
 
+
 .navbar.scrolled{
 
     background:
-    rgba(2,4,10,.72);
+    rgba(3,6,13,.78);
 
-    backdrop-filter:
-    blur(20px);
+    backdrop-filter:blur(18px);
 
     border-bottom:
-    1px solid var(--border);
+    1px solid
+    rgba(210,225,245,.08);
 
 }
 
+
 .nav-inner{
 
-    width:min(
+    width:
+    min(
         var(--max),
         calc(100% - 30px)
     );
@@ -359,20 +420,21 @@ section{
 
     justify-content:space-between;
 
-    padding:10px 17px;
+    padding:10px 16px;
 
     border:
-    1px solid rgba(130,166,255,.10);
+    1px solid
+    rgba(210,225,245,.09);
 
-    border-radius:17px;
+    border-radius:16px;
 
     background:
-    rgba(5,9,21,.40);
+    rgba(5,11,22,.48);
 
-    backdrop-filter:
-    blur(16px);
+    backdrop-filter:blur(12px);
 
 }
+
 
 .logo{
 
@@ -382,96 +444,79 @@ section{
 
     gap:10px;
 
-    font-size:.87rem;
+    font-size:.86rem;
 
     font-weight:900;
 
-    letter-spacing:.4px;
+    letter-spacing:1px;
 
 }
+
 
 .logo-star{
 
     width:9px;
-
     height:9px;
 
     border-radius:50%;
 
-    background:#dffaff;
+    background:#f3f7ff;
 
     box-shadow:
-    0 0 8px #bcefff,
-    0 0 25px #769dff;
-
-    animation:
-    starPulse 2.5s ease-in-out infinite;
+    0 0 8px rgba(238,244,255,.9),
+    0 0 20px rgba(180,210,255,.4);
 
 }
 
-@keyframes starPulse{
-
-    0%,100%{
-        opacity:.6;
-        transform:scale(.8);
-    }
-
-    50%{
-        opacity:1;
-        transform:scale(1.3);
-    }
-
-}
 
 .nav-links{
-
-    list-style:none;
 
     display:flex;
 
     gap:5px;
 
+    list-style:none;
+
 }
+
 
 .nav-links a{
 
-    display:block;
+    color:#9baabd;
 
-    color:#9daac2;
-
-    padding:8px 12px;
+    padding:9px 12px;
 
     border-radius:9px;
 
-    font-size:.83rem;
+    font-size:.82rem;
 
     transition:.25s;
 
 }
 
+
 .nav-links a:hover,
 .nav-links a.active{
 
-    color:white;
+    color:#fff;
 
     background:
-    rgba(115,148,255,.10);
+    rgba(200,220,245,.07);
 
 }
+
 
 .menu-btn{
 
     display:none;
 
-    border:0;
-
     background:none;
+
+    border:0;
 
     color:white;
 
-    font-size:25px;
-
-    cursor:pointer;
+    font-size:24px;
 
 }
 
@@ -490,15 +535,17 @@ section{
 
     padding-top:125px;
 
+    overflow:hidden;
+
 }
+
 
 .hero-grid{
 
     display:grid;
 
     grid-template-columns:
-        1.2fr
-        .8fr;
+    1.2fr .8fr;
 
     gap:65px;
 
@@ -506,93 +553,101 @@ section{
 
 }
 
+
 .hero-kicker{
 
     display:inline-flex;
 
     align-items:center;
 
-    gap:10px;
+    gap:9px;
 
-    padding:
-        7px
-        12px;
+    padding:7px 12px;
 
     border:
-    1px solid rgba(121,223,245,.18);
+    1px solid
+    rgba(210,225,245,.13);
 
     background:
-    rgba(91,124,255,.06);
+    rgba(220,235,255,.035);
 
     border-radius:100px;
 
-    color:#bdefff;
+    color:#c8d6e8;
 
-    font-size:.74rem;
+    font-size:.73rem;
 
-    font-weight:800;
+    font-weight:700;
 
-    letter-spacing:.4px;
+    letter-spacing:.5px;
 
     margin-bottom:25px;
 
 }
 
-.status-dot{
 
-    width:7px;
-    height:7px;
+.live-star{
+
+    width:6px;
+    height:6px;
 
     border-radius:50%;
 
-    background:#dffcff;
+    background:#fff;
 
     box-shadow:
-    0 0 7px #dffcff,
-    0 0 18px #73dfff;
+    0 0 8px #fff,
+    0 0 18px #b7d0f0;
 
     animation:
-    statusPulse 1.7s infinite;
+    starPulse 3.5s ease-in-out infinite;
 
 }
 
-@keyframes statusPulse{
+
+@keyframes starPulse{
+
+    0%,100%{
+        opacity:.45;
+    }
 
     50%{
-        transform:scale(1.7);
-        opacity:.45;
+        opacity:1;
     }
 
 }
 
+
 .hero h1{
 
     font-size:
-        clamp(
-            3.3rem,
-            7vw,
-            6.7rem
-        );
+    clamp(
+        3.3rem,
+        7vw,
+        6.8rem
+    );
 
     line-height:.91;
 
     letter-spacing:-6px;
 
+    font-weight:850;
+
 }
+
 
 .hero-description{
 
+    color:#9baabd;
+
     max-width:650px;
 
-    margin:
-        28px
-        0;
+    font-size:1.02rem;
 
-    color:var(--muted);
-
-    font-size:1.03rem;
+    margin:29px 0;
 
 }
+
 
 .hero-actions{
 
@@ -604,6 +659,7 @@ section{
 
 }
 
+
 .btn{
 
     display:inline-flex;
@@ -614,74 +670,78 @@ section{
 
     gap:8px;
 
-    padding:
-        12px
-        18px;
+    padding:12px 18px;
 
-    border-radius:12px;
+    border-radius:11px;
 
-    border:
-    1px solid var(--border);
-
-    font-size:.86rem;
+    font-size:.83rem;
 
     font-weight:800;
 
-    cursor:pointer;
+    border:
+    1px solid
+    rgba(210,225,245,.14);
 
     transition:.25s;
 
 }
 
-.btn-primary{
 
-    color:#02050b;
+.btn-primary{
 
     background:
     linear-gradient(
-        110deg,
-        #dffaff,
-        #8adff5
+        135deg,
+        #eef4ff,
+        #cbdcf2
     );
 
+    color:#06101e;
+
     box-shadow:
-    0 8px 35px
-    rgba(104,200,255,.13);
+    0 10px 30px
+    rgba(200,220,245,.08);
 
 }
+
 
 .btn-primary:hover{
 
     transform:translateY(-3px);
 
     box-shadow:
-    0 15px 50px
-    rgba(104,200,255,.23);
+    0 15px 35px
+    rgba(200,220,245,.15);
 
 }
+
 
 .btn-ghost{
 
     background:
-    rgba(255,255,255,.025);
+    rgba(220,235,255,.035);
 
-    color:white;
+    color:#e4ecf8;
 
 }
+
 
 .btn-ghost:hover{
 
-    transform:translateY(-3px);
-
     background:
-    rgba(105,140,255,.10);
+    rgba(220,235,255,.08);
 
     border-color:
-    var(--border-bright);
+    rgba(220,235,255,.25);
+
+    transform:translateY(-3px);
 
 }
 
+
 .hero-contact{
+
+    margin-top:30px;
 
     display:flex;
 
@@ -689,9 +749,8 @@ section{
 
     gap:9px;
 
-    margin-top:30px;
-
 }
+
 
 .contact-chip{
 
@@ -701,30 +760,29 @@ section{
 
     gap:8px;
 
-    padding:
-    7px
-    10px;
+    padding:7px 10px;
 
     border:
     1px solid
-    rgba(121,178,255,.11);
+    rgba(210,225,245,.09);
 
-    border-radius:10px;
+    border-radius:9px;
 
-    color:#91a5c3;
+    color:#8998ab;
 
-    font-size:.77rem;
+    font-size:.76rem;
 
     transition:.2s;
 
 }
+
 
 .contact-chip:hover{
 
     color:white;
 
     background:
-    rgba(115,148,255,.07);
+    rgba(220,235,255,.05);
 
 }
 
@@ -741,44 +799,40 @@ section{
 
 }
 
+
 .profile-card{
 
     width:
     min(
-        380px,
+        370px,
         100%
     );
 
-    padding:14px;
+    padding:12px;
 
     border:
     1px solid
-    rgba(130,165,255,.19);
+    rgba(220,235,255,.14);
 
-    border-radius:32px;
+    border-radius:29px;
 
     background:
-
     linear-gradient(
         145deg,
-        rgba(66,90,180,.15),
-        rgba(3,6,17,.72)
+        rgba(25,40,64,.55),
+        rgba(3,7,15,.72)
     );
 
     box-shadow:
+    0 25px 80px
+    rgba(0,0,0,.38);
 
-    0 25px 90px
-    rgba(0,0,0,.40),
-
-    inset 0 1px 0
-    rgba(255,255,255,.04);
-
-    transform:
-    rotate(1.5deg);
+    transform:rotate(1.5deg);
 
     transition:.5s;
 
 }
+
 
 .profile-card:hover{
 
@@ -786,7 +840,11 @@ section{
     rotate(0deg)
     translateY(-8px);
 
+    border-color:
+    rgba(220,235,255,.24);
+
 }
+
 
 .profile-image{
 
@@ -796,15 +854,13 @@ section{
 
     overflow:hidden;
 
-    border-radius:24px;
+    border-radius:21px;
 
     background:
-
-    radial-gradient(
-        circle at 50% 30%,
-        #344b9b,
-        #0b1430 48%,
-        #02040a
+    linear-gradient(
+        145deg,
+        #111d31,
+        #03060d
     );
 
     display:flex;
@@ -814,6 +870,7 @@ section{
     justify-content:center;
 
 }
+
 
 .profile-image img{
 
@@ -826,6 +883,7 @@ section{
 
 }
 
+
 .profile-placeholder{
 
     position:absolute;
@@ -834,52 +892,56 @@ section{
 
     display:flex;
 
+    flex-direction:column;
+
     align-items:center;
 
     justify-content:center;
 
-    flex-direction:column;
-
     text-align:center;
 
-    color:#ccefff;
+    color:#bdcee2;
 
 }
+
 
 .profile-placeholder strong{
 
     font-size:3rem;
 
+    font-weight:900;
+
 }
+
 
 .profile-placeholder span{
 
-    font-size:.72rem;
+    color:#718096;
 
-    color:#7f91b2;
+    font-size:.7rem;
 
 }
+
 
 .profile-info{
 
-    padding:
-        16px
-        8px
-        6px;
+    padding:16px 7px 6px;
 
 }
+
 
 .profile-info h3{
 
-    font-size:1.18rem;
+    font-size:1.15rem;
 
 }
 
+
 .profile-info p{
 
-    color:#8292ad;
+    color:#77879b;
 
-    font-size:.81rem;
+    font-size:.78rem;
 
 }
 
@@ -891,29 +953,32 @@ section{
 .glass{
 
     border:
-    1px solid var(--border);
+    1px solid
+    var(--border);
 
     background:
 
     linear-gradient(
         145deg,
-        rgba(11,20,48,.57),
-        rgba(2,4,10,.60)
+        rgba(13,25,45,.58),
+        rgba(3,7,15,.62)
     );
 
-    backdrop-filter:
-    blur(15px);
+    backdrop-filter:blur(13px);
 
-    border-radius:
-    var(--radius);
+    border-radius:var(--radius);
 
     box-shadow:
+    0 20px 60px
+    rgba(0,0,0,.13);
 
-    0 18px 70px
-    rgba(0,0,0,.18),
+}
 
-    inset 0 1px 0
-    rgba(255,255,255,.025);
+
+.glass:hover{
+
+    border-color:
+    var(--border-hover);
 
 }
 
@@ -926,13 +991,12 @@ section{
 
     display:grid;
 
-    grid-template-columns:
-    .8fr
-    1.2fr;
+    grid-template-columns:.8fr 1.2fr;
 
     gap:22px;
 
 }
+
 
 .about-card{
 
@@ -940,19 +1004,24 @@ section{
 
 }
 
+
 .about-card h3{
 
-    font-size:1.4rem;
+    font-size:1.3rem;
 
-    margin-bottom:15px;
+    margin-bottom:14px;
 
 }
+
 
 .about-card p{
 
     color:var(--muted);
 
+    font-size:.91rem;
+
 }
+
 
 .fact-grid{
 
@@ -965,11 +1034,13 @@ section{
 
 }
 
+
 .fact{
 
     padding:25px;
 
 }
+
 
 .fact-number{
 
@@ -977,23 +1048,24 @@ section{
 
     font-weight:900;
 
-    color:#a8e9ff;
+    color:#e6eef9;
 
 }
+
 
 .fact span{
 
     display:block;
 
-    color:#7586a2;
+    color:#718096;
 
-    font-size:.77rem;
+    font-size:.76rem;
 
 }
 
 
 /* =========================================================
-   TIMELINE
+   EXPERIENCE
 ========================================================= */
 
 .timeline{
@@ -1004,69 +1076,70 @@ section{
 
 }
 
+
 .timeline::before{
 
     content:"";
 
     position:absolute;
 
-    left:10px;
+    left:8px;
 
     top:0;
+
     bottom:0;
 
     width:1px;
 
     background:
-
     linear-gradient(
-        #83baff,
-        rgba(90,125,230,.03)
+        #b5c8e1,
+        rgba(181,200,225,.04)
     );
 
 }
+
 
 .timeline-item{
 
     position:relative;
 
-    padding-left:50px;
+    padding-left:47px;
 
-    margin-bottom:28px;
+    margin-bottom:27px;
 
 }
+
 
 .timeline-dot{
 
     position:absolute;
 
-    left:3px;
+    left:2px;
 
     top:25px;
 
-    width:15px;
-    height:15px;
+    width:14px;
+
+    height:14px;
 
     border-radius:50%;
 
-    background:
-    #d8f7ff;
+    background:#edf3fc;
 
     box-shadow:
-
-    0 0 0 5px
-    rgba(102,151,255,.08),
-
-    0 0 25px
-    rgba(130,220,255,.7);
+    0 0 0 5px rgba(220,235,255,.055),
+    0 0 18px rgba(220,235,255,.35);
 
 }
+
 
 .experience-card{
 
     padding:27px;
 
 }
+
 
 .card-top{
 
@@ -1078,50 +1151,56 @@ section{
 
 }
 
+
 .card-top h3{
 
-    font-size:1.2rem;
+    font-size:1.18rem;
 
 }
 
+
 .card-company{
 
-    color:#8eddf5;
+    color:#b2c5dc;
 
-    font-size:.87rem;
+    font-size:.85rem;
 
     font-weight:700;
 
 }
 
+
 .date{
 
     white-space:nowrap;
 
-    color:#71819d;
+    color:#718096;
 
-    font-size:.74rem;
+    font-size:.72rem;
 
-    padding:
-        6px
-        10px;
+    padding:5px 9px;
 
     border:
-    1px solid var(--border);
+    1px solid
+    var(--border);
 
     border-radius:8px;
 
 }
 
+
 .card-list{
 
     margin-top:17px;
 
-    padding-left:19px;
+    padding-left:18px;
 
-    color:var(--muted);
+    color:#94a4b8;
+
+    font-size:.86rem;
 
 }
+
 
 .card-list li{
 
@@ -1141,9 +1220,10 @@ section{
     grid-template-columns:
     repeat(2,1fr);
 
-    gap:17px;
+    gap:16px;
 
 }
+
 
 .project-card{
 
@@ -1157,42 +1237,19 @@ section{
 
 }
 
-.project-card::before{
-
-    content:"";
-
-    position:absolute;
-
-    width:150px;
-    height:150px;
-
-    top:-100px;
-    right:-100px;
-
-    border-radius:50%;
-
-    background:
-    rgba(83,117,255,.12);
-
-    filter:blur(20px);
-
-}
 
 .project-card:hover{
 
-    transform:
-    translateY(-7px);
-
-    border-color:
-    rgba(129,186,255,.31);
+    transform:translateY(-6px);
 
 }
 
+
 .project-number{
 
-    color:#8ddff6;
+    font-size:.7rem;
 
-    font-size:.69rem;
+    color:#899db8;
 
     font-weight:900;
 
@@ -1200,24 +1257,24 @@ section{
 
 }
 
+
 .project-card h3{
 
-    margin:
-        11px
-        0
-        8px;
+    margin:11px 0 8px;
 
-    font-size:1.16rem;
+    font-size:1.12rem;
 
 }
+
 
 .project-card p{
 
-    color:var(--muted);
+    color:#8d9daf;
 
-    font-size:.85rem;
+    font-size:.83rem;
 
 }
+
 
 .project-tags{
 
@@ -1231,22 +1288,21 @@ section{
 
 }
 
+
 .tag{
 
-    padding:
-        5px
-        9px;
+    padding:5px 9px;
 
     border-radius:7px;
 
     border:
     1px solid
-    rgba(121,178,255,.12);
+    rgba(210,225,245,.09);
 
     background:
-    rgba(93,125,255,.05);
+    rgba(220,235,255,.035);
 
-    color:#9ab5dc;
+    color:#9eafc3;
 
     font-size:.68rem;
 
@@ -1268,31 +1324,34 @@ section{
 
 }
 
+
 .metric{
 
     text-align:center;
 
-    padding:27px 15px;
+    padding:27px 12px;
 
 }
+
 
 .metric strong{
 
     display:block;
 
-    font-size:2.25rem;
+    font-size:2.15rem;
 
-    color:#a6eaff;
+    color:#e4edf9;
 
     line-height:1;
 
 }
 
+
 .metric span{
 
-    color:#71839f;
+    color:#718096;
 
-    font-size:.73rem;
+    font-size:.72rem;
 
 }
 
@@ -1312,6 +1371,7 @@ section{
 
 }
 
+
 .edu-card{
 
     padding:27px;
@@ -1320,43 +1380,50 @@ section{
 
 }
 
+
 .edu-icon{
 
     width:47px;
+
     height:47px;
 
     display:flex;
 
     align-items:center;
+
     justify-content:center;
 
     border-radius:14px;
 
     background:
-    rgba(89,125,255,.09);
+    rgba(220,235,255,.045);
 
     border:
-    1px solid var(--border);
+    1px solid
+    var(--border);
 
-    margin-bottom:24px;
+    margin-bottom:23px;
 
 }
+
 
 .edu-card h3{
 
-    font-size:1.02rem;
+    font-size:1rem;
 
 }
 
+
 .edu-card p{
 
-    color:var(--muted);
+    color:#8c9caf;
 
-    font-size:.82rem;
+    font-size:.8rem;
 
     margin-top:8px;
 
 }
+
 
 .edu-year{
 
@@ -1364,9 +1431,9 @@ section{
 
     margin-top:16px;
 
-    color:#83d9f4;
+    color:#b0c2d8;
 
-    font-size:.73rem;
+    font-size:.7rem;
 
     font-weight:800;
 
@@ -1388,6 +1455,7 @@ section{
 
 }
 
+
 .cert{
 
     display:flex;
@@ -1398,45 +1466,47 @@ section{
 
     gap:15px;
 
-    padding:
-        17px
-        20px;
+    padding:17px 19px;
 
     border:
-    1px solid var(--border);
+    1px solid
+    var(--border);
 
     background:
-    rgba(89,125,255,.035);
+    rgba(220,235,255,.025);
 
-    border-radius:14px;
+    border-radius:13px;
 
     transition:.25s;
 
 }
 
+
 .cert:hover{
 
-    transform:
-    translateX(5px);
-
     background:
-    rgba(89,125,255,.08);
+    rgba(220,235,255,.06);
+
+    transform:
+    translateX(4px);
 
 }
+
 
 .cert-name{
 
     font-weight:700;
 
-    font-size:.85rem;
+    font-size:.83rem;
 
 }
 
+
 .cert-date{
 
-    color:#687b99;
+    color:#68788c;
 
-    font-size:.69rem;
+    font-size:.68rem;
 
     white-space:nowrap;
 
@@ -1452,12 +1522,12 @@ section{
     display:grid;
 
     grid-template-columns:
-    1fr
-    1fr;
+    1fr 1fr;
 
     gap:18px;
 
 }
+
 
 .skill-card{
 
@@ -1465,11 +1535,13 @@ section{
 
 }
 
+
 .skill{
 
     margin-bottom:21px;
 
 }
+
 
 .skill-title{
 
@@ -1477,30 +1549,33 @@ section{
 
     justify-content:space-between;
 
-    margin-bottom:8px;
+    margin-bottom:7px;
 
-    font-size:.79rem;
+    font-size:.78rem;
 
 }
+
 
 .skill-title span:last-child{
 
-    color:#8cdef7;
+    color:#b7c8dc;
 
 }
+
 
 .skill-track{
 
     height:5px;
 
     background:
-    rgba(255,255,255,.055);
+    rgba(220,235,255,.06);
 
     border-radius:20px;
 
     overflow:hidden;
 
 }
+
 
 .skill-fill{
 
@@ -1511,17 +1586,17 @@ section{
     border-radius:20px;
 
     background:
-
     linear-gradient(
         90deg,
-        #344caa,
-        #85e7fa
+        #536c8c,
+        #e0e9f5
     );
 
     transition:
-    width 1.5s ease;
+    width 1.4s ease;
 
 }
+
 
 .tool-cloud{
 
@@ -1531,27 +1606,27 @@ section{
 
     gap:8px;
 
-    margin-top:19px;
+    margin-top:18px;
 
 }
 
+
 .tool{
 
-    padding:
-        8px
-        11px;
+    padding:8px 11px;
 
     border-radius:9px;
 
     background:
-    rgba(89,125,255,.045);
+    rgba(220,235,255,.035);
 
     border:
-    1px solid var(--border);
+    1px solid
+    var(--border);
 
-    color:#a6b9d4;
+    color:#a6b7ca;
 
-    font-size:.75rem;
+    font-size:.72rem;
 
 }
 
@@ -1564,9 +1639,7 @@ section{
 
     display:grid;
 
-    grid-template-columns:
-    auto
-    1fr;
+    grid-template-columns:auto 1fr;
 
     gap:24px;
 
@@ -1576,34 +1649,38 @@ section{
 
 }
 
+
 .achievement-icon{
 
     width:72px;
+
     height:72px;
 
     display:flex;
 
     align-items:center;
+
     justify-content:center;
 
-    border-radius:21px;
+    border-radius:20px;
 
     background:
-    linear-gradient(
-        145deg,
-        rgba(105,139,255,.18),
-        rgba(7,13,30,.5)
-    );
+    rgba(220,235,255,.05);
+
+    border:
+    1px solid
+    var(--border);
 
     font-size:1.8rem;
 
 }
 
+
 .achievement p{
 
-    color:var(--muted);
+    color:#8c9caf;
 
-    margin-top:7px;
+    margin-top:6px;
 
 }
 
@@ -1616,37 +1693,38 @@ section{
 
     display:grid;
 
-    grid-template-columns:
-    .8fr
-    1.2fr;
+    grid-template-columns:.8fr 1.2fr;
 
-    gap:19px;
+    gap:18px;
 
 }
+
 
 .contact-card{
 
-    padding:30px;
+    padding:29px;
 
 }
+
 
 .contact-method{
 
     display:flex;
 
-    gap:14px;
-
     align-items:center;
+
+    gap:14px;
 
     padding:15px;
 
-    border-radius:14px;
+    border-radius:13px;
 
     border:
-    1px solid var(--border);
+    1px solid
+    var(--border);
 
     background:
-    rgba(89,125,255,.035);
+    rgba(220,235,255,.025);
 
     margin-bottom:9px;
 
@@ -1654,38 +1732,39 @@ section{
 
 }
 
+
 .contact-method:hover{
+
+    background:
+    rgba(220,235,255,.065);
 
     transform:
     translateX(4px);
 
-    background:
-    rgba(89,125,255,.09);
-
 }
+
 
 .contact-icon{
 
-    width:42px;
-    height:42px;
+    width:41px;
 
-    flex-shrink:0;
+    height:41px;
 
     display:flex;
 
     align-items:center;
+
     justify-content:center;
 
     border-radius:11px;
 
     background:
-    rgba(104,147,255,.09);
+    rgba(220,235,255,.05);
 
-    color:#9be7fa;
-
-    font-weight:800;
+    color:#dbe6f5;
 
 }
+
 
 .contact-method strong{
 
@@ -1695,9 +1774,12 @@ section{
 
 }
 
+
 .contact-method span{
 
-    color:#7d8da9;
+    display:block;
+
+    color:#718096;
 
     font-size:.74rem;
 
@@ -1705,17 +1787,22 @@ section{
 
 }
 
+
+/* =========================================================
+   CONTACT FORM
+========================================================= */
+
 .form-row{
 
     display:grid;
 
     grid-template-columns:
-    1fr
-    1fr;
+    1fr 1fr;
 
     gap:11px;
 
 }
+
 
 .field{
 
@@ -1723,42 +1810,44 @@ section{
 
 }
 
+
 .field label{
 
     display:block;
 
     margin-bottom:6px;
 
-    color:#8292ad;
+    font-size:.73rem;
 
-    font-size:.74rem;
+    color:#8797aa;
 
 }
+
 
 .field input,
 .field textarea{
 
     width:100%;
 
-    padding:
-        12px
-        13px;
-
-    color:white;
+    border:
+    1px solid
+    rgba(210,225,245,.11);
 
     background:
-    rgba(0,0,0,.20);
+    rgba(0,0,0,.22);
 
-    border:
-    1px solid var(--border);
+    color:#fff;
+
+    outline:none;
 
     border-radius:11px;
 
-    outline:none;
+    padding:12px 13px;
 
     transition:.2s;
 
 }
+
 
 .field textarea{
 
@@ -1768,27 +1857,36 @@ section{
 
 }
 
+
 .field input:focus,
 .field textarea:focus{
 
     border-color:
-    #84dff7;
+    rgba(220,235,255,.35);
 
     box-shadow:
     0 0 0 3px
-    rgba(105,181,255,.07);
+    rgba(220,235,255,.035);
 
 }
+
 
 .form-note{
 
-    color:#657995;
+    margin-top:9px;
+
+    color:#64748b;
 
     font-size:.68rem;
 
-    margin-top:9px;
+    line-height:1.5;
 
 }
+
+
+/* =========================================================
+   EMAIL OPTIONS
+========================================================= */
 
 .email-options{
 
@@ -1799,14 +1897,16 @@ section{
     padding:11px;
 
     border:
-    1px solid var(--border);
+    1px solid
+    var(--border);
 
     border-radius:12px;
 
     background:
-    rgba(2,4,10,.88);
+    rgba(3,6,13,.9);
 
 }
+
 
 .email-options.show{
 
@@ -1814,15 +1914,17 @@ section{
 
 }
 
+
 .email-options-title{
 
-    color:#8395b0;
+    color:#8191a5;
 
     font-size:.7rem;
 
     margin-bottom:8px;
 
 }
+
 
 .email-option{
 
@@ -1833,23 +1935,102 @@ section{
     margin-top:5px;
 
     border:
-    1px solid var(--border);
+    1px solid
+    var(--border);
 
     border-radius:9px;
 
     background:
-    rgba(89,125,255,.06);
+    rgba(220,235,255,.035);
 
-    color:white;
+    color:#e6edf7;
 
-    cursor:pointer;
+    font-size:.75rem;
 
 }
+
 
 .email-option:hover{
 
     background:
-    rgba(89,125,255,.13);
+    rgba(220,235,255,.08);
+
+}
+
+
+/* =========================================================
+   CAMPUS IMAGE
+========================================================= */
+
+.campus-image{
+
+    position:relative;
+
+    width:100%;
+
+    aspect-ratio:16/9;
+
+    overflow:hidden;
+
+    border-radius:17px;
+
+    background:
+    linear-gradient(
+        145deg,
+        #111d31,
+        #03060d
+    );
+
+}
+
+
+.campus-image img{
+
+    width:100%;
+    height:100%;
+
+    object-fit:cover;
+
+}
+
+
+.campus-placeholder{
+
+    position:absolute;
+
+    inset:0;
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    justify-content:center;
+
+    color:#8999ad;
+
+    text-align:center;
+
+}
+
+
+.campus-placeholder strong{
+
+    font-size:2rem;
+
+    color:#dce6f3;
+
+}
+
+
+.campus-placeholder span{
+
+    font-size:.68rem;
+
+    color:#667589;
+
+    margin-top:5px;
 
 }
 
@@ -1863,88 +2044,100 @@ footer{
     padding:34px 0;
 
     border-top:
-    1px solid var(--border);
+    1px solid
+    rgba(210,225,245,.08);
 
 }
+
 
 .footer-inner{
 
     display:flex;
 
-    align-items:center;
-
     justify-content:space-between;
+
+    align-items:center;
 
     gap:20px;
 
 }
 
+
 .footer-inner p{
 
-    color:#5f718e;
+    color:#59687b;
 
-    font-size:.72rem;
+    font-size:.7rem;
 
 }
+
 
 .footer-links{
 
     display:flex;
 
-    gap:8px;
+    gap:7px;
 
 }
 
+
 .footer-links a{
 
-    width:35px;
-    height:35px;
+    width:34px;
+
+    height:34px;
 
     display:flex;
 
     align-items:center;
+
     justify-content:center;
+
+    border:
+    1px solid
+    var(--border);
 
     border-radius:9px;
 
-    border:
-    1px solid var(--border);
-
-    color:#8ba0bd;
+    color:#9aaabd;
 
 }
 
 
 /* =========================================================
-   TOP BUTTON
+   BACK TO TOP
 ========================================================= */
 
 .top-btn{
 
     position:fixed;
 
-    right:19px;
-    bottom:19px;
+    right:20px;
+
+    bottom:20px;
 
     width:43px;
+
     height:43px;
 
     display:flex;
 
     align-items:center;
+
     justify-content:center;
 
-    border-radius:12px;
-
     border:
-    1px solid var(--border);
+    1px solid
+    var(--border);
 
     background:
-    rgba(4,8,18,.85);
+    rgba(5,11,22,.85);
 
-    color:white;
+    backdrop-filter:blur(10px);
 
-    cursor:pointer;
+    color:#fff;
+
+    border-radius:11px;
 
     opacity:0;
 
@@ -1956,6 +2149,7 @@ footer{
 
 }
 
+
 .top-btn.show{
 
     opacity:1;
@@ -1966,7 +2160,7 @@ footer{
 
 
 /* =========================================================
-   REVEAL
+   SCROLL REVEAL
 ========================================================= */
 
 .reveal{
@@ -1974,13 +2168,14 @@ footer{
     opacity:0;
 
     transform:
-    translateY(28px);
+    translateY(25px);
 
     transition:
     opacity .7s ease,
     transform .7s ease;
 
 }
+
 
 .reveal.visible{
 
@@ -2006,24 +2201,28 @@ footer{
 
     }
 
+
     .profile-wrap{
 
         order:-1;
 
     }
 
+
     .profile-card{
 
-        width:300px;
+        width:290px;
 
     }
+
 
     .education-grid{
 
         grid-template-columns:
-        1fr 1fr;
+        repeat(2,1fr);
 
     }
+
 
     .metrics{
 
@@ -2043,6 +2242,7 @@ footer{
 
     }
 
+
     .container{
 
         width:
@@ -2053,17 +2253,19 @@ footer{
 
     }
 
+
     .menu-btn{
 
         display:block;
 
     }
 
+
     .nav-links{
 
         position:absolute;
 
-        top:67px;
+        top:65px;
 
         left:14px;
         right:14px;
@@ -2074,24 +2276,26 @@ footer{
 
         padding:9px;
 
-        border:
-        1px solid var(--border);
-
-        border-radius:15px;
-
         background:
-        rgba(2,4,10,.96);
+        rgba(3,6,13,.97);
 
-        backdrop-filter:
-        blur(20px);
+        border:
+        1px solid
+        var(--border);
+
+        border-radius:14px;
+
+        backdrop-filter:blur(20px);
 
     }
+
 
     .nav-links.open{
 
         display:flex;
 
     }
+
 
     .hero h1{
 
@@ -2106,17 +2310,20 @@ footer{
 
     }
 
+
     .hero-actions{
 
         flex-direction:column;
 
     }
 
+
     .btn{
 
         width:100%;
 
     }
+
 
     .fact-grid,
     .project-grid,
@@ -2127,6 +2334,7 @@ footer{
 
     }
 
+
     .metrics{
 
         grid-template-columns:
@@ -2134,11 +2342,13 @@ footer{
 
     }
 
+
     .form-row{
 
         grid-template-columns:1fr;
 
     }
+
 
     .card-top{
 
@@ -2146,11 +2356,13 @@ footer{
 
     }
 
+
     .achievement{
 
         grid-template-columns:1fr;
 
     }
+
 
     .footer-inner{
 
@@ -2163,10 +2375,6 @@ footer{
 }
 
 
-/* =========================================================
-   REDUCED MOTION
-========================================================= */
-
 @media(prefers-reduced-motion:reduce){
 
     html{
@@ -2175,7 +2383,9 @@ footer{
 
     }
 
-    *{
+    *,
+    *::before,
+    *::after{
 
         animation-duration:.01ms !important;
 
@@ -2195,30 +2405,37 @@ footer{
 <body>
 
 
-<!-- =====================================================
-     COSMIC BACKGROUND
-====================================================== -->
+<!-- =========================================================
+     ASTROPHOTOGRAPHY BACKGROUND
+========================================================= -->
 
-<canvas id="cosmosCanvas"></canvas>
+<canvas id="spaceCanvas"></canvas>
 
-<div class="milkyway-glow"></div>
+<div class="nebula nebula-one"></div>
 
-<div class="milkyway-core"></div>
+<div class="nebula nebula-two"></div>
 
-<div class="cosmic-vignette"></div>
+<div class="nebula nebula-three"></div>
+
+<div class="cosmic-horizon"></div>
+
+<div class="vignette"></div>
 
 
-<!-- =====================================================
+<!-- =========================================================
      NAVIGATION
-====================================================== -->
+========================================================= -->
 
-<header class="navbar" id="navbar">
+<header
+    class="navbar"
+    id="navbar"
+>
 
 <div class="nav-inner">
 
 <a
-href="#home"
-class="logo"
+    href="#home"
+    class="logo"
 >
 
 <span class="logo-star"></span>
@@ -2229,25 +2446,27 @@ PIYUSH SINGH
 
 
 <button
-class="menu-btn"
-id="menuBtn"
-aria-label="Open navigation"
+    class="menu-btn"
+    id="menuBtn"
+    aria-label="Open menu"
 >
+
 ☰
+
 </button>
 
 
 <nav>
 
 <ul
-class="nav-links"
-id="navLinks"
+    class="nav-links"
+    id="navLinks"
 >
 
 <li>
 <a
-href="#home"
-class="active"
+    href="#home"
+    class="active"
 >
 Home
 </a>
@@ -2298,20 +2517,20 @@ Contact
 </header>
 
 
-<!-- =====================================================
+<!-- =========================================================
      MAIN
-====================================================== -->
+========================================================= -->
 
 <main>
 
 
-<!-- =====================================================
+<!-- =========================================================
      HERO
-====================================================== -->
+========================================================= -->
 
 <section
-class="hero"
-id="home"
+    class="hero"
+    id="home"
 >
 
 <div class="container">
@@ -2323,7 +2542,7 @@ id="home"
 
 <div class="hero-kicker">
 
-<span class="status-dot"></span>
+<span class="live-star"></span>
 
 OPEN TO OPPORTUNITIES
 
@@ -2357,28 +2576,28 @@ with structured problem solving.
 
 
 <a
-href="#projects"
-class="btn btn-primary"
+    href="#projects"
+    class="btn btn-primary"
 >
 Explore My Work →
 </a>
 
 
 <a
-href="https://mail.google.com/mail/?view=cm&fs=1&to=piyushsingh20030610@gmail.com&su=Portfolio%20Opportunity"
-target="_blank"
-rel="noopener noreferrer"
-class="btn btn-ghost"
+    href="https://mail.google.com/mail/?view=cm&fs=1&to=piyushsingh20030610@gmail.com&su=Portfolio%20Opportunity"
+    target="_blank"
+    rel="noopener noreferrer"
+    class="btn btn-ghost"
 >
 ✉ Email Me
 </a>
 
 
 <a
-href="https://www.linkedin.com/in/piyushsingh0610/"
-target="_blank"
-rel="noopener noreferrer"
-class="btn btn-ghost"
+    href="https://www.linkedin.com/in/piyushsingh0610/"
+    target="_blank"
+    rel="noopener noreferrer"
+    class="btn btn-ghost"
 >
 ↗ LinkedIn
 </a>
@@ -2391,25 +2610,24 @@ class="btn btn-ghost"
 
 
 <a
-class="contact-chip"
-href="https://mail.google.com/mail/?view=cm&fs=1&to=piyushsingh20030610@gmail.com"
-target="_blank"
-rel="noopener noreferrer"
+    class="contact-chip"
+    href="https://mail.google.com/mail/?view=cm&fs=1&to=piyushsingh20030610@gmail.com"
+    target="_blank"
+    rel="noopener noreferrer"
 >
 ✉ piyushsingh20030610@gmail.com
 </a>
 
 
 <a
-class="contact-chip"
-href="tel:+918431832821"
+    class="contact-chip"
+    href="tel:+918431832821"
 >
 ☎ +91 84318 32821
 </a>
 
 
 </div>
-
 
 </div>
 
@@ -2425,19 +2643,19 @@ href="tel:+918431832821"
 
 
 <img
-src="assets/profile.jpg"
-alt="Piyush Singh"
-onerror="
-this.style.display='none';
-document.getElementById('profilePlaceholder').style.display='flex';
-"
+    src="assets/profile.jpg"
+    alt="Piyush Singh"
+    onerror="
+        this.style.display='none';
+        document.getElementById('profilePlaceholder').style.display='flex';
+    "
 >
 
 
 <div
-class="profile-placeholder"
-id="profilePlaceholder"
-style="display:none;"
+    class="profile-placeholder"
+    id="profilePlaceholder"
+    style="display:none;"
 >
 
 <strong>
@@ -2453,7 +2671,6 @@ assets/profile.jpg
 </span>
 
 </div>
-
 
 </div>
 
@@ -2483,11 +2700,13 @@ MBA — Digital Marketing & Operations
 </section>
 
 
-<!-- =====================================================
+<!-- =========================================================
      ABOUT
-====================================================== -->
+========================================================= -->
 
-<section id="about">
+<section
+    id="about"
+>
 
 <div class="container">
 
@@ -2527,6 +2746,7 @@ analytics, operations and business strategy.
 What I bring
 </h3>
 
+
 <p>
 
 I enjoy understanding how people, processes and data
@@ -2536,7 +2756,9 @@ practical ways to improve performance.
 
 </p>
 
+
 <br>
+
 
 <p>
 
@@ -2614,11 +2836,13 @@ Digital Product Revenue
 </section>
 
 
-<!-- =====================================================
+<!-- =========================================================
      EXPERIENCE
-====================================================== -->
+========================================================= -->
 
-<section id="experience">
+<section
+    id="experience"
+>
 
 <div class="container">
 
@@ -2649,10 +2873,12 @@ learned by doing.
 
 <span class="timeline-dot"></span>
 
+
 <div class="glass experience-card">
 
 
 <div class="card-top">
+
 
 <div>
 
@@ -2666,9 +2892,11 @@ Cognizen Innovations
 
 </div>
 
+
 <div class="date">
 Jun 2026 — Jul 2026
 </div>
+
 
 </div>
 
@@ -2699,7 +2927,6 @@ to build an initial outreach pipeline for SIP services.
 
 </ul>
 
-
 </div>
 
 </div>
@@ -2709,10 +2936,12 @@ to build an initial outreach pipeline for SIP services.
 
 <span class="timeline-dot"></span>
 
+
 <div class="glass experience-card">
 
 
 <div class="card-top">
+
 
 <div>
 
@@ -2726,9 +2955,11 @@ AIR FORCE Summer Coaching Camp
 
 </div>
 
+
 <div class="date">
 May 2025 — Jun 2025
 </div>
+
 
 </div>
 
@@ -2752,7 +2983,6 @@ skill acquisition and performance growth.
 
 </ul>
 
-
 </div>
 
 </div>
@@ -2762,10 +2992,12 @@ skill acquisition and performance growth.
 
 <span class="timeline-dot"></span>
 
+
 <div class="glass experience-card">
 
 
 <div class="card-top">
+
 
 <div>
 
@@ -2779,9 +3011,11 @@ Bhushan Badminton Academy
 
 </div>
 
+
 <div class="date">
 Jun 2023 — Jul 2023
 </div>
+
 
 </div>
 
@@ -2804,7 +3038,6 @@ to keep tournament schedules running without delays.
 
 </ul>
 
-
 </div>
 
 </div>
@@ -2814,10 +3047,12 @@ to keep tournament schedules running without delays.
 
 <span class="timeline-dot"></span>
 
+
 <div class="glass experience-card">
 
 
 <div class="card-top">
+
 
 <div>
 
@@ -2831,9 +3066,11 @@ Belagavi Bio-Center
 
 </div>
 
+
 <div class="date">
 Jun 2024 — Jul 2024
 </div>
+
 
 </div>
 
@@ -2863,7 +3100,6 @@ on Bio-Fertilizers and Bio-Control Agents.
 
 </ul>
 
-
 </div>
 
 </div>
@@ -2876,11 +3112,13 @@ on Bio-Fertilizers and Bio-Control Agents.
 </section>
 
 
-<!-- =====================================================
+<!-- =========================================================
      PROJECTS
-====================================================== -->
+========================================================= -->
 
-<section id="projects">
+<section
+    id="projects"
+>
 
 <div class="container">
 
@@ -2925,6 +3163,7 @@ congestion and passenger delays.
 
 </p>
 
+
 <div class="project-tags">
 
 <span class="tag">
@@ -2965,6 +3204,7 @@ ranking and executed Google Ads campaigns generating
 92.4K+ impressions and 257 clicks.
 
 </p>
+
 
 <div class="project-tags">
 
@@ -3007,6 +3247,7 @@ generating 25+ customer engagements and ₹10,000+ revenue.
 
 </p>
 
+
 <div class="project-tags">
 
 <span class="tag">
@@ -3048,6 +3289,7 @@ and contributing to 5% online sales growth.
 
 </p>
 
+
 <div class="project-tags">
 
 <span class="tag">
@@ -3084,6 +3326,7 @@ strategies for an attar and perfume product line,
 including positioning and go-to-market planning.
 
 </p>
+
 
 <div class="project-tags">
 
@@ -3126,6 +3369,7 @@ in inventory planning and logistics.
 
 </p>
 
+
 <div class="project-tags">
 
 <span class="tag">
@@ -3167,6 +3411,7 @@ buffer stock to improve availability.
 
 </p>
 
+
 <div class="project-tags">
 
 <span class="tag">
@@ -3197,13 +3442,14 @@ Optimization
 </section>
 
 
-<!-- =====================================================
+<!-- =========================================================
      METRICS
-====================================================== -->
+========================================================= -->
 
 <section>
 
 <div class="container">
+
 
 <div class="metrics">
 
@@ -3267,11 +3513,13 @@ Estimated AttarVibez Margin
 </section>
 
 
-<!-- =====================================================
+<!-- =========================================================
      EDUCATION
-====================================================== -->
+========================================================= -->
 
-<section id="education">
+<section
+    id="education"
+>
 
 <div class="container">
 
@@ -3381,9 +3629,9 @@ Aug 2020 — May 2021
 </section>
 
 
-<!-- =====================================================
-     CAMPUS PHOTOS
-====================================================== -->
+<!-- =========================================================
+     CAMPUS / SCHOOL PHOTOS
+========================================================= -->
 
 <section>
 
@@ -3414,34 +3662,37 @@ my journey.
 
 <div class="glass project-card reveal">
 
-<div
-class="profile-image"
-style="aspect-ratio:16/9;"
->
+
+<div class="campus-image">
 
 <img
-src="assets/lpu.jpg"
-alt="Lovely Professional University"
-onerror="this.style.display='none';"
+    src="assets/lpu.jpg"
+    alt="Lovely Professional University"
+    onerror="
+        this.style.display='none';
+        this.nextElementSibling.style.display='flex';
+    "
 >
 
-<div class="profile-placeholder">
+
+<div
+    class="campus-placeholder"
+    style="display:none;"
+>
 
 <strong>
 01
 </strong>
 
 <span>
-
-Add LPU campus photo<br>
-
+Add LPU photo<br>
 assets/lpu.jpg
-
 </span>
 
 </div>
 
 </div>
+
 
 <h3>
 Lovely Professional University
@@ -3456,34 +3707,37 @@ MBA — Digital Marketing & Operations
 
 <div class="glass project-card reveal">
 
-<div
-class="profile-image"
-style="aspect-ratio:16/9;"
->
+
+<div class="campus-image">
 
 <img
-src="assets/kle.jpg"
-alt="KLE Science Institute"
-onerror="this.style.display='none';"
+    src="assets/kle.jpg"
+    alt="KLE Society's Raja Lakhmagouda Science Institute"
+    onerror="
+        this.style.display='none';
+        this.nextElementSibling.style.display='flex';
+    "
 >
 
-<div class="profile-placeholder">
+
+<div
+    class="campus-placeholder"
+    style="display:none;"
+>
 
 <strong>
 02
 </strong>
 
 <span>
-
 Add college photo<br>
-
 assets/kle.jpg
-
 </span>
 
 </div>
 
 </div>
+
 
 <h3>
 KLE Society's Raja Lakhmagouda Science Institute
@@ -3498,34 +3752,37 @@ Bachelor's in Biotechnology & Zoology
 
 <div class="glass project-card reveal">
 
-<div
-class="profile-image"
-style="aspect-ratio:16/9;"
->
+
+<div class="campus-image">
 
 <img
-src="assets/kv-school.jpg"
-alt="KV No.1 Sambra"
-onerror="this.style.display='none';"
+    src="assets/kv-school.jpg"
+    alt="KV No.1 Sambra"
+    onerror="
+        this.style.display='none';
+        this.nextElementSibling.style.display='flex';
+    "
 >
 
-<div class="profile-placeholder">
+
+<div
+    class="campus-placeholder"
+    style="display:none;"
+>
 
 <strong>
 03
 </strong>
 
 <span>
-
 Add school photo<br>
-
 assets/kv-school.jpg
-
 </span>
 
 </div>
 
 </div>
+
 
 <h3>
 KV No.1, Sambra
@@ -3545,11 +3802,13 @@ Science Stream
 </section>
 
 
-<!-- =====================================================
+<!-- =========================================================
      SKILLS
-====================================================== -->
+========================================================= -->
 
-<section id="skills">
+<section
+    id="skills"
+>
 
 <div class="container">
 
@@ -3600,8 +3859,8 @@ Digital Marketing
 <div class="skill-track">
 
 <div
-class="skill-fill"
-data-width="90%"
+    class="skill-fill"
+    data-width="90%"
 ></div>
 
 </div>
@@ -3626,8 +3885,8 @@ Market Research
 <div class="skill-track">
 
 <div
-class="skill-fill"
-data-width="88%"
+    class="skill-fill"
+    data-width="88%"
 ></div>
 
 </div>
@@ -3652,8 +3911,8 @@ Data Analysis
 <div class="skill-track">
 
 <div
-class="skill-fill"
-data-width="85%"
+    class="skill-fill"
+    data-width="85%"
 ></div>
 
 </div>
@@ -3678,8 +3937,8 @@ Operations Analysis
 <div class="skill-track">
 
 <div
-class="skill-fill"
-data-width="84%"
+    class="skill-fill"
+    data-width="84%"
 ></div>
 
 </div>
@@ -3704,14 +3963,13 @@ Problem Solving
 <div class="skill-track">
 
 <div
-class="skill-fill"
-data-width="90%"
+    class="skill-fill"
+    data-width="90%"
 ></div>
 
 </div>
 
 </div>
-
 
 </div>
 
@@ -3797,8 +4055,8 @@ Problem Solving
 
 </div>
 
-
 </div>
+
 
 </div>
 
@@ -3807,9 +4065,9 @@ Problem Solving
 </section>
 
 
-<!-- =====================================================
+<!-- =========================================================
      CERTIFICATIONS
-====================================================== -->
+========================================================= -->
 
 <section>
 
@@ -3935,13 +4193,14 @@ May 2022
 </section>
 
 
-<!-- =====================================================
+<!-- =========================================================
      ACHIEVEMENT
-====================================================== -->
+========================================================= -->
 
 <section>
 
 <div class="container">
+
 
 <div class="glass achievement reveal">
 
@@ -3957,9 +4216,11 @@ May 2022
 Achievement
 </div>
 
+
 <h3>
 Vishwakarma Learnbiz Simulation Game
 </h3>
+
 
 <p>
 
@@ -3971,7 +4232,6 @@ among competing teams.
 
 </div>
 
-
 </div>
 
 </div>
@@ -3979,11 +4239,13 @@ among competing teams.
 </section>
 
 
-<!-- =====================================================
+<!-- =========================================================
      CONTACT
-====================================================== -->
+========================================================= -->
 
-<section id="contact">
+<section
+    id="contact"
+>
 
 <div class="container">
 
@@ -4004,6 +4266,7 @@ worth building.
 
 </h2>
 
+
 <p>
 
 Have an opportunity, project or idea?
@@ -4017,25 +4280,30 @@ Let's connect.
 <div class="contact-grid">
 
 
-<!-- CONTACT DETAILS -->
+<!-- CONTACT INFORMATION -->
 
 <div class="glass contact-card reveal">
+
 
 <h3 style="margin-bottom:18px;">
 Get in touch
 </h3>
 
 
+<!-- EMAIL -->
+
 <a
-href="https://mail.google.com/mail/?view=cm&fs=1&to=piyushsingh20030610@gmail.com"
-target="_blank"
-rel="noopener noreferrer"
-class="contact-method"
+    href="https://mail.google.com/mail/?view=cm&fs=1&to=piyushsingh20030610@gmail.com"
+    target="_blank"
+    rel="noopener noreferrer"
+    class="contact-method"
 >
+
 
 <div class="contact-icon">
 ✉
 </div>
+
 
 <div>
 
@@ -4052,14 +4320,18 @@ piyushsingh20030610@gmail.com
 </a>
 
 
+<!-- PHONE -->
+
 <a
-href="tel:+918431832821"
-class="contact-method"
+    href="tel:+918431832821"
+    class="contact-method"
 >
+
 
 <div class="contact-icon">
 ☎
 </div>
+
 
 <div>
 
@@ -4076,16 +4348,20 @@ Phone
 </a>
 
 
+<!-- LINKEDIN -->
+
 <a
-href="https://www.linkedin.com/in/piyushsingh0610/"
-target="_blank"
-rel="noopener noreferrer"
-class="contact-method"
+    href="https://www.linkedin.com/in/piyushsingh0610/"
+    target="_blank"
+    rel="noopener noreferrer"
+    class="contact-method"
 >
+
 
 <div class="contact-icon">
 in
 </div>
+
 
 <div>
 
@@ -4102,11 +4378,13 @@ linkedin.com/in/piyushsingh0610
 </a>
 
 
+<!-- COPY EMAIL -->
+
 <button
-type="button"
-class="btn btn-ghost"
-style="width:100%;margin-top:7px;"
-onclick="copyEmail()"
+    type="button"
+    class="btn btn-ghost"
+    style="width:100%;margin-top:7px;"
+    onclick="copyEmail()"
 >
 
 Copy Email Address
@@ -4115,22 +4393,24 @@ Copy Email Address
 
 
 <div
-id="copyMessage"
-style="
-text-align:center;
-color:#9be7fa;
-font-size:.72rem;
-margin-top:9px;
-min-height:18px;
-"
+    id="copyMessage"
+    style="
+        text-align:center;
+        color:#c7d7e9;
+        font-size:.72rem;
+        margin-top:8px;
+        min-height:18px;
+    "
 ></div>
 
 
+<!-- DEFAULT EMAIL APP -->
+
 <button
-type="button"
-class="btn btn-ghost"
-style="width:100%;margin-top:5px;"
-onclick="openMailApp()"
+    type="button"
+    class="btn btn-ghost"
+    style="width:100%;margin-top:4px;"
+    onclick="openMailApp()"
 >
 
 Open Email App
@@ -4144,6 +4424,7 @@ Open Email App
 <!-- CONTACT FORM -->
 
 <div class="glass contact-card reveal">
+
 
 <h3 style="margin-bottom:20px;">
 Send me a message
@@ -4163,11 +4444,11 @@ Your Name
 </label>
 
 <input
-id="name"
-type="text"
-placeholder="Your name"
-autocomplete="name"
-required
+    id="name"
+    type="text"
+    placeholder="Your name"
+    autocomplete="name"
+    required
 >
 
 </div>
@@ -4180,11 +4461,11 @@ Your Email
 </label>
 
 <input
-id="senderEmail"
-type="email"
-placeholder="you@example.com"
-autocomplete="email"
-required
+    id="senderEmail"
+    type="email"
+    placeholder="you@example.com"
+    autocomplete="email"
+    required
 >
 
 </div>
@@ -4200,10 +4481,10 @@ Subject
 </label>
 
 <input
-id="subject"
-type="text"
-placeholder="Opportunity / Collaboration"
-required
+    id="subject"
+    type="text"
+    placeholder="Opportunity / Collaboration"
+    required
 >
 
 </div>
@@ -4216,18 +4497,18 @@ Message
 </label>
 
 <textarea
-id="message"
-placeholder="Write your message here..."
-required
+    id="message"
+    placeholder="Write your message here..."
+    required
 ></textarea>
 
 </div>
 
 
 <button
-type="submit"
-class="btn btn-primary"
-style="width:100%;"
+    type="submit"
+    class="btn btn-primary"
+    style="width:100%;"
 >
 
 ✉ Send Message
@@ -4236,9 +4517,10 @@ style="width:100%;"
 
 
 <div
-class="email-options"
-id="emailOptions"
+    class="email-options"
+    id="emailOptions"
 >
+
 
 <div class="email-options-title">
 
@@ -4248,9 +4530,9 @@ Choose how you want to send the message:
 
 
 <button
-type="button"
-class="email-option"
-id="gmailButton"
+    type="button"
+    class="email-option"
+    id="gmailButton"
 >
 
 Continue with Gmail
@@ -4259,9 +4541,9 @@ Continue with Gmail
 
 
 <button
-type="button"
-class="email-option"
-id="mailAppButton"
+    type="button"
+    class="email-option"
+    id="mailAppButton"
 >
 
 Continue with Email App
@@ -4274,8 +4556,9 @@ Continue with Email App
 
 <p class="form-note">
 
-Gmail opens with your message automatically prepared.
-No backend or form service is required.
+The form opens Gmail with the recipient, subject
+and message automatically prepared. No backend
+or external form service is required.
 
 </p>
 
@@ -4283,7 +4566,6 @@ No backend or form service is required.
 </form>
 
 </div>
-
 
 </div>
 
@@ -4295,9 +4577,9 @@ No backend or form service is required.
 </main>
 
 
-<!-- =====================================================
+<!-- =========================================================
      FOOTER
-====================================================== -->
+========================================================= -->
 
 <footer>
 
@@ -4317,28 +4599,28 @@ Built with curiosity & code.
 
 
 <a
-href="https://mail.google.com/mail/?view=cm&fs=1&to=piyushsingh20030610@gmail.com"
-target="_blank"
-rel="noopener noreferrer"
-aria-label="Email"
+    href="https://mail.google.com/mail/?view=cm&fs=1&to=piyushsingh20030610@gmail.com"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Email"
 >
 ✉
 </a>
 
 
 <a
-href="tel:+918431832821"
-aria-label="Phone"
+    href="tel:+918431832821"
+    aria-label="Phone"
 >
 ☎
 </a>
 
 
 <a
-href="https://www.linkedin.com/in/piyushsingh0610/"
-target="_blank"
-rel="noopener noreferrer"
-aria-label="LinkedIn"
+    href="https://www.linkedin.com/in/piyushsingh0610/"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="LinkedIn"
 >
 in
 </a>
@@ -4354,9 +4636,9 @@ in
 <!-- BACK TO TOP -->
 
 <button
-class="top-btn"
-id="topBtn"
-aria-label="Back to top"
+    class="top-btn"
+    id="topBtn"
+    aria-label="Back to top"
 >
 ↑
 </button>
@@ -4369,13 +4651,13 @@ aria-label="Back to top"
 ========================================================= */
 
 const MY_EMAIL =
-"piyushsingh20030610@gmail.com";
+    "piyushsingh20030610@gmail.com";
 
 const MY_PHONE =
-"+918431832821";
+    "+918431832821";
 
 const MY_LINKEDIN =
-"https://www.linkedin.com/in/piyushsingh0610/";
+    "https://www.linkedin.com/in/piyushsingh0610/";
 
 
 /* =========================================================
@@ -4383,7 +4665,7 @@ const MY_LINKEDIN =
 ========================================================= */
 
 document.getElementById("year").textContent =
-new Date().getFullYear();
+    new Date().getFullYear();
 
 
 /* =========================================================
@@ -4391,39 +4673,39 @@ new Date().getFullYear();
 ========================================================= */
 
 const menuBtn =
-document.getElementById("menuBtn");
+    document.getElementById("menuBtn");
 
 const navLinks =
-document.getElementById("navLinks");
+    document.getElementById("navLinks");
 
 
 menuBtn.addEventListener(
-"click",
-function(){
+    "click",
+    function(){
 
-    navLinks.classList.toggle("open");
+        navLinks.classList.toggle("open");
 
-}
+    }
 );
 
 
 document.querySelectorAll(
-".nav-links a"
+    ".nav-links a"
 ).forEach(
-function(link){
+    function(link){
 
-    link.addEventListener(
-    "click",
-    function(){
+        link.addEventListener(
+            "click",
+            function(){
 
-        navLinks.classList.remove(
-        "open"
+                navLinks.classList.remove(
+                    "open"
+                );
+
+            }
         );
 
     }
-    );
-
-}
 );
 
 
@@ -4432,32 +4714,33 @@ function(link){
 ========================================================= */
 
 const navbar =
-document.getElementById("navbar");
+    document.getElementById("navbar");
 
 
 window.addEventListener(
-"scroll",
-function(){
+    "scroll",
+    function(){
 
-    if(
-        window.scrollY > 30
-    ){
+        if(
+            window.scrollY > 30
+        ){
 
-        navbar.classList.add(
-        "scrolled"
-        );
+            navbar.classList.add(
+                "scrolled"
+            );
 
+        }else{
+
+            navbar.classList.remove(
+                "scrolled"
+            );
+
+        }
+
+    },
+    {
+        passive:true
     }
-
-    else{
-
-        navbar.classList.remove(
-        "scrolled"
-        );
-
-    }
-
-}
 );
 
 
@@ -4466,120 +4749,122 @@ function(){
 ========================================================= */
 
 const sections =
-document.querySelectorAll(
-"section[id]"
-);
+    document.querySelectorAll(
+        "section[id]"
+    );
 
 const navigationLinks =
-document.querySelectorAll(
-".nav-links a"
-);
+    document.querySelectorAll(
+        ".nav-links a"
+    );
 
 
 window.addEventListener(
-"scroll",
-function(){
+    "scroll",
+    function(){
 
-    let current = "";
+        let current = "";
 
-    sections.forEach(
-    function(section){
+        sections.forEach(
+            function(section){
 
-        const top =
-        section.offsetTop - 180;
+                const top =
+                    section.offsetTop - 190;
 
-        if(
-            window.scrollY >= top
-        ){
+                if(
+                    window.scrollY >= top
+                ){
 
-            current =
-            section.getAttribute(
-            "id"
-            );
+                    current =
+                        section.getAttribute(
+                            "id"
+                        );
 
-        }
+                }
 
-    }
-    );
-
-
-    navigationLinks.forEach(
-    function(link){
-
-        link.classList.remove(
-        "active"
+            }
         );
 
 
-        if(
-            link.getAttribute(
-            "href"
-            ) ===
-            "#" + current
-        ){
+        navigationLinks.forEach(
+            function(link){
 
-            link.classList.add(
-            "active"
-            );
+                link.classList.remove(
+                    "active"
+                );
 
-        }
 
+                if(
+                    link.getAttribute(
+                        "href"
+                    ) === "#" + current
+                ){
+
+                    link.classList.add(
+                        "active"
+                    );
+
+                }
+
+            }
+        );
+
+    },
+    {
+        passive:true
     }
-    );
-
-}
 );
 
 
 /* =========================================================
-   SCROLL REVEAL
+   REVEAL ANIMATION
 ========================================================= */
 
 const revealElements =
-document.querySelectorAll(
-".reveal"
-);
+    document.querySelectorAll(
+        ".reveal"
+    );
 
 
 const revealObserver =
-new IntersectionObserver(
-function(entries){
+    new IntersectionObserver(
+        function(entries){
 
-    entries.forEach(
-    function(entry){
+            entries.forEach(
+                function(entry){
 
-        if(
-            entry.isIntersecting
-        ){
+                    if(
+                        entry.isIntersecting
+                    ){
 
-            entry.target.classList.add(
-            "visible"
+                        entry.target.classList.add(
+                            "visible"
+                        );
+
+                        revealObserver.unobserve(
+                            entry.target
+                        );
+
+                    }
+
+                }
             );
 
-            revealObserver.unobserve(
-            entry.target
-            );
-
+        },
+        {
+            threshold:.12
         }
-
-    }
     );
-
-},
-{
-    threshold:.12
-}
-);
 
 
 revealElements.forEach(
-function(element){
+    function(element){
 
-    revealObserver.observe(
-    element
-    );
+        revealObserver.observe(
+            element
+        );
 
-}
+    }
 );
 
 
@@ -4588,49 +4873,49 @@ function(element){
 ========================================================= */
 
 const skillFills =
-document.querySelectorAll(
-".skill-fill"
-);
+    document.querySelectorAll(
+        ".skill-fill"
+    );
 
 
 const skillObserver =
-new IntersectionObserver(
-function(entries){
+    new IntersectionObserver(
+        function(entries){
 
-    entries.forEach(
-    function(entry){
+            entries.forEach(
+                function(entry){
 
-        if(
-            entry.isIntersecting
-        ){
+                    if(
+                        entry.isIntersecting
+                    ){
 
-            entry.target.style.width =
-            entry.target.dataset.width;
+                        entry.target.style.width =
+                            entry.target.dataset.width;
 
-            skillObserver.unobserve(
-            entry.target
+                        skillObserver.unobserve(
+                            entry.target
+                        );
+
+                    }
+
+                }
             );
 
+        },
+        {
+            threshold:.35
         }
-
-    }
     );
-
-},
-{
-    threshold:.4
-}
-);
 
 
 skillFills.forEach(
-function(skill){
+    function(skill){
 
-    skillObserver.observe(
-    skill
-    );
+        skillObserver.observe(
+            skill
+        );
 
-}
+    }
 );
 
 
@@ -4648,25 +4933,23 @@ function copyEmail(){
         navigator.clipboard
         .writeText(MY_EMAIL)
         .then(
-        function(){
+            function(){
 
-            showCopyMessage(
-            "✓ Email copied"
-            );
+                showCopyMessage(
+                    "✓ Email copied"
+                );
 
-        }
+            }
         )
         .catch(
-        function(){
+            function(){
 
-            fallbackCopyEmail();
+                fallbackCopyEmail();
 
-        }
+            }
         );
 
-    }
-
-    else{
+    }else{
 
         fallbackCopyEmail();
 
@@ -4678,21 +4961,21 @@ function copyEmail(){
 function fallbackCopyEmail(){
 
     const textarea =
-    document.createElement(
-    "textarea"
-    );
+        document.createElement(
+            "textarea"
+        );
 
     textarea.value =
-    MY_EMAIL;
+        MY_EMAIL;
 
     textarea.style.position =
-    "fixed";
+        "fixed";
 
     textarea.style.opacity =
-    "0";
+        "0";
 
     document.body.appendChild(
-    textarea
+        textarea
     );
 
     textarea.select();
@@ -4701,81 +4984,82 @@ function fallbackCopyEmail(){
     try{
 
         document.execCommand(
-        "copy"
+            "copy"
         );
 
         showCopyMessage(
-        "✓ Email copied"
+            "✓ Email copied"
         );
 
-    }
-
-    catch(error){
+    }catch(error){
 
         showCopyMessage(
-        MY_EMAIL
+            MY_EMAIL
         );
 
     }
 
 
     document.body.removeChild(
-    textarea
+        textarea
     );
 
 }
 
 
 function showCopyMessage(
-message
+    message
 ){
 
     const element =
-    document.getElementById(
-    "copyMessage"
-    );
+        document.getElementById(
+            "copyMessage"
+        );
 
     element.textContent =
-    message;
+        message;
+
 
     setTimeout(
-    function(){
+        function(){
 
-        element.textContent =
-        "";
+            element.textContent =
+                "";
 
-    },
-    2500
+        },
+        2500
     );
 
 }
 
 
 /* =========================================================
-   EMAIL APP
+   DEFAULT EMAIL APP
 ========================================================= */
 
 function openMailApp(){
 
     const subject =
-    "Portfolio Opportunity";
+        "Portfolio Opportunity";
 
 
     const body =
-    `Hello Piyush,
-
-I would like to connect with you regarding an opportunity.
-
-Regards`;
+        "Hello Piyush,\n\n" +
+        "I would like to connect with you regarding an opportunity.\n\n" +
+        "Regards";
 
 
     window.location.href =
-    "mailto:" +
-    MY_EMAIL +
-    "?subject=" +
-    encodeURIComponent(subject) +
-    "&body=" +
-    encodeURIComponent(body);
+        "mailto:" +
+        MY_EMAIL +
+        "?subject=" +
+        encodeURIComponent(
+            subject
+        ) +
+        "&body=" +
+        encodeURIComponent(
+            body
+        );
 
 }
 
@@ -4785,73 +5069,78 @@ Regards`;
 ========================================================= */
 
 const contactForm =
-document.getElementById(
-"contactForm"
-);
+    document.getElementById(
+        "contactForm"
+    );
+
 
 const emailOptions =
-document.getElementById(
-"emailOptions"
-);
+    document.getElementById(
+        "emailOptions"
+    );
 
 
-let preparedGmailURL = "";
+let preparedGmailURL =
+    "";
 
-let preparedMailtoURL = "";
+
+let preparedMailtoURL =
+    "";
 
 
 contactForm.addEventListener(
-"submit",
-function(event){
+    "submit",
+    function(event){
 
-    event.preventDefault();
-
-
-    const name =
-    document.getElementById(
-    "name"
-    ).value.trim();
+        event.preventDefault();
 
 
-    const senderEmail =
-    document.getElementById(
-    "senderEmail"
-    ).value.trim();
+        const name =
+            document.getElementById(
+                "name"
+            ).value.trim();
 
 
-    const subject =
-    document.getElementById(
-    "subject"
-    ).value.trim();
+        const senderEmail =
+            document.getElementById(
+                "senderEmail"
+            ).value.trim();
 
 
-    const message =
-    document.getElementById(
-    "message"
-    ).value.trim();
+        const subject =
+            document.getElementById(
+                "subject"
+            ).value.trim();
 
 
-    if(
-        !name ||
-        !senderEmail ||
-        !subject ||
-        !message
-    ){
-
-        alert(
-        "Please fill in all fields."
-        );
-
-        return;
-
-    }
+        const message =
+            document.getElementById(
+                "message"
+            ).value.trim();
 
 
-    /* ================================================
-       PREPARE MESSAGE
-    ================================================= */
+        if(
+            !name ||
+            !senderEmail ||
+            !subject ||
+            !message
+        ){
 
-    const emailBody =
+            alert(
+                "Please fill in all fields."
+            );
+
+            return;
+
+        }
+
+
+        /* ==============================================
+           CREATE EMAIL BODY
+        ============================================== */
+
+        const emailBody =
+
 `Hello Piyush,
 
 My name is ${name}.
@@ -4867,110 +5156,131 @@ Regards,
 ${name}`;
 
 
-    /* ================================================
-       GMAIL COMPOSE
-    ================================================= */
+        /* ==============================================
+           GMAIL COMPOSE
+        ============================================== */
 
-    preparedGmailURL =
-    "https://mail.google.com/mail/" +
-    "?view=cm" +
-    "&fs=1" +
-    "&to=" +
-    encodeURIComponent(
-    MY_EMAIL
-    ) +
-    "&su=" +
-    encodeURIComponent(
-    subject
-    ) +
-    "&body=" +
-    encodeURIComponent(
-    emailBody
-    );
+        preparedGmailURL =
 
+            "https://mail.google.com/mail/" +
 
-    /* ================================================
-       MAILTO FALLBACK
-    ================================================= */
+            "?view=cm" +
 
-    preparedMailtoURL =
-    "mailto:" +
-    MY_EMAIL +
-    "?subject=" +
-    encodeURIComponent(
-    subject
-    ) +
-    "&body=" +
-    encodeURIComponent(
-    emailBody
-    );
+            "&fs=1" +
+
+            "&to=" +
+
+            encodeURIComponent(
+                MY_EMAIL
+            ) +
+
+            "&su=" +
+
+            encodeURIComponent(
+                subject
+            ) +
+
+            "&body=" +
+
+            encodeURIComponent(
+                emailBody
+            );
 
 
-    emailOptions.classList.add(
-    "show"
-    );
+        /* ==============================================
+           MAILTO FALLBACK
+        ============================================== */
+
+        preparedMailtoURL =
+
+            "mailto:" +
+
+            MY_EMAIL +
+
+            "?subject=" +
+
+            encodeURIComponent(
+                subject
+            ) +
+
+            "&body=" +
+
+            encodeURIComponent(
+                emailBody
+            );
 
 
-    /* ================================================
-       OPEN GMAIL AUTOMATICALLY
-    ================================================= */
+        /* ==============================================
+           SHOW OPTIONS
+        ============================================== */
 
-    window.open(
-    preparedGmailURL,
-    "_blank",
-    "noopener,noreferrer"
-    );
-
-}
-);
+        emailOptions.classList.add(
+            "show"
+        );
 
 
-/* =========================================================
-   GMAIL BUTTON
-========================================================= */
-
-document.getElementById(
-"gmailButton"
-).addEventListener(
-"click",
-function(){
-
-    if(
-        preparedGmailURL
-    ){
+        /* ==============================================
+           OPEN GMAIL AUTOMATICALLY
+        ============================================== */
 
         window.open(
-        preparedGmailURL,
-        "_blank",
-        "noopener,noreferrer"
+            preparedGmailURL,
+            "_blank",
+            "noopener,noreferrer"
         );
 
     }
-
-}
 );
 
 
 /* =========================================================
-   MAIL APP BUTTON
+   GMAIL OPTION
 ========================================================= */
 
 document.getElementById(
-"mailAppButton"
-).addEventListener(
-"click",
-function(){
+    "gmailButton"
+)
+.addEventListener(
+    "click",
+    function(){
 
-    if(
-        preparedMailtoURL
-    ){
+        if(
+            preparedGmailURL
+        ){
 
-        window.location.href =
-        preparedMailtoURL;
+            window.open(
+                preparedGmailURL,
+                "_blank",
+                "noopener,noreferrer"
+            );
+
+        }
 
     }
+);
 
-}
+
+/* =========================================================
+   EMAIL APP OPTION
+========================================================= */
+
+document.getElementById(
+    "mailAppButton"
+)
+.addEventListener(
+    "click",
+    function(){
+
+        if(
+            preparedMailtoURL
+        ){
+
+            window.location.href =
+                preparedMailtoURL;
+
+        }
+
+    }
 );
 
 
@@ -4979,143 +5289,173 @@ function(){
 ========================================================= */
 
 const topBtn =
-document.getElementById(
-"topBtn"
-);
+    document.getElementById(
+        "topBtn"
+    );
 
 
 window.addEventListener(
-"scroll",
-function(){
+    "scroll",
+    function(){
 
-    if(
-        window.scrollY > 500
-    ){
+        if(
+            window.scrollY > 500
+        ){
 
-        topBtn.classList.add(
-        "show"
-        );
+            topBtn.classList.add(
+                "show"
+            );
 
+        }else{
+
+            topBtn.classList.remove(
+                "show"
+            );
+
+        }
+
+    },
+    {
+        passive:true
     }
-
-    else{
-
-        topBtn.classList.remove(
-        "show"
-        );
-
-    }
-
-}
 );
 
 
 topBtn.addEventListener(
-"click",
-function(){
+    "click",
+    function(){
 
-    window.scrollTo({
+        window.scrollTo({
 
-        top:0,
+            top:0,
 
-        behavior:"smooth"
+            behavior:"smooth"
 
-    });
+        });
 
-}
+    }
 );
 
 
 /* =========================================================
-   ========================================================
-   COSMIC STAR ENGINE
-   ========================================================
+   REALISTIC ASTROPHOTOGRAPHY ENGINE
 ========================================================= */
 
 const canvas =
-document.getElementById(
-"cosmosCanvas"
-);
+    document.getElementById(
+        "spaceCanvas"
+    );
+
 
 const ctx =
-canvas.getContext(
-"2d"
-);
+    canvas.getContext(
+        "2d",
+        {
+            alpha:false,
+            desynchronized:true
+        }
+    );
 
 
 let width = 0;
 
 let height = 0;
 
-let pixelRatio =
-window.devicePixelRatio || 1;
+let dpr = 1;
 
 
 /* =========================================================
    STAR LAYERS
 ========================================================= */
 
-const stars = {
+let stars = [];
 
-    background:[],
-    medium:[],
-    focal:[]
-
-};
-
-
-/* =========================================================
-   SHOOTING STARS
-========================================================= */
+let milkyStars = [];
 
 let shootingStars = [];
 
 
 /* =========================================================
-   COSMIC TIME
+   PERFORMANCE
 ========================================================= */
 
-let cosmicTime = 0;
+let lastFrame =
+    performance.now();
+
+let frameTime = 0;
+
+let animationPaused =
+    false;
 
 
 /* =========================================================
-   RESIZE CANVAS
+   DEVICE PERFORMANCE
 ========================================================= */
 
-function resizeCosmos(){
-
-    width =
-    window.innerWidth;
-
-    height =
-    window.innerHeight;
-
-    pixelRatio =
-    Math.min(
-        window.devicePixelRatio || 1,
-        2
+const isLowPower =
+    window.matchMedia(
+        "(max-width:700px)"
+    ).matches ||
+    (
+        navigator.hardwareConcurrency &&
+        navigator.hardwareConcurrency <= 4
     );
 
 
+const STAR_COUNT =
+    isLowPower ? 180 : 330;
+
+
+const MILKY_COUNT =
+    isLowPower ? 430 : 820;
+
+
+/* =========================================================
+   RESIZE
+========================================================= */
+
+function resizeCanvas(){
+
+    dpr =
+        Math.min(
+            window.devicePixelRatio || 1,
+            isLowPower ? 1 : 1.5
+        );
+
+
+    width =
+        window.innerWidth;
+
+
+    height =
+        window.innerHeight;
+
+
     canvas.width =
-    width * pixelRatio;
+        Math.floor(
+            width * dpr
+        );
+
 
     canvas.height =
-    height * pixelRatio;
+        Math.floor(
+            height * dpr
+        );
 
 
     canvas.style.width =
-    width + "px";
+        width + "px";
+
 
     canvas.style.height =
-    height + "px";
+        height + "px";
 
 
     ctx.setTransform(
-        pixelRatio,
+        dpr,
         0,
         0,
-        pixelRatio,
+        dpr,
         0,
         0
     );
@@ -5123,175 +5463,78 @@ function resizeCosmos(){
 
     createStars();
 
+    createMilkyWay();
+
 }
 
 
 window.addEventListener(
-"resize",
-resizeCosmos
+    "resize",
+    resizeCanvas,
+    {
+        passive:true
+    }
 );
 
 
 /* =========================================================
-   RANDOM HELPER
+   RANDOM
 ========================================================= */
 
 function random(
-min,
-max
+    min,
+    max
 ){
 
-    return Math.random() *
-    (max - min) +
-    min;
+    return (
+        Math.random() *
+        (max - min)
+    ) + min;
 
 }
 
 
 /* =========================================================
-   CREATE STAR
+   NATURAL STAR COLOR
 ========================================================= */
 
-function createStar(
-layer
-){
+function starColor(){
 
-    let size;
-    let opacity;
-    let speed;
+    const value =
+        Math.random();
+
 
     if(
-        layer === "background"
+        value < .12
     ){
 
-        size =
-        random(
-            .15,
-            .65
-        );
-
-        opacity =
-        random(
-            .15,
-            .48
-        );
-
-        speed =
-        random(
-            .003,
-            .008
-        );
+        return {
+            r:210,
+            g:225,
+            b:255
+        };
 
     }
 
 
-    else if(
-        layer === "medium"
+    if(
+        value < .24
     ){
 
-        size =
-        random(
-            .55,
-            1.35
-        );
-
-        opacity =
-        random(
-            .35,
-            .78
-        );
-
-        speed =
-        random(
-            .005,
-            .014
-        );
+        return {
+            r:255,
+            g:235,
+            b:205
+        };
 
     }
-
-
-    else{
-
-        size =
-        random(
-            1.1,
-            2.4
-        );
-
-        opacity =
-        random(
-            .60,
-            .95
-        );
-
-        speed =
-        random(
-            .008,
-            .018
-        );
-
-    }
-
-
-    const colors = [
-
-        "255,255,255",
-
-        "211,242,255",
-
-        "172,225,255",
-
-        "255,247,225"
-
-    ];
 
 
     return {
 
-        x:
-        Math.random() * width,
-
-        y:
-        Math.random() * height,
-
-        size:size,
-
-        baseOpacity:opacity,
-
-        twinkleSpeed:speed,
-
-        phase:
-        Math.random() *
-        Math.PI *
-        2,
-
-        driftX:
-        random(
-            -.018,
-            .018
-        ),
-
-        driftY:
-        random(
-            -.006,
-            .006
-        ),
-
-        color:
-        colors[
-            Math.floor(
-                Math.random() *
-                colors.length
-            )
-        ],
-
-        layer:layer,
-
-        rotation:
-        random(
-            0,
-            Math.PI * 2
-        )
+        r:238,
+        g:244,
+        b:255
 
     };
 
@@ -5299,100 +5542,465 @@ layer
 
 
 /* =========================================================
-   CREATE ALL STARS
+   NORMAL STAR FIELD
 ========================================================= */
 
 function createStars(){
 
-    stars.background = [];
-
-    stars.medium = [];
-
-    stars.focal = [];
-
-
-    /*
-        Background microscopic dust
-    */
-
-    const backgroundCount =
-    Math.min(
-        850,
-        Math.floor(
-            width * height / 1800
-        )
-    );
-
-
-    /*
-        Medium stars
-    */
-
-    const mediumCount =
-    Math.min(
-        250,
-        Math.floor(
-            width * height / 6500
-        )
-    );
-
-
-    /*
-        Focal stars
-    */
-
-    const focalCount =
-    Math.min(
-        45,
-        Math.floor(
-            width * height / 35000
-        )
-    );
+    stars = [];
 
 
     for(
         let i=0;
-        i<backgroundCount;
+        i<STAR_COUNT;
         i++
     ){
 
-        stars.background.push(
-            createStar(
-                "background"
-            )
-        );
+        const color =
+            starColor();
+
+
+        stars.push({
+
+            x:
+                Math.random() *
+                width,
+
+            y:
+                Math.random() *
+                height,
+
+            size:
+                random(
+                    .35,
+                    1.7
+                ),
+
+            baseAlpha:
+                random(
+                    .16,
+                    .68
+                ),
+
+            twinkle:
+                random(
+                    .0005,
+                    .002
+                ),
+
+            phase:
+                random(
+                    0,
+                    Math.PI * 2
+                ),
+
+            drift:
+                random(
+                    .004,
+                    .018
+                ),
+
+            color:color
+
+        });
 
     }
+
+}
+
+
+/* =========================================================
+   MILKY WAY DIAGONAL BAND
+========================================================= */
+
+function createMilkyWay(){
+
+    milkyStars = [];
+
+
+    /*
+        The Milky Way runs diagonally
+        from lower-left toward upper-right
+        through the upper-middle section.
+    */
+
+
+    const angle =
+        -0.32;
+
+
+    const centerX =
+        width * .55;
+
+
+    const centerY =
+        height * .27;
+
+
+    const cos =
+        Math.cos(angle);
+
+
+    const sin =
+        Math.sin(angle);
 
 
     for(
         let i=0;
-        i<mediumCount;
+        i<MILKY_COUNT;
         i++
     ){
 
-        stars.medium.push(
-            createStar(
-                "medium"
-            )
-        );
+        const along =
+            random(
+                -width * .75,
+                width * .75
+            );
+
+
+        /*
+           Gaussian-like width.
+        */
+
+        const spread =
+            randomGaussian() *
+            height *
+            .14;
+
+
+        let x =
+            centerX +
+            along * cos -
+            spread * sin;
+
+
+        let y =
+            centerY +
+            along * sin +
+            spread * cos;
+
+
+        /*
+           Keep some stars away
+           from the core to create
+           natural soft edges.
+        */
+
+
+        const edgeFactor =
+            Math.max(
+                0,
+                1 -
+                Math.abs(spread) /
+                (height * .22)
+            );
+
+
+        const color =
+            starColor();
+
+
+        milkyStars.push({
+
+            x:x,
+
+            y:y,
+
+            size:
+                random(
+                    .25,
+                    1.35
+                ),
+
+            baseAlpha:
+                random(
+                    .035,
+                    .28
+                ) *
+                edgeFactor,
+
+            twinkle:
+                random(
+                    .0003,
+                    .0014
+                ),
+
+            phase:
+                random(
+                    0,
+                    Math.PI * 2
+                ),
+
+            drift:
+                random(
+                    .002,
+                    .012
+                ),
+
+            color:color
+
+        });
+
+    }
+
+}
+
+
+/* =========================================================
+   BOX-MULLER RANDOM
+========================================================= */
+
+function randomGaussian(){
+
+    let u = 0;
+
+    let v = 0;
+
+
+    while(
+        u === 0
+    ){
+
+        u =
+            Math.random();
 
     }
 
 
-    for(
-        let i=0;
-        i<focalCount;
-        i++
+    while(
+        v === 0
     ){
 
-        stars.focal.push(
-            createStar(
-                "focal"
-            )
-        );
+        v =
+            Math.random();
 
     }
+
+
+    return Math.sqrt(
+        -2 *
+        Math.log(u)
+    ) *
+    Math.cos(
+        2 *
+        Math.PI *
+        v
+    );
+
+}
+
+
+/* =========================================================
+   NEBULA GRADIENT
+========================================================= */
+
+function drawNebula(){
+
+    /*
+       Very subtle dark astrophotography haze.
+    */
+
+
+    const gradient =
+        ctx.createRadialGradient(
+
+            width * .48,
+            height * .22,
+
+            0,
+
+            width * .48,
+            height * .22,
+
+            width * .7
+
+        );
+
+
+    gradient.addColorStop(
+        0,
+        "rgba(24,40,65,.12)"
+    );
+
+
+    gradient.addColorStop(
+        .35,
+        "rgba(13,27,48,.075)"
+    );
+
+
+    gradient.addColorStop(
+        .7,
+        "rgba(5,13,26,.025)"
+    );
+
+
+    gradient.addColorStop(
+        1,
+        "rgba(0,0,0,0)"
+    );
+
+
+    ctx.fillStyle =
+        gradient;
+
+
+    ctx.fillRect(
+        0,
+        0,
+        width,
+        height
+    );
+
+}
+
+
+/* =========================================================
+   MILKY WAY SOFT HAZE
+========================================================= */
+
+function drawMilkyHaze(){
+
+    const angle =
+        -0.32;
+
+
+    const centerX =
+        width * .55;
+
+
+    const centerY =
+        height * .27;
+
+
+    ctx.save();
+
+
+    ctx.translate(
+        centerX,
+        centerY
+    );
+
+
+    ctx.rotate(
+        angle
+    );
+
+
+    const haze =
+        ctx.createLinearGradient(
+            -width,
+            0,
+            width,
+            0
+        );
+
+
+    haze.addColorStop(
+        0,
+        "rgba(0,0,0,0)"
+    );
+
+
+    haze.addColorStop(
+        .25,
+        "rgba(70,87,112,.025)"
+    );
+
+
+    haze.addColorStop(
+        .45,
+        "rgba(105,120,145,.065)"
+    );
+
+
+    haze.addColorStop(
+        .55,
+        "rgba(85,103,130,.055)"
+    );
+
+
+    haze.addColorStop(
+        .72,
+        "rgba(40,58,85,.025)"
+    );
+
+
+    haze.addColorStop(
+        1,
+        "rgba(0,0,0,0)"
+    );
+
+
+    ctx.fillStyle =
+        haze;
+
+
+    ctx.fillRect(
+        -width,
+        -height * .18,
+        width * 2,
+        height * .36
+    );
+
+
+    /*
+       Dark dust lane.
+    */
+
+
+    const dust =
+        ctx.createLinearGradient(
+            0,
+            -height * .12,
+            0,
+            height * .12
+        );
+
+
+    dust.addColorStop(
+        0,
+        "rgba(0,0,0,0)"
+    );
+
+
+    dust.addColorStop(
+        .38,
+        "rgba(0,0,0,.04)"
+    );
+
+
+    dust.addColorStop(
+        .5,
+        "rgba(0,0,0,.15)"
+    );
+
+
+    dust.addColorStop(
+        .62,
+        "rgba(0,0,0,.04)"
+    );
+
+
+    dust.addColorStop(
+        1,
+        "rgba(0,0,0,0)"
+    );
+
+
+    ctx.fillStyle =
+        dust;
+
+
+    ctx.fillRect(
+        -width,
+        -height * .2,
+        width * 2,
+        height * .4
+    );
+
+
+    ctx.restore();
 
 }
 
@@ -5402,146 +6010,130 @@ function createStars(){
 ========================================================= */
 
 function drawStar(
-star,
-time
+    star,
+    time,
+    milky=false
 ){
 
     /*
-        Individual sinusoidal twinkling.
+       Smooth natural twinkling.
+       No rapid flashing.
     */
 
-    const twinkle =
-    Math.sin(
-        time *
-        star.twinkleSpeed *
-        100 +
-        star.phase
-    );
+
+    const wave =
+        Math.sin(
+            time *
+            star.twinkle +
+            star.phase
+        );
 
 
-    const opacity =
-    Math.max(
-        .03,
-        star.baseOpacity +
-        twinkle *
-        star.baseOpacity *
-        .25
-    );
+    const modulation =
+        .84 +
+        wave * .16;
 
 
-    /*
-        Gentle parallax drift.
-    */
-
-    const parallax =
-    star.layer === "background"
-    ? .15
-    :
-    star.layer === "medium"
-    ? .45
-    : .85;
+    const alpha =
+        star.baseAlpha *
+        modulation;
 
 
     let x =
-    star.x +
-    Math.sin(
-        time * .000035 +
-        star.phase
-    ) *
-    18 *
-    parallax;
+        star.x;
 
 
     let y =
-    star.y +
-    Math.cos(
-        time * .000028 +
-        star.phase
-    ) *
-    10 *
-    parallax;
+        star.y;
 
 
     /*
-        Wrap around screen.
+       Very slow cosmic drift.
     */
 
-    x =
-    (x + width) %
-    width;
 
-    y =
-    (y + height) %
-    height;
+    x +=
+        Math.sin(
+            time * .000025 +
+            star.phase
+        ) *
+        star.drift *
+        40;
 
 
-    ctx.save();
+    y +=
+        Math.cos(
+            time * .00002 +
+            star.phase
+        ) *
+        star.drift *
+        25;
 
 
     /*
-        Focal stars get a soft glow.
+       Wrap around.
     */
+
 
     if(
-        star.layer === "focal"
+        x < -5
     ){
 
-        const glow =
-        ctx.createRadialGradient(
-            x,
-            y,
-            0,
-            x,
-            y,
-            star.size * 8
-        );
-
-
-        glow.addColorStop(
-            0,
-            `rgba(
-                ${star.color},
-                ${opacity * .40}
-            )`
-        );
-
-
-        glow.addColorStop(
-            1,
-            `rgba(
-                ${star.color},
-                0
-            )`
-        );
-
-
-        ctx.fillStyle =
-        glow;
-
-
-        ctx.beginPath();
-
-        ctx.arc(
-            x,
-            y,
-            star.size * 8,
-            0,
-            Math.PI * 2
-        );
-
-        ctx.fill();
+        x += width + 10;
 
     }
 
 
+    if(
+        x > width + 5
+    ){
+
+        x -= width + 10;
+
+    }
+
+
+    if(
+        y < -5
+    ){
+
+        y += height + 10;
+
+    }
+
+
+    if(
+        y > height + 5
+    ){
+
+        y -= height + 10;
+
+    }
+
+
+    const r =
+        star.color.r;
+
+
+    const g =
+        star.color.g;
+
+
+    const b =
+        star.color.b;
+
+
     ctx.fillStyle =
-    `rgba(
-        ${star.color},
-        ${opacity}
-    )`;
+        `rgba(
+            ${r},
+            ${g},
+            ${b},
+            ${alpha}
+        )`;
 
 
     ctx.beginPath();
+
 
     ctx.arc(
         x,
@@ -5551,92 +6143,77 @@ time
         Math.PI * 2
     );
 
+
     ctx.fill();
 
 
     /*
-        Cross flare for a few focal stars.
+       Very subtle glow
+       only for brighter stars.
     */
 
+
     if(
-        star.layer === "focal" &&
-        star.size > 1.7
+        star.size > 1.25 &&
+        alpha > .35
     ){
 
-        ctx.globalAlpha =
-        opacity * .45;
+        const glow =
+            ctx.createRadialGradient(
+                x,
+                y,
+                0,
+                x,
+                y,
+                star.size * 5
+            );
 
 
-        ctx.fillRect(
-            x - star.size * 4,
-            y - .35,
-            star.size * 8,
-            .7
+        glow.addColorStop(
+            0,
+            `rgba(
+                ${r},
+                ${g},
+                ${b},
+                ${alpha * .16}
+            )`
         );
 
 
-        ctx.fillRect(
-            x - .35,
-            y - star.size * 4,
-            .7,
-            star.size * 8
+        glow.addColorStop(
+            1,
+            "rgba(0,0,0,0)"
         );
+
+
+        ctx.fillStyle =
+            glow;
+
+
+        ctx.beginPath();
+
+
+        ctx.arc(
+            x,
+            y,
+            star.size * 5,
+            0,
+            Math.PI * 2
+        );
+
+
+        ctx.fill();
 
     }
 
-
-    ctx.restore();
-
 }
 
 
 /* =========================================================
-   DRAW STAR FIELD
-========================================================= */
-
-function drawStars(
-time
-){
-
-    stars.background.forEach(
-        star =>
-        drawStar(
-            star,
-            time
-        )
-    );
-
-
-    stars.medium.forEach(
-        star =>
-        drawStar(
-            star,
-            time
-        )
-    );
-
-
-    stars.focal.forEach(
-        star =>
-        drawStar(
-            star,
-            time
-        )
-    );
-
-}
-
-
-/* =========================================================
-   SHOOTING STAR CREATION
+   SHOOTING STAR
 ========================================================= */
 
 function createShootingStar(){
-
-    /*
-        Keep maximum number low
-        for performance.
-    */
 
     if(
         shootingStars.length >= 1
@@ -5647,27 +6224,24 @@ function createShootingStar(){
     }
 
 
-    const fromLeft =
-    Math.random() > .5;
+    /*
+       Start mostly from upper
+       half of viewport.
+    */
 
 
     const startX =
-    fromLeft
-    ? random(
-        width * .15,
-        width * .65
-    )
-    : random(
-        width * .35,
-        width * .85
-    );
+        random(
+            width * .15,
+            width * .9
+        );
 
 
     const startY =
-    random(
-        height * .05,
-        height * .55
-    );
+        random(
+            height * .05,
+            height * .4
+        );
 
 
     shootingStars.push({
@@ -5677,35 +6251,30 @@ function createShootingStar(){
         y:startY,
 
         length:
-        random(
-            80,
-            190
-        ),
+            random(
+                80,
+                170
+            ),
 
         speed:
-        random(
-            5,
-            10
-        ),
-
-        angle:
-        fromLeft
-        ? random(
-            .30,
-            .55
-        )
-        : random(
-            2.60,
-            2.85
-        ),
+            random(
+                7,
+                12
+            ),
 
         life:0,
 
         maxLife:
-        random(
-            65,
-            120
-        )
+            random(
+                38,
+                62
+            ),
+
+        angle:
+            random(
+                Math.PI * .12,
+                Math.PI * .32
+            )
 
     });
 
@@ -5713,81 +6282,91 @@ function createShootingStar(){
 
 
 /* =========================================================
-   DRAW SHOOTING STARS
+   DRAW SHOOTING STAR
 ========================================================= */
 
 function drawShootingStars(){
 
-    shootingStars.forEach(
-    function(star){
+    for(
+        let i =
+        shootingStars.length - 1;
 
-        star.life += 1;
+        i >= 0;
+
+        i--
+    ){
+
+        const s =
+            shootingStars[i];
 
 
-        star.x +=
-        Math.cos(
-            star.angle
-        ) *
-        star.speed;
+        s.life += 1;
 
 
-        star.y +=
-        Math.sin(
-            star.angle
-        ) *
-        star.speed;
+        s.x +=
+            Math.cos(
+                s.angle
+            ) *
+            s.speed;
+
+
+        s.y +=
+            Math.sin(
+                s.angle
+            ) *
+            s.speed;
 
 
         const progress =
-        star.life /
-        star.maxLife;
+            s.life /
+            s.maxLife;
 
 
         const alpha =
-        Math.sin(
-            progress *
-            Math.PI
-        ) *
-        .75;
+            Math.sin(
+                Math.PI *
+                progress
+            ) *
+            .6;
 
 
         const tailX =
-        star.x -
-        Math.cos(
-            star.angle
-        ) *
-        star.length;
+            s.x -
+            Math.cos(
+                s.angle
+            ) *
+            s.length;
 
 
         const tailY =
-        star.y -
-        Math.sin(
-            star.angle
-        ) *
-        star.length;
+            s.y -
+            Math.sin(
+                s.angle
+            ) *
+            s.length;
 
 
         const gradient =
-        ctx.createLinearGradient(
-            tailX,
-            tailY,
-            star.x,
-            star.y
-        );
+            ctx.createLinearGradient(
+                tailX,
+                tailY,
+                s.x,
+                s.y
+            );
 
 
         gradient.addColorStop(
             0,
-            "rgba(130,190,255,0)"
+            "rgba(238,244,255,0)"
         );
 
 
         gradient.addColorStop(
             .75,
             `rgba(
-                190,
-                225,
-                255,
+                220,
+                232,
+                248,
                 ${alpha * .35}
             )`
         );
@@ -5804,74 +6383,45 @@ function drawShootingStars(){
         );
 
 
-        ctx.save();
-
-
         ctx.strokeStyle =
-        gradient;
+            gradient;
+
 
         ctx.lineWidth =
-        1.2;
+            1;
+
 
         ctx.beginPath();
+
 
         ctx.moveTo(
             tailX,
             tailY
         );
 
+
         ctx.lineTo(
-            star.x,
-            star.y
+            s.x,
+            s.y
         );
+
 
         ctx.stroke();
 
 
-        ctx.fillStyle =
-        `rgba(
-            255,
-            255,
-            255,
-            ${alpha}
-        )`;
+        if(
+            s.life >=
+            s.maxLife
+        ){
 
+            shootingStars.splice(
+                i,
+                1
+            );
 
-        ctx.shadowBlur =
-        12;
+        }
 
-        ctx.shadowColor =
-        "rgba(180,230,255,.8)";
-
-
-        ctx.beginPath();
-
-        ctx.arc(
-            star.x,
-            star.y,
-            1.4,
-            0,
-            Math.PI * 2
-        );
-
-        ctx.fill();
-
-
-        ctx.restore();
-
-    });
-
-
-    shootingStars =
-    shootingStars.filter(
-    function(star){
-
-        return (
-            star.life <
-            star.maxLife
-        );
-
-    });
+    }
 
 }
 
@@ -5881,110 +6431,73 @@ function drawShootingStars(){
 ========================================================= */
 
 let nextShootingStar =
-Date.now() +
-random(
-    7000,
-    16000
-);
-
-
-function checkShootingStar(){
-
-    const now =
-    Date.now();
-
-
-    if(
-        now >=
-        nextShootingStar
-    ){
-
-        createShootingStar();
-
-
-        nextShootingStar =
-        now +
-        random(
-            9000,
-            22000
-        );
-
-    }
-
-}
+    performance.now() +
+    random(
+        7000,
+        17000
+    );
 
 
 /* =========================================================
-   VERY SLOW COSMIC PARALLAX
+   MAIN ANIMATION
 ========================================================= */
 
-function drawCosmicNebula(
-
-time
-
+function animateSpace(
+    now
 ){
 
-    /*
-        Extremely subtle moving
-        indigo-blue atmospheric haze.
+    if(
+        animationPaused
+    ){
 
-        This stays behind all stars.
+        lastFrame =
+            now;
+
+        requestAnimationFrame(
+            animateSpace
+        );
+
+        return;
+
+    }
+
+
+    /*
+       Keep animation around 60 FPS
+       while avoiding unnecessary
+       work on slow devices.
     */
 
-    const offsetX =
-    Math.sin(
-        time * .000015
-    ) * 45;
+
+    frameTime =
+        now -
+        lastFrame;
 
 
-    const offsetY =
-    Math.cos(
-        time * .000011
-    ) * 25;
+    if(
+        frameTime < 15
+    ){
+
+        requestAnimationFrame(
+            animateSpace
+        );
+
+        return;
+
+    }
 
 
-    const gradient =
-    ctx.createRadialGradient(
-
-        width * .52 +
-        offsetX,
-
-        height * .22 +
-        offsetY,
-
-        0,
-
-        width * .52 +
-        offsetX,
-
-        height * .22 +
-        offsetY,
-
-        width * .62
-
-    );
+    lastFrame =
+        now;
 
 
-    gradient.addColorStop(
-        0,
-        "rgba(56,75,166,.055)"
-    );
-
-
-    gradient.addColorStop(
-        .35,
-        "rgba(33,52,128,.035)"
-    );
-
-
-    gradient.addColorStop(
-        1,
-        "rgba(0,0,0,0)"
-    );
+    /*
+       Base space.
+    */
 
 
     ctx.fillStyle =
-    gradient;
+        "#03060d";
 
 
     ctx.fillRect(
@@ -5994,22 +6507,58 @@ time
         height
     );
 
-}
+
+    /*
+       Very subtle navy depth.
+    */
 
 
-/* =========================================================
-   COSMIC ANIMATION LOOP
-========================================================= */
+    const background =
+        ctx.createRadialGradient(
 
-function animateCosmos(
-timestamp
-){
+            width * .5,
+            height * .15,
+            0,
 
-    cosmicTime =
-    timestamp;
+            width * .5,
+            height * .5,
+            Math.max(
+                width,
+                height
+            )
+
+        );
 
 
-    ctx.clearRect(
+    background.addColorStop(
+        0,
+        "#0a1224"
+    );
+
+
+    background.addColorStop(
+        .35,
+        "#070e1c"
+    );
+
+
+    background.addColorStop(
+        .75,
+        "#040912"
+    );
+
+
+    background.addColorStop(
+        1,
+        "#03060d"
+    );
+
+
+    ctx.fillStyle =
+        background;
+
+
+    ctx.fillRect(
         0,
         0,
         width,
@@ -6018,70 +6567,182 @@ timestamp
 
 
     /*
-        Background atmospheric movement.
+       Nebula atmosphere.
     */
 
-    drawCosmicNebula(
-        timestamp
-    );
+
+    drawNebula();
 
 
     /*
-        Three-layer star field.
+       Milky Way soft haze.
     */
 
-    drawStars(
-        timestamp
-    );
+
+    drawMilkyHaze();
 
 
     /*
-        Occasional shooting star.
+       Distant Milky Way stars.
     */
 
-    checkShootingStar();
+
+    for(
+        let i=0;
+        i<milkyStars.length;
+        i++
+    ){
+
+        drawStar(
+            milkyStars[i],
+            now,
+            true
+        );
+
+    }
+
+
+    /*
+       Foreground stars.
+    */
+
+
+    for(
+        let i=0;
+        i<stars.length;
+        i++
+    ){
+
+        drawStar(
+            stars[i],
+            now,
+            false
+        );
+
+    }
+
+
+    /*
+       Shooting stars.
+    */
+
 
     drawShootingStars();
 
 
+    /*
+       Schedule rare shooting star.
+    */
+
+
+    if(
+        now >
+        nextShootingStar
+    ){
+
+        if(
+            Math.random() < .72
+        ){
+
+            createShootingStar();
+
+        }
+
+
+        nextShootingStar =
+            now +
+            random(
+                9000,
+                24000
+            );
+
+    }
+
+
     requestAnimationFrame(
-        animateCosmos
+        animateSpace
     );
 
 }
 
 
 /* =========================================================
-   START COSMOS
+   START SPACE
 ========================================================= */
 
-resizeCosmos();
+resizeCanvas();
 
 requestAnimationFrame(
-animateCosmos
+    animateSpace
 );
 
 
 /* =========================================================
-   IMAGE ERROR HANDLING
+   PAUSE WHEN TAB IS HIDDEN
+   Saves CPU/GPU.
+========================================================= */
+
+document.addEventListener(
+    "visibilitychange",
+    function(){
+
+        animationPaused =
+            document.hidden;
+
+    }
+);
+
+
+/* =========================================================
+   REDUCE ANIMATION IF USER PREFERS
+   REDUCED MOTION
+========================================================= */
+
+const reducedMotion =
+    window.matchMedia(
+        "(prefers-reduced-motion: reduce)"
+    );
+
+
+if(
+    reducedMotion.matches
+){
+
+    animationPaused = true;
+
+}
+
+
+/* =========================================================
+   IMAGE FALLBACK
 ========================================================= */
 
 document.querySelectorAll(
-".profile-image img"
-).forEach(
-function(img){
+    ".campus-image img"
+)
+.forEach(
+    function(img){
 
-    img.addEventListener(
-    "error",
-    function(){
+        img.addEventListener(
+            "error",
+            function(){
 
-        img.style.display =
-        "none";
+                img.style.display =
+                    "none";
+
+                if(
+                    img.nextElementSibling
+                ){
+
+                    img.nextElementSibling.style.display =
+                        "flex";
+
+                }
+
+            }
+        );
 
     }
-    );
-
-}
 );
 
 </script>
