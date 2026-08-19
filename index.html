@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 
 <meta charset="UTF-8">
@@ -10,45 +11,45 @@
 
 <meta
 name="description"
-content="Piyush Singh — MBA Digital Marketing & Operations Portfolio."
+content="Piyush Singh — MBA Digital Marketing & Operations portfolio."
 >
 
 <style>
 
-/* ============================================================
+/* =========================================================
    ROOT
-============================================================ */
+========================================================= */
 
 :root{
 
-    --black:#000205;
-    --black2:#02060b;
-    --black3:#050d13;
+    --night-950:#02050e;
+    --night-900:#030812;
+    --night-850:#050b18;
+    --night-800:#08142b;
 
-    --ocean950:#02141b;
-    --ocean900:#03242d;
-    --ocean800:#043744;
-    --ocean700:#07586a;
-    --ocean600:#087f91;
-    --ocean500:#0ba4b8;
-    --ocean400:#2ccddd;
-    --ocean300:#70edf3;
-    --ocean200:#b5f8fa;
+    --cyan:#65e6ff;
+    --cyan-soft:#8feaff;
 
-    --white:#f4ffff;
-    --muted:#9abcc1;
+    --purple:#a88cff;
+    --lavender:#c6b8ff;
 
-    --glass:rgba(2,10,15,.62);
-    --border:rgba(112,237,243,.16);
+    --white:#f5f9ff;
+    --muted:#9baabd;
+
+    --glass:rgba(6,14,30,.58);
+
+    --border:rgba(143,234,255,.14);
+
+    --radius:24px;
 
     --max:1180px;
-    --radius:24px;
+
 }
 
 
-/* ============================================================
+/* =========================================================
    RESET
-============================================================ */
+========================================================= */
 
 *{
     margin:0;
@@ -62,10 +63,6 @@ html{
 
 body{
 
-    background:#000205;
-
-    color:var(--white);
-
     font-family:
     Inter,
     ui-sans-serif,
@@ -75,14 +72,25 @@ body{
     "Segoe UI",
     sans-serif;
 
-    line-height:1.6;
+    color:var(--white);
+
+    background:
+    linear-gradient(
+        180deg,
+        #02050e 0%,
+        #040a17 45%,
+        #08142b 100%
+    );
 
     overflow-x:hidden;
+
+    line-height:1.6;
+
 }
 
 a{
-    color:inherit;
     text-decoration:none;
+    color:inherit;
 }
 
 button,
@@ -90,91 +98,6 @@ input,
 textarea{
     font:inherit;
 }
-
-
-/* ============================================================
-   BLACK HOLE CANVAS
-============================================================ */
-
-#blackHoleCanvas{
-
-    position:fixed;
-
-    inset:0;
-
-    width:100vw;
-    height:100vh;
-
-    z-index:-10;
-
-    pointer-events:none;
-
-    background:
-    radial-gradient(
-        circle at 50% 50%,
-        #000 0%,
-        #000 30%,
-        #010306 55%,
-        #000205 100%
-    );
-}
-
-
-/* ============================================================
-   DARK SPACE OVERLAY
-============================================================ */
-
-.space-overlay{
-
-    position:fixed;
-
-    inset:0;
-
-    z-index:-8;
-
-    pointer-events:none;
-
-    background:
-
-    radial-gradient(
-        ellipse at center,
-        transparent 0%,
-        rgba(0,0,0,.08) 40%,
-        rgba(0,0,0,.55) 100%
-    );
-
-}
-
-
-/* ============================================================
-   CINEMATIC VIGNETTE
-============================================================ */
-
-.vignette{
-
-    position:fixed;
-
-    inset:-10%;
-
-    z-index:-7;
-
-    pointer-events:none;
-
-    background:
-
-    radial-gradient(
-        ellipse at center,
-        transparent 38%,
-        rgba(0,0,0,.18) 60%,
-        rgba(0,0,0,.72) 100%
-    );
-
-}
-
-
-/* ============================================================
-   PAGE
-============================================================ */
 
 .container{
 
@@ -184,32 +107,30 @@ textarea{
     );
 
     margin:auto;
+
 }
 
 section{
 
-    position:relative;
-
     padding:110px 0;
 
-    z-index:2;
+    position:relative;
+
+    z-index:3;
+
 }
-
-
-/* ============================================================
-   SECTION HEADINGS
-============================================================ */
 
 .section-heading{
 
     margin-bottom:55px;
+
 }
 
 .eyebrow{
 
-    color:var(--ocean300);
+    color:var(--cyan);
 
-    font-size:.75rem;
+    font-size:.76rem;
 
     font-weight:800;
 
@@ -217,26 +138,33 @@ section{
 
     text-transform:uppercase;
 
-    margin-bottom:13px;
+    margin-bottom:12px;
+
 }
 
 .section-heading h2{
 
     font-size:
-    clamp(2.1rem,5vw,3.7rem);
+    clamp(
+        2.1rem,
+        5vw,
+        3.6rem
+    );
 
-    line-height:1.02;
+    line-height:1.05;
 
     letter-spacing:-2px;
+
 }
 
 .section-heading p{
 
-    color:var(--muted);
-
     max-width:680px;
 
-    margin-top:17px;
+    color:var(--muted);
+
+    margin-top:16px;
+
 }
 
 .gradient-text{
@@ -244,28 +172,255 @@ section{
     background:
     linear-gradient(
         100deg,
-        #fff,
-        #70edf3 45%,
-        #0ba4b8
+        #ffffff,
+        #8feaff 40%,
+        #b49aff 85%
     );
 
     -webkit-background-clip:text;
+
     background-clip:text;
 
     color:transparent;
+
 }
 
 
-/* ============================================================
-   NAVIGATION
-============================================================ */
+/* =========================================================
+   COSMIC BACKGROUND
+========================================================= */
+
+#spaceCanvas{
+
+    position:fixed;
+
+    inset:0;
+
+    width:100%;
+
+    height:100%;
+
+    z-index:-10;
+
+    pointer-events:none;
+
+}
+
+
+/* =========================================================
+   MILKY WAY NEBULA
+========================================================= */
+
+.milky-way{
+
+    position:fixed;
+
+    width:145vw;
+
+    height:48vh;
+
+    left:-28vw;
+
+    top:-5vh;
+
+    z-index:-9;
+
+    pointer-events:none;
+
+    transform:
+    rotate(
+        29deg
+    );
+
+    transform-origin:center;
+
+    background:
+
+    radial-gradient(
+        ellipse at center,
+        rgba(145,110,255,.20) 0%,
+        rgba(91,184,255,.14) 23%,
+        rgba(119,88,210,.10) 40%,
+        rgba(25,49,105,.04) 58%,
+        transparent 74%
+    );
+
+    filter:
+    blur(28px);
+
+    opacity:.75;
+
+}
+
+
+/* =========================================================
+   MILKY WAY DUST
+========================================================= */
+
+.milky-way::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background:
+
+    repeating-linear-gradient(
+        110deg,
+        transparent 0%,
+        rgba(255,255,255,.025) 8%,
+        transparent 15%
+    ),
+
+    radial-gradient(
+        ellipse at center,
+        rgba(174,135,255,.18),
+        transparent 60%
+    );
+
+    filter:blur(16px);
+
+}
+
+
+/* =========================================================
+   NEBULA GLOW
+========================================================= */
+
+.nebula-one,
+.nebula-two,
+.nebula-three{
+
+    position:fixed;
+
+    border-radius:50%;
+
+    pointer-events:none;
+
+    z-index:-8;
+
+    filter:blur(85px);
+
+    opacity:.12;
+
+}
+
+.nebula-one{
+
+    width:500px;
+
+    height:300px;
+
+    top:4%;
+
+    left:30%;
+
+    background:#8367ff;
+
+    transform:rotate(-20deg);
+
+}
+
+.nebula-two{
+
+    width:420px;
+
+    height:260px;
+
+    top:30%;
+
+    left:8%;
+
+    background:#38d8ff;
+
+}
+
+.nebula-three{
+
+    width:500px;
+
+    height:300px;
+
+    top:12%;
+
+    right:5%;
+
+    background:#5d7fff;
+
+}
+
+
+/* =========================================================
+   DARK CLOUD HORIZON
+========================================================= */
+
+.horizon-clouds{
+
+    position:fixed;
+
+    left:-10%;
+
+    bottom:-8px;
+
+    width:120%;
+
+    height:190px;
+
+    z-index:-6;
+
+    pointer-events:none;
+
+    opacity:.72;
+
+    filter:blur(4px);
+
+    background:
+
+    radial-gradient(
+        ellipse at 10% 100%,
+        #01040a 0%,
+        #01040a 40%,
+        transparent 70%
+    ),
+
+    radial-gradient(
+        ellipse at 32% 100%,
+        #01040a 0%,
+        #01040a 45%,
+        transparent 70%
+    ),
+
+    radial-gradient(
+        ellipse at 56% 100%,
+        #01040a 0%,
+        #01040a 42%,
+        transparent 70%
+    ),
+
+    radial-gradient(
+        ellipse at 82% 100%,
+        #01040a 0%,
+        #01040a 45%,
+        transparent 70%
+    );
+
+}
+
+
+/* =========================================================
+   NAVBAR
+========================================================= */
 
 .navbar{
 
     position:fixed;
 
     top:0;
+
     left:0;
+
     right:0;
 
     z-index:1000;
@@ -273,17 +428,19 @@ section{
     padding:16px 0;
 
     transition:.3s ease;
+
 }
 
 .navbar.scrolled{
 
     background:
-    rgba(0,2,5,.76);
+    rgba(2,5,14,.78);
 
-    backdrop-filter:blur(20px);
+    backdrop-filter:blur(18px);
 
     border-bottom:
-    1px solid rgba(112,237,243,.1);
+    1px solid var(--border);
+
 }
 
 .nav-inner{
@@ -297,21 +454,27 @@ section{
 
     display:flex;
 
-    justify-content:space-between;
-
     align-items:center;
+
+    justify-content:space-between;
 
     padding:10px 18px;
 
     border:
-    1px solid rgba(112,237,243,.1);
+    1px solid rgba(
+        143,
+        234,
+        255,
+        .10
+    );
 
     border-radius:18px;
 
     background:
-    rgba(0,8,13,.48);
+    rgba(3,8,18,.38);
 
-    backdrop-filter:blur(15px);
+    backdrop-filter:blur(12px);
+
 }
 
 .logo{
@@ -324,37 +487,20 @@ section{
 
     font-weight:900;
 
-    letter-spacing:.4px;
 }
 
 .logo-dot{
 
-    width:10px;
-    height:10px;
+    width:11px;
+
+    height:11px;
+
+    background:var(--cyan);
 
     border-radius:50%;
 
-    background:var(--ocean300);
-
     box-shadow:
-    0 0 12px var(--ocean300),
-    0 0 30px rgba(112,237,243,.5);
-
-    animation:
-    logoPulse 2s infinite;
-}
-
-@keyframes logoPulse{
-
-    0%,100%{
-        transform:scale(1);
-        opacity:1;
-    }
-
-    50%{
-        transform:scale(1.35);
-        opacity:.65;
-    }
+    0 0 25px var(--cyan);
 
 }
 
@@ -362,54 +508,56 @@ section{
 
     display:flex;
 
+    gap:8px;
+
     list-style:none;
 
-    gap:6px;
 }
 
 .nav-links a{
 
-    display:block;
+    color:#aab7ca;
 
     padding:9px 13px;
 
     border-radius:10px;
 
-    color:#a9c6ca;
-
-    font-size:.86rem;
+    font-size:.88rem;
 
     transition:.25s;
+
 }
 
 .nav-links a:hover,
 .nav-links a.active{
 
-    color:#fff;
+    color:white;
 
     background:
-    rgba(44,205,221,.08);
+    rgba(101,230,255,.09);
+
 }
 
 .menu-btn{
 
     display:none;
 
-    border:0;
-
     background:none;
+
+    border:0;
 
     color:white;
 
     font-size:25px;
 
     cursor:pointer;
+
 }
 
 
-/* ============================================================
+/* =========================================================
    HERO
-============================================================ */
+========================================================= */
 
 .hero{
 
@@ -419,9 +567,10 @@ section{
 
     align-items:center;
 
-    padding-top:130px;
+    padding-top:120px;
 
     overflow:hidden;
+
 }
 
 .hero-grid{
@@ -434,6 +583,7 @@ section{
     gap:60px;
 
     align-items:center;
+
 }
 
 .hero-kicker{
@@ -447,42 +597,49 @@ section{
     padding:7px 12px;
 
     border:
-    1px solid rgba(112,237,243,.15);
+    1px solid var(--border);
 
     background:
-    rgba(5,48,59,.22);
+    rgba(101,230,255,.06);
 
     border-radius:100px;
 
-    color:var(--ocean200);
+    color:#b7efff;
 
-    font-size:.76rem;
+    font-size:.8rem;
 
-    font-weight:800;
+    font-weight:700;
 
     margin-bottom:25px;
+
 }
 
 .live-dot{
 
     width:7px;
+
     height:7px;
+
+    background:#8fffe0;
 
     border-radius:50%;
 
-    background:#7ff7d5;
-
     box-shadow:
-    0 0 15px #7ff7d5;
+    0 0 14px #8fffe0;
 
-    animation:pulse 1.5s infinite;
+    animation:
+    pulse 1.6s infinite;
+
 }
 
 @keyframes pulse{
 
     50%{
-        transform:scale(1.7);
-        opacity:.45;
+
+        transform:scale(1.6);
+
+        opacity:.5;
+
     }
 
 }
@@ -490,22 +647,28 @@ section{
 .hero h1{
 
     font-size:
-    clamp(3.3rem,7vw,6.8rem);
+    clamp(
+        3.3rem,
+        7vw,
+        6.8rem
+    );
 
-    line-height:.9;
+    line-height:.92;
 
     letter-spacing:-6px;
+
 }
 
 .hero-description{
 
-    max-width:650px;
-
     color:var(--muted);
 
-    font-size:1.04rem;
+    max-width:650px;
+
+    font-size:1.05rem;
 
     margin:28px 0;
+
 }
 
 .hero-actions{
@@ -514,7 +677,8 @@ section{
 
     flex-wrap:wrap;
 
-    gap:12px;
+    gap:13px;
+
 }
 
 .btn{
@@ -531,27 +695,34 @@ section{
 
     border-radius:13px;
 
-    border:
-    1px solid var(--border);
-
     font-weight:800;
 
-    font-size:.88rem;
+    font-size:.9rem;
 
     cursor:pointer;
 
+    border:
+    1px solid var(--border);
+
     transition:.25s;
+
 }
 
 .btn-primary{
 
-    color:#001b20;
+    color:#03101b;
 
-    background:var(--ocean300);
+    background:
+    linear-gradient(
+        100deg,
+        #8feaff,
+        #65e6ff
+    );
 
     box-shadow:
-    0 10px 40px
-    rgba(44,205,221,.13);
+    0 10px 35px
+    rgba(101,230,255,.16);
+
 }
 
 .btn-primary:hover{
@@ -559,8 +730,9 @@ section{
     transform:translateY(-3px);
 
     box-shadow:
-    0 15px 50px
-    rgba(44,205,221,.25);
+    0 16px 45px
+    rgba(101,230,255,.28);
+
 }
 
 .btn-ghost{
@@ -569,92 +741,107 @@ section{
     rgba(255,255,255,.025);
 
     color:white;
+
 }
 
 .btn-ghost:hover{
 
     background:
-    rgba(44,205,221,.09);
+    rgba(101,230,255,.08);
 
     transform:translateY(-3px);
+
 }
 
 .hero-contact{
+
+    margin-top:32px;
 
     display:flex;
 
     flex-wrap:wrap;
 
-    gap:9px;
+    gap:10px;
 
-    margin-top:31px;
 }
 
 .contact-chip{
 
+    display:flex;
+
+    align-items:center;
+
+    gap:8px;
+
+    color:#9fb1c5;
+
+    font-size:.85rem;
+
     padding:8px 11px;
 
     border:
-    1px solid rgba(112,237,243,.1);
+    1px solid
+    rgba(143,234,255,.10);
 
-    border-radius:10px;
-
-    color:#91b9be;
-
-    font-size:.8rem;
+    border-radius:11px;
 
     transition:.2s;
+
 }
 
 .contact-chip:hover{
 
     color:white;
 
-    background:
-    rgba(44,205,221,.06);
-
     border-color:var(--border);
+
+    background:
+    rgba(101,230,255,.06);
+
 }
 
 
-/* ============================================================
+/* =========================================================
    PROFILE
-============================================================ */
+========================================================= */
 
 .profile-wrap{
 
     display:flex;
 
     justify-content:center;
+
 }
 
 .profile-card{
 
-    width:min(380px,100%);
+    width:min(
+        380px,
+        100%
+    );
 
-    padding:14px;
+    padding:15px;
 
     border:
-    1px solid rgba(112,237,243,.18);
+    1px solid var(--border);
 
     border-radius:34px;
 
     background:
     linear-gradient(
         145deg,
-        rgba(10,73,85,.25),
-        rgba(0,4,7,.75)
+        rgba(101,230,255,.09),
+        rgba(3,8,18,.68)
     );
 
-    backdrop-filter:blur(14px);
-
     box-shadow:
-    0 30px 100px
-    rgba(0,0,0,.7);
+    0 20px 70px
+    rgba(0,0,0,.35);
 
     transform:rotate(2deg);
 
     transition:.5s;
+
 }
 
 .profile-card:hover{
@@ -662,6 +849,7 @@ section{
     transform:
     rotate(0deg)
     translateY(-8px);
+
 }
 
 .profile-image{
@@ -677,8 +865,8 @@ section{
     background:
     linear-gradient(
         145deg,
-        #073d49,
-        #000
+        #101d42,
+        #02050e
     );
 
     display:flex;
@@ -686,16 +874,19 @@ section{
     align-items:center;
 
     justify-content:center;
+
 }
 
 .profile-image img{
 
     width:100%;
+
     height:100%;
 
     object-fit:cover;
 
     display:block;
+
 }
 
 .profile-placeholder{
@@ -712,55 +903,61 @@ section{
 
     flex-direction:column;
 
-    color:var(--ocean200);
+    color:#a9eaff;
 
     text-align:center;
+
 }
 
 .profile-placeholder strong{
 
     font-size:3rem;
+
 }
 
 .profile-placeholder span{
 
-    font-size:.72rem;
+    font-size:.75rem;
 
-    color:#7fa9af;
+    color:#8294ab;
+
 }
 
 .profile-info{
 
     padding:17px 8px 7px;
+
 }
 
 .profile-info h3{
 
-    font-size:1.2rem;
+    font-size:1.25rem;
+
 }
 
 .profile-info p{
 
-    color:#88abb0;
+    color:#879bb2;
 
-    font-size:.83rem;
+    font-size:.85rem;
+
 }
 
 
-/* ============================================================
-   GLASS CARDS
-============================================================ */
+/* =========================================================
+   GLASS
+========================================================= */
 
 .glass{
 
     border:
-    1px solid rgba(112,237,243,.13);
+    1px solid var(--border);
 
     background:
     linear-gradient(
         145deg,
-        rgba(4,27,34,.62),
-        rgba(0,5,9,.62)
+        rgba(8,20,43,.55),
+        rgba(2,5,14,.58)
     );
 
     backdrop-filter:blur(14px);
@@ -768,27 +965,31 @@ section{
     border-radius:var(--radius);
 
     box-shadow:
-    0 20px 70px
-    rgba(0,0,0,.22);
+    0 15px 60px
+    rgba(0,0,0,.14);
+
 }
 
 
-/* ============================================================
+/* =========================================================
    ABOUT
-============================================================ */
+========================================================= */
 
 .about-grid{
 
     display:grid;
 
-    grid-template-columns:.8fr 1.2fr;
+    grid-template-columns:
+    .8fr 1.2fr;
 
     gap:25px;
+
 }
 
 .about-card{
 
     padding:35px;
+
 }
 
 .about-card h3{
@@ -796,11 +997,13 @@ section{
     font-size:1.4rem;
 
     margin-bottom:15px;
+
 }
 
 .about-card p{
 
     color:var(--muted);
+
 }
 
 .fact-grid{
@@ -811,6 +1014,7 @@ section{
     repeat(2,1fr);
 
     gap:14px;
+
 }
 
 .fact{
@@ -818,12 +1022,13 @@ section{
     padding:25px;
 
     border:
-    1px solid rgba(112,237,243,.12);
+    1px solid var(--border);
 
     border-radius:18px;
 
     background:
-    rgba(8,61,72,.07);
+    rgba(101,230,255,.025);
+
 }
 
 .fact-number{
@@ -832,28 +1037,31 @@ section{
 
     font-weight:900;
 
-    color:var(--ocean300);
+    color:var(--cyan);
+
 }
 
 .fact span{
 
     display:block;
 
-    color:#89aeb3;
+    color:#8294aa;
 
-    font-size:.78rem;
+    font-size:.8rem;
+
 }
 
 
-/* ============================================================
-   EXPERIENCE
-============================================================ */
+/* =========================================================
+   TIMELINE
+========================================================= */
 
 .timeline{
 
     position:relative;
 
     max-width:950px;
+
 }
 
 .timeline::before{
@@ -872,9 +1080,10 @@ section{
 
     background:
     linear-gradient(
-        var(--ocean300),
-        rgba(112,237,243,.02)
+        var(--cyan),
+        rgba(143,234,255,.03)
     );
+
 }
 
 .timeline-item{
@@ -884,6 +1093,7 @@ section{
     padding-left:50px;
 
     margin-bottom:28px;
+
 }
 
 .timeline-dot{
@@ -898,18 +1108,22 @@ section{
 
     height:15px;
 
+    background:var(--cyan);
+
     border-radius:50%;
 
-    background:var(--ocean300);
-
     box-shadow:
-    0 0 0 5px rgba(44,205,221,.07),
-    0 0 25px rgba(112,237,243,.6);
+    0 0 0 5px
+    rgba(101,230,255,.07),
+    0 0 20px
+    rgba(101,230,255,.6);
+
 }
 
 .experience-card{
 
     padding:27px;
+
 }
 
 .card-top{
@@ -919,29 +1133,32 @@ section{
     justify-content:space-between;
 
     gap:20px;
+
 }
 
 .card-top h3{
 
-    font-size:1.2rem;
+    font-size:1.25rem;
+
 }
 
 .card-company{
 
-    color:var(--ocean300);
+    color:var(--cyan);
 
     font-weight:700;
 
-    font-size:.88rem;
+    font-size:.9rem;
+
 }
 
 .date{
 
     white-space:nowrap;
 
-    color:#789da2;
+    color:#7e90a7;
 
-    font-size:.75rem;
+    font-size:.78rem;
 
     padding:6px 10px;
 
@@ -949,6 +1166,7 @@ section{
     1px solid var(--border);
 
     border-radius:9px;
+
 }
 
 .card-list{
@@ -958,17 +1176,19 @@ section{
     padding-left:19px;
 
     color:var(--muted);
+
 }
 
 .card-list li{
 
     margin-bottom:8px;
+
 }
 
 
-/* ============================================================
+/* =========================================================
    PROJECTS
-============================================================ */
+========================================================= */
 
 .project-grid{
 
@@ -978,6 +1198,7 @@ section{
     repeat(2,1fr);
 
     gap:18px;
+
 }
 
 .project-card{
@@ -989,30 +1210,7 @@ section{
     overflow:hidden;
 
     transition:.3s;
-}
 
-.project-card::after{
-
-    content:"";
-
-    position:absolute;
-
-    width:150px;
-
-    height:150px;
-
-    border-radius:50%;
-
-    background:
-    rgba(44,205,221,.035);
-
-    filter:blur(40px);
-
-    right:-70px;
-
-    top:-70px;
-
-    pointer-events:none;
 }
 
 .project-card:hover{
@@ -1020,32 +1218,36 @@ section{
     transform:translateY(-7px);
 
     border-color:
-    rgba(112,237,243,.27);
+    rgba(143,234,255,.30);
+
 }
 
 .project-number{
 
-    font-size:.72rem;
+    font-size:.75rem;
 
-    color:var(--ocean300);
+    color:var(--cyan);
 
     font-weight:900;
 
     letter-spacing:2px;
+
 }
 
 .project-card h3{
 
     margin:11px 0 8px;
 
-    font-size:1.18rem;
+    font-size:1.2rem;
+
 }
 
 .project-card p{
 
     color:var(--muted);
 
-    font-size:.86rem;
+    font-size:.88rem;
+
 }
 
 .project-tags{
@@ -1057,6 +1259,7 @@ section{
     gap:7px;
 
     margin-top:18px;
+
 }
 
 .tag{
@@ -1066,20 +1269,22 @@ section{
     border-radius:8px;
 
     border:
-    1px solid rgba(112,237,243,.11);
+    1px solid
+    rgba(143,234,255,.12);
 
     background:
-    rgba(44,205,221,.04);
+    rgba(101,230,255,.04);
 
-    color:#a6dfe3;
+    color:#a8dff0;
 
-    font-size:.69rem;
+    font-size:.7rem;
+
 }
 
 
-/* ============================================================
+/* =========================================================
    METRICS
-============================================================ */
+========================================================= */
 
 .metrics{
 
@@ -1089,6 +1294,7 @@ section{
     repeat(4,1fr);
 
     gap:13px;
+
 }
 
 .metric{
@@ -1096,6 +1302,7 @@ section{
     text-align:center;
 
     padding:27px 15px;
+
 }
 
 .metric strong{
@@ -1104,22 +1311,24 @@ section{
 
     font-size:2.25rem;
 
-    color:var(--ocean300);
+    color:var(--cyan);
 
     line-height:1;
+
 }
 
 .metric span{
 
-    color:#7fa5aa;
+    color:#8295aa;
 
-    font-size:.74rem;
+    font-size:.75rem;
+
 }
 
 
-/* ============================================================
+/* =========================================================
    EDUCATION
-============================================================ */
+========================================================= */
 
 .education-grid{
 
@@ -1129,6 +1338,7 @@ section{
     repeat(3,1fr);
 
     gap:18px;
+
 }
 
 .edu-card{
@@ -1136,11 +1346,13 @@ section{
     padding:27px;
 
     min-height:260px;
+
 }
 
 .edu-icon{
 
     width:48px;
+
     height:48px;
 
     display:flex;
@@ -1152,26 +1364,31 @@ section{
     border-radius:15px;
 
     background:
-    rgba(44,205,221,.07);
+    rgba(101,230,255,.07);
 
     border:
     1px solid var(--border);
 
+    font-size:1.25rem;
+
     margin-bottom:25px;
+
 }
 
 .edu-card h3{
 
-    font-size:1.04rem;
+    font-size:1.05rem;
+
 }
 
 .edu-card p{
 
     color:var(--muted);
 
-    font-size:.83rem;
+    font-size:.84rem;
 
     margin-top:9px;
+
 }
 
 .edu-year{
@@ -1180,35 +1397,103 @@ section{
 
     margin-top:17px;
 
-    color:var(--ocean300);
+    color:var(--cyan);
 
-    font-size:.74rem;
+    font-size:.75rem;
 
     font-weight:800;
+
 }
 
 
-/* ============================================================
+/* =========================================================
+   CERTIFICATIONS
+========================================================= */
+
+.cert-grid{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(2,1fr);
+
+    gap:12px;
+
+}
+
+.cert{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:18px 20px;
+
+    border:
+    1px solid var(--border);
+
+    background:
+    rgba(101,230,255,.025);
+
+    border-radius:15px;
+
+    transition:.25s;
+
+}
+
+.cert:hover{
+
+    background:
+    rgba(101,230,255,.07);
+
+    transform:translateX(5px);
+
+}
+
+.cert-name{
+
+    font-weight:700;
+
+    font-size:.9rem;
+
+}
+
+.cert-date{
+
+    color:#72869d;
+
+    font-size:.72rem;
+
+}
+
+
+/* =========================================================
    SKILLS
-============================================================ */
+========================================================= */
 
 .skills-layout{
 
     display:grid;
 
-    grid-template-columns:1fr 1fr;
+    grid-template-columns:
+    1fr 1fr;
 
     gap:20px;
+
 }
 
 .skill-card{
 
     padding:28px;
+
 }
 
 .skill{
 
     margin-bottom:22px;
+
 }
 
 .skill-title{
@@ -1220,42 +1505,47 @@ section{
     margin-bottom:8px;
 
     font-size:.82rem;
+
 }
 
 .skill-title span:last-child{
 
-    color:var(--ocean300);
+    color:var(--cyan);
+
 }
 
 .skill-track{
 
-    height:5px;
+    height:6px;
 
     background:
-    rgba(255,255,255,.055);
+    rgba(255,255,255,.05);
 
     border-radius:20px;
 
     overflow:hidden;
+
 }
 
 .skill-fill{
 
-    width:0;
-
     height:100%;
+
+    width:0;
 
     border-radius:20px;
 
     background:
     linear-gradient(
         90deg,
-        var(--ocean700),
-        var(--ocean300)
+        #3b8cae,
+        #65e6ff,
+        #a88cff
     );
 
     transition:
     width 1.5s ease;
+
 }
 
 .tool-cloud{
@@ -1267,6 +1557,7 @@ section{
     gap:9px;
 
     margin-top:20px;
+
 }
 
 .tool{
@@ -1275,81 +1566,22 @@ section{
 
     border-radius:11px;
 
-    border:
-    1px solid var(--border);
-
     background:
-    rgba(44,205,221,.04);
-
-    color:#a9d9dd;
-
-    font-size:.77rem;
-}
-
-
-/* ============================================================
-   CERTIFICATIONS
-============================================================ */
-
-.cert-grid{
-
-    display:grid;
-
-    grid-template-columns:
-    repeat(2,1fr);
-
-    gap:12px;
-}
-
-.cert{
-
-    display:flex;
-
-    align-items:center;
-
-    justify-content:space-between;
-
-    gap:20px;
-
-    padding:18px 20px;
+    rgba(101,230,255,.035);
 
     border:
     1px solid var(--border);
 
-    border-radius:15px;
+    color:#b2cfe0;
 
-    background:
-    rgba(44,205,221,.025);
+    font-size:.78rem;
 
-    transition:.25s;
-}
-
-.cert:hover{
-
-    background:
-    rgba(44,205,221,.07);
-
-    transform:translateX(5px);
-}
-
-.cert-name{
-
-    font-weight:700;
-
-    font-size:.87rem;
-}
-
-.cert-date{
-
-    color:#759da3;
-
-    font-size:.71rem;
 }
 
 
-/* ============================================================
+/* =========================================================
    ACHIEVEMENT
-============================================================ */
+========================================================= */
 
 .achievement{
 
@@ -1362,11 +1594,13 @@ section{
     align-items:center;
 
     padding:35px;
+
 }
 
 .achievement-icon{
 
     width:75px;
+
     height:75px;
 
     display:flex;
@@ -1380,11 +1614,12 @@ section{
     background:
     linear-gradient(
         145deg,
-        rgba(112,237,243,.14),
-        rgba(0,8,13,.7)
+        rgba(143,234,255,.12),
+        rgba(168,140,255,.10)
     );
 
     font-size:2rem;
+
 }
 
 .achievement p{
@@ -1392,61 +1627,68 @@ section{
     color:var(--muted);
 
     margin-top:7px;
+
 }
 
 
-/* ============================================================
+/* =========================================================
    CONTACT
-============================================================ */
+========================================================= */
 
 .contact-grid{
 
     display:grid;
 
-    grid-template-columns:.8fr 1.2fr;
+    grid-template-columns:
+    .8fr 1.2fr;
 
     gap:20px;
+
 }
 
 .contact-card{
 
     padding:30px;
+
 }
 
 .contact-method{
 
     display:flex;
 
-    align-items:center;
-
     gap:15px;
 
+    align-items:center;
+
     padding:16px;
+
+    border-radius:15px;
 
     border:
     1px solid var(--border);
 
-    border-radius:15px;
-
     background:
-    rgba(44,205,221,.025);
+    rgba(101,230,255,.025);
 
     margin-bottom:10px;
 
     transition:.2s;
+
 }
 
 .contact-method:hover{
 
     background:
-    rgba(44,205,221,.07);
+    rgba(101,230,255,.08);
 
     transform:translateX(4px);
+
 }
 
 .contact-icon{
 
     width:43px;
+
     height:43px;
 
     display:flex;
@@ -1458,27 +1700,28 @@ section{
     border-radius:12px;
 
     background:
-    rgba(44,205,221,.08);
+    rgba(101,230,255,.07);
 
-    color:var(--ocean300);
+    color:var(--cyan);
+
 }
 
 .contact-method strong{
 
     display:block;
 
-    font-size:.85rem;
+    font-size:.86rem;
+
 }
 
 .contact-method span{
 
-    display:block;
+    color:#8194aa;
 
-    color:#82a9ae;
-
-    font-size:.76rem;
+    font-size:.78rem;
 
     word-break:break-word;
+
 }
 
 .form-row{
@@ -1489,11 +1732,13 @@ section{
     1fr 1fr;
 
     gap:12px;
+
 }
 
 .field{
 
     margin-bottom:13px;
+
 }
 
 .field label{
@@ -1502,9 +1747,10 @@ section{
 
     margin-bottom:7px;
 
-    color:#8fb5ba;
+    font-size:.76rem;
 
-    font-size:.75rem;
+    color:#8799ae;
+
 }
 
 .field input,
@@ -1515,18 +1761,19 @@ section{
     border:
     1px solid var(--border);
 
+    background:
+    rgba(0,0,0,.18);
+
+    color:white;
+
     outline:none;
 
     border-radius:12px;
 
     padding:13px 14px;
 
-    background:
-    rgba(0,0,0,.28);
-
-    color:white;
-
     transition:.2s;
+
 }
 
 .field textarea{
@@ -1534,26 +1781,28 @@ section{
     min-height:150px;
 
     resize:vertical;
+
 }
 
 .field input:focus,
 .field textarea:focus{
 
-    border-color:
-    var(--ocean300);
+    border-color:var(--cyan);
 
     box-shadow:
     0 0 0 3px
-    rgba(44,205,221,.06);
+    rgba(101,230,255,.06);
+
 }
 
 .form-note{
 
-    color:#6e969b;
-
-    font-size:.7rem;
-
     margin-top:10px;
+
+    color:#72869c;
+
+    font-size:.72rem;
+
 }
 
 .email-options{
@@ -1570,21 +1819,24 @@ section{
     border-radius:14px;
 
     background:
-    rgba(0,4,7,.94);
+    rgba(2,5,14,.88);
+
 }
 
 .email-options.show{
 
     display:block;
+
 }
 
 .email-options-title{
 
-    color:#8baeb3;
+    color:#8da2b7;
 
-    font-size:.73rem;
+    font-size:.75rem;
 
-    margin-bottom:8px;
+    margin-bottom:9px;
+
 }
 
 .email-option{
@@ -1597,54 +1849,65 @@ section{
 
     margin-top:6px;
 
+    border-radius:10px;
+
     border:
     1px solid var(--border);
 
-    border-radius:10px;
-
     background:
-    rgba(44,205,221,.045);
+    rgba(101,230,255,.04);
 
     color:white;
 
+    text-align:center;
+
     cursor:pointer;
+
 }
 
 .email-option:hover{
 
     background:
-    rgba(44,205,221,.1);
+    rgba(101,230,255,.10);
+
 }
 
 
-/* ============================================================
+/* =========================================================
    FOOTER
-============================================================ */
+========================================================= */
 
 footer{
 
     padding:35px 0;
 
     border-top:
-    1px solid rgba(112,237,243,.09);
+    1px solid var(--border);
+
+    position:relative;
+
+    z-index:5;
+
 }
 
 .footer-inner{
 
     display:flex;
 
-    align-items:center;
-
     justify-content:space-between;
 
+    align-items:center;
+
     gap:20px;
+
 }
 
 .footer-inner p{
 
-    color:#668b91;
+    color:#667991;
 
-    font-size:.76rem;
+    font-size:.78rem;
+
 }
 
 .footer-links{
@@ -1652,12 +1915,16 @@ footer{
     display:flex;
 
     gap:8px;
+
 }
 
 .footer-links a{
 
     width:36px;
+
     height:36px;
+
+    border-radius:10px;
 
     display:flex;
 
@@ -1668,43 +1935,44 @@ footer{
     border:
     1px solid var(--border);
 
-    border-radius:10px;
+    color:#9eb8cc;
 
-    color:#9dc7cc;
 }
 
 
-/* ============================================================
+/* =========================================================
    TOP BUTTON
-============================================================ */
+========================================================= */
 
 .top-btn{
 
     position:fixed;
 
     right:20px;
+
     bottom:20px;
 
     width:45px;
+
     height:45px;
-
-    border:
-    1px solid var(--border);
-
-    border-radius:13px;
-
-    background:
-    rgba(0,7,11,.88);
-
-    color:white;
-
-    cursor:pointer;
 
     display:flex;
 
     align-items:center;
 
     justify-content:center;
+
+    border-radius:13px;
+
+    border:
+    1px solid var(--border);
+
+    background:
+    rgba(3,8,18,.88);
+
+    color:white;
+
+    cursor:pointer;
 
     opacity:0;
 
@@ -1713,6 +1981,7 @@ footer{
     transition:.3s;
 
     z-index:900;
+
 }
 
 .top-btn.show{
@@ -1720,12 +1989,13 @@ footer{
     opacity:1;
 
     pointer-events:auto;
+
 }
 
 
-/* ============================================================
+/* =========================================================
    REVEAL
-============================================================ */
+========================================================= */
 
 .reveal{
 
@@ -1736,6 +2006,7 @@ footer{
     transition:
     opacity .7s ease,
     transform .7s ease;
+
 }
 
 .reveal.visible{
@@ -1743,12 +2014,13 @@ footer{
     opacity:1;
 
     transform:none;
+
 }
 
 
-/* ============================================================
+/* =========================================================
    RESPONSIVE
-============================================================ */
+========================================================= */
 
 @media(max-width:950px){
 
@@ -1758,29 +2030,35 @@ footer{
     .skills-layout{
 
         grid-template-columns:1fr;
+
     }
 
     .profile-wrap{
 
         order:-1;
+
     }
 
     .profile-card{
 
         width:300px;
+
     }
 
     .education-grid{
 
         grid-template-columns:
         1fr 1fr;
+
     }
 
     .metrics{
 
         grid-template-columns:
         repeat(2,1fr);
+
     }
+
 }
 
 
@@ -1789,20 +2067,23 @@ footer{
     section{
 
         padding:80px 0;
+
     }
 
     .container{
 
         width:
         min(
-            calc(100% - 28px),
+            100% - 28px,
             var(--max)
         );
+
     }
 
     .menu-btn{
 
         display:block;
+
     }
 
     .nav-links{
@@ -1812,6 +2093,7 @@ footer{
         top:68px;
 
         left:14px;
+
         right:14px;
 
         display:none;
@@ -1823,35 +2105,44 @@ footer{
         border:
         1px solid var(--border);
 
-        border-radius:16px;
-
         background:
-        rgba(0,4,7,.97);
+        rgba(2,5,14,.97);
 
         backdrop-filter:blur(20px);
+
+        border-radius:16px;
+
     }
 
     .nav-links.open{
 
         display:flex;
+
     }
 
     .hero h1{
 
         font-size:
-        clamp(3rem,16vw,5rem);
+        clamp(
+            3rem,
+            16vw,
+            5rem
+        );
 
         letter-spacing:-4px;
+
     }
 
     .hero-actions{
 
         flex-direction:column;
+
     }
 
     .btn{
 
         width:100%;
+
     }
 
     .fact-grid,
@@ -1860,27 +2151,32 @@ footer{
     .cert-grid{
 
         grid-template-columns:1fr;
+
     }
 
     .metrics{
 
         grid-template-columns:
         1fr 1fr;
+
     }
 
     .form-row{
 
         grid-template-columns:1fr;
+
     }
 
     .card-top{
 
         flex-direction:column;
+
     }
 
     .achievement{
 
         grid-template-columns:1fr;
+
     }
 
     .footer-inner{
@@ -1888,6 +2184,32 @@ footer{
         flex-direction:column;
 
         text-align:center;
+
+    }
+
+}
+
+
+/* =========================================================
+   REDUCE MOTION ACCESSIBILITY
+========================================================= */
+
+@media(
+    prefers-reduced-motion:reduce
+){
+
+    *,
+    *::before,
+    *::after{
+
+        animation-duration:.01ms !important;
+
+        animation-iteration-count:1 !important;
+
+        scroll-behavior:auto !important;
+
+        transition-duration:.01ms !important;
+
     }
 
 }
@@ -1900,26 +2222,35 @@ footer{
 <body>
 
 
-<!-- ============================================================
-     BLACK HOLE BACKGROUND
-============================================================ -->
+<!-- =====================================================
+     COSMIC BACKGROUND
+====================================================== -->
 
-<canvas id="blackHoleCanvas"></canvas>
+<canvas id="spaceCanvas"></canvas>
 
-<div class="space-overlay"></div>
+<div class="milky-way"></div>
 
-<div class="vignette"></div>
+<div class="nebula-one"></div>
+
+<div class="nebula-two"></div>
+
+<div class="nebula-three"></div>
+
+<div class="horizon-clouds"></div>
 
 
-<!-- ============================================================
+<!-- =====================================================
      NAVBAR
-============================================================ -->
+====================================================== -->
 
 <header class="navbar" id="navbar">
 
 <div class="nav-inner">
 
-<a href="#home" class="logo">
+<a
+href="#home"
+class="logo"
+>
 
 <span class="logo-dot"></span>
 
@@ -1933,40 +2264,76 @@ class="menu-btn"
 id="menuBtn"
 aria-label="Open navigation"
 >
+
 ☰
+
 </button>
 
 
 <nav>
 
-<ul class="nav-links" id="navLinks">
+<ul
+class="nav-links"
+id="navLinks"
+>
 
 <li>
-<a href="#home" class="active">Home</a>
+
+<a
+href="#home"
+class="active"
+>
+Home
+</a>
+
 </li>
 
 <li>
-<a href="#about">About</a>
+
+<a href="#about">
+About
+</a>
+
 </li>
 
 <li>
-<a href="#experience">Experience</a>
+
+<a href="#experience">
+Experience
+</a>
+
 </li>
 
 <li>
-<a href="#projects">Projects</a>
+
+<a href="#projects">
+Projects
+</a>
+
 </li>
 
 <li>
-<a href="#education">Education</a>
+
+<a href="#education">
+Education
+</a>
+
 </li>
 
 <li>
-<a href="#skills">Skills</a>
+
+<a href="#skills">
+Skills
+</a>
+
 </li>
 
 <li>
-<a href="#contact">Contact</a>
+
+<a href="#contact">
+Contact
+</a>
+
 </li>
 
 </ul>
@@ -1978,18 +2345,16 @@ aria-label="Open navigation"
 </header>
 
 
-<!-- ============================================================
-     MAIN
-============================================================ -->
+<!-- =====================================================
+     HERO
+====================================================== -->
 
 <main>
 
-
-<!-- ============================================================
-     HERO
-============================================================ -->
-
-<section class="hero" id="home">
+<section
+class="hero"
+id="home"
+>
 
 <div class="container">
 
@@ -2012,7 +2377,6 @@ OPEN TO OPPORTUNITIES
 Building ideas<br>
 
 that move
-
 <span class="gradient-text">
 forward.
 </span>
@@ -2032,11 +2396,14 @@ with structured problem solving.
 
 <div class="hero-actions">
 
+
 <a
 href="#projects"
 class="btn btn-primary"
 >
+
 Explore My Work →
+
 </a>
 
 
@@ -2046,7 +2413,9 @@ target="_blank"
 rel="noopener noreferrer"
 class="btn btn-ghost"
 >
+
 ✉ Email Me
+
 </a>
 
 
@@ -2056,13 +2425,17 @@ target="_blank"
 rel="noopener noreferrer"
 class="btn btn-ghost"
 >
+
 ↗ LinkedIn
+
 </a>
+
 
 </div>
 
 
 <div class="hero-contact">
+
 
 <a
 class="contact-chip"
@@ -2070,7 +2443,10 @@ href="https://mail.google.com/mail/?view=cm&fs=1&to=piyushsingh20030610@gmail.co
 target="_blank"
 rel="noopener noreferrer"
 >
-✉ piyushsingh20030610@gmail.com
+
+✉
+piyushsingh20030610@gmail.com
+
 </a>
 
 
@@ -2078,8 +2454,12 @@ rel="noopener noreferrer"
 class="contact-chip"
 href="tel:+918431832821"
 >
-☎ +91 84318 32821
+
+☎
++91 84318 32821
+
 </a>
+
 
 </div>
 
@@ -2094,11 +2474,16 @@ href="tel:+918431832821"
 
 <div class="profile-image">
 
+
 <img
 src="assets/profile.jpg"
 alt="Piyush Singh"
-onerror="this.style.display='none';document.getElementById('profilePlaceholder').style.display='flex';"
+onerror="
+this.style.display='none';
+document.getElementById('profilePlaceholder').style.display='flex';
+"
 >
+
 
 <div
 class="profile-placeholder"
@@ -2106,7 +2491,9 @@ id="profilePlaceholder"
 style="display:none;"
 >
 
-<strong>PS</strong>
+<strong>
+PS
+</strong>
 
 <span>
 
@@ -2117,6 +2504,7 @@ assets/profile.jpg
 </span>
 
 </div>
+
 
 </div>
 
@@ -2145,13 +2533,14 @@ MBA — Digital Marketing & Operations
 </section>
 
 
-<!-- ============================================================
+<!-- =====================================================
      ABOUT
-============================================================ -->
+====================================================== -->
 
 <section id="about">
 
 <div class="container">
+
 
 <div class="section-heading reveal">
 
@@ -2275,13 +2664,14 @@ Digital Product Revenue
 </section>
 
 
-<!-- ============================================================
+<!-- =====================================================
      EXPERIENCE
-============================================================ -->
+====================================================== -->
 
 <section id="experience">
 
 <div class="container">
+
 
 <div class="section-heading reveal">
 
@@ -2335,19 +2725,25 @@ Jun 2026 — Jul 2026
 <ul class="card-list">
 
 <li>
+
 Conducted high-volume cold calling to educate
 potential clients on SIP investments and wealth creation.
+
 </li>
 
 <li>
+
 Communicated market benefits, addressed investor
 hesitations and developed objection-handling skills
 in a competitive BFSI environment.
+
 </li>
 
 <li>
+
 Assessed prospect interest and financial readiness
 to build an initial outreach pipeline for SIP services.
+
 </li>
 
 </ul>
@@ -2387,14 +2783,18 @@ May 2025 — Jun 2025
 <ul class="card-list">
 
 <li>
+
 Supported badminton training programs by coaching
 22 students and assisting in skill development,
 practice coordination and performance improvement.
+
 </li>
 
 <li>
+
 Formulated structured daily drills to accelerate
 skill acquisition and performance growth.
+
 </li>
 
 </ul>
@@ -2434,13 +2834,17 @@ Jun 2023 — Jul 2023
 <ul class="card-list">
 
 <li>
+
 Coordinated event logistics and tournament operations
 to support successful event execution.
+
 </li>
 
 <li>
+
 Supervised match-day volunteers and vendor coordination
 to keep tournament schedules running without delays.
+
 </li>
 
 </ul>
@@ -2480,18 +2884,24 @@ Jun 2024 — Jul 2024
 <ul class="card-list">
 
 <li>
+
 Managed and validated 100+ laboratory data entries,
 ensuring accuracy and integrity of experimental records.
+
 </li>
 
 <li>
+
 Enhanced operational efficiency by 10% by supporting
 laboratory staff with essential daily tasks.
+
 </li>
 
 <li>
+
 Contributed to research and analysis projects focused
 on Bio-Fertilizers and Bio-Control Agents.
+
 </li>
 
 </ul>
@@ -2508,13 +2918,14 @@ on Bio-Fertilizers and Bio-Control Agents.
 </section>
 
 
-<!-- ============================================================
+<!-- =====================================================
      PROJECTS
-============================================================ -->
+====================================================== -->
 
 <section id="projects">
 
 <div class="container">
+
 
 <div class="section-heading reveal">
 
@@ -2549,17 +2960,30 @@ Lean Six Sigma Approach to Public Transport Efficiency
 </h3>
 
 <p>
+
 Applied DMAIC, SIPOC mapping, Fishbone diagrams and
 Pareto charts to analyze terminal bottlenecks,
 congestion and passenger delays.
+
 </p>
 
 <div class="project-tags">
 
-<span class="tag">Lean Six Sigma</span>
-<span class="tag">DMAIC</span>
-<span class="tag">SIPOC</span>
-<span class="tag">Process Improvement</span>
+<span class="tag">
+Lean Six Sigma
+</span>
+
+<span class="tag">
+DMAIC
+</span>
+
+<span class="tag">
+SIPOC
+</span>
+
+<span class="tag">
+Process Improvement
+</span>
 
 </div>
 
@@ -2577,17 +3001,30 @@ Digital Campaign Creation & SEO Optimization
 </h3>
 
 <p>
+
 Optimized website content for first-page Google SERP
 ranking and executed Google Ads campaigns generating
 92.4K+ impressions and 257 clicks.
+
 </p>
 
 <div class="project-tags">
 
-<span class="tag">Google Ads</span>
-<span class="tag">SEO</span>
-<span class="tag">Google Analytics</span>
-<span class="tag">SEM</span>
+<span class="tag">
+Google Ads
+</span>
+
+<span class="tag">
+SEO
+</span>
+
+<span class="tag">
+Google Analytics
+</span>
+
+<span class="tag">
+SEM
+</span>
 
 </div>
 
@@ -2605,17 +3042,30 @@ Digital Product Creation & Marketing
 </h3>
 
 <p>
+
 Developed and launched a digital kids colouring book
 supported by a landing page and social media promotion,
 generating 25+ customer engagements and ₹10,000+ revenue.
+
 </p>
 
 <div class="project-tags">
 
-<span class="tag">Digital Product</span>
-<span class="tag">Social Media</span>
-<span class="tag">Landing Page</span>
-<span class="tag">Conversion</span>
+<span class="tag">
+Digital Product
+</span>
+
+<span class="tag">
+Social Media
+</span>
+
+<span class="tag">
+Landing Page
+</span>
+
+<span class="tag">
+Conversion
+</span>
 
 </div>
 
@@ -2633,16 +3083,26 @@ Affiliate Marketing — August Bioscience
 </h3>
 
 <p>
+
 Orchestrated 5+ affiliate marketing campaigns across
 social platforms, achieving a 10% lead conversion rate
 and contributing to 5% online sales growth.
+
 </p>
 
 <div class="project-tags">
 
-<span class="tag">Affiliate Marketing</span>
-<span class="tag">Social Media</span>
-<span class="tag">Lead Generation</span>
+<span class="tag">
+Affiliate Marketing
+</span>
+
+<span class="tag">
+Social Media
+</span>
+
+<span class="tag">
+Lead Generation
+</span>
 
 </div>
 
@@ -2660,17 +3120,30 @@ Unbranded to Branded — AttarVibez
 </h3>
 
 <p>
+
 Developed brand identity and integrated marketing
 strategies for an attar and perfume product line,
 including positioning and go-to-market planning.
+
 </p>
 
 <div class="project-tags">
 
-<span class="tag">Brand Strategy</span>
-<span class="tag">Positioning</span>
-<span class="tag">GTM</span>
-<span class="tag">Pricing</span>
+<span class="tag">
+Brand Strategy
+</span>
+
+<span class="tag">
+Positioning
+</span>
+
+<span class="tag">
+GTM
+</span>
+
+<span class="tag">
+Pricing
+</span>
 
 </div>
 
@@ -2688,17 +3161,30 @@ Amul Supply Chain & Operations Analysis
 </h3>
 
 <p>
+
 Analyzed procurement, production, inventory,
 warehousing and distribution while identifying gaps
 in inventory planning and logistics.
+
 </p>
 
 <div class="project-tags">
 
-<span class="tag">Supply Chain</span>
-<span class="tag">Excel</span>
-<span class="tag">Operations</span>
-<span class="tag">Analysis</span>
+<span class="tag">
+Supply Chain
+</span>
+
+<span class="tag">
+Excel
+</span>
+
+<span class="tag">
+Operations
+</span>
+
+<span class="tag">
+Analysis
+</span>
 
 </div>
 
@@ -2716,17 +3202,30 @@ HP World Supply Chain & Inventory Optimization
 </h3>
 
 <p>
+
 Analyzed a 4-tier HP supply chain, diagnosed operational
 risks and recommended high-frequency spare parts with
 buffer stock to improve availability.
+
 </p>
 
 <div class="project-tags">
 
-<span class="tag">Inventory</span>
-<span class="tag">Supply Chain</span>
-<span class="tag">Risk Analysis</span>
-<span class="tag">Optimization</span>
+<span class="tag">
+Inventory
+</span>
+
+<span class="tag">
+Supply Chain
+</span>
+
+<span class="tag">
+Risk Analysis
+</span>
+
+<span class="tag">
+Optimization
+</span>
 
 </div>
 
@@ -2740,9 +3239,9 @@ buffer stock to improve availability.
 </section>
 
 
-<!-- ============================================================
+<!-- =====================================================
      METRICS
-============================================================ -->
+====================================================== -->
 
 <section>
 
@@ -2810,13 +3309,14 @@ Estimated AttarVibez Margin
 </section>
 
 
-<!-- ============================================================
+<!-- =====================================================
      EDUCATION
-============================================================ -->
+====================================================== -->
 
 <section id="education">
 
 <div class="container">
+
 
 <div class="section-heading reveal">
 
@@ -2923,13 +3423,14 @@ Aug 2020 — May 2021
 </section>
 
 
-<!-- ============================================================
+<!-- =====================================================
      CAMPUS PHOTOS
-============================================================ -->
+====================================================== -->
 
 <section>
 
 <div class="container">
+
 
 <div class="section-heading reveal">
 
@@ -2968,16 +3469,22 @@ onerror="this.style.display='none';"
 
 <div class="profile-placeholder">
 
-<strong>01</strong>
+<strong>
+01
+</strong>
 
 <span>
+
 Add LPU campus photo<br>
+
 assets/lpu.jpg
+
 </span>
 
 </div>
 
 </div>
+
 
 <h3>
 Lovely Professional University
@@ -2999,22 +3506,28 @@ style="aspect-ratio:16/9;"
 
 <img
 src="assets/kle.jpg"
-alt="KLE College"
+alt="KLE Society's Raja Lakhmagouda Science Institute"
 onerror="this.style.display='none';"
 >
 
 <div class="profile-placeholder">
 
-<strong>02</strong>
+<strong>
+02
+</strong>
 
 <span>
+
 Add college photo<br>
+
 assets/kle.jpg
+
 </span>
 
 </div>
 
 </div>
+
 
 <h3>
 KLE Society's Raja Lakhmagouda Science Institute
@@ -3042,16 +3555,22 @@ onerror="this.style.display='none';"
 
 <div class="profile-placeholder">
 
-<strong>03</strong>
+<strong>
+03
+</strong>
 
 <span>
+
 Add school photo<br>
+
 assets/kv-school.jpg
+
 </span>
 
 </div>
 
 </div>
+
 
 <h3>
 KV No.1, Sambra
@@ -3071,13 +3590,14 @@ Science Stream
 </section>
 
 
-<!-- ============================================================
+<!-- =====================================================
      SKILLS
-============================================================ -->
+====================================================== -->
 
 <section id="skills">
 
 <div class="container">
+
 
 <div class="section-heading reveal">
 
@@ -3247,6 +3767,7 @@ data-width="90%"
 Tools & platforms
 </h3>
 
+
 <div class="tool-cloud">
 
 <span class="tool">
@@ -3296,6 +3817,7 @@ Google Analytics
 Power skills
 </h3>
 
+
 <div class="tool-cloud">
 
 <span class="tool">
@@ -3320,6 +3842,7 @@ Problem Solving
 
 </div>
 
+
 </div>
 
 
@@ -3330,13 +3853,14 @@ Problem Solving
 </section>
 
 
-<!-- ============================================================
+<!-- =====================================================
      CERTIFICATIONS
-============================================================ -->
+====================================================== -->
 
 <section>
 
 <div class="container">
+
 
 <div class="section-heading reveal">
 
@@ -3347,7 +3871,6 @@ Problem Solving
 <h2>
 
 Always
-
 <span class="gradient-text">
 learning.
 </span>
@@ -3458,9 +3981,9 @@ May 2022
 </section>
 
 
-<!-- ============================================================
+<!-- =====================================================
      ACHIEVEMENT
-============================================================ -->
+====================================================== -->
 
 <section>
 
@@ -3483,9 +4006,11 @@ Vishwakarma Learnbiz Simulation Game
 </h3>
 
 <p>
+
 Achieved revenue growth from ₹5 lakhs to ₹21 lakhs
 in the business simulation game, securing 5th rank
 among competing teams.
+
 </p>
 
 </div>
@@ -3497,13 +4022,14 @@ among competing teams.
 </section>
 
 
-<!-- ============================================================
+<!-- =====================================================
      CONTACT
-============================================================ -->
+====================================================== -->
 
 <section id="contact">
 
 <div class="container">
+
 
 <div class="section-heading reveal">
 
@@ -3522,8 +4048,10 @@ worth building.
 </h2>
 
 <p>
+
 Have an opportunity, project or idea?
 Let's connect.
+
 </p>
 
 </div>
@@ -3531,8 +4059,6 @@ Let's connect.
 
 <div class="contact-grid">
 
-
-<!-- CONTACT INFO -->
 
 <div class="glass contact-card reveal">
 
@@ -3623,7 +4149,9 @@ class="btn btn-ghost"
 style="width:100%;margin-top:7px;"
 onclick="copyEmail()"
 >
+
 Copy Email Address
+
 </button>
 
 
@@ -3631,7 +4159,7 @@ Copy Email Address
 id="copyMessage"
 style="
 text-align:center;
-color:#70edf3;
+color:#65e6ff;
 font-size:.75rem;
 margin-top:9px;
 min-height:18px;
@@ -3645,7 +4173,9 @@ class="btn btn-ghost"
 style="width:100%;margin-top:5px;"
 onclick="openMailApp()"
 >
+
 Open Email App
+
 </button>
 
 
@@ -3740,7 +4270,9 @@ type="submit"
 class="btn btn-primary"
 style="width:100%;"
 >
+
 ✉ Send Message
+
 </button>
 
 
@@ -3750,7 +4282,9 @@ id="emailOptions"
 >
 
 <div class="email-options-title">
+
 Choose how you want to send the message:
+
 </div>
 
 
@@ -3759,7 +4293,9 @@ type="button"
 class="email-option"
 id="gmailButton"
 >
+
 Continue with Gmail
+
 </button>
 
 
@@ -3768,7 +4304,9 @@ type="button"
 class="email-option"
 id="mailAppButton"
 >
+
 Continue with Email App
+
 </button>
 
 
@@ -3777,8 +4315,8 @@ Continue with Email App
 
 <p class="form-note">
 
-The message opens directly in Gmail with the
-recipient, subject and message already filled in.
+Gmail opens with your message automatically prepared.
+No backend or form service is required.
 
 </p>
 
@@ -3786,7 +4324,6 @@ recipient, subject and message already filled in.
 </form>
 
 </div>
-
 
 </div>
 
@@ -3798,18 +4335,22 @@ recipient, subject and message already filled in.
 </main>
 
 
-<!-- ============================================================
+<!-- =====================================================
      FOOTER
-============================================================ -->
+====================================================== -->
 
 <footer>
 
 <div class="container footer-inner">
 
+
 <p>
 
-© <span id="year"></span>
+©
+<span id="year"></span>
+
 Piyush Singh.
+
 Built with curiosity & code.
 
 </p>
@@ -3824,7 +4365,9 @@ target="_blank"
 rel="noopener noreferrer"
 aria-label="Email"
 >
+
 ✉
+
 </a>
 
 
@@ -3832,7 +4375,9 @@ aria-label="Email"
 href="tel:+918431832821"
 aria-label="Phone"
 >
+
 ☎
+
 </a>
 
 
@@ -3842,7 +4387,9 @@ target="_blank"
 rel="noopener noreferrer"
 aria-label="LinkedIn"
 >
+
 in
+
 </a>
 
 
@@ -3853,20 +4400,24 @@ in
 </footer>
 
 
+<!-- BACK TO TOP -->
+
 <button
 class="top-btn"
 id="topBtn"
 aria-label="Back to top"
 >
+
 ↑
+
 </button>
 
 
 <script>
 
-/* ============================================================
-   CONTACT DETAILS
-============================================================ */
+/* =========================================================
+   CONTACT INFORMATION
+========================================================= */
 
 const MY_EMAIL =
 "piyushsingh20030610@gmail.com";
@@ -3878,32 +4429,40 @@ const MY_LINKEDIN =
 "https://www.linkedin.com/in/piyushsingh0610/";
 
 
-/* ============================================================
+/* =========================================================
    YEAR
-============================================================ */
+========================================================= */
 
-document.getElementById("year").textContent =
+document.getElementById(
+"year"
+).textContent =
 new Date().getFullYear();
 
 
-/* ============================================================
+/* =========================================================
    MOBILE MENU
-============================================================ */
+========================================================= */
 
 const menuBtn =
-document.getElementById("menuBtn");
+document.getElementById(
+"menuBtn"
+);
 
 const navLinks =
-document.getElementById("navLinks");
+document.getElementById(
+"navLinks"
+);
+
 
 menuBtn.addEventListener(
 "click",
 function(){
 
-navLinks.classList.toggle("open");
+    navLinks.classList.toggle(
+        "open"
+    );
 
-}
-);
+});
 
 
 document.querySelectorAll(
@@ -3911,47 +4470,60 @@ document.querySelectorAll(
 ).forEach(
 function(link){
 
-link.addEventListener(
-"click",
-function(){
+    link.addEventListener(
+        "click",
+        function(){
 
-navLinks.classList.remove("open");
+            navLinks.classList.remove(
+                "open"
+            );
 
-}
-);
+        }
+    );
 
-}
-);
+});
 
 
-/* ============================================================
+/* =========================================================
    NAVBAR
-============================================================ */
+========================================================= */
 
 const navbar =
-document.getElementById("navbar");
+document.getElementById(
+"navbar"
+);
+
 
 window.addEventListener(
 "scroll",
 function(){
 
-if(window.scrollY > 30){
+    if(
+        window.scrollY > 30
+    ){
 
-navbar.classList.add("scrolled");
+        navbar.classList.add(
+            "scrolled"
+        );
 
-}else{
+    }else{
 
-navbar.classList.remove("scrolled");
+        navbar.classList.remove(
+            "scrolled"
+        );
 
-}
+    }
 
+},
+{
+    passive:true
 }
 );
 
 
-/* ============================================================
+/* =========================================================
    ACTIVE NAVIGATION
-============================================================ */
+========================================================= */
 
 const sections =
 document.querySelectorAll(
@@ -3963,89 +4535,103 @@ document.querySelectorAll(
 ".nav-links a"
 );
 
+
 window.addEventListener(
 "scroll",
 function(){
 
-let current = "";
+    let current = "";
 
-sections.forEach(
-function(section){
+    sections.forEach(
+        function(section){
 
-const sectionTop =
-section.offsetTop - 180;
+            const sectionTop =
+            section.offsetTop - 180;
 
-if(
-window.scrollY >= sectionTop
-){
+            if(
+                window.scrollY >=
+                sectionTop
+            ){
 
-current =
-section.getAttribute("id");
+                current =
+                section.getAttribute(
+                    "id"
+                );
 
-}
+            }
 
+        }
+    );
+
+
+    navigationLinks.forEach(
+        function(link){
+
+            link.classList.remove(
+                "active"
+            );
+
+
+            if(
+                link.getAttribute(
+                    "href"
+                ) ===
+                "#" + current
+            ){
+
+                link.classList.add(
+                    "active"
+                );
+
+            }
+
+        }
+    );
+
+},
+{
+    passive:true
 }
 );
 
 
-navigationLinks.forEach(
-function(link){
-
-link.classList.remove("active");
-
-if(
-link.getAttribute("href")
-===
-"#" + current
-){
-
-link.classList.add("active");
-
-}
-
-}
-);
-
-}
-);
-
-
-/* ============================================================
-   REVEAL ANIMATION
-============================================================ */
+/* =========================================================
+   SCROLL REVEAL
+========================================================= */
 
 const revealElements =
 document.querySelectorAll(
 ".reveal"
 );
 
+
 const revealObserver =
 new IntersectionObserver(
 function(entries){
 
-entries.forEach(
-function(entry){
+    entries.forEach(
+        function(entry){
 
-if(
-entry.isIntersecting
-){
+            if(
+                entry.isIntersecting
+            ){
 
-entry.target.classList.add(
-"visible"
-);
+                entry.target.classList.add(
+                    "visible"
+                );
 
-revealObserver.unobserve(
-entry.target
-);
+                revealObserver.unobserve(
+                    entry.target
+                );
 
-}
+            }
 
-}
-);
+        }
+    );
 
 },
 {
-threshold:.12
+    threshold:.12
 }
 );
 
@@ -4053,49 +4639,49 @@ threshold:.12
 revealElements.forEach(
 function(element){
 
-revealObserver.observe(
-element
-);
+    revealObserver.observe(
+        element
+    );
 
-}
-);
+});
 
 
-/* ============================================================
+/* =========================================================
    SKILLS
-============================================================ */
+========================================================= */
 
 const skillFills =
 document.querySelectorAll(
 ".skill-fill"
 );
 
+
 const skillObserver =
 new IntersectionObserver(
 function(entries){
 
-entries.forEach(
-function(entry){
+    entries.forEach(
+        function(entry){
 
-if(
-entry.isIntersecting
-){
+            if(
+                entry.isIntersecting
+            ){
 
-entry.target.style.width =
-entry.target.dataset.width;
+                entry.target.style.width =
+                entry.target.dataset.width;
 
-skillObserver.unobserve(
-entry.target
-);
+                skillObserver.unobserve(
+                    entry.target
+                );
 
-}
+            }
 
-}
-);
+        }
+    );
 
 },
 {
-threshold:.4
+    threshold:.4
 }
 );
 
@@ -4103,94 +4689,99 @@ threshold:.4
 skillFills.forEach(
 function(skill){
 
-skillObserver.observe(
-skill
-);
+    skillObserver.observe(
+        skill
+    );
 
-}
-);
+});
 
 
-/* ============================================================
+/* =========================================================
    COPY EMAIL
-============================================================ */
+========================================================= */
 
 function copyEmail(){
 
-if(
-navigator.clipboard &&
-window.isSecureContext
-){
+    if(
+        navigator.clipboard &&
+        window.isSecureContext
+    ){
 
-navigator.clipboard
-.writeText(MY_EMAIL)
-.then(
-function(){
+        navigator.clipboard
+        .writeText(
+            MY_EMAIL
+        )
+        .then(
+            function(){
 
-showCopyMessage(
-"✓ Email copied"
-);
+                showCopyMessage(
+                    "✓ Email copied"
+                );
 
-}
-)
-.catch(
-function(){
+            }
+        )
+        .catch(
+            function(){
 
-fallbackCopyEmail();
+                fallbackCopyEmail();
 
-}
-);
+            }
+        );
 
-}else{
+    }else{
 
-fallbackCopyEmail();
+        fallbackCopyEmail();
 
-}
+    }
 
 }
 
 
 function fallbackCopyEmail(){
 
-const textarea =
-document.createElement("textarea");
+    const textarea =
+    document.createElement(
+        "textarea"
+    );
 
-textarea.value =
-MY_EMAIL;
+    textarea.value =
+    MY_EMAIL;
 
-textarea.style.position =
-"fixed";
+    textarea.style.position =
+    "fixed";
 
-textarea.style.opacity =
-"0";
+    textarea.style.opacity =
+    "0";
 
-document.body.appendChild(
-textarea
-);
+    document.body.appendChild(
+        textarea
+    );
 
-textarea.select();
+    textarea.select();
 
-try{
 
-document.execCommand(
-"copy"
-);
+    try{
 
-showCopyMessage(
-"✓ Email copied"
-);
+        document.execCommand(
+            "copy"
+        );
 
-}catch(error){
+        showCopyMessage(
+            "✓ Email copied"
+        );
 
-showCopyMessage(
-MY_EMAIL
-);
+    }catch(error){
 
-}
+        showCopyMessage(
+            MY_EMAIL
+        );
 
-document.body.removeChild(
-textarea
-);
+    }
+
+
+    document.body.removeChild(
+        textarea
+    );
 
 }
 
@@ -4199,56 +4790,60 @@ function showCopyMessage(
 message
 ){
 
-const element =
-document.getElementById(
-"copyMessage"
-);
+    const element =
+    document.getElementById(
+        "copyMessage"
+    );
 
-element.textContent =
-message;
+    element.textContent =
+    message;
 
-setTimeout(
-function(){
 
-element.textContent =
-"";
+    setTimeout(
+        function(){
 
-},
-2500
-);
+            element.textContent =
+            "";
+
+        },
+        2500
+    );
 
 }
 
 
-/* ============================================================
-   DEFAULT EMAIL APP
-============================================================ */
+/* =========================================================
+   EMAIL APP
+========================================================= */
 
 function openMailApp(){
 
-const subject =
-"Portfolio Opportunity";
-
-const body =
-"Hello Piyush,\n\n" +
-"I would like to connect with you regarding an opportunity.\n\n" +
-"Regards";
+    const subject =
+    "Portfolio Opportunity";
 
 
-window.location.href =
-"mailto:" +
-MY_EMAIL +
-"?subject=" +
-encodeURIComponent(subject) +
-"&body=" +
-encodeURIComponent(body);
+    const body =
+    "Hello Piyush,%0D%0A%0D%0A" +
+    "I would like to connect with you regarding an opportunity.%0D%0A%0D%0A" +
+    "Regards";
+
+
+    window.location.href =
+    "mailto:" +
+    MY_EMAIL +
+    "?subject=" +
+    encodeURIComponent(
+        subject
+    ) +
+    "&body=" +
+    body;
 
 }
 
 
-/* ============================================================
+/* =========================================================
    CONTACT FORM
-============================================================ */
+========================================================= */
 
 const contactForm =
 document.getElementById(
@@ -4261,61 +4856,59 @@ document.getElementById(
 );
 
 
-let preparedGmailURL =
-"";
+let preparedGmailURL = "";
 
-let preparedMailtoURL =
-"";
+let preparedMailtoURL = "";
 
 
 contactForm.addEventListener(
 "submit",
 function(event){
 
-event.preventDefault();
+    event.preventDefault();
 
 
-const name =
-document.getElementById(
-"name"
-).value.trim();
+    const name =
+    document.getElementById(
+        "name"
+    ).value.trim();
 
 
-const senderEmail =
-document.getElementById(
-"senderEmail"
-).value.trim();
+    const senderEmail =
+    document.getElementById(
+        "senderEmail"
+    ).value.trim();
 
 
-const subject =
-document.getElementById(
-"subject"
-).value.trim();
+    const subject =
+    document.getElementById(
+        "subject"
+    ).value.trim();
 
 
-const message =
-document.getElementById(
-"message"
-).value.trim();
+    const message =
+    document.getElementById(
+        "message"
+    ).value.trim();
 
 
-if(
-!name ||
-!senderEmail ||
-!subject ||
-!message
-){
+    if(
+        !name ||
+        !senderEmail ||
+        !subject ||
+        !message
+    ){
 
-alert(
-"Please fill in all fields."
-);
+        alert(
+            "Please fill in all fields."
+        );
 
-return;
+        return;
 
-}
+    }
 
 
-const emailBody =
+    const emailBody =
 
 `Hello Piyush,
 
@@ -4332,51 +4925,82 @@ Regards,
 ${name}`;
 
 
-preparedGmailURL =
+    /* =====================================================
+       GMAIL COMPOSE
+    ===================================================== */
 
-"https://mail.google.com/mail/" +
-"?view=cm" +
-"&fs=1" +
-"&to=" +
-encodeURIComponent(MY_EMAIL) +
-"&su=" +
-encodeURIComponent(subject) +
-"&body=" +
-encodeURIComponent(emailBody);
+    preparedGmailURL =
+
+    "https://mail.google.com/mail/" +
+
+    "?view=cm" +
+
+    "&fs=1" +
+
+    "&to=" +
+
+    encodeURIComponent(
+        MY_EMAIL
+    ) +
+
+    "&su=" +
+
+    encodeURIComponent(
+        subject
+    ) +
+
+    "&body=" +
+
+    encodeURIComponent(
+        emailBody
+    );
 
 
-preparedMailtoURL =
+    /* =====================================================
+       MAILTO FALLBACK
+    ===================================================== */
 
-"mailto:" +
-MY_EMAIL +
-"?subject=" +
-encodeURIComponent(subject) +
-"&body=" +
-encodeURIComponent(emailBody);
+    preparedMailtoURL =
+
+    "mailto:" +
+
+    MY_EMAIL +
+
+    "?subject=" +
+
+    encodeURIComponent(
+        subject
+    ) +
+
+    "&body=" +
+
+    encodeURIComponent(
+        emailBody
+    );
 
 
-emailOptions.classList.add(
-"show"
-);
+    emailOptions.classList.add(
+        "show"
+    );
 
 
-/*
-   Automatically open Gmail.
-*/
+    /* =====================================================
+       OPEN GMAIL
+    ===================================================== */
 
-window.open(
-preparedGmailURL,
-"_blank",
-"noopener,noreferrer"
-);
+    window.open(
+        preparedGmailURL,
+        "_blank",
+        "noopener,noreferrer"
+    );
 
 }
 );
 
 
-/* ============================================================
+/* =========================================================
    GMAIL BUTTON
-============================================================ */
+========================================================= */
 
 document.getElementById(
 "gmailButton"
@@ -4384,23 +5008,25 @@ document.getElementById(
 "click",
 function(){
 
-if(preparedGmailURL){
+    if(
+        preparedGmailURL
+    ){
 
-window.open(
-preparedGmailURL,
-"_blank",
-"noopener,noreferrer"
-);
+        window.open(
+            preparedGmailURL,
+            "_blank",
+            "noopener,noreferrer"
+        );
+
+    }
 
 }
-
-}
 );
 
 
-/* ============================================================
+/* =========================================================
    MAIL APP BUTTON
-============================================================ */
+========================================================= */
 
 document.getElementById(
 "mailAppButton"
@@ -4408,46 +5034,52 @@ document.getElementById(
 "click",
 function(){
 
-if(preparedMailtoURL){
+    if(
+        preparedMailtoURL
+    ){
 
-window.location.href =
-preparedMailtoURL;
+        window.location.href =
+        preparedMailtoURL;
 
-}
+    }
 
 }
 );
 
 
-/* ============================================================
+/* =========================================================
    BACK TO TOP
-============================================================ */
+========================================================= */
 
 const topBtn =
 document.getElementById(
 "topBtn"
 );
 
+
 window.addEventListener(
 "scroll",
 function(){
 
-if(
-window.scrollY > 500
-){
+    if(
+        window.scrollY > 500
+    ){
 
-topBtn.classList.add(
-"show"
-);
+        topBtn.classList.add(
+            "show"
+        );
 
-}else{
+    }else{
 
-topBtn.classList.remove(
-"show"
-);
+        topBtn.classList.remove(
+            "show"
+        );
 
-}
+    }
 
+},
+{
+    passive:true
 }
 );
 
@@ -4456,1021 +5088,858 @@ topBtn.addEventListener(
 "click",
 function(){
 
-window.scrollTo({
+    window.scrollTo({
 
-top:0,
+        top:0,
 
-behavior:"smooth"
+        behavior:"smooth"
+
+    });
 
 });
 
-}
-);
 
-
-/* ============================================================
-   CINEMATIC BLACK HOLE ENGINE
-============================================================ */
+/* =========================================================
+   ========================================================
+   HIGH PERFORMANCE COSMIC STARFIELD
+   ========================================================
+========================================================= */
 
 const canvas =
 document.getElementById(
-"blackHoleCanvas"
+"spaceCanvas"
 );
 
 const ctx =
 canvas.getContext(
-"2d"
+"2d",
+{
+    alpha:true
+}
 );
 
 
-let W =
-window.innerWidth;
+let width = 0;
 
-let H =
-window.innerHeight;
+let height = 0;
 
-let DPR =
-window.devicePixelRatio || 1;
+let dpr = 1;
+
+let stars = [];
+
+let shootingStars = [];
+
+let lastTime = 0;
+
+let nextShootingStar = 4000;
 
 
-function resizeCanvas(){
+/* =========================================================
+   STAR COUNT
+========================================================= */
 
-W =
-window.innerWidth;
+function getStarCount(){
 
-H =
-window.innerHeight;
+    const area =
+    width * height;
 
-DPR =
-Math.min(
-window.devicePixelRatio || 1,
-2
-);
+    /*
+       Density is deliberately controlled.
 
-canvas.width =
-W * DPR;
+       This keeps the animation smooth even on
+       high resolution displays.
+    */
 
-canvas.height =
-H * DPR;
-
-canvas.style.width =
-W + "px";
-
-canvas.style.height =
-H + "px";
-
-ctx.setTransform(
-DPR,
-0,
-0,
-DPR,
-0,
-0
-);
+    return Math.min(
+        650,
+        Math.max(
+            220,
+            Math.floor(
+                area / 3500
+            )
+        )
+    );
 
 }
 
 
-resizeCanvas();
+/* =========================================================
+   RESIZE CANVAS
+========================================================= */
+
+function resizeSpace(){
+
+    dpr =
+    Math.min(
+        window.devicePixelRatio || 1,
+        1.5
+    );
+
+
+    width =
+    window.innerWidth;
+
+    height =
+    window.innerHeight;
+
+
+    canvas.width =
+    Math.floor(
+        width * dpr
+    );
+
+
+    canvas.height =
+    Math.floor(
+        height * dpr
+    );
+
+
+    canvas.style.width =
+    width + "px";
+
+
+    canvas.style.height =
+    height + "px";
+
+
+    ctx.setTransform(
+        dpr,
+        0,
+        0,
+        dpr,
+        0,
+        0
+    );
+
+
+    createStars();
+
+}
 
 
 window.addEventListener(
 "resize",
-resizeCanvas
+resizeSpace,
+{
+    passive:true
+}
 );
 
 
-/* ============================================================
-   BLACK HOLE POSITION
-============================================================ */
-
-function getBlackHole(){
-
-return{
-
-x:
-W * .68,
-
-y:
-H * .48,
-
-radius:
-Math.min(W,H) *
-.095
-
-};
-
-}
-
-
-/* ============================================================
-   STAR FIELD
-============================================================ */
-
-const stars = [];
+/* =========================================================
+   STAR CREATION
+========================================================= */
 
 function createStars(){
 
-stars.length = 0;
+    stars = [];
 
-const count =
-Math.min(
-650,
-Math.floor(
-W * H / 2600
-)
-);
+    const count =
+    getStarCount();
 
 
-for(
-let i=0;
-i<count;
-i++
-){
+    for(
+        let i=0;
+        i<count;
+        i++
+    ){
 
-stars.push({
-
-x:
-Math.random()*W,
-
-y:
-Math.random()*H,
-
-size:
-Math.random()*1.5+.15,
-
-alpha:
-Math.random()*.7+.15,
-
-twinkle:
-Math.random()*Math.PI*2,
-
-speed:
-Math.random()*.0008+.0002
-
-});
-
-}
-
-}
-
-createStars();
+        const x =
+        Math.random() *
+        width;
 
 
-/* ============================================================
-   ACCRETION PARTICLES
-============================================================ */
-
-const diskParticles = [];
+        const y =
+        Math.random() *
+        height;
 
 
-function createDiskParticles(){
+        /*
+           Determine whether star lies near the
+           diagonal Milky Way area.
 
-diskParticles.length = 0;
+           Galaxy roughly travels from:
 
-const count = 480;
+           top-center
+           ↓
+           middle-left
+        */
 
-
-for(
-let i=0;
-i<count;
-i++
-){
-
-const angle =
-Math.random() *
-Math.PI * 2;
-
-const radius =
-60 +
-Math.random() *
-Math.min(W,H) *
-.30;
+        const galaxyCenterX =
+        width *
+        (
+            .55 -
+            .38 *
+            (y / height)
+        );
 
 
-diskParticles.push({
-
-angle:angle,
-
-radius:radius,
-
-speed:
-.0005 +
-Math.random()*.0018,
-
-size:
-Math.random()*1.7+.2,
-
-offset:
-Math.random()*Math.PI*2,
-
-alpha:
-Math.random()*.8+.15
-
-});
-
-}
-
-}
-
-createDiskParticles();
+        const galaxyDistance =
+        Math.abs(
+            x -
+            galaxyCenterX
+        );
 
 
-/* ============================================================
-   LIGHT STREAKS
-============================================================ */
-
-const streaks = [];
+        const inGalaxy =
+        galaxyDistance <
+        width * .18;
 
 
-function createStreaks(){
+        /*
+           Galaxy receives higher density and
+           slightly stronger stars.
+        */
 
-streaks.length = 0;
+        const size =
+        inGalaxy
+        ?
+        Math.random() * 1.65 + .35
+        :
+        Math.random() * 1.25 + .25;
 
 
-for(
-let i=0;
-i<90;
-i++
-){
+        const brightness =
+        inGalaxy
+        ?
+        Math.random() * .65 + .35
+        :
+        Math.random() * .50 + .20;
 
-streaks.push({
 
-angle:
-Math.random() *
-Math.PI*2,
+        /*
+           Cool star palette:
+           white
+           cyan
+           ice blue
+           lavender
+        */
 
-radius:
-80 +
-Math.random() *
-Math.min(W,H)*.27,
+        const palettes = [
 
-length:
-10 +
-Math.random()*65,
+            [245,249,255],
 
-speed:
-.0004 +
-Math.random()*.0015,
+            [210,245,255],
 
-alpha:
-Math.random()*.4+.1
+            [145,226,255],
 
-});
+            [192,180,255]
 
-}
+        ];
+
+
+        const color =
+        palettes[
+            Math.floor(
+                Math.random() *
+                palettes.length
+            )
+        ];
+
+
+        stars.push({
+
+            x:x,
+
+            y:y,
+
+            baseX:x,
+
+            baseY:y,
+
+            size:size,
+
+            alpha:brightness,
+
+            baseAlpha:brightness,
+
+            color:color,
+
+            phase:
+            Math.random() *
+            Math.PI *
+            2,
+
+            twinkle:
+            Math.random() *
+            .0017
+            +
+            .0005,
+
+            drift:
+            Math.random() *
+            .012
+            +
+            .003,
+
+            galaxy:inGalaxy
+
+        });
+
+    }
 
 }
 
-createStreaks();
 
+/* =========================================================
+   DRAW STAR
+========================================================= */
 
-/* ============================================================
-   DRAW STAR FIELD
-============================================================ */
-
-function drawStars(time){
-
-for(
-const star of stars
-){
-
-star.twinkle +=
-star.speed * 16;
-
-const alpha =
-star.alpha *
-(
-.55 +
-Math.sin(
-star.twinkle
-)*.35
-);
-
-
-ctx.beginPath();
-
-ctx.arc(
-star.x,
-star.y,
-star.size,
-0,
-Math.PI*2
-);
-
-
-ctx.fillStyle =
-`rgba(
-180,
-235,
-240,
-${alpha}
-)`;
-
-
-ctx.fill();
-
-}
-
-}
-
-
-/* ============================================================
-   DRAW BLACK HOLE HALO
-============================================================ */
-
-function drawHalo(bh){
-
-const halo =
-ctx.createRadialGradient(
-
-bh.x,
-bh.y,
-bh.radius*.7,
-
-bh.x,
-bh.y,
-bh.radius*4.7
-
-);
-
-
-halo.addColorStop(
-0,
-"rgba(0,0,0,1)"
-);
-
-
-halo.addColorStop(
-.22,
-"rgba(2,7,10,.98)"
-);
-
-
-halo.addColorStop(
-.45,
-"rgba(4,34,43,.28)"
-);
-
-
-halo.addColorStop(
-.65,
-"rgba(10,111,126,.08)"
-);
-
-
-halo.addColorStop(
-1,
-"rgba(0,0,0,0)"
-);
-
-
-ctx.fillStyle =
-halo;
-
-
-ctx.beginPath();
-
-ctx.arc(
-bh.x,
-bh.y,
-bh.radius*4.7,
-0,
-Math.PI*2
-);
-
-ctx.fill();
-
-}
-
-
-/* ============================================================
-   DRAW ACCRETION DISK
-============================================================ */
-
-function drawDisk(bh,time){
-
-ctx.save();
-
-ctx.translate(
-bh.x,
-bh.y
-);
-
-
-/*
-   Flatten the disk into a cinematic
-   elliptical shape.
-*/
-
-ctx.scale(
-1,
-.30
-);
-
-
-/* OUTER GLOW */
-
-const glow =
-ctx.createRadialGradient(
-0,
-0,
-bh.radius*.5,
-0,
-0,
-bh.radius*4
-);
-
-
-glow.addColorStop(
-0,
-"rgba(0,0,0,1)"
-);
-
-
-glow.addColorStop(
-.28,
-"rgba(8,65,77,.85)"
-);
-
-
-glow.addColorStop(
-.45,
-"rgba(20,156,173,.34)"
-);
-
-
-glow.addColorStop(
-.60,
-"rgba(53,218,230,.12)"
-);
-
-
-glow.addColorStop(
-1,
-"rgba(0,0,0,0)"
-);
-
-
-ctx.fillStyle =
-glow;
-
-
-ctx.beginPath();
-
-ctx.arc(
-0,
-0,
-bh.radius*4,
-0,
-Math.PI*2
-);
-
-ctx.fill();
-
-
-/* ========================================================
-   DISK PARTICLES
-======================================================== */
-
-for(
-const p of diskParticles
-){
-
-p.angle +=
-p.speed * 16;
-
-
-const wobble =
-Math.sin(
-p.angle*3 +
-p.offset
-) * 3;
-
-
-const r =
-p.radius +
-wobble;
-
-
-const x =
-Math.cos(p.angle) *
-r;
-
-
-const y =
-Math.sin(p.angle) *
-r;
-
-
-const brightness =
-.35 +
-.65 *
-(
-.5 +
-.5 *
-Math.sin(
-p.angle
-)
-);
-
-
-const alpha =
-p.alpha *
-(
-.35 +
-brightness*.65
-);
-
-
-ctx.beginPath();
-
-ctx.arc(
-x,
-y,
-p.size,
-0,
-Math.PI*2
-);
-
-
-ctx.fillStyle =
-`rgba(
-${60 + brightness*120},
-${170 + brightness*70},
-${185 + brightness*65},
-${alpha}
-)`;
-
-
-ctx.fill();
-
-}
-
-
-/* ========================================================
-   LIGHT STREAKS
-======================================================== */
-
-ctx.lineCap =
-"round";
-
-
-for(
-const s of streaks
-){
-
-s.angle +=
-s.speed * 16;
-
-
-const r =
-s.radius;
-
-
-const x =
-Math.cos(s.angle)*r;
-
-
-const y =
-Math.sin(s.angle)*r;
-
-
-const x2 =
-Math.cos(
-s.angle - .035
-) *
-(r+s.length);
-
-
-const y2 =
-Math.sin(
-s.angle - .035
-) *
-(r+s.length);
-
-
-const gradient =
-ctx.createLinearGradient(
-x,
-y,
-x2,
-y2
-);
-
-
-gradient.addColorStop(
-0,
-`rgba(
-80,
-230,
-240,
-${s.alpha}
-)`
-);
-
-
-gradient.addColorStop(
-1,
-"rgba(80,230,240,0)"
-);
-
-
-ctx.strokeStyle =
-gradient;
-
-
-ctx.lineWidth =
-Math.random()*1.5+.2;
-
-
-ctx.beginPath();
-
-ctx.moveTo(
-x,
-y
-);
-
-ctx.lineTo(
-x2,
-y2
-);
-
-ctx.stroke();
-
-}
-
-
-ctx.restore();
-
-}
-
-
-/* ============================================================
-   EVENT HORIZON
-============================================================ */
-
-function drawEventHorizon(bh){
-
-/*
-   Deep black center.
-*/
-
-const black =
-ctx.createRadialGradient(
-
-bh.x,
-bh.y,
-0,
-
-bh.x,
-bh.y,
-bh.radius*1.55
-
-);
-
-
-black.addColorStop(
-0,
-"#000000"
-);
-
-black.addColorStop(
-.72,
-"#000000"
-);
-
-black.addColorStop(
-.86,
-"rgba(0,0,0,.98)"
-);
-
-black.addColorStop(
-1,
-"rgba(0,0,0,0)"
-);
-
-
-ctx.fillStyle =
-black;
-
-
-ctx.beginPath();
-
-ctx.arc(
-bh.x,
-bh.y,
-bh.radius*1.55,
-0,
-Math.PI*2
-);
-
-ctx.fill();
-
-
-/*
-   Thin photon ring.
-*/
-
-ctx.save();
-
-ctx.shadowBlur =
-25;
-
-ctx.shadowColor =
-"rgba(112,237,243,.65)";
-
-ctx.strokeStyle =
-"rgba(105,232,240,.52)";
-
-ctx.lineWidth =
-1.8;
-
-ctx.beginPath();
-
-ctx.arc(
-bh.x,
-bh.y,
-bh.radius*1.06,
-0,
-Math.PI*2
-);
-
-ctx.stroke();
-
-ctx.restore();
-
-}
-
-
-/* ============================================================
-   GRAVITATIONAL LIGHTING
-============================================================ */
-
-function drawLensing(bh){
-
-ctx.save();
-
-ctx.translate(
-bh.x,
-bh.y
-);
-
-
-const ring =
-ctx.createRadialGradient(
-0,
-0,
-bh.radius*.95,
-0,
-0,
-bh.radius*2.25
-);
-
-
-ring.addColorStop(
-0,
-"rgba(0,0,0,0)"
-);
-
-
-ring.addColorStop(
-.46,
-"rgba(55,210,225,.02)"
-);
-
-
-ring.addColorStop(
-.64,
-"rgba(55,210,225,.08)"
-);
-
-
-ring.addColorStop(
-.72,
-"rgba(112,237,243,.14)"
-);
-
-
-ring.addColorStop(
-.78,
-"rgba(112,237,243,.025)"
-);
-
-
-ring.addColorStop(
-1,
-"rgba(0,0,0,0)"
-);
-
-
-ctx.fillStyle =
-ring;
-
-
-ctx.beginPath();
-
-ctx.arc(
-0,
-0,
-bh.radius*2.25,
-0,
-Math.PI*2
-);
-
-ctx.fill();
-
-
-ctx.restore();
-
-}
-
-
-/* ============================================================
-   CINEMATIC DISTANT DUST
-============================================================ */
-
-function drawDust(){
-
-const gradient =
-ctx.createRadialGradient(
-
-W*.25,
-H*.45,
-20,
-
-W*.25,
-H*.45,
-W*.65
-
-);
-
-
-gradient.addColorStop(
-0,
-"rgba(8,80,94,.035)"
-);
-
-gradient.addColorStop(
-.5,
-"rgba(3,40,50,.018)"
-);
-
-gradient.addColorStop(
-1,
-"rgba(0,0,0,0)"
-);
-
-
-ctx.fillStyle =
-gradient;
-
-
-ctx.fillRect(
-0,
-0,
-W,
-H
-);
-
-}
-
-
-/* ============================================================
-   MAIN BLACK HOLE LOOP
-============================================================ */
-
-let lastTime =
-0;
-
-
-function animateBlackHole(time){
-
-const delta =
-time-lastTime;
-
-lastTime =
-time;
-
-
-ctx.clearRect(
-0,
-0,
-W,
-H
-);
-
-
-/*
-   Deep black background.
-*/
-
-ctx.fillStyle =
-"#000205";
-
-ctx.fillRect(
-0,
-0,
-W,
-H
-);
-
-
-/*
-   Very subtle distant space.
-*/
-
-drawDust();
-
-
-/*
-   Stars.
-*/
-
-drawStars(time);
-
-
-const bh =
-getBlackHole();
-
-
-/*
-   Outer gravitational halo.
-*/
-
-drawHalo(bh);
-
-
-/*
-   Accretion disk.
-*/
-
-drawDisk(
-bh,
+function drawStar(
+star,
 time
-);
-
-
-/*
-   Lensing ring.
-*/
-
-drawLensing(bh);
-
-
-/*
-   Black event horizon.
-*/
-
-drawEventHorizon(bh);
-
-
-requestAnimationFrame(
-animateBlackHole
-);
-
-}
-
-
-requestAnimationFrame(
-animateBlackHole
-);
-
-
-/* ============================================================
-   REDUCED MOTION ACCESSIBILITY
-============================================================ */
-
-if(
-window.matchMedia(
-"(prefers-reduced-motion: reduce)"
-).matches
 ){
 
-document.documentElement.style.scrollBehavior =
-"auto";
+    /*
+       Independent twinkle.
+
+       Each star has a different phase and speed.
+    */
+
+    const pulse =
+    (
+        Math.sin(
+            time *
+            star.twinkle
+            +
+            star.phase
+        )
+        +
+        1
+    )
+    * .5;
+
+
+    const alpha =
+    star.baseAlpha *
+    (
+        .58 +
+        pulse *
+        .42
+    );
+
+
+    /*
+       Very subtle scale pulse.
+    */
+
+    const scale =
+    1 +
+    pulse *
+    .28;
+
+
+    const radius =
+    star.size *
+    scale;
+
+
+    /*
+       Slow horizontal drift.
+    */
+
+    star.x =
+    star.baseX +
+    Math.sin(
+        time *
+        .000035
+        +
+        star.phase
+    )
+    *
+    (
+        5 +
+        star.drift *
+        300
+    );
+
+
+    star.y =
+    star.baseY +
+    Math.cos(
+        time *
+        .000028
+        +
+        star.phase
+    )
+    *
+    3;
+
+
+    /*
+       Wrap stars.
+    */
+
+    if(
+        star.x < -10
+    ){
+
+        star.x =
+        width + 10;
+
+        star.baseX =
+        star.x;
+
+    }
+
+
+    if(
+        star.x >
+        width + 10
+    ){
+
+        star.x = -10;
+
+        star.baseX =
+        star.x;
+
+    }
+
+
+    const rgb =
+    star.color;
+
+
+    /*
+       Larger stars receive a tiny glow.
+    */
+
+    if(
+        radius > 1.25
+    ){
+
+        ctx.beginPath();
+
+        ctx.arc(
+            star.x,
+            star.y,
+            radius * 3.2,
+            0,
+            Math.PI * 2
+        );
+
+
+        ctx.fillStyle =
+        `rgba(
+            ${rgb[0]},
+            ${rgb[1]},
+            ${rgb[2]},
+            ${alpha * .055}
+        )`;
+
+
+        ctx.fill();
+
+    }
+
+
+    ctx.beginPath();
+
+    ctx.arc(
+        star.x,
+        star.y,
+        radius,
+        0,
+        Math.PI * 2
+    );
+
+
+    ctx.fillStyle =
+    `rgba(
+        ${rgb[0]},
+        ${rgb[1]},
+        ${rgb[2]},
+        ${alpha}
+    )`;
+
+
+    ctx.fill();
 
 }
 
 
-/* ============================================================
+/* =========================================================
+   SHOOTING STAR
+========================================================= */
+
+function createShootingStar(){
+
+    /*
+       Random start point around the upper half.
+    */
+
+    const startX =
+    Math.random() *
+    width *
+    .85;
+
+
+    const startY =
+    Math.random() *
+    height *
+    .38;
+
+
+    shootingStars.push({
+
+        x:startX,
+
+        y:startY,
+
+        length:
+        Math.random() *
+        100 +
+        80,
+
+        speed:
+        Math.random() *
+        .55 +
+        .65,
+
+        life:0,
+
+        maxLife:
+        Math.random() *
+        900 +
+        650,
+
+        angle:
+        Math.PI *
+        (
+            .15 +
+            Math.random() *
+            .13
+        ),
+
+        alpha:
+        Math.random() *
+        .35 +
+        .45
+
+    });
+
+}
+
+
+/* =========================================================
+   DRAW SHOOTING STARS
+========================================================= */
+
+function drawShootingStars(
+delta
+){
+
+    for(
+        let i =
+        shootingStars.length - 1;
+        i >= 0;
+        i--
+    ){
+
+        const s =
+        shootingStars[i];
+
+
+        s.life +=
+        delta;
+
+
+        s.x +=
+        Math.cos(
+            s.angle
+        )
+        *
+        s.speed
+        *
+        delta;
+
+
+        s.y +=
+        Math.sin(
+            s.angle
+        )
+        *
+        s.speed
+        *
+        delta;
+
+
+        const progress =
+        s.life /
+        s.maxLife;
+
+
+        let alpha =
+        s.alpha;
+
+
+        /*
+           Fade in and fade out.
+        */
+
+        if(
+            progress < .18
+        ){
+
+            alpha *=
+            progress / .18;
+
+        }
+
+        if(
+            progress > .65
+        ){
+
+            alpha *=
+            (
+                1 - progress
+            ) / .35;
+
+        }
+
+
+        const tailX =
+        s.x -
+        Math.cos(
+            s.angle
+        )
+        *
+        s.length;
+
+
+        const tailY =
+        s.y -
+        Math.sin(
+            s.angle
+        )
+        *
+        s.length;
+
+
+        const gradient =
+        ctx.createLinearGradient(
+            tailX,
+            tailY,
+            s.x,
+            s.y
+        );
+
+
+        gradient.addColorStop(
+            0,
+            "rgba(130,210,255,0)"
+        );
+
+
+        gradient.addColorStop(
+            .75,
+            `rgba(
+                190,
+                230,
+                255,
+                ${alpha * .28}
+            )`
+        );
+
+
+        gradient.addColorStop(
+            1,
+            `rgba(
+                255,
+                255,
+                255,
+                ${alpha}
+            )`
+        );
+
+
+        ctx.beginPath();
+
+        ctx.moveTo(
+            tailX,
+            tailY
+        );
+
+        ctx.lineTo(
+            s.x,
+            s.y
+        );
+
+
+        ctx.strokeStyle =
+        gradient;
+
+        ctx.lineWidth =
+        1.1;
+
+        ctx.stroke();
+
+
+        /*
+           Bright head.
+        */
+
+        ctx.beginPath();
+
+        ctx.arc(
+            s.x,
+            s.y,
+            1.6,
+            0,
+            Math.PI * 2
+        );
+
+
+        ctx.fillStyle =
+        `rgba(
+            255,
+            255,
+            255,
+            ${alpha}
+        )`;
+
+
+        ctx.fill();
+
+
+        if(
+            s.life >
+            s.maxLife
+        ){
+
+            shootingStars.splice(
+                i,
+                1
+            );
+
+        }
+
+    }
+
+}
+
+
+/* =========================================================
+   SPACE ANIMATION LOOP
+========================================================= */
+
+function animateSpace(
+time
+){
+
+    /*
+       Avoid enormous delta after tab switching.
+    */
+
+    const delta =
+    Math.min(
+        40,
+        time - lastTime || 16
+    );
+
+
+    lastTime =
+    time;
+
+
+    ctx.clearRect(
+        0,
+        0,
+        width,
+        height
+    );
+
+
+    /*
+       Draw stars.
+    */
+
+    for(
+        let i=0;
+        i<stars.length;
+        i++
+    ){
+
+        drawStar(
+            stars[i],
+            time
+        );
+
+    }
+
+
+    /*
+       Shooting stars.
+    */
+
+    nextShootingStar -=
+    delta;
+
+
+    if(
+        nextShootingStar <= 0
+    ){
+
+        /*
+           Only occasional.
+
+           Random interval:
+           5–13 seconds.
+        */
+
+        createShootingStar();
+
+
+        nextShootingStar =
+        5000 +
+        Math.random() *
+        8000;
+
+    }
+
+
+    drawShootingStars(
+        delta
+    );
+
+
+    requestAnimationFrame(
+        animateSpace
+    );
+
+}
+
+
+/* =========================================================
+   START COSMOS
+========================================================= */
+
+resizeSpace();
+
+requestAnimationFrame(
+animateSpace
+);
+
+
+/* =========================================================
    IMAGE ERROR HANDLING
-============================================================ */
+========================================================= */
 
 document.querySelectorAll(
 ".profile-image img"
 ).forEach(
 function(img){
 
-img.addEventListener(
-"error",
-function(){
+    img.addEventListener(
+        "error",
+        function(){
 
-img.style.display =
-"none";
+            img.style.display =
+            "none";
 
-}
-);
+        }
+    );
 
 });
 
@@ -5478,4 +5947,5 @@ img.style.display =
 </script>
 
 </body>
+
 </html>
