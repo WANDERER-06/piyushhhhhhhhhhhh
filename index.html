@@ -1,368 +1,235 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Piyush Singh — MBA Digital Marketing & Operations portfolio." />
-  <title>Piyush Singh | Digital Marketing & Operations</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <style>
-    :root{
-      --ocean-950:#031923;
-      --ocean-900:#052b3a;
-      --ocean-800:#06445b;
-      --ocean-700:#076987;
-      --ocean-600:#0785a8;
-      --ocean-500:#0aa7c7;
-      --ocean-300:#70d7e9;
-      --ocean-100:#dff7fb;
-      --white:#f7fcfd;
-      --ink:#08232d;
-      --muted:#5d7680;
-      --line:rgba(8,91,116,.14);
-      --card:rgba(255,255,255,.78);
-      --shadow:0 24px 70px rgba(3,39,51,.13);
-      --radius:24px;
-    }
-
-    *{box-sizing:border-box;scroll-behavior:smooth}
-    body{
-      margin:0;
-      color:var(--ink);
-      background:
-        radial-gradient(circle at 90% 4%, rgba(10,167,199,.16), transparent 26rem),
-        radial-gradient(circle at 0% 40%, rgba(7,105,135,.10), transparent 30rem),
-        linear-gradient(180deg,#f8fdfe 0%,#eef9fb 48%,#f9fdfe 100%);
-      font-family:"DM Sans",sans-serif;
-      line-height:1.6;
-    }
-    a{color:inherit;text-decoration:none}
-    button{font:inherit}
-    .container{width:min(1120px,92%);margin:auto}
-    .nav{
-      position:fixed;top:0;left:0;right:0;z-index:100;
-      background:rgba(248,253,254,.72);backdrop-filter:blur(18px);
-      border-bottom:1px solid rgba(8,91,116,.09);
-    }
-    .nav-inner{height:76px;display:flex;align-items:center;justify-content:space-between}
-    .brand{display:flex;align-items:center;gap:10px;font-family:"Space Grotesk";font-weight:700;letter-spacing:-.03em}
-    .brand-mark{
-      width:38px;height:38px;border-radius:12px;display:grid;place-items:center;
-      color:white;background:linear-gradient(145deg,var(--ocean-700),var(--ocean-500));
-      box-shadow:0 9px 24px rgba(7,105,135,.25)
-    }
-    .links{display:flex;gap:25px;align-items:center;font-size:14px;font-weight:600;color:#47616b}
-    .links a{transition:.2s}
-    .links a:hover{color:var(--ocean-700)}
-    .nav-cta{padding:10px 16px;border-radius:999px;background:var(--ocean-900);color:white!important}
-    .menu{display:none;border:0;background:transparent;color:var(--ocean-900);font-size:25px}
-
-    section{padding:100px 0}
-    .hero{min-height:100vh;padding-top:155px;display:flex;align-items:center}
-    .hero-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:70px;align-items:center}
-    .eyebrow{
-      display:inline-flex;align-items:center;gap:8px;padding:7px 12px;border:1px solid rgba(7,105,135,.16);
-      border-radius:999px;background:rgba(255,255,255,.62);color:var(--ocean-700);font-size:12px;font-weight:700;
-      letter-spacing:.08em;text-transform:uppercase
-    }
-    .dot{width:7px;height:7px;border-radius:50%;background:var(--ocean-500);box-shadow:0 0 0 5px rgba(10,167,199,.12)}
-    h1{
-      font-family:"Space Grotesk";font-size:clamp(54px,8vw,92px);line-height:.95;letter-spacing:-.065em;
-      margin:22px 0 20px;max-width:850px
-    }
-    .gradient-text{background:linear-gradient(100deg,var(--ocean-900),var(--ocean-500));-webkit-background-clip:text;background-clip:text;color:transparent}
-    .hero p{font-size:19px;max-width:650px;color:#55707a;margin:0 0 30px}
-    .actions{display:flex;gap:12px;flex-wrap:wrap}
-    .btn{
-      display:inline-flex;align-items:center;justify-content:center;gap:9px;padding:13px 19px;border-radius:14px;
-      font-weight:700;border:1px solid transparent;transition:.22s;cursor:pointer
-    }
-    .btn-primary{background:var(--ocean-900);color:#fff;box-shadow:0 12px 28px rgba(5,43,58,.18)}
-    .btn-primary:hover{transform:translateY(-2px);background:var(--ocean-800)}
-    .btn-ghost{background:rgba(255,255,255,.65);border-color:var(--line);color:var(--ocean-900)}
-    .btn-ghost:hover{transform:translateY(-2px);border-color:rgba(7,105,135,.35)}
-    .hero-card{
-      position:relative;min-height:420px;border-radius:34px;overflow:hidden;
-      background:linear-gradient(145deg,var(--ocean-950),var(--ocean-700));
-      box-shadow:var(--shadow);display:flex;align-items:flex-end;padding:30px;color:white
-    }
-    .hero-card:before,.hero-card:after{content:"";position:absolute;border-radius:50%;filter:blur(1px)}
-    .hero-card:before{width:290px;height:290px;right:-80px;top:-75px;background:rgba(112,215,233,.25)}
-    .hero-card:after{width:210px;height:210px;left:-70px;bottom:50px;background:rgba(10,167,199,.25)}
-    .orb{position:absolute;width:130px;height:130px;border:1px solid rgba(255,255,255,.25);border-radius:50%;right:24px;top:125px}
-    .orb:after{content:"";position:absolute;inset:24px;border:1px solid rgba(255,255,255,.22);border-radius:50%}
-    .profile-box{position:relative;z-index:2}
-    .profile-box .initials{
-      width:78px;height:78px;border-radius:22px;background:rgba(255,255,255,.13);border:1px solid rgba(255,255,255,.2);
-      display:grid;place-items:center;font-family:"Space Grotesk";font-size:28px;font-weight:700;margin-bottom:20px
-    }
-    .profile-box h2{font-family:"Space Grotesk";font-size:31px;letter-spacing:-.04em;margin:0 0 7px}
-    .profile-box p{margin:0;color:#c8edf4;max-width:320px}
-    .floating{position:absolute;z-index:3;right:24px;bottom:26px;padding:12px 15px;border-radius:16px;background:rgba(255,255,255,.12);backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,.18);font-size:12px;color:#dff7fb}
-
-    .section-head{display:flex;justify-content:space-between;gap:20px;align-items:end;margin-bottom:32px}
-    .kicker{color:var(--ocean-600);font-size:12px;font-weight:800;letter-spacing:.13em;text-transform:uppercase}
-    h2.section-title{font-family:"Space Grotesk";font-size:clamp(34px,5vw,52px);line-height:1;letter-spacing:-.055em;margin:8px 0 0}
-    .section-note{max-width:430px;color:var(--muted);font-size:15px}
-
-    .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px}
-    .glass{
-      background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:28px;
-      box-shadow:0 15px 50px rgba(4,64,81,.06);backdrop-filter:blur(10px)
-    }
-    .about-text{font-size:17px;color:#526d76}
-    .stat-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
-    .stat{padding:22px;border-radius:18px;background:linear-gradient(145deg,#fff,rgba(223,247,251,.65));border:1px solid rgba(7,105,135,.10)}
-    .stat strong{display:block;font-family:"Space Grotesk";font-size:30px;color:var(--ocean-800);letter-spacing:-.05em}
-    .stat span{font-size:12px;color:#6a8088}
-
-    .timeline{display:grid;gap:15px}
-    .item{display:grid;grid-template-columns:150px 1fr;gap:24px;padding:24px 0;border-bottom:1px solid var(--line)}
-    .item:last-child{border-bottom:0}
-    .date{font-size:12px;font-weight:800;letter-spacing:.08em;color:var(--ocean-600);text-transform:uppercase;padding-top:5px}
-    .item h3{margin:0;font-family:"Space Grotesk";font-size:21px;letter-spacing:-.03em}
-    .org{margin:3px 0 12px;color:var(--ocean-700);font-weight:700;font-size:14px}
-    .item ul{margin:0;padding-left:18px;color:#5c737b;font-size:14px}
-    .item li+li{margin-top:7px}
-
-    .project-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
-    .project{
-      position:relative;overflow:hidden;min-height:280px;padding:26px;border-radius:24px;background:#fff;
-      border:1px solid var(--line);box-shadow:0 15px 45px rgba(4,64,81,.06);transition:.25s
-    }
-    .project:hover{transform:translateY(-5px);box-shadow:0 25px 60px rgba(4,64,81,.11)}
-    .project:before{content:"";position:absolute;width:150px;height:150px;border-radius:50%;right:-60px;top:-65px;background:rgba(10,167,199,.08)}
-    .tag{display:inline-flex;padding:6px 9px;border-radius:999px;background:var(--ocean-100);color:var(--ocean-800);font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:.08em}
-    .project h3{font-family:"Space Grotesk";font-size:22px;line-height:1.15;letter-spacing:-.035em;margin:19px 0 10px;max-width:470px}
-    .project p{color:#60767e;font-size:14px;margin:0}
-    .metric{display:inline-block;margin-top:18px;font-family:"Space Grotesk";font-weight:700;color:var(--ocean-700);font-size:14px}
-
-    .skills{display:flex;flex-wrap:wrap;gap:10px}
-    .chip{padding:10px 13px;border-radius:12px;background:white;border:1px solid var(--line);font-size:13px;font-weight:600;color:#42616b}
-    .chip:hover{border-color:rgba(7,105,135,.35);color:var(--ocean-700)}
-
-    .contact{
-      border-radius:34px;padding:45px;background:linear-gradient(135deg,var(--ocean-950),var(--ocean-700));
-      color:white;display:grid;grid-template-columns:1fr auto;gap:30px;align-items:center;overflow:hidden;position:relative
-    }
-    .contact:after{content:"";position:absolute;width:330px;height:330px;border:1px solid rgba(255,255,255,.10);border-radius:50%;right:-110px;top:-120px}
-    .contact h2{font-family:"Space Grotesk";font-size:clamp(35px,5vw,58px);line-height:.98;letter-spacing:-.055em;margin:8px 0 14px;position:relative;z-index:1}
-    .contact p{color:#b9e3eb;max-width:590px;position:relative;z-index:1}
-    .contact-actions{position:relative;z-index:2;display:flex;flex-direction:column;gap:10px;min-width:190px}
-    .contact-actions .btn{background:rgba(255,255,255,.11);border-color:rgba(255,255,255,.2);color:white}
-    .contact-actions .btn:hover{background:rgba(255,255,255,.18)}
-
-    footer{padding:28px 0 45px;color:#70858c;font-size:12px}
-    .footer-inner{display:flex;justify-content:space-between;gap:20px;border-top:1px solid var(--line);padding-top:20px}
-
-    .reveal{opacity:0;transform:translateY(18px);transition:.7s ease}
-    .reveal.visible{opacity:1;transform:none}
-    .top{position:fixed;right:22px;bottom:22px;width:42px;height:42px;border-radius:13px;border:1px solid var(--line);background:rgba(255,255,255,.84);color:var(--ocean-800);display:none;place-items:center;z-index:90;cursor:pointer;box-shadow:0 10px 30px rgba(4,64,81,.12)}
-    .top.show{display:grid}
-
-    @media(max-width:850px){
-      .links{display:none;position:absolute;top:76px;left:4%;right:4%;padding:14px;border:1px solid var(--line);border-radius:18px;background:rgba(248,253,254,.96);box-shadow:var(--shadow);flex-direction:column;align-items:stretch}
-      .links.open{display:flex}.links a{padding:10px 12px}.menu{display:block}
-      .hero-grid,.about-grid,.contact{grid-template-columns:1fr}
-      .hero{padding-top:125px}.hero-card{min-height:330px}.project-grid{grid-template-columns:1fr}
-      .contact-actions{flex-direction:row;flex-wrap:wrap}
-    }
-    @media(max-width:560px){
-      section{padding:76px 0}.hero{padding-top:110px}h1{font-size:54px}
-      .item{grid-template-columns:1fr;gap:6px}.stat-grid{grid-template-columns:1fr 1fr}
-      .contact{padding:30px}.footer-inner{flex-direction:column}
-    }
-  </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Piyush Singh — MBA Digital Marketing & Operations portfolio">
+<title>Piyush Singh | Portfolio</title>
+<style>
+:root{
+  --navy:#032b3a; --deep:#06445b; --blue:#087ea4; --cyan:#11b6d2;
+  --pale:#e9faff; --bg:#f5fcfe; --text:#092833; --muted:#5b727b;
+  --white:#fff; --line:#cfe8ee; --shadow:0 20px 60px rgba(3,43,58,.12);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:linear-gradient(135deg,#f7fdff,#eaf8fb);color:var(--text);font-family:Arial,Helvetica,sans-serif}
+a{text-decoration:none;color:inherit}
+.container{width:min(1120px,92%);margin:auto}
+nav{position:sticky;top:0;z-index:10;background:rgba(245,252,254,.94);border-bottom:1px solid var(--line)}
+.nav{height:72px;display:flex;align-items:center;justify-content:space-between}
+.logo{font-size:20px;font-weight:800;color:var(--navy)}
+.logo span{display:inline-grid;place-items:center;width:38px;height:38px;margin-right:9px;border-radius:11px;background:var(--navy);color:white}
+.navlinks{display:flex;gap:25px;align-items:center;font-size:14px;font-weight:700;color:#45626c}
+.navlinks a:hover{color:var(--blue)}
+.navbtn{padding:10px 16px;border-radius:999px;background:var(--navy);color:#fff!important}
+.hero{min-height:680px;display:grid;grid-template-columns:1.15fr .85fr;gap:60px;align-items:center;padding:90px 0}
+.badge{display:inline-block;padding:8px 13px;border:1px solid #b9e1e9;border-radius:999px;background:#fff;color:var(--blue);font-size:12px;font-weight:800;letter-spacing:.08em;text-transform:uppercase}
+h1{font-size:clamp(48px,7vw,84px);line-height:.95;letter-spacing:-.06em;margin:22px 0}
+.gradient{background:linear-gradient(90deg,var(--navy),var(--cyan));-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero p{font-size:18px;line-height:1.7;color:var(--muted);max-width:650px}
+.buttons{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}
+.btn{display:inline-block;padding:13px 18px;border-radius:13px;font-weight:800;border:1px solid var(--line)}
+.primary{background:var(--navy);color:#fff;border-color:var(--navy)}
+.secondary{background:#fff;color:var(--navy)}
+.card{background:#fff;border:1px solid var(--line);border-radius:26px;box-shadow:var(--shadow)}
+.hero-card{min-height:410px;padding:35px;background:linear-gradient(145deg,var(--navy),var(--deep));color:white;position:relative;overflow:hidden;display:flex;align-items:flex-end}
+.hero-card:before{content:"";position:absolute;width:330px;height:330px;border-radius:50%;background:rgba(17,182,210,.22);right:-100px;top:-100px}
+.hero-card:after{content:"";position:absolute;width:190px;height:190px;border:1px solid rgba(255,255,255,.18);border-radius:50%;right:40px;top:80px}
+.initials{width:78px;height:78px;display:grid;place-items:center;border-radius:20px;background:rgba(255,255,255,.12);font-size:27px;font-weight:800;position:relative}
+.hero-card h2{font-size:29px;margin:18px 0 8px;position:relative}
+.hero-card p{color:#bde9f1;font-size:15px;margin:0;position:relative}
+section{padding:85px 0}
+.section-label{color:var(--blue);font-size:12px;font-weight:900;letter-spacing:.14em;text-transform:uppercase}
+h2.title{font-size:clamp(34px,5vw,52px);letter-spacing:-.05em;line-height:1;margin:8px 0 35px}
+.about{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+.box{padding:30px}
+.box p{color:var(--muted);font-size:16px;line-height:1.8}
+.stats{display:grid;grid-template-columns:1fr 1fr;gap:13px}
+.stat{padding:22px;border-radius:18px;background:var(--pale)}
+.stat strong{display:block;font-size:28px;color:var(--deep)}
+.stat span{font-size:12px;color:var(--muted)}
+.timeline{padding:10px 30px}
+.experience{display:grid;grid-template-columns:150px 1fr;gap:25px;padding:25px 0;border-bottom:1px solid var(--line)}
+.experience:last-child{border-bottom:0}
+.date{color:var(--blue);font-size:12px;font-weight:800}
+.experience h3{margin:0;font-size:21px}
+.org{color:var(--blue);font-weight:800;margin:4px 0 12px}
+.experience ul{margin:0;padding-left:18px;color:var(--muted);line-height:1.65}
+.projects{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+.project{padding:26px;min-height:240px;transition:.2s}
+.project:hover{transform:translateY(-4px)}
+.tag{display:inline-block;padding:6px 9px;border-radius:999px;background:var(--pale);color:var(--deep);font-size:10px;font-weight:900;text-transform:uppercase}
+.project h3{font-size:22px;line-height:1.2;margin:18px 0 10px}
+.project p{color:var(--muted);font-size:14px;line-height:1.65}
+.metric{color:var(--blue);font-weight:900;font-size:13px}
+.skills{display:flex;flex-wrap:wrap;gap:10px}
+.skill{padding:11px 14px;border-radius:12px;background:#fff;border:1px solid var(--line);font-size:13px;font-weight:700;color:#45626c}
+.contact{padding:45px;background:linear-gradient(135deg,var(--navy),var(--blue));color:#fff;display:flex;justify-content:space-between;gap:30px;align-items:center}
+.contact h2{font-size:clamp(36px,5vw,58px);line-height:1;letter-spacing:-.05em;margin:8px 0}
+.contact p{color:#c4edf4;max-width:650px}
+.contact-buttons{display:flex;flex-direction:column;gap:10px;min-width:190px}
+.contact-buttons a{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.25);padding:12px 16px;border-radius:12px;font-weight:800}
+footer{padding:30px 0;color:#6c828a;font-size:12px;border-top:1px solid var(--line)}
+@media(max-width:800px){
+ .hero{grid-template-columns:1fr;padding:65px 0}
+ .about,.projects{grid-template-columns:1fr}
+ .contact{display:block}
+ .contact-buttons{flex-direction:row;flex-wrap:wrap;margin-top:25px}
+ .experience{grid-template-columns:1fr;gap:7px}
+ .navlinks{display:none}
+}
+</style>
 </head>
 <body>
-  <nav class="nav">
-    <div class="container nav-inner">
-      <a class="brand" href="#home" aria-label="Piyush Singh home">
-        <span class="brand-mark">PS</span><span>Piyush Singh</span>
-      </a>
-      <button class="menu" id="menu" aria-label="Open navigation">☰</button>
-      <div class="links" id="links">
-        <a href="#about">About</a>
-        <a href="#experience">Experience</a>
-        <a href="#projects">Projects</a>
-        <a href="#skills">Skills</a>
-        <a href="#contact" class="nav-cta">Let's Connect</a>
-      </div>
-    </div>
-  </nav>
 
-  <main>
-    <section class="hero" id="home">
-      <div class="container hero-grid">
-        <div class="reveal">
-          <span class="eyebrow"><span class="dot"></span> MBA • Digital Marketing & Operations</span>
-          <h1>Turning <span class="gradient-text">ideas</span> into measurable impact.</h1>
-          <p>I’m Piyush Singh — a marketing and operations enthusiast who blends creative thinking, data, and structured problem-solving to build practical business solutions.</p>
-          <div class="actions">
-            <a class="btn btn-primary" href="#projects">Explore My Work ↗</a>
-            <a class="btn btn-ghost" href="mailto:piyushsingh20030610@gmail.com">Email Me</a>
-            <a class="btn btn-ghost" href="https://www.linkedin.com/in/piyushsingh0610/" target="_blank" rel="noopener">LinkedIn ↗</a>
-          </div>
-        </div>
+<nav>
+<div class="container nav">
+<a href="#home" class="logo"><span>PS</span>Piyush Singh</a>
+<div class="navlinks">
+<a href="#about">About</a>
+<a href="#experience">Experience</a>
+<a href="#projects">Projects</a>
+<a href="#skills">Skills</a>
+<a href="#contact" class="navbtn">Contact</a>
+</div>
+</div>
+</nav>
 
-        <div class="hero-card reveal">
-          <div class="orb"></div>
-          <div class="profile-box">
-            <div class="initials">PS</div>
-            <h2>Marketing × Operations</h2>
-            <p>Digital campaigns, market research, process improvement, analytics and business strategy.</p>
-          </div>
-          <div class="floating">Available for internships & opportunities</div>
-        </div>
-      </div>
-    </section>
+<main>
+<section id="home">
+<div class="container hero">
+<div>
+<span class="badge">MBA • Digital Marketing & Operations</span>
+<h1>Turning <span class="gradient">ideas</span> into measurable impact.</h1>
+<p>Hi, I’m Piyush Singh. I combine digital marketing, analytics, business strategy and operations to understand problems, create practical solutions and improve outcomes.</p>
+<div class="buttons">
+<a class="btn primary" href="#projects">View My Work ↓</a>
+<a class="btn secondary" href="mailto:piyushsingh20030610@gmail.com">Email Me</a>
+<a class="btn secondary" href="https://www.linkedin.com/in/piyushsingh0610/" target="_blank" rel="noopener">LinkedIn ↗</a>
+</div>
+</div>
+<div class="card hero-card">
+<div>
+<div class="initials">PS</div>
+<h2>Marketing × Operations</h2>
+<p>Digital campaigns • Market research • Analytics • Process improvement • Strategy</p>
+</div>
+</div>
+</div>
+</section>
 
-    <section id="about">
-      <div class="container">
-        <div class="section-head reveal">
-          <div><div class="kicker">01 / About</div><h2 class="section-title">A business mind with a creative edge.</h2></div>
-          <div class="section-note">Focused on understanding customers, improving processes and turning insights into action.</div>
-        </div>
-        <div class="about-grid">
-          <div class="glass reveal">
-            <p class="about-text">Currently pursuing an MBA in Digital Marketing and Operations at Lovely Professional University. My experience spans digital marketing, sales outreach, laboratory operations, event coordination and Lean Six Sigma-based process improvement.</p>
-            <p class="about-text">I enjoy working at the intersection of customer understanding, data analysis and operational efficiency — where creative ideas can be tested, measured and improved.</p>
-          </div>
-          <div class="glass reveal">
-            <div class="stat-grid">
-              <div class="stat"><strong>92.4K+</strong><span>Google Ads impressions</span></div>
-              <div class="stat"><strong>55%</strong><span>Travel-time reduction in project</span></div>
-              <div class="stat"><strong>₹10K+</strong><span>Digital product revenue</span></div>
-              <div class="stat"><strong>8.1</strong><span>Undergraduate CGPA</span></div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+<section id="about">
+<div class="container">
+<div class="section-label">01 / About</div>
+<h2 class="title">A business mind with a creative edge.</h2>
+<div class="about">
+<div class="card box">
+<p>Currently pursuing an MBA in Digital Marketing and Operations at Lovely Professional University. My experience covers marketing outreach, digital campaigns, laboratory operations, event coordination and Lean Six Sigma process improvement.</p>
+<p>I enjoy connecting customer understanding with data and structured problem-solving to turn ideas into measurable business outcomes.</p>
+</div>
+<div class="card box">
+<div class="stats">
+<div class="stat"><strong>92.4K+</strong><span>Google Ads impressions</span></div>
+<div class="stat"><strong>55%</strong><span>Travel-time reduction</span></div>
+<div class="stat"><strong>₹10K+</strong><span>Digital product revenue</span></div>
+<div class="stat"><strong>8.1</strong><span>Undergraduate CGPA</span></div>
+</div>
+</div>
+</div>
+</div>
+</section>
 
-    <section id="experience">
-      <div class="container">
-        <div class="section-head reveal">
-          <div><div class="kicker">02 / Experience</div><h2 class="section-title">Where I’ve learned by doing.</h2></div>
-        </div>
-        <div class="glass timeline reveal">
-          <div class="item">
-            <div class="date">Jun 2026 — Jul 2026</div>
-            <div><h3>Marketing Intern</h3><div class="org">Cognizen Innovations</div><ul><li>Conducted high-volume outreach to educate prospects on SIP investments and wealth creation.</li><li>Communicated market benefits, addressed investor hesitations and strengthened objection-handling skills.</li><li>Assessed prospect interest and financial readiness to build an initial outreach pipeline.</li></ul></div>
-          </div>
-          <div class="item">
-            <div class="date">Jun 2024 — Jul 2024</div>
-            <div><h3>Laboratory Assistant Intern</h3><div class="org">Belagavi Bio-Center</div><ul><li>Managed and validated 100+ laboratory data entries while maintaining record accuracy.</li><li>Supported workflow improvements that enhanced operational efficiency by 10%.</li><li>Contributed to research and analysis involving bio-fertilizers and bio-control agents.</li></ul></div>
-          </div>
-          <div class="item">
-            <div class="date">May 2025 — Jun 2025</div>
-            <div><h3>Assistant Coach</h3><div class="org">Air Force Summer Coaching Camp</div><ul><li>Coached 22 students and supported badminton skill development and practice coordination.</li><li>Formulated structured daily drills to accelerate skill acquisition and performance growth.</li></ul></div>
-          </div>
-          <div class="item">
-            <div class="date">Jun 2023 — Jul 2023</div>
-            <div><h3>Assistant Event Coordinator</h3><div class="org">Bhushan Badminton Academy</div><ul><li>Coordinated tournament logistics and match-day operations for smooth event execution.</li><li>Supervised volunteers and vendor coordination to keep tournament schedules on track.</li></ul></div>
-          </div>
-        </div>
-      </div>
-    </section>
+<section id="experience">
+<div class="container">
+<div class="section-label">02 / Experience</div>
+<h2 class="title">Experience</h2>
+<div class="card timeline">
 
-    <section id="projects">
-      <div class="container">
-        <div class="section-head reveal">
-          <div><div class="kicker">03 / Selected Work</div><h2 class="section-title">Projects built around real problems.</h2></div>
-          <div class="section-note">A mix of marketing, analytics, strategy and operational improvement work.</div>
-        </div>
-        <div class="project-grid">
-          <article class="project reveal"><span class="tag">Lean Six Sigma</span><h3>Public Transport Efficiency</h3><p>Applied DMAIC, SIPOC, Fishbone and Pareto analysis to identify terminal bottlenecks and passenger delays.</p><span class="metric">55% ↓ travel time · 68% ↓ wait time</span></article>
-          <article class="project reveal"><span class="tag">Digital Marketing</span><h3>Google Ads & SEO Optimization</h3><p>Optimized website content for targeted keywords and executed Google Ads with performance tracked through Google Analytics.</p><span class="metric">92.4K+ impressions · 257 clicks</span></article>
-          <article class="project reveal"><span class="tag">Product Marketing</span><h3>Kids Colouring Book — Digital Product</h3><p>Developed and launched a digital product with a landing page and social media promotion strategy.</p><span class="metric">₹10K+ revenue · 4% conversion</span></article>
-          <article class="project reveal"><span class="tag">Affiliate Marketing</span><h3>August Bioscience</h3><p>Orchestrated affiliate campaigns across social platforms and researched audience segments to improve ad relevance.</p><span class="metric">5+ campaigns · 10% lead conversion</span></article>
-          <article class="project reveal"><span class="tag">Brand Strategy</span><h3>Unbranded to Branded — AttarVibez</h3><p>Created a complete brand identity and go-to-market strategy, including positioning and strategic pricing.</p><span class="metric">₹18K revenue · ~50% estimated margin</span></article>
-          <article class="project reveal"><span class="tag">Operations</span><h3>Amul Supply Chain Analysis</h3><p>Analyzed procurement, production, inventory, warehousing and distribution to identify operational gaps and improvements.</p><span class="metric">Data-driven process recommendations</span></article>
-          <article class="project reveal"><span class="tag">Inventory</span><h3>HP World Supply Chain Optimization</h3><p>Analyzed a 4-tier supply chain, diagnosed repair-delay and stockout risks, and recommended buffer-stock improvements.</p><span class="metric">3+ risks · 5–8 high-frequency parts</span></article>
-          <article class="project reveal"><span class="tag">Business Simulation</span><h3>Vishwakarma Learnbiz Simulation</h3><p>Applied business decision-making in a competitive simulation environment focused on revenue growth.</p><span class="metric">₹5L → ₹21L · Rank #5</span></article>
-        </div>
-      </div>
-    </section>
+<div class="experience"><div class="date">JUN 2026 — JUL 2026</div><div><h3>Marketing Intern</h3><div class="org">Cognizen Innovations</div><ul><li>Conducted high-volume outreach to educate prospects on SIP investments and wealth creation.</li><li>Communicated market benefits, addressed investor hesitations and strengthened objection handling.</li><li>Assessed prospect interest and financial readiness to build an initial outreach pipeline.</li></ul></div></div>
 
-    <section id="skills">
-      <div class="container">
-        <div class="section-head reveal">
-          <div><div class="kicker">04 / Toolkit</div><h2 class="section-title">Tools, skills & strengths.</h2></div>
-        </div>
-        <div class="glass reveal">
-          <div class="kicker" style="margin-bottom:14px">Tools & Platforms</div>
-          <div class="skills">
-            <span class="chip">MS Excel</span><span class="chip">PowerPoint</span><span class="chip">Tableau</span><span class="chip">Google Sheets</span><span class="chip">Canva</span><span class="chip">IBM SPSS</span><span class="chip">Shopify</span><span class="chip">WordPress</span><span class="chip">Google Ads</span><span class="chip">Google Analytics</span>
-          </div>
-          <div class="kicker" style="margin:30px 0 14px">Power Skills</div>
-          <div class="skills">
-            <span class="chip">Communication</span><span class="chip">Leadership</span><span class="chip">Team Camaraderie</span><span class="chip">Strategic Thinking</span><span class="chip">Problem Solving</span>
-          </div>
-        </div>
-      </div>
-    </section>
+<div class="experience"><div class="date">JUN 2024 — JUL 2024</div><div><h3>Laboratory Assistant Intern</h3><div class="org">Belagavi Bio-Center</div><ul><li>Managed and validated 100+ laboratory data entries with strong accuracy and record integrity.</li><li>Supported workflow improvements that enhanced operational efficiency by 10%.</li><li>Contributed to research involving bio-fertilizers and bio-control agents.</li></ul></div></div>
 
-    <section id="education">
-      <div class="container">
-        <div class="section-head reveal">
-          <div><div class="kicker">05 / Education</div><h2 class="section-title">Academic foundation.</h2></div>
-        </div>
-        <div class="glass timeline reveal">
-          <div class="item"><div class="date">Aug 2025 — Jul 2027</div><div><h3>Master of Business Administration</h3><div class="org">Lovely Professional University · Digital Marketing & Operations</div><p style="color:#60767e;margin:0">CGPA: 7.2</p></div></div>
-          <div class="item"><div class="date">Aug 2021 — Oct 2024</div><div><h3>Bachelor’s in Biotechnology & Zoology</h3><div class="org">KLE Society's Raja Lakhmagouda Science Institute, Karnataka</div><p style="color:#60767e;margin:0">CGPA: 8.1</p></div></div>
-          <div class="item"><div class="date">Aug 2020 — May 2021</div><div><h3>Science Stream</h3><div class="org">KV No.1, Sambra, Karnataka</div><p style="color:#60767e;margin:0">85%</p></div></div>
-        </div>
-      </div>
-    </section>
+<div class="experience"><div class="date">MAY 2025 — JUN 2025</div><div><h3>Assistant Coach</h3><div class="org">Air Force Summer Coaching Camp</div><ul><li>Coached 22 students and supported badminton skill development and practice coordination.</li><li>Created structured daily drills to support skill acquisition and performance growth.</li></ul></div></div>
 
-    <section id="contact">
-      <div class="container">
-        <div class="contact reveal">
-          <div>
-            <div class="kicker" style="color:#70d7e9">06 / Contact</div>
-            <h2>Let’s build something meaningful.</h2>
-            <p>Whether it’s a marketing challenge, an operations problem or a new business idea, I’m always open to a conversation.</p>
-          </div>
-          <div class="contact-actions">
-            <a class="btn" href="mailto:piyushsingh20030610@gmail.com">✉ Email</a>
-            <a class="btn" href="tel:+918431832821">☎ +91 84318 32821</a>
-            <a class="btn" href="https://www.linkedin.com/in/piyushsingh0610/" target="_blank" rel="noopener">in LinkedIn</a>
-          </div>
-        </div>
-      </div>
-    </section>
-  </main>
+<div class="experience"><div class="date">JUN 2023 — JUL 2023</div><div><h3>Assistant Event Coordinator</h3><div class="org">Bhushan Badminton Academy</div><ul><li>Coordinated tournament logistics and match-day operations.</li><li>Supervised volunteers and vendor coordination to keep schedules running smoothly.</li></ul></div></div>
 
-  <footer>
-    <div class="container footer-inner">
-      <span>© <span id="year"></span> Piyush Singh. Crafted with an ocean-blue mindset.</span>
-      <span>Digital Marketing · Operations · Analytics</span>
-    </div>
-  </footer>
+</div>
+</div>
+</section>
 
-  <button class="top" id="top" aria-label="Back to top">↑</button>
+<section id="projects">
+<div class="container">
+<div class="section-label">03 / Selected Work</div>
+<h2 class="title">Projects & case studies</h2>
+<div class="projects">
 
-  <script>
-    const menu = document.getElementById('menu');
-    const links = document.getElementById('links');
-    menu.addEventListener('click', () => links.classList.toggle('open'));
-    links.querySelectorAll('a').forEach(a => a.addEventListener('click', () => links.classList.remove('open')));
+<div class="card project"><span class="tag">Lean Six Sigma</span><h3>Public Transport Efficiency</h3><p>Applied DMAIC, SIPOC mapping, Fishbone diagrams and Pareto analysis to identify terminal bottlenecks and passenger delays.</p><div class="metric">55% reduction in travel time • 68% drop in wait time</div></div>
 
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if(entry.isIntersecting) entry.target.classList.add('visible');
-      });
-    }, {threshold:.12});
-    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+<div class="card project"><span class="tag">Digital Marketing</span><h3>Google Ads & SEO Optimization</h3><p>Optimized website content for targeted keywords and executed Google Ads with performance tracked through Google Analytics.</p><div class="metric">92.4K+ impressions • 257 clicks</div></div>
 
-    const top = document.getElementById('top');
-    window.addEventListener('scroll', () => top.classList.toggle('show', window.scrollY > 500));
-    top.addEventListener('click', () => window.scrollTo({top:0, behavior:'smooth'}));
+<div class="card project"><span class="tag">Product Marketing</span><h3>Kids Colouring Book — Digital Product</h3><p>Developed and launched a digital product with a landing page and social media promotion.</p><div class="metric">₹10K+ revenue • 4% conversion rate</div></div>
 
-    document.getElementById('year').textContent = new Date().getFullYear();
-  </script>
+<div class="card project"><span class="tag">Affiliate Marketing</span><h3>August Bioscience</h3><p>Executed affiliate marketing campaigns across social media and researched target segments to improve ad relevance.</p><div class="metric">5+ campaigns • 10% lead conversion</div></div>
+
+<div class="card project"><span class="tag">Brand Strategy</span><h3>Unbranded to Branded — AttarVibez</h3><p>Developed brand identity, positioning, go-to-market planning and strategic pricing for an attar and perfume product line.</p><div class="metric">₹18K revenue • ~50% estimated margin</div></div>
+
+<div class="card project"><span class="tag">Operations</span><h3>Amul Supply Chain Analysis</h3><p>Analyzed procurement, production, inventory, warehousing and distribution to identify operational gaps and recommend improvements.</p><div class="metric">Supply chain workflow & inventory analysis</div></div>
+
+<div class="card project"><span class="tag">Inventory</span><h3>HP World Supply Chain Optimization</h3><p>Analyzed a 4-tier supply chain and identified repair-delay and stockout risks.</p><div class="metric">3+ risks • 5–8 high-frequency spare parts</div></div>
+
+<div class="card project"><span class="tag">Business Simulation</span><h3>Vishwakarma Learnbiz Simulation</h3><p>Applied business decision-making in a competitive simulation focused on revenue growth.</p><div class="metric">₹5L → ₹21L • Rank #5</div></div>
+
+</div>
+</div>
+</section>
+
+<section id="skills">
+<div class="container">
+<div class="section-label">04 / Toolkit</div>
+<h2 class="title">Tools & strengths</h2>
+<div class="card box">
+<div class="section-label">Tools & Platforms</div>
+<div class="skills" style="margin:16px 0 32px">
+<span class="skill">MS Excel</span><span class="skill">PowerPoint</span><span class="skill">Tableau</span><span class="skill">Google Sheets</span><span class="skill">Canva</span><span class="skill">IBM SPSS</span><span class="skill">Shopify</span><span class="skill">WordPress</span><span class="skill">Google Ads</span><span class="skill">Google Analytics</span>
+</div>
+<div class="section-label">Power Skills</div>
+<div class="skills" style="margin-top:16px">
+<span class="skill">Communication</span><span class="skill">Leadership</span><span class="skill">Team Camaraderie</span><span class="skill">Strategic Thinking</span><span class="skill">Problem Solving</span>
+</div>
+</div>
+</div>
+</section>
+
+<section>
+<div class="container">
+<div class="section-label">05 / Education</div>
+<h2 class="title">Academic foundation</h2>
+<div class="card timeline">
+<div class="experience"><div class="date">AUG 2025 — JUL 2027</div><div><h3>Master of Business Administration</h3><div class="org">Lovely Professional University</div><p style="color:var(--muted)">Digital Marketing & Operations • CGPA 7.2</p></div></div>
+<div class="experience"><div class="date">AUG 2021 — OCT 2024</div><div><h3>Bachelor’s in Biotechnology & Zoology</h3><div class="org">KLE Society's Raja Lakhmagouda Science Institute, Karnataka</div><p style="color:var(--muted)">CGPA 8.1</p></div></div>
+<div class="experience"><div class="date">AUG 2020 — MAY 2021</div><div><h3>Science Stream</h3><div class="org">KV No.1, Sambra, Karnataka</div><p style="color:var(--muted)">85%</p></div></div>
+</div>
+</div>
+</section>
+
+<section id="contact">
+<div class="container">
+<div class="contact card">
+<div><div class="section-label" style="color:#7be0ed">06 / Contact</div><h2>Let’s build something meaningful.</h2><p>Open to conversations around marketing, operations, analytics, business strategy and new opportunities.</p></div>
+<div class="contact-buttons">
+<a href="mailto:piyushsingh20030610@gmail.com">✉ Email Me</a>
+<a href="tel:+918431832821">☎ +91 84318 32821</a>
+<a href="https://www.linkedin.com/in/piyushsingh0610/" target="_blank" rel="noopener">in LinkedIn</a>
+</div>
+</div>
+</div>
+</section>
+</main>
+
+<footer>
+<div class="container">© 2026 Piyush Singh • Digital Marketing • Operations • Analytics</div>
+</footer>
+
 </body>
 </html>
