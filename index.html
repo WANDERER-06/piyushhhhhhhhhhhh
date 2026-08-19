@@ -2,1159 +2,1361 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Piyush Singh | Marketing & Digital Professional</title>
+<title>Piyush Singh | Digital Marketing & Operations</title>
 
 <meta name="description"
-content="Portfolio of Piyush Singh — Marketing, Digital Marketing, Market Research and Business Strategy.">
+content="Piyush Singh — MBA Digital Marketing & Operations portfolio.">
 
 <style>
 
 /* =========================================================
-   ROOT
+   VARIABLES
 ========================================================= */
 
-:root {
-    --black: #03060d;
-    --navy: #07101f;
-    --navy2: #0a1224;
-    --blue: #123b68;
-    --blue-light: #4f8fc9;
-    --blue-soft: #7faed3;
+:root{
+    --ocean-950:#02151d;
+    --ocean-900:#032630;
+    --ocean-850:#043440;
+    --ocean-800:#064452;
+    --ocean-700:#075e6f;
+    --ocean-600:#087f91;
+    --ocean-500:#0ba4b8;
+    --ocean-400:#28c5d5;
+    --ocean-300:#65e0e9;
+    --ocean-200:#a6f2f5;
 
-    --white: #eef4ff;
-    --white-soft: #cbd8e8;
+    --white:#f4feff;
+    --muted:#a7c9ce;
 
-    --warm: #ffe8cc;
+    --glass:rgba(4,45,56,.55);
+    --border:rgba(101,224,233,.18);
 
-    --glass: rgba(7, 16, 31, 0.58);
-    --border: rgba(150, 190, 230, 0.15);
-
-    --max-width: 1180px;
+    --radius:24px;
+    --max:1180px;
 }
 
 /* =========================================================
    RESET
 ========================================================= */
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
 }
 
-html {
-    scroll-behavior: smooth;
+html{
+    scroll-behavior:smooth;
 }
 
-body {
-    background: #03060d;
-    color: var(--white);
+body{
     font-family:
-        Inter,
-        ui-sans-serif,
-        system-ui,
-        -apple-system,
-        BlinkMacSystemFont,
-        "Segoe UI",
-        sans-serif;
+    Inter,
+    ui-sans-serif,
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
 
-    overflow-x: hidden;
-    cursor: none;
+    color:var(--white);
+
+    background:
+    radial-gradient(
+        circle at 10% 10%,
+        rgba(40,197,213,.14),
+        transparent 28%
+    ),
+    radial-gradient(
+        circle at 90% 20%,
+        rgba(8,127,145,.18),
+        transparent 30%
+    ),
+    radial-gradient(
+        circle at 50% 90%,
+        rgba(101,224,233,.08),
+        transparent 35%
+    ),
+    var(--ocean-950);
+
+    overflow-x:hidden;
+    line-height:1.6;
 }
+
+a{
+    text-decoration:none;
+    color:inherit;
+}
+
+button,
+input,
+textarea{
+    font:inherit;
+}
+
+.container{
+    width:min(var(--max),calc(100% - 40px));
+    margin:auto;
+}
+
+section{
+    padding:110px 0;
+    position:relative;
+    z-index:2;
+}
+
+.section-heading{
+    margin-bottom:55px;
+}
+
+.eyebrow{
+    color:var(--ocean-300);
+    font-size:.76rem;
+    font-weight:800;
+    letter-spacing:3px;
+    text-transform:uppercase;
+    margin-bottom:12px;
+}
+
+.section-heading h2{
+    font-size:clamp(2.1rem,5vw,3.6rem);
+    line-height:1.05;
+    letter-spacing:-2px;
+}
+
+.section-heading p{
+    max-width:680px;
+    color:var(--muted);
+    margin-top:16px;
+}
+
+.gradient-text{
+    background:
+    linear-gradient(
+        100deg,
+        #ffffff,
+        #65e0e9 45%,
+        #0ba4b8
+    );
+
+    -webkit-background-clip:text;
+    background-clip:text;
+    color:transparent;
+}
+
 
 /* =========================================================
-   CUSTOM MOON CURSOR
+   LIVE OCEAN BACKGROUND
 ========================================================= */
 
-#moonCursor {
-    position: fixed;
-    width: 30px;
-    height: 30px;
-
-    pointer-events: none;
-    z-index: 99999;
-
-    transform: translate(-50%, -50%);
-
-    transition:
-        width .2s ease,
-        height .2s ease,
-        transform .08s linear;
+#oceanCanvas{
+    position:fixed;
+    inset:0;
+    width:100%;
+    height:100%;
+    z-index:-5;
+    pointer-events:none;
 }
 
-.moon {
-    position: absolute;
-    inset: 0;
-
-    border-radius: 50%;
-
-    background:
-        radial-gradient(
-            circle at 35% 35%,
-            #ffffff 0%,
-            #f7f4df 35%,
-            #dbe8f5 70%,
-            #9dbbd8 100%
-        );
-
-    box-shadow:
-        0 0 8px rgba(238,244,255,.9),
-        0 0 18px rgba(170,205,235,.55),
-        0 0 35px rgba(125,180,230,.28);
+.ocean-glow{
+    position:fixed;
+    width:500px;
+    height:500px;
+    border-radius:50%;
+    filter:blur(100px);
+    opacity:.16;
+    pointer-events:none;
+    z-index:-3;
+    animation:floatGlow 12s ease-in-out infinite alternate;
 }
 
-/* crescent cutout */
-
-.moon::after {
-    content: "";
-
-    position: absolute;
-
-    width: 28px;
-    height: 28px;
-
-    top: -5px;
-    left: 8px;
-
-    border-radius: 50%;
-
-    background: #03060d;
+.glow-one{
+    background:#0ba4b8;
+    top:-200px;
+    left:-150px;
 }
 
-/* subtle moon aura */
-
-.moonAura {
-    position: absolute;
-
-    width: 55px;
-    height: 55px;
-
-    left: 50%;
-    top: 50%;
-
-    transform: translate(-50%, -50%);
-
-    border-radius: 50%;
-
-    background: rgba(170,205,235,.08);
-
-    box-shadow:
-        0 0 25px rgba(170,205,235,.16),
-        0 0 50px rgba(100,160,220,.08);
+.glow-two{
+    background:#65e0e9;
+    right:-200px;
+    bottom:-150px;
+    animation-delay:2s;
 }
 
-/* cursor becomes larger */
-
-body.cursor-hover #moonCursor {
-    transform: translate(-50%, -50%) scale(1.35);
-}
-
-/* =========================================================
-   STAR CANVAS
-========================================================= */
-
-#spaceCanvas {
-    position: fixed;
-
-    inset: 0;
-
-    width: 100%;
-    height: 100%;
-
-    z-index: -10;
-
-    background:
-        radial-gradient(
-            ellipse at 50% 10%,
-            rgba(16,45,78,.38),
-            transparent 55%
-        ),
-        radial-gradient(
-            ellipse at 15% 45%,
-            rgba(8,29,54,.3),
-            transparent 55%
-        ),
-        linear-gradient(
-            180deg,
-            #03060d 0%,
-            #06101f 48%,
-            #02050b 100%
-        );
-}
-
-/* =========================================================
-   MILKY WAY
-========================================================= */
-
-.milky-way {
-    position: fixed;
-
-    width: 150vw;
-    height: 30vh;
-
-    top: 7%;
-    left: -25vw;
-
-    z-index: -8;
-
-    pointer-events: none;
-
-    transform:
-        rotate(-19deg)
-        translateZ(0);
-
-    opacity: .42;
-
-    background:
-        radial-gradient(
-            ellipse,
-            rgba(184,210,237,.16) 0%,
-            rgba(90,145,190,.12) 25%,
-            rgba(40,80,120,.08) 45%,
-            transparent 72%
-        );
-
-    filter: blur(8px);
-
-    animation: galaxyDrift 100s linear infinite;
-}
-
-.milky-way::before {
-    content: "";
-
-    position: absolute;
-
-    inset: 0;
-
-    background:
-        radial-gradient(
-            ellipse,
-            rgba(255,255,255,.18) 0%,
-            transparent 48%
-        );
-
-    filter: blur(15px);
-}
-
-@keyframes galaxyDrift {
-
-    0% {
-        transform:
-            rotate(-19deg)
-            translateX(-2%);
+@keyframes floatGlow{
+    from{
+        transform:translate3d(0,0,0) scale(1);
     }
-
-    50% {
-        transform:
-            rotate(-19deg)
-            translateX(2%);
-    }
-
-    100% {
-        transform:
-            rotate(-19deg)
-            translateX(-2%);
+    to{
+        transform:translate3d(50px,40px,0) scale(1.12);
     }
 }
 
-/* =========================================================
-   ATMOSPHERIC HORIZON
-========================================================= */
-
-.horizon {
-    position: fixed;
-
-    bottom: -10vh;
-    left: -10%;
-
-    width: 120%;
-    height: 35vh;
-
-    z-index: -7;
-
-    background:
-        radial-gradient(
-            ellipse at center bottom,
-            rgba(1,4,9,.98),
-            rgba(3,6,13,.82) 45%,
-            transparent 75%
-        );
-
-    pointer-events: none;
-
-    filter: blur(10px);
-}
 
 /* =========================================================
    NAVBAR
 ========================================================= */
 
-nav {
-    position: fixed;
-
-    top: 0;
-    left: 0;
-
-    width: 100%;
-
-    z-index: 1000;
-
-    padding: 20px 5%;
-
-    backdrop-filter: blur(14px);
-
-    background:
-        linear-gradient(
-            180deg,
-            rgba(3,6,13,.82),
-            rgba(3,6,13,.25)
-        );
-
-    border-bottom:
-        1px solid rgba(180,210,240,.07);
+.navbar{
+    position:fixed;
+    top:0;
+    left:0;
+    right:0;
+    z-index:1000;
+    padding:16px 0;
+    transition:.3s ease;
 }
 
-.nav-inner {
-    max-width: var(--max-width);
-
-    margin: auto;
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: space-between;
+.navbar.scrolled{
+    background:rgba(2,21,29,.78);
+    backdrop-filter:blur(18px);
+    border-bottom:1px solid var(--border);
 }
 
-.logo {
-    font-size: 20px;
+.nav-inner{
+    width:min(var(--max),calc(100% - 30px));
+    margin:auto;
 
-    font-weight: 700;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
 
-    letter-spacing: 2px;
+    padding:10px 18px;
 
-    color: var(--white);
+    border:1px solid rgba(101,224,233,.10);
+    border-radius:18px;
 
-    text-decoration: none;
+    background:rgba(3,38,48,.28);
+    backdrop-filter:blur(12px);
 }
 
-.logo span {
-    color: var(--blue-soft);
+.logo{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    font-weight:900;
 }
 
-.nav-links {
-    display: flex;
-
-    gap: 28px;
-
-    list-style: none;
+.logo-dot{
+    width:11px;
+    height:11px;
+    background:var(--ocean-300);
+    border-radius:50%;
+    box-shadow:0 0 25px var(--ocean-300);
 }
 
-.nav-links a {
-    color: #c7d5e5;
-
-    text-decoration: none;
-
-    font-size: 14px;
-
-    transition: .3s ease;
+.nav-links{
+    display:flex;
+    gap:8px;
+    list-style:none;
 }
 
-.nav-links a:hover {
-    color: white;
-
-    text-shadow:
-        0 0 12px rgba(170,210,240,.5);
+.nav-links a{
+    color:#b9d9dd;
+    padding:9px 13px;
+    border-radius:10px;
+    font-size:.88rem;
+    transition:.25s;
 }
 
-/* =========================================================
-   CONTAINER
-========================================================= */
-
-.container {
-    width: min(92%, var(--max-width));
-
-    margin: auto;
+.nav-links a:hover,
+.nav-links a.active{
+    color:white;
+    background:rgba(40,197,213,.12);
 }
+
+.menu-btn{
+    display:none;
+    background:none;
+    border:0;
+    color:white;
+    font-size:25px;
+    cursor:pointer;
+}
+
 
 /* =========================================================
    HERO
 ========================================================= */
 
-.hero {
-    min-height: 100vh;
-
-    display: flex;
-
-    align-items: center;
-
-    padding-top: 100px;
+.hero{
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    padding-top:120px;
+    overflow:hidden;
 }
 
-.hero-content {
-    max-width: 850px;
+.hero-grid{
+    display:grid;
+    grid-template-columns:1.2fr .8fr;
+    gap:60px;
+    align-items:center;
 }
 
-.eyebrow {
-    display: inline-flex;
+.hero-kicker{
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
 
-    align-items: center;
+    padding:7px 12px;
 
-    gap: 10px;
+    border:1px solid var(--border);
+    background:rgba(11,164,184,.08);
+    border-radius:100px;
 
-    padding: 8px 15px;
+    color:var(--ocean-200);
+    font-size:.8rem;
+    font-weight:700;
 
-    margin-bottom: 24px;
-
-    border: 1px solid var(--border);
-
-    border-radius: 50px;
-
-    background: rgba(9,20,36,.42);
-
-    color: #b7cce0;
-
-    font-size: 13px;
-
-    letter-spacing: 1.2px;
+    margin-bottom:25px;
 }
 
-.eyebrow::before {
-    content: "";
-
-    width: 7px;
-    height: 7px;
-
-    border-radius: 50%;
-
-    background: #c7dced;
-
-    box-shadow:
-        0 0 10px #a9cae5;
+.live-dot{
+    width:7px;
+    height:7px;
+    background:#6ff7cf;
+    border-radius:50%;
+    box-shadow:0 0 14px #6ff7cf;
+    animation:pulse 1.6s infinite;
 }
 
-.hero h1 {
-    font-size:
-        clamp(
-            48px,
-            8vw,
-            94px
-        );
-
-    line-height: .96;
-
-    letter-spacing: -4px;
-
-    margin-bottom: 28px;
-
-    font-weight: 800;
+@keyframes pulse{
+    50%{
+        transform:scale(1.6);
+        opacity:.5;
+    }
 }
 
-.hero h1 .gradient {
-    background:
-        linear-gradient(
-            110deg,
-            #ffffff,
-            #bcd9f1,
-            #668db3
-        );
-
-    -webkit-background-clip: text;
-    background-clip: text;
-
-    color: transparent;
+.hero h1{
+    font-size:clamp(3.3rem,7vw,6.8rem);
+    line-height:.92;
+    letter-spacing:-6px;
 }
 
-.hero-description {
-    max-width: 700px;
-
-    color: #aebed0;
-
-    font-size: 18px;
-
-    line-height: 1.8;
-
-    margin-bottom: 34px;
+.hero-description{
+    color:var(--muted);
+    max-width:650px;
+    font-size:1.05rem;
+    margin:28px 0;
 }
 
-.hero-buttons {
-    display: flex;
-
-    gap: 14px;
-
-    flex-wrap: wrap;
+.hero-actions{
+    display:flex;
+    flex-wrap:wrap;
+    gap:13px;
 }
 
-.btn {
-    display: inline-flex;
+.btn{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:9px;
 
-    align-items: center;
+    padding:13px 19px;
+    border-radius:13px;
 
-    justify-content: center;
+    font-weight:800;
+    font-size:.9rem;
 
-    gap: 10px;
+    cursor:pointer;
 
-    padding: 13px 21px;
+    border:1px solid var(--border);
 
-    border-radius: 8px;
-
-    text-decoration: none;
-
-    font-size: 14px;
-
-    font-weight: 600;
-
-    transition:
-        transform .3s ease,
-        background .3s ease,
-        border .3s ease,
-        box-shadow .3s ease;
+    transition:.25s;
 }
 
-.btn-primary {
-    color: #06101c;
-
-    background:
-        linear-gradient(
-            135deg,
-            #eef4ff,
-            #b8d4ec
-        );
-
-    box-shadow:
-        0 0 25px rgba(150,190,225,.13);
+.btn-primary{
+    color:#002027;
+    background:var(--ocean-300);
+    box-shadow:0 10px 35px rgba(40,197,213,.18);
 }
 
-.btn-secondary {
-    color: #d9e6f2;
-
-    border: 1px solid rgba(175,205,235,.2);
-
-    background: rgba(10,22,38,.45);
+.btn-primary:hover{
+    transform:translateY(-3px);
+    box-shadow:0 16px 45px rgba(40,197,213,.3);
 }
 
-.btn:hover {
-    transform: translateY(-3px);
-
-    box-shadow:
-        0 10px 35px rgba(80,140,190,.15);
+.btn-ghost{
+    background:rgba(255,255,255,.025);
+    color:white;
 }
+
+.btn-ghost:hover{
+    background:rgba(40,197,213,.1);
+    transform:translateY(-3px);
+}
+
+.hero-contact{
+    margin-top:32px;
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px;
+}
+
+.contact-chip{
+    display:flex;
+    align-items:center;
+    gap:8px;
+
+    color:#a7c9ce;
+    font-size:.85rem;
+
+    padding:8px 11px;
+
+    border:1px solid rgba(101,224,233,.10);
+    border-radius:11px;
+
+    transition:.2s;
+}
+
+.contact-chip:hover{
+    color:white;
+    border-color:var(--border);
+    background:rgba(40,197,213,.07);
+}
+
 
 /* =========================================================
-   SECTIONS
+   PROFILE
 ========================================================= */
 
-section {
-    padding: 120px 0;
+.profile-wrap{
+    display:flex;
+    justify-content:center;
 }
 
-.section-label {
-    color: #8fb2d2;
+.profile-card{
+    width:min(380px,100%);
+    padding:15px;
 
-    text-transform: uppercase;
+    border:1px solid var(--border);
+    border-radius:34px;
 
-    letter-spacing: 3px;
+    background:
+    linear-gradient(
+        145deg,
+        rgba(40,197,213,.13),
+        rgba(3,38,48,.65)
+    );
 
-    font-size: 11px;
+    box-shadow:0 20px 70px rgba(0,0,0,.28);
 
-    margin-bottom: 12px;
+    transform:rotate(2deg);
+
+    transition:.5s;
 }
 
-.section-title {
-    font-size:
-        clamp(
-            32px,
-            5vw,
-            55px
-        );
-
-    letter-spacing: -2px;
-
-    margin-bottom: 50px;
+.profile-card:hover{
+    transform:rotate(0deg) translateY(-8px);
 }
+
+.profile-image{
+    position:relative;
+    aspect-ratio:4/5;
+    overflow:hidden;
+    border-radius:25px;
+
+    background:
+    linear-gradient(
+        145deg,
+        var(--ocean-700),
+        var(--ocean-950)
+    );
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+.profile-image img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    display:block;
+}
+
+.profile-placeholder{
+    position:absolute;
+    inset:0;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    flex-direction:column;
+
+    color:var(--ocean-200);
+    text-align:center;
+}
+
+.profile-placeholder strong{
+    font-size:3rem;
+}
+
+.profile-placeholder span{
+    font-size:.75rem;
+    color:#8cb9bf;
+}
+
+.profile-info{
+    padding:17px 8px 7px;
+}
+
+.profile-info h3{
+    font-size:1.25rem;
+}
+
+.profile-info p{
+    color:#8fb9bf;
+    font-size:.85rem;
+}
+
 
 /* =========================================================
-   GLASS CARD
+   GLASS
 ========================================================= */
 
-.glass {
-    background:
-        linear-gradient(
-            135deg,
-            rgba(12,29,49,.6),
-            rgba(3,10,20,.45)
-        );
+.glass{
+    border:1px solid var(--border);
 
-    border:
-        1px solid rgba(160,195,225,.12);
+    background:
+    linear-gradient(
+        145deg,
+        rgba(8,68,82,.45),
+        rgba(2,21,29,.55)
+    );
+
+    backdrop-filter:blur(14px);
+
+    border-radius:var(--radius);
 
     box-shadow:
-        inset 0 1px 0 rgba(255,255,255,.025),
-        0 20px 60px rgba(0,0,0,.25);
-
-    backdrop-filter: blur(15px);
-
-    border-radius: 18px;
+    0 15px 60px rgba(0,0,0,.12);
 }
+
 
 /* =========================================================
    ABOUT
 ========================================================= */
 
-.about-grid {
-    display: grid;
-
-    grid-template-columns:
-        1fr 1.5fr;
-
-    gap: 40px;
-
-    align-items: stretch;
+.about-grid{
+    display:grid;
+    grid-template-columns:.8fr 1.2fr;
+    gap:25px;
 }
 
-.photo-card {
-    min-height: 430px;
-
-    overflow: hidden;
-
-    position: relative;
+.about-card{
+    padding:35px;
 }
 
-.photo-card img {
-    width: 100%;
-    height: 100%;
-
-    object-fit: cover;
-
-    display: block;
-
-    filter:
-        saturate(.8)
-        contrast(.95);
-
-    opacity: .9;
+.about-card h3{
+    font-size:1.4rem;
+    margin-bottom:15px;
 }
 
-.photo-overlay {
-    position: absolute;
-
-    inset: auto 0 0 0;
-
-    padding: 25px;
-
-    background:
-        linear-gradient(
-            transparent,
-            rgba(2,7,14,.95)
-        );
+.about-card p{
+    color:var(--muted);
 }
 
-.about-text {
-    padding: 42px;
+.fact-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:14px;
 }
 
-.about-text p {
-    color: #adbdce;
-
-    line-height: 1.85;
-
-    margin-bottom: 20px;
+.fact{
+    padding:25px;
+    border:1px solid var(--border);
+    border-radius:18px;
+    background:rgba(40,197,213,.035);
 }
 
-.stats {
-    display: grid;
-
-    grid-template-columns:
-        repeat(3,1fr);
-
-    gap: 14px;
-
-    margin-top: 30px;
+.fact-number{
+    font-size:2rem;
+    font-weight:900;
+    color:var(--ocean-300);
 }
 
-.stat {
-    padding: 18px;
-
-    border-radius: 12px;
-
-    background: rgba(10,24,42,.45);
-
-    border:
-        1px solid rgba(150,190,225,.08);
+.fact span{
+    display:block;
+    color:#91b7bc;
+    font-size:.8rem;
 }
 
-.stat strong {
-    display: block;
-
-    font-size: 25px;
-
-    color: #e7f1fa;
-
-    margin-bottom: 5px;
-}
-
-.stat span {
-    font-size: 11px;
-
-    color: #8298ad;
-
-    text-transform: uppercase;
-
-    letter-spacing: 1px;
-}
 
 /* =========================================================
-   EXPERIENCE
+   TIMELINE
 ========================================================= */
 
-.timeline {
-    position: relative;
-
-    max-width: 900px;
+.timeline{
+    position:relative;
+    max-width:950px;
 }
 
-.timeline::before {
-    content: "";
+.timeline::before{
+    content:"";
 
-    position: absolute;
+    position:absolute;
 
-    left: 8px;
+    left:10px;
+    top:0;
+    bottom:0;
 
-    top: 0;
-
-    width: 1px;
-
-    height: 100%;
+    width:1px;
 
     background:
-        linear-gradient(
-            transparent,
-            rgba(130,180,220,.35),
-            transparent
-        );
+    linear-gradient(
+        var(--ocean-300),
+        rgba(101,224,233,.05)
+    );
 }
 
-.timeline-item {
-    position: relative;
-
-    padding-left: 45px;
-
-    margin-bottom: 55px;
+.timeline-item{
+    position:relative;
+    padding-left:50px;
+    margin-bottom:28px;
 }
 
-.timeline-dot {
-    position: absolute;
+.timeline-dot{
+    position:absolute;
 
-    left: 2px;
-    top: 8px;
+    left:3px;
+    top:25px;
 
-    width: 13px;
-    height: 13px;
+    width:15px;
+    height:15px;
 
-    border-radius: 50%;
-
-    background: #d7e7f5;
+    background:var(--ocean-300);
+    border-radius:50%;
 
     box-shadow:
-        0 0 15px rgba(160,205,240,.6);
+    0 0 0 5px rgba(40,197,213,.08),
+    0 0 20px rgba(101,224,233,.6);
 }
 
-.timeline-date {
-    color: #7fa4c6;
-
-    font-size: 12px;
-
-    letter-spacing: 1px;
-
-    margin-bottom: 9px;
+.experience-card{
+    padding:27px;
 }
 
-.timeline-item h3 {
-    font-size: 22px;
-
-    margin-bottom: 5px;
+.card-top{
+    display:flex;
+    justify-content:space-between;
+    gap:20px;
 }
 
-.timeline-company {
-    color: #a5bbce;
-
-    margin-bottom: 17px;
+.card-top h3{
+    font-size:1.25rem;
 }
 
-.timeline-item p {
-    color: #9baec0;
-
-    line-height: 1.75;
+.card-company{
+    color:var(--ocean-300);
+    font-weight:700;
+    font-size:.9rem;
 }
 
-/* =========================================================
-   SKILLS
-========================================================= */
+.date{
+    white-space:nowrap;
 
-.skills-grid {
-    display: grid;
+    color:#88aeb3;
+    font-size:.78rem;
 
-    grid-template-columns:
-        repeat(3,1fr);
+    padding:6px 10px;
 
-    gap: 18px;
+    border:1px solid var(--border);
+    border-radius:9px;
 }
 
-.skill-card {
-    padding: 27px;
-
-    transition:
-        transform .3s ease,
-        border .3s ease;
+.card-list{
+    margin-top:17px;
+    padding-left:19px;
+    color:var(--muted);
 }
 
-.skill-card:hover {
-    transform: translateY(-5px);
-
-    border-color:
-        rgba(150,200,235,.3);
+.card-list li{
+    margin-bottom:8px;
 }
 
-.skill-card h3 {
-    margin-bottom: 18px;
-
-    font-size: 17px;
-}
-
-.skill-list {
-    display: flex;
-
-    flex-wrap: wrap;
-
-    gap: 8px;
-}
-
-.skill {
-    padding: 7px 11px;
-
-    border-radius: 6px;
-
-    background: rgba(100,150,195,.08);
-
-    border:
-        1px solid rgba(150,190,220,.1);
-
-    color: #aabed1;
-
-    font-size: 12px;
-}
 
 /* =========================================================
    PROJECTS
 ========================================================= */
 
-.projects-grid {
-    display: grid;
-
-    grid-template-columns:
-        repeat(2,1fr);
-
-    gap: 22px;
+.project-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:18px;
 }
 
-.project {
-    padding: 30px;
-
-    min-height: 260px;
-
-    position: relative;
-
-    overflow: hidden;
-
-    transition:
-        transform .35s ease,
-        border .35s ease;
+.project-card{
+    padding:28px;
+    position:relative;
+    overflow:hidden;
+    transition:.3s;
 }
 
-.project:hover {
-    transform: translateY(-7px);
-
-    border-color:
-        rgba(160,200,230,.25);
+.project-card:hover{
+    transform:translateY(-7px);
+    border-color:rgba(101,224,233,.3);
 }
 
-.project-number {
-    font-size: 12px;
-
-    color: #6f94b4;
-
-    margin-bottom: 35px;
+.project-number{
+    font-size:.75rem;
+    color:var(--ocean-300);
+    font-weight:900;
+    letter-spacing:2px;
 }
 
-.project h3 {
-    font-size: 24px;
-
-    margin-bottom: 13px;
+.project-card h3{
+    margin:11px 0 8px;
+    font-size:1.2rem;
 }
 
-.project p {
-    color: #9cafc1;
-
-    line-height: 1.7;
-
-    max-width: 600px;
+.project-card p{
+    color:var(--muted);
+    font-size:.88rem;
 }
 
-.project-link {
-    position: absolute;
-
-    right: 28px;
-    bottom: 28px;
-
-    color: #d6e5f2;
-
-    text-decoration: none;
-
-    font-size: 13px;
+.project-tags{
+    display:flex;
+    flex-wrap:wrap;
+    gap:7px;
+    margin-top:18px;
 }
+
+.tag{
+    padding:5px 9px;
+    border-radius:8px;
+
+    border:1px solid rgba(101,224,233,.12);
+    background:rgba(40,197,213,.05);
+
+    color:#a5dce1;
+    font-size:.7rem;
+}
+
+
+/* =========================================================
+   METRICS
+========================================================= */
+
+.metrics{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:13px;
+}
+
+.metric{
+    text-align:center;
+    padding:27px 15px;
+}
+
+.metric strong{
+    display:block;
+    font-size:2.25rem;
+    color:var(--ocean-300);
+    line-height:1;
+}
+
+.metric span{
+    color:#8fb5ba;
+    font-size:.75rem;
+}
+
 
 /* =========================================================
    EDUCATION
 ========================================================= */
 
-.education-grid {
-    display: grid;
-
-    grid-template-columns:
-        repeat(2,1fr);
-
-    gap: 20px;
+.education-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:18px;
 }
 
-.education-card {
-    padding: 30px;
+.edu-card{
+    padding:27px;
+    min-height:260px;
 }
 
-.education-card .year {
-    color: #7fa5c6;
+.edu-icon{
+    width:48px;
+    height:48px;
 
-    font-size: 12px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
 
-    letter-spacing: 1px;
+    border-radius:15px;
 
-    margin-bottom: 15px;
+    background:rgba(40,197,213,.09);
+    border:1px solid var(--border);
+
+    font-size:1.25rem;
+
+    margin-bottom:25px;
 }
 
-.education-card h3 {
-    font-size: 20px;
-
-    margin-bottom: 7px;
+.edu-card h3{
+    font-size:1.05rem;
 }
 
-.education-card p {
-    color: #9fb1c2;
-
-    line-height: 1.7;
+.edu-card p{
+    color:var(--muted);
+    font-size:.84rem;
+    margin-top:9px;
 }
+
+.edu-year{
+    display:inline-block;
+    margin-top:17px;
+
+    color:var(--ocean-300);
+
+    font-size:.75rem;
+    font-weight:800;
+}
+
+
+/* =========================================================
+   CERTIFICATIONS
+========================================================= */
+
+.cert-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:12px;
+}
+
+.cert{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    padding:18px 20px;
+
+    border:1px solid var(--border);
+
+    background:rgba(40,197,213,.035);
+
+    border-radius:15px;
+
+    transition:.25s;
+}
+
+.cert:hover{
+    background:rgba(40,197,213,.08);
+    transform:translateX(5px);
+}
+
+.cert-name{
+    font-weight:700;
+    font-size:.9rem;
+}
+
+.cert-date{
+    color:#7ea8ae;
+    font-size:.72rem;
+}
+
+
+/* =========================================================
+   SKILLS
+========================================================= */
+
+.skills-layout{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:20px;
+}
+
+.skill-card{
+    padding:28px;
+}
+
+.skill{
+    margin-bottom:22px;
+}
+
+.skill-title{
+    display:flex;
+    justify-content:space-between;
+    margin-bottom:8px;
+    font-size:.82rem;
+}
+
+.skill-title span:last-child{
+    color:var(--ocean-300);
+}
+
+.skill-track{
+    height:6px;
+    background:rgba(255,255,255,.06);
+    border-radius:20px;
+    overflow:hidden;
+}
+
+.skill-fill{
+    height:100%;
+    width:0;
+
+    border-radius:20px;
+
+    background:
+    linear-gradient(
+        90deg,
+        var(--ocean-700),
+        var(--ocean-300)
+    );
+
+    transition:width 1.5s ease;
+}
+
+.tool-cloud{
+    display:flex;
+    flex-wrap:wrap;
+    gap:9px;
+    margin-top:20px;
+}
+
+.tool{
+    padding:9px 12px;
+
+    border-radius:11px;
+
+    background:rgba(40,197,213,.05);
+
+    border:1px solid var(--border);
+
+    color:#b5dce0;
+
+    font-size:.78rem;
+}
+
+
+/* =========================================================
+   ACHIEVEMENT
+========================================================= */
+
+.achievement{
+    display:grid;
+    grid-template-columns:auto 1fr;
+    gap:25px;
+    align-items:center;
+
+    padding:35px;
+}
+
+.achievement-icon{
+    width:75px;
+    height:75px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    border-radius:22px;
+
+    background:
+    linear-gradient(
+        145deg,
+        rgba(101,224,233,.18),
+        rgba(8,68,82,.5)
+    );
+
+    font-size:2rem;
+}
+
+.achievement p{
+    color:var(--muted);
+    margin-top:7px;
+}
+
 
 /* =========================================================
    CONTACT
 ========================================================= */
 
-.contact-box {
-    padding: 60px;
-
-    text-align: center;
-
-    position: relative;
-
-    overflow: hidden;
+.contact-grid{
+    display:grid;
+    grid-template-columns:.8fr 1.2fr;
+    gap:20px;
 }
 
-.contact-box::before {
-    content: "";
-
-    position: absolute;
-
-    width: 400px;
-    height: 400px;
-
-    left: 50%;
-    top: 50%;
-
-    transform:
-        translate(-50%,-50%);
-
-    background:
-        radial-gradient(
-            circle,
-            rgba(80,140,190,.13),
-            transparent 70%
-        );
-
-    pointer-events: none;
+.contact-card{
+    padding:30px;
 }
 
-.contact-box h2 {
-    position: relative;
+.contact-method{
+    display:flex;
+    gap:15px;
+    align-items:center;
 
-    font-size:
-        clamp(32px,5vw,58px);
+    padding:16px;
 
-    letter-spacing: -2px;
+    border-radius:15px;
 
-    margin-bottom: 15px;
+    border:1px solid var(--border);
+
+    background:rgba(40,197,213,.035);
+
+    margin-bottom:10px;
+
+    transition:.2s;
 }
 
-.contact-box p {
-    position: relative;
-
-    color: #9fb0c1;
-
-    margin-bottom: 30px;
+.contact-method:hover{
+    background:rgba(40,197,213,.09);
+    transform:translateX(4px);
 }
 
-.contact-buttons {
-    position: relative;
+.contact-icon{
+    width:43px;
+    height:43px;
 
-    display: flex;
+    display:flex;
+    align-items:center;
+    justify-content:center;
 
-    justify-content: center;
+    border-radius:12px;
 
-    gap: 12px;
+    background:rgba(40,197,213,.1);
 
-    flex-wrap: wrap;
+    color:var(--ocean-300);
 }
+
+.contact-method strong{
+    display:block;
+    font-size:.86rem;
+}
+
+.contact-method span{
+    color:#8eafb4;
+    font-size:.78rem;
+    word-break:break-word;
+}
+
+.form-row{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:12px;
+}
+
+.field{
+    margin-bottom:13px;
+}
+
+.field label{
+    display:block;
+    margin-bottom:7px;
+
+    font-size:.76rem;
+
+    color:#91b8bd;
+}
+
+.field input,
+.field textarea{
+    width:100%;
+
+    border:1px solid var(--border);
+
+    background:rgba(0,0,0,.15);
+
+    color:white;
+
+    outline:none;
+
+    border-radius:12px;
+
+    padding:13px 14px;
+
+    transition:.2s;
+}
+
+.field textarea{
+    min-height:150px;
+    resize:vertical;
+}
+
+.field input:focus,
+.field textarea:focus{
+    border-color:var(--ocean-300);
+
+    box-shadow:
+    0 0 0 3px rgba(40,197,213,.07);
+}
+
+.form-note{
+    margin-top:10px;
+    color:#7fa8ad;
+    font-size:.72rem;
+}
+
+.email-options{
+    display:none;
+
+    margin-top:12px;
+
+    padding:12px;
+
+    border:1px solid var(--border);
+
+    border-radius:14px;
+
+    background:rgba(2,21,29,.85);
+}
+
+.email-options.show{
+    display:block;
+}
+
+.email-options-title{
+    color:#8fb7bc;
+    font-size:.75rem;
+    margin-bottom:9px;
+}
+
+.email-option{
+    display:block;
+
+    width:100%;
+
+    padding:10px;
+
+    margin-top:6px;
+
+    border-radius:10px;
+
+    border:1px solid var(--border);
+
+    background:rgba(40,197,213,.05);
+
+    color:white;
+
+    text-align:center;
+
+    cursor:pointer;
+}
+
+.email-option:hover{
+    background:rgba(40,197,213,.12);
+}
+
 
 /* =========================================================
    FOOTER
 ========================================================= */
 
-footer {
-    padding: 40px 0;
-
-    border-top:
-        1px solid rgba(150,190,225,.08);
-
-    color: #71859a;
-
-    font-size: 12px;
-
-    text-align: center;
+footer{
+    padding:35px 0;
+    border-top:1px solid var(--border);
 }
 
+.footer-inner{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:20px;
+}
+
+.footer-inner p{
+    color:#739ba0;
+    font-size:.78rem;
+}
+
+.footer-links{
+    display:flex;
+    gap:8px;
+}
+
+.footer-links a{
+    width:36px;
+    height:36px;
+
+    border-radius:10px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    border:1px solid var(--border);
+
+    color:#9dc6ca;
+}
+
+
 /* =========================================================
-   REVEAL ANIMATION
+   TOP BUTTON
 ========================================================= */
 
-.reveal {
-    opacity: 0;
+.top-btn{
+    position:fixed;
 
-    transform: translateY(25px);
+    right:20px;
+    bottom:20px;
+
+    width:45px;
+    height:45px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    border-radius:13px;
+
+    border:1px solid var(--border);
+
+    background:rgba(3,38,48,.85);
+
+    color:white;
+
+    cursor:pointer;
+
+    opacity:0;
+    pointer-events:none;
+
+    transition:.3s;
+
+    z-index:900;
+}
+
+.top-btn.show{
+    opacity:1;
+    pointer-events:auto;
+}
+
+
+/* =========================================================
+   REVEAL
+========================================================= */
+
+.reveal{
+    opacity:0;
+    transform:translateY(30px);
 
     transition:
-        opacity .8s ease,
-        transform .8s ease;
+    opacity .7s ease,
+    transform .7s ease;
 }
 
-.reveal.visible {
-    opacity: 1;
-
-    transform: translateY(0);
+.reveal.visible{
+    opacity:1;
+    transform:none;
 }
 
-/* =========================================================
-   MOBILE NAV
-========================================================= */
-
-.menu-button {
-    display: none;
-
-    background: none;
-
-    border: none;
-
-    color: white;
-
-    font-size: 23px;
-
-    cursor: none;
-}
 
 /* =========================================================
    RESPONSIVE
 ========================================================= */
 
-@media(max-width: 850px) {
+@media(max-width:950px){
 
-    .nav-links {
-        display: none;
-    }
-
-    .menu-button {
-        display: block;
-    }
-
+    .hero-grid,
     .about-grid,
-    .skills-grid,
-    .projects-grid,
-    .education-grid {
-        grid-template-columns: 1fr;
+    .contact-grid,
+    .skills-layout{
+        grid-template-columns:1fr;
     }
 
-    .about-text {
-        padding: 30px;
+    .profile-wrap{
+        order:-1;
     }
 
-    .photo-card {
-        min-height: 350px;
+    .profile-card{
+        width:300px;
     }
 
-    .hero h1 {
-        letter-spacing: -2px;
+    .education-grid{
+        grid-template-columns:1fr 1fr;
     }
 
-    section {
-        padding: 90px 0;
-    }
-}
-
-@media(max-width: 600px) {
-
-    body {
-        cursor: auto;
-    }
-
-    #moonCursor {
-        display: none;
-    }
-
-    .stats {
-        grid-template-columns: 1fr;
-    }
-
-    .contact-box {
-        padding: 40px 22px;
-    }
-
-    .hero-description {
-        font-size: 16px;
+    .metrics{
+        grid-template-columns:repeat(2,1fr);
     }
 }
 
-/* =========================================================
-   REDUCE MOTION
-========================================================= */
+@media(max-width:720px){
 
-@media(prefers-reduced-motion: reduce) {
+    section{
+        padding:80px 0;
+    }
 
-    *,
-    *::before,
-    *::after {
-        animation-duration: .01ms !important;
+    .container{
+        width:min(100% - 28px,var(--max));
+    }
 
-        animation-iteration-count: 1 !important;
+    .menu-btn{
+        display:block;
+    }
 
-        scroll-behavior: auto !important;
+    .nav-links{
+        position:absolute;
 
-        transition-duration: .01ms !important;
+        top:68px;
+        left:14px;
+        right:14px;
+
+        display:none;
+
+        flex-direction:column;
+
+        padding:10px;
+
+        border:1px solid var(--border);
+
+        background:rgba(2,21,29,.97);
+
+        backdrop-filter:blur(20px);
+
+        border-radius:16px;
+    }
+
+    .nav-links.open{
+        display:flex;
+    }
+
+    .hero h1{
+        font-size:clamp(3rem,16vw,5rem);
+        letter-spacing:-4px;
+    }
+
+    .hero-actions{
+        flex-direction:column;
+    }
+
+    .btn{
+        width:100%;
+    }
+
+    .fact-grid,
+    .project-grid,
+    .education-grid,
+    .cert-grid{
+        grid-template-columns:1fr;
+    }
+
+    .metrics{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .form-row{
+        grid-template-columns:1fr;
+    }
+
+    .card-top{
+        flex-direction:column;
+    }
+
+    .achievement{
+        grid-template-columns:1fr;
+    }
+
+    .footer-inner{
+        flex-direction:column;
+        text-align:center;
     }
 }
 
@@ -1164,82 +1366,82 @@ footer {
 
 <body>
 
-<!-- =======================================================
-     BACKGROUND
-======================================================= -->
 
-<canvas id="spaceCanvas"></canvas>
+<!-- =====================================================
+     LIVE OCEAN
+====================================================== -->
 
-<div class="milky-way"></div>
+<canvas id="oceanCanvas"></canvas>
 
-<div class="horizon"></div>
-
-
-<!-- =======================================================
-     MOON CURSOR
-======================================================= -->
-
-<div id="moonCursor">
-
-    <div class="moonAura"></div>
-
-    <div class="moon"></div>
-
-</div>
+<div class="ocean-glow glow-one"></div>
+<div class="ocean-glow glow-two"></div>
 
 
-<!-- =======================================================
-     NAVIGATION
-======================================================= -->
+<!-- =====================================================
+     NAVBAR
+====================================================== -->
 
-<nav>
+<header class="navbar" id="navbar">
 
 <div class="nav-inner">
 
 <a href="#home" class="logo">
-    PIYUSH<span>.</span>
+    <span class="logo-dot"></span>
+    PIYUSH SINGH
 </a>
 
-<ul class="nav-links">
+<button
+    class="menu-btn"
+    id="menuBtn"
+    aria-label="Open navigation"
+>
+    ☰
+</button>
+
+<nav>
+
+<ul class="nav-links" id="navLinks">
 
 <li>
-<a href="#about">About</a>
+    <a href="#home" class="active">Home</a>
 </li>
 
 <li>
-<a href="#experience">Experience</a>
+    <a href="#about">About</a>
 </li>
 
 <li>
-<a href="#skills">Skills</a>
+    <a href="#experience">Experience</a>
 </li>
 
 <li>
-<a href="#projects">Projects</a>
+    <a href="#projects">Projects</a>
 </li>
 
 <li>
-<a href="#education">Education</a>
+    <a href="#education">Education</a>
 </li>
 
 <li>
-<a href="#contact">Contact</a>
+    <a href="#skills">Skills</a>
+</li>
+
+<li>
+    <a href="#contact">Contact</a>
 </li>
 
 </ul>
 
-<button class="menu-button">
-☰
-</button>
+</nav>
 
 </div>
 
-</nav>
+</header>
 
 
-<!-- =======================================================
+<!-- =====================================================
      HERO
-======================================================= -->
+====================================================== -->
 
 <main>
 
@@ -1247,52 +1449,123 @@ footer {
 
 <div class="container">
 
-<div class="hero-content reveal">
+<div class="hero-grid">
 
-<div class="eyebrow">
-MARKETING • DIGITAL • STRATEGY
+<div>
+
+<div class="hero-kicker">
+    <span class="live-dot"></span>
+    OPEN TO OPPORTUNITIES
 </div>
 
 <h1>
-
-Building
-<span class="gradient">
-ideas
-</span>
-that
-<br>
-move
-<span class="gradient">
-people.
-</span>
-
+    Building ideas<br>
+    that move <span class="gradient-text">forward.</span>
 </h1>
 
 <p class="hero-description">
-
-I'm Piyush Singh, a marketing professional passionate about
-digital marketing, market research, customer engagement,
-brand strategy and data-driven decision making.
-
+    MBA Digital Marketing & Operations student focused on
+    digital marketing, business strategy, analytics and
+    operational improvement — combining creative thinking
+    with structured problem solving.
 </p>
 
-<div class="hero-buttons">
+<div class="hero-actions">
 
 <a
-href="#contact"
-class="btn btn-primary"
+    href="#projects"
+    class="btn btn-primary"
 >
-Let's Connect →
+    Explore My Work →
+</a>
+
+<!-- GMAIL DIRECT BUTTON -->
+
+<a
+    href="https://mail.google.com/mail/?view=cm&fs=1&to=piyushsingh20030610@gmail.com&su=Portfolio%20Opportunity"
+    target="_blank"
+    rel="noopener noreferrer"
+    class="btn btn-ghost"
+>
+    ✉ Email Me
 </a>
 
 <a
-href="YOUR_CV_LINK_HERE"
-class="btn btn-secondary"
-target="_blank"
-rel="noopener"
+    href="https://www.linkedin.com/in/piyushsingh0610/"
+    target="_blank"
+    rel="noopener noreferrer"
+    class="btn btn-ghost"
 >
-View Resume
+    ↗ LinkedIn
 </a>
+
+</div>
+
+<div class="hero-contact">
+
+<a
+    class="contact-chip"
+    href="https://mail.google.com/mail/?view=cm&fs=1&to=piyushsingh20030610@gmail.com"
+    target="_blank"
+    rel="noopener noreferrer"
+>
+    ✉ piyushsingh20030610@gmail.com
+</a>
+
+<a
+    class="contact-chip"
+    href="tel:+918431832821"
+>
+    ☎ +91 84318 32821
+</a>
+
+</div>
+
+</div>
+
+
+<!-- PROFILE -->
+
+<div class="profile-wrap reveal">
+
+<div class="profile-card">
+
+<div class="profile-image">
+
+<img
+    src="assets/profile.jpg"
+    alt="Piyush Singh"
+    onerror="this.style.display='none';document.getElementById('profilePlaceholder').style.display='flex';"
+>
+
+<div
+    class="profile-placeholder"
+    id="profilePlaceholder"
+    style="display:none;"
+>
+
+<strong>PS</strong>
+
+<span>
+    Add your photo at<br>
+    assets/profile.jpg
+</span>
+
+</div>
+
+</div>
+
+<div class="profile-info">
+
+<h3>Piyush Singh</h3>
+
+<p>
+    MBA — Digital Marketing & Operations
+</p>
+
+</div>
+
+</div>
 
 </div>
 
@@ -1303,102 +1576,112 @@ View Resume
 </section>
 
 
-<!-- =======================================================
+<!-- =====================================================
      ABOUT
-======================================================= -->
+====================================================== -->
 
 <section id="about">
 
 <div class="container">
 
-<div class="section-label">
-01 / ABOUT
+<div class="section-heading reveal">
+
+<div class="eyebrow">
+    01 — About
 </div>
 
-<h2 class="section-title reveal">
-A little about me.
+<h2>
+    A marketer with an<br>
+    <span class="gradient-text">
+        analytical mindset.
+    </span>
 </h2>
+
+<p>
+    My work sits at the intersection of marketing,
+    analytics, operations and business strategy.
+</p>
+
+</div>
+
 
 <div class="about-grid">
 
-<div class="photo-card glass reveal">
+<div class="glass about-card reveal">
 
-<!-- REPLACE WITH YOUR PHOTO -->
+<h3>
+    What I bring
+</h3>
 
-<img
-src="YOUR_PHOTO_URL_HERE"
-alt="Piyush Singh"
->
-
-<div class="photo-overlay">
-
-<strong>
-Piyush Singh
-</strong>
+<p>
+    I enjoy understanding how people, processes and data
+    connect. From digital campaigns and SEO to supply chain
+    analysis and Lean Six Sigma projects, I focus on finding
+    practical ways to improve performance.
+</p>
 
 <br>
 
-<span style="color:#9fb2c5;font-size:12px;">
-Marketing & Business Professional
+<p>
+    Currently pursuing an MBA in Digital Marketing and
+    Operations at Lovely Professional University, I am
+    developing a multidisciplinary business perspective
+    supported by hands-on academic projects and internships.
+</p>
+
+</div>
+
+
+<div class="fact-grid">
+
+<div class="fact glass reveal">
+
+<div class="fact-number">
+    92.4K+
+</div>
+
+<span>
+    Google Ads Impressions
 </span>
 
 </div>
 
+
+<div class="fact glass reveal">
+
+<div class="fact-number">
+    55%
+</div>
+
+<span>
+    Travel Time Reduction
+</span>
+
 </div>
 
 
-<div class="about-text glass reveal">
+<div class="fact glass reveal">
 
-<p>
+<div class="fact-number">
+    68%
+</div>
 
-I am a marketing-focused professional interested in
-understanding customers, markets and brands and turning
-those insights into meaningful business outcomes.
-
-</p>
-
-<p>
-
-My interests include digital marketing, market research,
-campaign planning, customer engagement, competitor analysis
-and strategic marketing.
-
-</p>
-
-<p>
-
-I enjoy combining creativity with structured thinking,
-data analysis and communication to solve practical business
-problems.
-
-</p>
-
-
-<div class="stats">
-
-<div class="stat">
-
-<strong>Marketing</strong>
-
-<span>Focus</span>
+<span>
+    Passenger Wait Reduction
+</span>
 
 </div>
 
-<div class="stat">
 
-<strong>Strategy</strong>
+<div class="fact glass reveal">
 
-<span>Mindset</span>
-
+<div class="fact-number">
+    ₹10K+
 </div>
 
-<div class="stat">
-
-<strong>Data</strong>
-
-<span>Driven</span>
-
-</div>
+<span>
+    Digital Product Revenue
+</span>
 
 </div>
 
@@ -1411,21 +1694,28 @@ problems.
 </section>
 
 
-<!-- =======================================================
+<!-- =====================================================
      EXPERIENCE
-======================================================= -->
+====================================================== -->
 
 <section id="experience">
 
 <div class="container">
 
-<div class="section-label">
-02 / EXPERIENCE
+<div class="section-heading reveal">
+
+<div class="eyebrow">
+    02 — Experience
 </div>
 
-<h2 class="section-title reveal">
-Where I've worked.
+<h2>
+    Where I have<br>
+    <span class="gradient-text">
+        learned by doing.
+    </span>
 </h2>
+
+</div>
 
 
 <div class="timeline">
@@ -1433,200 +1723,190 @@ Where I've worked.
 
 <div class="timeline-item reveal">
 
-<div class="timeline-dot"></div>
+<span class="timeline-dot"></span>
 
-<div class="timeline-date">
-JUN 2026 — JUL 2026
-</div>
+<div class="glass experience-card">
+
+<div class="card-top">
+
+<div>
 
 <h3>
-Marketing Intern
+    Marketing Intern
 </h3>
 
-<div class="timeline-company">
-Cognizen Innovations
+<div class="card-company">
+    Cognizen Innovations
 </div>
-
-<p>
-
-Supported customer acquisition and lead-generation
-initiatives by identifying prospects, understanding
-customer interests, maintaining prospect information
-and developing customer communication approaches.
-
-</p>
 
 </div>
 
+<div class="date">
+    Jun 2026 — Jul 2026
+</div>
 
-<!-- ADD MORE EXPERIENCE HERE -->
+</div>
+
+<ul class="card-list">
+
+<li>
+    Conducted high-volume cold calling to educate
+    potential clients on SIP investments and wealth creation.
+</li>
+
+<li>
+    Communicated market benefits, addressed investor
+    hesitations and developed objection-handling skills
+    in a competitive BFSI environment.
+</li>
+
+<li>
+    Assessed prospect interest and financial readiness
+    to build an initial outreach pipeline for SIP services.
+</li>
+
+</ul>
+
+</div>
+
+</div>
+
 
 <div class="timeline-item reveal">
 
-<div class="timeline-dot"></div>
+<span class="timeline-dot"></span>
 
-<div class="timeline-date">
-EXPERIENCE
-</div>
+<div class="glass experience-card">
 
-<h3>
-Additional Experience
-</h3>
+<div class="card-top">
 
-<div class="timeline-company">
-Your Organization / Project
-</div>
-
-<p>
-
-Add your next internship, project, freelance experience
-or professional achievement here.
-
-</p>
-
-</div>
-
-
-</div>
-
-</div>
-
-</section>
-
-
-<!-- =======================================================
-     SKILLS
-======================================================= -->
-
-<section id="skills">
-
-<div class="container">
-
-<div class="section-label">
-03 / SKILLS
-</div>
-
-<h2 class="section-title reveal">
-What I work with.
-</h2>
-
-
-<div class="skills-grid">
-
-
-<div class="skill-card glass reveal">
+<div>
 
 <h3>
-Marketing & Strategy
+    Assistant Coach
 </h3>
 
-<div class="skill-list">
+<div class="card-company">
+    AIR FORCE Summer Coaching Camp
+</div>
 
-<span class="skill">
-Market Research
-</span>
+</div>
 
-<span class="skill">
-Brand Positioning
-</span>
+<div class="date">
+    May 2025 — Jun 2025
+</div>
 
-<span class="skill">
-Campaign Planning
-</span>
+</div>
 
-<span class="skill">
-Lead Generation
-</span>
+<ul class="card-list">
 
-<span class="skill">
-Competitor Analysis
-</span>
+<li>
+    Supported badminton training programs by coaching
+    22 students and assisting in skill development,
+    practice coordination and performance improvement.
+</li>
 
-<span class="skill">
-Marketing Strategy
-</span>
+<li>
+    Formulated structured daily drills to accelerate
+    skill acquisition and performance growth.
+</li>
+
+</ul>
 
 </div>
 
 </div>
 
 
-<div class="skill-card glass reveal">
+<div class="timeline-item reveal">
+
+<span class="timeline-dot"></span>
+
+<div class="glass experience-card">
+
+<div class="card-top">
+
+<div>
 
 <h3>
-Tools & Platforms
+    Assistant Event Coordinator
 </h3>
 
-<div class="skill-list">
+<div class="card-company">
+    Bhushan Badminton Academy
+</div>
 
-<span class="skill">
-Google Ads
-</span>
+</div>
 
-<span class="skill">
-Google Analytics
-</span>
+<div class="date">
+    Jun 2023 — Jul 2023
+</div>
 
-<span class="skill">
-Canva
-</span>
+</div>
 
-<span class="skill">
-MS Excel
-</span>
+<ul class="card-list">
 
-<span class="skill">
-PowerPoint
-</span>
+<li>
+    Coordinated event logistics and tournament operations
+    to support successful event execution.
+</li>
 
-<span class="skill">
-Google Sheets
-</span>
+<li>
+    Supervised match-day volunteers and vendor coordination
+    to keep tournament schedules running without delays.
+</li>
 
-<span class="skill">
-Tableau
-</span>
-
-<span class="skill">
-IBM SPSS
-</span>
+</ul>
 
 </div>
 
 </div>
 
 
-<div class="skill-card glass reveal">
+<div class="timeline-item reveal">
+
+<span class="timeline-dot"></span>
+
+<div class="glass experience-card">
+
+<div class="card-top">
+
+<div>
 
 <h3>
-Professional Strengths
+    Laboratory Assistant Intern
 </h3>
 
-<div class="skill-list">
+<div class="card-company">
+    Belagavi Bio-Center
+</div>
 
-<span class="skill">
-Communication
-</span>
+</div>
 
-<span class="skill">
-Leadership
-</span>
+<div class="date">
+    Jun 2024 — Jul 2024
+</div>
 
-<span class="skill">
-Strategic Thinking
-</span>
+</div>
 
-<span class="skill">
-Problem Solving
-</span>
+<ul class="card-list">
 
-<span class="skill">
-Team Collaboration
-</span>
+<li>
+    Managed and validated 100+ laboratory data entries,
+    ensuring accuracy and integrity of experimental records.
+</li>
 
-<span class="skill">
-Adaptability
-</span>
+<li>
+    Enhanced operational efficiency by 10% by supporting
+    laboratory staff with essential daily tasks.
+</li>
+
+<li>
+    Contributed to research and analysis projects focused
+    on Bio-Fertilizers and Bio-Control Agents.
+</li>
+
+</ul>
 
 </div>
 
@@ -1640,142 +1920,224 @@ Adaptability
 </section>
 
 
-<!-- =======================================================
+<!-- =====================================================
      PROJECTS
-======================================================= -->
+====================================================== -->
 
 <section id="projects">
 
 <div class="container">
 
-<div class="section-label">
-04 / PROJECTS
+<div class="section-heading reveal">
+
+<div class="eyebrow">
+    03 — Selected Work
 </div>
 
-<h2 class="section-title reveal">
-Things I've worked on.
+<h2>
+    Projects that turn<br>
+    <span class="gradient-text">
+        problems into possibilities.
+    </span>
 </h2>
 
+</div>
 
-<div class="projects-grid">
+
+<div class="project-grid">
 
 
-<div class="project glass reveal">
+<div class="glass project-card reveal">
 
 <div class="project-number">
-01
+    01 / OPERATIONS
 </div>
 
 <h3>
-Digital Marketing Campaign
+    Lean Six Sigma Approach to Public Transport Efficiency
 </h3>
 
 <p>
-
-Google Ads campaign analysis focused on impressions,
-click performance, campaign visibility and digital
-marketing metrics.
-
+    Applied DMAIC, SIPOC mapping, Fishbone diagrams and
+    Pareto charts to analyze terminal bottlenecks,
+    congestion and passenger delays.
 </p>
 
-<a
-href="YOUR_PROJECT_LINK_HERE"
-target="_blank"
-rel="noopener"
-class="project-link"
->
-View Project ↗
-</a>
+<div class="project-tags">
+
+<span class="tag">Lean Six Sigma</span>
+<span class="tag">DMAIC</span>
+<span class="tag">SIPOC</span>
+<span class="tag">Process Improvement</span>
+
+</div>
 
 </div>
 
 
-<div class="project glass reveal">
+<div class="glass project-card reveal">
 
 <div class="project-number">
-02
+    02 / DIGITAL MARKETING
 </div>
 
 <h3>
-Market Research Project
+    Digital Campaign Creation & SEO Optimization
 </h3>
 
 <p>
-
-A research-based project involving customer understanding,
-market analysis, competitor evaluation and strategic
-recommendations.
-
+    Optimized website content for first-page Google SERP
+    ranking and executed Google Ads campaigns generating
+    92.4K+ impressions and 257 clicks.
 </p>
 
-<a
-href="YOUR_PROJECT_LINK_HERE"
-target="_blank"
-rel="noopener"
-class="project-link"
->
-View Project ↗
-</a>
+<div class="project-tags">
+
+<span class="tag">Google Ads</span>
+<span class="tag">SEO</span>
+<span class="tag">Google Analytics</span>
+<span class="tag">SEM</span>
+
+</div>
 
 </div>
 
 
-<div class="project glass reveal">
+<div class="glass project-card reveal">
 
 <div class="project-number">
-03
+    03 / DIGITAL PRODUCT
 </div>
 
 <h3>
-Business Analysis
+    Digital Product Creation & Marketing
 </h3>
 
 <p>
-
-A structured business analysis project exploring market
-conditions, competitive positioning and strategic growth
-opportunities.
-
+    Developed and launched a digital kids colouring book
+    supported by a landing page and social media promotion,
+    generating 25+ customer engagements and ₹10,000+ revenue.
 </p>
 
-<a
-href="YOUR_PROJECT_LINK_HERE"
-target="_blank"
-rel="noopener"
-class="project-link"
->
-View Project ↗
-</a>
+<div class="project-tags">
+
+<span class="tag">Digital Product</span>
+<span class="tag">Social Media</span>
+<span class="tag">Landing Page</span>
+<span class="tag">Conversion</span>
+
+</div>
 
 </div>
 
 
-<div class="project glass reveal">
+<div class="glass project-card reveal">
 
 <div class="project-number">
-04
+    04 / AFFILIATE MARKETING
 </div>
 
 <h3>
-Six Sigma / Process Improvement
+    Affiliate Marketing — August Bioscience
 </h3>
 
 <p>
-
-Process improvement and analytical projects involving
-problem identification, root-cause thinking and structured
-improvement methodologies.
-
+    Orchestrated 5+ affiliate marketing campaigns across
+    social platforms, achieving a 10% lead conversion rate
+    and contributing to 5% online sales growth.
 </p>
 
-<a
-href="YOUR_PROJECT_LINK_HERE"
-target="_blank"
-rel="noopener"
-class="project-link"
->
-View Project ↗
-</a>
+<div class="project-tags">
+
+<span class="tag">Affiliate Marketing</span>
+<span class="tag">Social Media</span>
+<span class="tag">Lead Generation</span>
+
+</div>
+
+</div>
+
+
+<div class="glass project-card reveal">
+
+<div class="project-number">
+    05 / BRAND STRATEGY
+</div>
+
+<h3>
+    Unbranded to Branded — AttarVibez
+</h3>
+
+<p>
+    Developed brand identity and integrated marketing
+    strategies for an attar and perfume product line,
+    including positioning and go-to-market planning.
+</p>
+
+<div class="project-tags">
+
+<span class="tag">Brand Strategy</span>
+<span class="tag">Positioning</span>
+<span class="tag">GTM</span>
+<span class="tag">Pricing</span>
+
+</div>
+
+</div>
+
+
+<div class="glass project-card reveal">
+
+<div class="project-number">
+    06 / SUPPLY CHAIN
+</div>
+
+<h3>
+    Amul Supply Chain & Operations Analysis
+</h3>
+
+<p>
+    Analyzed procurement, production, inventory,
+    warehousing and distribution while identifying gaps
+    in inventory planning and logistics.
+</p>
+
+<div class="project-tags">
+
+<span class="tag">Supply Chain</span>
+<span class="tag">Excel</span>
+<span class="tag">Operations</span>
+<span class="tag">Analysis</span>
+
+</div>
+
+</div>
+
+
+<div class="glass project-card reveal">
+
+<div class="project-number">
+    07 / INVENTORY
+</div>
+
+<h3>
+    HP World Supply Chain & Inventory Optimization
+</h3>
+
+<p>
+    Analyzed a 4-tier HP supply chain, diagnosed operational
+    risks and recommended high-frequency spare parts with
+    buffer stock to improve availability.
+</p>
+
+<div class="project-tags">
+
+<span class="tag">Inventory</span>
+<span class="tag">Supply Chain</span>
+<span class="tag">Risk Analysis</span>
+<span class="tag">Optimization</span>
+
+</div>
 
 </div>
 
@@ -1787,80 +2149,316 @@ View Project ↗
 </section>
 
 
-<!-- =======================================================
+<!-- =====================================================
+     METRICS
+====================================================== -->
+
+<section>
+
+<div class="container">
+
+<div class="metrics">
+
+<div class="glass metric reveal">
+
+<strong>
+    92.4K+
+</strong>
+
+<span>
+    Ad Impressions
+</span>
+
+</div>
+
+
+<div class="glass metric reveal">
+
+<strong>
+    257
+</strong>
+
+<span>
+    Ad Clicks
+</span>
+
+</div>
+
+
+<div class="glass metric reveal">
+
+<strong>
+    4%
+</strong>
+
+<span>
+    Digital Product Conversion
+</span>
+
+</div>
+
+
+<div class="glass metric reveal">
+
+<strong>
+    50%
+</strong>
+
+<span>
+    Estimated AttarVibez Margin
+</span>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
      EDUCATION
-======================================================= -->
+====================================================== -->
 
 <section id="education">
 
 <div class="container">
 
-<div class="section-label">
-05 / EDUCATION
+<div class="section-heading reveal">
+
+<div class="eyebrow">
+    04 — Education
 </div>
 
-<h2 class="section-title reveal">
-My academic journey.
+<h2>
+    Learning across<br>
+    <span class="gradient-text">
+        business & science.
+    </span>
 </h2>
+
+</div>
 
 
 <div class="education-grid">
 
 
-<div class="education-card glass reveal">
+<div class="glass edu-card reveal">
 
-<div class="year">
-YOUR YEARS
+<div class="edu-icon">
+    🎓
 </div>
 
 <h3>
-MBA / Postgraduate Program
+    Lovely Professional University
 </h3>
 
 <p>
-YOUR COLLEGE / UNIVERSITY NAME
+    Master of Business Administration —
+    Digital Marketing and Operations
 </p>
 
 <p>
-Add specialization, location or relevant academic details.
+    CGPA: 7.2
 </p>
+
+<span class="edu-year">
+    Aug 2025 — Jul 2027
+</span>
 
 </div>
 
 
-<div class="education-card glass reveal">
+<div class="glass edu-card reveal">
 
-<div class="year">
-YOUR YEARS
+<div class="edu-icon">
+    🔬
 </div>
 
 <h3>
-Bachelor's Degree
+    KLE Society's Raja Lakhmagouda Science Institute
 </h3>
 
 <p>
-YOUR COLLEGE / UNIVERSITY NAME
+    Bachelor's in Biotechnology and Zoology
 </p>
 
 <p>
-Add your degree, specialization and relevant details here.
+    CGPA: 8.1
 </p>
+
+<span class="edu-year">
+    Aug 2021 — Oct 2024
+</span>
 
 </div>
 
 
-<div class="education-card glass reveal">
+<div class="glass edu-card reveal">
 
-<div class="year">
-SCHOOL
+<div class="edu-icon">
+    📚
 </div>
 
 <h3>
-Higher Secondary Education
+    KV No.1, Sambra, Karnataka
 </h3>
 
 <p>
-YOUR SCHOOL NAME
+    Science Stream
+</p>
+
+<p>
+    Percentage: 85%
+</p>
+
+<span class="edu-year">
+    Aug 2020 — May 2021
+</span>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     CAMPUS PHOTOS
+====================================================== -->
+
+<section>
+
+<div class="container">
+
+<div class="section-heading reveal">
+
+<div class="eyebrow">
+    Campus
+</div>
+
+<h2>
+    Places that shaped<br>
+    <span class="gradient-text">
+        my journey.
+    </span>
+</h2>
+
+</div>
+
+
+<div class="project-grid">
+
+
+<div class="glass project-card reveal">
+
+<div
+    class="profile-image"
+    style="aspect-ratio:16/9;"
+>
+
+<img
+    src="assets/lpu.jpg"
+    alt="Lovely Professional University"
+    onerror="this.style.display='none';"
+>
+
+<div class="profile-placeholder">
+
+<strong>01</strong>
+
+<span>
+    Add LPU campus photo<br>
+    assets/lpu.jpg
+</span>
+
+</div>
+
+</div>
+
+<h3>
+    Lovely Professional University
+</h3>
+
+<p>
+    MBA — Digital Marketing & Operations
+</p>
+
+</div>
+
+
+<div class="glass project-card reveal">
+
+<div
+    class="profile-image"
+    style="aspect-ratio:16/9;"
+>
+
+<img
+    src="assets/kle.jpg"
+    alt="KLE Society's Raja Lakhmagouda Science Institute"
+    onerror="this.style.display='none';"
+>
+
+<div class="profile-placeholder">
+
+<strong>02</strong>
+
+<span>
+    Add college photo<br>
+    assets/kle.jpg
+</span>
+
+</div>
+
+</div>
+
+<h3>
+    KLE Society's Raja Lakhmagouda Science Institute
+</h3>
+
+<p>
+    Bachelor's in Biotechnology & Zoology
+</p>
+
+</div>
+
+
+<div class="glass project-card reveal">
+
+<div
+    class="profile-image"
+    style="aspect-ratio:16/9;"
+>
+
+<img
+    src="assets/kv-school.jpg"
+    alt="KV No.1 Sambra"
+    onerror="this.style.display='none';"
+>
+
+<div class="profile-placeholder">
+
+<strong>03</strong>
+
+<span>
+    Add school photo<br>
+    assets/kv-school.jpg
+</span>
+
+</div>
+
+</div>
+
+<h3>
+    KV No.1, Sambra
+</h3>
+
+<p>
+    Science Stream
 </p>
 
 </div>
@@ -1873,64 +2471,664 @@ YOUR SCHOOL NAME
 </section>
 
 
-<!-- =======================================================
+<!-- =====================================================
+     SKILLS
+====================================================== -->
+
+<section id="skills">
+
+<div class="container">
+
+<div class="section-heading reveal">
+
+<div class="eyebrow">
+    05 — Skills
+</div>
+
+<h2>
+    Tools, thinking &<br>
+    <span class="gradient-text">
+        execution.
+    </span>
+</h2>
+
+</div>
+
+
+<div class="skills-layout">
+
+
+<div class="glass skill-card reveal">
+
+<h3 style="margin-bottom:25px;">
+    Core capabilities
+</h3>
+
+
+<div class="skill">
+
+<div class="skill-title">
+
+<span>
+    Digital Marketing
+</span>
+
+<span>
+    90%
+</span>
+
+</div>
+
+<div class="skill-track">
+
+<div
+    class="skill-fill"
+    data-width="90%"
+></div>
+
+</div>
+
+</div>
+
+
+<div class="skill">
+
+<div class="skill-title">
+
+<span>
+    Market Research
+</span>
+
+<span>
+    88%
+</span>
+
+</div>
+
+<div class="skill-track">
+
+<div
+    class="skill-fill"
+    data-width="88%"
+></div>
+
+</div>
+
+</div>
+
+
+<div class="skill">
+
+<div class="skill-title">
+
+<span>
+    Data Analysis
+</span>
+
+<span>
+    85%
+</span>
+
+</div>
+
+<div class="skill-track">
+
+<div
+    class="skill-fill"
+    data-width="85%"
+></div>
+
+</div>
+
+</div>
+
+
+<div class="skill">
+
+<div class="skill-title">
+
+<span>
+    Operations Analysis
+</span>
+
+<span>
+    84%
+</span>
+
+</div>
+
+<div class="skill-track">
+
+<div
+    class="skill-fill"
+    data-width="84%"
+></div>
+
+</div>
+
+</div>
+
+
+<div class="skill">
+
+<div class="skill-title">
+
+<span>
+    Problem Solving
+</span>
+
+<span>
+    90%
+</span>
+
+</div>
+
+<div class="skill-track">
+
+<div
+    class="skill-fill"
+    data-width="90%"
+></div>
+
+</div>
+
+</div>
+
+</div>
+
+
+<div class="glass skill-card reveal">
+
+<h3>
+    Tools & platforms
+</h3>
+
+<div class="tool-cloud">
+
+<span class="tool">MS Excel</span>
+<span class="tool">PowerPoint</span>
+<span class="tool">Tableau</span>
+<span class="tool">Google Sheets</span>
+<span class="tool">Canva</span>
+<span class="tool">IBM SPSS</span>
+<span class="tool">Shopify</span>
+<span class="tool">WordPress</span>
+<span class="tool">Google Ads</span>
+<span class="tool">Google Analytics</span>
+
+</div>
+
+
+<h3 style="margin-top:35px;">
+    Power skills
+</h3>
+
+<div class="tool-cloud">
+
+<span class="tool">Communication</span>
+<span class="tool">Leadership</span>
+<span class="tool">Team Camaraderie</span>
+<span class="tool">Strategic Thinking</span>
+<span class="tool">Problem Solving</span>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     CERTIFICATIONS
+====================================================== -->
+
+<section>
+
+<div class="container">
+
+<div class="section-heading reveal">
+
+<div class="eyebrow">
+    06 — Certifications
+</div>
+
+<h2>
+    Always <span class="gradient-text">learning.</span>
+</h2>
+
+</div>
+
+
+<div class="cert-grid">
+
+
+<div class="cert reveal">
+    <span class="cert-name">
+        Yellow Belt Six Sigma
+    </span>
+
+    <span class="cert-date">
+        Jun — Jul 2026
+    </span>
+</div>
+
+
+<div class="cert reveal">
+    <span class="cert-name">
+        Data Analyst 101
+    </span>
+
+    <span class="cert-date">
+        Nov 2025
+    </span>
+</div>
+
+
+<div class="cert reveal">
+    <span class="cert-name">
+        SEBI Investor Awareness Test
+    </span>
+
+    <span class="cert-date">
+        Oct 2025
+    </span>
+</div>
+
+
+<div class="cert reveal">
+    <span class="cert-name">
+        Bio-Fertilizer & Bio-Coated Agent Training
+    </span>
+
+    <span class="cert-date">
+        Jul 2024
+    </span>
+</div>
+
+
+<div class="cert reveal">
+    <span class="cert-name">
+        CME: Advanced Laboratory Techniques
+    </span>
+
+    <span class="cert-date">
+        May 2023
+    </span>
+</div>
+
+
+<div class="cert reveal">
+    <span class="cert-name">
+        Digital 101 Journey
+    </span>
+
+    <span class="cert-date">
+        Jun 2022
+    </span>
+</div>
+
+
+<div class="cert reveal">
+    <span class="cert-name">
+        Mushroom Cultivation Certification
+    </span>
+
+    <span class="cert-date">
+        May 2022
+    </span>
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     ACHIEVEMENT
+====================================================== -->
+
+<section>
+
+<div class="container">
+
+<div class="glass achievement reveal">
+
+<div class="achievement-icon">
+    🏆
+</div>
+
+<div>
+
+<div class="eyebrow">
+    Achievement
+</div>
+
+<h3>
+    Vishwakarma Learnbiz Simulation Game
+</h3>
+
+<p>
+    Achieved revenue growth from ₹5 lakhs to ₹21 lakhs
+    in the business simulation game, securing 5th rank
+    among competing teams.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
      CONTACT
-======================================================= -->
+====================================================== -->
 
 <section id="contact">
 
 <div class="container">
 
-<div class="contact-box glass reveal">
+<div class="section-heading reveal">
 
-<div class="section-label">
-06 / CONTACT
+<div class="eyebrow">
+    07 — Contact
 </div>
 
 <h2>
-Let's talk.
+    Let's create something<br>
+    <span class="gradient-text">
+        worth building.
+    </span>
 </h2>
 
 <p>
-Have an opportunity, idea or project?
-I'd love to hear from you.
+    Have an opportunity, project or idea?
+    Let's connect.
 </p>
 
+</div>
 
-<div class="contact-buttons">
+
+<div class="contact-grid">
+
+
+<!-- =====================================================
+     CONTACT INFORMATION
+====================================================== -->
+
+<div class="glass contact-card reveal">
+
+<h3 style="margin-bottom:18px;">
+    Get in touch
+</h3>
 
 
 <!-- EMAIL -->
 
 <a
-href="mailto:YOUR_EMAIL@gmail.com?subject=Portfolio%20Contact&body=Hello%20Piyush,%0A%0AI%20would%20like%20to%20connect%20with%20you."
-class="btn btn-primary"
+    href="https://mail.google.com/mail/?view=cm&fs=1&to=piyushsingh20030610@gmail.com"
+    target="_blank"
+    rel="noopener noreferrer"
+    class="contact-method"
 >
-✉ Email Me
+
+<div class="contact-icon">
+    ✉
+</div>
+
+<div>
+
+<strong>
+    Email
+</strong>
+
+<span>
+    piyushsingh20030610@gmail.com
+</span>
+
+</div>
+
 </a>
 
 
 <!-- PHONE -->
 
 <a
-href="tel:+91YOUR_PHONE_NUMBER"
-class="btn btn-secondary"
+    href="tel:+918431832821"
+    class="contact-method"
 >
-☎ Call Me
+
+<div class="contact-icon">
+    ☎
+</div>
+
+<div>
+
+<strong>
+    Phone
+</strong>
+
+<span>
+    +91 84318 32821
+</span>
+
+</div>
+
 </a>
 
 
 <!-- LINKEDIN -->
 
 <a
-href="https://www.linkedin.com/in/YOUR-LINKEDIN-ID/"
-target="_blank"
-rel="noopener noreferrer"
-class="btn btn-secondary"
+    href="https://www.linkedin.com/in/piyushsingh0610/"
+    target="_blank"
+    rel="noopener noreferrer"
+    class="contact-method"
 >
-in LinkedIn
+
+<div class="contact-icon">
+    in
+</div>
+
+<div>
+
+<strong>
+    LinkedIn
+</strong>
+
+<span>
+    linkedin.com/in/piyushsingh0610
+</span>
+
+</div>
+
 </a>
 
+
+<!-- COPY -->
+
+<button
+    type="button"
+    class="btn btn-ghost"
+    style="width:100%;margin-top:7px;"
+    onclick="copyEmail()"
+>
+    Copy Email Address
+</button>
+
+
+<div
+    id="copyMessage"
+    style="
+    text-align:center;
+    color:#65e0e9;
+    font-size:.75rem;
+    margin-top:9px;
+    min-height:18px;
+    "
+></div>
+
+
+<!-- EMAIL APP FALLBACK -->
+
+<button
+    type="button"
+    class="btn btn-ghost"
+    style="width:100%;margin-top:5px;"
+    onclick="openMailApp()"
+>
+    Open Email App
+</button>
+
+</div>
+
+
+<!-- =====================================================
+     WORKING CONTACT FORM
+====================================================== -->
+
+<div class="glass contact-card reveal">
+
+<h3 style="margin-bottom:20px;">
+    Send me a message
+</h3>
+
+
+<form id="contactForm">
+
+<div class="form-row">
+
+
+<div class="field">
+
+<label for="name">
+    Your Name
+</label>
+
+<input
+    id="name"
+    type="text"
+    placeholder="Your name"
+    autocomplete="name"
+    required
+>
+
+</div>
+
+
+<div class="field">
+
+<label for="senderEmail">
+    Your Email
+</label>
+
+<input
+    id="senderEmail"
+    type="email"
+    placeholder="you@example.com"
+    autocomplete="email"
+    required
+>
+
+</div>
+
+
+</div>
+
+
+<div class="field">
+
+<label for="subject">
+    Subject
+</label>
+
+<input
+    id="subject"
+    type="text"
+    placeholder="Opportunity / Collaboration"
+    required
+>
+
+</div>
+
+
+<div class="field">
+
+<label for="message">
+    Message
+</label>
+
+<textarea
+    id="message"
+    placeholder="Write your message here..."
+    required
+></textarea>
+
+</div>
+
+
+<!-- =================================================
+     MAIN SEND BUTTON
+================================================== -->
+
+<button
+    type="submit"
+    class="btn btn-primary"
+    style="width:100%;"
+>
+    ✉ Send Message
+</button>
+
+
+<!-- =================================================
+     EMAIL OPTIONS
+================================================== -->
+
+<div
+    class="email-options"
+    id="emailOptions"
+>
+
+<div class="email-options-title">
+    Choose how you want to send the message:
+</div>
+
+
+<button
+    type="button"
+    class="email-option"
+    id="gmailButton"
+>
+    Continue with Gmail
+</button>
+
+
+<button
+    type="button"
+    class="email-option"
+    id="mailAppButton"
+>
+    Continue with Email App
+</button>
+
+</div>
+
+
+<p class="form-note">
+    Gmail opens with your message automatically prepared.
+    No backend or form service is required.
+</p>
+
+</form>
 
 </div>
 
@@ -1940,82 +3138,737 @@ in LinkedIn
 
 </section>
 
+
 </main>
 
 
-<!-- =======================================================
+<!-- =====================================================
      FOOTER
-======================================================= -->
+====================================================== -->
 
 <footer>
 
-<div class="container">
+<div class="container footer-inner">
 
-© <span id="year"></span> Piyush Singh.
-Built with curiosity & code.
+<p>
+    © <span id="year"></span>
+    Piyush Singh.
+    Built with curiosity & code.
+</p>
+
+
+<div class="footer-links">
+
+<a
+    href="https://mail.google.com/mail/?view=cm&fs=1&to=piyushsingh20030610@gmail.com"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Email"
+>
+    ✉
+</a>
+
+
+<a
+    href="tel:+918431832821"
+    aria-label="Phone"
+>
+    ☎
+</a>
+
+
+<a
+    href="https://www.linkedin.com/in/piyushsingh0610/"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="LinkedIn"
+>
+    in
+</a>
+
+</div>
 
 </div>
 
 </footer>
 
 
+<!-- =====================================================
+     BACK TO TOP
+====================================================== -->
+
+<button
+    class="top-btn"
+    id="topBtn"
+    aria-label="Back to top"
+>
+    ↑
+</button>
+
+
 <script>
 
 /* =========================================================
-   STAR FIELD
+   YOUR CONTACT INFORMATION
 ========================================================= */
 
-const canvas =
-document.getElementById("spaceCanvas");
+const MY_EMAIL =
+    "piyushsingh20030610@gmail.com";
 
-const ctx =
-canvas.getContext("2d");
+const MY_PHONE =
+    "+918431832821";
 
-let stars = [];
+const MY_LINKEDIN =
+    "https://www.linkedin.com/in/piyushsingh0610/";
 
-let width;
-let height;
 
-const STAR_COUNT =
-Math.min(
-    850,
-    Math.floor(
-        window.innerWidth *
-        window.innerHeight /
-        1700
-    )
+/* =========================================================
+   YEAR
+========================================================= */
+
+document.getElementById("year").textContent =
+    new Date().getFullYear();
+
+
+/* =========================================================
+   MOBILE MENU
+========================================================= */
+
+const menuBtn =
+    document.getElementById("menuBtn");
+
+const navLinks =
+    document.getElementById("navLinks");
+
+menuBtn.addEventListener(
+    "click",
+    function(){
+
+        navLinks.classList.toggle("open");
+
+    }
+);
+
+
+document.querySelectorAll(
+    ".nav-links a"
+).forEach(function(link){
+
+    link.addEventListener(
+        "click",
+        function(){
+
+            navLinks.classList.remove("open");
+
+        }
+    );
+
+});
+
+
+/* =========================================================
+   NAVBAR
+========================================================= */
+
+const navbar =
+    document.getElementById("navbar");
+
+window.addEventListener(
+    "scroll",
+    function(){
+
+        if(window.scrollY > 30){
+
+            navbar.classList.add(
+                "scrolled"
+            );
+
+        }else{
+
+            navbar.classList.remove(
+                "scrolled"
+            );
+
+        }
+
+    }
 );
 
 
 /* =========================================================
-   RESIZE
+   ACTIVE NAVIGATION
 ========================================================= */
 
-function resizeCanvas() {
+const sections =
+    document.querySelectorAll(
+        "section[id]"
+    );
 
-    const ratio =
-        Math.min(
-            window.devicePixelRatio || 1,
-            1.5
+const navigationLinks =
+    document.querySelectorAll(
+        ".nav-links a"
+    );
+
+window.addEventListener(
+    "scroll",
+    function(){
+
+        let current = "";
+
+        sections.forEach(
+            function(section){
+
+                const sectionTop =
+                    section.offsetTop - 180;
+
+                if(
+                    window.scrollY >=
+                    sectionTop
+                ){
+
+                    current =
+                        section.getAttribute(
+                            "id"
+                        );
+
+                }
+
+            }
         );
 
-    width =
-        window.innerWidth;
 
-    height =
-        window.innerHeight;
+        navigationLinks.forEach(
+            function(link){
+
+                link.classList.remove(
+                    "active"
+                );
+
+                if(
+                    link.getAttribute(
+                        "href"
+                    ) === "#" + current
+                ){
+
+                    link.classList.add(
+                        "active"
+                    );
+
+                }
+
+            }
+        );
+
+    }
+);
+
+
+/* =========================================================
+   SCROLL REVEAL
+========================================================= */
+
+const revealElements =
+    document.querySelectorAll(
+        ".reveal"
+    );
+
+const revealObserver =
+    new IntersectionObserver(
+        function(entries){
+
+            entries.forEach(
+                function(entry){
+
+                    if(
+                        entry.isIntersecting
+                    ){
+
+                        entry.target.classList.add(
+                            "visible"
+                        );
+
+                        revealObserver.unobserve(
+                            entry.target
+                        );
+
+                    }
+
+                }
+            );
+
+        },
+        {
+            threshold:.12
+        }
+    );
+
+
+revealElements.forEach(
+    function(element){
+
+        revealObserver.observe(
+            element
+        );
+
+    }
+);
+
+
+/* =========================================================
+   SKILLS
+========================================================= */
+
+const skillFills =
+    document.querySelectorAll(
+        ".skill-fill"
+    );
+
+const skillObserver =
+    new IntersectionObserver(
+        function(entries){
+
+            entries.forEach(
+                function(entry){
+
+                    if(
+                        entry.isIntersecting
+                    ){
+
+                        entry.target.style.width =
+                            entry.target.dataset.width;
+
+                        skillObserver.unobserve(
+                            entry.target
+                        );
+
+                    }
+
+                }
+            );
+
+        },
+        {
+            threshold:.4
+        }
+    );
+
+
+skillFills.forEach(
+    function(skill){
+
+        skillObserver.observe(
+            skill
+        );
+
+    }
+);
+
+
+/* =========================================================
+   COPY EMAIL
+========================================================= */
+
+function copyEmail(){
+
+    if(
+        navigator.clipboard &&
+        window.isSecureContext
+    ){
+
+        navigator.clipboard
+            .writeText(MY_EMAIL)
+            .then(function(){
+
+                showCopyMessage(
+                    "✓ Email copied"
+                );
+
+            })
+            .catch(function(){
+
+                fallbackCopyEmail();
+
+            });
+
+    }else{
+
+        fallbackCopyEmail();
+
+    }
+
+}
+
+
+function fallbackCopyEmail(){
+
+    const textarea =
+        document.createElement("textarea");
+
+    textarea.value =
+        MY_EMAIL;
+
+    textarea.style.position =
+        "fixed";
+
+    textarea.style.opacity =
+        "0";
+
+    document.body.appendChild(
+        textarea
+    );
+
+    textarea.select();
+
+    try{
+
+        document.execCommand(
+            "copy"
+        );
+
+        showCopyMessage(
+            "✓ Email copied"
+        );
+
+    }catch(error){
+
+        showCopyMessage(
+            MY_EMAIL
+        );
+
+    }
+
+    document.body.removeChild(
+        textarea
+    );
+
+}
+
+
+function showCopyMessage(
+    message
+){
+
+    const element =
+        document.getElementById(
+            "copyMessage"
+        );
+
+    element.textContent =
+        message;
+
+    setTimeout(
+        function(){
+
+            element.textContent =
+                "";
+
+        },
+        2500
+    );
+
+}
+
+
+/* =========================================================
+   OPEN DEFAULT EMAIL APPLICATION
+========================================================= */
+
+function openMailApp(){
+
+    const subject =
+        "Portfolio Opportunity";
+
+    const body =
+        "Hello Piyush,%0D%0A%0D%0A" +
+        "I would like to connect with you regarding an opportunity.%0D%0A%0D%0A" +
+        "Regards";
+
+    window.location.href =
+        "mailto:" +
+        MY_EMAIL +
+        "?subject=" +
+        encodeURIComponent(subject) +
+        "&body=" +
+        body;
+
+}
+
+
+/* =========================================================
+   CONTACT FORM
+========================================================= */
+
+const contactForm =
+    document.getElementById(
+        "contactForm"
+    );
+
+const emailOptions =
+    document.getElementById(
+        "emailOptions"
+    );
+
+
+let preparedGmailURL =
+    "";
+
+let preparedMailtoURL =
+    "";
+
+
+contactForm.addEventListener(
+    "submit",
+    function(event){
+
+        event.preventDefault();
+
+
+        const name =
+            document.getElementById(
+                "name"
+            ).value.trim();
+
+
+        const senderEmail =
+            document.getElementById(
+                "senderEmail"
+            ).value.trim();
+
+
+        const subject =
+            document.getElementById(
+                "subject"
+            ).value.trim();
+
+
+        const message =
+            document.getElementById(
+                "message"
+            ).value.trim();
+
+
+        if(
+            !name ||
+            !senderEmail ||
+            !subject ||
+            !message
+        ){
+
+            alert(
+                "Please fill in all fields."
+            );
+
+            return;
+
+        }
+
+
+        /* ============================================
+           EMAIL CONTENT
+        ============================================ */
+
+        const emailBody =
+`Hello Piyush,
+
+My name is ${name}.
+
+My email address is:
+${senderEmail}
+
+Message:
+
+${message}
+
+Regards,
+${name}`;
+
+
+        /* ============================================
+           GMAIL COMPOSE URL
+
+           THIS IS THE IMPORTANT FIX.
+
+           It does NOT depend on the visitor
+           having Outlook/Windows Mail/etc.
+        ============================================ */
+
+        preparedGmailURL =
+            "https://mail.google.com/mail/" +
+            "?view=cm" +
+            "&fs=1" +
+            "&to=" +
+            encodeURIComponent(MY_EMAIL) +
+            "&su=" +
+            encodeURIComponent(subject) +
+            "&body=" +
+            encodeURIComponent(emailBody);
+
+
+        /* ============================================
+           MAILTO FALLBACK
+        ============================================ */
+
+        preparedMailtoURL =
+            "mailto:" +
+            MY_EMAIL +
+            "?subject=" +
+            encodeURIComponent(subject) +
+            "&body=" +
+            encodeURIComponent(emailBody);
+
+
+        /* ============================================
+           SHOW TWO OPTIONS
+        ============================================ */
+
+        emailOptions.classList.add(
+            "show"
+        );
+
+
+        /* ============================================
+           AUTOMATICALLY OPEN GMAIL
+
+           This makes the main button itself
+           functional.
+        ============================================ */
+
+        window.open(
+            preparedGmailURL,
+            "_blank",
+            "noopener,noreferrer"
+        );
+
+    }
+);
+
+
+/* =========================================================
+   GMAIL BUTTON
+========================================================= */
+
+document.getElementById(
+    "gmailButton"
+).addEventListener(
+    "click",
+    function(){
+
+        if(
+            preparedGmailURL
+        ){
+
+            window.open(
+                preparedGmailURL,
+                "_blank",
+                "noopener,noreferrer"
+            );
+
+        }
+
+    }
+);
+
+
+/* =========================================================
+   EMAIL APP BUTTON
+========================================================= */
+
+document.getElementById(
+    "mailAppButton"
+).addEventListener(
+    "click",
+    function(){
+
+        if(
+            preparedMailtoURL
+        ){
+
+            window.location.href =
+                preparedMailtoURL;
+
+        }
+
+    }
+);
+
+
+/* =========================================================
+   BACK TO TOP
+========================================================= */
+
+const topBtn =
+    document.getElementById(
+        "topBtn"
+    );
+
+window.addEventListener(
+    "scroll",
+    function(){
+
+        if(
+            window.scrollY > 500
+        ){
+
+            topBtn.classList.add(
+                "show"
+            );
+
+        }else{
+
+            topBtn.classList.remove(
+                "show"
+            );
+
+        }
+
+    }
+);
+
+
+topBtn.addEventListener(
+    "click",
+    function(){
+
+        window.scrollTo({
+            top:0,
+            behavior:"smooth"
+        });
+
+    }
+);
+
+
+/* =========================================================
+   LIVE OCEAN PARTICLES
+========================================================= */
+
+const canvas =
+    document.getElementById(
+        "oceanCanvas"
+    );
+
+const ctx =
+    canvas.getContext("2d");
+
+let particles = [];
+
+
+function resizeCanvas(){
+
+    const ratio =
+        window.devicePixelRatio || 1;
 
     canvas.width =
-        width * ratio;
+        window.innerWidth * ratio;
 
     canvas.height =
-        height * ratio;
+        window.innerHeight * ratio;
 
     canvas.style.width =
-        width + "px";
+        window.innerWidth + "px";
 
     canvas.style.height =
-        height + "px";
+        window.innerHeight + "px";
 
     ctx.setTransform(
         ratio,
@@ -2028,122 +3881,61 @@ function resizeCanvas() {
 
 }
 
+
 resizeCanvas();
 
 
-/* =========================================================
-   RANDOM HELPERS
-========================================================= */
+window.addEventListener(
+    "resize",
+    function(){
 
-function random(min,max) {
+        resizeCanvas();
+        createParticles();
 
-    return Math.random() *
-        (max-min) + min;
-
-}
+    }
+);
 
 
-/* =========================================================
-   CREATE STARS
-========================================================= */
+function createParticles(){
 
-function createStars() {
+    particles = [];
 
-    stars = [];
+    const amount =
+        Math.min(
+            85,
+            Math.floor(
+                window.innerWidth / 18
+            )
+        );
+
 
     for(
         let i=0;
-        i<STAR_COUNT;
+        i<amount;
         i++
-    ) {
+    ){
 
-        const x =
-            Math.random() * width;
+        particles.push({
 
-        const y =
-            Math.random() * height;
+            x:
+                Math.random() *
+                window.innerWidth,
 
+            y:
+                Math.random() *
+                window.innerHeight,
 
-        /*
-         * DIAGONAL MILKY WAY DENSITY
-         */
+            radius:
+                Math.random() * 2.2 + .4,
 
-        const diagonal =
-            y -
-            (
-                height * .13 +
-                x * .34
-            );
-
-        const band =
-            Math.exp(
-                -(diagonal * diagonal) /
-                (2 * Math.pow(height*.17,2))
-            );
-
-
-        const density =
-            Math.random() <
-            (.10 + band*.65);
-
-
-        if(!density && Math.random() < .55)
-            continue;
-
-
-        const size =
-            Math.random() < .90
-            ? random(.35,1.15)
-            : random(1.15,2);
-
-
-        let color;
-
-        const colorRoll =
-            Math.random();
-
-
-        if(colorRoll < .72) {
-
-            color =
-                "238,244,255";
-
-        } else if(colorRoll < .88) {
-
-            color =
-                "210,230,250";
-
-        } else {
-
-            color =
-                "255,232,204";
-
-        }
-
-
-        stars.push({
-
-            x,
-            y,
-
-            size,
-
-            base:
-                random(.25,.9),
-
-            alpha:
-                random(.25,.85),
-
-            twinkle:
-                random(.0015,.005),
-
-            phase:
-                random(0,Math.PI*2),
-
-            color,
+            speed:
+                Math.random() * .35 + .08,
 
             drift:
-                random(.00003,.00012)
+                (Math.random()-.5)*.25,
+
+            opacity:
+                Math.random()*.45+.08
 
         });
 
@@ -2151,528 +3943,115 @@ function createStars() {
 
 }
 
-createStars();
+
+createParticles();
 
 
-/* =========================================================
-   DRAW STARS
-========================================================= */
-
-let lastTime = 0;
-
-function drawStars(time) {
-
-    const delta =
-        time-lastTime;
-
-    lastTime = time;
-
+function animateOcean(){
 
     ctx.clearRect(
         0,
         0,
-        width,
-        height
+        window.innerWidth,
+        window.innerHeight
     );
 
 
-    for(const star of stars) {
+    particles.forEach(
+        function(p){
 
-        /*
-         * SUBTLE TWINKLE
-         */
+            p.y -= p.speed;
 
-        const pulse =
-            Math.sin(
-                time *
-                star.twinkle +
-                star.phase
-            );
+            p.x += p.drift;
 
 
-        const alpha =
-            Math.max(
-                .08,
-                star.alpha +
-                pulse*.12
-            );
+            if(
+                p.y < -10
+            ){
+
+                p.y =
+                    window.innerHeight + 10;
+
+                p.x =
+                    Math.random() *
+                    window.innerWidth;
+
+            }
 
 
-        /*
-         * VERY SLOW COSMIC DRIFT
-         */
+            if(
+                p.x < -10
+            ){
 
-        star.x +=
-            star.drift *
-            delta;
+                p.x =
+                    window.innerWidth + 10;
 
-        if(star.x > width+10)
-            star.x = -10;
+            }
 
 
-        ctx.beginPath();
+            if(
+                p.x >
+                window.innerWidth + 10
+            ){
 
-        ctx.arc(
-            star.x,
-            star.y,
-            star.size,
-            0,
-            Math.PI*2
-        );
+                p.x = -10;
 
+            }
 
-        ctx.fillStyle =
-            `rgba(${star.color},${alpha})`;
-
-        ctx.fill();
-
-
-        /*
-         * VERY SUBTLE HALO FOR LARGER STARS
-         */
-
-        if(star.size > 1.35) {
 
             ctx.beginPath();
 
             ctx.arc(
-                star.x,
-                star.y,
-                star.size*3,
+                p.x,
+                p.y,
+                p.radius,
                 0,
-                Math.PI*2
+                Math.PI * 2
             );
 
+
             ctx.fillStyle =
-                `rgba(${star.color},${alpha*.035})`;
+                `rgba(
+                    101,
+                    224,
+                    233,
+                    ${p.opacity}
+                )`;
 
             ctx.fill();
 
         }
-
-    }
-
-
-    requestAnimationFrame(drawStars);
-
-}
-
-requestAnimationFrame(drawStars);
-
-
-/* =========================================================
-   RESIZE EVENT
-========================================================= */
-
-let resizeTimer;
-
-window.addEventListener(
-    "resize",
-    () => {
-
-        clearTimeout(resizeTimer);
-
-        resizeTimer =
-            setTimeout(
-                () => {
-
-                    resizeCanvas();
-
-                    createStars();
-
-                },
-                200
-            );
-
-    }
-);
-
-
-/* =========================================================
-   SHOOTING STAR
-========================================================= */
-
-function createShootingStar() {
-
-    if(
-        document.hidden ||
-        Math.random() > .45
-    ) {
-
-        scheduleShootingStar();
-
-        return;
-
-    }
-
-
-    const star =
-        document.createElement("div");
-
-
-    star.style.position =
-        "fixed";
-
-    star.style.pointerEvents =
-        "none";
-
-    star.style.zIndex =
-        "-2";
-
-    star.style.width =
-        random(70,150) + "px";
-
-    star.style.height =
-        "1px";
-
-    star.style.background =
-        "linear-gradient(90deg,transparent,rgba(238,244,255,.8),transparent)";
-
-    star.style.filter =
-        "blur(.3px)";
-
-    star.style.left =
-        random(-5,75) + "%";
-
-    star.style.top =
-        random(8,55) + "%";
-
-    star.style.transform =
-        "rotate(-25deg)";
-
-    star.style.opacity =
-        "0";
-
-
-    document.body.appendChild(star);
-
-
-    star.animate(
-
-        [
-
-            {
-                transform:
-                    "translate(0,0) rotate(-25deg)",
-
-                opacity: 0
-
-            },
-
-            {
-                transform:
-                    "translate(80px,35px) rotate(-25deg)",
-
-                opacity: .8
-
-            },
-
-            {
-                transform:
-                    "translate(180px,80px) rotate(-25deg)",
-
-                opacity: 0
-
-            }
-
-        ],
-
-        {
-
-            duration:
-                random(700,1200),
-
-            easing:
-                "ease-out"
-
-        }
-
-    ).finished.then(
-        () => star.remove()
     );
-
-
-    scheduleShootingStar();
-
-}
-
-
-function scheduleShootingStar() {
-
-    setTimeout(
-        createShootingStar,
-        random(
-            7000,
-            18000
-        )
-    );
-
-}
-
-scheduleShootingStar();
-
-
-/* =========================================================
-   MOON CURSOR
-========================================================= */
-
-const cursor =
-document.getElementById(
-    "moonCursor"
-);
-
-
-let mouseX =
-    window.innerWidth/2;
-
-let mouseY =
-    window.innerHeight/2;
-
-let currentX =
-    mouseX;
-
-let currentY =
-    mouseY;
-
-
-window.addEventListener(
-    "mousemove",
-    (event) => {
-
-        mouseX =
-            event.clientX;
-
-        mouseY =
-            event.clientY;
-
-    },
-    {
-        passive:true
-    }
-);
-
-
-function animateCursor() {
-
-    /*
-     * SMOOTH FOLLOWING MOVEMENT
-     */
-
-    currentX +=
-        (mouseX-currentX)*.16;
-
-    currentY +=
-        (mouseY-currentY)*.16;
-
-
-    cursor.style.left =
-        currentX + "px";
-
-    cursor.style.top =
-        currentY + "px";
 
 
     requestAnimationFrame(
-        animateCursor
+        animateOcean
     );
 
 }
 
-animateCursor();
+
+animateOcean();
 
 
 /* =========================================================
-   CURSOR HOVER EFFECT
+   IMAGE ERROR HANDLING
 ========================================================= */
 
-const hoverElements =
 document.querySelectorAll(
-    "a, button, .project, .skill-card, .education-card"
-);
+    ".profile-image img"
+).forEach(
+    function(img){
 
+        img.addEventListener(
+            "error",
+            function(){
 
-hoverElements.forEach(
-    element => {
-
-        element.addEventListener(
-            "mouseenter",
-            () => {
-
-                document.body.classList.add(
-                    "cursor-hover"
-                );
+                img.style.display =
+                    "none";
 
             }
         );
-
-
-        element.addEventListener(
-            "mouseleave",
-            () => {
-
-                document.body.classList.remove(
-                    "cursor-hover"
-                );
-
-            }
-        );
-
-    }
-);
-
-
-/* =========================================================
-   REVEAL ON SCROLL
-========================================================= */
-
-const observer =
-new IntersectionObserver(
-    entries => {
-
-        entries.forEach(
-            entry => {
-
-                if(entry.isIntersecting) {
-
-                    entry.target.classList.add(
-                        "visible"
-                    );
-
-                }
-
-            }
-        );
-
-    },
-
-    {
-        threshold:.12
-    }
-);
-
-
-document
-    .querySelectorAll(".reveal")
-    .forEach(
-        element =>
-            observer.observe(element)
-    );
-
-
-/* =========================================================
-   CURRENT YEAR
-========================================================= */
-
-document.getElementById(
-    "year"
-).textContent =
-new Date().getFullYear();
-
-
-/* =========================================================
-   MOBILE MENU
-========================================================= */
-
-const menuButton =
-document.querySelector(
-    ".menu-button"
-);
-
-const navLinks =
-document.querySelector(
-    ".nav-links"
-);
-
-
-menuButton.addEventListener(
-    "click",
-    () => {
-
-        if(
-            navLinks.style.display ===
-            "flex"
-        ) {
-
-            navLinks.style.display =
-                "";
-
-        } else {
-
-            navLinks.style.display =
-                "flex";
-
-            navLinks.style.flexDirection =
-                "column";
-
-            navLinks.style.position =
-                "absolute";
-
-            navLinks.style.top =
-                "70px";
-
-            navLinks.style.right =
-                "5%";
-
-            navLinks.style.padding =
-                "20px";
-
-            navLinks.style.background =
-                "rgba(3,10,20,.95)";
-
-            navLinks.style.border =
-                "1px solid rgba(150,190,225,.15)";
-
-            navLinks.style.borderRadius =
-                "12px";
-
-        }
-
-    }
-);
-
-
-/* =========================================================
-   CLOSE MOBILE MENU
-========================================================= */
-
-navLinks
-    .querySelectorAll("a")
-    .forEach(
-        link => {
-
-            link.addEventListener(
-                "click",
-                () => {
-
-                    if(
-                        window.innerWidth <= 850
-                    ) {
-
-                        navLinks.style.display =
-                            "none";
-
-                    }
-
-                }
-            );
-
-        }
-    );
-
-
-/* =========================================================
-   PAGE VISIBILITY OPTIMIZATION
-========================================================= */
-
-document.addEventListener(
-    "visibilitychange",
-    () => {
-
-        /*
-         * Canvas animation automatically
-         * becomes less demanding when
-         * browser throttles hidden tabs.
-         */
 
     }
 );
