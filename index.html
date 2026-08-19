@@ -1,220 +1,3220 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Piyush Singh | Portfolio</title>
-  <style>
-    body {
-      font-family: 'Segoe UI', sans-serif;
-      margin: 0;
-      background: linear-gradient(to bottom right, #87CEEB, #1E90FF);
-      background-attachment: fixed;
-      color: #033E6B;
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Piyush Singh | Digital Marketing & Operations</title>
+
+<meta name="description"
+content="Portfolio of Piyush Singh — MBA Digital Marketing & Operations student, marketer, analyst and problem solver.">
+
+<meta name="keywords"
+content="Piyush Singh, Digital Marketing, Marketing, Operations, MBA, Portfolio, LPU, SEO, Google Ads, Analytics">
+
+<meta name="author" content="Piyush Singh">
+
+<meta property="og:title" content="Piyush Singh | Portfolio">
+<meta property="og:description" content="Digital Marketing & Operations Portfolio">
+<meta property="og:type" content="website">
+
+<style>
+
+/* =========================================================
+   GLOBAL
+========================================================= */
+
+:root{
+    --ocean-950:#02151d;
+    --ocean-900:#032630;
+    --ocean-850:#043440;
+    --ocean-800:#064452;
+    --ocean-700:#075e6f;
+    --ocean-600:#087f91;
+    --ocean-500:#0ba4b8;
+    --ocean-400:#28c5d5;
+    --ocean-300:#65e0e9;
+    --ocean-200:#a6f2f5;
+    --white:#f4feff;
+    --muted:#a7c9ce;
+    --glass:rgba(4,45,56,.55);
+    --glass-light:rgba(9,75,88,.45);
+    --border:rgba(101,224,233,.18);
+    --shadow:0 20px 70px rgba(0,0,0,.28);
+    --radius:24px;
+    --max:1180px;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    scroll-behavior:smooth;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:
+    Inter,
+    ui-sans-serif,
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+
+    color:var(--white);
+    background:
+    radial-gradient(circle at 10% 10%, rgba(40,197,213,.13), transparent 28%),
+    radial-gradient(circle at 90% 20%, rgba(8,127,145,.18), transparent 30%),
+    radial-gradient(circle at 50% 90%, rgba(101,224,233,.08), transparent 35%),
+    var(--ocean-950);
+
+    overflow-x:hidden;
+    line-height:1.6;
+}
+
+a{
+    color:inherit;
+    text-decoration:none;
+}
+
+button,
+input,
+textarea{
+    font:inherit;
+}
+
+.container{
+    width:min(var(--max), calc(100% - 40px));
+    margin:auto;
+}
+
+section{
+    padding:110px 0;
+    position:relative;
+    z-index:2;
+}
+
+.section-heading{
+    margin-bottom:55px;
+}
+
+.eyebrow{
+    color:var(--ocean-300);
+    font-size:.78rem;
+    font-weight:800;
+    letter-spacing:3px;
+    text-transform:uppercase;
+    margin-bottom:12px;
+}
+
+.section-heading h2{
+    font-size:clamp(2.1rem,5vw,3.6rem);
+    line-height:1.05;
+    letter-spacing:-2px;
+}
+
+.section-heading p{
+    max-width:680px;
+    color:var(--muted);
+    margin-top:16px;
+}
+
+
+/* =========================================================
+   LIVE OCEAN BACKGROUND
+========================================================= */
+
+#oceanCanvas{
+    position:fixed;
+    inset:0;
+    width:100%;
+    height:100%;
+    z-index:-5;
+    pointer-events:none;
+}
+
+.ocean-glow{
+    position:fixed;
+    width:500px;
+    height:500px;
+    border-radius:50%;
+    filter:blur(100px);
+    opacity:.16;
+    pointer-events:none;
+    z-index:-3;
+    animation:floatGlow 12s ease-in-out infinite alternate;
+}
+
+.glow-one{
+    background:#0ba4b8;
+    top:-200px;
+    left:-150px;
+}
+
+.glow-two{
+    background:#65e0e9;
+    right:-200px;
+    bottom:-150px;
+    animation-delay:2s;
+}
+
+@keyframes floatGlow{
+    from{
+        transform:translate3d(0,0,0) scale(1);
     }
-    header {
-      background-color: #005f99; /* Deep Ocean Blue */
-      color: white;
-      padding: 2rem;
-      text-align: center;
+    to{
+        transform:translate3d(50px,40px,0) scale(1.12);
     }
-    header h1 {
-      margin: 0;
-      font-size: 2.5rem;
+}
+
+
+/* =========================================================
+   NAVBAR
+========================================================= */
+
+.navbar{
+    position:fixed;
+    top:0;
+    left:0;
+    right:0;
+    z-index:1000;
+    padding:16px 0;
+    transition:.3s ease;
+}
+
+.navbar.scrolled{
+    background:rgba(2,21,29,.76);
+    backdrop-filter:blur(18px);
+    border-bottom:1px solid var(--border);
+}
+
+.nav-inner{
+    width:min(var(--max),calc(100% - 30px));
+    margin:auto;
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+
+    padding:10px 18px;
+
+    border:1px solid rgba(101,224,233,.10);
+    border-radius:18px;
+
+    background:rgba(3,38,48,.25);
+    backdrop-filter:blur(12px);
+}
+
+.logo{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    font-weight:900;
+    letter-spacing:-.5px;
+}
+
+.logo-dot{
+    width:11px;
+    height:11px;
+    background:var(--ocean-300);
+    border-radius:50%;
+    box-shadow:0 0 25px var(--ocean-300);
+}
+
+.nav-links{
+    display:flex;
+    gap:8px;
+    list-style:none;
+}
+
+.nav-links a{
+    color:#b9d9dd;
+    padding:9px 13px;
+    border-radius:10px;
+    font-size:.9rem;
+    transition:.25s;
+}
+
+.nav-links a:hover,
+.nav-links a.active{
+    color:white;
+    background:rgba(40,197,213,.12);
+}
+
+.menu-btn{
+    display:none;
+    background:none;
+    border:0;
+    color:white;
+    font-size:25px;
+    cursor:pointer;
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.hero{
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    padding-top:120px;
+    overflow:hidden;
+}
+
+.hero-grid{
+    display:grid;
+    grid-template-columns:1.2fr .8fr;
+    gap:60px;
+    align-items:center;
+}
+
+.hero-kicker{
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+
+    padding:7px 12px;
+    border:1px solid var(--border);
+    background:rgba(11,164,184,.08);
+    border-radius:100px;
+
+    color:var(--ocean-200);
+    font-size:.8rem;
+    font-weight:700;
+    margin-bottom:25px;
+}
+
+.live-dot{
+    width:7px;
+    height:7px;
+    background:#6ff7cf;
+    border-radius:50%;
+    box-shadow:0 0 14px #6ff7cf;
+    animation:pulse 1.6s infinite;
+}
+
+@keyframes pulse{
+    50%{
+        transform:scale(1.6);
+        opacity:.5;
     }
-    header p {
-      margin: 0.5rem 0;
+}
+
+.hero h1{
+    font-size:clamp(3.3rem,7vw,6.8rem);
+    line-height:.92;
+    letter-spacing:-6px;
+    max-width:850px;
+}
+
+.gradient-text{
+    background:linear-gradient(
+        100deg,
+        #ffffff,
+        #65e0e9 45%,
+        #0ba4b8
+    );
+
+    -webkit-background-clip:text;
+    background-clip:text;
+    color:transparent;
+}
+
+.hero-description{
+    color:var(--muted);
+    max-width:650px;
+    font-size:1.05rem;
+    margin:28px 0;
+}
+
+.hero-actions{
+    display:flex;
+    flex-wrap:wrap;
+    gap:13px;
+}
+
+.btn{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:9px;
+
+    padding:13px 19px;
+    border-radius:13px;
+
+    font-weight:800;
+    font-size:.9rem;
+
+    cursor:pointer;
+    border:1px solid var(--border);
+
+    transition:.25s;
+}
+
+.btn-primary{
+    color:#002027;
+    background:var(--ocean-300);
+    box-shadow:0 10px 35px rgba(40,197,213,.18);
+}
+
+.btn-primary:hover{
+    transform:translateY(-3px);
+    box-shadow:0 16px 45px rgba(40,197,213,.3);
+}
+
+.btn-ghost{
+    background:rgba(255,255,255,.025);
+    color:white;
+}
+
+.btn-ghost:hover{
+    background:rgba(40,197,213,.1);
+    transform:translateY(-3px);
+}
+
+.hero-contact{
+    margin-top:32px;
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px;
+}
+
+.contact-chip{
+    display:flex;
+    align-items:center;
+    gap:8px;
+
+    color:#a7c9ce;
+    font-size:.85rem;
+
+    padding:8px 11px;
+    border:1px solid rgba(101,224,233,.10);
+    border-radius:11px;
+
+    transition:.2s;
+}
+
+.contact-chip:hover{
+    color:white;
+    border-color:var(--border);
+    background:rgba(40,197,213,.07);
+}
+
+
+/* =========================================================
+   PROFILE CARD
+========================================================= */
+
+.profile-wrap{
+    display:flex;
+    justify-content:center;
+}
+
+.profile-card{
+    width:min(380px,100%);
+    padding:15px;
+    border:1px solid var(--border);
+    border-radius:34px;
+
+    background:
+    linear-gradient(
+        145deg,
+        rgba(40,197,213,.13),
+        rgba(3,38,48,.65)
+    );
+
+    box-shadow:var(--shadow);
+    transform:rotate(2deg);
+    transition:.5s;
+}
+
+.profile-card:hover{
+    transform:rotate(0deg) translateY(-8px);
+}
+
+.profile-image{
+    position:relative;
+    aspect-ratio:4/5;
+    overflow:hidden;
+    border-radius:25px;
+    background:
+    linear-gradient(
+        145deg,
+        var(--ocean-700),
+        var(--ocean-950)
+    );
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+.profile-image img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    display:block;
+}
+
+.profile-placeholder{
+    position:absolute;
+    inset:0;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    flex-direction:column;
+
+    color:var(--ocean-200);
+    text-align:center;
+    padding:25px;
+}
+
+.profile-placeholder strong{
+    font-size:3rem;
+    margin-bottom:5px;
+}
+
+.profile-placeholder span{
+    font-size:.75rem;
+    color:#8cb9bf;
+}
+
+.profile-info{
+    padding:17px 8px 7px;
+}
+
+.profile-info h3{
+    font-size:1.25rem;
+}
+
+.profile-info p{
+    color:#8fb9bf;
+    font-size:.85rem;
+}
+
+
+/* =========================================================
+   GLASS CARDS
+========================================================= */
+
+.glass{
+    border:1px solid var(--border);
+    background:
+    linear-gradient(
+        145deg,
+        rgba(8,68,82,.45),
+        rgba(2,21,29,.55)
+    );
+
+    backdrop-filter:blur(14px);
+    border-radius:var(--radius);
+    box-shadow:0 15px 60px rgba(0,0,0,.12);
+}
+
+
+/* =========================================================
+   ABOUT
+========================================================= */
+
+.about-grid{
+    display:grid;
+    grid-template-columns:.8fr 1.2fr;
+    gap:25px;
+}
+
+.about-card{
+    padding:35px;
+}
+
+.about-card h3{
+    font-size:1.4rem;
+    margin-bottom:15px;
+}
+
+.about-card p{
+    color:var(--muted);
+}
+
+.fact-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:14px;
+}
+
+.fact{
+    padding:25px;
+    border:1px solid var(--border);
+    border-radius:18px;
+    background:rgba(40,197,213,.035);
+}
+
+.fact-number{
+    font-size:2rem;
+    font-weight:900;
+    color:var(--ocean-300);
+}
+
+.fact span{
+    display:block;
+    color:#91b7bc;
+    font-size:.8rem;
+    margin-top:3px;
+}
+
+
+/* =========================================================
+   EXPERIENCE
+========================================================= */
+
+.timeline{
+    position:relative;
+    max-width:950px;
+}
+
+.timeline::before{
+    content:"";
+    position:absolute;
+    left:10px;
+    top:0;
+    bottom:0;
+    width:1px;
+    background:
+    linear-gradient(
+        var(--ocean-300),
+        rgba(101,224,233,.05)
+    );
+}
+
+.timeline-item{
+    position:relative;
+    padding-left:50px;
+    margin-bottom:28px;
+}
+
+.timeline-dot{
+    position:absolute;
+    left:3px;
+    top:25px;
+
+    width:15px;
+    height:15px;
+
+    background:var(--ocean-300);
+    border-radius:50%;
+
+    box-shadow:
+    0 0 0 5px rgba(40,197,213,.08),
+    0 0 20px rgba(101,224,233,.6);
+}
+
+.experience-card{
+    padding:27px;
+}
+
+.card-top{
+    display:flex;
+    justify-content:space-between;
+    gap:20px;
+    align-items:flex-start;
+}
+
+.card-top h3{
+    font-size:1.25rem;
+}
+
+.card-company{
+    color:var(--ocean-300);
+    font-weight:700;
+    font-size:.9rem;
+    margin-top:3px;
+}
+
+.date{
+    white-space:nowrap;
+    color:#88aeb3;
+    font-size:.78rem;
+    padding:6px 10px;
+    border:1px solid var(--border);
+    border-radius:9px;
+}
+
+.card-list{
+    margin-top:17px;
+    padding-left:19px;
+    color:var(--muted);
+}
+
+.card-list li{
+    margin-bottom:8px;
+}
+
+
+/* =========================================================
+   PROJECTS
+========================================================= */
+
+.project-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:18px;
+}
+
+.project-card{
+    padding:28px;
+    position:relative;
+    overflow:hidden;
+    transition:.3s;
+}
+
+.project-card::before{
+    content:"";
+    position:absolute;
+    width:180px;
+    height:180px;
+    background:var(--ocean-400);
+    opacity:.05;
+    border-radius:50%;
+    right:-80px;
+    top:-80px;
+    transition:.4s;
+}
+
+.project-card:hover{
+    transform:translateY(-7px);
+    border-color:rgba(101,224,233,.3);
+}
+
+.project-card:hover::before{
+    transform:scale(1.6);
+}
+
+.project-number{
+    font-size:.75rem;
+    color:var(--ocean-300);
+    font-weight:900;
+    letter-spacing:2px;
+}
+
+.project-card h3{
+    margin:11px 0 8px;
+    font-size:1.2rem;
+}
+
+.project-card p{
+    color:var(--muted);
+    font-size:.88rem;
+}
+
+.project-tags{
+    display:flex;
+    flex-wrap:wrap;
+    gap:7px;
+    margin-top:18px;
+}
+
+.tag{
+    padding:5px 9px;
+    border-radius:8px;
+    border:1px solid rgba(101,224,233,.12);
+    background:rgba(40,197,213,.05);
+    color:#a5dce1;
+    font-size:.7rem;
+}
+
+
+/* =========================================================
+   METRICS
+========================================================= */
+
+.metrics{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:13px;
+}
+
+.metric{
+    text-align:center;
+    padding:27px 15px;
+}
+
+.metric strong{
+    display:block;
+    font-size:2.25rem;
+    color:var(--ocean-300);
+    line-height:1;
+}
+
+.metric span{
+    color:#8fb5ba;
+    font-size:.75rem;
+}
+
+
+/* =========================================================
+   EDUCATION
+========================================================= */
+
+.education-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:18px;
+}
+
+.edu-card{
+    padding:27px;
+    min-height:260px;
+    position:relative;
+    overflow:hidden;
+}
+
+.edu-icon{
+    width:48px;
+    height:48px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    border-radius:15px;
+
+    background:rgba(40,197,213,.09);
+    border:1px solid var(--border);
+
+    font-size:1.25rem;
+    margin-bottom:25px;
+}
+
+.edu-card h3{
+    font-size:1.05rem;
+}
+
+.edu-card p{
+    color:var(--muted);
+    font-size:.84rem;
+    margin-top:9px;
+}
+
+.edu-year{
+    display:inline-block;
+    margin-top:17px;
+    color:var(--ocean-300);
+    font-size:.75rem;
+    font-weight:800;
+}
+
+
+/* =========================================================
+   CERTIFICATIONS
+========================================================= */
+
+.cert-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:12px;
+}
+
+.cert{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    padding:18px 20px;
+
+    border:1px solid var(--border);
+    background:rgba(40,197,213,.035);
+
+    border-radius:15px;
+
+    transition:.25s;
+}
+
+.cert:hover{
+    background:rgba(40,197,213,.08);
+    transform:translateX(5px);
+}
+
+.cert-name{
+    font-weight:700;
+    font-size:.9rem;
+}
+
+.cert-date{
+    color:#7ea8ae;
+    font-size:.72rem;
+}
+
+
+/* =========================================================
+   SKILLS
+========================================================= */
+
+.skills-layout{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:20px;
+}
+
+.skill-card{
+    padding:28px;
+}
+
+.skill{
+    margin-bottom:22px;
+}
+
+.skill:last-child{
+    margin-bottom:0;
+}
+
+.skill-title{
+    display:flex;
+    justify-content:space-between;
+    margin-bottom:8px;
+    font-size:.82rem;
+}
+
+.skill-title span:last-child{
+    color:var(--ocean-300);
+}
+
+.skill-track{
+    height:6px;
+    background:rgba(255,255,255,.06);
+    border-radius:20px;
+    overflow:hidden;
+}
+
+.skill-fill{
+    height:100%;
+    width:0;
+    border-radius:20px;
+
+    background:
+    linear-gradient(
+        90deg,
+        var(--ocean-700),
+        var(--ocean-300)
+    );
+
+    transition:width 1.5s cubic-bezier(.2,.7,.2,1);
+}
+
+.tool-cloud{
+    display:flex;
+    flex-wrap:wrap;
+    gap:9px;
+    margin-top:20px;
+}
+
+.tool{
+    padding:9px 12px;
+    border-radius:11px;
+    background:rgba(40,197,213,.05);
+    border:1px solid var(--border);
+    color:#b5dce0;
+    font-size:.78rem;
+}
+
+
+/* =========================================================
+   ACHIEVEMENT
+========================================================= */
+
+.achievement{
+    display:grid;
+    grid-template-columns:auto 1fr;
+    gap:25px;
+    align-items:center;
+
+    padding:35px;
+}
+
+.achievement-icon{
+    width:75px;
+    height:75px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    border-radius:22px;
+
+    background:
+    linear-gradient(
+        145deg,
+        rgba(101,224,233,.18),
+        rgba(8,68,82,.5)
+    );
+
+    font-size:2rem;
+}
+
+.achievement h3{
+    font-size:1.35rem;
+}
+
+.achievement p{
+    color:var(--muted);
+    margin-top:7px;
+}
+
+
+/* =========================================================
+   CONTACT
+========================================================= */
+
+.contact-grid{
+    display:grid;
+    grid-template-columns:.8fr 1.2fr;
+    gap:20px;
+}
+
+.contact-card{
+    padding:30px;
+}
+
+.contact-method{
+    display:flex;
+    gap:15px;
+    align-items:center;
+
+    padding:16px;
+    border-radius:15px;
+
+    border:1px solid var(--border);
+    background:rgba(40,197,213,.035);
+
+    margin-bottom:10px;
+
+    transition:.2s;
+}
+
+.contact-method:hover{
+    background:rgba(40,197,213,.09);
+    transform:translateX(4px);
+}
+
+.contact-icon{
+    width:43px;
+    height:43px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    border-radius:12px;
+
+    background:rgba(40,197,213,.1);
+    color:var(--ocean-300);
+}
+
+.contact-method strong{
+    display:block;
+    font-size:.86rem;
+}
+
+.contact-method span{
+    color:#8eafb4;
+    font-size:.78rem;
+    word-break:break-word;
+}
+
+.form-row{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:12px;
+}
+
+.field{
+    margin-bottom:13px;
+}
+
+.field label{
+    display:block;
+    margin-bottom:7px;
+    font-size:.76rem;
+    color:#91b8bd;
+}
+
+.field input,
+.field textarea{
+    width:100%;
+    border:1px solid var(--border);
+    background:rgba(0,0,0,.15);
+    color:white;
+    outline:none;
+    border-radius:12px;
+    padding:13px 14px;
+    transition:.2s;
+}
+
+.field textarea{
+    min-height:150px;
+    resize:vertical;
+}
+
+.field input:focus,
+.field textarea:focus{
+    border-color:var(--ocean-300);
+    box-shadow:0 0 0 3px rgba(40,197,213,.07);
+}
+
+.form-note{
+    margin-top:10px;
+    color:#7fa8ad;
+    font-size:.72rem;
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+footer{
+    padding:35px 0;
+    border-top:1px solid var(--border);
+    position:relative;
+    z-index:2;
+}
+
+.footer-inner{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:20px;
+}
+
+.footer-inner p{
+    color:#739ba0;
+    font-size:.78rem;
+}
+
+.footer-links{
+    display:flex;
+    gap:8px;
+}
+
+.footer-links a{
+    width:36px;
+    height:36px;
+    border-radius:10px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    border:1px solid var(--border);
+    color:#9dc6ca;
+
+    transition:.2s;
+}
+
+.footer-links a:hover{
+    background:rgba(40,197,213,.1);
+    color:white;
+}
+
+
+/* =========================================================
+   BACK TO TOP
+========================================================= */
+
+.top-btn{
+    position:fixed;
+    right:20px;
+    bottom:20px;
+
+    width:45px;
+    height:45px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    border-radius:13px;
+
+    border:1px solid var(--border);
+    background:rgba(3,38,48,.8);
+    color:white;
+
+    cursor:pointer;
+
+    opacity:0;
+    pointer-events:none;
+
+    transition:.3s;
+
+    z-index:900;
+}
+
+.top-btn.show{
+    opacity:1;
+    pointer-events:auto;
+}
+
+
+/* =========================================================
+   REVEAL
+========================================================= */
+
+.reveal{
+    opacity:0;
+    transform:translateY(30px);
+    transition:
+    opacity .7s ease,
+    transform .7s ease;
+}
+
+.reveal.visible{
+    opacity:1;
+    transform:none;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media(max-width:950px){
+
+    .hero-grid,
+    .about-grid,
+    .contact-grid,
+    .skills-layout{
+        grid-template-columns:1fr;
     }
-    nav {
-      background-color: #033E6B;
-      padding: 0.5rem;
-      text-align: center;
+
+    .hero{
+        padding-top:150px;
     }
-    nav a {
-      color: white;
-      margin: 0 1rem;
-      text-decoration: none;
-      font-weight: bold;
+
+    .profile-wrap{
+        order:-1;
     }
-    nav a:hover {
-      color: #87CEEB;
+
+    .profile-card{
+        width:300px;
     }
-    section {
-      padding: 2rem;
-      max-width: 1000px;
-      margin: auto;
+
+    .education-grid{
+        grid-template-columns:1fr 1fr;
     }
-    h2 {
-      color: #005f99;
-      border-bottom: 2px solid #005f99;
-      padding-bottom: 0.5rem;
+
+    .metrics{
+        grid-template-columns:repeat(2,1fr);
     }
-    ul {
-      list-style-type: square;
-      padding-left: 1.5rem;
+}
+
+@media(max-width:720px){
+
+    section{
+        padding:80px 0;
     }
-    footer {
-      background-color: #005f99;
-      color: white;
-      text-align: center;
-      padding: 1rem;
-      margin-top: 2rem;
+
+    .container{
+        width:min(100% - 28px,var(--max));
     }
-    .card {
-      background: rgba(255,255,255,0.9);
-      border: 1px solid #ddd;
-      border-radius: 8px;
-      padding: 1rem;
-      margin-bottom: 1rem;
-      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+
+    .nav-inner{
+        padding:10px 14px;
     }
-    .card h3 {
-      margin-top: 0;
-      color: #033E6B;
+
+    .menu-btn{
+        display:block;
     }
-    .photo {
-      text-align: center;
-      margin: 1rem 0;
+
+    .nav-links{
+        position:absolute;
+        top:68px;
+        left:14px;
+        right:14px;
+
+        display:none;
+        flex-direction:column;
+
+        padding:10px;
+
+        border:1px solid var(--border);
+        background:rgba(2,21,29,.95);
+        backdrop-filter:blur(20px);
+
+        border-radius:16px;
     }
-    .photo img {
-      width: 200px;
-      height: auto;
-      border-radius: 10px;
-      border: 3px solid #005f99;
-      box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+
+    .nav-links.open{
+        display:flex;
     }
-    .contact a {
-      color: #005f99;
-      text-decoration: none;
-      font-weight: bold;
+
+    .nav-links a{
+        display:block;
+        padding:12px;
     }
-    .contact a:hover {
-      text-decoration: underline;
+
+    .hero h1{
+        font-size:clamp(3rem,16vw,5rem);
+        letter-spacing:-4px;
     }
-  </style>
+
+    .hero-description{
+        font-size:.95rem;
+    }
+
+    .hero-actions{
+        flex-direction:column;
+        align-items:stretch;
+    }
+
+    .btn{
+        width:100%;
+    }
+
+    .fact-grid,
+    .project-grid,
+    .education-grid,
+    .cert-grid{
+        grid-template-columns:1fr;
+    }
+
+    .metrics{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .form-row{
+        grid-template-columns:1fr;
+    }
+
+    .card-top{
+        flex-direction:column;
+    }
+
+    .achievement{
+        grid-template-columns:1fr;
+    }
+
+    .footer-inner{
+        flex-direction:column;
+        text-align:center;
+    }
+}
+
+</style>
 </head>
+
+
 <body>
-  <header>
-    <h1>Piyush Singh</h1>
-    <p>📍 MBA in Digital Marketing & Operations | Biotechnology Graduate</p>
-    <p class="contact">
-      <a href="mailto:piyushsingh20030610@gmail.com">Email</a> | 
-      <a href="tel:+918431832821">Phone</a> | 
-      <a href="https://linkedin.com/in/piyushsingh0610" target="_blank">LinkedIn</a>
+
+<!-- =====================================================
+     LIVE OCEAN BACKGROUND
+====================================================== -->
+
+<canvas id="oceanCanvas"></canvas>
+
+<div class="ocean-glow glow-one"></div>
+<div class="ocean-glow glow-two"></div>
+
+
+<!-- =====================================================
+     NAVIGATION
+====================================================== -->
+
+<header class="navbar" id="navbar">
+
+    <div class="nav-inner">
+
+        <a href="#home" class="logo">
+            <span class="logo-dot"></span>
+            PIYUSH SINGH
+        </a>
+
+        <button class="menu-btn" id="menuBtn" aria-label="Open menu">
+            ☰
+        </button>
+
+        <nav>
+            <ul class="nav-links" id="navLinks">
+
+                <li><a href="#home" class="active">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#contact">Contact</a></li>
+
+            </ul>
+        </nav>
+
+    </div>
+
+</header>
+
+
+<!-- =====================================================
+     HERO
+====================================================== -->
+
+<main>
+
+<section class="hero" id="home">
+
+<div class="container">
+
+<div class="hero-grid">
+
+<div>
+
+    <div class="hero-kicker">
+        <span class="live-dot"></span>
+        OPEN TO OPPORTUNITIES
+    </div>
+
+    <h1>
+        Building ideas<br>
+        that move <span class="gradient-text">forward.</span>
+    </h1>
+
+    <p class="hero-description">
+        MBA Digital Marketing & Operations student focused on
+        digital marketing, business strategy, analytics and
+        operational improvement — combining creative thinking
+        with structured problem solving.
     </p>
-  </header>
 
-  <nav>
-    <a href="#experience">Experience</a>
-    <a href="#internships">Internships</a>
-    <a href="#projects">Projects</a>
-    <a href="#skills">Skills</a>
-    <a href="#education">Education</a>
-    <a href="#photos">Photos</a>
-  </nav>
+    <div class="hero-actions">
 
-  <section id="experience">
-    <h2>Work Experience</h2>
-    <div class="card">
-      <h3>Assistant Coach | AIR FORCE Summer Coaching Camp</h3>
-      <p>May 2025 - Jun 2025</p>
-      <ul>
-        <li>Coached 22 students in badminton skill development and performance improvement.</li>
-        <li>Designed structured daily drills to accelerate growth.</li>
-      </ul>
-    </div>
-    <div class="card">
-      <h3>Assistant Event Coordinator | Bhushan Badminton Academy</h3>
-      <p>Jun 2023 - Jul 2023</p>
-      <ul>
-        <li>Coordinated event logistics and tournament operations.</li>
-        <li>Supervised volunteers and vendors to ensure smooth execution.</li>
-      </ul>
-    </div>
-  </section>
+        <a href="#projects" class="btn btn-primary">
+            Explore My Work →
+        </a>
 
-  <section id="internships">
-    <h2>Internships</h2>
-    <div class="card">
-      <h3>Marketing Intern | Cognizen Innovations</h3>
-      <p>Jun 2026 - Jul 2026</p>
-      <ul>
-        <li>Cold calling to educate clients on SIP investments.</li>
-        <li>Built outreach pipeline and refined objection-handling skills.</li>
-      </ul>
-    </div>
-    <div class="card">
-      <h3>Laboratory Assistant Intern | Belagavi Bio-Center</h3>
-      <p>Jun 2024 - Jul 2024</p>
-      <ul>
-        <li>Validated 100+ lab data entries with high accuracy.</li>
-        <li>Improved operational efficiency by 10%.</li>
-      </ul>
-    </div>
-  </section>
+        <a
+            href="mailto:piyushsingh20030610@gmail.com?subject=Portfolio%20Opportunity"
+            class="btn btn-ghost"
+        >
+            ✉ Email Me
+        </a>
 
-  <section id="projects">
-    <h2>Projects</h2>
-    <div class="card">
-      <h3>Lean Six Sigma Approach to Public Transport Efficiency</h3>
-      <p>Jun 2026 - Jul 2026</p>
-      <ul>
-        <li>Applied DMAIC, SIPOC, Fishbone, and Pareto charts to reduce travel time by 55%.</li>
-        <li>Designed KPI dashboards and SOP guidelines for sustainability.</li>
-      </ul>
-    </div>
-    <div class="card">
-      <h3>Digital Campaign Creation & SEO Optimization | LPU</h3>
-      <p>Apr 2026 - May 2026</p>
-      <ul>
-        <li>Achieved 1st page Google SERP ranking.</li>
-        <li>Generated 92.4k+ impressions and 257 clicks via Google Ads.</li>
-      </ul>
-    </div>
-  </section>
+        <a
+            href="https://www.linkedin.com/in/piyushsingh0610/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="btn btn-ghost"
+        >
+            ↗ LinkedIn
+        </a>
 
-  <section id="skills">
-    <h2>Skills</h2>
-    <ul>
-      <li>Tools: MS Excel, Tableau, PowerPoint, Google Ads, Google Analytics, Canva, Shopify, WordPress, IBM SPSS</li>
-      <li>Power Skills: Communication, Leadership, Strategic Thinking, Problem Solving</li>
-    </ul>
-  </section>
+    </div>
 
-  <section id="education">
-    <h2>Education</h2>
-    <div class="card">
-      <h3>Lovely Professional University</h3>
-      <p>MBA - Digital Marketing & Operations | CGPA: 7.2</p>
-    </div>
-    <div class="card">
-      <h3>KLE Society's Raja Lakhmagouda Science Institute</h3>
-      <p>B.Sc Biotechnology & Zoology | CGPA: 8.1</p>
-    </div>
-    <div class="card">
-      <h3>KV NO.1, Sambra</h3>
-      <p>Science Stream | 85%</p>
-    </div>
-  </section>
+    <div class="hero-contact">
 
-  <section id="photos">
-    <h2>Photos</h2>
-    <div class="photo">
-      <img src="your-photo.jpg" alt="Piyush Singh">
-      <p>Personal Photo</p>
-    </div>
-    <div class="photo">
-      <img src="school-photo.jpg" alt="School">
-      <p>School Memories</p>
-    </div>
-    <div class="photo">
-      <img src="college-photo.jpg" alt="College">
-      <p>College Life</p>
-    </div>
-  </section>
+        <a
+            class="contact-chip"
+            href="mailto:piyushsingh20030610@gmail.com"
+        >
+            ✉ piyushsingh20030610@gmail.com
+        </a>
 
-  <footer>
-    <p>© 2026 Piyush Singh | Portfolio hosted on GitHub & Vercel</p>
-  </footer>
+        <a
+            class="contact-chip"
+            href="tel:+918431832821"
+        >
+            ☎ +91 84318 32821
+        </a>
+
+    </div>
+
+</div>
+
+
+<div class="profile-wrap reveal">
+
+    <div class="profile-card">
+
+        <div class="profile-image">
+
+            <!--
+            ==================================================
+            YOUR PROFILE PHOTO
+
+            Replace "assets/profile.jpg" with your photo.
+
+            Example:
+            assets/piyush-profile.jpg
+            ==================================================
+            -->
+
+            <img
+                src="assets/profile.jpg"
+                alt="Piyush Singh"
+                onerror="this.style.display='none';document.getElementById('profilePlaceholder').style.display='flex';"
+            >
+
+            <div
+                class="profile-placeholder"
+                id="profilePlaceholder"
+                style="display:none;"
+            >
+                <strong>PS</strong>
+                <span>
+                    Add your photo at<br>
+                    assets/profile.jpg
+                </span>
+            </div>
+
+        </div>
+
+        <div class="profile-info">
+
+            <h3>Piyush Singh</h3>
+
+            <p>
+                MBA — Digital Marketing & Operations
+            </p>
+
+        </div>
+
+    </div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     ABOUT
+====================================================== -->
+
+<section id="about">
+
+<div class="container">
+
+<div class="section-heading reveal">
+
+    <div class="eyebrow">01 — About</div>
+
+    <h2>A marketer with an<br>
+        <span class="gradient-text">analytical mindset.</span>
+    </h2>
+
+    <p>
+        My work sits at the intersection of marketing, analytics,
+        operations and business strategy.
+    </p>
+
+</div>
+
+
+<div class="about-grid">
+
+<div class="glass about-card reveal">
+
+    <h3>What I bring</h3>
+
+    <p>
+        I enjoy understanding how people, processes and data
+        connect. From digital campaigns and SEO to supply chain
+        analysis and Lean Six Sigma projects, I focus on finding
+        practical ways to improve performance.
+    </p>
+
+    <br>
+
+    <p>
+        Currently pursuing an MBA in Digital Marketing and
+        Operations at Lovely Professional University, I am
+        developing a multidisciplinary business perspective
+        supported by hands-on academic projects and internships.
+    </p>
+
+</div>
+
+
+<div class="fact-grid">
+
+    <div class="fact glass reveal">
+        <div class="fact-number">92.4K+</div>
+        <span>Google Ads Impressions</span>
+    </div>
+
+    <div class="fact glass reveal">
+        <div class="fact-number">55%</div>
+        <span>Travel Time Reduction</span>
+    </div>
+
+    <div class="fact glass reveal">
+        <div class="fact-number">68%</div>
+        <span>Passenger Wait Reduction</span>
+    </div>
+
+    <div class="fact glass reveal">
+        <div class="fact-number">₹10K+</div>
+        <span>Digital Product Revenue</span>
+    </div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     EXPERIENCE
+====================================================== -->
+
+<section id="experience">
+
+<div class="container">
+
+<div class="section-heading reveal">
+
+    <div class="eyebrow">02 — Experience</div>
+
+    <h2>Where I have<br>
+        <span class="gradient-text">learned by doing.</span>
+    </h2>
+
+</div>
+
+
+<div class="timeline">
+
+
+<div class="timeline-item reveal">
+
+<span class="timeline-dot"></span>
+
+<div class="glass experience-card">
+
+<div class="card-top">
+
+<div>
+
+    <h3>Marketing Intern</h3>
+
+    <div class="card-company">
+        Cognizen Innovations
+    </div>
+
+</div>
+
+<div class="date">
+    Jun 2026 — Jul 2026
+</div>
+
+</div>
+
+<ul class="card-list">
+
+    <li>
+        Conducted high-volume cold calling to educate
+        potential clients on SIP investments and wealth creation.
+    </li>
+
+    <li>
+        Communicated market benefits, addressed investor
+        hesitations and developed objection-handling skills
+        in a competitive BFSI environment.
+    </li>
+
+    <li>
+        Assessed prospect interest and financial readiness
+        to build an initial outreach pipeline for SIP services.
+    </li>
+
+</ul>
+
+</div>
+
+</div>
+
+
+<div class="timeline-item reveal">
+
+<span class="timeline-dot"></span>
+
+<div class="glass experience-card">
+
+<div class="card-top">
+
+<div>
+
+    <h3>Assistant Coach</h3>
+
+    <div class="card-company">
+        AIR FORCE Summer Coaching Camp
+    </div>
+
+</div>
+
+<div class="date">
+    May 2025 — Jun 2025
+</div>
+
+</div>
+
+<ul class="card-list">
+
+    <li>
+        Supported badminton training programs by coaching
+        22 students and assisting in skill development,
+        practice coordination and performance improvement.
+    </li>
+
+    <li>
+        Formulated structured daily drills to accelerate
+        skill acquisition and performance growth.
+    </li>
+
+</ul>
+
+</div>
+
+</div>
+
+
+<div class="timeline-item reveal">
+
+<span class="timeline-dot"></span>
+
+<div class="glass experience-card">
+
+<div class="card-top">
+
+<div>
+
+    <h3>Assistant Event Coordinator</h3>
+
+    <div class="card-company">
+        Bhushan Badminton Academy
+    </div>
+
+</div>
+
+<div class="date">
+    Jun 2023 — Jul 2023
+</div>
+
+</div>
+
+<ul class="card-list">
+
+    <li>
+        Coordinated event logistics and tournament operations
+        to support successful event execution.
+    </li>
+
+    <li>
+        Supervised match-day volunteers and vendor coordination
+        to keep tournament schedules running without delays.
+    </li>
+
+</ul>
+
+</div>
+
+</div>
+
+
+<div class="timeline-item reveal">
+
+<span class="timeline-dot"></span>
+
+<div class="glass experience-card">
+
+<div class="card-top">
+
+<div>
+
+    <h3>Laboratory Assistant Intern</h3>
+
+    <div class="card-company">
+        Belagavi Bio-Center
+    </div>
+
+</div>
+
+<div class="date">
+    Jun 2024 — Jul 2024
+</div>
+
+</div>
+
+<ul class="card-list">
+
+    <li>
+        Managed and validated 100+ laboratory data entries,
+        ensuring accuracy and integrity of experimental records.
+    </li>
+
+    <li>
+        Enhanced operational efficiency by 10% by supporting
+        laboratory staff with essential daily tasks.
+    </li>
+
+    <li>
+        Contributed to research and analysis projects focused
+        on Bio-Fertilizers and Bio-Control Agents.
+    </li>
+
+</ul>
+
+</div>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     PROJECTS
+====================================================== -->
+
+<section id="projects">
+
+<div class="container">
+
+<div class="section-heading reveal">
+
+    <div class="eyebrow">03 — Selected Work</div>
+
+    <h2>Projects that turn<br>
+        <span class="gradient-text">problems into possibilities.</span>
+    </h2>
+
+</div>
+
+
+<div class="project-grid">
+
+
+<div class="glass project-card reveal">
+
+    <div class="project-number">01 / OPERATIONS</div>
+
+    <h3>Lean Six Sigma Approach to Public Transport Efficiency</h3>
+
+    <p>
+        Applied DMAIC, SIPOC mapping, Fishbone diagrams and
+        Pareto charts to analyze terminal bottlenecks,
+        congestion and passenger delays.
+    </p>
+
+    <div class="project-tags">
+        <span class="tag">Lean Six Sigma</span>
+        <span class="tag">DMAIC</span>
+        <span class="tag">SIPOC</span>
+        <span class="tag">Process Improvement</span>
+    </div>
+
+</div>
+
+
+<div class="glass project-card reveal">
+
+    <div class="project-number">02 / DIGITAL MARKETING</div>
+
+    <h3>Digital Campaign Creation & SEO Optimization</h3>
+
+    <p>
+        Optimized website content for first-page Google SERP
+        ranking and executed Google Ads campaigns generating
+        92.4K+ impressions and 257 clicks.
+    </p>
+
+    <div class="project-tags">
+        <span class="tag">Google Ads</span>
+        <span class="tag">SEO</span>
+        <span class="tag">Google Analytics</span>
+        <span class="tag">SEM</span>
+    </div>
+
+</div>
+
+
+<div class="glass project-card reveal">
+
+    <div class="project-number">03 / DIGITAL PRODUCT</div>
+
+    <h3>Digital Product Creation & Marketing</h3>
+
+    <p>
+        Developed and launched a digital kids colouring book
+        supported by a landing page and social media promotion,
+        generating 25+ customer engagements and ₹10,000+ revenue.
+    </p>
+
+    <div class="project-tags">
+        <span class="tag">Digital Product</span>
+        <span class="tag">Social Media</span>
+        <span class="tag">Landing Page</span>
+        <span class="tag">Conversion</span>
+    </div>
+
+</div>
+
+
+<div class="glass project-card reveal">
+
+    <div class="project-number">04 / AFFILIATE MARKETING</div>
+
+    <h3>Affiliate Marketing — August Bioscience</h3>
+
+    <p>
+        Orchestrated 5+ affiliate marketing campaigns across
+        social platforms, achieving a 10% lead conversion rate
+        and contributing to 5% online sales growth.
+    </p>
+
+    <div class="project-tags">
+        <span class="tag">Affiliate Marketing</span>
+        <span class="tag">Social Media</span>
+        <span class="tag">Lead Generation</span>
+    </div>
+
+</div>
+
+
+<div class="glass project-card reveal">
+
+    <div class="project-number">05 / BRAND STRATEGY</div>
+
+    <h3>Unbranded to Branded — AttarVibez</h3>
+
+    <p>
+        Developed brand identity and integrated marketing
+        strategies for an attar and perfume product line,
+        including positioning and go-to-market planning.
+    </p>
+
+    <div class="project-tags">
+        <span class="tag">Brand Strategy</span>
+        <span class="tag">Positioning</span>
+        <span class="tag">GTM</span>
+        <span class="tag">Pricing</span>
+    </div>
+
+</div>
+
+
+<div class="glass project-card reveal">
+
+    <div class="project-number">06 / SUPPLY CHAIN</div>
+
+    <h3>Amul Supply Chain & Operations Analysis</h3>
+
+    <p>
+        Analyzed procurement, production, inventory,
+        warehousing and distribution while identifying gaps
+        in inventory planning and logistics.
+    </p>
+
+    <div class="project-tags">
+        <span class="tag">Supply Chain</span>
+        <span class="tag">Excel</span>
+        <span class="tag">Operations</span>
+        <span class="tag">Analysis</span>
+    </div>
+
+</div>
+
+
+<div class="glass project-card reveal">
+
+    <div class="project-number">07 / INVENTORY</div>
+
+    <h3>HP World Supply Chain & Inventory Optimization</h3>
+
+    <p>
+        Analyzed a 4-tier HP supply chain, diagnosed operational
+        risks and recommended high-frequency spare parts with
+        buffer stock to improve availability.
+    </p>
+
+    <div class="project-tags">
+        <span class="tag">Inventory</span>
+        <span class="tag">Supply Chain</span>
+        <span class="tag">Risk Analysis</span>
+        <span class="tag">Optimization</span>
+    </div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     METRICS
+====================================================== -->
+
+<section>
+
+<div class="container">
+
+<div class="metrics">
+
+    <div class="glass metric reveal">
+        <strong>92.4K+</strong>
+        <span>Ad Impressions</span>
+    </div>
+
+    <div class="glass metric reveal">
+        <strong>257</strong>
+        <span>Ad Clicks</span>
+    </div>
+
+    <div class="glass metric reveal">
+        <strong>4%</strong>
+        <span>Digital Product Conversion</span>
+    </div>
+
+    <div class="glass metric reveal">
+        <strong>50%</strong>
+        <span>Estimated AttarVibez Margin</span>
+    </div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     EDUCATION
+====================================================== -->
+
+<section id="education">
+
+<div class="container">
+
+<div class="section-heading reveal">
+
+    <div class="eyebrow">04 — Education</div>
+
+    <h2>Learning across<br>
+        <span class="gradient-text">business & science.</span>
+    </h2>
+
+</div>
+
+
+<div class="education-grid">
+
+
+<div class="glass edu-card reveal">
+
+    <div class="edu-icon">🎓</div>
+
+    <h3>
+        Lovely Professional University
+    </h3>
+
+    <p>
+        Master of Business Administration —
+        Digital Marketing and Operations
+    </p>
+
+    <p>
+        CGPA: 7.2
+    </p>
+
+    <span class="edu-year">
+        Aug 2025 — Jul 2027
+    </span>
+
+</div>
+
+
+<div class="glass edu-card reveal">
+
+    <div class="edu-icon">🔬</div>
+
+    <h3>
+        KLE Society's Raja Lakhmagouda Science Institute
+    </h3>
+
+    <p>
+        Bachelor's in Biotechnology and Zoology
+    </p>
+
+    <p>
+        CGPA: 8.1
+    </p>
+
+    <span class="edu-year">
+        Aug 2021 — Oct 2024
+    </span>
+
+</div>
+
+
+<div class="glass edu-card reveal">
+
+    <div class="edu-icon">📚</div>
+
+    <h3>
+        KV No.1, Sambra, Karnataka
+    </h3>
+
+    <p>
+        Science Stream
+    </p>
+
+    <p>
+        Percentage: 85%
+    </p>
+
+    <span class="edu-year">
+        Aug 2020 — May 2021
+    </span>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     EDUCATION PHOTOS
+====================================================== -->
+
+<section>
+
+<div class="container">
+
+<div class="section-heading reveal">
+
+    <div class="eyebrow">Campus</div>
+
+    <h2>Places that shaped<br>
+        <span class="gradient-text">my journey.</span>
+    </h2>
+
+</div>
+
+
+<div class="project-grid">
+
+<div class="glass project-card reveal">
+
+    <!-- Replace with your LPU image -->
+
+    <div class="profile-image" style="aspect-ratio:16/9;">
+
+        <img
+            src="assets/lpu.jpg"
+            alt="Lovely Professional University"
+            onerror="this.style.display='none';"
+        >
+
+        <div class="profile-placeholder">
+            <strong>01</strong>
+            <span>Add LPU campus photo<br>assets/lpu.jpg</span>
+        </div>
+
+    </div>
+
+    <h3>Lovely Professional University</h3>
+
+    <p>
+        MBA — Digital Marketing & Operations
+    </p>
+
+</div>
+
+
+<div class="glass project-card reveal">
+
+    <!-- Replace with your KLE image -->
+
+    <div class="profile-image" style="aspect-ratio:16/9;">
+
+        <img
+            src="assets/kle.jpg"
+            alt="KLE Society's Raja Lakhmagouda Science Institute"
+            onerror="this.style.display='none';"
+        >
+
+        <div class="profile-placeholder">
+            <strong>02</strong>
+            <span>Add college photo<br>assets/kle.jpg</span>
+        </div>
+
+    </div>
+
+    <h3>KLE Society's Raja Lakhmagouda Science Institute</h3>
+
+    <p>
+        Bachelor's in Biotechnology & Zoology
+    </p>
+
+</div>
+
+
+<div class="glass project-card reveal">
+
+    <!-- Replace with your school image -->
+
+    <div class="profile-image" style="aspect-ratio:16/9;">
+
+        <img
+            src="assets/kv-school.jpg"
+            alt="KV No.1 Sambra"
+            onerror="this.style.display='none';"
+        >
+
+        <div class="profile-placeholder">
+            <strong>03</strong>
+            <span>Add school photo<br>assets/kv-school.jpg</span>
+        </div>
+
+    </div>
+
+    <h3>KV No.1, Sambra</h3>
+
+    <p>
+        Science Stream
+    </p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     SKILLS
+====================================================== -->
+
+<section id="skills">
+
+<div class="container">
+
+<div class="section-heading reveal">
+
+    <div class="eyebrow">05 — Skills</div>
+
+    <h2>Tools, thinking &<br>
+        <span class="gradient-text">execution.</span>
+    </h2>
+
+</div>
+
+
+<div class="skills-layout">
+
+
+<div class="glass skill-card reveal">
+
+<h3 style="margin-bottom:25px;">
+    Core capabilities
+</h3>
+
+
+<div class="skill">
+
+<div class="skill-title">
+    <span>Digital Marketing</span>
+    <span>90%</span>
+</div>
+
+<div class="skill-track">
+    <div class="skill-fill" data-width="90%"></div>
+</div>
+
+</div>
+
+
+<div class="skill">
+
+<div class="skill-title">
+    <span>Market Research</span>
+    <span>88%</span>
+</div>
+
+<div class="skill-track">
+    <div class="skill-fill" data-width="88%"></div>
+</div>
+
+</div>
+
+
+<div class="skill">
+
+<div class="skill-title">
+    <span>Data Analysis</span>
+    <span>85%</span>
+</div>
+
+<div class="skill-track">
+    <div class="skill-fill" data-width="85%"></div>
+</div>
+
+</div>
+
+
+<div class="skill">
+
+<div class="skill-title">
+    <span>Operations Analysis</span>
+    <span>84%</span>
+</div>
+
+<div class="skill-track">
+    <div class="skill-fill" data-width="84%"></div>
+</div>
+
+</div>
+
+
+<div class="skill">
+
+<div class="skill-title">
+    <span>Problem Solving</span>
+    <span>90%</span>
+</div>
+
+<div class="skill-track">
+    <div class="skill-fill" data-width="90%"></div>
+</div>
+
+</div>
+
+
+</div>
+
+
+<div class="glass skill-card reveal">
+
+<h3>Tools & platforms</h3>
+
+<div class="tool-cloud">
+
+    <span class="tool">MS Excel</span>
+    <span class="tool">PowerPoint</span>
+    <span class="tool">Tableau</span>
+    <span class="tool">Google Sheets</span>
+    <span class="tool">Canva</span>
+    <span class="tool">IBM SPSS</span>
+    <span class="tool">Shopify</span>
+    <span class="tool">WordPress</span>
+    <span class="tool">Google Ads</span>
+    <span class="tool">Google Analytics</span>
+
+</div>
+
+<h3 style="margin-top:35px;">
+    Power skills
+</h3>
+
+<div class="tool-cloud">
+
+    <span class="tool">Communication</span>
+    <span class="tool">Leadership</span>
+    <span class="tool">Team Camaraderie</span>
+    <span class="tool">Strategic Thinking</span>
+    <span class="tool">Problem Solving</span>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     CERTIFICATIONS
+====================================================== -->
+
+<section>
+
+<div class="container">
+
+<div class="section-heading reveal">
+
+    <div class="eyebrow">06 — Certifications</div>
+
+    <h2>Always <span class="gradient-text">learning.</span></h2>
+
+</div>
+
+
+<div class="cert-grid">
+
+
+<div class="cert reveal">
+    <span class="cert-name">Yellow Belt Six Sigma</span>
+    <span class="cert-date">Jun — Jul 2026</span>
+</div>
+
+<div class="cert reveal">
+    <span class="cert-name">Data Analyst 101</span>
+    <span class="cert-date">Nov 2025</span>
+</div>
+
+<div class="cert reveal">
+    <span class="cert-name">SEBI Investor Awareness Test</span>
+    <span class="cert-date">Oct 2025</span>
+</div>
+
+<div class="cert reveal">
+    <span class="cert-name">Bio-Fertilizer & Bio-Coated Agent Training</span>
+    <span class="cert-date">Jul 2024</span>
+</div>
+
+<div class="cert reveal">
+    <span class="cert-name">CME: Advanced Laboratory Techniques</span>
+    <span class="cert-date">May 2023</span>
+</div>
+
+<div class="cert reveal">
+    <span class="cert-name">Digital 101 Journey</span>
+    <span class="cert-date">Jun 2022</span>
+</div>
+
+<div class="cert reveal">
+    <span class="cert-name">Mushroom Cultivation Certification</span>
+    <span class="cert-date">May 2022</span>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     ACHIEVEMENT
+====================================================== -->
+
+<section>
+
+<div class="container">
+
+<div class="glass achievement reveal">
+
+<div class="achievement-icon">
+    🏆
+</div>
+
+<div>
+
+    <div class="eyebrow">
+        Achievement
+    </div>
+
+    <h3>
+        Vishwakarma Learnbiz Simulation Game
+    </h3>
+
+    <p>
+        Achieved revenue growth from ₹5 lakhs to ₹21 lakhs
+        in the business simulation game, securing 5th rank
+        among competing teams.
+    </p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     CONTACT
+====================================================== -->
+
+<section id="contact">
+
+<div class="container">
+
+<div class="section-heading reveal">
+
+    <div class="eyebrow">07 — Contact</div>
+
+    <h2>Let's create something<br>
+        <span class="gradient-text">worth building.</span>
+    </h2>
+
+    <p>
+        Have an opportunity, project or idea?
+        Let's connect.
+    </p>
+
+</div>
+
+
+<div class="contact-grid">
+
+
+<div class="glass contact-card reveal">
+
+    <h3 style="margin-bottom:18px;">
+        Get in touch
+    </h3>
+
+
+    <a
+        href="mailto:piyushsingh20030610@gmail.com"
+        class="contact-method"
+    >
+
+        <div class="contact-icon">✉</div>
+
+        <div>
+
+            <strong>Email</strong>
+
+            <span>
+                piyushsingh20030610@gmail.com
+            </span>
+
+        </div>
+
+    </a>
+
+
+    <a
+        href="tel:+918431832821"
+        class="contact-method"
+    >
+
+        <div class="contact-icon">☎</div>
+
+        <div>
+
+            <strong>Phone</strong>
+
+            <span>
+                +91 84318 32821
+            </span>
+
+        </div>
+
+    </a>
+
+
+    <a
+        href="https://www.linkedin.com/in/piyushsingh0610/"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="contact-method"
+    >
+
+        <div class="contact-icon">in</div>
+
+        <div>
+
+            <strong>LinkedIn</strong>
+
+            <span>
+                linkedin.com/in/piyushsingh0610
+            </span>
+
+        </div>
+
+    </a>
+
+
+    <button
+        class="btn btn-ghost"
+        style="width:100%;margin-top:7px;"
+        onclick="copyEmail()"
+    >
+        Copy Email Address
+    </button>
+
+
+    <div
+        id="copyMessage"
+        style="
+        text-align:center;
+        color:#65e0e9;
+        font-size:.75rem;
+        margin-top:9px;
+        min-height:18px;
+        "
+    ></div>
+
+</div>
+
+
+<div class="glass contact-card reveal">
+
+<h3 style="margin-bottom:20px;">
+    Send me a message
+</h3>
+
+
+<form id="contactForm">
+
+<div class="form-row">
+
+<div class="field">
+
+    <label for="name">
+        Your Name
+    </label>
+
+    <input
+        id="name"
+        type="text"
+        placeholder="Your name"
+        required
+    >
+
+</div>
+
+
+<div class="field">
+
+    <label for="email">
+        Your Email
+    </label>
+
+    <input
+        id="email"
+        type="email"
+        placeholder="you@example.com"
+        required
+    >
+
+</div>
+
+</div>
+
+
+<div class="field">
+
+    <label for="subject">
+        Subject
+    </label>
+
+    <input
+        id="subject"
+        type="text"
+        placeholder="Opportunity / Project / Collaboration"
+        required
+    >
+
+</div>
+
+
+<div class="field">
+
+    <label for="message">
+        Message
+    </label>
+
+    <textarea
+        id="message"
+        placeholder="Write your message here..."
+        required
+    ></textarea>
+
+</div>
+
+
+<button
+    type="submit"
+    class="btn btn-primary"
+    style="width:100%;"
+>
+    Open Email & Send →
+</button>
+
+
+<p class="form-note">
+    This form uses your device's email application, so
+    no backend or third-party form service is required.
+</p>
+
+</form>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+</main>
+
+
+<!-- =====================================================
+     FOOTER
+====================================================== -->
+
+<footer>
+
+<div class="container footer-inner">
+
+<p>
+    © <span id="year"></span> Piyush Singh.
+    Built with curiosity & code.
+</p>
+
+
+<div class="footer-links">
+
+<a
+    href="mailto:piyushsingh20030610@gmail.com"
+    aria-label="Email"
+>
+    ✉
+</a>
+
+<a
+    href="tel:+918431832821"
+    aria-label="Phone"
+>
+    ☎
+</a>
+
+<a
+    href="https://www.linkedin.com/in/piyushsingh0610/"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="LinkedIn"
+>
+    in
+</a>
+
+</div>
+
+</div>
+
+</footer>
+
+
+<!-- BACK TO TOP -->
+
+<button
+    class="top-btn"
+    id="topBtn"
+    aria-label="Back to top"
+>
+    ↑
+</button>
+
+
+<script>
+
+/* =========================================================
+   BASIC SETTINGS
+========================================================= */
+
+document.getElementById("year").textContent =
+    new Date().getFullYear();
+
+
+/* =========================================================
+   MOBILE MENU
+========================================================= */
+
+const menuBtn = document.getElementById("menuBtn");
+const navLinks = document.getElementById("navLinks");
+
+menuBtn.addEventListener("click", () => {
+    navLinks.classList.toggle("open");
+});
+
+document.querySelectorAll(".nav-links a").forEach(link => {
+
+    link.addEventListener("click", () => {
+        navLinks.classList.remove("open");
+    });
+
+});
+
+
+/* =========================================================
+   NAVBAR SCROLL
+========================================================= */
+
+const navbar = document.getElementById("navbar");
+
+window.addEventListener("scroll", () => {
+
+    if(window.scrollY > 30){
+        navbar.classList.add("scrolled");
+    }else{
+        navbar.classList.remove("scrolled");
+    }
+
+});
+
+
+/* =========================================================
+   ACTIVE NAVIGATION
+========================================================= */
+
+const sections = document.querySelectorAll("section[id]");
+const navigationLinks =
+    document.querySelectorAll(".nav-links a");
+
+window.addEventListener("scroll", () => {
+
+    let current = "";
+
+    sections.forEach(section => {
+
+        const sectionTop =
+            section.offsetTop - 180;
+
+        if(window.scrollY >= sectionTop){
+            current = section.getAttribute("id");
+        }
+
+    });
+
+    navigationLinks.forEach(link => {
+
+        link.classList.remove("active");
+
+        if(link.getAttribute("href") === "#" + current){
+            link.classList.add("active");
+        }
+
+    });
+
+});
+
+
+/* =========================================================
+   SCROLL REVEAL
+========================================================= */
+
+const revealElements =
+    document.querySelectorAll(".reveal");
+
+const revealObserver =
+    new IntersectionObserver(
+        entries => {
+
+            entries.forEach(entry => {
+
+                if(entry.isIntersecting){
+
+                    entry.target.classList.add("visible");
+
+                    revealObserver.unobserve(
+                        entry.target
+                    );
+
+                }
+
+            });
+
+        },
+        {
+            threshold:.12
+        }
+    );
+
+revealElements.forEach(el => {
+    revealObserver.observe(el);
+});
+
+
+/* =========================================================
+   SKILL BAR ANIMATION
+========================================================= */
+
+const skillFills =
+    document.querySelectorAll(".skill-fill");
+
+const skillObserver =
+    new IntersectionObserver(
+        entries => {
+
+            entries.forEach(entry => {
+
+                if(entry.isIntersecting){
+
+                    const width =
+                        entry.target.dataset.width;
+
+                    entry.target.style.width = width;
+
+                    skillObserver.unobserve(
+                        entry.target
+                    );
+
+                }
+
+            });
+
+        },
+        {
+            threshold:.4
+        }
+    );
+
+skillFills.forEach(skill => {
+    skillObserver.observe(skill);
+});
+
+
+/* =========================================================
+   COPY EMAIL
+========================================================= */
+
+function copyEmail(){
+
+    const email =
+        "piyushsingh20030610@gmail.com";
+
+    navigator.clipboard.writeText(email)
+        .then(() => {
+
+            document.getElementById(
+                "copyMessage"
+            ).textContent =
+                "✓ Email copied to clipboard";
+
+            setTimeout(() => {
+
+                document.getElementById(
+                    "copyMessage"
+                ).textContent = "";
+
+            },2500);
+
+        })
+        .catch(() => {
+
+            document.getElementById(
+                "copyMessage"
+            ).textContent =
+                "Email: " + email;
+
+        });
+
+}
+
+
+/* =========================================================
+   CONTACT FORM
+   WORKING MAILTO IMPLEMENTATION
+========================================================= */
+
+const contactForm =
+    document.getElementById("contactForm");
+
+contactForm.addEventListener("submit", function(event){
+
+    event.preventDefault();
+
+    const name =
+        document.getElementById("name").value.trim();
+
+    const senderEmail =
+        document.getElementById("email").value.trim();
+
+    const subject =
+        document.getElementById("subject").value.trim();
+
+    const message =
+        document.getElementById("message").value.trim();
+
+
+    const emailBody =
+`Hello Piyush,
+
+My name is ${name}.
+
+My email: ${senderEmail}
+
+Message:
+${message}
+
+Regards,
+${name}`;
+
+
+    const mailtoURL =
+        "mailto:piyushsingh20030610@gmail.com" +
+        "?subject=" +
+        encodeURIComponent(subject) +
+        "&body=" +
+        encodeURIComponent(emailBody);
+
+
+    window.location.href = mailtoURL;
+
+});
+
+
+/* =========================================================
+   BACK TO TOP
+========================================================= */
+
+const topBtn =
+    document.getElementById("topBtn");
+
+window.addEventListener("scroll", () => {
+
+    if(window.scrollY > 500){
+        topBtn.classList.add("show");
+    }else{
+        topBtn.classList.remove("show");
+    }
+
+});
+
+topBtn.addEventListener("click", () => {
+
+    window.scrollTo({
+        top:0,
+        behavior:"smooth"
+    });
+
+});
+
+
+/* =========================================================
+   LIVE OCEAN PARTICLES
+========================================================= */
+
+const canvas =
+    document.getElementById("oceanCanvas");
+
+const ctx =
+    canvas.getContext("2d");
+
+let particles = [];
+
+function resizeCanvas(){
+
+    canvas.width =
+        window.innerWidth *
+        window.devicePixelRatio;
+
+    canvas.height =
+        window.innerHeight *
+        window.devicePixelRatio;
+
+    canvas.style.width =
+        window.innerWidth + "px";
+
+    canvas.style.height =
+        window.innerHeight + "px";
+
+    ctx.scale(
+        window.devicePixelRatio,
+        window.devicePixelRatio
+    );
+
+}
+
+resizeCanvas();
+
+window.addEventListener(
+    "resize",
+    resizeCanvas
+);
+
+
+function createParticles(){
+
+    particles = [];
+
+    const amount =
+        Math.min(
+            80,
+            Math.floor(window.innerWidth / 18)
+        );
+
+    for(let i=0;i<amount;i++){
+
+        particles.push({
+
+            x:Math.random()*window.innerWidth,
+
+            y:Math.random()*window.innerHeight,
+
+            radius:
+                Math.random()*2.2+.4,
+
+            speed:
+                Math.random()*.35+.08,
+
+            drift:
+                (Math.random()-.5)*.25,
+
+            opacity:
+                Math.random()*.45+.08
+
+        });
+
+    }
+
+}
+
+createParticles();
+
+
+function animateOcean(){
+
+    ctx.clearRect(
+        0,
+        0,
+        window.innerWidth,
+        window.innerHeight
+    );
+
+
+    particles.forEach(p => {
+
+        p.y -= p.speed;
+
+        p.x += p.drift;
+
+
+        if(p.y < -10){
+
+            p.y =
+                window.innerHeight + 10;
+
+            p.x =
+                Math.random()*window.innerWidth;
+
+        }
+
+
+        if(p.x < -10){
+            p.x = window.innerWidth + 10;
+        }
+
+        if(p.x > window.innerWidth + 10){
+            p.x = -10;
+        }
+
+
+        ctx.beginPath();
+
+        ctx.arc(
+            p.x,
+            p.y,
+            p.radius,
+            0,
+            Math.PI*2
+        );
+
+
+        ctx.fillStyle =
+            `rgba(101,224,233,${p.opacity})`;
+
+        ctx.fill();
+
+    });
+
+
+    requestAnimationFrame(
+        animateOcean
+    );
+
+}
+
+animateOcean();
+
+
+/* =========================================================
+   SUBTLE CURSOR GLOW
+========================================================= */
+
+let mouseX = 0;
+let mouseY = 0;
+
+const cursorGlow =
+    document.createElement("div");
+
+cursorGlow.style.position = "fixed";
+cursorGlow.style.width = "220px";
+cursorGlow.style.height = "220px";
+cursorGlow.style.borderRadius = "50%";
+cursorGlow.style.pointerEvents = "none";
+cursorGlow.style.zIndex = "-1";
+cursorGlow.style.background =
+    "radial-gradient(circle, rgba(40,197,213,.08), transparent 70%)";
+cursorGlow.style.transform =
+    "translate(-50%,-50%)";
+
+document.body.appendChild(cursorGlow);
+
+window.addEventListener("mousemove", e => {
+
+    mouseX = e.clientX;
+    mouseY = e.clientY;
+
+    cursorGlow.style.left =
+        mouseX + "px";
+
+    cursorGlow.style.top =
+        mouseY + "px";
+
+});
+
+
+/* =========================================================
+   IMAGE FALLBACK
+========================================================= */
+
+document.querySelectorAll(
+    ".profile-image img"
+).forEach(img => {
+
+    img.addEventListener(
+        "error",
+        () => {
+
+            img.style.display = "none";
+
+        }
+    );
+
+});
+
+</script>
+
 </body>
 </html>
