@@ -1,17 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
 <meta charset="UTF-8">
-
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Piyush Singh | Digital Marketing & Operations</title>
 
-<meta
-name="description"
-content="Piyush Singh — MBA Digital Marketing & Operations portfolio."
->
+<meta name="description"
+content="Piyush Singh — MBA Digital Marketing & Operations portfolio.">
 
 <style>
 
@@ -20,23 +16,25 @@ content="Piyush Singh — MBA Digital Marketing & Operations portfolio."
 ========================================================= */
 
 :root{
+    --black:#010204;
+    --black2:#03070a;
+    --black3:#071015;
 
-    --black:#000000;
-    --space:#020204;
-    --space2:#05070b;
+    --cyan:#56dce7;
+    --cyan2:#1da5b5;
+    --blue:#0b6578;
+    --blue2:#083642;
 
-    --blue:#0ba4b8;
-    --cyan:#55e6ef;
-    --cyan2:#9cfaff;
+    --white:#f3fbfc;
+    --muted:#9db6ba;
 
-    --white:#f4fbff;
-    --muted:#9aafb5;
+    --glass:rgba(3,12,16,.58);
+    --glass2:rgba(4,18,23,.72);
 
-    --glass:rgba(5,9,14,.68);
-    --border:rgba(85,230,239,.14);
+    --border:rgba(86,220,231,.16);
 
     --max:1180px;
-
+    --radius:24px;
 }
 
 *{
@@ -50,23 +48,30 @@ html{
 }
 
 body{
-
     font-family:
     Inter,
-    system-ui,
-    -apple-system,
-    BlinkMacSystemFont,
-    "Segoe UI",
+    Arial,
+    Helvetica,
     sans-serif;
 
     color:var(--white);
 
-    background:#000;
-
-    line-height:1.6;
+    background:#010204;
 
     overflow-x:hidden;
 
+    line-height:1.6;
+}
+
+a{
+    color:inherit;
+    text-decoration:none;
+}
+
+button,
+input,
+textarea{
+    font:inherit;
 }
 
 
@@ -75,7 +80,6 @@ body{
 ========================================================= */
 
 #blackHoleCanvas{
-
     position:fixed;
 
     inset:0;
@@ -83,76 +87,83 @@ body{
     width:100%;
     height:100%;
 
-    z-index:-10;
-
-    pointer-events:none;
+    z-index:-20;
 
     background:
     radial-gradient(
         circle at 50% 50%,
-        #090b0f 0%,
-        #020204 30%,
+        #020304 0%,
+        #010203 30%,
         #000000 70%
     );
 
+    pointer-events:none;
 }
 
 
-/* dark cinematic overlay */
+/* Dark cinematic overlay */
 
 .space-overlay{
-
     position:fixed;
 
     inset:0;
 
-    z-index:-8;
+    z-index:-15;
 
     pointer-events:none;
 
     background:
-
     radial-gradient(
         ellipse at center,
         transparent 0%,
-        rgba(0,0,0,.05) 35%,
-        rgba(0,0,0,.58) 80%,
-        rgba(0,0,0,.9) 100%
+        rgba(0,0,0,.03) 35%,
+        rgba(0,0,0,.50) 75%,
+        rgba(0,0,0,.88) 100%
     );
-
 }
 
 
-/* subtle blue atmosphere */
+/* Subtle blue atmospheric glow */
 
 .space-blue-glow{
-
     position:fixed;
 
-    width:700px;
-    height:700px;
+    width:70vw;
+    height:50vh;
 
-    left:50%;
-    top:50%;
-
-    transform:
-    translate(-50%,-50%);
+    left:15vw;
+    top:25vh;
 
     border-radius:50%;
 
     background:
     radial-gradient(
-        circle,
-        rgba(7,91,105,.10),
-        transparent 65%
+        ellipse,
+        rgba(14,105,125,.075),
+        transparent 70%
     );
 
-    filter:blur(50px);
+    filter:blur(45px);
+
+    z-index:-14;
 
     pointer-events:none;
 
-    z-index:-7;
+    animation:
+    atmosphericPulse 9s ease-in-out infinite alternate;
+}
 
+@keyframes atmosphericPulse{
+
+    from{
+        opacity:.45;
+        transform:scale(.95);
+    }
+
+    to{
+        opacity:.8;
+        transform:scale(1.08);
+    }
 }
 
 
@@ -161,49 +172,27 @@ body{
 ========================================================= */
 
 .container{
-
     width:min(
         var(--max),
         calc(100% - 40px)
     );
 
     margin:auto;
-
 }
 
 section{
+    padding:110px 0;
 
     position:relative;
 
-    padding:110px 0;
-
     z-index:2;
-
 }
 
-a{
-
-    color:inherit;
-
-    text-decoration:none;
-
+.section-heading{
+    margin-bottom:55px;
 }
-
-button,
-input,
-textarea{
-
-    font:inherit;
-
-}
-
-
-/* =========================================================
-   TYPOGRAPHY
-========================================================= */
 
 .eyebrow{
-
     color:var(--cyan);
 
     font-size:.72rem;
@@ -214,39 +203,28 @@ textarea{
 
     text-transform:uppercase;
 
-    margin-bottom:13px;
-
-}
-
-.section-heading{
-
-    margin-bottom:55px;
-
+    margin-bottom:12px;
 }
 
 .section-heading h2{
-
     font-size:
     clamp(
-        2.1rem,
+        2.2rem,
         5vw,
         3.7rem
     );
 
-    line-height:1.02;
+    line-height:1.03;
 
     letter-spacing:-2.5px;
-
 }
 
 .section-heading p{
+    max-width:680px;
 
     color:var(--muted);
 
-    max-width:690px;
-
-    margin-top:16px;
-
+    margin-top:17px;
 }
 
 .gradient-text{
@@ -254,66 +232,24 @@ textarea{
     background:
     linear-gradient(
         100deg,
-        #ffffff,
-        #7af2fa 45%,
-        #0ba4b8
+        #ffffff 0%,
+        #8cecf3 35%,
+        #27b9ca 75%,
+        #0d7183 100%
     );
 
     -webkit-background-clip:text;
-
     background-clip:text;
 
     color:transparent;
-
 }
 
 
 /* =========================================================
-   GLASS
-========================================================= */
-
-.glass{
-
-    border:
-
-    1px solid
-    rgba(
-        85,
-        230,
-        239,
-        .13
-    );
-
-    background:
-
-    linear-gradient(
-        145deg,
-        rgba(10,16,22,.72),
-        rgba(2,3,6,.72)
-    );
-
-    backdrop-filter:
-    blur(14px);
-
-    -webkit-backdrop-filter:
-    blur(14px);
-
-    border-radius:24px;
-
-    box-shadow:
-
-    0 25px 80px
-    rgba(0,0,0,.35);
-
-}
-
-
-/* =========================================================
-   NAVIGATION
+   NAVBAR
 ========================================================= */
 
 .navbar{
-
     position:fixed;
 
     top:0;
@@ -322,30 +258,25 @@ textarea{
 
     z-index:1000;
 
-    padding:16px 0;
+    padding:15px 0;
 
-    transition:.3s ease;
-
+    transition:.35s ease;
 }
 
 .navbar.scrolled{
 
     background:
-    rgba(0,0,0,.72);
+    rgba(0,0,0,.70);
 
-    backdrop-filter:
-    blur(18px);
+    backdrop-filter:blur(20px);
 
     border-bottom:
-    1px solid
-    rgba(85,230,239,.10);
-
+    1px solid rgba(86,220,231,.10);
 }
 
 .nav-inner{
 
-    width:
-    min(
+    width:min(
         var(--max),
         calc(100% - 30px)
     );
@@ -358,21 +289,17 @@ textarea{
 
     justify-content:space-between;
 
-    padding:
-    10px 18px;
+    padding:10px 17px;
 
     border:
-    1px solid
-    rgba(85,230,239,.10);
+    1px solid rgba(86,220,231,.10);
 
     border-radius:18px;
 
     background:
-    rgba(2,3,5,.48);
+    rgba(2,7,9,.48);
 
-    backdrop-filter:
-    blur(15px);
-
+    backdrop-filter:blur(15px);
 }
 
 .logo{
@@ -385,25 +312,21 @@ textarea{
 
     font-weight:900;
 
-    letter-spacing:.5px;
-
+    letter-spacing:.4px;
 }
 
 .logo-dot{
 
     width:10px;
-
     height:10px;
 
     border-radius:50%;
 
-    background:
-    var(--cyan);
+    background:var(--cyan);
 
     box-shadow:
-    0 0 20px
-    var(--cyan);
-
+    0 0 12px var(--cyan),
+    0 0 30px rgba(86,220,231,.6);
 }
 
 .nav-links{
@@ -413,24 +336,19 @@ textarea{
     gap:7px;
 
     list-style:none;
-
 }
 
 .nav-links a{
 
-    display:block;
+    color:#a7c0c4;
 
-    padding:
-    9px 13px;
-
-    color:#9fb4b9;
-
-    font-size:.85rem;
+    padding:9px 13px;
 
     border-radius:10px;
 
-    transition:.25s;
+    font-size:.85rem;
 
+    transition:.25s;
 }
 
 .nav-links a:hover,
@@ -439,8 +357,7 @@ textarea{
     color:white;
 
     background:
-    rgba(85,230,239,.08);
-
+    rgba(86,220,231,.08);
 }
 
 .menu-btn{
@@ -456,7 +373,6 @@ textarea{
     font-size:25px;
 
     cursor:pointer;
-
 }
 
 
@@ -474,6 +390,7 @@ textarea{
 
     padding-top:120px;
 
+    overflow:hidden;
 }
 
 .hero-grid{
@@ -481,12 +398,12 @@ textarea{
     display:grid;
 
     grid-template-columns:
-    1.15fr .85fr;
+    1.18fr
+    .82fr;
 
-    gap:60px;
+    gap:65px;
 
     align-items:center;
-
 }
 
 .hero-kicker{
@@ -495,21 +412,19 @@ textarea{
 
     align-items:center;
 
-    gap:9px;
+    gap:10px;
 
-    padding:
-    7px 12px;
+    padding:7px 12px;
 
     border:
-    1px solid
-    rgba(85,230,239,.14);
+    1px solid rgba(86,220,231,.16);
 
     background:
-    rgba(85,230,239,.035);
+    rgba(0,0,0,.38);
 
     border-radius:100px;
 
-    color:#a5eaf0;
+    color:#9beaf0;
 
     font-size:.75rem;
 
@@ -517,37 +432,32 @@ textarea{
 
     margin-bottom:25px;
 
+    backdrop-filter:blur(8px);
 }
 
 .live-dot{
 
     width:7px;
-
     height:7px;
 
-    background:#7affd4;
+    background:#67f5d0;
 
     border-radius:50%;
 
     box-shadow:
-    0 0 15px
-    #7affd4;
+    0 0 8px #67f5d0,
+    0 0 20px #67f5d0;
 
     animation:
-    pulse 1.6s infinite;
-
+    pulse 1.7s infinite;
 }
 
 @keyframes pulse{
 
     50%{
-
-        transform:scale(1.6);
-
-        opacity:.45;
-
+        transform:scale(1.7);
+        opacity:.4;
     }
-
 }
 
 .hero h1{
@@ -559,23 +469,23 @@ textarea{
         6.7rem
     );
 
-    line-height:.92;
+    line-height:.91;
 
     letter-spacing:-6px;
 
+    text-shadow:
+    0 10px 50px rgba(0,0,0,.8);
 }
 
 .hero-description{
 
+    color:#a2b8bc;
+
     max-width:650px;
 
-    color:var(--muted);
+    font-size:1.02rem;
 
-    font-size:1.03rem;
-
-    margin:
-    28px 0;
-
+    margin:29px 0;
 }
 
 .hero-actions{
@@ -585,7 +495,6 @@ textarea{
     flex-wrap:wrap;
 
     gap:12px;
-
 }
 
 .btn{
@@ -596,10 +505,9 @@ textarea{
 
     justify-content:center;
 
-    gap:8px;
+    gap:9px;
 
-    padding:
-    13px 19px;
+    padding:13px 19px;
 
     border-radius:13px;
 
@@ -610,85 +518,84 @@ textarea{
     cursor:pointer;
 
     border:
-    1px solid
-    rgba(85,230,239,.15);
+    1px solid var(--border);
 
     transition:.25s;
-
 }
 
 .btn-primary{
 
-    color:#001014;
+    color:#001519;
 
     background:
-    var(--cyan);
+    linear-gradient(
+        120deg,
+        #9ff7fb,
+        #4dd4df
+    );
 
     box-shadow:
-    0 10px 40px
-    rgba(85,230,239,.12);
-
+    0 10px 35px rgba(29,165,181,.18);
 }
 
 .btn-primary:hover{
 
-    transform:
-    translateY(-3px);
+    transform:translateY(-3px);
 
     box-shadow:
-    0 16px 50px
-    rgba(85,230,239,.25);
-
+    0 16px 50px rgba(29,165,181,.32);
 }
 
 .btn-ghost{
 
-    color:white;
-
     background:
     rgba(255,255,255,.025);
 
+    color:white;
 }
 
 .btn-ghost:hover{
 
     background:
-    rgba(85,230,239,.08);
+    rgba(86,220,231,.09);
 
-    transform:
-    translateY(-3px);
-
+    transform:translateY(-3px);
 }
 
 .hero-contact{
 
-    margin-top:30px;
+    margin-top:31px;
 
     display:flex;
 
     flex-wrap:wrap;
 
     gap:9px;
-
 }
 
 .contact-chip{
 
-    padding:
-    8px 11px;
+    display:flex;
+
+    align-items:center;
+
+    gap:8px;
+
+    color:#9bb7bb;
+
+    font-size:.82rem;
+
+    padding:8px 11px;
 
     border:
-    1px solid
-    rgba(85,230,239,.10);
+    1px solid rgba(86,220,231,.10);
 
     border-radius:11px;
 
-    color:#8daeb3;
-
-    font-size:.78rem;
+    background:
+    rgba(0,0,0,.20);
 
     transition:.2s;
-
 }
 
 .contact-chip:hover{
@@ -696,11 +603,10 @@ textarea{
     color:white;
 
     border-color:
-    rgba(85,230,239,.28);
+    rgba(86,220,231,.25);
 
     background:
-    rgba(85,230,239,.05);
-
+    rgba(86,220,231,.06);
 }
 
 
@@ -713,13 +619,11 @@ textarea{
     display:flex;
 
     justify-content:center;
-
 }
 
 .profile-card{
 
-    width:
-    min(
+    width:min(
         380px,
         100%
     );
@@ -727,27 +631,24 @@ textarea{
     padding:14px;
 
     border:
-    1px solid
-    rgba(85,230,239,.15);
+    1px solid rgba(86,220,231,.18);
 
     border-radius:34px;
 
     background:
     linear-gradient(
         145deg,
-        rgba(10,25,31,.78),
-        rgba(0,0,0,.8)
+        rgba(19,92,105,.16),
+        rgba(0,0,0,.72)
     );
 
     box-shadow:
-    0 25px 90px
-    rgba(0,0,0,.6);
+    0 25px 90px rgba(0,0,0,.7),
+    0 0 50px rgba(20,100,120,.08);
 
-    transform:
-    rotate(2deg);
+    transform:rotate(2deg);
 
     transition:.5s;
-
 }
 
 .profile-card:hover{
@@ -755,7 +656,6 @@ textarea{
     transform:
     rotate(0deg)
     translateY(-8px);
-
 }
 
 .profile-image{
@@ -769,10 +669,10 @@ textarea{
     border-radius:25px;
 
     background:
-    linear-gradient(
-        145deg,
-        #0b3e48,
-        #020305
+    radial-gradient(
+        circle,
+        #0a3943,
+        #020506 70%
     );
 
     display:flex;
@@ -780,7 +680,6 @@ textarea{
     align-items:center;
 
     justify-content:center;
-
 }
 
 .profile-image img{
@@ -791,7 +690,6 @@ textarea{
     object-fit:cover;
 
     display:block;
-
 }
 
 .profile-placeholder{
@@ -808,45 +706,74 @@ textarea{
 
     flex-direction:column;
 
+    color:#9debf1;
+
     text-align:center;
-
-    color:#8cecf2;
-
 }
 
 .profile-placeholder strong{
 
     font-size:3rem;
-
 }
 
 .profile-placeholder span{
 
-    color:#73959a;
+    font-size:.75rem;
 
-    font-size:.72rem;
-
+    color:#729da2;
 }
 
 .profile-info{
 
-    padding:
-    17px 8px 7px;
-
+    padding:17px 8px 7px;
 }
 
 .profile-info h3{
 
     font-size:1.25rem;
-
 }
 
 .profile-info p{
 
-    color:#7e9ba0;
+    color:#8baeb2;
 
-    font-size:.83rem;
+    font-size:.85rem;
+}
 
+
+/* =========================================================
+   GLASS
+========================================================= */
+
+.glass{
+
+    border:
+    1px solid rgba(86,220,231,.13);
+
+    background:
+    linear-gradient(
+        145deg,
+        rgba(8,26,31,.66),
+        rgba(0,0,0,.64)
+    );
+
+    backdrop-filter:
+    blur(17px);
+
+    border-radius:var(--radius);
+
+    box-shadow:
+    0 18px 70px rgba(0,0,0,.28);
+
+    transition:
+    border-color .3s,
+    transform .3s;
+}
+
+.glass:hover{
+
+    border-color:
+    rgba(86,220,231,.22);
 }
 
 
@@ -859,30 +786,27 @@ textarea{
     display:grid;
 
     grid-template-columns:
-    .8fr 1.2fr;
+    .8fr
+    1.2fr;
 
     gap:25px;
-
 }
 
 .about-card{
 
     padding:35px;
-
 }
 
 .about-card h3{
 
-    margin-bottom:15px;
-
     font-size:1.4rem;
 
+    margin-bottom:15px;
 }
 
 .about-card p{
 
     color:var(--muted);
-
 }
 
 .fact-grid{
@@ -893,7 +817,6 @@ textarea{
     repeat(2,1fr);
 
     gap:14px;
-
 }
 
 .fact{
@@ -901,28 +824,25 @@ textarea{
     padding:25px;
 
     background:
-    rgba(3,6,9,.67);
-
+    rgba(0,0,0,.45);
 }
 
 .fact-number{
-
-    color:var(--cyan);
 
     font-size:2rem;
 
     font-weight:900;
 
+    color:var(--cyan);
 }
 
 .fact span{
 
     display:block;
 
-    color:#7f9da2;
+    color:#86a8ad;
 
     font-size:.78rem;
-
 }
 
 
@@ -935,7 +855,6 @@ textarea{
     position:relative;
 
     max-width:950px;
-
 }
 
 .timeline::before{
@@ -947,7 +866,6 @@ textarea{
     left:10px;
 
     top:0;
-
     bottom:0;
 
     width:1px;
@@ -955,9 +873,8 @@ textarea{
     background:
     linear-gradient(
         var(--cyan),
-        rgba(85,230,239,.02)
+        rgba(86,220,231,.02)
     );
-
 }
 
 .timeline-item{
@@ -967,7 +884,6 @@ textarea{
     padding-left:50px;
 
     margin-bottom:28px;
-
 }
 
 .timeline-dot{
@@ -975,30 +891,23 @@ textarea{
     position:absolute;
 
     left:3px;
-
     top:25px;
 
     width:15px;
-
     height:15px;
 
-    background:
-    var(--cyan);
+    background:var(--cyan);
 
     border-radius:50%;
 
     box-shadow:
-    0 0 0 5px
-    rgba(85,230,239,.06),
-    0 0 22px
-    rgba(85,230,239,.6);
-
+    0 0 0 5px rgba(86,220,231,.06),
+    0 0 25px rgba(86,220,231,.55);
 }
 
 .experience-card{
 
     padding:27px;
-
 }
 
 .card-top{
@@ -1008,43 +917,36 @@ textarea{
     justify-content:space-between;
 
     gap:20px;
-
 }
 
 .card-top h3{
 
-    font-size:1.2rem;
-
+    font-size:1.25rem;
 }
 
 .card-company{
 
-    color:
-    var(--cyan);
-
-    font-size:.88rem;
+    color:var(--cyan);
 
     font-weight:700;
 
+    font-size:.9rem;
 }
 
 .date{
 
     white-space:nowrap;
 
-    color:#759398;
+    color:#79999e;
 
-    font-size:.75rem;
+    font-size:.77rem;
 
-    padding:
-    6px 10px;
+    padding:6px 10px;
 
     border:
-    1px solid
-    var(--border);
+    1px solid var(--border);
 
     border-radius:9px;
-
 }
 
 .card-list{
@@ -1054,13 +956,11 @@ textarea{
     padding-left:19px;
 
     color:var(--muted);
-
 }
 
 .card-list li{
 
     margin-bottom:8px;
-
 }
 
 
@@ -1076,57 +976,46 @@ textarea{
     repeat(2,1fr);
 
     gap:18px;
-
 }
 
 .project-card{
 
     padding:28px;
 
+    position:relative;
+
     overflow:hidden;
-
-    transition:.3s;
-
 }
 
 .project-card:hover{
 
     transform:
     translateY(-7px);
-
-    border-color:
-    rgba(85,230,239,.28);
-
 }
 
 .project-number{
 
-    color:
-    var(--cyan);
-
     font-size:.72rem;
+
+    color:var(--cyan);
 
     font-weight:900;
 
     letter-spacing:2px;
-
 }
 
 .project-card h3{
 
-    margin:
-    11px 0 8px;
+    margin:11px 0 8px;
 
-    font-size:1.18rem;
-
+    font-size:1.2rem;
 }
 
 .project-card p{
 
     color:var(--muted);
 
-    font-size:.86rem;
-
+    font-size:.87rem;
 }
 
 .project-tags{
@@ -1138,27 +1027,23 @@ textarea{
     gap:7px;
 
     margin-top:18px;
-
 }
 
 .tag{
 
-    padding:
-    5px 9px;
-
-    border:
-    1px solid
-    rgba(85,230,239,.11);
+    padding:5px 9px;
 
     border-radius:8px;
 
-    color:#91d6dc;
+    border:
+    1px solid rgba(86,220,231,.12);
 
     background:
-    rgba(85,230,239,.035);
+    rgba(86,220,231,.04);
+
+    color:#9dd6dc;
 
     font-size:.69rem;
-
 }
 
 
@@ -1174,36 +1059,34 @@ textarea{
     repeat(4,1fr);
 
     gap:13px;
-
 }
 
 .metric{
 
-    padding:27px 15px;
-
     text-align:center;
 
+    padding:27px 15px;
+
+    background:
+    rgba(0,0,0,.5);
 }
 
 .metric strong{
 
     display:block;
 
-    color:
-    var(--cyan);
+    font-size:2.25rem;
 
-    font-size:2.2rem;
+    color:var(--cyan);
 
     line-height:1;
-
 }
 
 .metric span{
 
-    color:#77969b;
+    color:#78999e;
 
-    font-size:.74rem;
-
+    font-size:.75rem;
 }
 
 
@@ -1219,7 +1102,6 @@ textarea{
     repeat(3,1fr);
 
     gap:18px;
-
 }
 
 .edu-card{
@@ -1227,13 +1109,11 @@ textarea{
     padding:27px;
 
     min-height:260px;
-
 }
 
 .edu-icon{
 
     width:48px;
-
     height:48px;
 
     display:flex;
@@ -1242,33 +1122,29 @@ textarea{
 
     justify-content:center;
 
-    border:
-    1px solid
-    var(--border);
-
-    background:
-    rgba(85,230,239,.05);
-
     border-radius:15px;
 
-    margin-bottom:25px;
+    background:
+    rgba(86,220,231,.07);
 
+    border:
+    1px solid var(--border);
+
+    margin-bottom:25px;
 }
 
 .edu-card h3{
 
-    font-size:1.03rem;
-
+    font-size:1.05rem;
 }
 
 .edu-card p{
 
     color:var(--muted);
 
-    font-size:.82rem;
+    font-size:.84rem;
 
     margin-top:9px;
-
 }
 
 .edu-year{
@@ -1277,169 +1153,11 @@ textarea{
 
     margin-top:17px;
 
-    color:
-    var(--cyan);
+    color:var(--cyan);
 
-    font-size:.73rem;
+    font-size:.75rem;
 
     font-weight:800;
-
-}
-
-
-/* =========================================================
-   CAMPUS
-========================================================= */
-
-.campus-image{
-
-    aspect-ratio:16/9;
-
-    overflow:hidden;
-
-    position:relative;
-
-    border-radius:18px;
-
-    background:
-    linear-gradient(
-        145deg,
-        #0c3d45,
-        #010204
-    );
-
-}
-
-.campus-image img{
-
-    width:100%;
-    height:100%;
-
-    object-fit:cover;
-
-}
-
-.campus-image .profile-placeholder{
-
-    background:
-    linear-gradient(
-        145deg,
-        rgba(5,50,59,.7),
-        rgba(0,0,0,.85)
-    );
-
-}
-
-
-/* =========================================================
-   SKILLS
-========================================================= */
-
-.skills-layout{
-
-    display:grid;
-
-    grid-template-columns:
-    1fr 1fr;
-
-    gap:20px;
-
-}
-
-.skill-card{
-
-    padding:28px;
-
-}
-
-.skill{
-
-    margin-bottom:22px;
-
-}
-
-.skill-title{
-
-    display:flex;
-
-    justify-content:space-between;
-
-    margin-bottom:8px;
-
-    font-size:.81rem;
-
-}
-
-.skill-title span:last-child{
-
-    color:
-    var(--cyan);
-
-}
-
-.skill-track{
-
-    height:6px;
-
-    background:
-    rgba(255,255,255,.05);
-
-    border-radius:20px;
-
-    overflow:hidden;
-
-}
-
-.skill-fill{
-
-    width:0;
-
-    height:100%;
-
-    border-radius:20px;
-
-    background:
-    linear-gradient(
-        90deg,
-        #075665,
-        #55e6ef
-    );
-
-    transition:
-    width 1.5s ease;
-
-}
-
-.tool-cloud{
-
-    display:flex;
-
-    flex-wrap:wrap;
-
-    gap:9px;
-
-    margin-top:20px;
-
-}
-
-.tool{
-
-    padding:
-    9px 12px;
-
-    border:
-    1px solid
-    var(--border);
-
-    border-radius:11px;
-
-    background:
-    rgba(85,230,239,.035);
-
-    color:#a3c9cd;
-
-    font-size:.76rem;
-
 }
 
 
@@ -1455,59 +1173,151 @@ textarea{
     repeat(2,1fr);
 
     gap:12px;
-
 }
 
 .cert{
 
     display:flex;
 
-    align-items:center;
-
     justify-content:space-between;
 
-    gap:15px;
+    align-items:center;
 
-    padding:
-    18px 20px;
+    padding:18px 20px;
 
     border:
-    1px solid
-    var(--border);
+    1px solid var(--border);
 
     background:
-    rgba(4,7,10,.65);
+    rgba(0,0,0,.42);
 
     border-radius:15px;
 
     transition:.25s;
-
 }
 
 .cert:hover{
 
+    background:
+    rgba(86,220,231,.06);
+
     transform:
     translateX(5px);
-
-    background:
-    rgba(85,230,239,.05);
-
 }
 
 .cert-name{
 
-    font-size:.87rem;
-
     font-weight:700;
 
+    font-size:.88rem;
 }
 
 .cert-date{
 
-    color:#708c91;
+    color:#6e9196;
 
-    font-size:.71rem;
+    font-size:.72rem;
+}
 
+
+/* =========================================================
+   SKILLS
+========================================================= */
+
+.skills-layout{
+
+    display:grid;
+
+    grid-template-columns:
+    1fr
+    1fr;
+
+    gap:20px;
+}
+
+.skill-card{
+
+    padding:28px;
+}
+
+.skill{
+
+    margin-bottom:22px;
+}
+
+.skill-title{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    margin-bottom:8px;
+
+    font-size:.82rem;
+}
+
+.skill-title span:last-child{
+
+    color:var(--cyan);
+}
+
+.skill-track{
+
+    height:6px;
+
+    background:
+    rgba(255,255,255,.05);
+
+    border-radius:20px;
+
+    overflow:hidden;
+}
+
+.skill-fill{
+
+    height:100%;
+
+    width:0;
+
+    border-radius:20px;
+
+    background:
+    linear-gradient(
+        90deg,
+        #0b5668,
+        #74e7ed
+    );
+
+    transition:
+    width 1.5s ease;
+}
+
+.tool-cloud{
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    gap:9px;
+
+    margin-top:20px;
+}
+
+.tool{
+
+    padding:9px 12px;
+
+    border-radius:11px;
+
+    background:
+    rgba(86,220,231,.04);
+
+    border:
+    1px solid var(--border);
+
+    color:#a8d0d5;
+
+    font-size:.78rem;
 }
 
 
@@ -1526,13 +1336,11 @@ textarea{
     align-items:center;
 
     padding:35px;
-
 }
 
 .achievement-icon{
 
     width:75px;
-
     height:75px;
 
     display:flex;
@@ -1541,17 +1349,16 @@ textarea{
 
     justify-content:center;
 
-    border:
-    1px solid
-    var(--border);
-
     border-radius:22px;
 
     background:
-    rgba(85,230,239,.05);
+    linear-gradient(
+        145deg,
+        rgba(86,220,231,.12),
+        rgba(0,0,0,.5)
+    );
 
     font-size:2rem;
-
 }
 
 .achievement p{
@@ -1559,7 +1366,6 @@ textarea{
     color:var(--muted);
 
     margin-top:7px;
-
 }
 
 
@@ -1572,57 +1378,52 @@ textarea{
     display:grid;
 
     grid-template-columns:
-    .8fr 1.2fr;
+    .8fr
+    1.2fr;
 
     gap:20px;
-
 }
 
 .contact-card{
 
     padding:30px;
-
 }
 
 .contact-method{
 
     display:flex;
 
-    align-items:center;
-
     gap:15px;
+
+    align-items:center;
 
     padding:16px;
 
-    margin-bottom:10px;
-
-    border:
-    1px solid
-    var(--border);
-
     border-radius:15px;
 
+    border:
+    1px solid var(--border);
+
     background:
-    rgba(85,230,239,.025);
+    rgba(0,0,0,.35);
+
+    margin-bottom:10px;
 
     transition:.2s;
-
 }
 
 .contact-method:hover{
 
+    background:
+    rgba(86,220,231,.06);
+
     transform:
     translateX(4px);
-
-    background:
-    rgba(85,230,239,.07);
-
 }
 
 .contact-icon{
 
     width:43px;
-
     height:43px;
 
     display:flex;
@@ -1634,31 +1435,25 @@ textarea{
     border-radius:12px;
 
     background:
-    rgba(85,230,239,.08);
+    rgba(86,220,231,.08);
 
-    color:
-    var(--cyan);
-
+    color:var(--cyan);
 }
 
 .contact-method strong{
 
     display:block;
 
-    font-size:.84rem;
-
+    font-size:.86rem;
 }
 
 .contact-method span{
 
-    display:block;
+    color:#7f9fa4;
 
-    color:#78969b;
-
-    font-size:.76rem;
+    font-size:.78rem;
 
     word-break:break-word;
-
 }
 
 .form-row{
@@ -1666,16 +1461,15 @@ textarea{
     display:grid;
 
     grid-template-columns:
-    1fr 1fr;
+    1fr
+    1fr;
 
     gap:12px;
-
 }
 
 .field{
 
     margin-bottom:13px;
-
 }
 
 .field label{
@@ -1684,10 +1478,9 @@ textarea{
 
     margin-bottom:7px;
 
-    color:#86a5aa;
+    font-size:.76rem;
 
-    font-size:.75rem;
-
+    color:#88a9ae;
 }
 
 .field input,
@@ -1695,24 +1488,21 @@ textarea{
 
     width:100%;
 
-    outline:none;
-
     border:
-    1px solid
-    var(--border);
-
-    border-radius:12px;
+    1px solid var(--border);
 
     background:
-    rgba(0,0,0,.3);
+    rgba(0,0,0,.4);
 
     color:white;
 
-    padding:
-    13px 14px;
+    outline:none;
+
+    border-radius:12px;
+
+    padding:13px 14px;
 
     transition:.2s;
-
 }
 
 .field textarea{
@@ -1720,29 +1510,25 @@ textarea{
     min-height:150px;
 
     resize:vertical;
-
 }
 
 .field input:focus,
 .field textarea:focus{
 
     border-color:
-    var(--cyan);
+    rgba(86,220,231,.6);
 
     box-shadow:
-    0 0 0 3px
-    rgba(85,230,239,.06);
-
+    0 0 0 3px rgba(86,220,231,.06);
 }
 
 .form-note{
 
     margin-top:10px;
 
-    color:#607c81;
+    color:#66878c;
 
-    font-size:.7rem;
-
+    font-size:.72rem;
 }
 
 .email-options{
@@ -1754,58 +1540,57 @@ textarea{
     padding:12px;
 
     border:
-    1px solid
-    var(--border);
+    1px solid var(--border);
 
     border-radius:14px;
 
     background:
     rgba(0,0,0,.8);
-
 }
 
 .email-options.show{
 
     display:block;
-
 }
 
 .email-options-title{
 
-    color:#86a6ab;
+    color:#8cabb0;
 
-    font-size:.73rem;
+    font-size:.75rem;
 
+    margin-bottom:9px;
 }
 
 .email-option{
 
-    width:100%;
+    display:block;
 
-    margin-top:7px;
+    width:100%;
 
     padding:10px;
 
-    border:
-    1px solid
-    var(--border);
+    margin-top:6px;
 
     border-radius:10px;
 
+    border:
+    1px solid var(--border);
+
     background:
-    rgba(85,230,239,.04);
+    rgba(86,220,231,.04);
 
     color:white;
 
-    cursor:pointer;
+    text-align:center;
 
+    cursor:pointer;
 }
 
 .email-option:hover{
 
     background:
-    rgba(85,230,239,.09);
-
+    rgba(86,220,231,.1);
 }
 
 
@@ -1818,9 +1603,7 @@ footer{
     padding:35px 0;
 
     border-top:
-    1px solid
-    rgba(85,230,239,.10);
-
+    1px solid rgba(86,220,231,.10);
 }
 
 .footer-inner{
@@ -1832,15 +1615,13 @@ footer{
     align-items:center;
 
     gap:20px;
-
 }
 
 .footer-inner p{
 
-    color:#5f7c81;
+    color:#607f83;
 
-    font-size:.75rem;
-
+    font-size:.78rem;
 }
 
 .footer-links{
@@ -1848,14 +1629,14 @@ footer{
     display:flex;
 
     gap:8px;
-
 }
 
 .footer-links a{
 
     width:36px;
-
     height:36px;
+
+    border-radius:10px;
 
     display:flex;
 
@@ -1864,13 +1645,9 @@ footer{
     justify-content:center;
 
     border:
-    1px solid
-    var(--border);
+    1px solid var(--border);
 
-    border-radius:10px;
-
-    color:#90aeb3;
-
+    color:#8db2b7;
 }
 
 
@@ -1883,11 +1660,9 @@ footer{
     position:fixed;
 
     right:20px;
-
     bottom:20px;
 
     width:45px;
-
     height:45px;
 
     display:flex;
@@ -1896,14 +1671,13 @@ footer{
 
     justify-content:center;
 
-    border:
-    1px solid
-    var(--border);
-
     border-radius:13px;
 
+    border:
+    1px solid var(--border);
+
     background:
-    rgba(0,0,0,.85);
+    rgba(0,0,0,.8);
 
     color:white;
 
@@ -1916,7 +1690,6 @@ footer{
     transition:.3s;
 
     z-index:900;
-
 }
 
 .top-btn.show{
@@ -1924,7 +1697,6 @@ footer{
     opacity:1;
 
     pointer-events:auto;
-
 }
 
 
@@ -1942,7 +1714,6 @@ footer{
     transition:
     opacity .7s ease,
     transform .7s ease;
-
 }
 
 .reveal.visible{
@@ -1950,7 +1721,6 @@ footer{
     opacity:1;
 
     transform:none;
-
 }
 
 
@@ -1966,56 +1736,51 @@ footer{
     .skills-layout{
 
         grid-template-columns:1fr;
-
     }
 
     .profile-wrap{
 
         order:-1;
-
     }
 
     .profile-card{
 
         width:300px;
-
     }
 
     .education-grid{
 
         grid-template-columns:
         1fr 1fr;
-
     }
 
     .metrics{
 
         grid-template-columns:
         repeat(2,1fr);
-
     }
-
 }
+
 
 @media(max-width:720px){
 
     section{
 
         padding:80px 0;
-
     }
 
     .container{
 
         width:
-        calc(100% - 28px);
-
+        min(
+            100% - 28px,
+            var(--max)
+        );
     }
 
     .menu-btn{
 
         display:block;
-
     }
 
     .nav-links{
@@ -2025,7 +1790,6 @@ footer{
         top:68px;
 
         left:14px;
-
         right:14px;
 
         display:none;
@@ -2035,23 +1799,19 @@ footer{
         padding:10px;
 
         border:
-        1px solid
-        var(--border);
-
-        border-radius:16px;
+        1px solid var(--border);
 
         background:
-        rgba(0,0,0,.95);
+        rgba(0,0,0,.96);
 
-        backdrop-filter:
-        blur(20px);
+        backdrop-filter:blur(20px);
 
+        border-radius:16px;
     }
 
     .nav-links.open{
 
         display:flex;
-
     }
 
     .hero h1{
@@ -2064,19 +1824,16 @@ footer{
         );
 
         letter-spacing:-4px;
-
     }
 
     .hero-actions{
 
         flex-direction:column;
-
     }
 
     .btn{
 
         width:100%;
-
     }
 
     .fact-grid,
@@ -2085,25 +1842,27 @@ footer{
     .cert-grid{
 
         grid-template-columns:1fr;
+    }
 
+    .metrics{
+
+        grid-template-columns:
+        1fr 1fr;
     }
 
     .form-row{
 
         grid-template-columns:1fr;
-
     }
 
     .card-top{
 
         flex-direction:column;
-
     }
 
     .achievement{
 
         grid-template-columns:1fr;
-
     }
 
     .footer-inner{
@@ -2111,45 +1870,19 @@ footer{
         flex-direction:column;
 
         text-align:center;
-
     }
-
-}
-
-
-/* =========================================================
-   ACCESSIBILITY
-========================================================= */
-
-@media(prefers-reduced-motion:reduce){
-
-    *,
-    *::before,
-    *::after{
-
-        animation-duration:.01ms !important;
-
-        animation-iteration-count:1 !important;
-
-        scroll-behavior:auto !important;
-
-        transition-duration:.01ms !important;
-
-    }
-
 }
 
 </style>
-
 </head>
 
 
 <body>
 
 
-<!-- =====================================================
-     REALISTIC BLACK HOLE CANVAS
-====================================================== -->
+<!-- =========================================================
+     BLACK HOLE
+========================================================= -->
 
 <canvas id="blackHoleCanvas"></canvas>
 
@@ -2158,21 +1891,15 @@ footer{
 <div class="space-blue-glow"></div>
 
 
-<!-- =====================================================
-     NAVIGATION
-====================================================== -->
+<!-- =========================================================
+     NAVBAR
+========================================================= -->
 
-<header
-class="navbar"
-id="navbar"
->
+<header class="navbar" id="navbar">
 
 <div class="nav-inner">
 
-<a
-href="#home"
-class="logo"
->
+<a href="#home" class="logo">
 
 <span class="logo-dot"></span>
 
@@ -2182,28 +1909,20 @@ PIYUSH SINGH
 
 
 <button
-class="menu-btn"
-id="menuBtn"
-aria-label="Open navigation"
+    class="menu-btn"
+    id="menuBtn"
+    aria-label="Open navigation"
 >
-
-☰
-
+    ☰
 </button>
 
 
 <nav>
 
-<ul
-class="nav-links"
-id="navLinks"
->
+<ul class="nav-links" id="navLinks">
 
 <li>
-<a
-href="#home"
-class="active"
->
+<a href="#home" class="active">
 Home
 </a>
 </li>
@@ -2253,21 +1972,18 @@ Contact
 </header>
 
 
-<!-- =====================================================
+<!-- =========================================================
      MAIN
-====================================================== -->
+========================================================= -->
 
 <main>
 
 
-<!-- =====================================================
+<!-- =========================================================
      HERO
-====================================================== -->
+========================================================= -->
 
-<section
-class="hero"
-id="home"
->
+<section class="hero" id="home">
 
 <div class="container">
 
@@ -2309,14 +2025,11 @@ with structured problem solving.
 
 <div class="hero-actions">
 
-
 <a
 href="#projects"
 class="btn btn-primary"
 >
-
 Explore My Work →
-
 </a>
 
 
@@ -2326,9 +2039,7 @@ target="_blank"
 rel="noopener noreferrer"
 class="btn btn-ghost"
 >
-
 ✉ Email Me
-
 </a>
 
 
@@ -2338,11 +2049,8 @@ target="_blank"
 rel="noopener noreferrer"
 class="btn btn-ghost"
 >
-
 ↗ LinkedIn
-
 </a>
-
 
 </div>
 
@@ -2356,10 +2064,7 @@ href="https://mail.google.com/mail/?view=cm&fs=1&to=piyushsingh20030610@gmail.co
 target="_blank"
 rel="noopener noreferrer"
 >
-
-✉
-piyushsingh20030610@gmail.com
-
+✉ piyushsingh20030610@gmail.com
 </a>
 
 
@@ -2367,10 +2072,7 @@ piyushsingh20030610@gmail.com
 class="contact-chip"
 href="tel:+918431832821"
 >
-
-☎
-+91 84318 32821
-
+☎ +91 84318 32821
 </a>
 
 
@@ -2379,9 +2081,7 @@ href="tel:+918431832821"
 </div>
 
 
-<!-- =====================================================
-     PROFILE PHOTO
-====================================================== -->
+<!-- PROFILE -->
 
 <div class="profile-wrap reveal">
 
@@ -2392,10 +2092,7 @@ href="tel:+918431832821"
 <img
 src="assets/profile.jpg"
 alt="Piyush Singh"
-onerror="
-this.style.display='none';
-document.getElementById('profilePlaceholder').style.display='flex';
-"
+onerror="this.style.display='none';document.getElementById('profilePlaceholder').style.display='flex';"
 >
 
 
@@ -2405,16 +2102,11 @@ id="profilePlaceholder"
 style="display:none;"
 >
 
-<strong>
-PS
-</strong>
+<strong>PS</strong>
 
 <span>
-
 Add your photo at<br>
-
 assets/profile.jpg
-
 </span>
 
 </div>
@@ -2446,9 +2138,9 @@ MBA — Digital Marketing & Operations
 </section>
 
 
-<!-- =====================================================
+<!-- =========================================================
      ABOUT
-====================================================== -->
+========================================================= -->
 
 <section id="about">
 
@@ -2471,10 +2163,8 @@ analytical mindset.
 </h2>
 
 <p>
-
 My work sits at the intersection of marketing,
 analytics, operations and business strategy.
-
 </p>
 
 </div>
@@ -2576,9 +2266,9 @@ Digital Product Revenue
 </section>
 
 
-<!-- =====================================================
+<!-- =========================================================
      EXPERIENCE
-====================================================== -->
+========================================================= -->
 
 <section id="experience">
 
@@ -2632,6 +2322,7 @@ Jun 2026 — Jul 2026
 
 </div>
 
+
 <ul class="card-list">
 
 <li>
@@ -2683,6 +2374,7 @@ May 2025 — Jun 2025
 
 </div>
 
+
 <ul class="card-list">
 
 <li>
@@ -2729,6 +2421,7 @@ Jun 2023 — Jul 2023
 
 </div>
 
+
 <ul class="card-list">
 
 <li>
@@ -2774,6 +2467,7 @@ Jun 2024 — Jul 2024
 
 </div>
 
+
 <ul class="card-list">
 
 <li>
@@ -2805,9 +2499,9 @@ on Bio-Fertilizers and Bio-Control Agents.
 </section>
 
 
-<!-- =====================================================
+<!-- =========================================================
      PROJECTS
-====================================================== -->
+========================================================= -->
 
 <section id="projects">
 
@@ -2846,30 +2540,17 @@ Lean Six Sigma Approach to Public Transport Efficiency
 </h3>
 
 <p>
-
 Applied DMAIC, SIPOC mapping, Fishbone diagrams and
 Pareto charts to analyze terminal bottlenecks,
 congestion and passenger delays.
-
 </p>
 
 <div class="project-tags">
 
-<span class="tag">
-Lean Six Sigma
-</span>
-
-<span class="tag">
-DMAIC
-</span>
-
-<span class="tag">
-SIPOC
-</span>
-
-<span class="tag">
-Process Improvement
-</span>
+<span class="tag">Lean Six Sigma</span>
+<span class="tag">DMAIC</span>
+<span class="tag">SIPOC</span>
+<span class="tag">Process Improvement</span>
 
 </div>
 
@@ -2887,30 +2568,17 @@ Digital Campaign Creation & SEO Optimization
 </h3>
 
 <p>
-
 Optimized website content for first-page Google SERP
 ranking and executed Google Ads campaigns generating
 92.4K+ impressions and 257 clicks.
-
 </p>
 
 <div class="project-tags">
 
-<span class="tag">
-Google Ads
-</span>
-
-<span class="tag">
-SEO
-</span>
-
-<span class="tag">
-Google Analytics
-</span>
-
-<span class="tag">
-SEM
-</span>
+<span class="tag">Google Ads</span>
+<span class="tag">SEO</span>
+<span class="tag">Google Analytics</span>
+<span class="tag">SEM</span>
 
 </div>
 
@@ -2928,30 +2596,17 @@ Digital Product Creation & Marketing
 </h3>
 
 <p>
-
 Developed and launched a digital kids colouring book
 supported by a landing page and social media promotion,
 generating 25+ customer engagements and ₹10,000+ revenue.
-
 </p>
 
 <div class="project-tags">
 
-<span class="tag">
-Digital Product
-</span>
-
-<span class="tag">
-Social Media
-</span>
-
-<span class="tag">
-Landing Page
-</span>
-
-<span class="tag">
-Conversion
-</span>
+<span class="tag">Digital Product</span>
+<span class="tag">Social Media</span>
+<span class="tag">Landing Page</span>
+<span class="tag">Conversion</span>
 
 </div>
 
@@ -2969,26 +2624,16 @@ Affiliate Marketing — August Bioscience
 </h3>
 
 <p>
-
 Orchestrated 5+ affiliate marketing campaigns across
 social platforms, achieving a 10% lead conversion rate
 and contributing to 5% online sales growth.
-
 </p>
 
 <div class="project-tags">
 
-<span class="tag">
-Affiliate Marketing
-</span>
-
-<span class="tag">
-Social Media
-</span>
-
-<span class="tag">
-Lead Generation
-</span>
+<span class="tag">Affiliate Marketing</span>
+<span class="tag">Social Media</span>
+<span class="tag">Lead Generation</span>
 
 </div>
 
@@ -3006,30 +2651,17 @@ Unbranded to Branded — AttarVibez
 </h3>
 
 <p>
-
 Developed brand identity and integrated marketing
 strategies for an attar and perfume product line,
 including positioning and go-to-market planning.
-
 </p>
 
 <div class="project-tags">
 
-<span class="tag">
-Brand Strategy
-</span>
-
-<span class="tag">
-Positioning
-</span>
-
-<span class="tag">
-GTM
-</span>
-
-<span class="tag">
-Pricing
-</span>
+<span class="tag">Brand Strategy</span>
+<span class="tag">Positioning</span>
+<span class="tag">GTM</span>
+<span class="tag">Pricing</span>
 
 </div>
 
@@ -3047,30 +2679,17 @@ Amul Supply Chain & Operations Analysis
 </h3>
 
 <p>
-
 Analyzed procurement, production, inventory,
 warehousing and distribution while identifying gaps
 in inventory planning and logistics.
-
 </p>
 
 <div class="project-tags">
 
-<span class="tag">
-Supply Chain
-</span>
-
-<span class="tag">
-Excel
-</span>
-
-<span class="tag">
-Operations
-</span>
-
-<span class="tag">
-Analysis
-</span>
+<span class="tag">Supply Chain</span>
+<span class="tag">Excel</span>
+<span class="tag">Operations</span>
+<span class="tag">Analysis</span>
 
 </div>
 
@@ -3088,30 +2707,17 @@ HP World Supply Chain & Inventory Optimization
 </h3>
 
 <p>
-
 Analyzed a 4-tier HP supply chain, diagnosed operational
 risks and recommended high-frequency spare parts with
 buffer stock to improve availability.
-
 </p>
 
 <div class="project-tags">
 
-<span class="tag">
-Inventory
-</span>
-
-<span class="tag">
-Supply Chain
-</span>
-
-<span class="tag">
-Risk Analysis
-</span>
-
-<span class="tag">
-Optimization
-</span>
+<span class="tag">Inventory</span>
+<span class="tag">Supply Chain</span>
+<span class="tag">Risk Analysis</span>
+<span class="tag">Optimization</span>
 
 </div>
 
@@ -3125,9 +2731,9 @@ Optimization
 </section>
 
 
-<!-- =====================================================
+<!-- =========================================================
      METRICS
-====================================================== -->
+========================================================= -->
 
 <section>
 
@@ -3195,9 +2801,9 @@ Estimated AttarVibez Margin
 </section>
 
 
-<!-- =====================================================
+<!-- =========================================================
      EDUCATION
-====================================================== -->
+========================================================= -->
 
 <section id="education">
 
@@ -3308,9 +2914,9 @@ Aug 2020 — May 2021
 </section>
 
 
-<!-- =====================================================
+<!-- =========================================================
      CAMPUS PHOTOS
-====================================================== -->
+========================================================= -->
 
 <section>
 
@@ -3340,24 +2946,22 @@ my journey.
 
 <div class="glass project-card reveal">
 
-<div class="campus-image">
+<div
+class="profile-image"
+style="aspect-ratio:16/9;"
+>
 
 <img
 src="assets/lpu.jpg"
 alt="Lovely Professional University"
-onerror="
-this.style.display='none';
-"
 >
 
 <div class="profile-placeholder">
 
-<strong>
-01
-</strong>
+<strong>01</strong>
 
 <span>
-Add LPU campus photo<br>
+Add LPU photo<br>
 assets/lpu.jpg
 </span>
 
@@ -3378,21 +2982,19 @@ MBA — Digital Marketing & Operations
 
 <div class="glass project-card reveal">
 
-<div class="campus-image">
+<div
+class="profile-image"
+style="aspect-ratio:16/9;"
+>
 
 <img
 src="assets/kle.jpg"
-alt="KLE College"
-onerror="
-this.style.display='none';
-"
+alt="KLE Society's Raja Lakhmagouda Science Institute"
 >
 
 <div class="profile-placeholder">
 
-<strong>
-02
-</strong>
+<strong>02</strong>
 
 <span>
 Add college photo<br>
@@ -3416,21 +3018,19 @@ Bachelor's in Biotechnology & Zoology
 
 <div class="glass project-card reveal">
 
-<div class="campus-image">
+<div
+class="profile-image"
+style="aspect-ratio:16/9;"
+>
 
 <img
 src="assets/kv-school.jpg"
 alt="KV No.1 Sambra"
-onerror="
-this.style.display='none';
-"
 >
 
 <div class="profile-placeholder">
 
-<strong>
-03
-</strong>
+<strong>03</strong>
 
 <span>
 Add school photo<br>
@@ -3459,9 +3059,9 @@ Science Stream
 </section>
 
 
-<!-- =====================================================
+<!-- =========================================================
      SKILLS
-====================================================== -->
+========================================================= -->
 
 <section id="skills">
 
@@ -3635,47 +3235,19 @@ data-width="90%"
 Tools & platforms
 </h3>
 
+
 <div class="tool-cloud">
 
-<span class="tool">
-MS Excel
-</span>
-
-<span class="tool">
-PowerPoint
-</span>
-
-<span class="tool">
-Tableau
-</span>
-
-<span class="tool">
-Google Sheets
-</span>
-
-<span class="tool">
-Canva
-</span>
-
-<span class="tool">
-IBM SPSS
-</span>
-
-<span class="tool">
-Shopify
-</span>
-
-<span class="tool">
-WordPress
-</span>
-
-<span class="tool">
-Google Ads
-</span>
-
-<span class="tool">
-Google Analytics
-</span>
+<span class="tool">MS Excel</span>
+<span class="tool">PowerPoint</span>
+<span class="tool">Tableau</span>
+<span class="tool">Google Sheets</span>
+<span class="tool">Canva</span>
+<span class="tool">IBM SPSS</span>
+<span class="tool">Shopify</span>
+<span class="tool">WordPress</span>
+<span class="tool">Google Ads</span>
+<span class="tool">Google Analytics</span>
 
 </div>
 
@@ -3684,27 +3256,14 @@ Google Analytics
 Power skills
 </h3>
 
+
 <div class="tool-cloud">
 
-<span class="tool">
-Communication
-</span>
-
-<span class="tool">
-Leadership
-</span>
-
-<span class="tool">
-Team Camaraderie
-</span>
-
-<span class="tool">
-Strategic Thinking
-</span>
-
-<span class="tool">
-Problem Solving
-</span>
+<span class="tool">Communication</span>
+<span class="tool">Leadership</span>
+<span class="tool">Team Camaraderie</span>
+<span class="tool">Strategic Thinking</span>
+<span class="tool">Problem Solving</span>
 
 </div>
 
@@ -3718,9 +3277,9 @@ Problem Solving
 </section>
 
 
-<!-- =====================================================
+<!-- =========================================================
      CERTIFICATIONS
-====================================================== -->
+========================================================= -->
 
 <section>
 
@@ -3845,9 +3404,9 @@ May 2022
 </section>
 
 
-<!-- =====================================================
+<!-- =========================================================
      ACHIEVEMENT
-====================================================== -->
+========================================================= -->
 
 <section>
 
@@ -3886,9 +3445,9 @@ among competing teams.
 </section>
 
 
-<!-- =====================================================
+<!-- =========================================================
      CONTACT
-====================================================== -->
+========================================================= -->
 
 <section id="contact">
 
@@ -4012,9 +3571,7 @@ class="btn btn-ghost"
 style="width:100%;margin-top:7px;"
 onclick="copyEmail()"
 >
-
 Copy Email Address
-
 </button>
 
 
@@ -4022,7 +3579,7 @@ Copy Email Address
 id="copyMessage"
 style="
 text-align:center;
-color:#55e6ef;
+color:#65e0e9;
 font-size:.75rem;
 margin-top:9px;
 min-height:18px;
@@ -4036,10 +3593,9 @@ class="btn btn-ghost"
 style="width:100%;margin-top:5px;"
 onclick="openMailApp()"
 >
-
 Open Email App
-
 </button>
+
 
 </div>
 
@@ -4132,9 +3688,7 @@ type="submit"
 class="btn btn-primary"
 style="width:100%;"
 >
-
 ✉ Send Message
-
 </button>
 
 
@@ -4144,9 +3698,7 @@ id="emailOptions"
 >
 
 <div class="email-options-title">
-
 Choose how you want to send the message:
-
 </div>
 
 
@@ -4155,9 +3707,7 @@ type="button"
 class="email-option"
 id="gmailButton"
 >
-
 Continue with Gmail
-
 </button>
 
 
@@ -4166,9 +3716,7 @@ type="button"
 class="email-option"
 id="mailAppButton"
 >
-
 Continue with Email App
-
 </button>
 
 </div>
@@ -4186,6 +3734,7 @@ No backend or form service is required.
 
 </div>
 
+
 </div>
 
 </div>
@@ -4196,9 +3745,9 @@ No backend or form service is required.
 </main>
 
 
-<!-- =====================================================
+<!-- =========================================================
      FOOTER
-====================================================== -->
+========================================================= -->
 
 <footer>
 
@@ -4206,8 +3755,7 @@ No backend or form service is required.
 
 <p>
 
-©
-<span id="year"></span>
+© <span id="year"></span>
 Piyush Singh.
 Built with curiosity & code.
 
@@ -4252,6 +3800,8 @@ in
 </footer>
 
 
+<!-- BACK TO TOP -->
+
 <button
 class="top-btn"
 id="topBtn"
@@ -4264,7 +3814,7 @@ aria-label="Back to top"
 <script>
 
 /* =========================================================
-   CONTACT DETAILS
+   CONTACT INFORMATION
 ========================================================= */
 
 const MY_EMAIL =
@@ -4286,7 +3836,7 @@ new Date().getFullYear();
 
 
 /* =========================================================
-   MOBILE MENU
+   MOBILE NAV
 ========================================================= */
 
 const menuBtn =
@@ -4295,12 +3845,11 @@ document.getElementById("menuBtn");
 const navLinks =
 document.getElementById("navLinks");
 
-
 menuBtn.addEventListener(
 "click",
 function(){
 
-    navLinks.classList.toggle("open");
+navLinks.classList.toggle("open");
 
 }
 );
@@ -4311,52 +3860,52 @@ document.querySelectorAll(
 ).forEach(
 function(link){
 
-    link.addEventListener(
-    "click",
-    function(){
+link.addEventListener(
+"click",
+function(){
 
-        navLinks.classList.remove(
-        "open"
-        );
+navLinks.classList.remove(
+"open"
+);
 
-    });
+}
+);
 
-});
+}
+);
 
 
 /* =========================================================
-   NAVBAR
+   NAVBAR SCROLL
 ========================================================= */
 
 const navbar =
 document.getElementById("navbar");
 
-
 window.addEventListener(
 "scroll",
 function(){
 
-    if(
-        window.scrollY > 30
-    ){
+if(window.scrollY > 30){
 
-        navbar.classList.add(
-        "scrolled"
-        );
+navbar.classList.add(
+"scrolled"
+);
 
-    }else{
+}else{
 
-        navbar.classList.remove(
-        "scrolled"
-        );
+navbar.classList.remove(
+"scrolled"
+);
 
-    }
+}
 
-});
+}
+);
 
 
 /* =========================================================
-   ACTIVE NAV
+   ACTIVE NAVIGATION
 ========================================================= */
 
 const sections =
@@ -4369,57 +3918,61 @@ document.querySelectorAll(
 ".nav-links a"
 );
 
-
 window.addEventListener(
 "scroll",
 function(){
 
-    let current = "";
+let current = "";
 
-    sections.forEach(
-    function(section){
+sections.forEach(
+function(section){
 
-        const top =
-        section.offsetTop - 180;
+const top =
+section.offsetTop - 180;
 
-        if(
-            window.scrollY >= top
-        ){
+if(
+window.scrollY >= top
+){
 
-            current =
-            section.getAttribute("id");
+current =
+section.getAttribute(
+"id"
+);
 
-        }
+}
 
-    });
+}
+);
 
 
-    navigationLinks.forEach(
-    function(link){
+navigationLinks.forEach(
+function(link){
 
-        link.classList.remove(
-        "active"
-        );
+link.classList.remove(
+"active"
+);
 
-        if(
-            link.getAttribute("href")
-            ===
-            "#" + current
-        ){
+if(
+link.getAttribute("href")
+===
+"#" + current
+){
 
-            link.classList.add(
-            "active"
-            );
+link.classList.add(
+"active"
+);
 
-        }
+}
 
-    });
+}
+);
 
-});
+}
+);
 
 
 /* =========================================================
-   REVEAL ANIMATION
+   SCROLL REVEAL
 ========================================================= */
 
 const revealElements =
@@ -4427,44 +3980,46 @@ document.querySelectorAll(
 ".reveal"
 );
 
-
 const revealObserver =
 new IntersectionObserver(
 function(entries){
 
-    entries.forEach(
-    function(entry){
+entries.forEach(
+function(entry){
 
-        if(
-            entry.isIntersecting
-        ){
+if(
+entry.isIntersecting
+){
 
-            entry.target.classList.add(
-            "visible"
-            );
+entry.target.classList.add(
+"visible"
+);
 
-            revealObserver.unobserve(
-            entry.target
-            );
+revealObserver.unobserve(
+entry.target
+);
 
-        }
+}
 
-    });
+}
+);
 
 },
 {
-    threshold:.12
-});
+threshold:.12
+}
+);
 
 
 revealElements.forEach(
 function(element){
 
-    revealObserver.observe(
-    element
-    );
+revealObserver.observe(
+element
+);
 
-});
+}
+);
 
 
 /* =========================================================
@@ -4476,43 +4031,45 @@ document.querySelectorAll(
 ".skill-fill"
 );
 
-
 const skillObserver =
 new IntersectionObserver(
 function(entries){
 
-    entries.forEach(
-    function(entry){
+entries.forEach(
+function(entry){
 
-        if(
-            entry.isIntersecting
-        ){
+if(
+entry.isIntersecting
+){
 
-            entry.target.style.width =
-            entry.target.dataset.width;
+entry.target.style.width =
+entry.target.dataset.width;
 
-            skillObserver.unobserve(
-            entry.target
-            );
+skillObserver.unobserve(
+entry.target
+);
 
-        }
+}
 
-    });
+}
+);
 
 },
 {
-    threshold:.4
-});
+threshold:.4
+}
+);
 
 
 skillFills.forEach(
 function(skill){
 
-    skillObserver.observe(
-    skill
-    );
+skillObserver.observe(
+skill
+);
 
-});
+}
+);
 
 
 /* =========================================================
@@ -4521,80 +4078,82 @@ function(skill){
 
 function copyEmail(){
 
-    if(
-        navigator.clipboard &&
-        window.isSecureContext
-    ){
+if(
+navigator.clipboard &&
+window.isSecureContext
+){
 
-        navigator.clipboard
-        .writeText(MY_EMAIL)
-        .then(
-        function(){
+navigator.clipboard
+.writeText(MY_EMAIL)
+.then(
+function(){
 
-            showCopyMessage(
-            "✓ Email copied"
-            );
+showCopyMessage(
+"✓ Email copied"
+);
 
-        })
-        .catch(
-        function(){
+}
+)
+.catch(
+function(){
 
-            fallbackCopyEmail();
+fallbackCopyEmail();
 
-        });
+}
+);
 
-    }else{
+}else{
 
-        fallbackCopyEmail();
+fallbackCopyEmail();
 
-    }
+}
 
 }
 
 
 function fallbackCopyEmail(){
 
-    const textarea =
-    document.createElement(
-    "textarea"
-    );
+const textarea =
+document.createElement(
+"textarea"
+);
 
-    textarea.value =
-    MY_EMAIL;
+textarea.value =
+MY_EMAIL;
 
-    textarea.style.position =
-    "fixed";
+textarea.style.position =
+"fixed";
 
-    textarea.style.opacity =
-    "0";
+textarea.style.opacity =
+"0";
 
-    document.body.appendChild(
-    textarea
-    );
+document.body.appendChild(
+textarea
+);
 
-    textarea.select();
+textarea.select();
 
-    try{
+try{
 
-        document.execCommand(
-        "copy"
-        );
+document.execCommand(
+"copy"
+);
 
-        showCopyMessage(
-        "✓ Email copied"
-        );
+showCopyMessage(
+"✓ Email copied"
+);
 
-    }catch(error){
+}catch(error){
 
-        showCopyMessage(
-        MY_EMAIL
-        );
+showCopyMessage(
+MY_EMAIL
+);
 
-    }
+}
 
-    document.body.removeChild(
-    textarea
-    );
+document.body.removeChild(
+textarea
+);
 
 }
 
@@ -4603,23 +4162,23 @@ function showCopyMessage(
 message
 ){
 
-    const element =
-    document.getElementById(
-    "copyMessage"
-    );
+const element =
+document.getElementById(
+"copyMessage"
+);
 
-    element.textContent =
-    message;
+element.textContent =
+message;
 
-    setTimeout(
-    function(){
+setTimeout(
+function(){
 
-        element.textContent =
-        "";
+element.textContent =
+"";
 
-    },
-    2500
-    );
+},
+2500
+);
 
 }
 
@@ -4630,22 +4189,23 @@ message
 
 function openMailApp(){
 
-    const subject =
-    "Portfolio Opportunity";
+const subject =
+"Portfolio Opportunity";
 
-    const body =
-    "Hello Piyush,\n\n" +
-    "I would like to connect with you regarding an opportunity.\n\n" +
-    "Regards";
+const body =
+`Hello Piyush,
 
+I would like to connect with you regarding an opportunity.
 
-    window.location.href =
-    "mailto:" +
-    MY_EMAIL +
-    "?subject=" +
-    encodeURIComponent(subject) +
-    "&body=" +
-    encodeURIComponent(body);
+Regards`;
+
+window.location.href =
+"mailto:" +
+MY_EMAIL +
+"?subject=" +
+encodeURIComponent(subject) +
+"&body=" +
+encodeURIComponent(body);
 
 }
 
@@ -4664,7 +4224,6 @@ document.getElementById(
 "emailOptions"
 );
 
-
 let preparedGmailURL =
 "";
 
@@ -4676,51 +4235,50 @@ contactForm.addEventListener(
 "submit",
 function(event){
 
-    event.preventDefault();
+event.preventDefault();
 
 
-    const name =
-    document.getElementById(
-    "name"
-    ).value.trim();
+const name =
+document.getElementById(
+"name"
+).value.trim();
 
 
-    const senderEmail =
-    document.getElementById(
-    "senderEmail"
-    ).value.trim();
+const senderEmail =
+document.getElementById(
+"senderEmail"
+).value.trim();
 
 
-    const subject =
-    document.getElementById(
-    "subject"
-    ).value.trim();
+const subject =
+document.getElementById(
+"subject"
+).value.trim();
 
 
-    const message =
-    document.getElementById(
-    "message"
-    ).value.trim();
+const message =
+document.getElementById(
+"message"
+).value.trim();
 
 
-    if(
-        !name ||
-        !senderEmail ||
-        !subject ||
-        !message
-    ){
+if(
+!name ||
+!senderEmail ||
+!subject ||
+!message
+){
 
-        alert(
-        "Please fill in all fields."
-        );
+alert(
+"Please fill in all fields."
+);
 
-        return;
+return;
 
-    }
+}
 
 
-    const emailBody =
-
+const emailBody =
 `Hello Piyush,
 
 My name is ${name}.
@@ -4736,47 +4294,48 @@ Regards,
 ${name}`;
 
 
-    /* Gmail */
+/* Gmail */
 
-    preparedGmailURL =
-
-    "https://mail.google.com/mail/" +
-    "?view=cm" +
-    "&fs=1" +
-    "&to=" +
-    encodeURIComponent(MY_EMAIL) +
-    "&su=" +
-    encodeURIComponent(subject) +
-    "&body=" +
-    encodeURIComponent(emailBody);
-
-
-    /* Mail App */
-
-    preparedMailtoURL =
-
-    "mailto:" +
-    MY_EMAIL +
-    "?subject=" +
-    encodeURIComponent(subject) +
-    "&body=" +
-    encodeURIComponent(emailBody);
+preparedGmailURL =
+"https://mail.google.com/mail/" +
+"?view=cm" +
+"&fs=1" +
+"&to=" +
+encodeURIComponent(MY_EMAIL) +
+"&su=" +
+encodeURIComponent(subject) +
+"&body=" +
+encodeURIComponent(emailBody);
 
 
-    emailOptions.classList.add(
-    "show"
-    );
+/* Mail app */
+
+preparedMailtoURL =
+"mailto:" +
+MY_EMAIL +
+"?subject=" +
+encodeURIComponent(subject) +
+"&body=" +
+encodeURIComponent(emailBody);
 
 
-    /* Automatically open Gmail */
+/* Show options */
 
-    window.open(
-    preparedGmailURL,
-    "_blank",
-    "noopener,noreferrer"
-    );
+emailOptions.classList.add(
+"show"
+);
 
-});
+
+/* Open Gmail */
+
+window.open(
+preparedGmailURL,
+"_blank",
+"noopener,noreferrer"
+);
+
+}
+);
 
 
 /* =========================================================
@@ -4789,19 +4348,20 @@ document.getElementById(
 "click",
 function(){
 
-    if(
-        preparedGmailURL
-    ){
+if(
+preparedGmailURL
+){
 
-        window.open(
-        preparedGmailURL,
-        "_blank",
-        "noopener,noreferrer"
-        );
+window.open(
+preparedGmailURL,
+"_blank",
+"noopener,noreferrer"
+);
 
-    }
+}
 
-});
+}
+);
 
 
 /* =========================================================
@@ -4814,16 +4374,17 @@ document.getElementById(
 "click",
 function(){
 
-    if(
-        preparedMailtoURL
-    ){
+if(
+preparedMailtoURL
+){
 
-        window.location.href =
-        preparedMailtoURL;
+window.location.href =
+preparedMailtoURL;
 
-    }
+}
 
-});
+}
+);
 
 
 /* =========================================================
@@ -4835,49 +4396,45 @@ document.getElementById(
 "topBtn"
 );
 
-
 window.addEventListener(
 "scroll",
 function(){
 
-    if(
-        window.scrollY > 500
-    ){
+if(
+window.scrollY > 500
+){
 
-        topBtn.classList.add(
-        "show"
-        );
+topBtn.classList.add(
+"show"
+);
 
-    }else{
+}else{
 
-        topBtn.classList.remove(
-        "show"
-        );
+topBtn.classList.remove(
+"show"
+);
 
-    }
+}
 
-});
+}
+);
 
 
 topBtn.addEventListener(
 "click",
 function(){
 
-    window.scrollTo({
-
-        top:0,
-
-        behavior:"smooth"
-
-    });
-
+window.scrollTo({
+top:0,
+behavior:"smooth"
 });
+
+}
+);
 
 
 /* =========================================================
-   ========================================================
-   REALISTIC BLACK HOLE ENGINE
-   ========================================================
+   CINEMATIC BLACK HOLE
 ========================================================= */
 
 const canvas =
@@ -4890,26 +4447,90 @@ canvas.getContext(
 "2d"
 );
 
+let width;
+let height;
+let centerX;
+let centerY;
 
-let width =
-window.innerWidth;
+let blackHoleRadius;
 
-let height =
-window.innerHeight;
+let stars = [];
+let dust = [];
 
-let centerX =
-width / 2;
-
-let centerY =
-height / 2;
+let animationTime = 0;
 
 
-/* Device pixel ratio */
+/* =========================================================
+   RESIZE
+========================================================= */
 
-let DPR =
+function resize(){
+
+const dpr =
 Math.min(
 window.devicePixelRatio || 1,
 2
+);
+
+width =
+window.innerWidth;
+
+height =
+window.innerHeight;
+
+canvas.width =
+width * dpr;
+
+canvas.height =
+height * dpr;
+
+canvas.style.width =
+width + "px";
+
+canvas.style.height =
+height + "px";
+
+ctx.setTransform(
+dpr,
+0,
+0,
+dpr,
+0,
+0
+);
+
+
+/*
+   Position the black hole slightly
+   toward the right on desktop.
+*/
+
+centerX =
+width > 900
+?
+width * .72
+:
+width * .58;
+
+centerY =
+height * .48;
+
+blackHoleRadius =
+Math.min(
+width,
+height
+) * .115;
+
+
+createStars();
+
+createDust();
+
+}
+
+window.addEventListener(
+"resize",
+resize
 );
 
 
@@ -4917,350 +4538,264 @@ window.devicePixelRatio || 1,
    STAR FIELD
 ========================================================= */
 
-let stars = [];
-
-const STAR_COUNT = 430;
-
-
-function randomStar(){
-
-    return {
-
-        angle:
-        Math.random() *
-        Math.PI * 2,
-
-        distance:
-        Math.random() *
-        Math.max(
-            width,
-            height
-        ),
-
-        size:
-        Math.random() *
-        1.25
-        + .15,
-
-        opacity:
-        Math.random() *
-        .8
-        + .15,
-
-        speed:
-        Math.random() *
-        .0005
-        + .00008,
-
-        twinkle:
-        Math.random() *
-        Math.PI * 2
-
-    };
-
-}
-
-
 function createStars(){
 
-    stars = [];
+stars = [];
 
-    for(
-        let i=0;
-        i<STAR_COUNT;
-        i++
-    ){
+const amount =
+Math.min(
+450,
+Math.floor(
+(width * height) / 6500
+)
+);
 
-        stars.push(
-        randomStar()
-        );
+for(
+let i=0;
+i<amount;
+i++
+){
 
-    }
+stars.push({
 
-}
+x:
+Math.random() * width,
 
+y:
+Math.random() * height,
 
-createStars();
+radius:
+Math.random() * 1.25 + .1,
 
+opacity:
+Math.random() * .45 + .08,
 
-/* =========================================================
-   RESIZE
-========================================================= */
+twinkle:
+Math.random() * Math.PI * 2,
 
-function resizeCanvas(){
-
-    width =
-    window.innerWidth;
-
-    height =
-    window.innerHeight;
-
-    DPR =
-    Math.min(
-    window.devicePixelRatio || 1,
-    2
-    );
-
-
-    canvas.width =
-    width * DPR;
-
-    canvas.height =
-    height * DPR;
-
-    canvas.style.width =
-    width + "px";
-
-    canvas.style.height =
-    height + "px";
-
-
-    ctx.setTransform(
-    DPR,
-    0,
-    0,
-    DPR,
-    0,
-    0
-    );
-
-
-    centerX =
-    width / 2;
-
-    centerY =
-    height / 2;
-
-}
-
-
-resizeCanvas();
-
-
-window.addEventListener(
-"resize",
-function(){
-
-    resizeCanvas();
-
-    createStars();
+speed:
+Math.random() * .015 + .004
 
 });
 
-
-/* =========================================================
-   DRAW STAR FIELD
-========================================================= */
-
-function drawStars(time){
-
-    stars.forEach(
-    function(star){
-
-        star.angle +=
-        star.speed;
-
-
-        const x =
-        centerX +
-        Math.cos(star.angle) *
-        star.distance;
-
-
-        const y =
-        centerY +
-        Math.sin(star.angle) *
-        star.distance;
-
-
-        if(
-            x < -20 ||
-            x > width + 20 ||
-            y < -20 ||
-            y > height + 20
-        ){
-
-            return;
-
-        }
-
-
-        /* gravitational distortion */
-
-        const dx =
-        x - centerX;
-
-        const dy =
-        y - centerY;
-
-        const dist =
-        Math.sqrt(
-        dx*dx + dy*dy
-        );
-
-
-        const eventRadius =
-        Math.min(
-        width,
-        height
-        ) * .135;
-
-
-        if(
-            dist < eventRadius * 2.8
-        ){
-
-            return;
-
-        }
-
-
-        const twinkle =
-        Math.sin(
-        time * .0015 +
-        star.twinkle
-        );
-
-
-        const alpha =
-        star.opacity *
-        (.72 + twinkle * .2);
-
-
-        ctx.beginPath();
-
-        ctx.arc(
-        x,
-        y,
-        star.size,
-        0,
-        Math.PI * 2
-        );
-
-
-        ctx.fillStyle =
-        `rgba(
-        205,
-        235,
-        240,
-        ${alpha}
-        )`;
-
-        ctx.fill();
-
-    });
+}
 
 }
 
 
 /* =========================================================
-   STAR STREAKS / LENSING
+   ACCRETION DUST
 ========================================================= */
 
-function drawLensingStars(){
+function createDust(){
 
-    const radius =
-    Math.min(
-    width,
-    height
-    ) * .19;
+dust = [];
 
+const amount =
+Math.min(
+900,
+Math.floor(
+(width * height) / 2500
+)
+);
 
-    for(
-        let i=0;
-        i<42;
-        i++
-    ){
+for(
+let i=0;
+i<amount;
+i++
+){
 
-        const angle =
-        (i / 42) *
-        Math.PI * 2;
+const angle =
+Math.random() *
+Math.PI * 2;
 
+const distance =
+blackHoleRadius *
+(
+2.0 +
+Math.random() * 5.2
+);
 
-        const distance =
-        radius +
-        Math.sin(
-        i * 7.3
-        ) * 15;
+dust.push({
 
+angle:angle,
 
-        const x =
-        centerX +
-        Math.cos(angle) *
-        distance;
+distance:distance,
 
+size:
+Math.random() * 1.8 + .15,
 
-        const y =
-        centerY +
-        Math.sin(angle) *
-        distance *
-        .45;
+speed:
+.0005 +
+Math.random() * .0025,
 
+opacity:
+Math.random() * .35 + .05,
 
-        const length =
-        8 +
-        Math.random() * 20;
+phase:
+Math.random() * Math.PI * 2
 
+});
 
-        const x2 =
-        x +
-        Math.cos(angle)
-        * length;
+}
 
-
-        const y2 =
-        y +
-        Math.sin(angle)
-        * length *
-        .45;
+}
 
 
-        const gradient =
-        ctx.createLinearGradient(
-        x,
-        y,
-        x2,
-        y2
-        );
+/* =========================================================
+   DRAW STARS
+========================================================= */
+
+function drawStars(){
+
+stars.forEach(
+function(star){
+
+const twinkle =
+(
+Math.sin(
+animationTime *
+star.speed *
+1000 +
+star.twinkle
+) + 1
+) / 2;
+
+const alpha =
+star.opacity *
+(
+.55 +
+twinkle * .45
+);
+
+ctx.beginPath();
+
+ctx.arc(
+star.x,
+star.y,
+star.radius,
+0,
+Math.PI * 2
+);
+
+ctx.fillStyle =
+`rgba(
+180,
+230,
+235,
+${alpha}
+)`;
+
+ctx.fill();
+
+}
+);
+
+}
 
 
-        gradient.addColorStop(
-        0,
-        "rgba(180,235,240,.0)"
-        );
+/* =========================================================
+   BLACK HOLE SHADOW
+========================================================= */
 
-        gradient.addColorStop(
-        .5,
-        "rgba(120,220,230,.35)"
-        );
+function drawBlackHole(){
 
-        gradient.addColorStop(
-        1,
-        "rgba(255,255,255,.0)"
-        );
+/*
+   Outer gravitational shadow
+*/
+
+const outer =
+blackHoleRadius *
+2.05;
+
+const shadowGradient =
+ctx.createRadialGradient(
+centerX,
+centerY,
+blackHoleRadius * .3,
+centerX,
+centerY,
+outer
+);
+
+shadowGradient.addColorStop(
+0,
+"rgba(0,0,0,1)"
+);
+
+shadowGradient.addColorStop(
+.42,
+"rgba(0,0,0,.99)"
+);
+
+shadowGradient.addColorStop(
+.72,
+"rgba(0,0,0,.82)"
+);
+
+shadowGradient.addColorStop(
+1,
+"rgba(0,0,0,0)"
+);
 
 
-        ctx.beginPath();
+ctx.beginPath();
 
-        ctx.moveTo(
-        x,
-        y
-        );
+ctx.arc(
+centerX,
+centerY,
+outer,
+0,
+Math.PI * 2
+);
 
-        ctx.lineTo(
-        x2,
-        y2
-        );
+ctx.fillStyle =
+shadowGradient;
 
-        ctx.strokeStyle =
-        gradient;
+ctx.fill();
 
-        ctx.lineWidth =
-        .7;
 
-        ctx.stroke();
+/*
+   Absolute black event horizon
+*/
 
-    }
+ctx.beginPath();
+
+ctx.arc(
+centerX,
+centerY,
+blackHoleRadius,
+0,
+Math.PI * 2
+);
+
+ctx.fillStyle =
+"#000000";
+
+ctx.fill();
+
+
+/*
+   Very subtle edge
+*/
+
+ctx.beginPath();
+
+ctx.arc(
+centerX,
+centerY,
+blackHoleRadius * 1.02,
+0,
+Math.PI * 2
+);
+
+ctx.strokeStyle =
+"rgba(0,0,0,.95)";
+
+ctx.lineWidth =
+blackHoleRadius * .12;
+
+ctx.stroke();
 
 }
 
@@ -5269,614 +4804,632 @@ function drawLensingStars(){
    ACCRETION DISK
 ========================================================= */
 
-function drawAccretionDisk(time){
+function drawAccretionDisk(){
 
-    const minSize =
-    Math.min(
-    width,
-    height
-    );
+/*
+   The disk is intentionally stretched
+   horizontally to create a cinematic
+   gravitational-lensing appearance.
+*/
 
+const diskWidth =
+blackHoleRadius * 5.8;
 
-    const outer =
-    minSize * .31;
-
-    const inner =
-    minSize * .125;
-
-
-    /*
-       multiple rotating elliptical rings
-    */
-
-    for(
-        let ring=0;
-        ring<34;
-        ring++
-    ){
-
-        const ratio =
-        ring / 34;
+const diskHeight =
+blackHoleRadius * 1.15;
 
 
-        const radius =
-        inner +
-        (outer-inner) *
-        ratio;
+/* soft outer glow */
+
+ctx.save();
+
+ctx.translate(
+centerX,
+centerY
+);
+
+ctx.rotate(
+-0.08
+);
 
 
-        const rotation =
-        time *
-        .000035 *
-        (1.4 - ratio);
+const glow =
+ctx.createRadialGradient(
+0,
+0,
+blackHoleRadius * .5,
+0,
+0,
+diskWidth
+);
+
+glow.addColorStop(
+0,
+"rgba(255,255,255,.0)"
+);
+
+glow.addColorStop(
+.30,
+"rgba(255,220,155,.12)"
+);
+
+glow.addColorStop(
+.48,
+"rgba(255,165,65,.24)"
+);
+
+glow.addColorStop(
+.65,
+"rgba(30,150,180,.12)"
+);
+
+glow.addColorStop(
+1,
+"rgba(0,0,0,0)"
+);
+
+ctx.scale(
+1,
+diskHeight / diskWidth
+);
+
+ctx.beginPath();
+
+ctx.arc(
+0,
+0,
+diskWidth,
+0,
+Math.PI * 2
+);
+
+ctx.fillStyle =
+glow;
+
+ctx.fill();
+
+ctx.restore();
 
 
-        const alpha =
-        .035 +
-        (1-ratio) *
-        .025;
+/*
+   Detailed moving disk particles
+*/
+
+ctx.save();
+
+ctx.translate(
+centerX,
+centerY
+);
+
+ctx.rotate(
+-0.08
+);
 
 
-        ctx.save();
+dust.forEach(
+function(p){
 
-        ctx.translate(
-        centerX,
-        centerY
-        );
+p.angle += p.speed;
 
-        ctx.rotate(
-        rotation
-        );
+const x =
+Math.cos(p.angle) *
+p.distance;
 
-
-        ctx.beginPath();
-
-
-        ctx.ellipse(
-        0,
-        0,
-        radius,
-        radius * .28,
-        0,
-        0,
-        Math.PI * 2
-        );
+const y =
+Math.sin(p.angle) *
+p.distance *
+.19;
 
 
-        const gradient =
-        ctx.createLinearGradient(
-        -radius,
-        0,
-        radius,
-        0
-        );
+/*
+   Hide dust behind the event horizon.
+*/
+
+const radial =
+Math.sqrt(
+x*x +
+y*y
+);
+
+if(
+radial <
+blackHoleRadius * 1.02
+){
+
+return;
+
+}
 
 
-        gradient.addColorStop(
-        0,
-        `rgba(20,115,130,${alpha})`
-        );
+/*
+   Hotter inner region.
+*/
 
-        gradient.addColorStop(
-        .3,
-        `rgba(90,220,230,${alpha*1.8})`
-        );
+const normalized =
+Math.min(
+1,
+p.distance /
+(
+blackHoleRadius * 7
+)
+);
 
-        gradient.addColorStop(
-        .52,
-        `rgba(245,255,250,${alpha*2})`
-        );
-
-        gradient.addColorStop(
-        .7,
-        `rgba(70,190,205,${alpha*1.5})`
-        );
-
-        gradient.addColorStop(
-        1,
-        `rgba(10,60,70,${alpha})`
-        );
+const heat =
+1 -
+normalized;
 
 
-        ctx.strokeStyle =
-        gradient;
+/*
+   Slight gravitational brightening.
+*/
 
-        ctx.lineWidth =
-        1.5 +
-        Math.sin(
-        ring * 1.7 +
-        time*.001
-        ) * .5;
+const brightness =
+.55 +
+heat * .45;
 
 
-        ctx.stroke();
+/*
+   Blue-white outer material.
+   Warm inner material.
+*/
 
-        ctx.restore();
+const r =
+Math.floor(
+255 *
+brightness
+);
 
-    }
+const g =
+Math.floor(
+155 +
+100 * heat
+);
 
-
-    /* bright inner disk */
-
-    ctx.save();
-
-    ctx.translate(
-    centerX,
-    centerY
-    );
-
-
-    ctx.rotate(
-    time * .00006
-    );
-
-
-    ctx.beginPath();
-
-    ctx.ellipse(
-    0,
-    0,
-    inner * 1.9,
-    inner * .46,
-    0,
-    0,
-    Math.PI * 2
-    );
+const b =
+Math.floor(
+70 +
+185 * normalized
+);
 
 
-    const innerGradient =
-    ctx.createRadialGradient(
-    0,
-    0,
-    inner*.2,
-    0,
-    0,
-    inner*2
-    );
+ctx.beginPath();
 
+ctx.arc(
+x,
+y,
+p.size,
+0,
+Math.PI * 2
+);
 
-    innerGradient.addColorStop(
-    0,
-    "rgba(255,255,255,.0)"
-    );
+ctx.fillStyle =
+`rgba(
+${r},
+${g},
+${b},
+${p.opacity}
+)`;
 
-    innerGradient.addColorStop(
-    .35,
-    "rgba(180,245,250,.16)"
-    );
+ctx.fill();
 
-    innerGradient.addColorStop(
-    .62,
-    "rgba(60,205,220,.20)"
-    );
+}
+);
 
-    innerGradient.addColorStop(
-    1,
-    "rgba(0,50,60,0)"
-    );
-
-
-    ctx.fillStyle =
-    innerGradient;
-
-    ctx.fill();
-
-    ctx.restore();
+ctx.restore();
 
 }
 
 
 /* =========================================================
-   EVENT HORIZON
+   LENSING RING
 ========================================================= */
 
-function drawBlackHole(time){
+function drawPhotonRing(){
 
-    const minSize =
-    Math.min(
-    width,
-    height
-    );
+const ring =
+blackHoleRadius *
+1.18;
 
-
-    const eventRadius =
-    minSize * .105;
-
-
-    /* gravitational glow */
-
-    const glow =
-    ctx.createRadialGradient(
-    centerX,
-    centerY,
-    eventRadius*.7,
-    centerX,
-    centerY,
-    eventRadius*2.5
-    );
+const pulse =
+Math.sin(
+animationTime * .8
+) * .015;
 
 
-    glow.addColorStop(
-    0,
-    "rgba(0,0,0,1)"
-    );
+ctx.save();
 
-    glow.addColorStop(
-    .42,
-    "rgba(0,0,0,.98)"
-    );
+ctx.translate(
+centerX,
+centerY
+);
 
-    glow.addColorStop(
-    .65,
-    "rgba(0,0,0,.5)"
-    );
-
-    glow.addColorStop(
-    1,
-    "rgba(0,0,0,0)"
-    );
+ctx.scale(
+1.35,
+.40
+);
 
 
-    ctx.beginPath();
+const gradient =
+ctx.createRadialGradient(
+0,
+0,
+ring * .65,
+0,
+0,
+ring * 1.35
+);
 
-    ctx.arc(
-    centerX,
-    centerY,
-    eventRadius*2.5,
-    0,
-    Math.PI*2
-    );
+gradient.addColorStop(
+0,
+"rgba(0,0,0,0)"
+);
 
-    ctx.fillStyle =
-    glow;
+gradient.addColorStop(
+.67,
+"rgba(255,220,160,0)"
+);
 
-    ctx.fill();
+gradient.addColorStop(
+.78,
+"rgba(255,211,140,.22)"
+);
 
+gradient.addColorStop(
+.85,
+"rgba(255,180,85,.10)"
+);
 
-    /* photon ring */
-
-    ctx.beginPath();
-
-    ctx.arc(
-    centerX,
-    centerY,
-    eventRadius*1.17,
-    0,
-    Math.PI*2
-    );
-
-
-    const photon =
-    ctx.createRadialGradient(
-    centerX,
-    centerY,
-    eventRadius*1.03,
-    centerX,
-    centerY,
-    eventRadius*1.24
-    );
+gradient.addColorStop(
+1,
+"rgba(0,0,0,0)"
+);
 
 
-    photon.addColorStop(
-    0,
-    "rgba(0,0,0,0)"
-    );
+ctx.beginPath();
 
-    photon.addColorStop(
-    .4,
-    "rgba(130,225,235,.30)"
-    );
+ctx.arc(
+0,
+0,
+ring * (1 + pulse),
+0,
+Math.PI * 2
+);
 
-    photon.addColorStop(
-    .55,
-    "rgba(220,255,255,.52)"
-    );
+ctx.strokeStyle =
+gradient;
 
-    photon.addColorStop(
-    .7,
-    "rgba(50,170,185,.24)"
-    );
+ctx.lineWidth =
+blackHoleRadius * .12;
 
-    photon.addColorStop(
-    1,
-    "rgba(0,0,0,0)"
-    );
+ctx.stroke();
 
-
-    ctx.strokeStyle =
-    photon;
-
-    ctx.lineWidth =
-    7;
-
-    ctx.stroke();
-
-
-    /* black event horizon */
-
-    ctx.beginPath();
-
-    ctx.arc(
-    centerX,
-    centerY,
-    eventRadius,
-    0,
-    Math.PI*2
-    );
-
-
-    const black =
-    ctx.createRadialGradient(
-    centerX - eventRadius*.2,
-    centerY - eventRadius*.2,
-    eventRadius*.1,
-    centerX,
-    centerY,
-    eventRadius
-    );
-
-
-    black.addColorStop(
-    0,
-    "#000000"
-    );
-
-    black.addColorStop(
-    .8,
-    "#000000"
-    );
-
-    black.addColorStop(
-    1,
-    "#010101"
-    );
-
-
-    ctx.fillStyle =
-    black;
-
-    ctx.fill();
-
-
-    /* subtle moving edge */
-
-    ctx.beginPath();
-
-    ctx.arc(
-    centerX,
-    centerY,
-    eventRadius*1.09,
-    time*.00015,
-    time*.00015 +
-    Math.PI*1.2
-    );
-
-
-    ctx.strokeStyle =
-    "rgba(145,245,250,.24)";
-
-    ctx.lineWidth =
-    1.5;
-
-    ctx.stroke();
+ctx.restore();
 
 }
 
 
 /* =========================================================
-   DUST / PARTICLES AROUND DISK
+   DUST STREAMS
 ========================================================= */
 
-function drawDust(time){
+function drawDustStreams(){
 
-    const minSize =
-    Math.min(
-    width,
-    height
-    );
+ctx.save();
 
+ctx.translate(
+centerX,
+centerY
+);
 
-    const outer =
-    minSize*.33;
+for(
+let i=0;
+i<90;
+i++
+){
 
+const angle =
+(
+i / 90
+) *
+Math.PI * 2;
 
-    for(
-        let i=0;
-        i<150;
-        i++
-    ){
+const radius =
+blackHoleRadius *
+(
+2.0 +
+(
+Math.sin(
+i * 7.3 +
+animationTime * .6
+) + 1
+) *
+2.1
+);
 
-        const angle =
-        i*.71 +
-        time*.00004;
+const x =
+Math.cos(angle) *
+radius;
 
+const y =
+Math.sin(angle) *
+radius *
+.17;
 
-        const distance =
-        minSize*.14 +
-        Math.abs(
-        Math.sin(i*4.13)
-        ) *
-        (outer-minSize*.14);
-
-
-        const x =
-        centerX +
-        Math.cos(angle) *
-        distance;
-
-
-        const y =
-        centerY +
-        Math.sin(angle) *
-        distance *
-        .28;
-
-
-        const alpha =
-        .04 +
-        Math.abs(
-        Math.sin(
-        time*.001+i
-        )
-        )*.08;
-
-
-        ctx.beginPath();
-
-        ctx.arc(
-        x,
-        y,
-        .5 +
-        Math.random()*.7,
-        0,
-        Math.PI*2
-        );
+const alpha =
+.025 +
+(
+Math.sin(
+animationTime +
+i
+) + 1
+) *
+.018;
 
 
-        ctx.fillStyle =
-        `rgba(
-        150,
-        230,
-        235,
-        ${alpha}
-        )`;
+ctx.beginPath();
 
-        ctx.fill();
+ctx.arc(
+x,
+y,
+.5 +
+Math.random() * .7,
+0,
+Math.PI * 2
+);
 
-    }
+ctx.fillStyle =
+`rgba(
+120,
+205,
+215,
+${alpha}
+)`;
+
+ctx.fill();
+
+}
+
+ctx.restore();
 
 }
 
 
 /* =========================================================
-   BLACK HOLE ANIMATION
+   LENSING LIGHT
 ========================================================= */
 
-function animateBlackHole(time){
+function drawLensingLight(){
 
-    ctx.clearRect(
-    0,
-    0,
-    width,
-    height
-    );
+/*
+   Thin glowing arcs above and below
+   the event horizon.
+*/
+
+ctx.save();
+
+ctx.translate(
+centerX,
+centerY
+);
+
+ctx.rotate(
+-.08
+);
+
+const r =
+blackHoleRadius * 1.62;
+
+ctx.beginPath();
+
+ctx.ellipse(
+0,
+0,
+r * 1.75,
+r * .32,
+0,
+Math.PI,
+Math.PI * 2
+);
+
+const topGradient =
+ctx.createLinearGradient(
+-r * 1.7,
+0,
+r * 1.7,
+0
+);
+
+topGradient.addColorStop(
+0,
+"rgba(0,0,0,0)"
+);
+
+topGradient.addColorStop(
+.3,
+"rgba(255,192,105,.04)"
+);
+
+topGradient.addColorStop(
+.5,
+"rgba(255,230,180,.25)"
+);
+
+topGradient.addColorStop(
+.7,
+"rgba(255,170,75,.05)"
+);
+
+topGradient.addColorStop(
+1,
+"rgba(0,0,0,0)"
+);
+
+ctx.strokeStyle =
+topGradient;
+
+ctx.lineWidth =
+blackHoleRadius * .13;
+
+ctx.stroke();
 
 
-    /*
-       Deep black base
-    */
+ctx.beginPath();
 
-    const background =
-    ctx.createRadialGradient(
-    centerX,
-    centerY,
-    0,
-    centerX,
-    centerY,
-    Math.max(
-    width,
-    height
-    )*.7
-    );
+ctx.ellipse(
+0,
+0,
+r * 1.75,
+r * .32,
+0,
+0,
+Math.PI
+);
 
+ctx.strokeStyle =
+"rgba(40,150,170,.12)";
 
-    background.addColorStop(
-    0,
-    "#050609"
-    );
+ctx.lineWidth =
+blackHoleRadius * .08;
 
-    background.addColorStop(
-    .3,
-    "#020306"
-    );
-
-    background.addColorStop(
-    .75,
-    "#010102"
-    );
-
-    background.addColorStop(
-    1,
-    "#000000"
-    );
+ctx.stroke();
 
 
-    ctx.fillStyle =
-    background;
-
-    ctx.fillRect(
-    0,
-    0,
-    width,
-    height
-    );
-
-
-    drawStars(time);
-
-    drawLensingStars();
-
-    drawDust(time);
-
-    drawAccretionDisk(time);
-
-    drawBlackHole(time);
-
-
-    requestAnimationFrame(
-    animateBlackHole
-    );
+ctx.restore();
 
 }
+
+
+/* =========================================================
+   VIGNETTE
+========================================================= */
+
+function drawVignette(){
+
+const vignette =
+ctx.createRadialGradient(
+width/2,
+height/2,
+Math.min(width,height)*.15,
+width/2,
+height/2,
+Math.max(width,height)*.72
+);
+
+vignette.addColorStop(
+0,
+"rgba(0,0,0,0)"
+);
+
+vignette.addColorStop(
+.65,
+"rgba(0,0,0,.18)"
+);
+
+vignette.addColorStop(
+1,
+"rgba(0,0,0,.82)"
+);
+
+ctx.fillStyle =
+vignette;
+
+ctx.fillRect(
+0,
+0,
+width,
+height
+);
+
+}
+
+
+/* =========================================================
+   ANIMATION LOOP
+========================================================= */
+
+function animateBlackHole(){
+
+animationTime += .016;
+
+
+ctx.clearRect(
+0,
+0,
+width,
+height
+);
+
+
+/*
+   Very dark background.
+*/
+
+ctx.fillStyle =
+"#010204";
+
+ctx.fillRect(
+0,
+0,
+width,
+height
+);
+
+
+/*
+   Background stars.
+*/
+
+drawStars();
+
+
+/*
+   Accretion disk behind
+   the event horizon.
+*/
+
+drawAccretionDisk();
+
+
+/*
+   Lensing effects.
+*/
+
+drawLensingLight();
+
+drawPhotonRing();
+
+drawDustStreams();
+
+
+/*
+   Black hole itself goes on top.
+*/
+
+drawBlackHole();
+
+
+/*
+   Cinematic vignette.
+*/
+
+drawVignette();
 
 
 requestAnimationFrame(
 animateBlackHole
 );
 
+}
+
 
 /* =========================================================
-   MOUSE PARALLAX
+   START BLACK HOLE
 ========================================================= */
 
-let mouseX = 0;
-let mouseY = 0;
+resize();
 
-
-window.addEventListener(
-"mousemove",
-function(event){
-
-    mouseX =
-    (event.clientX / width - .5);
-
-    mouseY =
-    (event.clientY / height - .5);
-
-});
-
-
-/* subtle atmosphere response */
-
-setInterval(
-function(){
-
-    const glow =
-    document.querySelector(
-    ".space-blue-glow"
-    );
-
-    if(!glow) return;
-
-    glow.style.transform =
-    `translate(
-    calc(-50% + ${mouseX*15}px),
-    calc(-50% + ${mouseY*15}px)
-    )`;
-
-},
-50
-);
+animateBlackHole();
 
 </script>
 
