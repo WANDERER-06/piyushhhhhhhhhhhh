@@ -21,43 +21,40 @@ content="Piyush Singh — MBA Digital Marketing & Operations portfolio.">
 
 :root{
 
-    --space-950:#03040d;
-    --space-900:#050817;
-    --space-850:#080d21;
-    --space-800:#0b1029;
-    --space-750:#10163a;
+    --space-black:#02040a;
+    --space-deep:#050814;
+    --space-blue:#081323;
+    --space-indigo:#0c1426;
 
-    --moon:#f4f7ff;
-    --moon-blue:#dbe8ff;
-    --moon-soft:#b9cfff;
+    --moon-white:#f4f8ff;
+    --moon-light:#dce8f7;
+    --moon-silver:#b8c9dc;
 
-    --lavender:#b9a7ff;
-    --violet:#806cff;
-    --cosmic-blue:#6c9cff;
-    --electric:#8bc7ff;
+    --ice-blue:#a9d8ff;
+    --electric-blue:#76c8ff;
+    --soft-blue:#6ca8d9;
 
-    --text:#f4f6ff;
-    --muted:#a9b3cc;
-    --muted-light:#c1c9dc;
+    --muted:#8fa5bc;
 
     --glass:
-        rgba(18,25,58,.46);
+        rgba(16,27,45,.50);
 
     --glass-light:
-        rgba(180,201,255,.075);
+        rgba(196,220,246,.055);
 
     --border:
-        rgba(190,211,255,.17);
+        rgba(185,215,245,.16);
 
     --border-bright:
-        rgba(205,220,255,.35);
+        rgba(185,225,255,.32);
 
     --shadow:
-        rgba(0,0,0,.45);
+        rgba(0,0,0,.50);
 
     --radius:24px;
 
     --max:1180px;
+
 }
 
 
@@ -86,153 +83,35 @@ body{
     "Segoe UI",
     sans-serif;
 
-    color:var(--text);
+    color:var(--moon-white);
 
     background:
         radial-gradient(
-            circle at 15% 15%,
-            rgba(111,104,255,.16),
-            transparent 27%
+            ellipse at 50% 0%,
+            rgba(39,77,124,.18),
+            transparent 45%
         ),
-
         radial-gradient(
-            circle at 85% 20%,
-            rgba(91,153,255,.13),
-            transparent 28%
+            ellipse at 15% 70%,
+            rgba(32,57,100,.14),
+            transparent 38%
         ),
-
         radial-gradient(
-            circle at 50% 90%,
-            rgba(164,132,255,.10),
-            transparent 32%
+            ellipse at 85% 35%,
+            rgba(49,71,112,.10),
+            transparent 38%
         ),
+        var(--space-black);
 
-        var(--space-950);
+    line-height:1.6;
 
     overflow-x:hidden;
 
-    line-height:1.6;
-}
-
-body::before{
-
-    content:"";
-
-    position:fixed;
-
-    inset:0;
-
-    pointer-events:none;
-
-    z-index:-2;
-
-    background:
-
-        radial-gradient(
-            circle at 50% 35%,
-            transparent 0%,
-            rgba(2,3,12,.25) 55%,
-            rgba(1,2,7,.72) 100%
-        );
-
-}
-
-a{
-    text-decoration:none;
-    color:inherit;
-}
-
-button,
-input,
-textarea{
-    font:inherit;
-}
-
-.container{
-
-    width:
-    min(
-        var(--max),
-        calc(100% - 40px)
-    );
-
-    margin:auto;
-}
-
-section{
-
-    padding:110px 0;
-
-    position:relative;
-
-    z-index:2;
-}
-
-.section-heading{
-
-    margin-bottom:55px;
-}
-
-.eyebrow{
-
-    color:var(--moon-blue);
-
-    font-size:.72rem;
-
-    font-weight:900;
-
-    letter-spacing:3px;
-
-    text-transform:uppercase;
-
-    margin-bottom:13px;
-}
-
-.section-heading h2{
-
-    font-size:
-    clamp(
-        2.2rem,
-        5vw,
-        3.8rem
-    );
-
-    line-height:1.04;
-
-    letter-spacing:-2.5px;
-}
-
-.section-heading p{
-
-    max-width:680px;
-
-    color:var(--muted);
-
-    margin-top:17px;
-}
-
-.gradient-text{
-
-    background:
-
-        linear-gradient(
-            105deg,
-            #ffffff 0%,
-            #dce7ff 25%,
-            #a8bcff 52%,
-            #bba6ff 80%,
-            #ffffff 100%
-        );
-
-    -webkit-background-clip:text;
-    background-clip:text;
-
-    color:transparent;
 }
 
 
 /* =========================================================
-   LIVE COSMOS CANVAS
+   COSMIC CANVAS
 ========================================================= */
 
 #cosmosCanvas{
@@ -247,11 +126,12 @@ section{
     z-index:-10;
 
     pointer-events:none;
+
 }
 
 
 /* =========================================================
-   NEBULA GLOW
+   NEBULA LAYERS
 ========================================================= */
 
 .nebula{
@@ -266,7 +146,7 @@ section{
 
     z-index:-8;
 
-    opacity:.22;
+    opacity:.12;
 
     animation:
         nebulaFloat
@@ -274,59 +154,67 @@ section{
         ease-in-out
         infinite
         alternate;
+
 }
 
 .nebula-one{
 
-    width:600px;
-    height:600px;
+    width:650px;
+    height:420px;
 
-    top:-260px;
-    left:-220px;
+    top:-200px;
+    left:-200px;
 
     background:
         radial-gradient(
-            circle,
-            rgba(104,93,255,.8),
-            transparent 68%
+            ellipse,
+            #4979bd,
+            #172d5a,
+            transparent 70%
         );
+
 }
 
 .nebula-two{
 
-    width:650px;
-    height:650px;
+    width:700px;
+    height:500px;
 
-    right:-270px;
-    bottom:-250px;
+    right:-300px;
+    top:25%;
 
     background:
         radial-gradient(
-            circle,
-            rgba(75,144,255,.75),
-            transparent 68%
+            ellipse,
+            #6c91c2,
+            #263a68,
+            transparent 70%
         );
 
-    animation-delay:4s;
+    animation-delay:3s;
+
 }
 
 .nebula-three{
 
-    width:420px;
+    width:650px;
     height:420px;
 
-    left:42%;
-    top:30%;
+    bottom:-250px;
+    left:25%;
 
     background:
         radial-gradient(
-            circle,
-            rgba(184,143,255,.4),
-            transparent 68%
+            ellipse,
+            #305b92,
+            #101d3a,
+            transparent 70%
         );
 
     animation-delay:7s;
+
 }
+
 
 @keyframes nebulaFloat{
 
@@ -338,111 +226,108 @@ section{
 
     to{
         transform:
-            translate3d(45px,-35px,0)
-            scale(1.13);
+            translate3d(60px,-35px,0)
+            scale(1.15);
     }
+
 }
 
 
 /* =========================================================
-   MOON
+   GLOBAL
 ========================================================= */
 
-.moon{
+.container{
 
-    position:fixed;
-
-    width:210px;
-    height:210px;
-
-    right:9%;
-    top:115px;
-
-    border-radius:50%;
-
-    z-index:-7;
-
-    background:
-
-        radial-gradient(
-            circle at 35% 30%,
-            #ffffff 0%,
-            #f3f5ff 28%,
-            #d8e2ff 65%,
-            #aebce2 100%
+    width:
+        min(
+            var(--max),
+            calc(100% - 40px)
         );
 
-    box-shadow:
+    margin:auto;
 
-        0 0 35px
-        rgba(226,237,255,.5),
-
-        0 0 100px
-        rgba(167,190,255,.22),
-
-        0 0 180px
-        rgba(137,151,255,.13);
-
-    opacity:.78;
-
-    animation:
-        moonFloat
-        8s
-        ease-in-out
-        infinite
-        alternate;
 }
 
-.moon::before{
+section{
 
-    content:"";
+    padding:110px 0;
 
-    position:absolute;
+    position:relative;
 
-    inset:12%;
+    z-index:2;
 
-    border-radius:50%;
+}
 
-    opacity:.25;
+
+.section-heading{
+
+    margin-bottom:55px;
+
+}
+
+
+.eyebrow{
+
+    color:var(--ice-blue);
+
+    font-size:.72rem;
+
+    font-weight:800;
+
+    letter-spacing:3px;
+
+    text-transform:uppercase;
+
+    margin-bottom:12px;
+
+}
+
+
+.section-heading h2{
+
+    font-size:
+        clamp(
+            2.1rem,
+            5vw,
+            3.7rem
+        );
+
+    line-height:1.04;
+
+    letter-spacing:-2px;
+
+}
+
+
+.section-heading p{
+
+    max-width:680px;
+
+    color:var(--muted);
+
+    margin-top:16px;
+
+}
+
+
+.gradient-text{
 
     background:
-
-        radial-gradient(
-            circle at 20% 35%,
-            #9da9c8 0 5%,
-            transparent 6%
-        ),
-
-        radial-gradient(
-            circle at 70% 25%,
-            #8e9bbd 0 7%,
-            transparent 8%
-        ),
-
-        radial-gradient(
-            circle at 55% 65%,
-            #a0accb 0 9%,
-            transparent 10%
-        ),
-
-        radial-gradient(
-            circle at 30% 75%,
-            #8c99bb 0 5%,
-            transparent 6%
+        linear-gradient(
+            105deg,
+            #ffffff 5%,
+            #d9ebff 35%,
+            #82caff 75%,
+            #b9d9ff 100%
         );
-}
 
-@keyframes moonFloat{
+    -webkit-background-clip:text;
 
-    from{
-        transform:
-            translateY(0);
-    }
+    background-clip:text;
 
-    to{
-        transform:
-            translateY(14px);
-    }
+    color:transparent;
+
 }
 
 
@@ -462,21 +347,25 @@ section{
 
     padding:16px 0;
 
-    transition:.35s ease;
+    transition:.3s ease;
+
 }
+
 
 .navbar.scrolled{
 
     background:
-        rgba(3,4,13,.76);
+        rgba(2,4,10,.76);
 
     backdrop-filter:
-        blur(22px);
+        blur(20px);
 
     border-bottom:
         1px solid
-        rgba(190,211,255,.12);
+        rgba(190,220,250,.10);
+
 }
+
 
 .nav-inner{
 
@@ -494,26 +383,22 @@ section{
 
     justify-content:space-between;
 
-    padding:
-        10px
-        18px;
+    padding:10px 18px;
 
     border:
         1px solid
-        rgba(190,211,255,.12);
+        rgba(185,215,245,.10);
 
     border-radius:18px;
 
     background:
-        rgba(8,12,31,.48);
+        rgba(10,18,31,.38);
 
     backdrop-filter:
-        blur(17px);
+        blur(16px);
 
-    box-shadow:
-        0 10px 40px
-        rgba(0,0,0,.18);
 }
+
 
 .logo{
 
@@ -526,27 +411,32 @@ section{
     font-weight:900;
 
     letter-spacing:.5px;
+
 }
+
 
 .logo-dot{
 
     width:10px;
+
     height:10px;
 
     border-radius:50%;
 
     background:
         radial-gradient(
-            circle,
-            white,
-            #b9cfff 45%,
-            #778fff
+            circle at 35% 30%,
+            #ffffff,
+            #8ecbff 45%,
+            #467aa5
         );
 
     box-shadow:
-        0 0 10px #b9cfff,
-        0 0 25px rgba(153,178,255,.7);
+        0 0 15px
+        rgba(151,211,255,.9);
+
 }
+
 
 .nav-links{
 
@@ -555,35 +445,35 @@ section{
     gap:7px;
 
     list-style:none;
+
 }
+
 
 .nav-links a{
 
-    color:#aeb8d0;
+    color:#aabbd0;
 
-    padding:
-        9px
-        13px;
+    padding:9px 13px;
 
     border-radius:10px;
 
     font-size:.86rem;
 
     transition:.25s;
+
 }
+
 
 .nav-links a:hover,
 .nav-links a.active{
 
-    color:white;
+    color:#ffffff;
 
     background:
-        rgba(181,203,255,.09);
+        rgba(188,220,250,.08);
 
-    box-shadow:
-        inset 0 0 20px
-        rgba(166,187,255,.035);
 }
+
 
 .menu-btn{
 
@@ -598,6 +488,7 @@ section{
     font-size:25px;
 
     cursor:pointer;
+
 }
 
 
@@ -616,7 +507,9 @@ section{
     padding-top:120px;
 
     overflow:hidden;
+
 }
+
 
 .hero-grid{
 
@@ -629,7 +522,9 @@ section{
     gap:60px;
 
     align-items:center;
+
 }
+
 
 .hero-kicker{
 
@@ -639,90 +534,91 @@ section{
 
     gap:10px;
 
-    padding:
-        7px
-        12px;
+    padding:7px 13px;
 
     border:
         1px solid
-        rgba(210,222,255,.18);
+        rgba(178,216,249,.16);
 
     background:
-        rgba(184,203,255,.06);
+        rgba(140,190,235,.055);
 
     border-radius:100px;
 
-    color:
-        #dce7ff;
+    color:#c5ddf5;
 
     font-size:.76rem;
 
-    font-weight:800;
+    font-weight:700;
 
     margin-bottom:25px;
 
-    box-shadow:
-        inset 0 0 20px
-        rgba(186,207,255,.025);
 }
+
 
 .live-dot{
 
     width:7px;
+
     height:7px;
 
     border-radius:50%;
 
-    background:#e8efff;
+    background:#dff4ff;
 
     box-shadow:
-        0 0 8px #e8efff,
-        0 0 20px #9eb8ff;
+        0 0 12px
+        #9dd9ff;
 
     animation:
-        moonPulse
+        pulse
         1.7s
         infinite;
+
 }
 
-@keyframes moonPulse{
+
+@keyframes pulse{
 
     50%{
-        transform:scale(1.7);
+
+        transform:scale(1.6);
+
         opacity:.45;
+
     }
+
 }
+
 
 .hero h1{
 
     font-size:
         clamp(
-            3.4rem,
+            3.3rem,
             7vw,
-            6.9rem
+            6.8rem
         );
 
     line-height:.91;
 
     letter-spacing:-6px;
 
-    text-shadow:
-        0 10px 50px
-        rgba(136,159,255,.10);
 }
+
 
 .hero-description{
 
-    color:
-        #aeb8d0;
+    color:#9aadc2;
 
     max-width:650px;
 
-    font-size:1.04rem;
+    font-size:1.05rem;
 
-    margin:
-        28px 0;
+    margin:28px 0;
+
 }
+
 
 .hero-actions{
 
@@ -731,7 +627,9 @@ section{
     flex-wrap:wrap;
 
     gap:12px;
+
 }
+
 
 .btn{
 
@@ -743,9 +641,7 @@ section{
 
     gap:9px;
 
-    padding:
-        13px
-        19px;
+    padding:13px 19px;
 
     border-radius:13px;
 
@@ -760,24 +656,27 @@ section{
         var(--border);
 
     transition:.28s;
+
 }
+
 
 .btn-primary{
 
-    color:#0a0d1d;
+    color:#07101c;
 
     background:
-
         linear-gradient(
             135deg,
-            #ffffff,
-            #d7e3ff
+            #f7fbff,
+            #b9dcfa
         );
 
     box-shadow:
-        0 12px 40px
-        rgba(181,204,255,.18);
+        0 12px 35px
+        rgba(132,193,239,.15);
+
 }
+
 
 .btn-primary:hover{
 
@@ -785,30 +684,35 @@ section{
         translateY(-3px);
 
     box-shadow:
-        0 18px 55px
-        rgba(181,204,255,.30);
+        0 18px 45px
+        rgba(151,210,255,.25);
+
 }
+
 
 .btn-ghost{
 
-    color:#edf2ff;
-
     background:
-        rgba(184,204,255,.045);
+        rgba(190,220,250,.035);
+
+    color:#edf6ff;
 
 }
+
 
 .btn-ghost:hover{
 
     background:
-        rgba(184,204,255,.11);
+        rgba(190,220,250,.10);
 
     border-color:
-        rgba(210,223,255,.3);
+        var(--border-bright);
 
     transform:
         translateY(-3px);
+
 }
+
 
 .hero-contact{
 
@@ -819,7 +723,9 @@ section{
     flex-wrap:wrap;
 
     gap:9px;
+
 }
+
 
 .contact-chip{
 
@@ -829,37 +735,38 @@ section{
 
     gap:8px;
 
-    color:#9faac2;
+    color:#8fa7be;
 
-    font-size:.82rem;
+    font-size:.83rem;
 
-    padding:
-        8px
-        11px;
+    padding:8px 11px;
 
     border:
         1px solid
-        rgba(190,211,255,.10);
+        rgba(190,220,250,.09);
 
     border-radius:11px;
 
     transition:.2s;
+
 }
+
 
 .contact-chip:hover{
 
     color:white;
 
     border-color:
-        rgba(210,224,255,.3);
+        rgba(190,220,250,.25);
 
     background:
-        rgba(190,211,255,.07);
+        rgba(190,220,250,.05);
+
 }
 
 
 /* =========================================================
-   PROFILE CARD
+   PROFILE
 ========================================================= */
 
 .profile-wrap{
@@ -867,7 +774,9 @@ section{
     display:flex;
 
     justify-content:center;
+
 }
+
 
 .profile-card{
 
@@ -881,7 +790,7 @@ section{
 
     border:
         1px solid
-        rgba(213,225,255,.20);
+        rgba(205,230,255,.20);
 
     border-radius:34px;
 
@@ -889,34 +798,34 @@ section{
 
         linear-gradient(
             145deg,
-            rgba(220,231,255,.10),
-            rgba(55,65,125,.15),
-            rgba(8,10,28,.64)
+            rgba(214,232,249,.11),
+            rgba(10,19,33,.72)
         );
-
-    backdrop-filter:
-        blur(18px);
 
     box-shadow:
 
         0 25px 80px
-        rgba(0,0,0,.42),
+        rgba(0,0,0,.45),
 
         inset 0 1px 0
-        rgba(255,255,255,.10);
+        rgba(255,255,255,.08);
 
     transform:
         rotate(2deg);
 
     transition:.5s;
+
 }
+
 
 .profile-card:hover{
 
     transform:
         rotate(0deg)
         translateY(-8px);
+
 }
+
 
 .profile-image{
 
@@ -930,16 +839,10 @@ section{
 
     background:
 
-        radial-gradient(
-            circle at 50% 20%,
-            rgba(210,225,255,.18),
-            transparent 35%
-        ),
-
         linear-gradient(
             145deg,
-            #202b61,
-            #080b20
+            #1b3149,
+            #060b14
         );
 
     display:flex;
@@ -947,17 +850,22 @@ section{
     align-items:center;
 
     justify-content:center;
+
 }
+
 
 .profile-image img{
 
     width:100%;
+
     height:100%;
 
     object-fit:cover;
 
     display:block;
+
 }
+
 
 .profile-placeholder{
 
@@ -973,26 +881,28 @@ section{
 
     flex-direction:column;
 
-    color:#dbe7ff;
+    color:#bdddf7;
 
     text-align:center;
+
 }
+
 
 .profile-placeholder strong{
 
     font-size:3rem;
 
-    text-shadow:
-        0 0 30px
-        rgba(195,213,255,.5);
 }
+
 
 .profile-placeholder span{
 
-    font-size:.72rem;
+    font-size:.74rem;
 
-    color:#8e9ab9;
+    color:#819bb5;
+
 }
+
 
 .profile-info{
 
@@ -1000,41 +910,48 @@ section{
         17px
         8px
         7px;
+
 }
+
 
 .profile-info h3{
 
     font-size:1.25rem;
+
 }
+
 
 .profile-info p{
 
-    color:#8e9ab9;
+    color:#8fa7be;
 
     font-size:.84rem;
+
 }
 
 
 /* =========================================================
-   MOONLIGHT GLASS
+   MOONLIGHT GLASS CARDS
 ========================================================= */
 
 .glass{
 
     border:
         1px solid
-        rgba(196,214,255,.15);
+        rgba(196,220,246,.14);
 
     background:
 
         linear-gradient(
             145deg,
-            rgba(159,183,255,.075),
-            rgba(18,23,54,.48),
-            rgba(7,9,25,.58)
+            rgba(145,181,218,.075),
+            rgba(10,18,31,.58)
         );
 
     backdrop-filter:
+        blur(18px);
+
+    -webkit-backdrop-filter:
         blur(18px);
 
     border-radius:
@@ -1042,44 +959,34 @@ section{
 
     box-shadow:
 
-        0 18px 65px
-        rgba(0,0,0,.20),
+        0 20px 65px
+        rgba(0,0,0,.28),
 
         inset 0 1px 0
-        rgba(255,255,255,.055);
+        rgba(255,255,255,.045);
 
-    position:relative;
-
-    overflow:hidden;
 }
 
-.glass::before{
+
+.glass::after{
 
     content:"";
 
     position:absolute;
 
-    top:0;
-    left:0;
+    inset:0;
 
-    width:100%;
-    height:1px;
+    border-radius:inherit;
+
+    pointer-events:none;
 
     background:
         linear-gradient(
-            90deg,
-            transparent,
-            rgba(226,235,255,.35),
-            transparent
+            120deg,
+            rgba(255,255,255,.035),
+            transparent 35%
         );
 
-    opacity:.65;
-}
-
-.glass:hover{
-
-    border-color:
-        rgba(205,220,255,.25);
 }
 
 
@@ -1096,24 +1003,34 @@ section{
         1.2fr;
 
     gap:25px;
+
 }
+
 
 .about-card{
 
     padding:35px;
+
+    position:relative;
+
 }
+
 
 .about-card h3{
 
     font-size:1.4rem;
 
     margin-bottom:15px;
+
 }
+
 
 .about-card p{
 
-    color:var(--muted);
+    color:#9aacbf;
+
 }
+
 
 .fact-grid{
 
@@ -1123,24 +1040,18 @@ section{
         repeat(2,1fr);
 
     gap:14px;
+
 }
+
 
 .fact{
 
     padding:25px;
 
-    transition:.3s;
+    position:relative;
+
 }
 
-.fact:hover{
-
-    transform:
-        translateY(-5px);
-
-    box-shadow:
-        0 20px 55px
-        rgba(92,113,190,.15);
-}
 
 .fact-number{
 
@@ -1148,20 +1059,23 @@ section{
 
     font-weight:900;
 
-    color:#dce7ff;
+    color:#cbe7ff;
 
     text-shadow:
         0 0 25px
-        rgba(180,205,255,.25);
+        rgba(145,205,255,.22);
+
 }
+
 
 .fact span{
 
     display:block;
 
-    color:#8f9ab4;
+    color:#8298ae;
 
-    font-size:.78rem;
+    font-size:.79rem;
+
 }
 
 
@@ -1174,7 +1088,9 @@ section{
     position:relative;
 
     max-width:950px;
+
 }
+
 
 .timeline::before{
 
@@ -1185,6 +1101,7 @@ section{
     left:10px;
 
     top:0;
+
     bottom:0;
 
     width:1px;
@@ -1192,10 +1109,12 @@ section{
     background:
 
         linear-gradient(
-            #bdceff,
-            rgba(189,206,255,.04)
+            #9bd4ff,
+            rgba(155,212,255,.04)
         );
+
 }
+
 
 .timeline-item{
 
@@ -1204,7 +1123,9 @@ section{
     padding-left:50px;
 
     margin-bottom:28px;
+
 }
+
 
 .timeline-dot{
 
@@ -1215,15 +1136,14 @@ section{
     top:25px;
 
     width:15px;
+
     height:15px;
 
     background:
-
         radial-gradient(
-            circle,
+            circle at 35% 30%,
             white,
-            #c3d5ff 45%,
-            #8da6ff
+            #9ed7ff
         );
 
     border-radius:50%;
@@ -1231,16 +1151,22 @@ section{
     box-shadow:
 
         0 0 0 5px
-        rgba(171,195,255,.07),
+        rgba(150,210,250,.07),
 
-        0 0 25px
-        rgba(174,198,255,.7);
+        0 0 20px
+        rgba(150,210,250,.55);
+
 }
+
 
 .experience-card{
 
     padding:27px;
+
+    position:relative;
+
 }
+
 
 .card-top{
 
@@ -1249,40 +1175,49 @@ section{
     justify-content:space-between;
 
     gap:20px;
+
 }
+
 
 .card-top h3{
 
     font-size:1.25rem;
+
 }
+
 
 .card-company{
 
-    color:#b7c8ff;
+    color:#a8d5f5;
 
     font-weight:700;
 
-    font-size:.89rem;
+    font-size:.9rem;
+
 }
+
 
 .date{
 
     white-space:nowrap;
 
-    color:#8995b0;
+    color:#7f95aa;
 
-    font-size:.76rem;
+    font-size:.77rem;
 
-    padding:
-        6px
-        10px;
+    padding:6px 10px;
 
     border:
         1px solid
-        var(--border);
+        rgba(190,220,250,.13);
 
     border-radius:9px;
+
+    background:
+        rgba(200,225,250,.025);
+
 }
+
 
 .card-list{
 
@@ -1290,12 +1225,15 @@ section{
 
     padding-left:19px;
 
-    color:#a8b1c6;
+    color:#95a9bc;
+
 }
+
 
 .card-list li{
 
     margin-bottom:8px;
+
 }
 
 
@@ -1311,50 +1249,75 @@ section{
         repeat(2,1fr);
 
     gap:18px;
+
 }
+
 
 .project-card{
 
     padding:28px;
 
-    transition:.35s;
+    position:relative;
+
+    overflow:hidden;
+
+    transition:.3s;
+
 }
+
 
 .project-card:hover{
 
     transform:
         translateY(-7px);
 
+    border-color:
+        rgba(190,225,255,.28);
+
     box-shadow:
-        0 25px 75px
-        rgba(71,89,163,.16);
+
+        0 25px 70px
+        rgba(0,0,0,.38),
+
+        inset 0 1px 0
+        rgba(255,255,255,.07);
+
 }
+
 
 .project-number{
 
     font-size:.72rem;
 
-    color:#bfcfff;
+    color:#9fd3f5;
 
     font-weight:900;
 
     letter-spacing:2px;
+
 }
+
 
 .project-card h3{
 
     margin:
-        11px 0 8px;
+        11px
+        0
+        8px;
 
     font-size:1.2rem;
+
 }
+
 
 .project-card p{
 
-    color:#a7b0c4;
+    color:#91a5b9;
 
-    font-size:.87rem;
+    font-size:.88rem;
+
 }
+
 
 .project-tags{
 
@@ -1365,7 +1328,9 @@ section{
     gap:7px;
 
     margin-top:18px;
+
 }
+
 
 .tag{
 
@@ -1377,14 +1342,15 @@ section{
 
     border:
         1px solid
-        rgba(195,215,255,.13);
+        rgba(185,220,250,.12);
 
     background:
-        rgba(190,210,255,.045);
+        rgba(190,220,250,.045);
 
-    color:#bdcbed;
+    color:#a9c9e3;
 
-    font-size:.69rem;
+    font-size:.7rem;
+
 }
 
 
@@ -1400,16 +1366,20 @@ section{
         repeat(4,1fr);
 
     gap:13px;
+
 }
+
 
 .metric{
 
     text-align:center;
 
-    padding:
-        27px
-        15px;
+    padding:27px 15px;
+
+    position:relative;
+
 }
+
 
 .metric strong{
 
@@ -1417,20 +1387,23 @@ section{
 
     font-size:2.25rem;
 
-    color:#dbe7ff;
+    color:#d3eaff;
 
     line-height:1;
 
     text-shadow:
         0 0 25px
-        rgba(180,204,255,.20);
+        rgba(140,205,255,.15);
+
 }
+
 
 .metric span{
 
-    color:#8793ad;
+    color:#8298ad;
 
-    font-size:.74rem;
+    font-size:.75rem;
+
 }
 
 
@@ -1446,18 +1419,25 @@ section{
         repeat(3,1fr);
 
     gap:18px;
+
 }
+
 
 .edu-card{
 
     padding:27px;
 
     min-height:260px;
+
+    position:relative;
+
 }
+
 
 .edu-icon{
 
     width:48px;
+
     height:48px;
 
     display:flex;
@@ -1469,34 +1449,36 @@ section{
     border-radius:15px;
 
     background:
-        rgba(190,210,255,.07);
+        rgba(190,220,250,.07);
 
     border:
         1px solid
-        rgba(200,220,255,.15);
+        rgba(190,220,250,.13);
 
     font-size:1.25rem;
 
     margin-bottom:25px;
 
-    box-shadow:
-        0 0 30px
-        rgba(147,173,255,.06);
 }
+
 
 .edu-card h3{
 
     font-size:1.05rem;
+
 }
+
 
 .edu-card p{
 
-    color:#a4aec3;
+    color:#91a6ba;
 
     font-size:.84rem;
 
     margin-top:9px;
+
 }
+
 
 .edu-year{
 
@@ -1504,53 +1486,42 @@ section{
 
     margin-top:17px;
 
-    color:#c3d2ff;
+    color:#a8d5f5;
 
-    font-size:.74rem;
+    font-size:.75rem;
 
     font-weight:800;
+
 }
 
 
 /* =========================================================
-   CAMPUS PHOTO CARDS
+   CAMPUS PHOTO SECTION
 ========================================================= */
 
 .campus-photo{
 
-    aspect-ratio:16/9;
+    aspect-ratio:16/9 !important;
 
-    border-radius:17px;
-
-    overflow:hidden;
-
-    margin-bottom:20px;
-
-    background:
-
-        linear-gradient(
-            145deg,
-            #1b2755,
-            #07091c
-        );
 }
+
 
 .campus-photo img{
 
-    width:100%;
-    height:100%;
+    transition:
+        transform
+        .6s
+        ease;
 
-    object-fit:cover;
-
-    display:block;
-
-    transition:.5s;
 }
+
 
 .project-card:hover
 .campus-photo img{
 
-    transform:scale(1.05);
+    transform:
+        scale(1.04);
+
 }
 
 
@@ -1567,17 +1538,25 @@ section{
         1fr;
 
     gap:20px;
+
 }
+
 
 .skill-card{
 
     padding:28px;
+
+    position:relative;
+
 }
+
 
 .skill{
 
     margin-bottom:22px;
+
 }
+
 
 .skill-title{
 
@@ -1588,12 +1567,16 @@ section{
     margin-bottom:8px;
 
     font-size:.82rem;
+
 }
+
 
 .skill-title span:last-child{
 
-    color:#c9d7ff;
+    color:#a9d8f7;
+
 }
+
 
 .skill-track{
 
@@ -1605,7 +1588,9 @@ section{
     border-radius:20px;
 
     overflow:hidden;
+
 }
+
 
 .skill-fill{
 
@@ -1619,19 +1604,21 @@ section{
 
         linear-gradient(
             90deg,
-            #718cff,
-            #dce8ff
+            #4c7ca8,
+            #b9e1ff
         );
-
-    box-shadow:
-        0 0 12px
-        rgba(167,190,255,.25);
 
     transition:
         width
         1.5s
         ease;
+
+    box-shadow:
+        0 0 12px
+        rgba(150,215,255,.22);
+
 }
+
 
 .tool-cloud{
 
@@ -1642,7 +1629,9 @@ section{
     gap:9px;
 
     margin-top:20px;
+
 }
+
 
 .tool{
 
@@ -1653,25 +1642,16 @@ section{
     border-radius:11px;
 
     background:
-        rgba(190,210,255,.045);
+        rgba(190,220,250,.045);
 
     border:
         1px solid
-        rgba(195,215,255,.13);
+        rgba(190,220,250,.11);
 
-    color:#b9c6e2;
+    color:#abc7df;
 
-    font-size:.77rem;
+    font-size:.78rem;
 
-    transition:.2s;
-}
-
-.tool:hover{
-
-    background:
-        rgba(190,210,255,.10);
-
-    color:white;
 }
 
 
@@ -1687,7 +1667,9 @@ section{
         repeat(2,1fr);
 
     gap:12px;
+
 }
+
 
 .cert{
 
@@ -1703,37 +1685,44 @@ section{
 
     border:
         1px solid
-        rgba(195,215,255,.12);
+        rgba(190,220,250,.12);
 
     background:
-        rgba(190,210,255,.035);
+        rgba(180,215,245,.035);
 
     border-radius:15px;
 
     transition:.25s;
+
 }
+
 
 .cert:hover{
 
     background:
-        rgba(190,210,255,.08);
+        rgba(190,220,250,.075);
 
     transform:
         translateX(5px);
+
 }
+
 
 .cert-name{
 
     font-weight:700;
 
-    font-size:.88rem;
+    font-size:.9rem;
+
 }
+
 
 .cert-date{
 
-    color:#7f8ca8;
+    color:#738ca3;
 
-    font-size:.71rem;
+    font-size:.72rem;
+
 }
 
 
@@ -1745,18 +1734,25 @@ section{
 
     display:grid;
 
-    grid-template-columns:auto 1fr;
+    grid-template-columns:
+        auto
+        1fr;
 
     gap:25px;
 
     align-items:center;
 
     padding:35px;
+
+    position:relative;
+
 }
+
 
 .achievement-icon{
 
     width:75px;
+
     height:75px;
 
     display:flex;
@@ -1771,26 +1767,25 @@ section{
 
         linear-gradient(
             145deg,
-            rgba(215,228,255,.12),
-            rgba(105,123,196,.08)
+            rgba(220,238,255,.11),
+            rgba(30,48,70,.35)
         );
 
     border:
         1px solid
-        rgba(205,220,255,.16);
+        rgba(190,220,250,.14);
 
     font-size:2rem;
 
-    box-shadow:
-        0 0 35px
-        rgba(151,176,255,.08);
 }
+
 
 .achievement p{
 
-    color:#a5aec2;
+    color:#91a6ba;
 
     margin-top:7px;
+
 }
 
 
@@ -1807,12 +1802,18 @@ section{
         1.2fr;
 
     gap:20px;
+
 }
+
 
 .contact-card{
 
     padding:30px;
+
+    position:relative;
+
 }
+
 
 .contact-method{
 
@@ -1828,28 +1829,33 @@ section{
 
     border:
         1px solid
-        rgba(195,215,255,.12);
+        rgba(190,220,250,.11);
 
     background:
-        rgba(190,210,255,.035);
+        rgba(190,220,250,.035);
 
     margin-bottom:10px;
 
     transition:.2s;
+
 }
+
 
 .contact-method:hover{
 
     background:
-        rgba(190,210,255,.085);
+        rgba(190,220,250,.075);
 
     transform:
         translateX(4px);
+
 }
+
 
 .contact-icon{
 
     width:43px;
+
     height:43px;
 
     display:flex;
@@ -1861,35 +1867,32 @@ section{
     border-radius:12px;
 
     background:
-        rgba(195,215,255,.08);
+        rgba(190,220,250,.07);
 
-    color:#d6e2ff;
+    color:#b8ddfa;
 
-    border:
-        1px solid
-        rgba(210,225,255,.10);
 }
+
 
 .contact-method strong{
 
     display:block;
 
     font-size:.86rem;
+
 }
+
 
 .contact-method span{
 
-    color:#8995ad;
+    color:#8198ad;
 
-    font-size:.77rem;
+    font-size:.78rem;
 
     word-break:break-word;
+
 }
 
-
-/* =========================================================
-   FORM
-========================================================= */
 
 .form-row{
 
@@ -1900,12 +1903,16 @@ section{
         1fr;
 
     gap:12px;
+
 }
+
 
 .field{
 
     margin-bottom:13px;
+
 }
+
 
 .field label{
 
@@ -1913,10 +1920,12 @@ section{
 
     margin-bottom:7px;
 
-    font-size:.75rem;
+    font-size:.76rem;
 
-    color:#919db6;
+    color:#8ea6bb;
+
 }
+
 
 .field input,
 .field textarea{
@@ -1925,7 +1934,7 @@ section{
 
     border:
         1px solid
-        rgba(195,215,255,.14);
+        rgba(190,220,250,.13);
 
     background:
         rgba(0,0,0,.18);
@@ -1941,40 +1950,54 @@ section{
         14px;
 
     transition:.2s;
+
 }
+
 
 .field input::placeholder,
 .field textarea::placeholder{
 
-    color:#65718b;
+    color:#596f85;
+
 }
+
 
 .field textarea{
 
     min-height:150px;
 
     resize:vertical;
+
 }
+
 
 .field input:focus,
 .field textarea:focus{
 
     border-color:
-        rgba(210,225,255,.42);
+        rgba(175,220,255,.45);
 
     box-shadow:
         0 0 0 3px
-        rgba(181,203,255,.06);
+        rgba(150,210,255,.055);
+
 }
+
 
 .form-note{
 
     margin-top:10px;
 
-    color:#707d98;
+    color:#667f96;
 
-    font-size:.71rem;
+    font-size:.72rem;
+
 }
+
+
+/* =========================================================
+   EMAIL OPTIONS
+========================================================= */
 
 .email-options{
 
@@ -1986,27 +2009,33 @@ section{
 
     border:
         1px solid
-        rgba(195,215,255,.13);
+        rgba(190,220,250,.14);
 
     border-radius:14px;
 
     background:
-        rgba(4,5,17,.88);
+        rgba(3,7,15,.86);
+
 }
+
 
 .email-options.show{
 
     display:block;
+
 }
+
 
 .email-options-title{
 
-    color:#909db7;
+    color:#8fa8bf;
 
-    font-size:.74rem;
+    font-size:.75rem;
 
     margin-bottom:9px;
+
 }
+
 
 .email-option{
 
@@ -2022,22 +2051,25 @@ section{
 
     border:
         1px solid
-        rgba(195,215,255,.13);
+        rgba(190,220,250,.12);
 
     background:
-        rgba(190,210,255,.045);
+        rgba(190,220,250,.045);
 
     color:white;
 
     text-align:center;
 
     cursor:pointer;
+
 }
+
 
 .email-option:hover{
 
     background:
-        rgba(190,210,255,.11);
+        rgba(190,220,250,.10);
+
 }
 
 
@@ -2051,8 +2083,10 @@ footer{
 
     border-top:
         1px solid
-        rgba(190,211,255,.10);
+        rgba(190,220,250,.09);
+
 }
+
 
 .footer-inner{
 
@@ -2063,25 +2097,32 @@ footer{
     align-items:center;
 
     gap:20px;
+
 }
+
 
 .footer-inner p{
 
-    color:#68758e;
+    color:#657d93;
 
-    font-size:.77rem;
+    font-size:.78rem;
+
 }
+
 
 .footer-links{
 
     display:flex;
 
     gap:8px;
+
 }
+
 
 .footer-links a{
 
     width:36px;
+
     height:36px;
 
     border-radius:10px;
@@ -2094,27 +2135,15 @@ footer{
 
     border:
         1px solid
-        rgba(195,215,255,.13);
+        rgba(190,220,250,.13);
 
-    color:#a8b8da;
+    color:#a5c3dd;
 
-    background:
-        rgba(190,210,255,.025);
-
-    transition:.2s;
-}
-
-.footer-links a:hover{
-
-    background:
-        rgba(190,210,255,.09);
-
-    color:white;
 }
 
 
 /* =========================================================
-   BACK TO TOP
+   TOP BUTTON
 ========================================================= */
 
 .top-btn{
@@ -2122,9 +2151,11 @@ footer{
     position:fixed;
 
     right:20px;
+
     bottom:20px;
 
     width:45px;
+
     height:45px;
 
     display:flex;
@@ -2137,10 +2168,10 @@ footer{
 
     border:
         1px solid
-        rgba(195,215,255,.16);
+        rgba(190,220,250,.16);
 
     background:
-        rgba(8,11,31,.88);
+        rgba(8,15,26,.86);
 
     color:white;
 
@@ -2154,21 +2185,20 @@ footer{
 
     z-index:900;
 
-    box-shadow:
-        0 10px 35px
-        rgba(0,0,0,.3);
 }
+
 
 .top-btn.show{
 
     opacity:1;
 
     pointer-events:auto;
+
 }
 
 
 /* =========================================================
-   REVEAL ANIMATION
+   REVEAL
 ========================================================= */
 
 .reveal{
@@ -2179,15 +2209,18 @@ footer{
         translateY(30px);
 
     transition:
-        opacity .75s ease,
-        transform .75s ease;
+        opacity .7s ease,
+        transform .7s ease;
+
 }
+
 
 .reveal.visible{
 
     opacity:1;
 
     transform:none;
+
 }
 
 
@@ -2203,38 +2236,39 @@ footer{
     .skills-layout{
 
         grid-template-columns:1fr;
+
     }
+
 
     .profile-wrap{
 
         order:-1;
+
     }
+
 
     .profile-card{
 
         width:300px;
+
     }
+
 
     .education-grid{
 
         grid-template-columns:
-            1fr
-            1fr;
+            1fr 1fr;
+
     }
+
 
     .metrics{
 
         grid-template-columns:
             repeat(2,1fr);
+
     }
 
-    .moon{
-
-        width:150px;
-        height:150px;
-
-        right:4%;
-    }
 }
 
 
@@ -2243,7 +2277,9 @@ footer{
     section{
 
         padding:80px 0;
+
     }
+
 
     .container{
 
@@ -2252,12 +2288,16 @@ footer{
                 100% - 28px,
                 var(--max)
             );
+
     }
+
 
     .menu-btn{
 
         display:block;
+
     }
+
 
     .nav-links{
 
@@ -2266,6 +2306,7 @@ footer{
         top:68px;
 
         left:14px;
+
         right:14px;
 
         display:none;
@@ -2276,21 +2317,25 @@ footer{
 
         border:
             1px solid
-            rgba(195,215,255,.15);
+            rgba(190,220,250,.14);
 
         background:
-            rgba(4,5,17,.97);
+            rgba(3,6,13,.97);
 
         backdrop-filter:
-            blur(22px);
+            blur(20px);
 
         border-radius:16px;
+
     }
+
 
     .nav-links.open{
 
         display:flex;
+
     }
+
 
     .hero h1{
 
@@ -2302,17 +2347,23 @@ footer{
             );
 
         letter-spacing:-4px;
+
     }
+
 
     .hero-actions{
 
         flex-direction:column;
+
     }
+
 
     .btn{
 
         width:100%;
+
     }
+
 
     .fact-grid,
     .project-grid,
@@ -2320,55 +2371,69 @@ footer{
     .cert-grid{
 
         grid-template-columns:1fr;
+
     }
+
 
     .metrics{
 
         grid-template-columns:
-            1fr
-            1fr;
+            1fr 1fr;
+
     }
+
 
     .form-row{
 
         grid-template-columns:1fr;
+
     }
+
 
     .card-top{
 
         flex-direction:column;
+
     }
+
 
     .achievement{
 
         grid-template-columns:1fr;
+
     }
+
 
     .footer-inner{
 
         flex-direction:column;
 
         text-align:center;
+
     }
 
-    .moon{
+}
 
-        width:110px;
-        height:110px;
 
-        top:95px;
+@media(prefers-reduced-motion:reduce){
 
-        right:5%;
+    *,
+    *::before,
+    *::after{
 
-        opacity:.55;
+        animation-duration:
+            .01ms !important;
+
+        animation-iteration-count:
+            1 !important;
+
+        scroll-behavior:auto !important;
+
+        transition-duration:
+            .01ms !important;
+
     }
 
-    .nebula{
-
-        filter:blur(80px);
-
-        opacity:.15;
-    }
 }
 
 </style>
@@ -2380,7 +2445,7 @@ footer{
 
 
 <!-- =====================================================
-     COSMOS BACKGROUND
+     COSMIC BACKGROUND
 ====================================================== -->
 
 <canvas id="cosmosCanvas"></canvas>
@@ -2391,24 +2456,16 @@ footer{
 
 <div class="nebula nebula-three"></div>
 
-<div class="moon"></div>
-
 
 <!-- =====================================================
-     NAVIGATION
+     NAVBAR
 ====================================================== -->
 
-<header
-    class="navbar"
-    id="navbar"
->
+<header class="navbar" id="navbar">
 
 <div class="nav-inner">
 
-<a
-    href="#home"
-    class="logo"
->
+<a href="#home" class="logo">
 
 <span class="logo-dot"></span>
 
@@ -2422,22 +2479,18 @@ PIYUSH SINGH
     id="menuBtn"
     aria-label="Open navigation"
 >
-    ☰
+
+☰
+
 </button>
 
 
 <nav>
 
-<ul
-    class="nav-links"
-    id="navLinks"
->
+<ul class="nav-links" id="navLinks">
 
 <li>
-<a
-    href="#home"
-    class="active"
->
+<a href="#home" class="active">
 Home
 </a>
 </li>
@@ -2493,10 +2546,7 @@ Contact
 
 <main>
 
-<section
-    class="hero"
-    id="home"
->
+<section class="hero" id="home">
 
 <div class="container">
 
@@ -2516,9 +2566,12 @@ OPEN TO OPPORTUNITIES
 
 <h1>
 
-Building ideas<br>
+Building ideas
+
+<br>
 
 that move
+
 <span class="gradient-text">
 forward.
 </span>
@@ -2543,7 +2596,9 @@ with structured problem solving.
     href="#projects"
     class="btn btn-primary"
 >
+
 Explore My Work →
+
 </a>
 
 
@@ -2553,7 +2608,9 @@ Explore My Work →
     rel="noopener noreferrer"
     class="btn btn-ghost"
 >
+
 ✉ Email Me
+
 </a>
 
 
@@ -2563,7 +2620,9 @@ Explore My Work →
     rel="noopener noreferrer"
     class="btn btn-ghost"
 >
+
 ↗ LinkedIn
+
 </a>
 
 
@@ -2602,13 +2661,12 @@ piyushsingh20030610@gmail.com
 </div>
 
 
-<!-- =================================================
-     PROFILE
-================================================== -->
+<!-- PROFILE -->
 
 <div class="profile-wrap reveal">
 
 <div class="profile-card">
+
 
 <div class="profile-image">
 
@@ -2616,10 +2674,7 @@ piyushsingh20030610@gmail.com
 <img
     src="assets/profile.jpg"
     alt="Piyush Singh"
-    onerror="
-        this.style.display='none';
-        document.getElementById('profilePlaceholder').style.display='flex';
-    "
+    onerror="this.style.display='none';document.getElementById('profilePlaceholder').style.display='flex';"
 >
 
 
@@ -2635,7 +2690,9 @@ PS
 
 <span>
 
-Add your photo at<br>
+Add your photo at
+
+<br>
 
 assets/profile.jpg
 
@@ -2658,6 +2715,7 @@ MBA — Digital Marketing & Operations
 </p>
 
 </div>
+
 
 </div>
 
@@ -2689,7 +2747,9 @@ MBA — Digital Marketing & Operations
 
 <h2>
 
-A marketer with an<br>
+A marketer with an
+
+<br>
 
 <span class="gradient-text">
 analytical mindset.
@@ -2825,7 +2885,9 @@ Digital Product Revenue
 
 <h2>
 
-Where I have<br>
+Where I have
+
+<br>
 
 <span class="gradient-text">
 learned by doing.
@@ -2845,7 +2907,6 @@ learned by doing.
 
 
 <div class="glass experience-card">
-
 
 <div class="card-top">
 
@@ -2891,7 +2952,6 @@ to build an initial outreach pipeline for SIP services.
 
 </ul>
 
-
 </div>
 
 </div>
@@ -2903,7 +2963,6 @@ to build an initial outreach pipeline for SIP services.
 
 
 <div class="glass experience-card">
-
 
 <div class="card-top">
 
@@ -2944,7 +3003,6 @@ skill acquisition and performance growth.
 
 </ul>
 
-
 </div>
 
 </div>
@@ -2956,7 +3014,6 @@ skill acquisition and performance growth.
 
 
 <div class="glass experience-card">
-
 
 <div class="card-top">
 
@@ -2996,7 +3053,6 @@ to keep tournament schedules running without delays.
 
 </ul>
 
-
 </div>
 
 </div>
@@ -3008,7 +3064,6 @@ to keep tournament schedules running without delays.
 
 
 <div class="glass experience-card">
-
 
 <div class="card-top">
 
@@ -3053,7 +3108,6 @@ on Bio-Fertilizers and Bio-Control Agents.
 
 </ul>
 
-
 </div>
 
 </div>
@@ -3084,7 +3138,9 @@ on Bio-Fertilizers and Bio-Control Agents.
 
 <h2>
 
-Projects that turn<br>
+Projects that turn
+
+<br>
 
 <span class="gradient-text">
 problems into possibilities.
@@ -3116,10 +3172,21 @@ congestion and passenger delays.
 
 <div class="project-tags">
 
-<span class="tag">Lean Six Sigma</span>
-<span class="tag">DMAIC</span>
-<span class="tag">SIPOC</span>
-<span class="tag">Process Improvement</span>
+<span class="tag">
+Lean Six Sigma
+</span>
+
+<span class="tag">
+DMAIC
+</span>
+
+<span class="tag">
+SIPOC
+</span>
+
+<span class="tag">
+Process Improvement
+</span>
 
 </div>
 
@@ -3144,10 +3211,21 @@ ranking and executed Google Ads campaigns generating
 
 <div class="project-tags">
 
-<span class="tag">Google Ads</span>
-<span class="tag">SEO</span>
-<span class="tag">Google Analytics</span>
-<span class="tag">SEM</span>
+<span class="tag">
+Google Ads
+</span>
+
+<span class="tag">
+SEO
+</span>
+
+<span class="tag">
+Google Analytics
+</span>
+
+<span class="tag">
+SEM
+</span>
 
 </div>
 
@@ -3172,10 +3250,21 @@ generating 25+ customer engagements and ₹10,000+ revenue.
 
 <div class="project-tags">
 
-<span class="tag">Digital Product</span>
-<span class="tag">Social Media</span>
-<span class="tag">Landing Page</span>
-<span class="tag">Conversion</span>
+<span class="tag">
+Digital Product
+</span>
+
+<span class="tag">
+Social Media
+</span>
+
+<span class="tag">
+Landing Page
+</span>
+
+<span class="tag">
+Conversion
+</span>
 
 </div>
 
@@ -3200,9 +3289,17 @@ and contributing to 5% online sales growth.
 
 <div class="project-tags">
 
-<span class="tag">Affiliate Marketing</span>
-<span class="tag">Social Media</span>
-<span class="tag">Lead Generation</span>
+<span class="tag">
+Affiliate Marketing
+</span>
+
+<span class="tag">
+Social Media
+</span>
+
+<span class="tag">
+Lead Generation
+</span>
 
 </div>
 
@@ -3227,10 +3324,21 @@ including positioning and go-to-market planning.
 
 <div class="project-tags">
 
-<span class="tag">Brand Strategy</span>
-<span class="tag">Positioning</span>
-<span class="tag">GTM</span>
-<span class="tag">Pricing</span>
+<span class="tag">
+Brand Strategy
+</span>
+
+<span class="tag">
+Positioning
+</span>
+
+<span class="tag">
+GTM
+</span>
+
+<span class="tag">
+Pricing
+</span>
 
 </div>
 
@@ -3255,10 +3363,21 @@ in inventory planning and logistics.
 
 <div class="project-tags">
 
-<span class="tag">Supply Chain</span>
-<span class="tag">Excel</span>
-<span class="tag">Operations</span>
-<span class="tag">Analysis</span>
+<span class="tag">
+Supply Chain
+</span>
+
+<span class="tag">
+Excel
+</span>
+
+<span class="tag">
+Operations
+</span>
+
+<span class="tag">
+Analysis
+</span>
 
 </div>
 
@@ -3283,10 +3402,21 @@ buffer stock to improve availability.
 
 <div class="project-tags">
 
-<span class="tag">Inventory</span>
-<span class="tag">Supply Chain</span>
-<span class="tag">Risk Analysis</span>
-<span class="tag">Optimization</span>
+<span class="tag">
+Inventory
+</span>
+
+<span class="tag">
+Supply Chain
+</span>
+
+<span class="tag">
+Risk Analysis
+</span>
+
+<span class="tag">
+Optimization
+</span>
 
 </div>
 
@@ -3307,7 +3437,6 @@ buffer stock to improve availability.
 <section>
 
 <div class="container">
-
 
 <div class="metrics">
 
@@ -3389,7 +3518,9 @@ Estimated AttarVibez Margin
 
 <h2>
 
-Learning across<br>
+Learning across
+
+<br>
 
 <span class="gradient-text">
 business & science.
@@ -3504,7 +3635,9 @@ Campus
 
 <h2>
 
-Places that shaped<br>
+Places that shaped
+
+<br>
 
 <span class="gradient-text">
 my journey.
@@ -3520,19 +3653,33 @@ my journey.
 
 <div class="glass project-card reveal">
 
-<div class="campus-photo">
+<div
+    class="profile-image campus-photo"
+>
 
 <img
     src="assets/lpu.jpg"
     alt="Lovely Professional University"
-    onerror="
-        this.style.display='none';
-        this.parentElement.innerHTML=
-        '<div class=&quot;profile-placeholder&quot; style=&quot;position:relative;height:100%;&quot;><strong>01</strong><span>Add LPU photo<br>assets/lpu.jpg</span></div>';
-    "
+    onerror="this.style.display='none';"
 >
 
+
+<div class="profile-placeholder">
+
+<strong>
+01
+</strong>
+
+<span>
+Add LPU campus photo
+<br>
+assets/lpu.jpg
+</span>
+
 </div>
+
+</div>
+
 
 <h3>
 Lovely Professional University
@@ -3547,19 +3694,33 @@ MBA — Digital Marketing & Operations
 
 <div class="glass project-card reveal">
 
-<div class="campus-photo">
+<div
+    class="profile-image campus-photo"
+>
 
 <img
     src="assets/kle.jpg"
     alt="KLE Society's Raja Lakhmagouda Science Institute"
-    onerror="
-        this.style.display='none';
-        this.parentElement.innerHTML=
-        '<div class=&quot;profile-placeholder&quot; style=&quot;position:relative;height:100%;&quot;><strong>02</strong><span>Add college photo<br>assets/kle.jpg</span></div>';
-    "
+    onerror="this.style.display='none';"
 >
 
+
+<div class="profile-placeholder">
+
+<strong>
+02
+</strong>
+
+<span>
+Add college photo
+<br>
+assets/kle.jpg
+</span>
+
 </div>
+
+</div>
+
 
 <h3>
 KLE Society's Raja Lakhmagouda Science Institute
@@ -3574,19 +3735,33 @@ Bachelor's in Biotechnology & Zoology
 
 <div class="glass project-card reveal">
 
-<div class="campus-photo">
+<div
+    class="profile-image campus-photo"
+>
 
 <img
     src="assets/kv-school.jpg"
     alt="KV No.1 Sambra"
-    onerror="
-        this.style.display='none';
-        this.parentElement.innerHTML=
-        '<div class=&quot;profile-placeholder&quot; style=&quot;position:relative;height:100%;&quot;><strong>03</strong><span>Add school photo<br>assets/kv-school.jpg</span></div>';
-    "
+    onerror="this.style.display='none';"
 >
 
+
+<div class="profile-placeholder">
+
+<strong>
+03
+</strong>
+
+<span>
+Add school photo
+<br>
+assets/kv-school.jpg
+</span>
+
 </div>
+
+</div>
+
 
 <h3>
 KV No.1, Sambra
@@ -3624,7 +3799,9 @@ Science Stream
 
 <h2>
 
-Tools, thinking &<br>
+Tools, thinking &
+
+<br>
 
 <span class="gradient-text">
 execution.
@@ -3659,6 +3836,7 @@ Digital Marketing
 
 </div>
 
+
 <div class="skill-track">
 
 <div
@@ -3684,6 +3862,7 @@ Market Research
 </span>
 
 </div>
+
 
 <div class="skill-track">
 
@@ -3711,6 +3890,7 @@ Data Analysis
 
 </div>
 
+
 <div class="skill-track">
 
 <div
@@ -3736,6 +3916,7 @@ Operations Analysis
 </span>
 
 </div>
+
 
 <div class="skill-track">
 
@@ -3763,6 +3944,7 @@ Problem Solving
 
 </div>
 
+
 <div class="skill-track">
 
 <div
@@ -3779,6 +3961,7 @@ Problem Solving
 
 
 <div class="glass skill-card reveal">
+
 
 <h3>
 Tools & platforms
@@ -3859,8 +4042,8 @@ Problem Solving
 
 </div>
 
-</div>
 
+</div>
 
 </div>
 
@@ -3888,6 +4071,7 @@ Problem Solving
 <h2>
 
 Always
+
 <span class="gradient-text">
 learning.
 </span>
@@ -4009,6 +4193,7 @@ May 2022
 
 <div class="glass achievement reveal">
 
+
 <div class="achievement-icon">
 🏆
 </div>
@@ -4027,14 +4212,14 @@ Vishwakarma Learnbiz Simulation Game
 
 
 <p>
-
 Achieved revenue growth from ₹5 lakhs to ₹21 lakhs
 in the business simulation game, securing 5th rank
 among competing teams.
-
 </p>
 
+
 </div>
+
 
 </div>
 
@@ -4061,7 +4246,9 @@ among competing teams.
 
 <h2>
 
-Let's create something<br>
+Let's create something
+
+<br>
 
 <span class="gradient-text">
 worth building.
@@ -4075,15 +4262,17 @@ Have an opportunity, project or idea?
 Let's connect.
 </p>
 
+
 </div>
 
 
 <div class="contact-grid">
 
 
-<!-- CONTACT INFO -->
+<!-- CONTACT INFORMATION -->
 
 <div class="glass contact-card reveal">
+
 
 <h3 style="margin-bottom:18px;">
 Get in touch
@@ -4100,6 +4289,7 @@ Get in touch
 <div class="contact-icon">
 ✉
 </div>
+
 
 <div>
 
@@ -4124,6 +4314,7 @@ piyushsingh20030610@gmail.com
 <div class="contact-icon">
 ☎
 </div>
+
 
 <div>
 
@@ -4150,6 +4341,7 @@ Phone
 <div class="contact-icon">
 in
 </div>
+
 
 <div>
 
@@ -4181,11 +4373,11 @@ Copy Email Address
 <div
     id="copyMessage"
     style="
-        text-align:center;
-        color:#d7e3ff;
-        font-size:.75rem;
-        margin-top:9px;
-        min-height:18px;
+    text-align:center;
+    color:#a9d8ff;
+    font-size:.75rem;
+    margin-top:9px;
+    min-height:18px;
     "
 ></div>
 
@@ -4201,12 +4393,14 @@ Open Email App
 
 </button>
 
+
 </div>
 
 
 <!-- CONTACT FORM -->
 
 <div class="glass contact-card reveal">
+
 
 <h3 style="margin-bottom:20px;">
 Send me a message
@@ -4303,6 +4497,7 @@ Message
     id="emailOptions"
 >
 
+
 <div class="email-options-title">
 
 Choose how you want to send the message:
@@ -4337,7 +4532,7 @@ Continue with Email App
 
 <p class="form-note">
 
-Gmail opens with your message automatically prepared.
+Gmail will open with the message automatically prepared.
 No backend or form service is required.
 
 </p>
@@ -4352,7 +4547,6 @@ No backend or form service is required.
 </div>
 
 </section>
-
 
 </main>
 
@@ -4423,34 +4617,34 @@ in
     id="topBtn"
     aria-label="Back to top"
 >
+
 ↑
+
 </button>
 
 
 <script>
 
 /* =========================================================
-   CONTACT DETAILS
+   CONTACT INFORMATION
 ========================================================= */
 
 const MY_EMAIL =
-    "piyushsingh20030610@gmail.com";
+"piyushsingh20030610@gmail.com";
 
 const MY_PHONE =
-    "+918431832821";
+"+918431832821";
 
 const MY_LINKEDIN =
-    "https://www.linkedin.com/in/piyushsingh0610/";
+"https://www.linkedin.com/in/piyushsingh0610/";
 
 
 /* =========================================================
    YEAR
 ========================================================= */
 
-document.getElementById(
-    "year"
-).textContent =
-    new Date().getFullYear();
+document.getElementById("year").textContent =
+new Date().getFullYear();
 
 
 /* =========================================================
@@ -4458,82 +4652,68 @@ document.getElementById(
 ========================================================= */
 
 const menuBtn =
-    document.getElementById(
-        "menuBtn"
-    );
+document.getElementById("menuBtn");
 
 const navLinks =
-    document.getElementById(
-        "navLinks"
-    );
+document.getElementById("navLinks");
 
 
 menuBtn.addEventListener(
-    "click",
-    function(){
+"click",
+function(){
 
-        navLinks.classList.toggle(
-            "open"
-        );
+    navLinks.classList.toggle("open");
 
-    }
-);
+});
 
 
 document.querySelectorAll(
-    ".nav-links a"
+".nav-links a"
 ).forEach(
-    function(link){
+function(link){
 
-        link.addEventListener(
-            "click",
-            function(){
+    link.addEventListener(
+    "click",
+    function(){
 
-                navLinks.classList.remove(
-                    "open"
-                );
-
-            }
+        navLinks.classList.remove(
+            "open"
         );
 
-    }
-);
+    });
+
+});
 
 
 /* =========================================================
-   NAVBAR SCROLL
+   NAVBAR
 ========================================================= */
 
 const navbar =
-    document.getElementById(
-        "navbar"
-    );
+document.getElementById("navbar");
 
 
 window.addEventListener(
-    "scroll",
-    function(){
+"scroll",
+function(){
 
-        if(
-            window.scrollY > 30
-        ){
+    if(window.scrollY > 30){
 
-            navbar.classList.add(
-                "scrolled"
-            );
-
-        }
-
-        else{
-
-            navbar.classList.remove(
-                "scrolled"
-            );
-
-        }
+        navbar.classList.add(
+            "scrolled"
+        );
 
     }
-);
+
+    else{
+
+        navbar.classList.remove(
+            "scrolled"
+        );
+
+    }
+
+});
 
 
 /* =========================================================
@@ -4541,173 +4721,164 @@ window.addEventListener(
 ========================================================= */
 
 const sections =
-    document.querySelectorAll(
-        "section[id]"
-    );
+document.querySelectorAll(
+"section[id]"
+);
 
 const navigationLinks =
-    document.querySelectorAll(
-        ".nav-links a"
-    );
+document.querySelectorAll(
+".nav-links a"
+);
 
 
 window.addEventListener(
-    "scroll",
-    function(){
+"scroll",
+function(){
 
-        let current = "";
+    let current = "";
 
-        sections.forEach(
-            function(section){
+    sections.forEach(
+    function(section){
 
-                const sectionTop =
-                    section.offsetTop - 180;
+        const sectionTop =
+            section.offsetTop - 180;
 
-                if(
-                    window.scrollY >=
-                    sectionTop
-                ){
+        if(
+            window.scrollY >=
+            sectionTop
+        ){
 
-                    current =
-                        section.getAttribute(
-                            "id"
-                        );
-
-                }
-
-            }
-        );
-
-
-        navigationLinks.forEach(
-            function(link){
-
-                link.classList.remove(
-                    "active"
+            current =
+                section.getAttribute(
+                    "id"
                 );
 
+        }
 
-                if(
-                    link.getAttribute(
-                        "href"
-                    ) ===
-                    "#" + current
-                ){
+    });
 
-                    link.classList.add(
-                        "active"
-                    );
 
-                }
+    navigationLinks.forEach(
+    function(link){
 
-            }
+        link.classList.remove(
+            "active"
         );
 
-    }
-);
+
+        if(
+            link.getAttribute(
+                "href"
+            ) ===
+            "#" + current
+        ){
+
+            link.classList.add(
+                "active"
+            );
+
+        }
+
+    });
+
+});
 
 
 /* =========================================================
-   SCROLL REVEAL
+   REVEAL ANIMATION
 ========================================================= */
 
 const revealElements =
-    document.querySelectorAll(
-        ".reveal"
-    );
+document.querySelectorAll(
+".reveal"
+);
 
 
 const revealObserver =
-    new IntersectionObserver(
-        function(entries){
+new IntersectionObserver(
+function(entries){
 
-            entries.forEach(
-                function(entry){
+    entries.forEach(
+    function(entry){
 
-                    if(
-                        entry.isIntersecting
-                    ){
+        if(
+            entry.isIntersecting
+        ){
 
-                        entry.target.classList.add(
-                            "visible"
-                        );
-
-                        revealObserver.unobserve(
-                            entry.target
-                        );
-
-                    }
-
-                }
+            entry.target.classList.add(
+                "visible"
             );
 
-        },
-        {
-            threshold:.12
+            revealObserver.unobserve(
+                entry.target
+            );
+
         }
-    );
+
+    });
+
+},
+{
+    threshold:.12
+});
 
 
 revealElements.forEach(
-    function(element){
+function(element){
 
-        revealObserver.observe(
-            element
-        );
+    revealObserver.observe(
+        element
+    );
 
-    }
-);
+});
 
 
 /* =========================================================
-   SKILL BARS
+   SKILLS
 ========================================================= */
 
 const skillFills =
-    document.querySelectorAll(
-        ".skill-fill"
-    );
+document.querySelectorAll(
+".skill-fill"
+);
 
 
 const skillObserver =
-    new IntersectionObserver(
-        function(entries){
+new IntersectionObserver(
+function(entries){
 
-            entries.forEach(
-                function(entry){
+    entries.forEach(
+    function(entry){
 
-                    if(
-                        entry.isIntersecting
-                    ){
+        if(
+            entry.isIntersecting
+        ){
 
-                        entry.target.style.width =
-                            entry.target.dataset.width;
+            entry.target.style.width =
+                entry.target.dataset.width;
 
-                        skillObserver.unobserve(
-                            entry.target
-                        );
-
-                    }
-
-                }
+            skillObserver.unobserve(
+                entry.target
             );
 
-        },
-        {
-            threshold:.4
         }
-    );
+
+    });
+
+},
+{
+    threshold:.4
+});
 
 
 skillFills.forEach(
-    function(skill){
+function(skill){
 
-        skillObserver.observe(
-            skill
-        );
+    skillObserver.observe(
+        skill
+    );
 
-    }
-);
+});
 
 
 /* =========================================================
@@ -4722,25 +4893,21 @@ function copyEmail(){
     ){
 
         navigator.clipboard
-            .writeText(
-                MY_EMAIL
-            )
-            .then(
-                function(){
+        .writeText(MY_EMAIL)
+        .then(
+        function(){
 
-                    showCopyMessage(
-                        "✓ Email copied"
-                    );
-
-                }
-            )
-            .catch(
-                function(){
-
-                    fallbackCopyEmail();
-
-                }
+            showCopyMessage(
+                "✓ Email copied"
             );
+
+        })
+        .catch(
+        function(){
+
+            fallbackCopyEmail();
+
+        });
 
     }
 
@@ -4760,6 +4927,7 @@ function fallbackCopyEmail(){
             "textarea"
         );
 
+
     textarea.value =
         MY_EMAIL;
 
@@ -4769,9 +4937,11 @@ function fallbackCopyEmail(){
     textarea.style.opacity =
         "0";
 
+
     document.body.appendChild(
         textarea
     );
+
 
     textarea.select();
 
@@ -4805,7 +4975,7 @@ function fallbackCopyEmail(){
 
 
 function showCopyMessage(
-    message
+message
 ){
 
     const element =
@@ -4813,18 +4983,19 @@ function showCopyMessage(
             "copyMessage"
         );
 
+
     element.textContent =
         message;
 
 
     setTimeout(
-        function(){
+    function(){
 
-            element.textContent =
-                "";
+        element.textContent =
+            "";
 
-        },
-        2500
+    },
+    2500
     );
 
 }
@@ -4841,8 +5012,8 @@ function openMailApp(){
 
 
     const body =
-        "Hello Piyush,\n\n" +
-        "I would like to connect with you regarding an opportunity.\n\n" +
+        "Hello Piyush,%0D%0A%0D%0A" +
+        "I would like to connect with you regarding an opportunity.%0D%0A%0D%0A" +
         "Regards";
 
 
@@ -4854,9 +5025,7 @@ function openMailApp(){
             subject
         ) +
         "&body=" +
-        encodeURIComponent(
-            body
-        );
+        body;
 
 }
 
@@ -4866,70 +5035,73 @@ function openMailApp(){
 ========================================================= */
 
 const contactForm =
-    document.getElementById(
-        "contactForm"
-    );
+document.getElementById(
+    "contactForm"
+);
 
 
 const emailOptions =
-    document.getElementById(
-        "emailOptions"
-    );
+document.getElementById(
+    "emailOptions"
+);
 
 
-let preparedGmailURL = "";
+let preparedGmailURL =
+"";
 
-let preparedMailtoURL = "";
+
+let preparedMailtoURL =
+"";
 
 
 contactForm.addEventListener(
-    "submit",
-    function(event){
+"submit",
+function(event){
 
-        event.preventDefault();
-
-
-        const name =
-            document.getElementById(
-                "name"
-            ).value.trim();
+    event.preventDefault();
 
 
-        const senderEmail =
-            document.getElementById(
-                "senderEmail"
-            ).value.trim();
+    const name =
+        document.getElementById(
+            "name"
+        ).value.trim();
 
 
-        const subject =
-            document.getElementById(
-                "subject"
-            ).value.trim();
+    const senderEmail =
+        document.getElementById(
+            "senderEmail"
+        ).value.trim();
 
 
-        const message =
-            document.getElementById(
-                "message"
-            ).value.trim();
+    const subject =
+        document.getElementById(
+            "subject"
+        ).value.trim();
 
 
-        if(
-            !name ||
-            !senderEmail ||
-            !subject ||
-            !message
-        ){
-
-            alert(
-                "Please fill in all fields."
-            );
-
-            return;
-
-        }
+    const message =
+        document.getElementById(
+            "message"
+        ).value.trim();
 
 
-        const emailBody =
+    if(
+        !name ||
+        !senderEmail ||
+        !subject ||
+        !message
+    ){
+
+        alert(
+            "Please fill in all fields."
+        );
+
+        return;
+
+    }
+
+
+    const emailBody =
 
 `Hello Piyush,
 
@@ -4946,68 +5118,91 @@ Regards,
 ${name}`;
 
 
-        /* =========================================
-           GMAIL COMPOSE
-        ========================================= */
+    /* =====================================================
+       GMAIL COMPOSE
+    ===================================================== */
 
-        preparedGmailURL =
+    preparedGmailURL =
 
-            "https://mail.google.com/mail/" +
+        "https://mail.google.com/mail/" +
 
-            "?view=cm" +
+        "?view=cm" +
 
-            "&fs=1" +
+        "&fs=1" +
 
-            "&to=" +
+        "&to=" +
 
-            encodeURIComponent(
-                MY_EMAIL
-            ) +
+        encodeURIComponent(
+            MY_EMAIL
+        ) +
 
-            "&su=" +
+        "&su=" +
 
-            encodeURIComponent(
-                subject
-            ) +
+        encodeURIComponent(
+            subject
+        ) +
 
-            "&body=" +
+        "&body=" +
 
-            encodeURIComponent(
-                emailBody
-            );
-
-
-        /* =========================================
-           MAILTO FALLBACK
-        ========================================= */
-
-        preparedMailtoURL =
-
-            "mailto:" +
-
-            MY_EMAIL +
-
-            "?subject=" +
-
-            encodeURIComponent(
-                subject
-            ) +
-
-            "&body=" +
-
-            encodeURIComponent(
-                emailBody
-            );
-
-
-        emailOptions.classList.add(
-            "show"
+        encodeURIComponent(
+            emailBody
         );
 
 
-        /* =========================================
-           OPEN GMAIL AUTOMATICALLY
-        ========================================= */
+    /* =====================================================
+       MAILTO FALLBACK
+    ===================================================== */
+
+    preparedMailtoURL =
+
+        "mailto:" +
+
+        MY_EMAIL +
+
+        "?subject=" +
+
+        encodeURIComponent(
+            subject
+        ) +
+
+        "&body=" +
+
+        encodeURIComponent(
+            emailBody
+        );
+
+
+    emailOptions.classList.add(
+        "show"
+    );
+
+
+    /* =====================================================
+       OPEN GMAIL IMMEDIATELY
+    ===================================================== */
+
+    window.open(
+        preparedGmailURL,
+        "_blank",
+        "noopener,noreferrer"
+    );
+
+});
+
+
+/* =========================================================
+   GMAIL BUTTON
+========================================================= */
+
+document.getElementById(
+"gmailButton"
+).addEventListener(
+"click",
+function(){
+
+    if(
+        preparedGmailURL
+    ){
 
         window.open(
             preparedGmailURL,
@@ -5016,33 +5211,8 @@ ${name}`;
         );
 
     }
-);
 
-
-/* =========================================================
-   GMAIL BUTTON
-========================================================= */
-
-document.getElementById(
-    "gmailButton"
-).addEventListener(
-    "click",
-    function(){
-
-        if(
-            preparedGmailURL
-        ){
-
-            window.open(
-                preparedGmailURL,
-                "_blank",
-                "noopener,noreferrer"
-            );
-
-        }
-
-    }
-);
+});
 
 
 /* =========================================================
@@ -5050,22 +5220,21 @@ document.getElementById(
 ========================================================= */
 
 document.getElementById(
-    "mailAppButton"
+"mailAppButton"
 ).addEventListener(
-    "click",
-    function(){
+"click",
+function(){
 
-        if(
-            preparedMailtoURL
-        ){
+    if(
+        preparedMailtoURL
+    ){
 
-            window.location.href =
-                preparedMailtoURL;
-
-        }
+        window.location.href =
+            preparedMailtoURL;
 
     }
-);
+
+});
 
 
 /* =========================================================
@@ -5073,161 +5242,134 @@ document.getElementById(
 ========================================================= */
 
 const topBtn =
-    document.getElementById(
-        "topBtn"
-    );
+document.getElementById(
+    "topBtn"
+);
 
 
 window.addEventListener(
-    "scroll",
-    function(){
+"scroll",
+function(){
 
-        if(
-            window.scrollY > 500
-        ){
+    if(
+        window.scrollY > 500
+    ){
 
-            topBtn.classList.add(
-                "show"
-            );
-
-        }
-
-        else{
-
-            topBtn.classList.remove(
-                "show"
-            );
-
-        }
+        topBtn.classList.add(
+            "show"
+        );
 
     }
-);
+
+    else{
+
+        topBtn.classList.remove(
+            "show"
+        );
+
+    }
+
+});
 
 
 topBtn.addEventListener(
-    "click",
-    function(){
+"click",
+function(){
 
-        window.scrollTo({
+    window.scrollTo({
 
-            top:0,
+        top:0,
 
-            behavior:"smooth"
+        behavior:"smooth"
 
-        });
+    });
 
-    }
-);
+});
 
 
 /* =========================================================
-   LIVE COSMOS ENGINE
+   REALISTIC COSMOS ENGINE
 ========================================================= */
 
 const canvas =
-    document.getElementById(
-        "cosmosCanvas"
-    );
+document.getElementById(
+    "cosmosCanvas"
+);
+
 
 const ctx =
-    canvas.getContext(
-        "2d"
-    );
+canvas.getContext(
+    "2d"
+);
 
 
 let stars = [];
 
 let shootingStars = [];
 
-let mouseX = 0;
+let width = 0;
 
-let mouseY = 0;
+let height = 0;
 
-let targetMouseX = 0;
-
-let targetMouseY = 0;
+let dpr =
+window.devicePixelRatio || 1;
 
 
 /* =========================================================
-   CANVAS SIZE
+   RESIZE
 ========================================================= */
 
-function resizeCanvas(){
+function resizeCosmos(){
 
-    const ratio =
-        window.devicePixelRatio || 1;
+    dpr =
+        Math.min(
+            window.devicePixelRatio || 1,
+            2
+        );
+
+
+    width =
+        window.innerWidth;
+
+
+    height =
+        window.innerHeight;
 
 
     canvas.width =
-        window.innerWidth *
-        ratio;
+        width * dpr;
 
 
     canvas.height =
-        window.innerHeight *
-        ratio;
+        height * dpr;
 
 
     canvas.style.width =
-        window.innerWidth +
-        "px";
+        width + "px";
 
 
     canvas.style.height =
-        window.innerHeight +
-        "px";
+        height + "px";
 
 
     ctx.setTransform(
-        ratio,
+        dpr,
         0,
         0,
-        ratio,
+        dpr,
         0,
         0
     );
 
+
+    createStars();
+
 }
 
 
-resizeCanvas();
-
-
 window.addEventListener(
-    "resize",
-    function(){
-
-        resizeCanvas();
-
-        createStars();
-
-    }
-);
-
-
-/* =========================================================
-   MOUSE PARALLAX
-========================================================= */
-
-window.addEventListener(
-    "mousemove",
-    function(event){
-
-        targetMouseX =
-            (
-                event.clientX /
-                window.innerWidth -
-                .5
-            );
-
-        targetMouseY =
-            (
-                event.clientY /
-                window.innerHeight -
-                .5
-            );
-
-    }
+"resize",
+resizeCosmos
 );
 
 
@@ -5239,13 +5381,14 @@ function createStars(){
 
     stars = [];
 
+
     const amount =
         Math.min(
-            330,
+            650,
             Math.floor(
-                window.innerWidth *
-                window.innerHeight /
-                4500
+                width *
+                height /
+                2200
             )
         );
 
@@ -5264,48 +5407,46 @@ function createStars(){
 
             x:
                 Math.random() *
-                window.innerWidth,
+                width,
 
             y:
                 Math.random() *
-                window.innerHeight,
+                height,
 
             radius:
-                Math.random() *
-                1.6 +
-                .2,
+                depth *
+                1.7 +
+                .25,
 
             alpha:
-                Math.random() *
-                .75 +
-                .15,
+                .18 +
+                depth *
+                .68,
 
             twinkle:
                 Math.random() *
-                .025 +
-                .004,
+                Math.PI *
+                2,
 
-            depth:
-                depth,
+            twinkleSpeed:
+                .002 +
+                Math.random() *
+                .012,
 
             drift:
-                Math.random() *
-                .12 +
-                .02,
+                .005 +
+                depth *
+                .018,
 
-            phase:
-                Math.random() *
-                Math.PI *
-                2
+            blue:
+                Math.random() >
+                .82
 
         });
 
     }
 
 }
-
-
-createStars();
 
 
 /* =========================================================
@@ -5315,8 +5456,7 @@ createStars();
 function createShootingStar(){
 
     if(
-        Math.random() >
-        .006
+        shootingStars.length >= 2
     ){
 
         return;
@@ -5328,33 +5468,60 @@ function createShootingStar(){
 
         x:
             Math.random() *
-            window.innerWidth *
-            .9,
+            width,
 
         y:
             Math.random() *
-            window.innerHeight *
+            height *
             .55,
 
         length:
+            80 +
             Math.random() *
-            120 +
-            70,
+            150,
 
         speed:
+            7 +
             Math.random() *
-            8 +
             8,
 
         opacity:
-            1,
+            .45 +
+            Math.random() *
+            .45,
 
-        angle:
-            Math.PI / 4
+        life:
+            0,
+
+        maxLife:
+            55 +
+            Math.random() *
+            35
 
     });
 
 }
+
+
+/* =========================================================
+   OCCASIONAL SHOOTING STAR
+========================================================= */
+
+setInterval(
+function(){
+
+    if(
+        Math.random() <
+        .72
+    ){
+
+        createShootingStar();
+
+    }
+
+},
+4200
+);
 
 
 /* =========================================================
@@ -5364,249 +5531,260 @@ function createShootingStar(){
 function drawStars(){
 
     stars.forEach(
-        function(star){
+    function(star){
 
-            star.phase +=
-                star.twinkle;
-
-
-            const twinkle =
-                (
-                    Math.sin(
-                        star.phase
-                    ) +
-                    1
-                ) / 2;
+        star.twinkle +=
+            star.twinkleSpeed;
 
 
-            const parallaxX =
-                mouseX *
-                star.depth *
-                12;
+        const pulse =
+            .72 +
+            Math.sin(
+                star.twinkle
+            ) *
+            .28;
 
 
-            const parallaxY =
-                mouseY *
-                star.depth *
-                8;
+        star.y -=
+            star.drift;
 
 
-            const x =
-                star.x +
-                parallaxX;
+        if(
+            star.y < -5
+        ){
 
+            star.y =
+                height + 5;
 
-            const y =
-                star.y +
-                parallaxY;
-
-
-            ctx.beginPath();
-
-
-            ctx.arc(
-                x,
-                y,
-                star.radius,
-                0,
-                Math.PI * 2
-            );
-
-
-            ctx.fillStyle =
-
-                `rgba(
-                    220,
-                    231,
-                    255,
-                    ${
-                        star.alpha *
-                        (
-                            .55 +
-                            twinkle *
-                            .45
-                        )
-                    }
-                )`;
-
-
-            ctx.fill();
-
-
-            /* Larger stars get a glow */
-
-            if(
-                star.radius >
-                1.25
-            ){
-
-                ctx.beginPath();
-
-                ctx.arc(
-                    x,
-                    y,
-                    star.radius *
-                    3.5,
-                    0,
-                    Math.PI * 2
-                );
-
-
-                const glow =
-                    ctx.createRadialGradient(
-                        x,
-                        y,
-                        0,
-                        x,
-                        y,
-                        star.radius * 4
-                    );
-
-
-                glow.addColorStop(
-                    0,
-                    "rgba(190,210,255,.15)"
-                );
-
-
-                glow.addColorStop(
-                    1,
-                    "rgba(190,210,255,0)"
-                );
-
-
-                ctx.fillStyle =
-                    glow;
-
-                ctx.fill();
-
-            }
+            star.x =
+                Math.random() *
+                width;
 
         }
-    );
+
+
+        ctx.beginPath();
+
+
+        ctx.arc(
+            star.x,
+            star.y,
+            star.radius,
+            0,
+            Math.PI * 2
+        );
+
+
+        if(
+            star.blue
+        ){
+
+            ctx.fillStyle =
+                `rgba(
+                    174,
+                    215,
+                    255,
+                    ${star.alpha * pulse}
+                )`;
+
+        }
+
+        else{
+
+            ctx.fillStyle =
+                `rgba(
+                    235,
+                    244,
+                    255,
+                    ${star.alpha * pulse}
+                )`;
+
+        }
+
+
+        ctx.fill();
+
+    });
 
 }
 
 
 /* =========================================================
-   DRAW SHOOTING STARS
+   SHOOTING STARS
 ========================================================= */
 
 function drawShootingStars(){
 
     shootingStars.forEach(
-        function(star,index){
+    function(star){
 
-            star.x +=
-                Math.cos(
-                    star.angle
-                ) *
-                star.speed;
+        star.x +=
+            star.speed;
 
+        star.y +=
+            star.speed *
+            .42;
 
-            star.y +=
-                Math.sin(
-                    star.angle
-                ) *
-                star.speed;
+        star.life++;
 
 
-            star.opacity -=
-                .012;
+        const progress =
+            star.life /
+            star.maxLife;
 
 
-            const gradient =
-                ctx.createLinearGradient(
-                    star.x,
-                    star.y,
-                    star.x -
-                        star.length,
-                    star.y -
-                        star.length
-                );
+        const opacity =
+            star.opacity *
+            (1 - progress);
 
 
-            gradient.addColorStop(
-                0,
-                `rgba(
-                    255,
-                    255,
-                    255,
-                    ${star.opacity}
-                )`
-            );
+        const gradient =
+            ctx.createLinearGradient(
 
-
-            gradient.addColorStop(
-                .35,
-                `rgba(
-                    197,
-                    215,
-                    255,
-                    ${star.opacity * .45}
-                )`
-            );
-
-
-            gradient.addColorStop(
-                1,
-                "rgba(180,200,255,0)"
-            );
-
-
-            ctx.beginPath();
-
-
-            ctx.moveTo(
                 star.x,
-                star.y
-            );
+                star.y,
 
-
-            ctx.lineTo(
                 star.x -
                     star.length,
+
                 star.y -
-                    star.length
+                    star.length *
+                    .42
+
             );
 
 
-            ctx.strokeStyle =
-                gradient;
+        gradient.addColorStop(
+            0,
+            `rgba(
+                255,
+                255,
+                255,
+                ${opacity}
+            )`
+        );
 
 
-            ctx.lineWidth =
-                1.5;
+        gradient.addColorStop(
+            .25,
+            `rgba(
+                183,
+                222,
+                255,
+                ${opacity * .6}
+            )`
+        );
 
 
-            ctx.stroke();
+        gradient.addColorStop(
+            1,
+            "rgba(120,180,240,0)"
+        );
 
 
-            if(
-                star.opacity <= 0 ||
-                star.x >
-                    window.innerWidth +
-                    200 ||
-                star.y >
-                    window.innerHeight +
-                    200
-            ){
+        ctx.beginPath();
 
-                shootingStars.splice(
-                    index,
-                    1
-                );
 
-            }
+        ctx.strokeStyle =
+            gradient;
 
-        }
+
+        ctx.lineWidth =
+            1.5;
+
+
+        ctx.moveTo(
+            star.x,
+            star.y
+        );
+
+
+        ctx.lineTo(
+            star.x -
+                star.length,
+
+            star.y -
+                star.length *
+                .42
+        );
+
+
+        ctx.stroke();
+
+    });
+
+
+    shootingStars =
+        shootingStars.filter(
+        function(star){
+
+            return (
+                star.life <
+                star.maxLife
+            );
+
+        });
+
+}
+
+
+/* =========================================================
+   SUBTLE GALAXY HAZE
+========================================================= */
+
+function drawGalaxyHaze(){
+
+    const gradient =
+        ctx.createRadialGradient(
+
+            width * .50,
+            height * .38,
+            0,
+
+            width * .50,
+            height * .38,
+            Math.max(
+                width,
+                height
+            ) * .72
+
+        );
+
+
+    gradient.addColorStop(
+        0,
+        "rgba(96,139,194,.055)"
+    );
+
+
+    gradient.addColorStop(
+        .3,
+        "rgba(55,92,145,.025)"
+    );
+
+
+    gradient.addColorStop(
+        1,
+        "rgba(0,0,0,0)"
+    );
+
+
+    ctx.fillStyle =
+        gradient;
+
+
+    ctx.fillRect(
+        0,
+        0,
+        width,
+        height
     );
 
 }
 
 
 /* =========================================================
-   COSMIC ANIMATION
+   COSMOS ANIMATION
 ========================================================= */
 
 function animateCosmos(){
@@ -5614,32 +5792,14 @@ function animateCosmos(){
     ctx.clearRect(
         0,
         0,
-        window.innerWidth,
-        window.innerHeight
+        width,
+        height
     );
 
 
-    /* Smooth mouse movement */
-
-    mouseX +=
-        (
-            targetMouseX -
-            mouseX
-        ) *
-        .025;
-
-
-    mouseY +=
-        (
-            targetMouseY -
-            mouseY
-        ) *
-        .025;
-
+    drawGalaxyHaze();
 
     drawStars();
-
-    createShootingStar();
 
     drawShootingStars();
 
@@ -5651,30 +5811,31 @@ function animateCosmos(){
 }
 
 
+resizeCosmos();
+
 animateCosmos();
 
 
 /* =========================================================
-   PREVENT BROKEN IMAGE VISUALS
+   IMAGE FALLBACK
 ========================================================= */
 
 document.querySelectorAll(
-    ".profile-image img"
+".profile-image img"
 ).forEach(
-    function(img){
+function(img){
 
-        img.addEventListener(
-            "error",
-            function(){
+    img.addEventListener(
+        "error",
+        function(){
 
-                img.style.display =
-                    "none";
+            img.style.display =
+                "none";
 
-            }
-        );
+        }
+    );
 
-    }
-);
+});
 
 </script>
 
